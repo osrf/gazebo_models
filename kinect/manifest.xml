@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
-<version>1.0</version>
+
+<model>
+  <name>Kinect</name>
+  <version>1.0</version>
+</model>
+
 <author>
   <name>Nate Koenig</name>
   <email>nate@osrfoundation.org</email>
