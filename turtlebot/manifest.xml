@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<model>
+  <name>TurtleBot</name>
+  <version>1.0</version>
+  <sdf>model.sdf</sdf>
+</model>
+
+<author>
+  <name>Nate Koenig</name>
+  <email>nate@osrfoundation.org</email>
+</author>
+
+<description>
+  A model of the turtlebot
+</description>
+
+<depend>
+  <model>
+    <name>kinect</name>
+    <version>1.0</version>
+  </model>
+</depend>
