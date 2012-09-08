@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<models>
+  <model>turtlebot</model>
+  <model>willowgarage</model>
+  <model>kinect</model>
+  <model>pioneer2dx</model>
+</models>

@@ -1,0 +1,21 @@
+package gazebo_models;
+
+message Request
+{
+  required int32 id       = 1;
+  required string request = 2;
+}
+
+message Response
+{
+  required int32 id        = 1;
+  required string request  = 2;
+  required string response = 3;
+  optional string type     = 4;
+  optional bytes data      = 5;
+}
+
+message ModelList
+{
+  repeated string model = 1;
+}
