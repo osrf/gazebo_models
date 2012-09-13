@@ -8,7 +8,7 @@ from xml.dom import minidom
 import request_pb2
 
 TCP_IP = '127.0.0.1'
-TCP_PORT = 5018
+TCP_PORT = 50199
 BUFFER_SIZE = 1024
 
 models = []
@@ -34,7 +34,6 @@ s.listen(1)
 conn, addr = s.accept()
 print 'Connection address:', addr
 while 1:
-  print "here"
   request = request_pb2.Request()
   data = conn.recv(BUFFER_SIZE)
   if not data:
