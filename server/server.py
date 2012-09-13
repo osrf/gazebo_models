@@ -8,10 +8,10 @@ from xml.dom import minidom
 import request_pb2
 
 TCP_IP = '127.0.0.1'
-TCP_PORT = 50199
+TCP_PORT = 50198
 BUFFER_SIZE = 1024
 
-models = []
+models = {}
 
 #################################################
 # Read the main manifest file
@@ -20,10 +20,9 @@ def read_manifest():
   model_list = xmldoc.getElementsByTagName("model")
   
   for model in model_list:
-    model_name = model.childNodes[0].data
-    models.append(model_name)
-  
-
+    model_name = model.getElementsByTagName("name")[0].childNodes[0].data
+    model_path = model.getElementsByTagName("path")[0].childNodes[0].data
+    models[model_name] = model_path
 
 read_manifest()
 
@@ -52,8 +51,8 @@ while 1:
 
     model_list_msg = request_pb2.ModelList()
     response.type = model_list_msg.DESCRIPTOR.full_name
-    for m in models:
-      model_list_msg.model.append(m)
+    for key in models:
+      model_list_msg.model.append(key)
     response.data = model_list_msg.SerializeToString()
 
   print "Response Size:", len(response.SerializeToString())

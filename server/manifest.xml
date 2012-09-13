@@ -1,7 +1,22 @@
 <?xml version="1.0" ?>
 <models>
-  <model>turtlebot</model>
-  <model>willowgarage</model>
-  <model>kinect</model>
-  <model>pioneer2dx</model>
+  <model>
+    <name>Turtle Bot</name>
+    <path>turtlebot</path>
+  </model>
+
+  <model>
+    <name>Willow Garage</name>
+    <path>willowgarage</path>
+  </model>
+
+  <model>
+    <name>Kinect</name>
+    <path>kinect</path>
+  </model>
+
+  <model>
+    <name>Pioneer2 DX</name>
+    <path>pioneer2dx</path>
+  </model>
 </models>
