@@ -8,7 +8,7 @@ from xml.dom import minidom
 import request_pb2
 
 TCP_IP = '127.0.0.1'
-TCP_PORT = 50198
+TCP_PORT = 50199
 BUFFER_SIZE = 1024
 
 models = {}
@@ -26,9 +26,11 @@ def read_manifest():
 
 read_manifest()
 
+print 'here'
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((TCP_IP, TCP_PORT))
 s.listen(1)
+print 'here2'
 
 conn, addr = s.accept()
 print 'Connection address:', addr
