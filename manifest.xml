@@ -25,4 +25,10 @@
     <uri>/simple_arm</uri>
   </model>
 
+  <model>
+    <name>PR2</name>
+    <uri>/pr2</uri>
+  </model>
+
+
 </models>
