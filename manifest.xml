@@ -19,4 +19,10 @@
     <name>Pioneer2 DX</name>
     <uri>/pioneer2dx</uri>
   </model>
+
+  <model>
+    <name>Simple Arm</name>
+    <uri>/simple_arm</uri>
+  </model>
+
 </models>
