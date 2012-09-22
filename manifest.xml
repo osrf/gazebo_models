@@ -30,5 +30,9 @@
     <uri>/pr2</uri>
   </model>
 
+  <model>
+    <name>Keuka YouBot</name>
+    <uri>/youbot</uri>
+  </model>
 
 </models>
