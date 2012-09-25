@@ -10,24 +10,24 @@ set (CMAKE_INSTALL_PREFIX /usr CACHE STRING "Install path prefix")
 project (gazebo_models)
 string (TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
 
-include (FindPkgConfig)
-if (PKG_CONFIG_FOUND)
-  pkg_check_modules(GAZEBO gazebo)
-  pkg_check_modules(OGRE OGRE)
-  pkg_check_modules(CEGUI CEGUI)
-endif()
-
-include_directories(
-  ${GAZEBO_INCLUDE_DIRS}
-  ${OGRE_INCLUDE_DIRS}
-  ${CEGUI_INCLUDE_DIRS}
-)
-
-link_directories(
-  ${GAZEBO_LIBRARY_DIRS}
-  ${OGRE_LIBRARY_DIRS}
-  ${CEGUI_LIBRARY_DIRS}
-)
+#include (FindPkgConfig)
+#if (PKG_CONFIG_FOUND)
+#  pkg_check_modules(GAZEBO gazebo)
+#  pkg_check_modules(OGRE OGRE)
+#  pkg_check_modules(CEGUI CEGUI)
+#endif()
+#
+#include_directories(
+#  ${GAZEBO_INCLUDE_DIRS}
+#  ${OGRE_INCLUDE_DIRS}
+#  ${CEGUI_INCLUDE_DIRS}
+#)
+#
+#link_directories(
+#  ${GAZEBO_LIBRARY_DIRS}
+#  ${OGRE_LIBRARY_DIRS}
+#  ${CEGUI_LIBRARY_DIRS}
+#)
 
 
 set (dirs
@@ -44,6 +44,14 @@ set (dirs
   youbot
 )
 
-install(DIRECTORY ${dirs} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/gazebo_models)
+foreach (dir ${dirs})
+  add_custom_target(${dir}
+    ALL
+    COMMAND tar czvf ${dir}.tar.gz ../${dir}
+    COMMAND mv ${dir}.tar.gz ../${dir}/model.tar.gz)
+endforeach ()
 
 message (STATUS "Install path: ${CMAKE_INSTALL_PREFIX}/share/gazebo_models")
+
+# This must always be last!
+include(CPack)
