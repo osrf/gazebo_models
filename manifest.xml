@@ -21,6 +21,11 @@
   </model>
 
   <model>
+    <name>Hokuyo</name>
+    <uri>/hokuyo</uri>
+  </model>
+
+  <model>
     <name>Pioneer2 DX</name>
     <uri>/pioneer2dx</uri>
   </model>

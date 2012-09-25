@@ -28,7 +28,7 @@
         <pose>-0.043340 0 0.084757 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://turtlebot/meshes/plate_0_logo.dae</filename>
+            <uri>model://turtlebot/meshes/plate_0_logo.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -45,7 +45,7 @@
         <pose>-0.002660 0 0.141907 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://turtlebot/meshes/plate_1_logo.dae</filename>
+            <uri>model://turtlebot/meshes/plate_1_logo.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -62,7 +62,7 @@
         <pose>-0.002660 0 0.199108 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://turtlebot/meshes/plate_1_logo.dae</filename>
+            <uri>model://turtlebot/meshes/plate_1_logo.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -79,7 +79,7 @@
         <pose>-0.015820 0 0.405457 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://turtlebot/meshes/plate_2_logo.dae</filename>
+            <uri>model://turtlebot/meshes/plate_2_logo.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -97,7 +97,7 @@
         <pose>-0.002540 0.111468 0.079992 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://turtlebot/meshes/68-02403-125_Spacer.dae</filename>
+            <uri>model://turtlebot/meshes/68-02403-125_Spacer.dae</uri>
             <scale>0.001 0.001 0.001000</scale>
           </mesh>
         </geometry>
@@ -116,7 +116,7 @@
         <pose>-0.002540 -0.111468 0.079992 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://turtlebot/meshes/68-02403-125_Spacer.dae</filename>
+            <uri>model://turtlebot/meshes/68-02403-125_Spacer.dae</uri>
             <scale>0.001 0.001 0.001000</scale>
           </mesh>
         </geometry>
@@ -135,7 +135,7 @@
         <pose>-0.072390 -0.111468 0.079992 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://turtlebot/meshes/68-02403-125_Spacer.dae</filename>
+            <uri>model://turtlebot/meshes/68-02403-125_Spacer.dae</uri>
             <scale>0.001 0.001 0.001000</scale>
           </mesh>
         </geometry>
@@ -154,7 +154,7 @@
         <pose>-0.072390 0.111468 0.079992 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://turtlebot/meshes/68-02403-125_Spacer.dae</filename>
+            <uri>model://turtlebot/meshes/68-02403-125_Spacer.dae</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -173,7 +173,7 @@
         <pose>0.067640 0.131420 0.087980 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</filename>
+            <uri>model://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -192,7 +192,7 @@
         <pose>0.067640 -0.131420 0.087980 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</filename>
+            <uri>model://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -211,7 +211,7 @@
         <pose>-0.052832 -0.131420 0.087980 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</filename>
+            <uri>model://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -230,7 +230,7 @@
         <pose>-0.052832 0.131420 0.087980 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</filename>
+            <uri>model://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -249,7 +249,7 @@
         <pose>0.067640 0.131420 0.145130 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</filename>
+            <uri>model://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -268,7 +268,7 @@
         <pose>0.067640 -0.131420 0.145130 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</filename>
+            <uri>model://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -287,7 +287,7 @@
         <pose>-0.052832 -0.131420 0.145130 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</filename>
+            <uri>model://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -306,7 +306,7 @@
         <pose>-0.052832 0.131420 0.145130 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</filename>
+            <uri>model://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -325,7 +325,7 @@
         <pose>0.067640 0.131420 0.202280 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://turtlebot/meshes/68-02421-8000-RA_Turtlebot_F-F_Standoff.dae</filename>
+            <uri>model://turtlebot/meshes/68-02421-8000-RA_Turtlebot_F-F_Standoff.dae</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -344,7 +344,7 @@
         <pose>0.067640 -0.131420 0.202280 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://turtlebot/meshes/68-02421-8000-RA_Turtlebot_F-F_Standoff.dae</filename>
+            <uri>model://turtlebot/meshes/68-02421-8000-RA_Turtlebot_F-F_Standoff.dae</uri>
             <scale>0.001 0.001 0.001000</scale>
           </mesh>
         </geometry>
@@ -363,7 +363,7 @@
         <pose>-0.052832 -0.131420 0.202280 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://turtlebot/meshes/68-02421-8000-RA_Turtlebot_F-F_Standoff.dae</filename>
+            <uri>model://turtlebot/meshes/68-02421-8000-RA_Turtlebot_F-F_Standoff.dae</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -382,7 +382,7 @@
         <pose>-0.052832 0.131420 0.202280 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://turtlebot/meshes/68-02421-8000-RA_Turtlebot_F-F_Standoff.dae</filename>
+            <uri>model://turtlebot/meshes/68-02421-8000-RA_Turtlebot_F-F_Standoff.dae</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -401,7 +401,7 @@
         <pose>-0.105098 0.098000 0.202308 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://turtlebot/meshes/68-04556-RA_Kinect_Standoff_Assy.dae</filename>
+            <uri>model://turtlebot/meshes/68-04556-RA_Kinect_Standoff_Assy.dae</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -420,7 +420,7 @@
         <pose>-0.105098 -0.098000 0.202308 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://turtlebot/meshes/68-04556-RA_Kinect_Standoff_Assy.dae</filename>
+            <uri>model://turtlebot/meshes/68-04556-RA_Kinect_Standoff_Assy.dae</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -456,11 +456,11 @@
     </link>
 
     <include>
-      <uri>models://create</uri>
+      <uri>model://create</uri>
     </include>
 
     <include>
-      <uri>models://kinect</uri>
+      <uri>model://kinect</uri>
       <pose>-0.087098 0 0.303857 0 0 0</pose>
     </include>
 

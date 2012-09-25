@@ -29,7 +29,7 @@
         <pose>0 0 0.047800 0 0 0</pose>
         <geometry>
           <mesh>
-            <filename>models://create/meshes/create_body.dae</filename>
+            <uri>model://create/meshes/create_body.dae</uri>
           </mesh>
         </geometry>
       </visual>
