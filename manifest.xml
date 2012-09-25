@@ -1,6 +1,11 @@
 <?xml version="1.0" ?>
 <models>
   <model>
+    <name>Camera</name>
+    <uri>/camera</uri>
+  </model>
+
+  <model>
     <name>Turtle Bot</name>
     <uri>/turtlebot</uri>
   </model>
