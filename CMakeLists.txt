@@ -49,6 +49,7 @@ foreach (dir ${dirs})
     ALL
     COMMAND tar czvf ${dir}.tar.gz ../${dir}
     COMMAND mv ${dir}.tar.gz ../${dir}/model.tar.gz)
+  install (DIRECTORY ${dir} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/gazebo_models)
 endforeach ()
 
 message (STATUS "Install path: ${CMAKE_INSTALL_PREFIX}/share/gazebo_models")

@@ -17,7 +17,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <filename>models://kinect/meshes/kinect.dae</filename>
+            <uri>model://kinect/meshes/kinect.dae</uri>
           </mesh>
         </geometry>
       </visual>
