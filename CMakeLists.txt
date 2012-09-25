@@ -37,7 +37,6 @@ set (dirs
   kinect
   pioneer2dx
   pr2
-  server
   simple_arm
   sun
   turtlebot
