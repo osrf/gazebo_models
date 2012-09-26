@@ -81,7 +81,6 @@
         <geometry>
           <mesh>
             <uri>model://youbot/meshes/base/base_convex.stl</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
         <surface>
@@ -116,7 +115,6 @@
         <geometry>
           <mesh>
             <uri>model://youbot/meshes/base/base.dae</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
       </visual>
@@ -143,7 +141,6 @@
         <geometry>
           <mesh>
             <uri>model://youbot/meshes/arm/arm0_convex.stl</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
         <surface>
@@ -178,12 +175,11 @@
         <geometry>
           <mesh>
             <uri>model://youbot/meshes/arm/arm0.dae</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
         <material>
           <script>
-            <uri>model://youbot/materials/youbot.material</uri>
+            <uri>model://youbot/materials/scripts/youbot.material</uri>
             <name>youbot/DarkGrey</name>
           </script>
         </material>
@@ -211,7 +207,6 @@
         <geometry>
           <mesh>
             <uri>model://youbot/meshes/arm/arm1_convex.stl</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
         <surface>
@@ -246,7 +241,6 @@
         <geometry>
           <mesh>
             <uri>model://youbot/meshes/arm/arm1.dae</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
       </visual>
@@ -273,7 +267,6 @@
         <geometry>
           <mesh>
             <uri>model://youbot/meshes/arm/arm2_convex.stl</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
         <surface>
@@ -308,7 +301,6 @@
         <geometry>
           <mesh>
             <uri>model://youbot/meshes/arm/arm2.dae</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
       </visual>
@@ -335,7 +327,6 @@
         <geometry>
           <mesh>
             <uri>model://youbot/meshes/arm/arm3_convex.stl</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
         <surface>
@@ -370,7 +361,6 @@
         <geometry>
           <mesh>
             <uri>model://youbot/meshes/arm/arm3.dae</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
       </visual>
@@ -397,7 +387,6 @@
         <geometry>
           <mesh>
             <uri>model://youbot/meshes/arm/arm4_convex.stl</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
         <surface>
@@ -432,7 +421,6 @@
         <geometry>
           <mesh>
             <uri>model://youbot/meshes/arm/arm4.dae</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
       </visual>
@@ -459,7 +447,6 @@
         <geometry>
           <mesh>
             <uri>model://youbot/meshes/arm/arm5_convex.stl</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
         <surface>
@@ -494,7 +481,6 @@
         <geometry>
           <mesh>
             <uri>model://youbot/meshes/arm/arm5.dae</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
       </visual>
@@ -521,7 +507,6 @@
         <geometry>
           <mesh>
             <uri>model://youbot/meshes/gripper/palm_convex.stl</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
         <surface>
@@ -556,7 +541,6 @@
         <geometry>
           <mesh>
             <uri>model://youbot/meshes/gripper/palm.stl</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
         <material>
@@ -589,7 +573,6 @@
         <geometry>
           <mesh>
             <uri>model://youbot/meshes/gripper/finger_convex.stl</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
         <surface>
@@ -624,7 +607,6 @@
         <geometry>
           <mesh>
             <uri>model://youbot/meshes/gripper/finger.stl</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
       </visual>
@@ -651,7 +633,6 @@
         <geometry>
           <mesh>
             <uri>model://youbot/meshes/gripper/finger_convex.stl</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
         <surface>
@@ -686,7 +667,6 @@
         <geometry>
           <mesh>
             <uri>model://youbot/meshes/gripper/finger.stl</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
       </visual>
@@ -713,7 +693,6 @@
         <geometry>
           <mesh>
             <uri>model://hokuyo/meshes/hokuyo_convex.stl</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
         <surface>
@@ -748,7 +727,6 @@
         <geometry>
           <mesh>
             <uri>model://hokuyo/meshes/hokuyo.dae</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
       </visual>
@@ -1136,7 +1114,6 @@
         <geometry>
           <mesh>
             <uri>model://youbot/meshes/plate/plate_convex.stl</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
         <surface>
@@ -1171,7 +1148,6 @@
         <geometry>
           <mesh>
             <uri>model://youbot/meshes/plate/plate.dae</uri>
-            <scale>1.000000 1.000000 1</scale>
           </mesh>
         </geometry>
       </visual>
