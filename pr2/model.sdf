@@ -50,7 +50,7 @@
         <pose>0.000000 0.000000 0.051000 0.000000 -0.000000 0.000000</pose>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/base_v0/base_L.stl</filename>
+            <uri>model://pr2/meshes/base_v0/base_L.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -58,7 +58,7 @@
         <pose>0.000000 0.000000 0.051000 0.000000 -0.000000 0.000000</pose>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/base_v0/base.dae</filename>
+            <uri>model://pr2/meshes/base_v0/base.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -112,14 +112,14 @@
       <collision name='bl_caster_rotation_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/base_v0/caster_L.stl</filename>
+            <uri>model://pr2/meshes/base_v0/caster_L.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='bl_caster_rotation_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/base_v0/caster.stl</filename>
+            <uri>model://pr2/meshes/base_v0/caster.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -151,7 +151,7 @@
       <visual name='bl_caster_l_wheel_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/base_v0/wheel.dae</filename>
+            <uri>model://pr2/meshes/base_v0/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -183,7 +183,7 @@
       <visual name='bl_caster_r_wheel_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/base_v0/wheel.dae</filename>
+            <uri>model://pr2/meshes/base_v0/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -207,14 +207,14 @@
       <collision name='br_caster_rotation_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/base_v0/caster_L.stl</filename>
+            <uri>model://pr2/meshes/base_v0/caster_L.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='br_caster_rotation_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/base_v0/caster.stl</filename>
+            <uri>model://pr2/meshes/base_v0/caster.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -246,7 +246,7 @@
       <visual name='br_caster_l_wheel_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/base_v0/wheel.dae</filename>
+            <uri>model://pr2/meshes/base_v0/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -278,7 +278,7 @@
       <visual name='br_caster_r_wheel_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/base_v0/wheel.dae</filename>
+            <uri>model://pr2/meshes/base_v0/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -302,14 +302,14 @@
       <collision name='fl_caster_rotation_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/base_v0/caster_L.stl</filename>
+            <uri>model://pr2/meshes/base_v0/caster_L.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='fl_caster_rotation_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/base_v0/caster.stl</filename>
+            <uri>model://pr2/meshes/base_v0/caster.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -341,7 +341,7 @@
       <visual name='fl_caster_l_wheel_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/base_v0/wheel.dae</filename>
+            <uri>model://pr2/meshes/base_v0/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -373,7 +373,7 @@
       <visual name='fl_caster_r_wheel_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/base_v0/wheel.dae</filename>
+            <uri>model://pr2/meshes/base_v0/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -397,14 +397,14 @@
       <collision name='fr_caster_rotation_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/base_v0/caster_L.stl</filename>
+            <uri>model://pr2/meshes/base_v0/caster_L.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='fr_caster_rotation_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/base_v0/caster.stl</filename>
+            <uri>model://pr2/meshes/base_v0/caster.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -436,7 +436,7 @@
       <visual name='fr_caster_l_wheel_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/base_v0/wheel.dae</filename>
+            <uri>model://pr2/meshes/base_v0/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -468,7 +468,7 @@
       <visual name='fr_caster_r_wheel_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/base_v0/wheel.dae</filename>
+            <uri>model://pr2/meshes/base_v0/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -492,14 +492,14 @@
       <collision name='torso_lift_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/torso_v0/torso_lift_L.stl</filename>
+            <uri>model://pr2/meshes/torso_v0/torso_lift_L.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='torso_lift_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/torso_v0/torso_lift.dae</filename>
+            <uri>model://pr2/meshes/torso_v0/torso_lift.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -530,14 +530,14 @@
       <collision name='head_pan_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/head_v0/head_pan_L.stl</filename>
+            <uri>model://pr2/meshes/head_v0/head_pan_L.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='head_pan_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/head_v0/head_pan.dae</filename>
+            <uri>model://pr2/meshes/head_v0/head_pan.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -561,14 +561,14 @@
       <collision name='head_tilt_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/head_v0/head_tilt_L.stl</filename>
+            <uri>model://pr2/meshes/head_v0/head_tilt_L.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='head_tilt_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/head_v0/head_tilt.dae</filename>
+            <uri>model://pr2/meshes/head_v0/head_tilt.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -622,7 +622,7 @@
         <pose>-0.114800 0.000000 0.155500 0.000000 -0.000000 0.000000</pose>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/sensors/kinect_prosilica_v0/115x100_swept_back--coarse.STL</filename>
+            <uri>model://pr2/meshes/sensors/kinect_prosilica_v0/115x100_swept_back--coarse.STL</uri>
             <scale>0.001000 0.001000 0.001000</scale>
           </mesh>
         </geometry>
@@ -819,14 +819,14 @@
       <collision name='l_shoulder_pan_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/shoulder_v0/shoulder_pan.stl</filename>
+            <uri>model://pr2/meshes/shoulder_v0/shoulder_pan.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='l_shoulder_pan_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/shoulder_v0/shoulder_pan.dae</filename>
+            <uri>model://pr2/meshes/shoulder_v0/shoulder_pan.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -851,14 +851,14 @@
       <collision name='l_shoulder_lift_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/shoulder_v0/shoulder_lift.stl</filename>
+            <uri>model://pr2/meshes/shoulder_v0/shoulder_lift.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='l_shoulder_lift_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/shoulder_v0/shoulder_lift.dae</filename>
+            <uri>model://pr2/meshes/shoulder_v0/shoulder_lift.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -883,28 +883,28 @@
       <collision name='l_upper_arm_roll_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/shoulder_v0/upper_arm_roll_L.stl</filename>
+            <uri>model://pr2/meshes/shoulder_v0/upper_arm_roll_L.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='l_upper_arm_roll_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/shoulder_v0/upper_arm_roll.stl</filename>
+            <uri>model://pr2/meshes/shoulder_v0/upper_arm_roll.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <collision name='l_upper_arm_roll_link_geom_l_upper_arm_link'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/upper_arm_v0/upper_arm.stl</filename>
+            <uri>model://pr2/meshes/upper_arm_v0/upper_arm.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='l_upper_arm_roll_link_geom_l_upper_arm_link_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/upper_arm_v0/upper_arm.dae</filename>
+            <uri>model://pr2/meshes/upper_arm_v0/upper_arm.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -929,14 +929,14 @@
       <collision name='l_elbow_flex_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/upper_arm_v0/elbow_flex.stl</filename>
+            <uri>model://pr2/meshes/upper_arm_v0/elbow_flex.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='l_elbow_flex_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/upper_arm_v0/elbow_flex.dae</filename>
+            <uri>model://pr2/meshes/upper_arm_v0/elbow_flex.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -961,28 +961,28 @@
       <collision name='l_forearm_roll_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/upper_arm_v0/forearm_roll_L.stl</filename>
+            <uri>model://pr2/meshes/upper_arm_v0/forearm_roll_L.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='l_forearm_roll_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/upper_arm_v0/forearm_roll.stl</filename>
+            <uri>model://pr2/meshes/upper_arm_v0/forearm_roll.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <collision name='l_forearm_roll_link_geom_l_forearm_link'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/forearm_v0/forearm.stl</filename>
+            <uri>model://pr2/meshes/forearm_v0/forearm.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='l_forearm_roll_link_geom_l_forearm_link_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/forearm_v0/forearm.dae</filename>
+            <uri>model://pr2/meshes/forearm_v0/forearm.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1023,14 +1023,14 @@
       <collision name='l_wrist_flex_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/forearm_v0/wrist_flex.stl</filename>
+            <uri>model://pr2/meshes/forearm_v0/wrist_flex.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='l_wrist_flex_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/forearm_v0/wrist_flex.dae</filename>
+            <uri>model://pr2/meshes/forearm_v0/wrist_flex.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1055,14 +1055,14 @@
       <collision name='l_wrist_roll_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/forearm_v0/wrist_roll_L.stl</filename>
+            <uri>model://pr2/meshes/forearm_v0/wrist_roll_L.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='l_wrist_roll_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/forearm_v0/wrist_roll.stl</filename>
+            <uri>model://pr2/meshes/forearm_v0/wrist_roll.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1083,14 +1083,14 @@
       <collision name='l_wrist_roll_link_geom_l_gripper_palm_link'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/gripper_v0/gripper_palm.stl</filename>
+            <uri>model://pr2/meshes/gripper_v0/gripper_palm.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='l_wrist_roll_link_geom_l_gripper_palm_link_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/gripper_v0/gripper_palm.dae</filename>
+            <uri>model://pr2/meshes/gripper_v0/gripper_palm.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1115,7 +1115,7 @@
       <collision name='l_gripper_l_finger_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/gripper_v0/l_finger.stl</filename>
+            <uri>model://pr2/meshes/gripper_v0/l_finger.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1140,7 +1140,7 @@
       <visual name='l_gripper_l_finger_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/gripper_v0/l_finger.dae</filename>
+            <uri>model://pr2/meshes/gripper_v0/l_finger.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1165,7 +1165,7 @@
       <collision name='l_gripper_l_finger_tip_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/gripper_v0/l_finger_tip.stl</filename>
+            <uri>model://pr2/meshes/gripper_v0/l_finger_tip.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1190,7 +1190,7 @@
       <visual name='l_gripper_l_finger_tip_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/gripper_v0/l_finger_tip.dae</filename>
+            <uri>model://pr2/meshes/gripper_v0/l_finger_tip.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1257,7 +1257,7 @@
         <pose>0.000000 0.000000 0.000000 -3.141590 0.000000 0.000000</pose>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/gripper_v0/l_finger.stl</filename>
+            <uri>model://pr2/meshes/gripper_v0/l_finger.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1283,7 +1283,7 @@
         <pose>0.000000 0.000000 0.000000 -3.141590 0.000000 0.000000</pose>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/gripper_v0/l_finger.dae</filename>
+            <uri>model://pr2/meshes/gripper_v0/l_finger.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1309,7 +1309,7 @@
         <pose>0.000000 0.000000 0.000000 -3.141590 0.000000 0.000000</pose>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/gripper_v0/l_finger_tip.stl</filename>
+            <uri>model://pr2/meshes/gripper_v0/l_finger_tip.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1335,7 +1335,7 @@
         <pose>0.000000 0.000000 0.000000 -3.141590 0.000000 0.000000</pose>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/gripper_v0/l_finger_tip.dae</filename>
+            <uri>model://pr2/meshes/gripper_v0/l_finger_tip.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1366,7 +1366,7 @@
       <collision name='laser_tilt_mount_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/tilting_laser_v0/tilting_hokuyo_L.stl</filename>
+            <uri>model://pr2/meshes/tilting_laser_v0/tilting_hokuyo_L.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1391,7 +1391,7 @@
       <visual name='laser_tilt_mount_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/tilting_laser_v0/tilting_hokuyo.dae</filename>
+            <uri>model://pr2/meshes/tilting_laser_v0/tilting_hokuyo.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1435,7 +1435,7 @@
       <collision name='r_shoulder_pan_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/shoulder_v0/shoulder_pan.stl</filename>
+            <uri>model://pr2/meshes/shoulder_v0/shoulder_pan.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1460,7 +1460,7 @@
       <visual name='r_shoulder_pan_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/shoulder_v0/shoulder_pan.dae</filename>
+            <uri>model://pr2/meshes/shoulder_v0/shoulder_pan.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1485,7 +1485,7 @@
       <collision name='r_shoulder_lift_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/shoulder_v0/shoulder_lift.stl</filename>
+            <uri>model://pr2/meshes/shoulder_v0/shoulder_lift.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1510,7 +1510,7 @@
       <visual name='r_shoulder_lift_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/shoulder_v0/shoulder_lift.dae</filename>
+            <uri>model://pr2/meshes/shoulder_v0/shoulder_lift.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1535,28 +1535,28 @@
       <collision name='r_upper_arm_roll_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/shoulder_v0/upper_arm_roll_L.stl</filename>
+            <uri>model://pr2/meshes/shoulder_v0/upper_arm_roll_L.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='r_upper_arm_roll_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/shoulder_v0/upper_arm_roll.stl</filename>
+            <uri>model://pr2/meshes/shoulder_v0/upper_arm_roll.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <collision name='r_upper_arm_roll_link_geom_r_upper_arm_link'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/upper_arm_v0/upper_arm.stl</filename>
+            <uri>model://pr2/meshes/upper_arm_v0/upper_arm.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='r_upper_arm_roll_link_geom_r_upper_arm_link_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/upper_arm_v0/upper_arm.dae</filename>
+            <uri>model://pr2/meshes/upper_arm_v0/upper_arm.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1581,14 +1581,14 @@
       <collision name='r_elbow_flex_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/upper_arm_v0/elbow_flex.stl</filename>
+            <uri>model://pr2/meshes/upper_arm_v0/elbow_flex.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='r_elbow_flex_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/upper_arm_v0/elbow_flex.dae</filename>
+            <uri>model://pr2/meshes/upper_arm_v0/elbow_flex.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1613,28 +1613,28 @@
       <collision name='r_forearm_roll_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/upper_arm_v0/forearm_roll_L.stl</filename>
+            <uri>model://pr2/meshes/upper_arm_v0/forearm_roll_L.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='r_forearm_roll_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/upper_arm_v0/forearm_roll.stl</filename>
+            <uri>model://pr2/meshes/upper_arm_v0/forearm_roll.stl</uri>
           </mesh>
         </geometry>
       </visual>
       <collision name='r_forearm_roll_link_geom_r_forearm_link'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/forearm_v0/forearm.stl</filename>
+            <uri>model://pr2/meshes/forearm_v0/forearm.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='r_forearm_roll_link_geom_r_forearm_link_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/forearm_v0/forearm.dae</filename>
+            <uri>model://pr2/meshes/forearm_v0/forearm.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1675,14 +1675,14 @@
       <collision name='r_wrist_flex_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/forearm_v0/wrist_flex.stl</filename>
+            <uri>model://pr2/meshes/forearm_v0/wrist_flex.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='r_wrist_flex_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/forearm_v0/wrist_flex.dae</filename>
+            <uri>model://pr2/meshes/forearm_v0/wrist_flex.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1707,14 +1707,14 @@
       <collision name='r_wrist_roll_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/forearm_v0/wrist_roll_L.stl</filename>
+            <uri>model://pr2/meshes/forearm_v0/wrist_roll_L.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='r_wrist_roll_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/forearm_v0/wrist_roll.stl</filename>
+            <uri>model://pr2/meshes/forearm_v0/wrist_roll.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1735,14 +1735,14 @@
       <collision name='r_wrist_roll_link_geom_r_gripper_palm_link'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/gripper_v0/gripper_palm.stl</filename>
+            <uri>model://pr2/meshes/gripper_v0/gripper_palm.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='r_wrist_roll_link_geom_r_gripper_palm_link_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/gripper_v0/gripper_palm.dae</filename>
+            <uri>model://pr2/meshes/gripper_v0/gripper_palm.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1767,7 +1767,7 @@
       <collision name='r_gripper_l_finger_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/gripper_v0/l_finger.stl</filename>
+            <uri>model://pr2/meshes/gripper_v0/l_finger.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1792,7 +1792,7 @@
       <visual name='r_gripper_l_finger_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/gripper_v0/l_finger.dae</filename>
+            <uri>model://pr2/meshes/gripper_v0/l_finger.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1817,7 +1817,7 @@
       <collision name='r_gripper_l_finger_tip_link_geom'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/gripper_v0/l_finger_tip.stl</filename>
+            <uri>model://pr2/meshes/gripper_v0/l_finger_tip.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1842,7 +1842,7 @@
       <visual name='r_gripper_l_finger_tip_link_geom_visual'>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/gripper_v0/l_finger_tip.dae</filename>
+            <uri>model://pr2/meshes/gripper_v0/l_finger_tip.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1909,7 +1909,7 @@
         <pose>0.000000 0.000000 0.000000 -3.141590 0.000000 0.000000</pose>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/gripper_v0/l_finger.stl</filename>
+            <uri>model://pr2/meshes/gripper_v0/l_finger.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1935,7 +1935,7 @@
         <pose>0.000000 0.000000 0.000000 -3.141590 0.000000 0.000000</pose>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/gripper_v0/l_finger.dae</filename>
+            <uri>model://pr2/meshes/gripper_v0/l_finger.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1961,7 +1961,7 @@
         <pose>0.000000 0.000000 0.000000 -3.141590 0.000000 0.000000</pose>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/gripper_v0/l_finger_tip.stl</filename>
+            <uri>model://pr2/meshes/gripper_v0/l_finger_tip.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1987,7 +1987,7 @@
         <pose>0.000000 0.000000 0.000000 -3.141590 0.000000 0.000000</pose>
         <geometry>
           <mesh>
-            <filename>models://pr2/meshes/gripper_v0/l_finger_tip.dae</filename>
+            <uri>model://pr2/meshes/gripper_v0/l_finger_tip.dae</uri>
           </mesh>
         </geometry>
       </visual>

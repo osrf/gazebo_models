@@ -34,6 +34,7 @@ set (dirs
   camera
   create
   ground_plane
+  hokuyo
   kinect
   pioneer2dx
   pr2
