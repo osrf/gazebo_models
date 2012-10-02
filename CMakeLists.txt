@@ -34,13 +34,17 @@ set (dirs
   camera
   create
   ground_plane
+  hammer
   hokuyo
   kinect
+  monkey_wrench
   pioneer2dx
   pr2
+  powerplant
   simple_arm
   sun
   turtlebot
+  utility_cart
   willowgarage
   youbot
 )

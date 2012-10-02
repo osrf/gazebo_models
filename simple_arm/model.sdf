@@ -30,7 +30,7 @@
           </box>
         </geometry>
         <material>
-          <script>Gazebo/Blue</script>
+          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Blue</name></script>
         </material>
       </visual>
       <collision name="arm_base_geom_arm_trunk">
@@ -51,7 +51,7 @@
           </cylinder>
         </geometry>
         <material>
-          <script>Gazebo/Red</script>
+          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Red</name></script>
         </material>
       </visual>
     </link>
@@ -87,7 +87,7 @@
           </cylinder>
         </geometry>
         <material>
-          <script>Gazebo/Yellow</script>
+          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Yellow</name></script>
         </material>
       </visual>
       <collision name="arm_shoulder_pan_geom_arm_shoulder">
@@ -106,7 +106,7 @@
           </box>
         </geometry>
         <material>
-          <script>Gazebo/Yellow</script>
+          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Yellow</name></script>
         </material>
       </visual>
     </link>
@@ -142,7 +142,7 @@
           </cylinder>
         </geometry>
         <material>
-          <script>Gazebo/Red</script>
+          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Red</name></script>
         </material>
       </visual>
       <collision name="arm_elbow_pan_geom_arm_elbow">
@@ -161,7 +161,7 @@
           </box>
         </geometry>
         <material>
-          <script>Gazebo/Yellow</script>
+          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Yellow</name></script>
         </material>
       </visual>
       <collision name="arm_elbow_pan_geom_arm_wrist">
@@ -182,7 +182,7 @@
           </cylinder>
         </geometry>
         <material>
-          <script>Gazebo/Red</script>
+          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Red</name></script>
         </material>
       </visual>
     </link>
@@ -218,7 +218,7 @@
           </cylinder>
         </geometry>
         <material>
-          <script>Gazebo/Yellow</script>
+          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Yellow</name></script>
         </material>
       </visual>
     </link>
@@ -254,7 +254,7 @@
           </cylinder>
         </geometry>
         <material>
-          <script>Gazebo/Red</script>
+          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Red</name></script>
         </material>
       </visual>
     </link>

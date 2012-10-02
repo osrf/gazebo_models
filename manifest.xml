@@ -8,18 +8,8 @@
   </model>
 
   <model>
-    <name>Turtle Bot</name>
-    <uri>/turtlebot</uri>
-  </model>
-
-  <model>
-    <name>Willow Garage</name>
-    <uri>/willowgarage</uri>
-  </model>
-
-  <model>
-    <name>Kinect</name>
-    <uri>/kinect</uri>
+    <name>Hammer</name>
+    <uri>/hammer</uri>
   </model>
 
   <model>
@@ -28,13 +18,28 @@
   </model>
 
   <model>
+    <name>Keuka YouBot</name>
+    <uri>/youbot</uri>
+  </model>
+
+  <model>
+    <name>Kinect</name>
+    <uri>/kinect</uri>
+  </model>
+
+  <model>
+    <name>Monkey Wrench</name>
+    <uri>/monkey_wrench</uri>
+  </model>
+
+  <model>
     <name>Pioneer2 DX</name>
     <uri>/pioneer2dx</uri>
   </model>
 
   <model>
-    <name>Simple Arm</name>
-    <uri>/simple_arm</uri>
+    <name>Power Plant</name>
+    <uri>/powerplant</uri>
   </model>
 
   <model>
@@ -43,8 +48,23 @@
   </model>
 
   <model>
-    <name>Keuka YouBot</name>
-    <uri>/youbot</uri>
+    <name>Simple Arm</name>
+    <uri>/simple_arm</uri>
+  </model>
+
+  <model>
+    <name>Turtle Bot</name>
+    <uri>/turtlebot</uri>
+  </model>
+
+  <model>
+    <name>Utility Cart</name>
+    <uri>/utility_cart</uri>
+  </model>
+
+  <model>
+    <name>Willow Garage</name>
+    <uri>/willowgarage</uri>
   </model>
 
 </models>

@@ -47,7 +47,10 @@
           </sphere>
         </geometry>
         <material>
-          <script>Gazebo/FlatBlack</script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/FlatBlack</name>
+          </script>
         </material>
       </visual>
     </link>
@@ -82,7 +85,10 @@
           </cylinder>
         </geometry>
         <material>
-          <script>Gazebo/FlatBlack</script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/FlatBlack</name>
+          </script>
         </material>
       </visual>
     </link>
@@ -117,7 +123,10 @@
           </cylinder>
         </geometry>
         <material>
-          <script>Gazebo/FlatBlack</script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/FlatBlack</name>
+          </script>
         </material>
       </visual>
     </link>
