@@ -545,6 +545,14 @@
       <velocity_decay/>
     </link>
     <link name='head_tilt_link'>
+      <projector name='projector_wg6802418_projector_wg6802418'>
+        <texture>stereo_projection_pattern_high_res_red.png</texture>
+        <fov>0.959931</fov>
+        <near_clip>0.100000</near_clip>
+        <far_clip>10.000000</far_clip>
+        <pose>0.023200 0.110000 0.119100 3.141593 -1.570793 3.141593</pose>
+      </projector>
+
       <self_collide>0</self_collide>
       <pose>0.000930 0.000000 1.172130 0.000000 -0.000000 0.000000</pose>
       <inertial>
