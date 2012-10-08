@@ -305,41 +305,5 @@
         <xyz>0 0 1</xyz>
       </axis>
     </joint>
-    <!--
-    <plugin name="simple_arm_plugin" filename="libSimpleArmPlugin.so">
-      <joint1>arm_base_joint</joint1>
-      <joint2>arm_shoulder_pan_joint</joint2>
-      <joint3>arm_elbow_pan_joint</joint3>
-      <joint4>arm_wrist_lift_joint</joint4>
-      <joint5>arm_wrist_roll_joint</joint5>
-      <joint1_pid>1 0.01 0.1</joint1_pid>
-      <joint2_pid>1 0.01 0.1</joint2_pid>
-      <joint3_pid>1 0.01 0.1</joint3_pid>
-      <joint4_pid>20 0.05 0.5</joint4_pid>
-      <joint5_pid>1 0.01 0.1</joint5_pid>
-      <joint1_ilim>-1 1</joint1_ilim>
-      <joint2_ilim>-1 1</joint2_ilim>
-      <joint3_ilim>-1 1</joint3_ilim>
-      <joint4_ilim>-10 10</joint4_ilim>
-      <joint5_ilim>-1 1</joint5_ilim>
-    </plugin>
-    -->
-        <!--  attaching the pr2 gripper to simple_arm 
-    <include filename="pr2_gripper.model" model_pose="0.829 0.188 0.209325 0 1.57079633 0"/>
-    <origin pose='-0.771000 0.188000 -0.790675 0.000000 -1.57079633 0.000000'/>
-    -->
-        <!--<include filename="pr2_gripper.model" model_pose="0.81 0.188 1.795 0 1.57079633 0" />
-        <joint name="arm_gripper_joint" type="revolute">
-          <parent>arm_wrist_roll</parent>
-          <child>pr2_gripper::r_wrist_roll_link</child>
-          <axis>
-            <limit>
-              <lower>0</lower>
-              <upper>0</upper>
-            </limit>
-            <xyz>0 0 1</xyz>
-          </axis>
-        </joint>
--->
   </model>
 </gazebo>

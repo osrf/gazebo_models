@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<model>
+  <name>Simple Gripper</name>
+  <version>1.0</version>
+  <sdf>model.sdf</sdf>
+</model>
+
+<author>
+  <name>John Hsu</name>
+  <email>hsu@osrfoundation.org</email>
+</author>
+
+<description>
+  A simple pinch gripper.
+</description>

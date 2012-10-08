@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<model>
+  <name>Cube 20k</name>
+  <version>1.0</version>
+  <sdf>model.sdf</sdf>
+</model>
+
+<author>
+  <name>Mihai Dhola</name>
+  <email>mihai@</email>
+</author>
+
+<description>
+  A cube composed of 20,000 triangles. This is used for testing.
+</description>
