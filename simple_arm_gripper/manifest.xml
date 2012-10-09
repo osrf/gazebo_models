@@ -4,13 +4,13 @@
   <name>Simple Arm Gripper</name>
   <version>1.0</version>
   <sdf>model.sdf</sdf>
+
+  <author>
+    <name>John Hsu</name>
+    <email>hsu@osrfoundation.org</email>
+  </author>
+
+  <description>
+    A simple arm and pinch gripper.
+  </description>
 </model>
-
-<author>
-  <name>John Hsu</name>
-  <email>hsu@osrfoundation.org</email>
-</author>
-
-<description>
-  A simple arm and pinch gripper.
-</description>

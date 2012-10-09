@@ -4,13 +4,13 @@
   <name>simple arm</name>
   <version>1.0</version>
   <sdf>model.sdf</sdf>
+
+  <author>
+    <name>John Hsu</name>
+    <email>hsu@osrfoundation.org</email>
+  </author>
+
+  <description>
+    A simple SCARA arm.
+  </description>
 </model>
-
-<author>
-  <name>John Hsu</name>
-  <email>hsu@osrfoundation.org</email>
-</author>
-
-<description>
-  A simple SCARA arm.
-</description>

@@ -4,20 +4,20 @@
   <name>Keuka YouBot</name>
   <version>1.0</version>
   <sdf>model.sdf</sdf>
+
+  <author>
+    <name>Nate Koenig</name>
+    <email>nate@osrfoundation.org</email>
+  </author>
+
+  <depend>
+    <model>
+      <uri>model://hokuyo</uri>
+      <version>1.0</version>
+    </model>
+  </depend>
+
+  <description>
+    The Keuka YouBot
+  </description>
 </model>
-
-<author>
-  <name>Nate Koenig</name>
-  <email>nate@osrfoundation.org</email>
-</author>
-
-<depend>
-  <model>
-    <uri>model://hokuyo</uri>
-    <version>1.0</version>
-  </model>
-</depend>
-
-<description>
-  The Keuka YouBot
-</description>

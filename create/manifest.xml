@@ -4,16 +4,16 @@
   <name>iRobot Create</name>
   <version>1.0</version>
   <sdf>model.sdf</sdf>
+
+  <author>
+    <name>Nate Koenig</name>
+    <email>nate@osrfoundation.org</email>
+  </author>
+
+  <description>
+    A model of the iRobot Create.
+  </description>
+
+  <depend>
+  </depend>
 </model>
-
-<author>
-  <name>Nate Koenig</name>
-  <email>nate@osrfoundation.org</email>
-</author>
-
-<description>
-  A model of the iRobot Create.
-</description>
-
-<depend>
-</depend>

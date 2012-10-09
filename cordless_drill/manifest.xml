@@ -4,13 +4,13 @@
   <name>Cordless Drill</name>
   <version>1.0</version>
   <sdf>model.sdf</sdf>
+
+  <author>
+    <name>John Hsu</name>
+    <email>hsu@osrfoundation.org</email>
+  </author>
+
+  <description>
+    A cordless drill..
+  </description>
 </model>
-
-<author>
-  <name>John Hsu</name>
-  <email>hsu@osrfoundation.org</email>
-</author>
-
-<description>
-  A cordless drill..
-</description>

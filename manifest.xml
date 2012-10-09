@@ -1,130 +1,33 @@
 <?xml version="1.0" ?>
-<license>Creative Commons Attribution 3.0 Unported</license>
+<database>
+  <name>gazebosim</name>
+  <license>Creative Commons Attribution 3.0 Unported</license>
 
-<models>
-  <model>
-    <name>Bookshelf</name>
-    <uri>/bookshelf</uri>
-  </model>
-
-  <model>
-    <name>Bowl</name>
-    <uri>/bowl</uri>
-  </model>
-
-  <model>
-    <name>Cabinet</name>
-    <uri>/cabinet</uri>
-  </model>
-
-  <model>
-    <name>Coke Can</name>
-    <uri>/coke_can</uri>
-  </model>
-
-  <model>
-    <name>Cordless Drill</name>
-    <uri>/cordless_drill</uri>
-  </model>
-
-  <model>
-    <name>Cube 20k</name>
-    <uri>/cube_20k</uri>
-  </model>
-
-  <model>
-    <name>Ground Plane</name>
-    <uri>/ground_plane</uri>
-  </model>
-
-  <model>
-    <name>Camera</name>
-    <uri>/camera</uri>
-  </model>
-
-  <model>
-    <name>Hammer</name>
-    <uri>/hammer</uri>
-  </model>
-
-  <model>
-    <name>Hokuyo</name>
-    <uri>/hokuyo</uri>
-  </model>
-
-  <model>
-    <name>Keuka YouBot</name>
-    <uri>/youbot</uri>
-  </model>
-
-  <model>
-    <name>Kinect</name>
-    <uri>/kinect</uri>
-  </model>
-
-  <model>
-    <name>Monkey Wrench</name>
-    <uri>/monkey_wrench</uri>
-  </model>
-
-  <model>
-    <name>Pioneer2 DX</name>
-    <uri>/pioneer2dx</uri>
-  </model>
-
-  <model>
-    <name>Power Plant</name>
-    <uri>/powerplant</uri>
-  </model>
-
-  <model>
-    <name>PR2</name>
-    <uri>/pr2</uri>
-  </model>
-
-  <model>
-    <name>Saucepan</name>
-    <uri>/Saucepan</uri>
-  </model>
-
-  <model>
-    <name>Simple Arm</name>
-    <uri>/simple_arm</uri>
-  </model>
-
-  <model>
-    <name>Simple Arm Gripper</name>
-    <uri>/simple_arm_gripper</uri>
-  </model>
-
-  <model>
-    <name>Simple Gripper</name>
-    <uri>/simple_gripper</uri>
-  </model>
-
-  <model>
-    <name>Sun</name>
-    <uri>/sun</uri>
-  </model>
-
-  <model>
-    <name>Table</name>
-    <uri>/table</uri>
-  </model>
-
-  <model>
-    <name>Turtle Bot</name>
-    <uri>/turtlebot</uri>
-  </model>
-
-  <model>
-    <name>Utility Cart</name>
-    <uri>/utility_cart</uri>
-  </model>
-
-  <model>
-    <name>Willow Garage</name>
-    <uri>/willowgarage</uri>
-  </model>
-
-</models>
+  <models>
+    <uri>file://bookshelf</uri>
+    <uri>file://bowl</uri>
+    <uri>file://cabinet</uri>
+    <uri>file://coke_can</uri>
+    <uri>file://cordless_drill</uri>
+    <uri>file://cube_20k</uri>
+    <uri>file://ground_plane</uri>
+    <uri>file://camera</uri>
+    <uri>file://hammer</uri>
+    <uri>file://hokuyo</uri>
+    <uri>file://youbot</uri>
+    <uri>file://kinect</uri>
+    <uri>file://monkey_wrench</uri>
+    <uri>file://pioneer2dx</uri>
+    <uri>file://powerplant</uri>
+    <uri>file://pr2</uri>
+    <uri>file://Saucepan</uri>
+    <uri>file://simple_arm</uri>
+    <uri>file://simple_arm_gripper</uri>
+    <uri>file://simple_gripper</uri>
+    <uri>file://sun</uri>
+    <uri>file://table</uri>
+    <uri>file://turtlebot</uri>
+    <uri>file://utility_cart</uri>
+    <uri>file://willowgarage</uri>
+  </models>
+</database>
