@@ -3,6 +3,41 @@
 
 <models>
   <model>
+    <name>Bookshelf</name>
+    <uri>/bookshelf</uri>
+  </model>
+
+  <model>
+    <name>Bowl</name>
+    <uri>/bowl</uri>
+  </model>
+
+  <model>
+    <name>Cabinet</name>
+    <uri>/cabinet</uri>
+  </model>
+
+  <model>
+    <name>Coke Can</name>
+    <uri>/coke_can</uri>
+  </model>
+
+  <model>
+    <name>Cordless Drill</name>
+    <uri>/cordless_drill</uri>
+  </model>
+
+  <model>
+    <name>Cube 20k</name>
+    <uri>/cube_20k</uri>
+  </model>
+
+  <model>
+    <name>Ground Plane</name>
+    <uri>/ground_plane</uri>
+  </model>
+
+  <model>
     <name>Camera</name>
     <uri>/camera</uri>
   </model>
@@ -48,8 +83,33 @@
   </model>
 
   <model>
+    <name>Saucepan</name>
+    <uri>/Saucepan</uri>
+  </model>
+
+  <model>
     <name>Simple Arm</name>
     <uri>/simple_arm</uri>
+  </model>
+
+  <model>
+    <name>Simple Arm Gripper</name>
+    <uri>/simple_arm_gripper</uri>
+  </model>
+
+  <model>
+    <name>Simple Gripper</name>
+    <uri>/simple_gripper</uri>
+  </model>
+
+  <model>
+    <name>Sun</name>
+    <uri>/sun</uri>
+  </model>
+
+  <model>
+    <name>Table</name>
+    <uri>/table</uri>
   </model>
 
   <model>
