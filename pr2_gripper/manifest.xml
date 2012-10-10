@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<model>
+  <name>PR2 Gripper</name>
+  <version>1.0</version>
+  <sdf>model.sdf</sdf>
+
+  <author>
+    <name>John Hsu</name>
+    <email>hsu@osrfoundation.org</email>
+  </author>
+
+  <description>
+    The Willow Garage PR2 gripper model.
+  </description>
+
+  <depend>
+    pr2
+  </depend>
+</model>
