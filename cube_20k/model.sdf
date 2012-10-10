@@ -6,7 +6,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>cube_20k.stl</uri>
+            <uri>model://cube_20k/meshes/cube_20k.stl</uri>
             <scale>0.5 0.5 0.5</scale>
           </mesh>
         </geometry>
@@ -14,7 +14,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>cube_20k.stl</uri>
+            <uri>model://cube_20k/meshes/cube_20k.stl</uri>
             <scale>0.5 0.5 0.5</scale>
           </mesh>
         </geometry>

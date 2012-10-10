@@ -30,6 +30,12 @@
             <size>0.450000 0.450000 0.020000</size>
           </box>
         </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
       </visual>
       <collision name="cabinet_bottom_plate_geom_cabinet_back_plate">
         <pose>0.235000 0 0.510000 0 0 0</pose>
@@ -46,6 +52,12 @@
             <size>0.020000 0.450000 1.020000</size>
           </box>
         </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
       </visual>
       <collision name="cabinet_bottom_plate_geom_cabinet_left_plate">
         <pose>0 0.235000 0.510000 0 0 0</pose>
@@ -62,6 +74,12 @@
             <size>0.450000 0.020000 1.020000</size>
           </box>
         </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
       </visual>
       <collision name="cabinet_bottom_plate_geom_cabinet_middle_plate">
         <pose>0 0 0.510000 0 0 0</pose>
@@ -78,6 +96,12 @@
             <size>0.450000 0.450000 0.020000</size>
           </box>
         </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
       </visual>
       <collision name="cabinet_bottom_plate_geom_cabinet_right_plate">
         <pose>0 -0.235000 0.510000 0 0 0</pose>
@@ -94,6 +118,12 @@
             <size>0.450000 0.020000 1.020000</size>
           </box>
         </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
       </visual>
       <collision name="cabinet_bottom_plate_geom_cabinet_top_plate">
         <pose>0 0 1.010000 0 0 0</pose>
@@ -110,6 +140,12 @@
             <size>0.450000 0.450000 0.020000</size>
           </box>
         </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
       </visual>
     </link>
   </model>

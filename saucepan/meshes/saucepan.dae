@@ -6,7 +6,7 @@
       </contributor>
       <created>2007-06-11T19:34:18Z</created>
       <modified>2007-06-11T19:34:18Z</modified>
-      <unit name="meter" meter="1.0"/>
+      <unit name="meter" meter="0.001"/>
       <up_axis>Z_UP</up_axis>
    </asset>
    <library_materials>

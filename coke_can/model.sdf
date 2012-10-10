@@ -2,9 +2,8 @@
 <gazebo version="1.2">
   <model name="coke_can">
     <link name="link">
-      <pose>0 0 0.05 0 0 0</pose>
       <inertial>
-        <mass>1.0</mass>
+        <mass>0.1</mass>
         <inertia>
           <ixx>0.01</ixx>
           <ixy>0</ixy>
@@ -15,6 +14,7 @@
         </inertia>
       </inertial>
       <collision name="collision">
+        <pose>0 0 -0.46 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://coke_can/meshes/coke_can.dae</uri>
@@ -22,6 +22,7 @@
         </geometry>
       </collision>
       <visual name="visual">
+        <pose>0 0 -0.46 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://coke_can/meshes/coke_can.dae</uri>

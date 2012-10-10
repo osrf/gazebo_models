@@ -8,10 +8,11 @@
         <up_axis>Y_UP</up_axis>
         <created>Wed Apr 25 01:36:10 2012</created>
         <modified>Wed Apr 25 01:36:10 2012</modified>
+        <unit meter="0.00254" name="inches"/>
     </asset>
     <library_images>
         <image id="texture0" name="texture0">
-            <init_from>coke_can.jpg</init_from>
+          <init_from>coke_can.jpg</init_from>
         </image>
     </library_images>
     <library_materials>
@@ -21,7 +22,7 @@
     </library_materials>
     <library_effects>
         <effect id="material0-fx">
-            <profile_COMMON>
+          <profile_COMMON>
                 <newparam sid="texture0-surface">
                     <surface type="2D">
                         <init_from>texture0</init_from>
@@ -41,13 +42,13 @@
                             <color>0 0 0 1</color>
                         </emission>
                         <ambient>
-                            <color>0 0 0 1</color>
+                            <color>1 1 1 1</color>
                         </ambient>
                         <diffuse>
                             <texture texture="texture0" texcoord="UVSET0"/>
                         </diffuse>
                         <specular>
-                            <color>0 0 0 1</color>
+                            <color>0.2 0.2 0.2 1</color>
                         </specular>
                         <shininess>
                             <float>0.3</float>

@@ -19,7 +19,10 @@
           </box>
         </geometry>
         <material>
-          <script>Gazebo/Wood</script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
         </material>
       </visual>
       <collision name="front_left_leg">
@@ -40,7 +43,10 @@
           </cylinder>
         </geometry>
         <material>
-          <script>Gazebo/Grey</script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
         </material>
       </visual>
       <collision name="front_right_leg">
@@ -61,7 +67,10 @@
           </cylinder>
         </geometry>
         <material>
-          <script>Gazebo/Grey</script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
         </material>
       </visual>
       <collision name="back_right_leg">
@@ -82,7 +91,10 @@
           </cylinder>
         </geometry>
         <material>
-          <script>Gazebo/Grey</script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
         </material>
       </visual>
       <collision name="back_left_leg">
@@ -103,7 +115,10 @@
           </cylinder>
         </geometry>
         <material>
-          <script>Gazebo/Grey</script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
         </material>
       </visual>
     </link>

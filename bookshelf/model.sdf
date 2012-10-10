@@ -22,7 +22,10 @@
           </box>
         </geometry>
         <material>
-          <script>Gazebo/Wood</script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
         </material>
       </visual>
       <collision name="left_side">
@@ -41,7 +44,10 @@
           </box>
         </geometry>
         <material>
-          <script>Gazebo/Wood</script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
         </material>
       </visual>
       <collision name="right_side">
@@ -60,7 +66,10 @@
           </box>
         </geometry>
         <material>
-          <script>Gazebo/Wood</script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
         </material>
       </visual>
       <collision name="bottom">
@@ -79,7 +88,10 @@
           </box>
         </geometry>
         <material>
-          <script>Gazebo/Wood</script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
         </material>
       </visual>
       <collision name="top">
@@ -98,7 +110,10 @@
           </box>
         </geometry>
         <material>
-          <script>Gazebo/Wood</script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
         </material>
       </visual>
       <collision name="low_shelf">
@@ -117,7 +132,10 @@
           </box>
         </geometry>
         <material>
-          <script>Gazebo/Wood</script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
         </material>
       </visual>
       <collision name="high_shelf">
@@ -136,7 +154,10 @@
           </box>
         </geometry>
         <material>
-          <script>Gazebo/Wood</script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
         </material>
       </visual>
     </link>

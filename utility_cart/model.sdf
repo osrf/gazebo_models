@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <gazebo version="1.2">
-  <model name="car" static="false">
+  <model name="car">
     <link name="chassis">
       <pose>0 0 0.3 0 0 0</pose>
       <collision name="collision">
@@ -12,7 +12,12 @@
         <geometry>
           <box><size>2.0 1.0 0.2</size></box>
         </geometry>
-        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Green</name></script></material>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Green</name>
+          </script>
+        </material>
       </visual>
     </link>
     <link name="front_left_wheel">
@@ -26,7 +31,12 @@
         <geometry>
           <cylinder><radius>0.3</radius><length>0.1</length></cylinder>
         </geometry>
-        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Black</name></script></material>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
       </visual>
     </link>
     <link name="front_right_wheel">
@@ -40,7 +50,12 @@
         <geometry>
           <cylinder><radius>0.3</radius><length>0.1</length></cylinder>
         </geometry>
-        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Black</name></script></material>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+        </script>
+      </material>
       </visual>
     </link>
     <link name="back_right_wheel">
@@ -54,7 +69,12 @@
         <geometry>
           <cylinder><radius>0.3</radius><length>0.1</length></cylinder>
         </geometry>
-        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Black</name></script></material>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+        </script>
+      </material>
       </visual>
     </link>
     <link name="back_left_wheel">
@@ -68,7 +88,12 @@
         <geometry>
           <cylinder><radius>0.3</radius><length>0.1</length></cylinder>
         </geometry>
-        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Black</name></script></material>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+        </script>
+      </material>
       </visual>
     </link>
     <link name="gas_pedal">
@@ -82,7 +107,12 @@
         <geometry>
           <box><size>0.1 0.1 0.1</size></box>
         </geometry>
-        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Red</name></script></material>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
       </visual>
     </link>
     <link name="brake_pedal">
@@ -96,7 +126,12 @@
         <geometry>
           <box><size>0.1 0.1 0.1</size></box>
         </geometry>
-        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Blue</name></script></material>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Blue</name>
+          </script>
+        </material>
       </visual>
     </link>
     <link name="steering_wheel">
@@ -110,82 +145,103 @@
         <geometry>
           <cylinder><radius>0.1</radius><length>0.01</length></cylinder>
         </geometry>
-        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Blue</name></script></material>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Blue</name>
+          </script>
+        </material>
       </visual>
     </link>
     <joint type="prismatic" name="gas_joint">
       <parent>chassis</parent>
       <child>gas_pedal</child>
-      <axis xyz="1 0 0">
-        <limit lower="0" upper="0.2" />
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit><lower>0</lower><upper>0.2</upper></limit>
       </axis>
     </joint>
     <joint type="prismatic" name="brake_joint">
       <parent>chassis</parent>
       <child>brake_pedal</child>
-      <axis xyz="1 0 0">
-        <limit lower="0" upper="0.2" />
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit><lower>0</lower><upper>0.2</upper></limit>
       </axis>
     </joint>
     <joint type="revolute" name="steering_joint">
       <parent>chassis</parent>
       <child>steering_wheel</child>
-      <axis xyz="1 0 0">
-        <limit lower="-7.853" upper="7.853" />
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit><lower>-7.853</lower><upper>7.853</upper></limit>
       </axis>
     </joint>
     <joint type="revolute2" name="front_left_joint">
       <parent>chassis</parent>
       <child>front_left_wheel</child>
-      <axis xyz="0 0 1">
-        <limit lower="0" upper="0" />
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
       </axis>
-      <axis2 xyz="0 1 0" />
+      <axis2>
+        <xyz>0 1 0</xyz>
+      </axis2>
       <physics>
         <ode>
-          <limit cfm="0.0" erp="0.9" />
+          <limit><cfm>0.0</cfm><erp>0.9</erp></limit> 
         </ode>
       </physics>
     </joint>
     <joint type="revolute2" name="front_right_joint">
       <parent>chassis</parent>
       <child>front_right_wheel</child>
-      <axis xyz="0 0 1">
-        <limit lower="0" upper="0" />
+      <axis><xyz>0 0 1</xyz>
+        <limit><lower>0</lower><upper>0</upper></limit>
       </axis>
-      <axis2 xyz="0 1 0" />
+      <axis2>
+        <xyz>0 1 0</xyz>
+      </axis2>
       <physics>
         <ode>
-          <limit cfm="0.0" erp="0.9" />
+          <limit><cfm>0.0</cfm><erp>0.9</erp></limit> 
         </ode>
       </physics>
     </joint>
     <joint type="revolute2" name="back_right_joint">
       <parent>chassis</parent>
       <child>back_right_wheel</child>
-      <axis xyz="0 0 1">
-        <limit lower="0" upper="0" />
+      <axis><xyz>0 0 1</xyz>
+        <limit><lower>0</lower><upper>0</upper></limit>
       </axis>
-      <axis2 xyz="0 1 0" />
+      <axis2>
+        <xyz>0 1 0</xyz>
+      </axis2>
       <physics>
         <ode>
-          <limit cfm="0.0" erp="0.9" />
+          <limit><cfm>0.0</cfm><erp>0.9</erp></limit> 
         </ode>
       </physics>
     </joint>
     <joint type="revolute2" name="back_left_joint">
       <parent>chassis</parent>
       <child>back_left_wheel</child>
-      <axis xyz="0 0 1">
-        <limit lower="0" upper="0" />
+      <axis><xyz>0 0 1</xyz>
+        <limit><lower>0</lower><upper>0</upper></limit>
       </axis>
-      <axis2 xyz="0 1 0" />
+      <axis2>
+        <xyz>0 1 0</xyz>
+      </axis2>
       <physics>
         <ode>
-          <limit cfm="0.0" erp="0.9" />
+          <limit><cfm>0.0</cfm><erp>0.9</erp></limit> 
         </ode>
       </physics>
     </joint>
+
     <plugin filename="libVehiclePlugin.so" name="vehicle">
       <!-- Joints for each wheel -->
       <front_left>front_left_joint</front_left>

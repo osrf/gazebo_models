@@ -98,7 +98,6 @@
         <geometry>
           <mesh>
             <uri>model://turtlebot/meshes/68-02403-125_Spacer.dae</uri>
-            <scale>0.001 0.001 0.001000</scale>
           </mesh>
         </geometry>
       </visual>
@@ -117,7 +116,6 @@
         <geometry>
           <mesh>
             <uri>model://turtlebot/meshes/68-02403-125_Spacer.dae</uri>
-            <scale>0.001 0.001 0.001000</scale>
           </mesh>
         </geometry>
       </visual>
@@ -136,7 +134,6 @@
         <geometry>
           <mesh>
             <uri>model://turtlebot/meshes/68-02403-125_Spacer.dae</uri>
-            <scale>0.001 0.001 0.001000</scale>
           </mesh>
         </geometry>
       </visual>
@@ -155,7 +152,6 @@
         <geometry>
           <mesh>
             <uri>model://turtlebot/meshes/68-02403-125_Spacer.dae</uri>
-            <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>
@@ -174,7 +170,6 @@
         <geometry>
           <mesh>
             <uri>model://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</uri>
-            <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>
@@ -193,7 +188,6 @@
         <geometry>
           <mesh>
             <uri>model://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</uri>
-            <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>
@@ -212,7 +206,6 @@
         <geometry>
           <mesh>
             <uri>model://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</uri>
-            <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>
@@ -231,7 +224,6 @@
         <geometry>
           <mesh>
             <uri>model://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</uri>
-            <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>
@@ -250,7 +242,6 @@
         <geometry>
           <mesh>
             <uri>model://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</uri>
-            <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>
@@ -269,7 +260,6 @@
         <geometry>
           <mesh>
             <uri>model://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</uri>
-            <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>
@@ -288,7 +278,6 @@
         <geometry>
           <mesh>
             <uri>model://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</uri>
-            <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>
@@ -307,7 +296,6 @@
         <geometry>
           <mesh>
             <uri>model://turtlebot/meshes/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae</uri>
-            <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>
@@ -326,7 +314,6 @@
         <geometry>
           <mesh>
             <uri>model://turtlebot/meshes/68-02421-8000-RA_Turtlebot_F-F_Standoff.dae</uri>
-            <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>
@@ -345,7 +332,6 @@
         <geometry>
           <mesh>
             <uri>model://turtlebot/meshes/68-02421-8000-RA_Turtlebot_F-F_Standoff.dae</uri>
-            <scale>0.001 0.001 0.001000</scale>
           </mesh>
         </geometry>
       </visual>
@@ -364,7 +350,6 @@
         <geometry>
           <mesh>
             <uri>model://turtlebot/meshes/68-02421-8000-RA_Turtlebot_F-F_Standoff.dae</uri>
-            <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>
@@ -383,7 +368,6 @@
         <geometry>
           <mesh>
             <uri>model://turtlebot/meshes/68-02421-8000-RA_Turtlebot_F-F_Standoff.dae</uri>
-            <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>
@@ -402,7 +386,6 @@
         <geometry>
           <mesh>
             <uri>model://turtlebot/meshes/68-04556-RA_Kinect_Standoff_Assy.dae</uri>
-            <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>
@@ -421,7 +404,6 @@
         <geometry>
           <mesh>
             <uri>model://turtlebot/meshes/68-04556-RA_Kinect_Standoff_Assy.dae</uri>
-            <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>

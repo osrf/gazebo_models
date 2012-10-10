@@ -10,7 +10,7 @@
 		</contributor>
 		<created>2011-04-01T12:49:29.799628</created>
 		<modified>2011-04-01T12:49:29.799646</modified>
-		<unit meter="0.01" name="centimeter"/>
+		<unit meter="1.0" name="meter"/>
 		<up_axis>Z_UP</up_axis>
 	</asset>
 	<library_effects>
