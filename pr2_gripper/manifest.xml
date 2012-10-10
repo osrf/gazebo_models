@@ -15,6 +15,9 @@
   </description>
 
   <depend>
-    pr2
+    <model>
+      <uri>model://pr2</uri>
+      <version>1.0</version>
+    </model>
   </depend>
 </model>
