@@ -20,6 +20,7 @@
     <uri>file://pioneer2dx</uri>
     <uri>file://powerplant</uri>
     <uri>file://pr2</uri>
+    <uri>file://pr2_gripper</uri>
     <uri>file://saucepan</uri>
     <uri>file://simple_arm</uri>
     <uri>file://simple_arm_gripper</uri>
