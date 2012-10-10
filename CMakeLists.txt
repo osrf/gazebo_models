@@ -47,6 +47,7 @@ set (dirs
   pioneer2dx
   powerplant
   pr2
+  pr2_gripper
   saucepan
   simple_arm
   simple_arm_gripper
