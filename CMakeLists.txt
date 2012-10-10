@@ -31,23 +31,34 @@ string (TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
 
 
 set (dirs
+  bookshelf
+  bowl
+  cabinet
   camera
+  coke_can
+  cordless_drill
   create
+  cube_20k
   ground_plane
   hammer
   hokuyo
   kinect
   monkey_wrench
   pioneer2dx
-  pr2
   powerplant
+  pr2
+  saucepan
   simple_arm
+  simple_arm_gripper
+  simple_gripper
   sun
+  table
   turtlebot
   utility_cart
   willowgarage
   youbot
-)
+
+  )
 
 foreach (dir ${dirs})
   add_custom_target(${dir}
