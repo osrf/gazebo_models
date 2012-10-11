@@ -9,7 +9,7 @@
       <collision name="collision">
         <geometry>
           <box>
-            <size>0.2 0.2 1.0</size>
+            <size>0.05 0.05 1.0</size>
           </box>
         </geometry>
         <surface>
@@ -23,7 +23,7 @@
       <visual name="visual">
         <geometry>
           <box>
-            <size>0.2 0.2 1.0</size>
+            <size>0.05 0.05 1.0</size>
           </box>
         </geometry>
         <material>
@@ -246,14 +246,6 @@
       <parent>riser</parent>
       <axis>
         <limit><lower>0</lower><upper>0.9</upper></limit>
-        <xyz>0 0 1</xyz>
-      </axis>
-    </joint>
-    <joint name="fixed_riser" type="revolute">
-      <child>riser</child>
-      <parent>world</parent>
-      <axis>
-        <limit><lower>0</lower><upper>0</upper></limit>
         <xyz>0 0 1</xyz>
       </axis>
     </joint>
