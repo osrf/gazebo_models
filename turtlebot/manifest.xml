@@ -19,5 +19,9 @@
       <uri>model://kinect</uri>
       <version>1.0</version>
     </model>
+    <model>
+      <uri>model://create</uri>
+      <version>1.0</version>
+    </model>
   </depend>
 </model>
