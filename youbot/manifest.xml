@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <model>
-  <name>Keuka YouBot</name>
+  <name>Kuka YouBot</name>
   <version>1.0</version>
   <sdf>model.sdf</sdf>
 
