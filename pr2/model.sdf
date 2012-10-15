@@ -550,7 +550,7 @@
         <fov>0.959931</fov>
         <near_clip>0.100000</near_clip>
         <far_clip>10.000000</far_clip>
-        <pose>0.023200 0.110000 0.119100 3.141593 -1.570793 3.141593</pose>
+        <pose>0.023200 0.110000 0.119100 0 -1.570793 0</pose>
       </projector>
 
       <self_collide>0</self_collide>

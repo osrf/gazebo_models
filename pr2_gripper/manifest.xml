@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <model>
-  <name>Simple Arm Gripper</name>
+  <name>PR2 Gripper</name>
   <version>1.0</version>
   <sdf>model.sdf</sdf>
 
@@ -10,14 +10,14 @@
     <email>hsu@osrfoundation.org</email>
   </author>
 
+  <description>
+    The Willow Garage PR2 gripper model.
+  </description>
+
   <depend>
     <model>
-      <uri>model://simple_gripper</uri>
+      <uri>model://pr2</uri>
       <version>1.0</version>
     </model>
   </depend>
-
-  <description>
-    A simple arm and pinch gripper.
-  </description>
 </model>
