@@ -26,9 +26,6 @@
             <size>0.2 0.2 1.0</size>
           </box>
         </geometry>
-        <material>
-          <script>Gazebo/Purple</script>
-        </material>
       </visual>
     </link>
     <link name="palm">
@@ -56,9 +53,6 @@
             <size>0.1 0.2 0.1</size>
           </box>
         </geometry>
-        <material>
-          <script>Gazebo/Red</script>
-        </material>
       </visual>
     </link>
     <link name="left_finger">
@@ -92,9 +86,6 @@
             <size>0.1 0.3 0.1</size>
           </box>
         </geometry>
-        <material>
-          <script>Gazebo/Blue</script>
-        </material>
       </visual>
     </link>
     <link name="left_finger_tip">
@@ -128,9 +119,6 @@
             <size>0.1 0.2 0.1</size>
           </box>
         </geometry>
-        <material>
-          <script>Gazebo/Blue</script>
-        </material>
       </visual>
     </link>
     <link name="right_finger">
@@ -164,9 +152,6 @@
             <size>0.1 0.3 0.1</size>
           </box>
         </geometry>
-        <material>
-          <script>Gazebo/Green</script>
-        </material>
       </visual>
     </link>
     <link name="right_finger_tip">
@@ -200,9 +185,6 @@
             <size>0.1 0.2 0.1</size>
           </box>
         </geometry>
-        <material>
-          <script>Gazebo/Green</script>
-        </material>
       </visual>
     </link>
     <joint name="palm_left_finger" type="revolute">

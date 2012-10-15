@@ -16,7 +16,7 @@
 
   <depend>
     <model>
-      <name>kinect</name>
+      <uri>model://kinect</uri>
       <version>1.0</version>
     </model>
   </depend>
