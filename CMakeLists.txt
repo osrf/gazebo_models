@@ -48,7 +48,6 @@ set (dirs
   powerplant
   pr2
   pr2_gripper
-  saucepan
   simple_arm
   simple_arm_gripper
   simple_gripper
