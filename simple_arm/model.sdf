@@ -258,19 +258,8 @@
         </material>
       </visual>
     </link>
-    <joint name="arm_base_joint" type="revolute">
-      <parent>world</parent>
-      <child>arm_base</child>
-      <axis>
-        <limit>
-          <lower>0</lower>
-          <upper>0</upper>
-        </limit>
-        <xyz>0 0 1</xyz>
-      </axis>
-    </joint>
     <joint name="arm_shoulder_pan_joint" type="revolute">
-      <parent>world</parent>
+      <parent>arm_base</parent>
       <child>arm_shoulder_pan</child>
       <axis>
         <xyz>0 0 1</xyz>
@@ -305,5 +294,18 @@
         <xyz>0 0 1</xyz>
       </axis>
     </joint>
+    <!-- comment out link attachment to the world
+    <joint name="arm_base_joint" type="revolute">
+      <parent>world</parent>
+      <child>arm_base</child>
+      <axis>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    -->
   </model>
 </gazebo>
