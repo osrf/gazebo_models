@@ -160,7 +160,7 @@
     </link>
     <link name='bl_caster_r_wheel_link'>
       <self_collide>0</self_collide>
-      <pose>0.224600 0.175600 0.079200 0.000000 -0.000000 0.000000</pose>
+      <pose>-0.224600 0.175600 0.079200 0.000000 -0.000000 0.000000</pose>
       <inertial>
         <mass>0.440360</mass>
         <inertia>
