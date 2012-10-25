@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<model> 
+  <name>NIST fiducial barrel</name>
+  <version>1.0</version>
+  <sdf>model.sdf</sdf>
+
+  <author>
+    <name>Stefan Kohlbrecher</name>
+    <email>kohlbrecher@sim.tu-darmstadt.de</email>
+  </author>
+
+  <description>
+    NIST standard test arena fiducial barrel
+  </description>
+
+</model>
