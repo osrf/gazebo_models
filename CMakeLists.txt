@@ -5,7 +5,7 @@ if(COMMAND CMAKE_POLICY)
   CMAKE_POLICY(SET CMP0004 NEW)
 endif(COMMAND CMAKE_POLICY)
 
-set (CMAKE_INSTALL_PREFIX /usr CACHE STRING "Install path prefix")
+set (CMAKE_INSTALL_PREFIX /usr/share CACHE STRING "Install path prefix")
 
 project (gazebo_models)
 string (TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
@@ -70,22 +70,22 @@ youbot
 set (MODEL_URI_LIST "" CACHE INTERNAL "Model URI List" FORCE)
 
 foreach (dir ${dirs})
-  add_custom_target(${dir} ALL COMMAND tar czvf ${dir}.tar.gz ../${dir})
-  install (DIRECTORY ${dir} DESTINATION
-    ${CMAKE_INSTALL_PREFIX}/share/models)
-  install (FILES ${PROJECT_BINARY_DIR}/${dir}.tar.gz DESTINATION
-    ${CMAKE_INSTALL_PREFIX}/share/models/${dir})
+  add_custom_target(${dir} ALL COMMAND mkdir -p ${PROJECT_BINARY_DIR}/${dir}
+    COMMAND tar czvf ${PROJECT_BINARY_DIR}/${dir}/model.tar.gz ../${dir})
+
+  install (DIRECTORY ${dir} DESTINATION ${CMAKE_INSTALL_PREFIX}/models)
+  install (FILES ${PROJECT_BINARY_DIR}/${dir}/model.tar.gz DESTINATION
+    ${CMAKE_INSTALL_PREFIX}/models/${dir})
   set(MODEL_URI_LIST "${MODEL_URI_LIST}<uri>file://${dir}</uri>\n")
-  #CACHE INTERNAL "Model URI List" FORCE)
 endforeach ()
 
 configure_file("${CMAKE_SOURCE_DIR}/manifest.xml.in"
                "${PROJECT_BINARY_DIR}/manifest.xml")
 
 install (FILES "${PROJECT_BINARY_DIR}/manifest.xml" DESTINATION
-         ${CMAKE_INSTALL_PREFIX}/share/models/)
+         ${CMAKE_INSTALL_PREFIX}/models/)
 
-message (STATUS "Install path: ${CMAKE_INSTALL_PREFIX}/share/models")
+message (STATUS "Install path: ${CMAKE_INSTALL_PREFIX}/models")
 
 # This must always be last!
 include(CPack)
