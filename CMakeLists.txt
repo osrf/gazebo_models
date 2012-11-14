@@ -10,6 +10,8 @@ set (CMAKE_INSTALL_PREFIX /usr/share CACHE STRING "Install path prefix")
 project (gazebo_models)
 string (TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
 
+exec_program(date ARGS -u +%Y-%m-%-dT%H:%M:%S OUTPUT_VARIABLE CURRENT_DATE)
+
 #include (FindPkgConfig)
 #if (PKG_CONFIG_FOUND)
 #  pkg_check_modules(GAZEBO gazebo)

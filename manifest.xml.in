@@ -2,6 +2,7 @@
 <database>
   <name>gazebosim</name>
   <license>Creative Commons Attribution 3.0 Unported</license>
+  <last_modified>@CURRENT_DATE@</last_modified>
 
   <models>
     @MODEL_URI_LIST@
