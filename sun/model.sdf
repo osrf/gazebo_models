@@ -10,10 +10,10 @@
     <attenuation>
       <range>1000</range>
       <constant>0.9</constant>
-      <linear>0.1</linear>
-      <quadratic>0.01</quadratic>
+      <linear>0.01</linear>
+      <quadratic>0.001</quadratic>
     </attenuation>
 
-    <direction>0.5 0.0 -1.0</direction>
+    <direction>-0.5 0.5 -1.0</direction>
   </light>
 </gazebo>

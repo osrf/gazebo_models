@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<model> 
+  <name>NIST stairs 120</name>
+  <version>1.0</version>
+  <sdf>model.sdf</sdf>
+
+  <author>
+    <name>Stefan Kohlbrecher</name>
+    <email>kohlbrecher@sim.tu-darmstadt.de</email>
+  </author>
+
+  <description>
+    1.2m high NIST standard test arena stairs
+  </description>
+
+</model>
