@@ -3,7 +3,7 @@
 <model>
   <name>Kuka YouBot</name>
   <version>1.0</version>
-  <sdf>model.sdf</sdf>
+  <sdf version="1.2">model.sdf</sdf>
 
   <author>
     <name>Nate Koenig</name>

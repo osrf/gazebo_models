@@ -4,7 +4,7 @@
   <name>Power Plant</name>
   <version>1.0</version>
   <license></license>
-  <sdf>model.sdf</sdf>
+  <sdf version="1.2">model.sdf</sdf>
 
   <author>
     <name>Nate Koenig</name>
