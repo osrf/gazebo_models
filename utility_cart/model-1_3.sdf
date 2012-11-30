@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<gazebo version="1.2">
+<sdf version="1.3">
   <model name="car">
     <link name="chassis">
       <pose>0 0 0.3 0 0 0</pose>
@@ -266,4 +266,4 @@
       <aero_load>0.1</aero_load>
     </plugin>
   </model>
-</gazebo>
+</sdf>

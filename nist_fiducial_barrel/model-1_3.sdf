@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<gazebo version="1.2">
+<sdf version="1.3">
   <model name="nist_fiducial_barrel">
     <static>true</static>
     <link name="nist_fiducial_barrel_link">
@@ -22,4 +22,4 @@
       </visual>
     </link>
   </model>
-</gazebo>
+</sdf>

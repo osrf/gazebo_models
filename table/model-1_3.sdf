@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<gazebo version="1.2">
+<sdf version="1.3">
   <model name="table">
     <static>false</static>
     <link name="link">
@@ -123,4 +123,4 @@
       </visual>
     </link>
   </model>
-</gazebo>
+</sdf>

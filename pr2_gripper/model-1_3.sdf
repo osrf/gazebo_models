@@ -713,5 +713,5 @@
     </joint>
     <static>0</static>
   </model>
-</gazebo>
+</sdf>
 Success

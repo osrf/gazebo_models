@@ -16,4 +16,4 @@
 
     <direction>-0.5 0.5 -1.0</direction>
   </light>
-</gazebo>
+</sdf>
