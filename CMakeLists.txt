@@ -61,6 +61,7 @@ saucepan
 simple_arm
 simple_arm_gripper
 simple_gripper
+stereo_camera
 sun
 table
 turtlebot
