@@ -1,10 +1,28 @@
 <?xml version="1.0" ?>
 <gazebo version="1.2">
   <model name="hokuyo">
+    <pose>0 0 0.062 0 0 0</pose>
     <link name="link">
       <inertial>
         <mass>0.1</mass>
       </inertial>
+      <collision name="collision_box">
+        <pose>0 0 -0.011 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.041</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="collision_cylinder">
+        <pose>0 0 0.024 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>0.029</length>
+          </cylinder>
+        </geometry>
+      </collision>
       <visual name="visual">
         <geometry>
           <mesh>
