@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<sdf version="1.3">
+  <model name="Polaris Ranger EV">
+    <link name="chassis">
+      <pose>0 0 0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://polaris_ranger_ev/meshes/polaris.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://polaris_ranger_ev/meshes/polaris.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

@@ -54,6 +54,7 @@ nist_maze_wall_triple_holes_120
 nist_simple_ramp_120
 nist_stairs_120
 pioneer2dx
+polaris_ranger_ev
 powerplant
 pr2
 pr2_gripper
