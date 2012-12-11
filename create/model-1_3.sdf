@@ -1,0 +1,296 @@
+<?xml version="1.0" ?>
+<sdf version="1.3">
+  <model name="create">
+
+    <link name="base">
+      <inertial>
+        <pose>0.001453 -0.000453 0.029787 0 0 0</pose>
+        <inertia>
+          <ixx>0.058640</ixx>
+          <ixy>0.000124</ixy>
+          <ixz>0.000615</ixz>
+          <iyy>0.058786</iyy>
+          <iyz>0.000014</iyz>
+          <izz>1.532440</izz>
+        </inertia>
+        <mass>2.234000</mass>
+      </inertial>
+
+      <collision name="base_collision">
+        <pose>0 0 0.047800 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.016495</radius>
+            <length>0.061163</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="base_visual">
+        <pose>0 0 0.047800 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://create/meshes/create_body.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name="front_wheel_collision">
+        <pose>0.130000 0 0.017000 0 1.570700 1.570700</pose>
+        <geometry>
+          <sphere>
+            <radius>0.018000</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="front_wheel_visual">
+        <pose>0.130000 0 0.017000 0 1.570700 1.570700</pose>
+        <geometry>
+          <sphere>
+            <radius>0.009000</radius>
+          </sphere>
+        </geometry>
+      </visual>
+
+      <collision name="rear_wheel_collision">
+        <pose>-0.13 0 0.017 0 1.5707 1.5707</pose>
+        <geometry>
+          <sphere>
+            <radius>0.015000</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="rear_wheel_visual">
+        <pose>-0.130000 0 0.017000 0 1.570700 1.570700</pose>
+        <geometry>
+          <sphere>
+            <radius>0.007500</radius>
+          </sphere>
+        </geometry>
+      </visual>
+
+
+      <sensor name="left_cliff_sensor" type="ray">
+        <pose>0.070000 0.140000 0.027000 0 1.570790 0</pose>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1.000000</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.010000</min>
+            <max>0.040000</max>
+            <resolution>0.100000</resolution>
+          </range>
+        </ray>
+      </sensor>
+
+      <sensor name="leftfront_cliff_sensor" type="ray">
+        <pose>0.150000 0.040000 0.027000 0 1.570790 0</pose>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1.000000</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.010000</min>
+            <max>0.040000</max>
+            <resolution>0.100000</resolution>
+          </range>
+        </ray>
+      </sensor>
+
+      <sensor name="right_cliff_sensor" type="ray">
+        <pose>0.070000 -0.140000 0.027000 0 1.570790 0</pose>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1.000000</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.010000</min>
+            <max>0.040000</max>
+            <resolution>0.100000</resolution>
+          </range>
+        </ray>
+      </sensor>
+
+      <sensor name="rightfront_cliff_sensor" type="ray">
+        <pose>0.150000 -0.040000 0.027000 0 1.570790 0</pose>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1.000000</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.010000</min>
+            <max>0.040000</max>
+            <resolution>0.100000</resolution>
+          </range>
+        </ray>
+      </sensor>
+
+      <sensor name="wall_sensor" type="ray">
+        <pose>0.090000 -0.120000 0.059000 0 0 -1.000000</pose>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1.000000</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.016000</min>
+            <max>0.040000</max>
+            <resolution>0.100000</resolution>
+          </range>
+        </ray>
+      </sensor>
+    </link>
+
+
+    <link name="left_wheel">
+      <pose>0 0.130000 0.032000 0 0 0</pose>
+      <inertial>
+        <inertia>
+          <ixx>0.001000</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001000</iyy>
+          <iyz>0</iyz>
+          <izz>0.001000</izz>
+        </inertia>
+        <mass>0.010000</mass>
+      </inertial>
+      <collision name="collision">
+        <pose>0 0 0 0 1.570700 1.570700</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.033000</radius>
+            <length>0.023000</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10</mu>
+              <mu2>10</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0 0 0 0 1.570700 1.570700</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.033000</radius>
+            <length>0.023000</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="right_wheel">
+      <pose>0 -0.130000 0.032000 0 0 0</pose>
+      <inertial>
+        <inertia>
+          <ixx>0.001000</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001000</iyy>
+          <iyz>0</iyz>
+          <izz>0.001000</izz>
+        </inertia>
+        <mass>0.010000</mass>
+      </inertial>
+      <collision name="collision">
+        <pose>0 0 0 0 1.570700 1.570700</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.033000</radius>
+            <length>0.023000</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10</mu>
+              <mu2>10</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0 0 0 0 1.570700 1.570700</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.033000</radius>
+            <length>0.023000</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="left_wheel" type="revolute">
+      <parent>base</parent>
+      <child>left_wheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="right_wheel" type="revolute">
+      <parent>base</parent>
+      <child>right_wheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+  </model>
+</sdf>

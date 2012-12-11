@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<sdf version='1.3'>
+  <model name="monkey wrench">
+    <static>false</static>
+    <link name="link">
+      <pose>0 0 0 0 0 0</pose>
+
+      <!--
+      <collision name="shaft">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.3</length>
+          </cylinder>
+        </geomtry>
+      </collision>
+
+      <collision name="head">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.3</length>
+          </cylinder>
+        </geomtry>
+      </collision>
+-->
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://monkey_wrench/meshes/monkey_wrench.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://monkey_wrench/meshes/monkey_wrench.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
