@@ -10,7 +10,6 @@
       <pose>1.8 0 1 0 0 0</pose>
     </include>
 
-    <!-- comment out demo plugin -->
     <plugin name="simple_arm_plugin" filename="libJointTrajectoryPlugin.so"/>
 
     <joint name="arm_gripper_joint" type="revolute">
