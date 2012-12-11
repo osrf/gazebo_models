@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <gazebo version="1.2">
-  <model name="simple_arm">
+  <model name="simple_arm_gripper">
     <include>
       <uri>model://simple_arm</uri>
     </include>
@@ -11,13 +11,7 @@
     </include>
 
     <!-- comment out demo plugin -->
-    <plugin name="simple_arm_plugin" filename="libJointTrajectoryPlugin.so">
-      <joint>simple_arm::arm_shoulder_pan_joint</joint>
-      <joint>simple_arm::arm_elbow_pan_joint</joint>
-      <joint>simple_arm::arm_wrist_lift_joint</joint>
-      <joint>simple_arm::arm_wrist_roll_joint</joint>
-    </plugin>
-
+    <plugin name="simple_arm_plugin" filename="libJointTrajectoryPlugin.so"/>
 
     <joint name="arm_gripper_joint" type="revolute">
       <parent>simple_arm::arm_wrist_roll</parent>
