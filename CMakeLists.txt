@@ -44,6 +44,7 @@ cube_20k
 ground_plane
 hammer
 hokuyo
+irobot_hand
 kinect
 monkey_wrench
 nist_elevated_floor_120
