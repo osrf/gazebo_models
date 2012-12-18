@@ -7,7 +7,7 @@
       </inertial>
       <visual name="visual">
         <!-- rotate mesh to get to X-forward -->
-        <pose>0 0 0 0 0 -1.507</pose>
+        <pose>0 0 0 0 0 -1.5708</pose>
         <geometry>
           <mesh>
             <uri>model://polaris_ranger_ev/meshes/polaris.dae</uri>
@@ -15,11 +15,111 @@
         </geometry>
       </visual>
       <collision name="chassis_bottom">
-        <pose>0.0 0.0 0.3 0.0 0.0 0.0</pose> 
+        <pose>0.0 0.0 0.35 0.0 0.0 0.0</pose> 
         <geometry>
           <box>
-            <size>2.0 1.0 0.01</size>
+            <size>2.0 1.0 0.1</size>
           </box>
+        </geometry>
+      </collision>
+      <collision name="cargo_bottom">
+        <pose>-0.9 0.0 0.9 0.0 0.0 0.0</pose> 
+        <geometry>
+          <box>
+            <size>0.9 1.2 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="cargo_front">
+        <pose>-0.45 0.0 1.025 0.0 1.5708 0.0</pose> 
+        <geometry>
+          <box>
+            <size>0.25 1.2 0.05</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="cargo_back">
+        <pose>-1.35 0.0 1.025 0.0 1.5708 0.0</pose> 
+        <geometry>
+          <box>
+            <size>0.25 1.2 0.05</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="cargo_left">
+        <pose>-0.9 0.6 1.025 1.5708 1.5708 0.0</pose> 
+        <geometry>
+          <box>
+            <size>0.25 0.9 0.05</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="cargo_right">
+        <pose>-0.9 -0.6 1.025 1.5708 1.5708 0.0</pose> 
+        <geometry>
+          <box>
+            <size>0.25 0.9 0.05</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="seat">
+        <pose>-0.1 0.0 0.625 0.0 0.0 0.0</pose> 
+        <geometry>
+          <box>
+            <size>0.6 1.0 0.65</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="seat_back">
+        <pose>-0.3 0.0 1.125 0.0 -0.2 0.0</pose> 
+        <geometry>
+          <box>
+            <size>0.1 1.0 0.4</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="engine">
+        <pose>0.95 0.0 0.7 0.0 0.0 0.0</pose> 
+        <geometry>
+          <box>
+            <size>0.75 1.0 0.8</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="steering_column">
+        <pose>0.525 0.3 1.025 0.0 -0.8 0.0</pose> 
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.45</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="steering_wheel_post_left">
+        <pose>0.37 0.38 1.2 1.5708 -0.8 0.0</pose> 
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="steering_wheel_post_right">
+        <pose>0.37 0.23 1.2 1.5708 -0.8 0.0</pose> 
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="steering_wheel_post_middle">
+        <pose>0.325 0.305 1.15 0.0 -2.3708 0.0</pose> 
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>0.15</length>
+          </cylinder>
         </geometry>
       </collision>
     </link>
