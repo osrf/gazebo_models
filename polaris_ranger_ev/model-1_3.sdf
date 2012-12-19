@@ -7,7 +7,7 @@
       </inertial>
       <visual name="visual">
         <!-- rotate mesh to get to X-forward -->
-        <pose>0 0 0 0 0 -1.5708</pose>
+        <pose>0 0 0 0 0 -1.570796</pose>
         <geometry>
           <mesh>
             <uri>model://polaris_ranger_ev/meshes/polaris.dae</uri>
@@ -31,34 +31,34 @@
         </geometry>
       </collision>
       <collision name="cargo_front">
-        <pose>-0.45 0.0 1.025 0.0 1.5708 0.0</pose> 
+        <pose>-0.45 0.0 1.025 0.0 0.0 0.0</pose> 
         <geometry>
           <box>
-            <size>0.25 1.2 0.05</size>
+            <size>0.05 1.2 0.25</size>
           </box>
         </geometry>
       </collision>
       <collision name="cargo_back">
-        <pose>-1.35 0.0 1.025 0.0 1.5708 0.0</pose> 
+        <pose>-1.35 0.0 1.025 0.0 0.0 0.0</pose> 
         <geometry>
           <box>
-            <size>0.25 1.2 0.05</size>
+            <size>0.05 1.2 0.25</size>
           </box>
         </geometry>
       </collision>
       <collision name="cargo_left">
-        <pose>-0.9 0.6 1.025 1.5708 1.5708 0.0</pose> 
+        <pose>-0.9 0.6 1.025 0.0 0.0 0.0</pose> 
         <geometry>
           <box>
-            <size>0.25 0.9 0.05</size>
+            <size>0.9 0.05 0.25</size>
           </box>
         </geometry>
       </collision>
       <collision name="cargo_right">
-        <pose>-0.9 -0.6 1.025 1.5708 1.5708 0.0</pose> 
+        <pose>-0.9 -0.6 1.025 0.0 0.0 0.0</pose> 
         <geometry>
           <box>
-            <size>0.25 0.9 0.05</size>
+            <size>0.9 0.05 0.25</size>
           </box>
         </geometry>
       </collision>
@@ -96,7 +96,7 @@
         </geometry>
       </collision>
       <collision name="steering_wheel_post_left">
-        <pose>0.37 0.38 1.2 1.5708 -0.8 0.0</pose> 
+        <pose>0.37 0.38 1.2 1.570796 -0.8 0.0</pose> 
         <geometry>
           <cylinder>
             <radius>0.02</radius>
@@ -105,7 +105,7 @@
         </geometry>
       </collision>
       <collision name="steering_wheel_post_right">
-        <pose>0.37 0.23 1.2 1.5708 -0.8 0.0</pose> 
+        <pose>0.37 0.23 1.2 1.570796 -0.8 0.0</pose> 
         <geometry>
           <cylinder>
             <radius>0.02</radius>
@@ -124,15 +124,15 @@
       </collision>
     </link>
     <link name="rear_right_wheel">
-      <pose>-0.85 -0.675 0.3 1.5708 0.0 0.0</pose>
+      <pose>-0.85 -0.6 0.32 1.570796 0.0 0.0</pose>
       <inertial>
         <mass>0.5</mass>
       </inertial>
       <collision name="collision">
         <geometry>
           <cylinder>
-            <radius>0.3</radius>
-            <length>0.2</length>
+            <radius>0.32</radius>
+            <length>0.23</length>
           </cylinder>
         </geometry>
         <surface>
@@ -156,15 +156,15 @@
       </axis>
     </joint>
     <link name="rear_left_wheel">
-      <pose>-0.85 0.575 0.3 1.5708 0.0 0.0</pose>
+      <pose>-0.85 0.6 0.32 1.570796 0.0 0.0</pose>
       <inertial>
         <mass>0.5</mass>
       </inertial>
       <collision name="collision">
         <geometry>
           <cylinder>
-            <radius>0.3</radius>
-            <length>0.2</length>
+            <radius>0.32</radius>
+            <length>0.23</length>
           </cylinder>
         </geometry>
         <surface>
@@ -188,15 +188,15 @@
       </axis>
     </joint>
     <link name="front_right_wheel">
-      <pose>1.03 -0.55 0.3 1.5708 0.0 0.0</pose>
+      <pose>1.03 -0.6 0.32 1.570796 0.0 0.0</pose>
       <inertial>
         <mass>0.5</mass>
       </inertial>
       <collision name="collision">
         <geometry>
           <cylinder>
-            <radius>0.3</radius>
-            <length>0.2</length>
+            <radius>0.32</radius>
+            <length>0.23</length>
           </cylinder>
         </geometry>
         <surface>
@@ -220,15 +220,15 @@
       </axis>
     </joint>
     <link name="front_left_wheel">
-      <pose>1.03 0.65 0.3 1.5708 0.0 0.0</pose>
+      <pose>1.03 0.6 0.32 1.570796 0.0 0.0</pose>
       <inertial>
         <mass>0.5</mass>
       </inertial>
       <collision name="collision">
         <geometry>
           <cylinder>
-            <radius>0.3</radius>
-            <length>0.2</length>
+            <radius>0.32</radius>
+            <length>0.23</length>
           </cylinder>
         </geometry>
         <surface>
