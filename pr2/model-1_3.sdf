@@ -684,7 +684,7 @@
           <image>
             <width>640</width>
             <height>480</height>
-            <format>L_INT8</format>
+            <format>L8</format>
           </image>
           <clip>
             <near>0.010000</near>
@@ -700,7 +700,7 @@
           <image>
             <width>320</width>
             <height>240</height>
-            <format>RGB_INT8</format>
+            <format>R8G8B8</format>
           </image>
           <clip>
             <near>0.100000</near>
@@ -716,7 +716,7 @@
           <image>
             <width>320</width>
             <height>240</height>
-            <format>RGB_INT8</format>
+            <format>R8G8B8</format>
           </image>
           <clip>
             <near>0.100000</near>
@@ -734,7 +734,7 @@
           <image>
             <width>640</width>
             <height>480</height>
-            <format>L_INT8</format>
+            <format>L8</format>
           </image>
           <clip>
             <near>0.100000</near>
@@ -751,7 +751,7 @@
           <image>
             <width>640</width>
             <height>480</height>
-            <format>L_INT8</format>
+            <format>L8</format>
           </image>
           <clip>
             <near>0.100000</near>
@@ -799,7 +799,7 @@
           <image>
             <width>2448</width>
             <height>2050</height>
-            <format>RGB_INT8</format>
+            <format>R8G8B8</format>
           </image>
           <clip>
             <near>0.100000</near>
@@ -1003,7 +1003,7 @@
           <image>
             <width>640</width>
             <height>480</height>
-            <format>RGB_INT8</format>
+            <format>R8G8B8</format>
           </image>
           <clip>
             <near>0.100000</near>
@@ -1655,7 +1655,7 @@
           <image>
             <width>640</width>
             <height>480</height>
-            <format>RGB_INT8</format>
+            <format>R8G8B8</format>
           </image>
           <clip>
             <near>0.100000</near>
