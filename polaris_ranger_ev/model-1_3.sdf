@@ -8,11 +8,8 @@
         <mass>720.0</mass>
         <inertia>
           <ixx>140</ixx>
-          <ixy>0.0</ixy>
-          <ixz>0.0</ixz>
-          <iyy>550</iyy>
-          <iyz>0.0</iyz>
-          <izz>550</izz>
+          <ixy>0.0</ixy><iyy>550</iyy>
+          <ixz>0.0</ixz><iyz>0.0</iyz><izz>550</izz>
         </inertia>
       </inertial>
       <visual name="visual">
@@ -139,11 +136,8 @@
         <mass>12</mass><!-- estimated from http://www.rzrforums.net/wheels-tires/1729-tire-wheel-weights-most-sizes.html -->
         <inertia>
           <ixx>0.5</ixx>
-          <ixy>0.0</ixy>
-          <ixz>0.0</ixz>
-          <iyy>0.5</iyy>
-          <iyz>0.0</iyz>
-          <izz>1.0</izz>
+          <ixy>0.0</ixy><iyy>0.5</iyy>
+          <ixz>0.0</ixz><iyz>0.0</iyz><izz>1.0</izz>
         </inertia>
       </inertial>
       <collision name="collision">
@@ -179,11 +173,8 @@
         <mass>12</mass><!-- estimated from http://www.rzrforums.net/wheels-tires/1729-tire-wheel-weights-most-sizes.html -->
         <inertia>
           <ixx>0.5</ixx>
-          <ixy>0.0</ixy>
-          <ixz>0.0</ixz>
-          <iyy>0.5</iyy>
-          <iyz>0.0</iyz>
-          <izz>1.0</izz>
+          <ixy>0.0</ixy><iyy>0.5</iyy>
+          <ixz>0.0</ixz><iyz>0.0</iyz><izz>1.0</izz>
         </inertia>
       </inertial>
       <collision name="collision">
@@ -219,11 +210,8 @@
         <mass>12</mass><!-- estimated from http://www.rzrforums.net/wheels-tires/1729-tire-wheel-weights-most-sizes.html -->
         <inertia>
           <ixx>0.5</ixx>
-          <ixy>0.0</ixy>
-          <ixz>0.0</ixz>
-          <iyy>0.5</iyy>
-          <iyz>0.0</iyz>
-          <izz>1.0</izz>
+          <ixy>0.0</ixy><iyy>0.5</iyy>
+          <ixz>0.0</ixz><iyz>0.0</iyz><izz>1.0</izz>
         </inertia>
       </inertial>
       <collision name="collision">
@@ -259,11 +247,8 @@
         <mass>12</mass><!-- estimated from http://www.rzrforums.net/wheels-tires/1729-tire-wheel-weights-most-sizes.html -->
         <inertia>
           <ixx>0.5</ixx>
-          <ixy>0.0</ixy>
-          <ixz>0.0</ixz>
-          <iyy>0.5</iyy>
-          <iyz>0.0</iyz>
-          <izz>1.0</izz>
+          <ixy>0.0</ixy><iyy>0.5</iyy>
+          <ixz>0.0</ixz><iyz>0.0</iyz><izz>1.0</izz>
         </inertia>
       </inertial>
       <collision name="collision">
