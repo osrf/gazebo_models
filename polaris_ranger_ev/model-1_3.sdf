@@ -20,6 +20,16 @@
             <uri>model://polaris_ranger_ev/meshes/polaris.dae</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
       </visual>
       <collision name="chassis_bottom">
         <pose>0.0 0.0 0.35 0.0 0.0 0.0</pose> 
@@ -89,7 +99,7 @@
         <pose>0.95 0.0 0.7 0.0 0.0 0.0</pose> 
         <geometry>
           <box>
-            <size>0.75 1.0 0.8</size>
+            <size>0.58 1.0 0.8</size>
           </box>
         </geometry>
       </collision>
@@ -102,34 +112,7 @@
           </cylinder>
         </geometry>
       </collision>
-      <collision name="steering_wheel_post_left">
-        <pose>0.37 0.38 1.2 1.570796 -0.8 0.0</pose> 
-        <geometry>
-          <cylinder>
-            <radius>0.02</radius>
-            <length>0.15</length>
-          </cylinder>
-        </geometry>
-      </collision>
-      <collision name="steering_wheel_post_right">
-        <pose>0.37 0.23 1.2 1.570796 -0.8 0.0</pose> 
-        <geometry>
-          <cylinder>
-            <radius>0.02</radius>
-            <length>0.15</length>
-          </cylinder>
-        </geometry>
-      </collision>
-      <collision name="steering_wheel_post_middle">
-        <pose>0.325 0.305 1.15 0.0 -2.3708 0.0</pose> 
-        <geometry>
-          <cylinder>
-            <radius>0.02</radius>
-            <length>0.15</length>
-          </cylinder>
-        </geometry>
-      </collision>
-    </link>
+   </link>
     <link name="rear_right_wheel">
       <pose>-0.85 -0.6 0.32 1.570796 0.0 0.0</pose>
       <inertial>
@@ -358,6 +341,216 @@
         <cfm>0.000000</cfm>
         <erp>0.900000</erp>
       </limit></ode></physics>
+    </joint>
+    <!-- gas/brake pedals, steering wheel and hand brake -->
+    <link name='gas_pedal'>
+      <pose>0.58 0.14 0.51 0 -1.0 0</pose>
+      <gravity>false</gravity>
+      <inertial>
+        <mass>1.0</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name='gas_pedal_collision'>
+        <geometry>
+          <box>
+            <size>0.120000 0.070000 0.030000</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='gas_pedal_visual'>
+        <geometry>
+          <box>
+            <size>0.120000 0.070000 0.030000</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <link name='brake_pedal'>
+      <gravity>false</gravity>
+      <pose>0.59 0.27 0.53 0 -1.0 0</pose>
+      <inertial>
+        <mass>1</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name='brake_pedal_collision'>
+        <geometry>
+          <box>
+            <size>0.06 0.08 0.03</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='brake_pedal_visual'>
+        <geometry>
+          <box>
+            <size>0.060000 0.080000 0.030000</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <link name='steering_wheel'>
+      <pose>0.37 0.30 1.2 1.570796 -0.8 0.0</pose> 
+      <inertial>
+        <mass>1.0</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.1</iyy>
+          <iyz>0</iyz>
+          <izz>1.0</izz>
+        </inertia>
+      </inertial>
+      <collision name="steering_wheel_post_left">
+        <pose>0.0 0.0 0.08 0 0 0</pose> 
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="steering_wheel_post_right">
+        <pose>0.0 0.0 -0.08 0 0 0</pose> 
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="steering_wheel_post_middle">
+        <pose>-0.08 0.0 0.0 0 1.570796 0</pose> 
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <velocity_decay>0.1</velocity_decay>
+    </link>
+    <link name='hand_brake'>
+      <pose>0.50 0.00 1.05 0.0 3.2 0.0</pose> 
+      <inertial>
+        <mass>1.0</mass>
+        <pose>0 0 -0.15 0 0 0</pose>
+        <inertia>
+          <ixx>0.1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.1</iyy>
+          <iyz>0</iyz>
+          <izz>1.0</izz>
+        </inertia>
+      </inertial>
+      <collision name="hand_brake_collision">
+        <pose>0 0 -0.10 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.01</radius>
+            <length>0.2</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="hand_brake_visual">
+        <pose>0 0 -0.10 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.01</radius>
+            <length>0.2</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='gas_joint' type='prismatic'>
+      <parent>chassis</parent>
+      <child>gas_pedal</child>
+      <axis>
+        <xyz>1.000000 0.000000 -1.000000</xyz>
+        <limit>
+          <lower>0.00</lower>
+          <upper>0.06</upper>
+        </limit>
+      </axis>
+    </joint>
+    <joint name='brake_joint' type='prismatic'>
+      <parent>chassis</parent>
+      <child>brake_pedal</child>
+      <axis>
+        <xyz>1.000000 0.000000 -0.600000</xyz>
+        <limit>
+          <lower>0.00</lower>
+          <upper>0.05</upper>
+        </limit>
+      </axis>
+    </joint>
+    <joint name='steering_joint' type='revolute'>
+      <pose>0 0 0 1.570796 -0.8 0.0</pose> 
+      <parent>chassis</parent>
+      <child>steering_wheel</child>
+      <axis>
+        <xyz>-1 0 1.023</xyz>
+        <limit>
+          <lower>-7.853000</lower>
+          <upper>7.853000</upper>
+        </limit>
+      </axis>
+    </joint>
+    <joint name='hand_brake_joint' type='revolute'>
+      <parent>chassis</parent>
+      <child>hand_brake</child>
+      <axis>
+        <xyz>0.0 -1.0 0.0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.35</upper>
+        </limit>
+      </axis>
     </joint>
   </model>
 </sdf>
