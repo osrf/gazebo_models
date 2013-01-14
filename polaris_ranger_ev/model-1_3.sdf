@@ -426,7 +426,7 @@
     </link>
 
     <link name='steering_wheel'>
-      <pose>0.37 0.30 1.2 1.570796 -0.8 0.0</pose> 
+      <pose>0.37 0.30 1.2  0 -0.8 0</pose> 
       <inertial>
         <mass>1.0</mass>
         <pose>0 0 0 0 0 0</pose>
@@ -440,7 +440,7 @@
         </inertia>
       </inertial>
       <collision name="steering_wheel_post_left">
-        <pose>0.0 0.0 0.08 0 0 0</pose> 
+        <pose>0.0 0.08 0.0  1.570796 0 0</pose> 
         <geometry>
           <cylinder>
             <radius>0.02</radius>
@@ -449,7 +449,7 @@
         </geometry>
       </collision>
       <collision name="steering_wheel_post_right">
-        <pose>0.0 0.0 -0.08 0 0 0</pose> 
+        <pose>0.0 -0.08 0.0  1.570796 0 0</pose> 
         <geometry>
           <cylinder>
             <radius>0.02</radius>
@@ -465,6 +465,46 @@
             <length>0.15</length>
           </cylinder>
         </geometry>
+      </collision>
+      <collision name="collision00">
+        <pose>0.150000 0.000000 0  0 1.570796 1.570796</pose>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.01</radius></cylinder></geometry>
+      </collision>
+      <collision name="collision01">
+        <pose>0.121353 0.088168 0  0 1.570796 2.199115</pose>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.01</radius></cylinder></geometry>
+      </collision>
+      <collision name="collision02">
+        <pose>0.046353 0.142658 0  0 1.570796 2.827433</pose>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.01</radius></cylinder></geometry>
+      </collision>
+      <collision name="collision03">
+       <pose>-0.046353 0.142658 0  0 1.570796 3.455752</pose>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.01</radius></cylinder></geometry>
+      </collision>
+      <collision name="collision04">
+        <pose>-0.121353 0.088168 0  0 1.570796 4.084070</pose>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.01</radius></cylinder></geometry>
+      </collision>
+      <collision name="collision05">
+        <pose>-0.150000 0.000000 0  0 1.570796 4.712389</pose>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.01</radius></cylinder></geometry>
+      </collision>
+      <collision name="collision06">
+        <pose>-0.121353 -0.088168 0  0 1.570796 5.340708</pose>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.01</radius></cylinder></geometry>
+      </collision>
+      <collision name="collision07">
+        <pose>-0.046353 -0.142658 0  0 1.570796 5.969026</pose>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.01</radius></cylinder></geometry>
+      </collision>
+      <collision name="collision08">
+        <pose>0.046353 -0.142658 0  0 1.570796 6.597345</pose>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.01</radius></cylinder></geometry>
+      </collision>
+      <collision name="collision09">
+        <pose>0.121353 -0.088168 0  0 1.570796 7.225663</pose>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.01</radius></cylinder></geometry>
       </collision>
       <velocity_decay>0.1</velocity_decay>
     </link>
