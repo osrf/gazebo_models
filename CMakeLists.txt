@@ -41,6 +41,7 @@ coke_can
 cordless_drill
 create
 cube_20k
+dumpster
 fast_food
 gas_station
 ground_plane
@@ -51,6 +52,7 @@ house_2
 house_3
 irobot_hand
 kinect
+mailbox
 monkey_wrench
 nist_elevated_floor_120
 nist_fiducial_barrel
@@ -70,6 +72,7 @@ simple_arm
 simple_arm_gripper
 simple_gripper
 stereo_camera
+stop_sign
 sun
 table
 turtlebot

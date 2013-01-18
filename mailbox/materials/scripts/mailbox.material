@@ -1,0 +1,27 @@
+material Mailbox/Diffuse
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture Mailbox_Diffuse.tga
+      }
+    }
+  }
+}
+
+material Mailbox/Specular
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture Mailbox_Spec.tga
+      }
+    }
+  }
+}

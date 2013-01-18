@@ -1,0 +1,27 @@
+material StopSign/Diffuse
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture StopSign_Diffuse.tga
+      }
+    }
+  }
+}
+
+material StopSign/Specular
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture StopSign_Spec.tga
+      }
+    }
+  }
+}
