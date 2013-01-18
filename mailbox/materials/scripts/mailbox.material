@@ -1,5 +1,6 @@
 material Mailbox/Diffuse
 {
+  receive_shadows off
   technique
   {
     pass
@@ -14,6 +15,7 @@ material Mailbox/Diffuse
 
 material Mailbox/Specular
 {
+  receive_shadows off
   technique
   {
     pass

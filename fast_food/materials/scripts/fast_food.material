@@ -1,5 +1,6 @@
 material FastFood/Diffuse
 {
+  receive_shadows off
   technique
   {
     pass
@@ -14,6 +15,7 @@ material FastFood/Diffuse
 
 material FastFood/Specular
 {
+  receive_shadows off
   technique
   {
     pass
@@ -28,6 +30,7 @@ material FastFood/Specular
 
 material FastFood/Normal
 {
+  receive_shadows off
   technique
   {
     pass

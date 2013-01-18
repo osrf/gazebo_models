@@ -1,5 +1,6 @@
 material House_1/Diffuse
 {
+  receive_shadows off
   technique
   {
     pass
@@ -14,6 +15,7 @@ material House_1/Diffuse
 
 material House_1/Specular
 {
+  receive_shadows off
   technique
   {
     pass
@@ -28,6 +30,7 @@ material House_1/Specular
 
 material House_1/Normal
 {
+  receive_shadows off
   technique
   {
     pass

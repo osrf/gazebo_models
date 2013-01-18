@@ -1,5 +1,6 @@
 material Polaris/Diffuse
 {
+  receive_shadows off
   technique
   {
     pass

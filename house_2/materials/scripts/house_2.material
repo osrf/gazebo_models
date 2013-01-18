@@ -1,5 +1,6 @@
 material House_2/Diffuse
 {
+  receive_shadows off
   technique
   {
     pass

@@ -1,5 +1,6 @@
 material Dumpster/Diffuse
 {
+  receive_shadows off
   technique
   {
     pass
@@ -14,6 +15,7 @@ material Dumpster/Diffuse
 
 material Dumpster/Specular
 {
+  receive_shadows off
   technique
   {
     pass

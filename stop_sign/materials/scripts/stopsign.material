@@ -1,5 +1,6 @@
 material StopSign/Diffuse
 {
+  receive_shadows off
   technique
   {
     pass
@@ -14,6 +15,7 @@ material StopSign/Diffuse
 
 material StopSign/Specular
 {
+  receive_shadows off
   technique
   {
     pass
