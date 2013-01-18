@@ -46,6 +46,9 @@ gas_station
 ground_plane
 hammer
 hokuyo
+house_1
+house_2
+house_3
 irobot_hand
 kinect
 monkey_wrench

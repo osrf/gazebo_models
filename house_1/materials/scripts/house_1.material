@@ -1,0 +1,41 @@
+material House_1/Diffuse
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture House_1_Diffuse.tga
+      }
+    }
+  }
+}
+
+material House_1/Specular
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture House_1_Spec.tga
+      }
+    }
+  }
+}
+
+material House_1/Normal
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture House_1_Normal.tga
+      }
+    }
+  }
+}

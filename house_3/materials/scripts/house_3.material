@@ -1,0 +1,13 @@
+material House_3/Diffuse
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture House_3_Diffuse.tga
+      }
+    }
+  }
+}
