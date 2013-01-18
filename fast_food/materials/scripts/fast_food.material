@@ -1,0 +1,41 @@
+material FastFood/Diffuse
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture FastFood_Diffuse.tga
+      }
+    }
+  }
+}
+
+material FastFood/Specular
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture FastFood_Spec.tga
+      }
+    }
+  }
+}
+
+material FastFood/Normal
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture FastFood_Normal.tga
+      }
+    }
+  }
+}

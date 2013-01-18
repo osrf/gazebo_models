@@ -1,0 +1,41 @@
+material GasStation/Diffuse
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture GasStation_Diffuse.tga
+      }
+    }
+  }
+}
+
+material GasStation/Specular
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture GasStation_Spec.tga
+      }
+    }
+  }
+}
+
+material GasStation/Normal
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture GasStation_Normal.tga
+      }
+    }
+  }
+}

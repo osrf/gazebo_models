@@ -41,6 +41,8 @@ coke_can
 cordless_drill
 create
 cube_20k
+fast_food
+gas_station
 ground_plane
 hammer
 hokuyo
@@ -54,6 +56,7 @@ nist_maze_wall_240
 nist_maze_wall_triple_holes_120
 nist_simple_ramp_120
 nist_stairs_120
+office_building
 pioneer2dx
 polaris_ranger_ev
 powerplant

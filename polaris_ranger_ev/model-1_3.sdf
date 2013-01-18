@@ -16,6 +16,13 @@
             <uri>model://polaris_ranger_ev/meshes/polaris.dae</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <uri>model://polaris_ranger_ev/materials/scripts</uri>
+            <uri>model://polaris_ranger_ev/materials/textures</uri>
+            <name>Polaris/Diffuse</name>
+          </script>
+        </material>
       </visual>
     </link>
   </model>

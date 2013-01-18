@@ -1,0 +1,20 @@
+material Polaris/Diffuse
+{
+  technique
+  {
+    pass
+    {
+			ambient 1.0 1.0 1.0 1.000000
+
+      texture_unit
+      {
+        texture Ranger_Diffuse.tga
+      }
+
+      rtshader_system
+      {
+        lighting_stage per_pixel
+      }
+    }
+  }
+}
