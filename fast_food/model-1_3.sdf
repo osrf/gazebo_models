@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<sdf version="1.3">
+  <model name="Fast Food">
+    <link name="link">
+      <pose>0 0 0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://fast_food/meshes/fast_food.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://fast_food/meshes/fast_food.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fast_food/materials/scripts</uri>
+            <uri>model://fast_food/materials/textures</uri>
+            <name>FastFood/Diffuse</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

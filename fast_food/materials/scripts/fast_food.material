@@ -1,0 +1,44 @@
+material FastFood/Diffuse
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture FastFood_Diffuse.tga
+      }
+    }
+  }
+}
+
+material FastFood/Specular
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture FastFood_Spec.tga
+      }
+    }
+  }
+}
+
+material FastFood/Normal
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture FastFood_Normal.tga
+      }
+    }
+  }
+}
