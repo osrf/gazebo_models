@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<model> 
+  <name>NIST maze wall triple holes 120</name>
+  <version>1.0</version>
+  <sdf version="1.2">model.sdf</sdf>
+  <sdf version="1.3">model-1_3.sdf</sdf>
+
+  <author>
+    <name>Stefan Kohlbrecher</name>
+    <email>kohlbrecher@sim.tu-darmstadt.de</email>
+  </author>
+
+  <description>
+    1.2m high NIST standard test arena maze wall with 3 triple victim holes
+  </description>
+
+</model>
