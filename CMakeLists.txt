@@ -90,6 +90,12 @@ configure_file("${CMAKE_SOURCE_DIR}/manifest.xml.in"
 install (FILES "${PROJECT_BINARY_DIR}/manifest.xml" DESTINATION
          ${CMAKE_INSTALL_PREFIX}/models/)
 
+configure_file("${CMAKE_SOURCE_DIR}/database.config.in"
+               "${PROJECT_BINARY_DIR}/database.config")
+
+install (FILES "${PROJECT_BINARY_DIR}/database.config" DESTINATION
+         ${CMAKE_INSTALL_PREFIX}/models/)
+
 message (STATUS "Install path: ${CMAKE_INSTALL_PREFIX}/models")
 
 # This must always be last!
