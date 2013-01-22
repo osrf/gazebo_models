@@ -4,43 +4,92 @@
     <contributor>
       <author>Cole</author>
       <authoring_tool>OpenCOLLADA for 3ds Max;  Version: 1.3.1;  Revision: 847M;  Platform: x64;  Configuration: Release_Max2012_static</authoring_tool>
-      <source_data>file:///C:/Users/Cole/Desktop/OSRF_Models/PolarisRangerEV/PolarisRangerEV_18.max</source_data>
     </contributor>
-    <created>2012-12-21T08:07:01</created>
-    <modified>2012-12-21T08:07:01</modified>
+    <created>2013-01-18T18:45:13</created>
+    <modified>2013-01-18T18:45:13</modified>
     <unit name="inch" meter="0.0254"/>
     <up_axis>Z_UP</up_axis>
   </asset>
   <library_effects>
-    <effect id="_8_-_Default">
+    <effect id="_23">
       <profile_COMMON>
+        <newparam sid="Ranger_UV_Diffuse_psd-surface">
+          <surface type="2D">
+            <init_from>Ranger_UV_Diffuse_psd</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Ranger_UV_Diffuse_psd-sampler">
+          <sampler2D>
+            <source>Ranger_UV_Diffuse_psd-surface</source>
+          </sampler2D>
+        </newparam>
+        <newparam sid="Ranger_UV_Opac_psd-surface">
+          <surface type="2D">
+            <init_from>Ranger_UV_Opac_psd</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Ranger_UV_Opac_psd-sampler">
+          <sampler2D>
+            <source>Ranger_UV_Opac_psd-surface</source>
+          </sampler2D>
+        </newparam>
+        <newparam sid="Spec_psd-surface">
+          <surface type="2D">
+            <init_from>Spec_psd</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Spec_psd-sampler">
+          <sampler2D>
+            <source>Spec_psd-surface</source>
+          </sampler2D>
+        </newparam>
+        <newparam sid="Gloss_psd-surface">
+          <surface type="2D">
+            <init_from>Gloss_psd</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Gloss_psd-sampler">
+          <sampler2D>
+            <source>Gloss_psd-surface</source>
+          </sampler2D>
+        </newparam>
         <technique sid="common">
           <blinn>
             <emission>
               <color>0 0 0 1</color>
             </emission>
             <ambient>
-              <color>1 1 1 1</color>
+              <color>0.5882353 0.5882353 0.5882353 1</color>
             </ambient>
             <diffuse>
-              <color>1 1 1 1</color>
+              <texture texture="Ranger_UV_Diffuse_psd-sampler" texcoord="CHANNEL1"/>
             </diffuse>
             <specular>
               <color>0.9 0.9 0.9 1</color>
             </specular>
             <shininess>
-              <float>9.999999</float>
+              <float>0</float>
             </shininess>
             <reflective>
               <color>0 0 0 1</color>
             </reflective>
-            <transparent opaque="A_ONE">
-              <color>1 1 1 1</color>
+            <transparent opaque="RGB_ZERO">
+              <texture texture="Ranger_UV_Opac_psd-sampler" texcoord="CHANNEL1"/>
             </transparent>
             <transparency>
               <float>1</float>
             </transparency>
           </blinn>
+          <extra>
+            <technique profile="OpenCOLLADA3dsMax">
+              <specularLevel>
+                <texture texture="Spec_psd-sampler" texcoord="CHANNEL1"/>
+              </specularLevel>
+              <gloss>
+                <texture texture="Gloss_psd-sampler" texcoord="CHANNEL1"/>
+              </gloss>
+            </technique>
+          </extra>
         </technique>
       </profile_COMMON>
       <extra>
@@ -67,8 +116,8 @@
     </effect>
   </library_effects>
   <library_materials>
-    <material id="_8_-_Default-material" name="_8_-_Default">
-      <instance_effect url="#_8_-_Default"/>
+    <material id="_23-material" name="_23">
+      <instance_effect url="#_23"/>
     </material>
   </library_materials>
   <library_geometries>
@@ -107,7 +156,7 @@
         <vertices id="geom-Ranger-vertices">
           <input semantic="POSITION" source="#geom-Ranger-positions"/>
         </vertices>
-        <triangles material="_8_-_Default_1" count="5644">
+        <triangles material="_23_1" count="5644">
           <input semantic="VERTEX" source="#geom-Ranger-vertices" offset="0"/>
           <input semantic="NORMAL" source="#geom-Ranger-normals" offset="1"/>
           <input semantic="TEXCOORD" source="#geom-Ranger-map1" offset="2" set="0"/>
@@ -150,7 +199,7 @@
         <vertices id="geom-Steering_Wheel-vertices">
           <input semantic="POSITION" source="#geom-Steering_Wheel-positions"/>
         </vertices>
-        <triangles material="_8_-_Default" count="250">
+        <triangles material="_23" count="250">
           <input semantic="VERTEX" source="#geom-Steering_Wheel-vertices" offset="0"/>
           <input semantic="NORMAL" source="#geom-Steering_Wheel-normals" offset="1"/>
           <input semantic="TEXCOORD" source="#geom-Steering_Wheel-map1" offset="2" set="0"/>
@@ -193,7 +242,7 @@
         <vertices id="geom-Pedal_Gas-vertices">
           <input semantic="POSITION" source="#geom-Pedal_Gas-positions"/>
         </vertices>
-        <triangles material="_8_-_Default" count="26">
+        <triangles material="_23" count="26">
           <input semantic="VERTEX" source="#geom-Pedal_Gas-vertices" offset="0"/>
           <input semantic="NORMAL" source="#geom-Pedal_Gas-normals" offset="1"/>
           <input semantic="TEXCOORD" source="#geom-Pedal_Gas-map1" offset="2" set="0"/>
@@ -236,7 +285,7 @@
         <vertices id="geom-Pedal_brake-vertices">
           <input semantic="POSITION" source="#geom-Pedal_brake-positions"/>
         </vertices>
-        <triangles material="_8_-_Default" count="26">
+        <triangles material="_23" count="26">
           <input semantic="VERTEX" source="#geom-Pedal_brake-vertices" offset="0"/>
           <input semantic="NORMAL" source="#geom-Pedal_brake-normals" offset="1"/>
           <input semantic="TEXCOORD" source="#geom-Pedal_brake-map1" offset="2" set="0"/>
@@ -279,7 +328,7 @@
         <vertices id="geom-Front_Wheel_Left-vertices">
           <input semantic="POSITION" source="#geom-Front_Wheel_Left-positions"/>
         </vertices>
-        <triangles material="_8_-_Default" count="514">
+        <triangles material="_23" count="514">
           <input semantic="VERTEX" source="#geom-Front_Wheel_Left-vertices" offset="0"/>
           <input semantic="NORMAL" source="#geom-Front_Wheel_Left-normals" offset="1"/>
           <input semantic="TEXCOORD" source="#geom-Front_Wheel_Left-map1" offset="2" set="0"/>
@@ -322,7 +371,7 @@
         <vertices id="geom-Front_Wheel_Right-vertices">
           <input semantic="POSITION" source="#geom-Front_Wheel_Right-positions"/>
         </vertices>
-        <triangles material="_8_-_Default" count="514">
+        <triangles material="_23" count="514">
           <input semantic="VERTEX" source="#geom-Front_Wheel_Right-vertices" offset="0"/>
           <input semantic="NORMAL" source="#geom-Front_Wheel_Right-normals" offset="1"/>
           <input semantic="TEXCOORD" source="#geom-Front_Wheel_Right-map1" offset="2" set="0"/>
@@ -365,7 +414,7 @@
         <vertices id="geom-Rear_Wheel_Left-vertices">
           <input semantic="POSITION" source="#geom-Rear_Wheel_Left-positions"/>
         </vertices>
-        <triangles material="_8_-_Default" count="442">
+        <triangles material="_23" count="442">
           <input semantic="VERTEX" source="#geom-Rear_Wheel_Left-vertices" offset="0"/>
           <input semantic="NORMAL" source="#geom-Rear_Wheel_Left-normals" offset="1"/>
           <input semantic="TEXCOORD" source="#geom-Rear_Wheel_Left-map1" offset="2" set="0"/>
@@ -408,7 +457,7 @@
         <vertices id="geom-Rear_Wheel_Right-vertices">
           <input semantic="POSITION" source="#geom-Rear_Wheel_Right-positions"/>
         </vertices>
-        <triangles material="_8_-_Default" count="442">
+        <triangles material="_23" count="442">
           <input semantic="VERTEX" source="#geom-Rear_Wheel_Right-vertices" offset="0"/>
           <input semantic="NORMAL" source="#geom-Rear_Wheel_Right-normals" offset="1"/>
           <input semantic="TEXCOORD" source="#geom-Rear_Wheel_Right-map1" offset="2" set="0"/>
@@ -417,113 +466,165 @@
       </mesh>
     </geometry>
   </library_geometries>
+  <library_lights>
+    <light id="EnvironmentAmbientLight" name="EnvironmentAmbientLight">
+      <technique_common>
+        <ambient>
+          <color>0 0 0</color>
+        </ambient>
+      </technique_common>
+    </light>
+  </library_lights>
   <library_visual_scenes>
     <visual_scene id="MaxScene">
+      <node name="EnvironmentAmbientLight">
+        <instance_light url="#EnvironmentAmbientLight"/>
+      </node>
       <node id="node-Ranger" name="Ranger">
-        <translate>-1.242579 -18.73506 12.09435</translate>
-        <scale>0.6388727 0.6388727 0.6388727</scale>
+        <translate>0.0140183 -34.52818 19.84442</translate>
+        <scale>1.004074 1.004074 1.004074</scale>
         <instance_geometry url="#geom-Ranger">
           <bind_material>
             <technique_common>
-              <instance_material symbol="_8_-_Default_1" target="#_8_-_Default-material"/>
+              <instance_material symbol="_23_1" target="#_23-material">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
             </technique_common>
           </bind_material>
         </instance_geometry>
       </node>
       <node id="node-Steering_Wheel" name="Steering_Wheel">
-        <translate>-8.755083 13.7382 27.72446</translate>
+        <translate>-11.79289 16.5079 44.40922</translate>
         <rotate>-1 0 0 -40</rotate>
-        <scale>0.6388727 0.6388726 0.6388726</scale>
+        <scale>1.004074 1.004074 1.004074</scale>
         <node>
           <matrix>1 0 0 11.759 0 0.7660444 0.6427876 -54.66315 0 -0.6427876 0.7660444 13.93088 0 0 0 1</matrix>
           <instance_geometry url="#geom-Steering_Wheel">
             <bind_material>
               <technique_common>
-                <instance_material symbol="_8_-_Default" target="#_8_-_Default-material"/>
+                <instance_material symbol="_23" target="#_23-material">
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
               </technique_common>
             </bind_material>
           </instance_geometry>
         </node>
       </node>
       <node id="node-Pedal_Gas" name="Pedal_Gas">
-        <translate>-1.242578 20.59776 17.67831</translate>
-        <scale>0.6388727 0.6388727 0.6388727</scale>
+        <translate>0.01402044 27.28861 28.62035</translate>
+        <scale>1.004074 1.004074 1.004074</scale>
         <node>
           <matrix>1 0 0 -2.69113e-6 0 1 0 -61.56597 0 0 1 -8.740331 0 0 0 1</matrix>
           <instance_geometry url="#geom-Pedal_Gas">
             <bind_material>
               <technique_common>
-                <instance_material symbol="_8_-_Default" target="#_8_-_Default-material"/>
+                <instance_material symbol="_23" target="#_23-material">
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
               </technique_common>
             </bind_material>
           </instance_geometry>
         </node>
       </node>
       <node id="node-Pedal_brake" name="Pedal_brake">
-        <translate>-1.242578 20.59776 17.67831</translate>
-        <scale>0.6388727 0.6388727 0.6388727</scale>
+        <translate>0.01402044 27.28861 28.62035</translate>
+        <scale>1.004074 1.004074 1.004074</scale>
         <node>
           <matrix>1 0 0 -2.69113e-6 0 1 0 -61.56597 0 0 1 -8.740331 0 0 0 1</matrix>
           <instance_geometry url="#geom-Pedal_brake">
             <bind_material>
               <technique_common>
-                <instance_material symbol="_8_-_Default" target="#_8_-_Default-material"/>
+                <instance_material symbol="_23" target="#_23-material">
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
               </technique_common>
             </bind_material>
           </instance_geometry>
         </node>
       </node>
       <node id="node-Front_Wheel_Left" name="Front_Wheel_Left">
-        <translate>-13.17991 27.95567 8.021671</translate>
-        <scale>0.6388727 0.6388727 0.6388727</scale>
+        <translate>-18.7471 38.85256 13.44365</translate>
+        <scale>1.004074 1.004074 1.004074</scale>
         <node>
           <matrix>1 0 0 18.685 0 1 0 -73.083 0 0 1 6.374798 0 0 0 1</matrix>
           <instance_geometry url="#geom-Front_Wheel_Left">
             <bind_material>
               <technique_common>
-                <instance_material symbol="_8_-_Default" target="#_8_-_Default-material"/>
+                <instance_material symbol="_23" target="#_23-material">
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
               </technique_common>
             </bind_material>
           </instance_geometry>
         </node>
       </node>
       <node id="node-Front_Wheel_Right" name="Front_Wheel_Right">
-        <translate>10.69476 27.95567 8.021671</translate>
-        <scale>0.6388727 0.6388727 0.6388727</scale>
+        <translate>18.77514 38.85256 13.44365</translate>
+        <scale>1.004074 1.004074 1.004074</scale>
         <node>
           <matrix>1 0 0 -18.685 0 1 0 -73.083 0 0 1 6.374798 0 0 0 1</matrix>
           <instance_geometry url="#geom-Front_Wheel_Right">
             <bind_material>
               <technique_common>
-                <instance_material symbol="_8_-_Default" target="#_8_-_Default-material"/>
+                <instance_material symbol="_23" target="#_23-material">
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
               </technique_common>
             </bind_material>
           </instance_geometry>
         </node>
       </node>
       <node id="node-Rear_Wheel_Left" name="Rear_Wheel_Left">
-        <translate>-1.242579 -18.73506 8.021671</translate>
-        <scale>0.6388727 0.6388727 0.6388727</scale>
+        <translate>0.0140183 -34.52818 13.44365</translate>
+        <scale>1.004074 1.004074 1.004074</scale>
         <node>
           <matrix>1 0 0 0 0 1 0 0 0 0 1 6.374798 0 0 0 1</matrix>
           <instance_geometry url="#geom-Rear_Wheel_Left">
             <bind_material>
               <technique_common>
-                <instance_material symbol="_8_-_Default" target="#_8_-_Default-material"/>
+                <instance_material symbol="_23" target="#_23-material">
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
               </technique_common>
             </bind_material>
           </instance_geometry>
         </node>
       </node>
       <node id="node-Rear_Wheel_Right" name="Rear_Wheel_Right">
-        <translate>-1.242579 -18.73506 8.021671</translate>
-        <scale>0.6388727 0.6388727 0.6388727</scale>
+        <translate>0.0140183 -34.52818 13.44365</translate>
+        <scale>1.004074 1.004074 1.004074</scale>
         <node>
           <matrix>1 0 0 0 0 1 0 0 0 0 1 6.374798 0 0 0 1</matrix>
           <instance_geometry url="#geom-Rear_Wheel_Right">
             <bind_material>
               <technique_common>
-                <instance_material symbol="_8_-_Default" target="#_8_-_Default-material"/>
+                <instance_material symbol="_23" target="#_23-material">
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
               </technique_common>
             </bind_material>
           </instance_geometry>
