@@ -41,10 +41,18 @@ coke_can
 cordless_drill
 create
 cube_20k
+dumpster
+fast_food
+gas_station
 ground_plane
 hammer
 hokuyo
+house_1
+house_2
+house_3
+irobot_hand
 kinect
+mailbox
 monkey_wrench
 nist_elevated_floor_120
 nist_fiducial_barrel
@@ -53,6 +61,7 @@ nist_maze_wall_240
 nist_maze_wall_triple_holes_120
 nist_simple_ramp_120
 nist_stairs_120
+office_building
 pioneer2dx
 polaris_ranger_ev
 powerplant
@@ -63,6 +72,7 @@ simple_arm
 simple_arm_gripper
 simple_gripper
 stereo_camera
+stop_sign
 sun
 table
 turtlebot
@@ -87,6 +97,12 @@ configure_file("${CMAKE_SOURCE_DIR}/manifest.xml.in"
                "${PROJECT_BINARY_DIR}/manifest.xml")
 
 install (FILES "${PROJECT_BINARY_DIR}/manifest.xml" DESTINATION
+         ${CMAKE_INSTALL_PREFIX}/models/)
+
+configure_file("${CMAKE_SOURCE_DIR}/database.config.in"
+               "${PROJECT_BINARY_DIR}/database.config")
+
+install (FILES "${PROJECT_BINARY_DIR}/database.config" DESTINATION
          ${CMAKE_INSTALL_PREFIX}/models/)
 
 message (STATUS "Install path: ${CMAKE_INSTALL_PREFIX}/models")

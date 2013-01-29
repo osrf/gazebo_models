@@ -1,0 +1,29 @@
+material Dumpster/Diffuse
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture Dumpster_Diffuse.tga
+      }
+    }
+  }
+}
+
+material Dumpster/Specular
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture Dumpster_Spec.tga
+      }
+    }
+  }
+}

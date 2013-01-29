@@ -1,0 +1,44 @@
+material House_1/Diffuse
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture House_1_Diffuse.tga
+      }
+    }
+  }
+}
+
+material House_1/Specular
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture House_1_Spec.tga
+      }
+    }
+  }
+}
+
+material House_1/Normal
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture House_1_Normal.tga
+      }
+    }
+  }
+}
