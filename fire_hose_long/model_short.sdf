@@ -1,5 +1,5 @@
 <gazebo version='1.2'>
-  <model name='fire_hose'>
+  <model name='fire_hose_long'>
     <link name='nozzle'>
       <gravity>false</gravity>
       <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
@@ -21,7 +21,7 @@
         <geometry>
           <mesh>
             <scale>0.002540 0.002540 0.002540</scale>
-            <uri>model://fire_hose/meshes/nozzle.stl</uri>
+            <uri>model://fire_hose_long/meshes/nozzle.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -40,7 +40,7 @@
         <geometry>
           <mesh>
             <scale>0.002540 0.002540 0.002540</scale>
-            <uri>model://fire_hose/meshes/nozzle.stl</uri>
+            <uri>model://fire_hose_long/meshes/nozzle.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -959,7 +959,7 @@
         <geometry>
           <mesh>
             <scale>0.001000 0.001000 0.001000</scale>
-            <uri>model://fire_hose/meshes/coupling.stl</uri>
+            <uri>model://fire_hose_long/meshes/coupling.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1001,7 +1001,7 @@
         <geometry>
           <mesh>
             <scale>0.001000 0.001000 0.001000</scale>
-            <uri>model://fire_hose/meshes/coupling.stl</uri>
+            <uri>model://fire_hose_long/meshes/coupling.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1042,7 +1042,7 @@
       </axis>
     </joint>
 
-    <plugin name='fire_hose_plugin' filename='libDRCFirehosePlugin.so'>
+    <plugin name='fire_hose_long_plugin' filename='libDRCFirehosePlugin.so'>
       <coupling_link>coupling</coupling_link>
       <spout_model>standpipe</spout_model>
       <spout_link>standpipe</spout_link>

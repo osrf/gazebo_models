@@ -1,5 +1,5 @@
 <gazebo version='1.2'>
-  <model name='fire_hose'>
+  <model name='fire_hose_long'>
     <pose>0 0 10 0.708 0 0</pose>
     <joint name='joint_01_world' type='revolute'>
       <child>nozzle</child>
@@ -31,7 +31,7 @@
         <geometry>
           <mesh>
             <scale>0.002540 0.002540 0.002540</scale>
-            <uri>model://fire_hose/meshes/nozzle.stl</uri>
+            <uri>model://fire_hose_long/meshes/nozzle.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -40,7 +40,7 @@
         <geometry>
           <mesh>
             <scale>0.002540 0.002540 0.002540</scale>
-            <uri>model://fire_hose/meshes/nozzle.stl</uri>
+            <uri>model://fire_hose_long/meshes/nozzle.stl</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1975,7 +1975,7 @@
         <geometry>
           <mesh>
             <scale>0.001000 0.001000 0.001000</scale>
-            <uri>model://fire_hose/meshes/coupling.stl</uri>
+            <uri>model://fire_hose_long/meshes/coupling.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1984,7 +1984,7 @@
         <geometry>
           <mesh>
             <scale>0.001000 0.001000 0.001000</scale>
-            <uri>model://fire_hose/meshes/coupling.stl</uri>
+            <uri>model://fire_hose_long/meshes/coupling.stl</uri>
           </mesh>
         </geometry>
       </visual>
