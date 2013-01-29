@@ -16,7 +16,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://cordless_drill/meshes/cordless_drill.dae</uri>
+            <uri>model://cordless_drill/meshes/cordless_drill.stl</uri>
           </mesh>
         </geometry>
       </collision>
