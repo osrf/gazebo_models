@@ -11,6 +11,8 @@
           <ixy>0.0</ixy><iyy>550</iyy>
           <ixz>0.0</ixz><iyz>0.0</iyz><izz>550</izz>
         </inertia>
+        <!-- estimated center of mass height -->
+        <pose>0 0 0.4  0 0 0</pose>
       </inertial>
       <visual name="visual">
         <!-- rotate mesh to get to X-forward -->
@@ -130,8 +132,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>100000.0</mu>
-              <mu2>100000.0</mu2>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
@@ -171,8 +173,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>100000.0</mu>
-              <mu2>100000.0</mu2>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
@@ -211,8 +213,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>100000.0</mu>
-              <mu2>100000.0</mu2>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
@@ -285,8 +287,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>100000.0</mu>
-              <mu2>100000.0</mu2>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
