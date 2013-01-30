@@ -129,17 +129,18 @@
         </geometry>
         <surface>
           <friction>
+<!--
             <ode>
               <mu>100000.0</mu>
               <mu2>100000.0</mu2>
-              <slip1>0.0</slip1>
-              <slip2>0.0</slip2>
             </ode>
+-->
           </friction>
           <contact>
             <ode>
-              <max_vel>100</max_vel>
-              <min_depth>0</min_depth>
+              <kp>2.5e16</kp>
+              <max_vel>300</max_vel>
+              <min_depth>0.0</min_depth>
             </ode>
           </contact>
         </surface>
@@ -152,10 +153,6 @@
       <axis>
         <xyz>0 1 0</xyz>
       </axis>
-      <physics><ode><limit>
-        <cfm>0.000000</cfm>
-        <erp>0.900000</erp>
-      </limit></ode></physics>
     </joint>
     <link name="rear_left_wheel">
       <pose>-0.85 0.6 0.32 1.570796 0.0 0.0</pose>
@@ -176,17 +173,18 @@
         </geometry>
         <surface>
           <friction>
+<!--
             <ode>
               <mu>100000.0</mu>
               <mu2>100000.0</mu2>
-              <slip1>0.0</slip1>
-              <slip2>0.0</slip2>
             </ode>
+-->
           </friction>
           <contact>
             <ode>
-              <max_vel>100</max_vel>
-              <min_depth>0</min_depth>
+              <kp>2.5e16</kp>
+              <max_vel>300</max_vel>
+              <min_depth>0.0</min_depth>
             </ode>
           </contact>
         </surface>
@@ -198,10 +196,6 @@
       <axis>
         <xyz>0 1 0</xyz>
       </axis>
-      <physics><ode><limit>
-        <cfm>0.000000</cfm>
-        <erp>0.900000</erp>
-      </limit></ode></physics>
     </joint>
     <link name="front_right_wheel">
       <pose>1.03 -0.6 0.32 1.570796 0.0 0.0</pose>
@@ -222,17 +216,18 @@
         </geometry>
         <surface>
           <friction>
+<!--
             <ode>
               <mu>100000.0</mu>
               <mu2>100000.0</mu2>
-              <slip1>0.0</slip1>
-              <slip2>0.0</slip2>
             </ode>
+-->
           </friction>
           <contact>
             <ode>
-              <max_vel>100</max_vel>
-              <min_depth>0</min_depth>
+              <kp>2.5e16</kp>
+              <max_vel>300</max_vel>
+              <min_depth>0.0</min_depth>
             </ode>
           </contact>
         </surface>
@@ -241,7 +236,7 @@
     <link name="front_right_wheel_steering_block">
       <pose>1.03 -0.5 0.32 1.570796 0.0 0.0</pose>
       <inertial>
-        <mass>1</mass>
+        <mass>10</mass>
         <inertia>
           <ixx>1.0</ixx>
           <ixy>0.0</ixy><iyy>1.0</iyy>
@@ -267,10 +262,6 @@
           <upper>1.0</upper>
         </limit>
       </axis>
-      <physics><ode><limit>
-        <cfm>0.000000</cfm>
-        <erp>0.900000</erp>
-      </limit></ode></physics>
     </joint>
     <joint type="revolute" name="front_right_wheel_joint">
       <child>front_right_wheel</child>
@@ -278,10 +269,6 @@
       <axis>
         <xyz>0 1 0</xyz>
       </axis>
-      <physics><ode><limit>
-        <cfm>0.000000</cfm>
-        <erp>0.900000</erp>
-      </limit></ode></physics>
     </joint>
     <link name="front_left_wheel">
       <pose>1.03 0.6 0.32 1.570796 0.0 0.0</pose>
@@ -302,17 +289,18 @@
         </geometry>
         <surface>
           <friction>
+<!--
             <ode>
               <mu>100000.0</mu>
               <mu2>100000.0</mu2>
-              <slip1>0.0</slip1>
-              <slip2>0.0</slip2>
             </ode>
+-->
           </friction>
           <contact>
             <ode>
-              <max_vel>100</max_vel>
-              <min_depth>0</min_depth>
+              <kp>2.5e16</kp>
+              <max_vel>300</max_vel>
+              <min_depth>0.0</min_depth>
             </ode>
           </contact>
         </surface>
@@ -321,7 +309,7 @@
     <link name="front_left_wheel_steering_block">
       <pose>1.03 0.5 0.32 1.570796 0.0 0.0</pose>
       <inertial>
-        <mass>1</mass>
+        <mass>10</mass>
         <inertia>
           <ixx>1.0</ixx>
           <ixy>0.0</ixy><iyy>1.0</iyy>
@@ -347,10 +335,6 @@
           <upper>1.0</upper>
         </limit>
       </axis>
-      <physics><ode><limit>
-        <cfm>0.000000</cfm>
-        <erp>0.900000</erp>
-      </limit></ode></physics>
     </joint>
     <joint type="revolute" name="front_left_wheel_joint">
       <child>front_left_wheel</child>
@@ -358,10 +342,6 @@
       <axis>
         <xyz>0 1 0</xyz>
       </axis>
-      <physics><ode><limit>
-        <cfm>0.000000</cfm>
-        <erp>0.900000</erp>
-      </limit></ode></physics>
     </joint>
     <!-- gas/brake pedals, steering wheel and hand brake -->
     <link name='gas_pedal'>
@@ -447,6 +427,7 @@
     </link>
 
     <link name='steering_wheel'>
+      <gravity>false</gravity>
       <pose>0.37 0.30 1.2  0 -0.8 0</pose> 
       <inertial>
         <mass>1.0</mass>
@@ -530,6 +511,7 @@
       <velocity_decay>0.1</velocity_decay>
     </link>
     <link name='hand_brake'>
+      <gravity>false</gravity>
       <pose>0.50 0.00 1.05 0.0 3.2 0.0</pose> 
       <inertial>
         <mass>1.0</mass>
