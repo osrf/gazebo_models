@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <sdf version="1.3">
   <model name="Fast Food">
+    <static>true</static>
     <link name="link">
       <pose>0 0 0 0 0 0</pose>
       <collision name="collision">
