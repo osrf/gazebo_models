@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<sdf version="1.3">
+    <model name="simple_box_squat">
+        <static>true</static>
+        <link name="chassis">
+            <pose>0 0 1.5 0 0 0</pose>
+            <collision name="collision">
+                <geometry>
+                    <box>
+                        <size>3.0 1.0 3.0</size>
+                    </box>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <mesh>
+                        <uri>model://simple_box_squat/meshes/simple_box.dae</uri>
+                        <scale>3.0 1.0 3.0</scale>
+                    </mesh>
+                </geometry>
+                <material>
+                  <script>
+                    <uri>model://simple_box_squat/materials/scripts</uri>
+            <uri>model://simple_box_squat/materials/textures</uri>
+                    <name>Bricks/Diffuse</name>
+                  </script>
+                </material>
+            </visual>
+        </link>
+    </model>
+</sdf>

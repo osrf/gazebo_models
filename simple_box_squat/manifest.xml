@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<model>
+  <name>Simple Box Squat</name>
+  <version>1.0</version>
+  <sdf>model.sdf</sdf>
+
+  <description>
+    The Simple Box Squat
+  </description>
+</model>
