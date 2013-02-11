@@ -1,4 +1,4 @@
-material Bricks/Diffuse
+material BrickBox/Diffuse
 {
   receive_shadows off
   technique

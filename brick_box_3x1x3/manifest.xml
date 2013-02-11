@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 
 <model>
-  <name>Simple Box Squat</name>
+  <name>Brick Box 3x1x3</name>
   <version>1.0</version>
   <sdf>model.sdf</sdf>
 
   <description>
-    The Simple Box Squat
+    Brick Box 3x1x3
   </description>
 </model>

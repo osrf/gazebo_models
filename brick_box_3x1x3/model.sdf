@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.3">
-    <model name="simple_box_squat">
+    <model name="brick_box_3x1x3">
         <static>true</static>
         <link name="chassis">
             <pose>0 0 1.5 0 0 0</pose>
@@ -14,15 +14,15 @@
             <visual name="visual">
                 <geometry>
                     <mesh>
-                        <uri>model://simple_box_squat/meshes/simple_box.dae</uri>
+                        <uri>model://brick_box_3x1x3/meshes/simple_box.dae</uri>
                         <scale>3.0 1.0 3.0</scale>
                     </mesh>
                 </geometry>
                 <material>
                   <script>
-                    <uri>model://simple_box_squat/materials/scripts</uri>
-            <uri>model://simple_box_squat/materials/textures</uri>
-                    <name>Bricks/Diffuse</name>
+                    <uri>model://brick_box_3x1x3/materials/scripts</uri>
+            <uri>model://brick_box_3x1x3/materials/textures</uri>
+                    <name>BrickBox/Diffuse</name>
                   </script>
                 </material>
             </visual>
