@@ -4,13 +4,46 @@
       <inertial>
         <mass>100</mass>
       </inertial>
-      <collision name="box_on_ground">
+      <visual name="vis_plate_on_ground">
         <pose>0 0 0.01  0 0 0</pose>
         <geometry>
           <cylinder>
             <radius>0.8</radius>
             <length>0.02</length>
           </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="vis_pole">
+        <pose>-0.275 0 1.1  0 0 0</pose>
+        <geometry>
+          <box><size>0.2 0.2 2.2</size></box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="col_plate_on_ground">
+        <pose>0 0 0.01  0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.8</radius>
+            <length>0.02</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="col_pole">
+        <pose>-0.275 0 1.1  0 0 0</pose>
+        <geometry>
+          <box><size>0.2 0.2 2.2</size></box>
         </geometry>
       </collision>
     </link>
@@ -21,7 +54,37 @@
       <inertial>
         <pose>0 0 0.5  0 0 0</pose>
       </inertial>
-      <visual name="visual_cylinder">
+      <visual name="vis_upper_joint">
+        <pose>-0.05 0 0  0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.3</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="vis_lower_joint">
+        <pose>0 0 1.0  0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.2</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="vis_cylinder">
         <pose>0 0 0.5  0 0 0</pose>
         <geometry>
           <cylinder>
@@ -36,7 +99,25 @@
           </script>
         </material>
       </visual>
-      <collision name="collision_cylinder">
+      <collision name="col_upper_joint">
+        <pose>-0.05 0 0  0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.3</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="col_lower_joint">
+        <pose>0 0 1.0  0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.2</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="col_cylinder">
         <pose>0 0 0.5  0 0 0</pose>
         <geometry>
           <cylinder>
@@ -48,12 +129,27 @@
     </link>
     <!-- lower link, length 1, IC ~-120 degrees more -->
     <link name="lower_link">
-      <pose>0 1.0 2.1  -2 0 0</pose>
+      <pose>0.25 1.0 2.1  -2 0 0</pose>
       <self_collide>0</self_collide>
       <inertial>
         <pose>0 0 0.5  0 0 0</pose>
       </inertial>
-      <visual name="visual_cylinder">
+      <visual name="vis_lower_joint">
+        <pose>0 0 0  0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.08</radius>
+            <length>0.3</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="vis_cylinder">
         <pose>0 0 0.5  0 0 0</pose>
         <geometry>
           <cylinder>
@@ -68,7 +164,16 @@
           </script>
         </material>
       </visual>
-      <collision name="collision_cylinder">
+      <collision name="col_lower_joint">
+        <pose>0 0 0  0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.08</radius>
+            <length>0.3</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="col_cylinder">
         <pose>0 0 0.5  0 0 0</pose>
         <geometry>
           <cylinder>
