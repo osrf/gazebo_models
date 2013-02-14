@@ -3,7 +3,6 @@
   <model name="hokuyo">
     <pose>0 0 0.035 0 0 0</pose>
     <link name="link">
-      <gravity>false</gravity>
       <inertial>
         <mass>0.1</mass>
       </inertial>
