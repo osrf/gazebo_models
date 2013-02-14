@@ -41,6 +41,7 @@ coke_can
 cordless_drill
 create
 cube_20k
+double_pendulum_with_base
 dumpster
 fast_food
 gas_station
