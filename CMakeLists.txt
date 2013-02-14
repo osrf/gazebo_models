@@ -52,6 +52,7 @@ house_2
 house_3
 irobot_hand
 kinect
+kitchen_dining
 mailbox
 monkey_wrench
 nist_elevated_floor_120
