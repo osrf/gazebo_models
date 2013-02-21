@@ -1,0 +1,230 @@
+<sdf version="1.3">
+    <model name="fire_hose_long">
+        <link name="sphere_09">
+            <gravity>false</gravity>
+            <pose>1.700000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
+            <inertial>
+                <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
+                <mass>0.100000</mass>
+                <inertia>
+                    <ixx>0.010000</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.010000</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.010000</izz>
+                </inertia>
+            </inertial>
+            <collision name="sphere_09_collision">
+                <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
+                <geometry>
+                    <sphere>
+                        <radius>0.025000</radius>
+                    </sphere>
+                </geometry>
+            </collision>
+            <visual name="sphere_09_vis">
+                <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
+                <geometry>
+                    <sphere>
+                        <radius>0.025000</radius>
+                    </sphere>
+                </geometry>
+            </visual>
+            <velocity_decay />
+        </link>
+        <link name="link_09">
+            <gravity>false</gravity>
+            <pose>1.700000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
+            <inertial>
+                <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
+                <mass>0.100000</mass>
+                <inertia>
+                    <ixx>0.010000</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.010000</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.010000</izz>
+                </inertia>
+            </inertial>
+            <collision name="link_09_collision">
+                <pose>0.100000 0.000000 0.000000 0.000000 1.570790 0.000000</pose>
+                <geometry>
+                    <cylinder>
+                        <length>0.200000</length>
+                        <radius>0.025000</radius>
+                    </cylinder>
+                </geometry>
+            </collision>
+            <visual name="link_09_vis">
+                <pose>0.100000 0.000000 0.000000 0.000000 1.570790 0.000000</pose>
+                <geometry>
+                    <cylinder>
+                        <length>0.200000</length>
+                        <radius>0.025000</radius>
+                    </cylinder>
+                </geometry>
+            </visual>
+            <velocity_decay />
+        </link>
+        <joint name="joint_09_2" type="revolute">
+            <child>link_09</child>
+            <parent>sphere_09</parent>
+            <axis>
+                <xyz>0.000000 1.000000 0.000000</xyz>
+                <limit>
+                    <lower>-1.570800</lower>
+                    <upper>1.570800</upper>
+                </limit>
+                <dynamics />
+            </axis>
+        </joint>
+        <link name="sphere_10">
+            <gravity>false</gravity>
+            <pose>1.900000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
+            <inertial>
+                <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
+                <mass>0.100000</mass>
+                <inertia>
+                    <ixx>0.010000</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.010000</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.010000</izz>
+                </inertia>
+            </inertial>
+            <collision name="sphere_10_collision">
+                <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
+                <geometry>
+                    <sphere>
+                        <radius>0.025000</radius>
+                    </sphere>
+                </geometry>
+            </collision>
+            <visual name="sphere_10_vis">
+                <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
+                <geometry>
+                    <sphere>
+                        <radius>0.025000</radius>
+                    </sphere>
+                </geometry>
+            </visual>
+            <velocity_decay />
+        </link>
+        <joint name="joint_10_1" type="revolute">
+            <child>sphere_10</child>
+            <parent>link_09</parent>
+            <axis>
+                <xyz>0.000000 0.000000 1.000000</xyz>
+                <limit>
+                    <lower>-1.570800</lower>
+                    <upper>1.570800</upper>
+                </limit>
+                <dynamics />
+            </axis>
+        </joint>
+        <link name="coupling_base">
+            <pose>1.900000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
+            <inertial>
+                <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
+                <mass>0.100000</mass>
+                <inertia>
+                    <ixx>0.010000</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.010000</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.010000</izz>
+                </inertia>
+            </inertial>
+            <!--
+      <collision name='coupling_collision'>
+        <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001000 0.001000 0.001000</scale>
+            <uri>model://fire_hose_long/meshes/coupling.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      -->
+            <velocity_decay />
+        </link>
+        <joint name="joint_20_2" type="revolute">
+            <child>coupling_base</child>
+            <parent>sphere_10</parent>
+            <axis>
+                <xyz>0.000000 1.000000 0.000000</xyz>
+                <limit>
+                    <lower>-1.570800</lower>
+                    <upper>1.570800</upper>
+                </limit>
+                <dynamics />
+            </axis>
+        </joint>
+        <link name="coupling">
+            <pose>1.900000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
+            <inertial>
+                <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
+                <mass>0.100000</mass>
+                <inertia>
+                    <ixx>0.010000</ixx>
+                    <ixy>0.000000</ixy>
+                    <ixz>0.000000</ixz>
+                    <iyy>0.010000</iyy>
+                    <iyz>0.000000</iyz>
+                    <izz>0.010000</izz>
+                </inertia>
+            </inertial>
+            <visual name="coupling_mesh_visual">
+                <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
+                <geometry>
+                    <mesh>
+                        <scale>0.001000 0.001000 0.001000</scale>
+                        <uri>model://fire_hose_long/meshes/coupling.stl</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+            <!--
+      <visual name='coupling_visual'>
+        <pose>0.030000 0.000000 0.000000 0.000000 1.570790 0.000000</pose>
+        <geometry>
+          <cylinder>
+            <length>0.03</length>
+            <radius>0.04</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      -->
+            <collision name="coupling_collision">
+                <pose>0.030000 0.000000 0.000000 0.000000 1.570790 0.000000</pose>
+                <geometry>
+                    <cylinder>
+                        <length>0.03</length>
+                        <radius>0.04</radius>
+                    </cylinder>
+                </geometry>
+            </collision>
+            <velocity_decay>
+                <linear>0.005</linear>
+                <angular>0.005</angular>
+            </velocity_decay>
+        </link>
+        <joint name="joint_20_3" type="revolute">
+            <child>coupling</child>
+            <parent>coupling_base</parent>
+            <axis>
+                <xyz>1.000000 0.000000 0.000000</xyz>
+            </axis>
+        </joint>
+        <plugin name="fire_hose_long_plugin" filename="libDRCFirehosePlugin.so">
+            <coupling_link>coupling</coupling_link>
+            <spout_model>standpipe</spout_model>
+            <spout_link>standpipe</spout_link>
+            <thread_pitch>-1000</thread_pitch>
+            <coupling_relative_pose>1.17038e-05 -0.125623 0.35 -0.0412152 -1.57078 1.61199</coupling_relative_pose>
+        </plugin>
+    </model>
+</sdf>
