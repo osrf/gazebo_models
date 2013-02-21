@@ -41,6 +41,7 @@ coke_can
 cordless_drill
 create
 cube_20k
+double_pendulum_with_base
 dumpster
 fast_food
 gas_station
@@ -52,6 +53,7 @@ house_2
 house_3
 irobot_hand
 kinect
+kitchen_dining
 mailbox
 monkey_wrench
 nist_elevated_floor_120
