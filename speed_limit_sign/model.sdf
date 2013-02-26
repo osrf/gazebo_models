@@ -6,6 +6,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
+            <scale>10 10 10</scale>
             <uri>model://speed_limit_sign/meshes/speed_limit_sign.dae</uri>
           </mesh>
         </geometry>
@@ -13,6 +14,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
+            <scale>10 10 10</scale>
             <uri>model://speed_limit_sign/meshes/speed_limit_sign.dae</uri>
           </mesh>
         </geometry>
