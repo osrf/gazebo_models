@@ -38,6 +38,8 @@ bowl
 cabinet
 camera
 coke_can
+construction_barrel
+construction_cone
 cordless_drill
 create
 cube_20k
@@ -54,6 +56,7 @@ house_3
 irobot_hand
 kinect
 kitchen_dining
+lamp_post
 mailbox
 monkey_wrench
 nist_elevated_floor_120
@@ -74,7 +77,9 @@ saucepan
 simple_arm
 simple_arm_gripper
 simple_gripper
+speed_limit_sign
 stereo_camera
+starting_pen
 stop_sign
 sun
 table
