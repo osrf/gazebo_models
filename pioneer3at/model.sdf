@@ -6,13 +6,20 @@
     <link name="chassis">
       <inertial>
         <mass>14.0</mass>
-        <inertia>
-          <ixx>1.0</ixx>
+        <inertia>          
+          <!-- http://en.wikipedia.org/wiki/List_of_moment_of_inertia_tensors
+          MATLAB:
+          m=14; h=0.19; w=0.4; d=0.5; 
+          ixx = 1/12*m*(h^2+d^2)
+          iyy = 1/12*m*(w^2+d^2) 
+          izz = 1/12*m*(h^2+d^2) 
+          -->
+          <ixx>0.3338</ixx>
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>1.0</iyy>
+          <iyy>0.4783</iyy>
           <iyz>0.0</iyz>
-          <izz>1.0</izz>
+          <izz>0.3338</izz>
         </inertia>
       </inertial>
       <collision name="collision">
@@ -148,7 +155,7 @@
     </link>
     
     
-    <joint type="revolute" name="right_front_wheel_joint">
+    <joint type="revolute" name="right_front">
       <pose>0 0 0 0 0 0</pose>
       <child>right_front_wheel</child>
       <parent>chassis</parent>
@@ -156,7 +163,7 @@
         <xyz>0 1 0</xyz>
       </axis>
     </joint>
-    <joint type="revolute" name="right_rear_wheel_joint">
+    <joint type="revolute" name="right_rear">
       <pose>0 0 0 0 0 0</pose>
       <child>right_rear_wheel</child>
       <parent>chassis</parent>
@@ -164,7 +171,7 @@
         <xyz>0 1 0</xyz>
       </axis>
     </joint>
-    <joint type="revolute" name="left_front_wheel_joint">
+    <joint type="revolute" name="left_front">
       <pose>0 0 0 0 0 0</pose>
       <child>left_front_wheel</child>
       <parent>chassis</parent>
@@ -172,7 +179,7 @@
         <xyz>0 1 0</xyz>
       </axis>
     </joint>
-    <joint type="revolute" name="left_rear_wheel_joint">
+    <joint type="revolute" name="left_rear">
       <pose>0 0 0 0 0 0</pose>
       <child>left_rear_wheel</child>
       <parent>chassis</parent>
@@ -197,8 +204,10 @@
           </limit>
         </axis>
       </joint>
-    -->
     
-    <plugin name="ros_based_plugin" filename="libros_model_plugin.so"/>
+    <plugin name="SkidSteerDrivePlugin" filename="SkidSteerDrivePlugin.so"/>
+      <MaxForce>5.0</MaxForce>
+    
+    -->
   </model>
 </sdf>
