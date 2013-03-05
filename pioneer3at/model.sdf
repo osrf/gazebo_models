@@ -1,5 +1,5 @@
 <sdf version="1.3">
-  <model name="P3AT">
+  <model name="Pioneer3AT">
     <pose>0 0 0.180 0 0 0</pose>
     <static>false</static>
     
@@ -32,7 +32,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://Pioneer/meshes/chassis.dae</uri>
+            <uri>model://pioneer3at/meshes/chassis.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -61,7 +61,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://Pioneer/meshes/wheel.dae</uri>
+            <uri>model://pioneer3at/meshes/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -90,7 +90,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://Pioneer/meshes/wheel.dae</uri>
+            <uri>model://pioneer3at/meshes/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -119,7 +119,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://Pioneer/meshes/wheel.dae</uri>
+            <uri>model://pioneer3at/meshes/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -148,7 +148,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://Pioneer/meshes/wheel.dae</uri>
+            <uri>model://pioneer3at/meshes/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -204,10 +204,11 @@
           </limit>
         </axis>
       </joint>
-    
-    <plugin name="SkidSteerDrivePlugin" filename="SkidSteerDrivePlugin.so"/>
+      
       <MaxForce>5.0</MaxForce>
-    
     -->
+    <plugin name="SkidSteerDrivePlugin" filename="libSkidSteerDrivePlugin.so" />
+    
+    
   </model>
 </sdf>
