@@ -205,9 +205,10 @@
         </axis>
       </joint>
       
-      <MaxForce>5.0</MaxForce>
-    -->
+    Comming Soon to Gazebo Plugins:
     <plugin name="SkidSteerDrivePlugin" filename="libSkidSteerDrivePlugin.so" />
+    <MaxForce>5.0</MaxForce>
+    -->
     
     
   </model>
