@@ -12,29 +12,10 @@ string (TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
 
 exec_program(date ARGS -u +%Y-%m-%-dT%H:%M:%S OUTPUT_VARIABLE CURRENT_DATE)
 
-#include (FindPkgConfig)
-#if (PKG_CONFIG_FOUND)
-#  pkg_check_modules(GAZEBO gazebo)
-#  pkg_check_modules(OGRE OGRE)
-#  pkg_check_modules(CEGUI CEGUI)
-#endif()
-#
-#include_directories(
-#  ${GAZEBO_INCLUDE_DIRS}
-#  ${OGRE_INCLUDE_DIRS}
-#  ${CEGUI_INCLUDE_DIRS}
-#)
-#
-#link_directories(
-#  ${GAZEBO_LIBRARY_DIRS}
-#  ${OGRE_LIBRARY_DIRS}
-#  ${CEGUI_LIBRARY_DIRS}
-#)
-
-
 set (dirs
 bookshelf
 bowl
+brick_box_3x1x3
 cabinet
 camera
 coke_can
@@ -46,6 +27,7 @@ cube_20k
 double_pendulum_with_base
 dumpster
 fast_food
+fire_hose_long
 gas_station
 ground_plane
 hammer
@@ -77,8 +59,8 @@ simple_arm
 simple_arm_gripper
 simple_gripper
 speed_limit_sign
-stereo_camera
 starting_pen
+stereo_camera
 stop_sign
 sun
 table
@@ -116,4 +98,3 @@ message (STATUS "Install path: ${CMAKE_INSTALL_PREFIX}/models")
 
 # This must always be last!
 include(CPack)
-
