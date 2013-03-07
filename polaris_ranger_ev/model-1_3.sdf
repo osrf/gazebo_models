@@ -80,7 +80,7 @@
         <pose>-0.1 0.0 0.625 0.0 0.0 0.0</pose> 
         <geometry>
           <box>
-            <size>0.6 1.0 0.65</size>
+            <size>0.6 1.0 0.55</size>
           </box>
         </geometry>
       </collision>
@@ -88,7 +88,7 @@
         <pose>-0.3 0.0 1.125 0.0 -0.2 0.0</pose> 
         <geometry>
           <box>
-            <size>0.1 1.0 0.4</size>
+            <size>0.06 1.0 0.4</size>
           </box>
         </geometry>
       </collision>
@@ -101,7 +101,7 @@
         </geometry>
       </collision>
       <collision name="steering_column">
-        <pose>0.525 0.3 1.025 0.0 -0.8 0.0</pose> 
+        <pose>0.525 0.3 1.125 0.0 -0.8 0.0</pose> 
         <geometry>
           <cylinder>
             <radius>0.05</radius>
@@ -109,7 +109,22 @@
           </cylinder>
         </geometry>
       </collision>
-   </link>
+      <visual name="steering_column_visual">
+        <pose>0.525 0.3 1.125 0.0 -0.8 0.0</pose> 
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.45</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
     <link name="rear_right_wheel">
       <pose>-0.85 -0.6 0.32 1.570796 0.0 0.0</pose>
       <inertial>
@@ -423,7 +438,7 @@
     </link>
 
     <link name='steering_wheel'>
-      <pose>0.37 0.30 1.2  0 -0.8 0</pose> 
+      <pose>0.37 0.30 1.3  0 -0.8 0</pose> 
       <inertial>
         <mass>1.0</mass>
         <pose>0 0 0 0 0 0</pose>
@@ -440,7 +455,7 @@
         <pose>0.0 0.08 0.0  1.570796 0 0</pose> 
         <geometry>
           <cylinder>
-            <radius>0.02</radius>
+            <radius>0.015</radius>
             <length>0.15</length>
           </cylinder>
         </geometry>
@@ -449,7 +464,7 @@
         <pose>0.0 -0.08 0.0  1.570796 0 0</pose> 
         <geometry>
           <cylinder>
-            <radius>0.02</radius>
+            <radius>0.015</radius>
             <length>0.15</length>
           </cylinder>
         </geometry>
@@ -458,52 +473,196 @@
         <pose>-0.08 0.0 0.0 0 1.570796 0</pose> 
         <geometry>
           <cylinder>
-            <radius>0.02</radius>
+            <radius>0.015</radius>
             <length>0.15</length>
           </cylinder>
         </geometry>
       </collision>
       <collision name="collision00">
         <pose>0.150000 0.000000 0  0 1.570796 1.570796</pose>
-        <geometry><cylinder><length>0.105065778087</length><radius>0.01</radius></cylinder></geometry>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.015</radius></cylinder></geometry>
       </collision>
       <collision name="collision01">
         <pose>0.121353 0.088168 0  0 1.570796 2.199115</pose>
-        <geometry><cylinder><length>0.105065778087</length><radius>0.01</radius></cylinder></geometry>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.015</radius></cylinder></geometry>
       </collision>
       <collision name="collision02">
         <pose>0.046353 0.142658 0  0 1.570796 2.827433</pose>
-        <geometry><cylinder><length>0.105065778087</length><radius>0.01</radius></cylinder></geometry>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.015</radius></cylinder></geometry>
       </collision>
       <collision name="collision03">
        <pose>-0.046353 0.142658 0  0 1.570796 3.455752</pose>
-        <geometry><cylinder><length>0.105065778087</length><radius>0.01</radius></cylinder></geometry>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.015</radius></cylinder></geometry>
       </collision>
       <collision name="collision04">
         <pose>-0.121353 0.088168 0  0 1.570796 4.084070</pose>
-        <geometry><cylinder><length>0.105065778087</length><radius>0.01</radius></cylinder></geometry>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.015</radius></cylinder></geometry>
       </collision>
       <collision name="collision05">
         <pose>-0.150000 0.000000 0  0 1.570796 4.712389</pose>
-        <geometry><cylinder><length>0.105065778087</length><radius>0.01</radius></cylinder></geometry>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.015</radius></cylinder></geometry>
       </collision>
       <collision name="collision06">
         <pose>-0.121353 -0.088168 0  0 1.570796 5.340708</pose>
-        <geometry><cylinder><length>0.105065778087</length><radius>0.01</radius></cylinder></geometry>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.015</radius></cylinder></geometry>
       </collision>
       <collision name="collision07">
         <pose>-0.046353 -0.142658 0  0 1.570796 5.969026</pose>
-        <geometry><cylinder><length>0.105065778087</length><radius>0.01</radius></cylinder></geometry>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.015</radius></cylinder></geometry>
       </collision>
       <collision name="collision08">
         <pose>0.046353 -0.142658 0  0 1.570796 6.597345</pose>
-        <geometry><cylinder><length>0.105065778087</length><radius>0.01</radius></cylinder></geometry>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.015</radius></cylinder></geometry>
       </collision>
       <collision name="collision09">
         <pose>0.121353 -0.088168 0  0 1.570796 7.225663</pose>
-        <geometry><cylinder><length>0.105065778087</length><radius>0.01</radius></cylinder></geometry>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.015</radius></cylinder></geometry>
       </collision>
-      <velocity_decay>0.1</velocity_decay>
+      <visual name="steering_wheel_post_left">
+        <pose>0.0 0.08 0.0  1.570796 0 0</pose> 
+        <geometry>
+          <cylinder>
+            <radius>0.015</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="steering_wheel_post_right">
+        <pose>0.0 -0.08 0.0  1.570796 0 0</pose> 
+        <geometry>
+          <cylinder>
+            <radius>0.015</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="steering_wheel_post_middle">
+        <pose>-0.08 0.0 0.0 0 1.570796 0</pose> 
+        <geometry>
+          <cylinder>
+            <radius>0.015</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="visual00">
+        <pose>0.150000 0.000000 0  0 1.570796 1.570796</pose>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.015</radius></cylinder></geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="visual01">
+        <pose>0.121353 0.088168 0  0 1.570796 2.199115</pose>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.015</radius></cylinder></geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="visual02">
+        <pose>0.046353 0.142658 0  0 1.570796 2.827433</pose>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.015</radius></cylinder></geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="visual03">
+       <pose>-0.046353 0.142658 0  0 1.570796 3.455752</pose>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.015</radius></cylinder></geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="visual04">
+        <pose>-0.121353 0.088168 0  0 1.570796 4.084070</pose>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.015</radius></cylinder></geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="visual05">
+        <pose>-0.150000 0.000000 0  0 1.570796 4.712389</pose>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.015</radius></cylinder></geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="visual06">
+        <pose>-0.121353 -0.088168 0  0 1.570796 5.340708</pose>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.015</radius></cylinder></geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="visual07">
+        <pose>-0.046353 -0.142658 0  0 1.570796 5.969026</pose>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.015</radius></cylinder></geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="visual08">
+        <pose>0.046353 -0.142658 0  0 1.570796 6.597345</pose>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.015</radius></cylinder></geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="visual09">
+        <pose>0.121353 -0.088168 0  0 1.570796 7.225663</pose>
+        <geometry><cylinder><length>0.105065778087</length><radius>0.015</radius></cylinder></geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
     </link>
     <link name='hand_brake'>
       <pose>0.50 0.00 1.05 0.0 3.2 0.0</pose> 
