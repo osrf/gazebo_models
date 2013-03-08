@@ -100,6 +100,62 @@
           </box>
         </geometry>
       </collision>
+      <!-- Begin simple collision shapes for entry/exit handles -->
+      <collision name="handle_left_top">
+        <pose>-0.23 0.61 1.175  0 -1.32 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.015</radius>
+            <length>0.25</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="handle_left_bottom">
+        <pose>-0.20 0.61 0.98  0 -1.40 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.015</radius>
+            <length>0.25</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="handle_left_middle">
+        <pose>-0.10 0.61 1.055  0 -0.20 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>0.20</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="handle_right_top">
+        <pose>-0.23 -0.61 1.175  0 -1.32 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.015</radius>
+            <length>0.25</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="handle_right_bottom">
+        <pose>-0.20 -0.61 0.98  0 -1.40 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.015</radius>
+            <length>0.25</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="handle_right_middle">
+        <pose>-0.10 -0.61 1.055  0 -0.20 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>0.20</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <!-- End simple collision shapes for entry/exit handles -->
       <!-- Begin simple collision shapes for roll cage -->
       <collision name="rollcage_top_left">
         <pose>0.0 0.61 1.92  0 1.61 0</pose>
