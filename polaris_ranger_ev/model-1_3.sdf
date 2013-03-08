@@ -100,6 +100,134 @@
           </box>
         </geometry>
       </collision>
+      <!-- Begin simple collision shapes for roll cage -->
+      <collision name="rollcage_top_left">
+        <pose>0.0 0.61 1.92  0 1.61 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>0.68</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="rollcage_top_right">
+        <pose>0.0 -0.61 1.92  0 1.61 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>0.68</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="rollcage_top_front">
+        <pose>0.325 0.0 1.89  1.570796 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>1.22</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="rollcage_top_back">
+        <pose>-0.330 0.0 1.92  1.570796 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>1.22</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="rollcage_front_left">
+        <pose>0.54 0.61 1.45  0 -0.44 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>1.04</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="rollcage_front_right">
+        <pose>0.54 -0.61 1.45  0 -0.44 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>1.04</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="rollcage_back_left">
+        <pose>-0.37 0.61 1.25  0 -0.14 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>0.90</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="rollcage_back_right">
+        <pose>-0.37 -0.61 1.25  0 -0.14 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>0.90</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="rollcage_back_midleft">
+        <pose>-0.37 0.155 1.25  0 -0.14 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.023</radius>
+            <length>0.90</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="rollcage_back_midright">
+        <pose>-0.37 -0.155 1.25  0 -0.14 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.023</radius>
+            <length>0.90</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="rollcage_back_upper_left">
+        <pose>-0.38 0.61 1.82  0 0.40 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>0.29</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="rollcage_back_upper_right">
+        <pose>-0.38 -0.61 1.82  0 0.40 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>0.29</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="rollcage_back_upper_midleft">
+        <pose>-0.38 0.155 1.82  0 0.40 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.023</radius>
+            <length>0.29</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="rollcage_back_upper_midright">
+        <pose>-0.38 -0.155 1.82  0 0.40 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.023</radius>
+            <length>0.29</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <!-- End simple collision shapes for roll cage -->
       <collision name="steering_column">
         <pose>0.525 0.3 1.125 0.0 -0.8 0.0</pose> 
         <geometry>
