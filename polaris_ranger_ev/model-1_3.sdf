@@ -341,10 +341,10 @@
     </joint>
     <!-- gas/brake pedals, steering wheel and hand brake -->
     <link name='gas_pedal'>
-      <pose>0.58 0.14 0.51 0 -1.0 0</pose>
+      <pose>0.53 0.14 0.56 0 -1.0 0</pose>
       <gravity>false</gravity>
       <inertial>
-        <mass>1.0</mass>
+        <mass>0.1</mass>
         <pose>0 0 0 0 0 0</pose>
         <inertia>
           <ixx>0.01</ixx>
@@ -383,9 +383,9 @@
 
     <link name='brake_pedal'>
       <gravity>false</gravity>
-      <pose>0.59 0.27 0.53 0 -1.0 0</pose>
+      <pose>0.54 0.27 0.58 0 -1.0 0</pose>
       <inertial>
-        <mass>1</mass>
+        <mass>0.1</mass>
         <pose>0 0 0 0 0 0</pose>
         <inertia>
           <ixx>0.01</ixx>
@@ -551,7 +551,7 @@
         <xyz>1.000000 0.000000 -1.000000</xyz>
         <limit>
           <lower>0.00</lower>
-          <upper>0.06</upper>
+          <upper>0.15</upper>
         </limit>
       </axis>
     </joint>
@@ -562,7 +562,7 @@
         <xyz>1.000000 0.000000 -0.600000</xyz>
         <limit>
           <lower>0.00</lower>
-          <upper>0.05</upper>
+          <upper>0.15</upper>
         </limit>
       </axis>
     </joint>
@@ -585,7 +585,7 @@
         <xyz>0.0 -1.0 0.0</xyz>
         <limit>
           <lower>0</lower>
-          <upper>0.35</upper>
+          <upper>0.6</upper>
         </limit>
       </axis>
     </joint>
