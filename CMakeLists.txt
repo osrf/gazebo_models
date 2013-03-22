@@ -50,6 +50,7 @@ nist_simple_ramp_120
 nist_stairs_120
 office_building
 pioneer2dx
+pioneer3at
 polaris_ranger_ev
 powerplant
 pr2
