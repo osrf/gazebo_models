@@ -81,7 +81,7 @@
         </geometry>
       </collision>
       <collision name="seat">
-        <pose>-0.1 0.0 0.625 0.0 0.0 0.0</pose> 
+        <pose>-0.1 0.0 0.585 0.0 0.0 0.0</pose> 
         <geometry>
           <box>
             <size>0.6 1.0 0.55</size>
@@ -363,18 +363,6 @@
         </material>
       </visual>
     </link>
-    <joint type="revolute" name="rear_right_wheel_joint">
-      <pose>0.0 0.0 -0.1 0 0 0</pose>
-      <child>rear_right_wheel</child>
-      <parent>chassis</parent>
-      <axis>
-        <xyz>0 1 0</xyz>
-      </axis>
-      <physics><ode><limit>
-        <cfm>0.000000</cfm>
-        <erp>0.900000</erp>
-      </limit></ode></physics>
-    </joint>
     <link name="rear_left_wheel">
       <pose>-0.85 0.6 0.32 1.570796 0.0 0.0</pose>
       <inertial>
@@ -425,18 +413,6 @@
         </material>
       </visual>
     </link>
-
-    <joint type="revolute" name="rear_left_wheel_joint">
-      <child>rear_left_wheel</child>
-      <parent>chassis</parent>
-      <axis>
-        <xyz>0 1 0</xyz>
-      </axis>
-      <physics><ode><limit>
-        <cfm>0.000000</cfm>
-        <erp>0.900000</erp>
-      </limit></ode></physics>
-    </joint>
 
     <link name="front_right_wheel">
       <pose>1.03 -0.6 0.32 1.570796 0.0 0.0</pose>
@@ -507,34 +483,6 @@
         </geometry>
       </collision>
     </link>
-    <joint type="revolute" name="front_right_steering_joint">
-      <child>front_right_wheel_steering_block</child>
-      <parent>chassis</parent>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>-1.0</lower>
-          <upper>1.0</upper>
-        </limit>
-      </axis>
-      <physics><ode><limit>
-        <cfm>0.000000</cfm>
-        <erp>0.900000</erp>
-      </limit></ode></physics>
-    </joint>
-
-    <joint type="revolute" name="front_right_wheel_joint">
-      <child>front_right_wheel</child>
-      <parent>front_right_wheel_steering_block</parent>
-      <axis>
-        <xyz>0 1 0</xyz>
-      </axis>
-      <physics><ode><limit>
-        <cfm>0.000000</cfm>
-        <erp>0.900000</erp>
-      </limit></ode></physics>
-    </joint>
-
     <link name="front_left_wheel">
       <pose>1.03 0.6 0.32 1.570796 0.0 0.0</pose>
       <inertial>
@@ -602,32 +550,6 @@
         </geometry>
       </collision>
     </link>
-    <joint type="revolute" name="front_left_steering_joint">
-      <child>front_left_wheel_steering_block</child>
-      <parent>chassis</parent>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>-1.0</lower>
-          <upper>1.0</upper>
-        </limit>
-      </axis>
-      <physics><ode><limit>
-        <cfm>0.000000</cfm>
-        <erp>0.900000</erp>
-      </limit></ode></physics>
-    </joint>
-    <joint type="revolute" name="front_left_wheel_joint">
-      <child>front_left_wheel</child>
-      <parent>front_left_wheel_steering_block</parent>
-      <axis>
-        <xyz>0 1 0</xyz>
-      </axis>
-      <physics><ode><limit>
-        <cfm>0.000000</cfm>
-        <erp>0.900000</erp>
-      </limit></ode></physics>
-    </joint>
     <!-- gas/brake pedals, steering wheel and hand brake -->
     <link name='gas_pedal'>
       <pose>0.53 0.14 0.56 0 0 0</pose>
@@ -811,6 +733,76 @@
         </material>
       </visual>
     </link>
+
+    <joint type="revolute" name="front_left_steering_joint">
+      <child>front_left_wheel_steering_block</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.0</lower>
+          <upper>1.0</upper>
+        </limit>
+      </axis>
+      <physics><ode><limit>
+        <cfm>0.000000</cfm>
+        <erp>0.900000</erp>
+      </limit></ode></physics>
+    </joint>
+    <joint type="revolute" name="front_left_wheel_joint">
+      <child>front_left_wheel</child>
+      <parent>front_left_wheel_steering_block</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+      <physics><ode><limit>
+        <cfm>0.000000</cfm>
+        <erp>0.900000</erp>
+      </limit></ode></physics>
+    </joint>
+
+    <joint type="revolute" name="front_right_steering_joint">
+      <child>front_right_wheel_steering_block</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.0</lower>
+          <upper>1.0</upper>
+        </limit>
+      </axis>
+      <physics><ode><limit>
+        <cfm>0.000000</cfm>
+        <erp>0.900000</erp>
+      </limit></ode></physics>
+    </joint>
+
+    <joint type="revolute" name="front_right_wheel_joint">
+      <child>front_right_wheel</child>
+      <parent>front_right_wheel_steering_block</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+      <physics><ode><limit>
+        <cfm>0.000000</cfm>
+        <erp>0.900000</erp>
+      </limit></ode></physics>
+    </joint>
+
+
+    <joint type="revolute" name="rear_left_wheel_joint">
+      <child>rear_left_wheel</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+      <physics><ode><limit>
+        <cfm>0.000000</cfm>
+        <erp>0.900000</erp>
+      </limit></ode></physics>
+    </joint>
+
+
     <joint name='gas_joint' type='prismatic'>
       <parent>chassis</parent>
       <child>gas_pedal</child>
@@ -856,5 +848,19 @@
         </limit>
       </axis>
     </joint>
+
+    <joint type="revolute" name="rear_right_wheel_joint">
+      <pose>0.0 0.0 -0.1 0 0 0</pose>
+      <child>rear_right_wheel</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+      <physics><ode><limit>
+        <cfm>0.000000</cfm>
+        <erp>0.900000</erp>
+      </limit></ode></physics>
+    </joint>
+
   </model>
 </sdf>
