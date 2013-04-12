@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<gazebo version='1.2'>
+<sdf version='1.4'>
   <model name='pr2'>
     <static>0</static>
     <link name='base_footprint'>
@@ -148,13 +148,6 @@
             <length>0.034000</length>
           </cylinder>
         </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <max_vel>100.0</max_vel>
-            </ode>
-          </contact>
-        </surface>
       </collision>
       <visual name='bl_caster_l_wheel_link_geom_visual'>
         <geometry>
@@ -187,13 +180,6 @@
             <length>0.034000</length>
           </cylinder>
         </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <max_vel>100.0</max_vel>
-            </ode>
-          </contact>
-        </surface>
       </collision>
       <visual name='bl_caster_r_wheel_link_geom_visual'>
         <geometry>
@@ -257,13 +243,6 @@
             <length>0.034000</length>
           </cylinder>
         </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <max_vel>100.0</max_vel>
-            </ode>
-          </contact>
-        </surface>
       </collision>
       <visual name='br_caster_l_wheel_link_geom_visual'>
         <geometry>
@@ -296,13 +275,6 @@
             <length>0.034000</length>
           </cylinder>
         </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <max_vel>100.0</max_vel>
-            </ode>
-          </contact>
-        </surface>
       </collision>
       <visual name='br_caster_r_wheel_link_geom_visual'>
         <geometry>
@@ -366,13 +338,6 @@
             <length>0.034000</length>
           </cylinder>
         </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <max_vel>100.0</max_vel>
-            </ode>
-          </contact>
-        </surface>
       </collision>
       <visual name='fl_caster_l_wheel_link_geom_visual'>
         <geometry>
@@ -405,13 +370,6 @@
             <length>0.034000</length>
           </cylinder>
         </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <max_vel>100.0</max_vel>
-            </ode>
-          </contact>
-        </surface>
       </collision>
       <visual name='fl_caster_r_wheel_link_geom_visual'>
         <geometry>
@@ -475,13 +433,6 @@
             <length>0.034000</length>
           </cylinder>
         </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <max_vel>100.0</max_vel>
-            </ode>
-          </contact>
-        </surface>
       </collision>
       <visual name='fr_caster_l_wheel_link_geom_visual'>
         <geometry>
@@ -514,13 +465,6 @@
             <length>0.034000</length>
           </cylinder>
         </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <max_vel>100.0</max_vel>
-            </ode>
-          </contact>
-        </surface>
       </collision>
       <visual name='fr_caster_r_wheel_link_geom_visual'>
         <geometry>
@@ -3089,4 +3033,4 @@
       </axis>
     </joint>
   </model>
-</gazebo>
+</sdf>

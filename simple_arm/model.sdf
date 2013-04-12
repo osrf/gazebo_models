@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<gazebo version="1.2">
+<sdf version="1.4">
   <model name="simple_arm">
     <link name="arm_base">
       <inertial>
@@ -30,7 +30,10 @@
           </box>
         </geometry>
         <material>
-          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Blue</name></script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Blue</name>
+          </script>
         </material>
       </visual>
       <collision name="arm_base_geom_arm_trunk">
@@ -51,7 +54,10 @@
           </cylinder>
         </geometry>
         <material>
-          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Red</name></script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
         </material>
       </visual>
     </link>
@@ -87,7 +93,10 @@
           </cylinder>
         </geometry>
         <material>
-          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Yellow</name></script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
         </material>
       </visual>
       <collision name="arm_shoulder_pan_geom_arm_shoulder">
@@ -106,7 +115,10 @@
           </box>
         </geometry>
         <material>
-          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Yellow</name></script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
         </material>
       </visual>
     </link>
@@ -142,7 +154,10 @@
           </cylinder>
         </geometry>
         <material>
-          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Red</name></script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
         </material>
       </visual>
       <collision name="arm_elbow_pan_geom_arm_elbow">
@@ -161,7 +176,10 @@
           </box>
         </geometry>
         <material>
-          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Yellow</name></script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
         </material>
       </visual>
       <collision name="arm_elbow_pan_geom_arm_wrist">
@@ -182,7 +200,10 @@
           </cylinder>
         </geometry>
         <material>
-          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Red</name></script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
         </material>
       </visual>
     </link>
@@ -218,7 +239,10 @@
           </cylinder>
         </geometry>
         <material>
-          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Yellow</name></script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
         </material>
       </visual>
     </link>
@@ -254,7 +278,10 @@
           </cylinder>
         </geometry>
         <material>
-          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Red</name></script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
         </material>
       </visual>
     </link>
@@ -323,5 +350,5 @@
       </axis>
     </joint>
     -->
-  </model>
-</gazebo>
+    </model>
+  </sdf>
