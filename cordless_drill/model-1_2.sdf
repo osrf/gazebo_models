@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<gazebo version="1.2">
+  <model name="drill">
+    <link name="link">
+      <inertial>
+        <pose>-0.00637 -0.008 0.13254 0 0 0</pose>        
+        <inertia>
+          <ixx>0.01331127</ixx>
+          <ixy>-0.00030365</ixy>
+          <ixz>-0.00034148</ixz>
+          <iyy>0.01157659</iyy>
+          <iyz>0.00088073</iyz>
+          <izz>0.00378028</izz>
+        </inertia>
+        <mass>1.50251902</mass>
+      </inertial>
+      <collision name="collision">
+        <pose>0 0 -0.09 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://cordless_drill/meshes/cordless_drill.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose>0 0 -0.09 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://cordless_drill/meshes/cordless_drill.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</gazebo>
