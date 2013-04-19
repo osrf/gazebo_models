@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<gazebo version="1.2">
+  <model name="nist_elevated_floor_120">
+    <static>true</static>
+    <link name="nist_elevated_floor_120">
+      <pose>0 0 0.0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://nist_elevated_floor_120/meshes/nist_elevated_floor_120.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://nist_elevated_floor_120/meshes/nist_elevated_floor_120.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</gazebo>

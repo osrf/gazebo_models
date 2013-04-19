@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<gazebo version="1.2">
+<sdf version="1.4">
   <model name="cabinet">
     <static>true</static>
     <link name="cabinet_bottom_plate">
@@ -149,4 +149,4 @@
       </visual>
     </link>
   </model>
-</gazebo>
+</sdf>
