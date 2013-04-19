@@ -21,6 +21,13 @@
             <uri>model://cordless_drill/meshes/cordless_drill.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+            </ode>
+          </contact>
+        </surface>
       </collision>
       <visual name="visual">
         <pose>0 0 -0.09 0 0 0</pose>
