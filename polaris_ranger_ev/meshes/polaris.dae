@@ -558,7 +558,7 @@
       </technique_common>
     </light>
   </library_lights>
-  <library_images>
+  <!--library_images>
     <image id="Gloss_psd">
       <init_from>file:///C:/Users/Cole/Desktop/Temp/images/Gloss.psd</init_from>
     </image>
@@ -577,7 +577,7 @@
     <image id="Ranger_Spec_tga">
       <init_from>file:///C:/Users/Cole/Desktop/Temp/images/Ranger_Spec.tga</init_from>
     </image>
-  </library_images>
+  </library_images-->
   <library_visual_scenes>
     <visual_scene id="MaxScene">
       <node name="EnvironmentAmbientLight">
