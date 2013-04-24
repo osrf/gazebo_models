@@ -33,10 +33,10 @@
         </material>
       </visual>
       <collision name="chassis_bottom">
-        <pose>0.0 0.0 0.35 0.0 0.0 0.0</pose> 
+        <pose>0.1 0.0 0.37  0 0 0</pose> 
         <geometry>
           <box>
-            <size>2.0 1.0 0.1</size>
+            <size>1.0 1.34 0.06</size>
           </box>
         </geometry>
       </collision>
