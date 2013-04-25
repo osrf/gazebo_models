@@ -36,7 +36,7 @@
         <pose>0.1 0.0 0.37  0 0 0</pose> 
         <geometry>
           <box>
-            <size>1.0 1.34 0.06</size>
+            <size>1.5 1.34 0.06</size>
           </box>
         </geometry>
       </collision>
@@ -81,13 +81,40 @@
         </geometry>
       </collision>
       <collision name="seat">
-        <pose>-0.1 0.0 0.585 0.0 0.0 0.0</pose> 
+        <pose>-0.1 0.0 0.560  0 0 0</pose> 
         <geometry>
           <box>
-            <size>0.6 1.0 0.55</size>
+            <size>0.6 1.0 0.50</size>
           </box>
         </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.01</min_depth>
+            </ode>
+          </contact>
+        </surface>
       </collision>
+      <collision name="mud_seat">
+        <pose>-0.1 0.0 0.81  0 0 0</pose> 
+        <geometry>
+          <box>
+            <size>0.63 1.0 0.1</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <collide_without_contact>true</collide_without_contact>
+          </contact>
+        </surface>
+      </collision>
+      <sensor name="seat_contact" type="contact">
+        <always_on>true</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>mud_seat</collision>
+        </contact>
+      </sensor>
       <collision name="seat_back">
         <pose>-0.3 0.0 1.125 0.0 -0.2 0.0</pose> 
         <geometry>
@@ -97,7 +124,7 @@
         </geometry>
       </collision>
       <collision name="engine">
-        <pose>0.95 0.0 0.7 0.0 0.0 0.0</pose> 
+        <pose>1.05 0.0 0.7 0.0 0.0 0.0</pose> 
         <geometry>
           <box>
             <size>0.58 1.0 0.8</size>
@@ -324,6 +351,12 @@
         </geometry>
       </visual-->
     </link>
+    <!--plugin name="seat_mud" filename="libMudPlugin.so">
+      <contact_sensor_name>chassis/seat_contact</contact_sensor_name>
+      <stiffness>0.0</stiffness>
+      <damping>100.0</damping>
+      <link_name>atlas::pelvis</link_name>
+    </plugin-->
     <link name="rear_right_wheel">
       <pose>-0.85 -0.6 0.32 1.570796 0.0 0.0</pose>
       <inertial>
@@ -350,6 +383,11 @@
               <slip2>0.0</slip2>
             </ode>
           </friction>
+          <contact>
+            <ode>
+              <min_depth>0.01</min_depth>
+            </ode>
+          </contact>
         </surface>
       </collision>
       <visual name="visual">
@@ -399,6 +437,11 @@
               <slip2>0.0</slip2>
             </ode>
           </friction>
+          <contact>
+            <ode>
+              <min_depth>0.01</min_depth>
+            </ode>
+          </contact>
         </surface>
       </collision>
 
@@ -450,6 +493,11 @@
               <slip2>0.0</slip2>
             </ode>
           </friction>
+          <contact>
+            <ode>
+              <min_depth>0.01</min_depth>
+            </ode>
+          </contact>
         </surface>
       </collision>
 
@@ -519,6 +567,11 @@
               <slip2>0.0</slip2>
             </ode>
           </friction>
+          <contact>
+            <ode>
+              <min_depth>0.01</min_depth>
+            </ode>
+          </contact>
         </surface>
       </collision>
       <visual name="visual">
@@ -562,7 +615,7 @@
     </link>
     <!-- gas/brake pedals, steering wheel and hand brake -->
     <link name='gas_pedal'>
-      <pose>0.53 0.14 0.56 0 0 0</pose>
+      <pose>0.63 0.10 0.58 0 0 0</pose>
       <gravity>false</gravity>
       <inertial>
         <mass>0.1</mass>
@@ -608,7 +661,7 @@
 
     <link name='brake_pedal'>
       <gravity>false</gravity>
-      <pose>0.54 0.27 0.58 0 0 0</pose>
+      <pose>0.64 0.27 0.58 0 0 0</pose>
       <inertial>
         <mass>0.1</mass>
         <pose>0 0 0 0 0 0</pose>
@@ -680,6 +733,13 @@
             </submesh>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.003</min_depth>
+            </ode>
+          </contact>
+        </surface>
       </collision>
 
       <visual name="visual">
@@ -820,7 +880,7 @@
         <xyz>1.000000 0.000000 -1.000000</xyz>
         <limit>
           <lower>0.00</lower>
-          <upper>0.15</upper>
+          <upper>0.08</upper>
         </limit>
       </axis>
     </joint>
@@ -831,7 +891,7 @@
         <xyz>1.000000 0.000000 -0.600000</xyz>
         <limit>
           <lower>0.00</lower>
-          <upper>0.15</upper>
+          <upper>0.08</upper>
         </limit>
       </axis>
     </joint>
