@@ -1,4 +1,4 @@
-material DuffBeer/Diffuse
+material Beer/Diffuse
 {
   technique
   {
