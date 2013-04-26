@@ -1,0 +1,15 @@
+material DuffBeer/Diffuse
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture beer.jpg
+        filtering anistropic
+        max_anisotropy 16
+      }
+    }
+  }
+}
