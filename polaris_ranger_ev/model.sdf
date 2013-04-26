@@ -132,7 +132,7 @@
         </geometry>
       </collision>
       <!-- Begin simple collision shapes for entry/exit handles -->
-      <collision name="handle_left_top">
+      <!--collision name="handle_left_top">
         <pose>-0.23 0.61 1.175  0 -1.32 0</pose>
         <geometry>
           <cylinder>
@@ -149,17 +149,17 @@
             <length>0.25</length>
           </cylinder>
         </geometry>
-      </collision>
+      </collision-->
       <collision name="handle_left_middle">
-        <pose>-0.10 0.61 1.055  0 -0.20 0</pose>
+        <pose>-0.35 0.61 1.055  0 -0.20 0</pose>
         <geometry>
           <cylinder>
             <radius>0.02</radius>
-            <length>0.20</length>
+            <length>0.17</length>
           </cylinder>
         </geometry>
       </collision>
-      <collision name="handle_right_top">
+      <!--collision name="handle_right_top">
         <pose>-0.23 -0.61 1.175  0 -1.32 0</pose>
         <geometry>
           <cylinder>
@@ -176,13 +176,13 @@
             <length>0.25</length>
           </cylinder>
         </geometry>
-      </collision>
+      </collision-->
       <collision name="handle_right_middle">
-        <pose>-0.10 -0.61 1.055  0 -0.20 0</pose>
+        <pose>-0.30 -0.61 1.055  0 -0.20 0</pose>
         <geometry>
           <cylinder>
             <radius>0.02</radius>
-            <length>0.20</length>
+            <length>0.17</length>
           </cylinder>
         </geometry>
       </collision>
@@ -239,6 +239,24 @@
           <cylinder>
             <radius>0.03</radius>
             <length>1.04</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="fender_front_right">
+        <pose>0.64 -0.61 0.70  0 0.35 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>0.72</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="fender_front_left">
+        <pose>0.64 0.61 0.70  0 0.35 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>0.72</length>
           </cylinder>
         </geometry>
       </collision>
