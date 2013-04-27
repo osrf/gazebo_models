@@ -5,6 +5,7 @@ material House_1/Diffuse
   {
     pass
     {
+      lighting off
       texture_unit
       {
         texture House_1_Diffuse.tga
