@@ -11,6 +11,8 @@
           <ixy>0.0</ixy><iyy>550</iyy>
           <ixz>0.0</ixz><iyz>0.0</iyz><izz>550</izz>
         </inertia>
+        <!-- chassis c.o.g. near lateral/longitudinal center, height of 0.4 m -->
+        <pose>0.1 0 0.4  0 0 0</pose>
       </inertial>
       <visual name="visual">
         <!-- rotate mesh to get to X-forward -->
@@ -376,7 +378,7 @@
       <link_name>atlas::pelvis</link_name>
     </plugin-->
     <link name="rear_right_wheel">
-      <pose>-0.85 -0.6 0.32 1.570796 0.0 0.0</pose>
+      <pose>-0.85 -0.6 0.32  1.52 0.0 0.0</pose>
       <inertial>
         <mass>12</mass><!-- estimated from http://www.rzrforums.net/wheels-tires/1729-tire-wheel-weights-most-sizes.html -->
         <inertia>
@@ -395,8 +397,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>100000.0</mu>
-              <mu2>100000.0</mu2>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
@@ -430,7 +432,7 @@
       </visual>
     </link>
     <link name="rear_left_wheel">
-      <pose>-0.85 0.6 0.32 1.570796 0.0 0.0</pose>
+      <pose>-0.85 0.6 0.32  -1.52 0.0 0.0</pose>
       <inertial>
         <mass>12</mass><!-- estimated from http://www.rzrforums.net/wheels-tires/1729-tire-wheel-weights-most-sizes.html -->
         <inertia>
@@ -449,8 +451,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>100000.0</mu>
-              <mu2>100000.0</mu2>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
@@ -486,7 +488,7 @@
     </link>
 
     <link name="front_right_wheel">
-      <pose>1.03 -0.6 0.32 1.570796 0.0 0.0</pose>
+      <pose>1.03 -0.6 0.32 1.52 0.0 0.0</pose>
       <inertial>
         <mass>12</mass><!-- estimated from http://www.rzrforums.net/wheels-tires/1729-tire-wheel-weights-most-sizes.html -->
         <inertia>
@@ -505,8 +507,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>100000.0</mu>
-              <mu2>100000.0</mu2>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
@@ -560,7 +562,7 @@
       </collision>
     </link>
     <link name="front_left_wheel">
-      <pose>1.03 0.6 0.32 1.570796 0.0 0.0</pose>
+      <pose>1.03 0.6 0.32  -1.52 0.0 0.0</pose>
       <inertial>
         <mass>12</mass><!-- estimated from http://www.rzrforums.net/wheels-tires/1729-tire-wheel-weights-most-sizes.html -->
         <inertia>
@@ -579,8 +581,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>100000.0</mu>
-              <mu2>100000.0</mu2>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
@@ -593,7 +595,7 @@
         </surface>
       </collision>
       <visual name="visual">
-        <pose>0 0 0 0 -1.570796 0</pose>
+        <pose>0 0 0  3.14159 1.570796 0</pose>
         <geometry>
           <mesh>
             <uri>model://polaris_ranger_ev/meshes/polaris.dae</uri>
@@ -728,16 +730,14 @@
         <mass>1.0</mass>
         <pose>0 0 0 0 0 0</pose>
         <inertia>
-          <ixx>0.1</ixx>
+          <ixx>0.012</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.1</iyy>
+          <iyy>0.012</iyy>
           <iyz>0</iyz>
-          <izz>1.0</izz>
+          <izz>0.024</izz>
         </inertia>
       </inertial>
-
-      <velocity_decay>0.1</velocity_decay>
 
       <collision name="collision">
         <!-- rotate mesh to get to X-forward -->
@@ -780,6 +780,16 @@
           </script>
         </material>
       </visual>
+      <!-- visual used to measure size of mesh steering wheel -->
+      <!--visual name="vis_cyl">
+        <pose>0 0 0  0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.16</radius>
+            <length>0.01</length>
+          </cylinder>
+        </geometry>
+      </visual-->
     </link>
 
     <link name='hand_brake'>
@@ -831,22 +841,26 @@
           <lower>-1.0</lower>
           <upper>1.0</upper>
         </limit>
+        <dynamics>
+          <damping>50.0</damping>
+        </dynamics>
       </axis>
-      <physics><ode><limit>
-        <cfm>0.000000</cfm>
-        <erp>0.900000</erp>
-      </limit></ode></physics>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0.000000</cfm>
+            <erp>0.900000</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <joint type="revolute" name="front_left_wheel_joint">
       <child>front_left_wheel</child>
       <parent>front_left_wheel_steering_block</parent>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 1 0.05</xyz>
       </axis>
-      <physics><ode><limit>
-        <cfm>0.000000</cfm>
-        <erp>0.900000</erp>
-      </limit></ode></physics>
     </joint>
 
     <joint type="revolute" name="front_right_steering_joint">
@@ -858,23 +872,27 @@
           <lower>-1.0</lower>
           <upper>1.0</upper>
         </limit>
+        <dynamics>
+          <damping>50.0</damping>
+        </dynamics>
       </axis>
-      <physics><ode><limit>
-        <cfm>0.000000</cfm>
-        <erp>0.900000</erp>
-      </limit></ode></physics>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0.000000</cfm>
+            <erp>0.900000</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
 
     <joint type="revolute" name="front_right_wheel_joint">
       <child>front_right_wheel</child>
       <parent>front_right_wheel_steering_block</parent>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 1 -0.05</xyz>
       </axis>
-      <physics><ode><limit>
-        <cfm>0.000000</cfm>
-        <erp>0.900000</erp>
-      </limit></ode></physics>
     </joint>
 
 
@@ -882,14 +900,18 @@
       <child>rear_left_wheel</child>
       <parent>chassis</parent>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 1 0.05</xyz>
       </axis>
-      <physics><ode><limit>
-        <cfm>0.000000</cfm>
-        <erp>0.900000</erp>
-      </limit></ode></physics>
     </joint>
 
+    <joint type="revolute" name="rear_right_wheel_joint">
+      <pose>0.0 0.0 -0.1 0 0 0</pose>
+      <child>rear_right_wheel</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>0 1 -0.05</xyz>
+      </axis>
+    </joint>
 
     <joint name='gas_joint' type='prismatic'>
       <parent>chassis</parent>
@@ -900,7 +922,15 @@
           <lower>0.00</lower>
           <upper>0.08</upper>
         </limit>
+        <dynamics>
+          <damping>3.0</damping>
+        </dynamics>
       </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
     </joint>
     <joint name='brake_joint' type='prismatic'>
       <parent>chassis</parent>
@@ -911,7 +941,15 @@
           <lower>0.00</lower>
           <upper>0.08</upper>
         </limit>
+        <dynamics>
+          <damping>3.0</damping>
+        </dynamics>
       </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
     </joint>
     <joint name='steering_joint' type='revolute'>
       <pose>-0.002 0 0  0 0 0</pose>
@@ -934,20 +972,15 @@
           <lower>0</lower>
           <upper>0.6</upper>
         </limit>
+        <dynamics>
+          <damping>3.0</damping>
+        </dynamics>
       </axis>
-    </joint>
-
-    <joint type="revolute" name="rear_right_wheel_joint">
-      <pose>0.0 0.0 -0.1 0 0 0</pose>
-      <child>rear_right_wheel</child>
-      <parent>chassis</parent>
-      <axis>
-        <xyz>0 1 0</xyz>
-      </axis>
-      <physics><ode><limit>
-        <cfm>0.000000</cfm>
-        <erp>0.900000</erp>
-      </limit></ode></physics>
+        <physics>
+          <ode>
+            <cfm_damping>1</cfm_damping>
+          </ode>
+        </physics>
     </joint>
 
   </model>
