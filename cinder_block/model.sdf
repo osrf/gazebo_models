@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="cinder_block">
+    <link name="link">
+      <inertial>
+        <mass>0.1</mass>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://cinder_block/meshes/cinder_block.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name="left">
+        <pose>0 -0.08465 0.1016 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.43495 0.0339 0.2032</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="right">
+        <pose>0 0.08465 0.1016 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.43495 0.0339 0.2032</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="front">
+        <pose>0.18625 0 0.1016 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0339 0.1354  0.2032</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="middle">
+        <pose>0 0 0.1016 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0339 0.1354  0.2032</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="back">
+        <pose>-0.18625 0 0.1016 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0339 0.1354  0.2032</size>
+          </box>
+        </geometry>
+      </collision>
+
+    </link>
+  </model>
+</sdf>
