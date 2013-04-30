@@ -19,3 +19,33 @@ material Polaris/Diffuse
     }
   }
 }
+material FNR_switch_F
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      ambient 1.0 1.0 1.0 1.000
+      texture_unit
+      {
+        texture FNR_switch_F.png
+      }
+    }
+  }
+}
+material FNR_switch_R
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      ambient 1.0 1.0 1.0 1.000
+      texture_unit
+      {
+        texture FNR_switch_R.png
+      }
+    }
+  }
+}
