@@ -20,8 +20,14 @@
           <script>
             <uri>model://house_3/materials/scripts</uri>
             <uri>model://house_3/materials/textures</uri>
+            <uri>model://house_1/materials/textures</uri>
             <name>House_3/Diffuse</name>
           </script>
+
+          <shader type="normal_map_object_space">
+            <normal_map>model://house_1/materials/textures/House_1_Normal.tga</normal_map>
+          </shader>
+
         </material>
       </visual>
     </link>

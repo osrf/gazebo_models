@@ -22,6 +22,7 @@
             <uri>model://house_1/materials/textures</uri>
             <name>House_1/Diffuse</name>
           </script>
+
           <shader type="normal_map_object_space">
             <normal_map>House_1_Normal.tga</normal_map>
           </shader>

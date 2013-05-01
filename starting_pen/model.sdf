@@ -10,6 +10,63 @@
           </mesh>
         </geometry>
       </collision>
+
+      <collision name="collision_floor">
+        <pose>-3.31 7.19 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>18.8 14.68 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual_floor_hall">
+        <pose>-3.31 7.19 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>18.8 14.68 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://starting_pen/materials/scripts</uri>
+            <uri>model://starting_pen/materials/textures</uri>
+            <name>StartingPen/Floor</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="visual_osrf">
+        <pose>-5.74 4.99 3 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01 6 1.0</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://starting_pen/materials/scripts</uri>
+            <uri>model://starting_pen/materials/textures</uri>
+            <name>StartingPen/OSRF</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="visual_osrf_2">
+        <pose>5.74 4.99 3 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01 6 1.0</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://starting_pen/materials/scripts</uri>
+            <uri>model://starting_pen/materials/textures</uri>
+            <name>StartingPen/OSRF</name>
+          </script>
+        </material>
+      </visual>
+
       <visual name="visual">
         <geometry>
           <mesh>
