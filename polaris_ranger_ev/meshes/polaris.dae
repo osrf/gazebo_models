@@ -497,10 +497,10 @@
   </library_lights>
   <library_images>
     <image id="Ranger_Diffuse_tga">
-      <init_from>file:///C:/Users/Cole/Desktop/Temp/Temp/images/Ranger_Diffuse.tga</init_from>
+      <init_from>../materials/textures/Ranger_Diffuse.tga</init_from>
     </image>
     <image id="Ranger_Spec_tga">
-      <init_from>file:///C:/Users/Cole/Desktop/Temp/Temp/images/Ranger_Spec.tga</init_from>
+      <init_from>../materials/textures/Ranger_Diffuse.tga</init_from>
     </image>
   </library_images>
   <library_visual_scenes>
