@@ -3,7 +3,15 @@
   <model name="jersey_barrier">
     <link name="link">
       <inertial>
-        <mass>0.1</mass>
+        <pose>0 0 0.2  0 0 0</pose>
+        <!-- Volume ~ 4x1x0.5 = 2 m^3, 2000 kg/m^3 -->
+        <mass>4000</mass>
+        <!-- approximate as uniform box 4 x 0.5 x 1 m -->
+        <inertia>
+          <ixx>416.67</ixx>
+          <ixy>0.0000</ixy><iyy>5666.7</iyy>
+          <ixz>0.0000</ixz><iyz>0.0000</iyz><izz>5416.7</izz>
+        </inertia>
       </inertial>
       <visual name="visual">
         <geometry>
