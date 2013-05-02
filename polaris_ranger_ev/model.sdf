@@ -793,7 +793,8 @@
     </link>
 
     <link name='hand_brake'>
-      <pose>0.50 0.00 1.05 0.0 3.2 0.0</pose> 
+      <!--pose>0.50 0.00 1.05 0.0 3.2 0.0</pose-->
+      <pose>0.53 0.07 1.05  0 0 0</pose>
       <inertial>
         <mass>1.0</mass>
         <pose>0 0 -0.15 0 0 0</pose>
@@ -807,33 +808,54 @@
         </inertia>
       </inertial>
       <collision name="hand_brake_collision">
-        <pose>0 0 -0.10 0 0 0</pose>
+        <!--pose>0 0 -0.10 0 0 0</pose-->
+        <pose>0 0 0.05  -0.2 0 -1.570796</pose>
         <geometry>
-          <cylinder>
+          <mesh>
+            <uri>model://polaris_ranger_ev/meshes/polaris.dae</uri>
+            <submesh>
+              <name>E-Brake</name>
+              <center>true</center>
+            </submesh>
+          </mesh>
+          <!--cylinder>
             <radius>0.01</radius>
             <length>0.2</length>
-          </cylinder>
+          </cylinder-->
         </geometry>
       </collision>
       <visual name="hand_brake_visual">
-        <pose>0 0 -0.10 0 0 0</pose>
+        <!--pose>0 0 -0.10 0 0 0</pose-->
+        <pose>0 0 0.05  -0.2 0 -1.570796</pose>
         <geometry>
-          <cylinder>
+          <mesh>
+            <uri>model://polaris_ranger_ev/meshes/polaris.dae</uri>
+            <submesh>
+              <name>E-Brake</name>
+              <center>true</center>
+            </submesh>
+          </mesh>
+          <!--cylinder>
             <radius>0.01</radius>
             <length>0.2</length>
-          </cylinder>
+          </cylinder-->
         </geometry>
         <material>
           <script>
+            <uri>model://polaris_ranger_ev/materials/scripts</uri>
+            <uri>model://polaris_ranger_ev/materials/textures</uri>
+            <name>Polaris/Diffuse</name>
+          </script>
+          <!--script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
             <name>Gazebo/Wood</name>
-          </script>
+          </script-->
         </material>
       </visual>
     </link>
 
     <link name='FNR_switch'>
-      <pose>0.56 0.05 1.08  0 0.25 0</pose> 
+      <pose>0.56 -0.02 1.08  0 0.25 0</pose> 
       <inertial>
         <mass>0.1</mass>
         <inertia>
