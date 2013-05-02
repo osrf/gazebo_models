@@ -86,7 +86,7 @@
         <pose>-0.1 0.0 0.560  0 0 0</pose> 
         <geometry>
           <box>
-            <size>0.6 1.0 0.50</size>
+            <size>0.6 1.22 0.50</size>
           </box>
         </geometry>
         <surface>
@@ -101,7 +101,7 @@
         <pose>-0.1 0.0 0.81  0 0 0</pose> 
         <geometry>
           <box>
-            <size>0.63 1.0 0.1</size>
+            <size>0.6 1.15 0.1</size>
           </box>
         </geometry>
         <surface>
@@ -153,7 +153,7 @@
         </geometry>
       </collision-->
       <collision name="handle_left_middle">
-        <pose>-0.35 0.61 1.055  0 -0.20 0</pose>
+        <pose>-0.30 0.61 1.055  0 -0.20 0</pose>
         <geometry>
           <cylinder>
             <radius>0.02</radius>
@@ -728,7 +728,7 @@
       <pose>0.34 0.30 1.29  0 -0.87 0</pose> 
       <inertial>
         <mass>1.0</mass>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>-0.002 0 0  0 0 0</pose>
         <inertia>
           <ixx>0.012</ixx>
           <ixy>0</ixy>
@@ -827,6 +827,62 @@
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
             <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name='FNR_switch'>
+      <pose>0.56 0.05 1.08  0 0.25 0</pose> 
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <!-- constrained about x axis -->
+          <!--ixx>0.00002</ixx-->
+          <ixx>0.1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00006</iyy>
+          <iyz>0</iyz>
+          <!-- constrained about z axis -->
+          <!--izz>0.00007</izz-->
+          <izz>0.1</izz>
+        </inertia>
+      </inertial>
+      <collision name="FNR_switch">
+        <geometry>
+          <box>
+            <size>0.02 0.04 0.08</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="FNR_switch_F">
+        <transparency>0.0</transparency>
+        <geometry>
+          <box>
+            <size>0.02 0.04 0.08</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://polaris_ranger_ev/materials/scripts</uri>
+            <uri>model://polaris_ranger_ev/materials/textures</uri>
+            <name>FNR_switch_F</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="FNR_switch_R">
+        <transparency>1.0</transparency>
+        <geometry>
+          <box>
+            <size>0.0199 0.0399 0.0799</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://polaris_ranger_ev/materials/scripts</uri>
+            <uri>model://polaris_ranger_ev/materials/textures</uri>
+            <name>FNR_switch_R</name>
           </script>
         </material>
       </visual>
@@ -974,6 +1030,25 @@
         </limit>
         <dynamics>
           <damping>3.0</damping>
+        </dynamics>
+      </axis>
+        <physics>
+          <ode>
+            <cfm_damping>1</cfm_damping>
+          </ode>
+        </physics>
+    </joint>
+    <joint name='FNR_switch_joint' type='revolute'>
+      <parent>chassis</parent>
+      <child>FNR_switch</child>
+      <axis>
+        <xyz>0.0 -1.0 0.0</xyz>
+        <limit>
+          <lower>-0.3</lower>
+          <upper>0.3</upper>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
         </dynamics>
       </axis>
         <physics>
