@@ -18,6 +18,7 @@ bowl
 brick_box_3x1x3
 cabinet
 camera
+cinder_block
 coke_can
 construction_barrel
 construction_cone
@@ -36,6 +37,7 @@ house_1
 house_2
 house_3
 irobot_hand
+jersey_barrier
 kinect
 kitchen_dining
 lamp_post

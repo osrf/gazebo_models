@@ -105,13 +105,13 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <ambient>
-              <color sid="ambient">0 0 0 1</color>
+              <color sid="ambient">1 1 1 1</color>
             </ambient>
             <diffuse>
-              <color sid="diffuse">0.8 0.8 0.8 1</color>
+              <color sid="diffuse">1.0 1.0 1.0 1</color>
             </diffuse>
             <specular>
-              <color sid="specular">8.999999 8.999999 8.999999 1</color>
+              <color sid="specular">0.999999 0.999999 0.999999 1</color>
             </specular>
             <shininess>
               <float sid="shininess">50</float>

@@ -3,7 +3,7 @@
   <model name="Fast Food">
     <static>true</static>
     <link name="link">
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 1.57965648 0 0 0</pose>
       <collision name="collision">
         <geometry>
           <mesh>
@@ -23,6 +23,10 @@
             <uri>model://fast_food/materials/textures</uri>
             <name>FastFood/Diffuse</name>
           </script>
+
+          <shader type="normal_map_object_space">
+            <normal_map>FastFood_Normal.tga</normal_map>
+          </shader>
         </material>
       </visual>
     </link>

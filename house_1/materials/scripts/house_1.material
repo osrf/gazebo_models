@@ -9,6 +9,11 @@ material House_1/Diffuse
       {
         texture House_1_Diffuse.tga
       }
+
+      rtshader_system
+      {
+        lighting_stage normal_map House_1_Normal.tga tangent_space 0
+      }
     }
   }
 }
