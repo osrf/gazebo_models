@@ -1,10 +1,8 @@
 <?xml version="1.0" ?>
 <sdf version="1.4">
   <model name="jersey_barrier">
+    <static>true</static>
     <link name="link">
-      <inertial>
-        <mass>0.1</mass>
-      </inertial>
       <visual name="visual">
         <geometry>
           <mesh>
