@@ -13,7 +13,6 @@ material StartingPen/Floor
         texture metal_ripped.jpg
         filtering anistorpic
         max_anisotropy 16
-        scale 0.1 0.1
       }
     }
   }

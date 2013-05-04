@@ -13,6 +13,7 @@ string (TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
 exec_program(date ARGS -u +%Y-%m-%-dT%H:%M:%S OUTPUT_VARIABLE CURRENT_DATE)
 
 set (dirs
+asphalt_plane
 bookshelf
 bowl
 brick_box_3x1x3
@@ -30,6 +31,7 @@ dumpster
 fast_food
 fire_hose_long
 gas_station
+grey_wall
 ground_plane
 hammer
 hokuyo
@@ -43,6 +45,7 @@ kitchen_dining
 lamp_post
 mailbox
 monkey_wrench
+mud_box
 nist_elevated_floor_120
 nist_fiducial_barrel
 nist_maze_wall_120
