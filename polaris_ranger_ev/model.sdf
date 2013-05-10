@@ -399,13 +399,15 @@
             <ode>
               <mu>1.0</mu>
               <mu2>1.0</mu2>
+              <fdir1>1 0 0</fdir1>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
           </friction>
           <contact>
             <ode>
-              <min_depth>0.01</min_depth>
+              <min_depth>0.00</min_depth>
+              <kp>1e8</kp>
             </ode>
           </contact>
         </surface>
@@ -453,13 +455,15 @@
             <ode>
               <mu>1.0</mu>
               <mu2>1.0</mu2>
+              <fdir1>1 0 0</fdir1>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
           </friction>
           <contact>
             <ode>
-              <min_depth>0.01</min_depth>
+              <min_depth>0.00</min_depth>
+              <kp>1e8</kp>
             </ode>
           </contact>
         </surface>
@@ -509,13 +513,15 @@
             <ode>
               <mu>1.0</mu>
               <mu2>1.0</mu2>
+              <fdir1>1 0 0</fdir1>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
           </friction>
           <contact>
             <ode>
-              <min_depth>0.01</min_depth>
+              <min_depth>0.00</min_depth>
+              <kp>1e8</kp>
             </ode>
           </contact>
         </surface>
@@ -583,13 +589,15 @@
             <ode>
               <mu>1.0</mu>
               <mu2>1.0</mu2>
+              <fdir1>1 0 0</fdir1>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
           </friction>
           <contact>
             <ode>
-              <min_depth>0.01</min_depth>
+              <min_depth>0.00</min_depth>
+              <kp>1e8</kp>
             </ode>
           </contact>
         </surface>
@@ -915,8 +923,9 @@
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-1.0</lower>
-          <upper>1.0</upper>
+          <!-- +- 50 degrees -->
+          <lower>-0.8727</lower>
+          <upper>0.8727</upper>
         </limit>
         <dynamics>
           <damping>50.0</damping>
@@ -946,8 +955,9 @@
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-1.0</lower>
-          <upper>1.0</upper>
+          <!-- +- 50 degrees -->
+          <lower>-0.8727</lower>
+          <upper>0.8727</upper>
         </limit>
         <dynamics>
           <damping>50.0</damping>
@@ -990,6 +1000,25 @@
       </axis>
     </joint>
 
+    <joint type="revolute" name="rear_differential_joint">
+      <child>rear_right_wheel</child>
+      <parent>rear_left_wheel</parent>
+      <axis>
+        <!-- expressed in chassis frame -->
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>70</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <erp>0</erp>
+          <cfm>1000</cfm>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
     <joint name='gas_joint' type='prismatic'>
       <parent>chassis</parent>
       <child>gas_pedal</child>
@@ -1000,7 +1029,7 @@
           <upper>0.08</upper>
         </limit>
         <dynamics>
-          <damping>3.0</damping>
+          <damping>1.0</damping>
         </dynamics>
       </axis>
       <physics>
@@ -1019,7 +1048,7 @@
           <upper>0.08</upper>
         </limit>
         <dynamics>
-          <damping>3.0</damping>
+          <damping>1.0</damping>
         </dynamics>
       </axis>
       <physics>
@@ -1038,7 +1067,15 @@
           <lower>-3.14</lower>
           <upper>3.14</upper>
         </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
       </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
     </joint>
     <joint name='hand_brake_joint' type='revolute'>
       <parent>chassis</parent>
@@ -1050,7 +1087,7 @@
           <upper>0.6</upper>
         </limit>
         <dynamics>
-          <damping>3.0</damping>
+          <damping>1.0</damping>
         </dynamics>
       </axis>
         <physics>
