@@ -18,6 +18,26 @@ material StartingPen/Floor
   }
 }
 
+material StartingPen/FloorRusty
+{
+  receive_shadows on
+  technique
+  {
+    pass
+    {
+      ambient 1 1 1 1
+      diffuse 1 1 1 1
+
+      texture_unit
+      {
+        texture rusty_metal.jpg
+        filtering anistorpic
+        max_anisotropy 16
+      }
+    }
+  }
+}
+
 material StartingPen/OSRF
 {
   receive_shadows off
