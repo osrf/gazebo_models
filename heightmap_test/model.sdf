@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="heightmap_test">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <heightmap>
+            <uri>model://heightmap_test/materials/textures/heightmap.png</uri>
+            <size>100 100 3.5</size>
+            <pos>0 0 -0.6</pos>
+          </heightmap>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <heightmap>
+            <texture>
+              <!--
+              <diffuse>file://media/materials/textures/dirt_diffusespecular.png</diffuse>
+              -->
+              <diffuse>file://media/materials/textures/ceiling_tiled.jpg</diffuse>
+              <normal>file://media/materials/textures/flat_normal.png</normal>
+              <size>0.5</size>
+            </texture>
+              <!--
+            <texture>
+              <diffuse>file://media/materials/textures/grass_diffusespecular.png</diffuse>
+              <diffuse>file://media/materials/textures/flat_normal.png</diffuse>
+              <normal>file://media/materials/textures/flat_normal.png</normal>
+              <size>5</size>
+            </texture>
+              -->
+              <!--
+            <texture>
+              <diffuse>file://media/materials/textures/fungus_diffusespecular.png</diffuse>
+              <diffuse>file://media/materials/textures/flat_normal.png</diffuse>
+              <normal>file://media/materials/textures/flat_normal.png</normal>
+              <size>5</size>
+            </texture>
+              -->
+            <blend>
+              <min_height>0.48</min_height>
+              <fade_dist>0.4</fade_dist>
+            </blend>
+            <blend>
+              <min_height>2.2</min_height>
+              <fade_dist>1</fade_dist>
+            </blend>
+            <uri>model://heightmap_test/materials/textures/heightmap.png</uri>
+            <size>100 100 3.5</size>
+            <pos>0 0 -0.6</pos>
+          </heightmap>
+        </geometry>
+      </visual>
+    </link>
+    <allow_auto_disable>false</allow_auto_disable>
+  </model>
+</sdf>
