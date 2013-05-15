@@ -189,7 +189,7 @@
       </visual>
 
       <visual name='visual_floor_7'>
-        <pose>1.79 0.35 0 0 0 0</pose>
+        <pose>1.79 0.35 0 0 0 1.5707</pose>
 
         <geometry>
           <box>
@@ -240,7 +240,7 @@
       </visual>
 
       <visual name='visual_floor_10'>
-        <pose>-12.21 2.35 0 0 0 0</pose>
+        <pose>-12.21 2.35 0 0 0 1.5707</pose>
 
         <geometry>
           <box>
@@ -342,24 +342,7 @@
       </visual>
 
       <visual name='visual_floor_16'>
-        <pose>-0.21 2.35 0 0 0 0</pose>
-
-        <geometry>
-          <box>
-            <size>2 2 0.01</size>
-          </box>
-        </geometry>
-        <material>
-          <script>
-            <uri>model://starting_pen/materials/scripts</uri>
-            <uri>model://starting_pen/materials/textures</uri>
-            <name>StartingPen/Floor</name>
-          </script>
-        </material>
-      </visual>
-
-      <visual name='visual_floor_17'>
-        <pose>1.79 2.35 0 0 0 -1.5707</pose>
+        <pose>-0.21 2.35 0 0 0 1.5707</pose>
 
         <geometry>
           <box>
@@ -371,6 +354,23 @@
             <uri>model://starting_pen/materials/scripts</uri>
             <uri>model://starting_pen/materials/textures</uri>
             <name>StartingPen/FloorRusty</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name='visual_floor_17'>
+        <pose>1.79 2.35 0 0 0 1.5707</pose>
+
+        <geometry>
+          <box>
+            <size>2 2 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://starting_pen/materials/scripts</uri>
+            <uri>model://starting_pen/materials/textures</uri>
+            <name>StartingPen/Floor</name>
           </script>
         </material>
       </visual>
@@ -444,7 +444,7 @@
       </visual>
 
       <visual name='visual_floor_22'>
-        <pose>-8.21 4.35 0 0 0 -1.5707</pose>
+        <pose>-8.21 4.35 0 0 0 1.5707</pose>
 
         <geometry>
           <box>
@@ -665,7 +665,7 @@
       </visual>
 
       <visual name='visual_floor_35'>
-        <pose>-2.21 6.35 0 0 0 0</pose>
+        <pose>-2.21 6.35 0 0 0 1.5707</pose>
 
         <geometry>
           <box>
@@ -784,7 +784,7 @@
       </visual>
 
       <visual name='visual_floor_42'>
-        <pose>-8.21 8.35 0 0 0 0</pose>
+        <pose>-8.21 8.35 0 0 0 1.5707</pose>
 
         <geometry>
           <box>
@@ -852,7 +852,7 @@
       </visual>
 
       <visual name='visual_floor_46'>
-        <pose>-0.21 8.35 0 0 0 -1.5707</pose>
+        <pose>-0.21 8.35 0 0 0 1.5707</pose>
 
         <geometry>
           <box>
@@ -971,7 +971,7 @@
       </visual>
 
       <visual name='visual_floor_53'>
-        <pose>-6.21 10.35 0 0 0 -1.5707</pose>
+        <pose>-6.21 10.35 0 0 0 1.5707</pose>
 
         <geometry>
           <box>
@@ -1090,7 +1090,7 @@
       </visual>
 
       <visual name='visual_floor_60'>
-        <pose>-12.21 12.35 0 0 0 0</pose>
+        <pose>-12.21 12.35 0 0 0 1.5707</pose>
 
         <geometry>
           <box>
@@ -1175,7 +1175,7 @@
       </visual>
 
       <visual name='visual_floor_65'>
-        <pose>-2.21 12.35 0 0 0 3.1415</pose>
+        <pose>-2.21 12.35 0 0 0 1.5707</pose>
 
         <geometry>
           <box>
@@ -1328,7 +1328,7 @@
       </visual>
 
       <visual name='visual_floor_74'>
-        <pose>-4.21 14.35 0 0 0 0</pose>
+        <pose>-4.21 14.35 0 0 0 1.5707</pose>
 
         <geometry>
           <box>
@@ -1339,7 +1339,7 @@
           <script>
             <uri>model://starting_pen/materials/scripts</uri>
             <uri>model://starting_pen/materials/textures</uri>
-            <name>StartingPen/Floor</name>
+            <name>StartingPen/FloorRusty</name>
           </script>
         </material>
       </visual>
@@ -1356,7 +1356,7 @@
           <script>
             <uri>model://starting_pen/materials/scripts</uri>
             <uri>model://starting_pen/materials/textures</uri>
-            <name>StartingPen/FloorRusty</name>
+            <name>StartingPen/Floor</name>
           </script>
         </material>
       </visual>
