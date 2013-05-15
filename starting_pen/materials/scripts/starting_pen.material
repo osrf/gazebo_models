@@ -18,7 +18,7 @@ material StartingPen/Floor
   }
 }
 
-material StartingPen/FloorRusty
+material StartingPen/FloorStripped
 {
   receive_shadows on
   technique
@@ -30,7 +30,7 @@ material StartingPen/FloorRusty
 
       texture_unit
       {
-        texture rusty_metal.jpg
+        texture metal_stripped.png
         filtering anistorpic
         max_anisotropy 16
       }
