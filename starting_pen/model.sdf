@@ -81,7 +81,7 @@
           <script>
             <uri>model://starting_pen/materials/scripts</uri>
             <uri>model://starting_pen/materials/textures</uri>
-            <name>StartingPen/FloorRusty</name>
+            <name>StartingPen/Floor</name>
           </script>
         </material>
       </visual>

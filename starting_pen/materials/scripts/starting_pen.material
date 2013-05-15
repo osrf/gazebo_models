@@ -30,7 +30,7 @@ material StartingPen/FloorRusty
 
       texture_unit
       {
-        texture rusty_metal.jpg
+        texture metal_stripped.png
         filtering anistorpic
         max_anisotropy 16
       }
