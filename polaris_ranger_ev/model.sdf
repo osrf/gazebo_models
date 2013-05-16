@@ -394,6 +394,7 @@
             <length>0.23</length>
           </cylinder>
         </geometry>
+        <max_contacts>1</max_contacts>
         <surface>
           <friction>
             <ode>
@@ -450,6 +451,7 @@
             <length>0.23</length>
           </cylinder>
         </geometry>
+        <max_contacts>1</max_contacts>
         <surface>
           <friction>
             <ode>
@@ -508,6 +510,7 @@
             <length>0.23</length>
           </cylinder>
         </geometry>
+        <max_contacts>1</max_contacts>
         <surface>
           <friction>
             <ode>
@@ -584,6 +587,7 @@
             <length>0.23</length>
           </cylinder>
         </geometry>
+        <max_contacts>1</max_contacts>
         <surface>
           <friction>
             <ode>
