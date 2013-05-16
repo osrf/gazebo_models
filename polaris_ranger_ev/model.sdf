@@ -399,14 +399,14 @@
             <ode>
               <mu>1.0</mu>
               <mu2>1.0</mu2>
-              <fdir1>1 0 0</fdir1>
+              <fdir1>0 0 1</fdir1>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
           </friction>
           <contact>
             <ode>
-              <min_depth>0.00</min_depth>
+              <min_depth>0.005</min_depth>
               <kp>1e8</kp>
             </ode>
           </contact>
@@ -455,14 +455,14 @@
             <ode>
               <mu>1.0</mu>
               <mu2>1.0</mu2>
-              <fdir1>1 0 0</fdir1>
+              <fdir1>0 0 1</fdir1>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
           </friction>
           <contact>
             <ode>
-              <min_depth>0.00</min_depth>
+              <min_depth>0.005</min_depth>
               <kp>1e8</kp>
             </ode>
           </contact>
@@ -513,14 +513,14 @@
             <ode>
               <mu>1.0</mu>
               <mu2>1.0</mu2>
-              <fdir1>1 0 0</fdir1>
+              <fdir1>0 0 1</fdir1>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
           </friction>
           <contact>
             <ode>
-              <min_depth>0.00</min_depth>
+              <min_depth>0.005</min_depth>
               <kp>1e8</kp>
             </ode>
           </contact>
@@ -589,14 +589,14 @@
             <ode>
               <mu>1.0</mu>
               <mu2>1.0</mu2>
-              <fdir1>1 0 0</fdir1>
+              <fdir1>0 0 1</fdir1>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
           </friction>
           <contact>
             <ode>
-              <min_depth>0.00</min_depth>
+              <min_depth>0.005</min_depth>
               <kp>1e8</kp>
             </ode>
           </contact>
@@ -1029,7 +1029,7 @@
           <upper>0.08</upper>
         </limit>
         <dynamics>
-          <damping>1.0</damping>
+          <damping>3.0</damping>
         </dynamics>
       </axis>
       <physics>
@@ -1048,7 +1048,7 @@
           <upper>0.08</upper>
         </limit>
         <dynamics>
-          <damping>1.0</damping>
+          <damping>3.0</damping>
         </dynamics>
       </axis>
       <physics>
