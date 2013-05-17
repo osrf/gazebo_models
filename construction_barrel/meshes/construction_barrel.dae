@@ -36,7 +36,7 @@
         <technique sid="common">
           <phong>
             <emission>
-              <color>0 0 0 1</color>
+              <color>0.2 0.2 0.2 1</color>
             </emission>
             <ambient>
               <color>1.0 1.0 1.0 1</color>
