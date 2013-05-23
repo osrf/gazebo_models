@@ -3,19 +3,84 @@
   <model name="Starting Pen">
     <static>true</static>
     <link name="link">
-      <collision name="collision">
+      <collision name="wall_01">
+        <pose>-0.0 0 2.14 0 0 0</pose>
         <geometry>
-          <mesh>
-            <uri>model://starting_pen/meshes/starting_pen.dae</uri>
-          </mesh>
+          <box>
+            <size>12.15 0.31 4.28</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="wall_02">
+        <pose>-5.28 14.3205 2.14 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>14.8 0.46 4.28</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="wall_03">
+        <pose>-5.91 5.0 2.14 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.385 10.3 4.28</size>
+          </box>
+        </geometry>
+      </collision>
+
+
+      <collision name="wall_04">
+        <pose>5.91 5.161 2.14 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.385 10.66 4.28</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="wall_05">
+        <pose>3.9 10.285 2.14 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>4.38 0.45 4.28</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="wall_06">
+        <pose>-4.0 9.95 2.14 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>4.25 0.45 4.28</size>
+          </box>
+        </geometry>hg
+      </collision>
+
+      <collision name="wall_07">
+        <pose>1.94 12.3 2.14 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.45 4.5 4.28</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="wall_arrow">
+        <pose>-0.232 14.03 2.46 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>3.33 0.12 1.16</size>
+          </box>
         </geometry>
       </collision>
 
       <collision name="collision_floor">
-        <pose>-3.31 7.19 0 0 0 0</pose>
+        <pose>-3.21 7.355 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>18.8 14.68 0.01</size>
+            <size>20 16 0.01</size>
           </box>
         </geometry>
         <surface>
@@ -1433,4 +1498,3 @@
     </link>
   </model>
 </sdf>
-
