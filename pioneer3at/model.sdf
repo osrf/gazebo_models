@@ -189,6 +189,14 @@
       </axis>
     </joint>
 
+    <plugin name="SkidSteerDrivePlugin" filename="libSkidSteerDrivePlugin.so">
+      <right_front>right_front</right_front>
+      <right_rear>right_rear</right_rear>
+      <left_front>left_front</left_front>
+      <left_rear>left_rear</left_rear>
+      <MaxForce>5.0</MaxForce>
+    </plugin>
+
     <!--    
       <include>
         <uri>model://hokuyo</uri>
@@ -205,10 +213,6 @@
           </limit>
         </axis>
       </joint>
-
-    Comming Soon to Gazebo Plugins:
-    <plugin name="SkidSteerDrivePlugin" filename="libSkidSteerDrivePlugin.so" />
-    <MaxForce>5.0</MaxForce>
     -->
 
 
