@@ -10,6 +10,19 @@
             <size>1.5 0.8 0.03</size>
           </box>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
       </collision>
       <visual name="visual1">
         <pose>0 0 1.0 0 0 0</pose>
