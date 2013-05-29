@@ -1,0 +1,147 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="box_test">
+    <static>false</static>
+    <link name="link0">
+      <pose>0 0 0.5 0 0 0</pose>
+      <inertial>
+        <pose>.4 0 0 0 0 0</pose>
+        <mass>300.0</mass>
+        <inertia>
+          <ixx>0.041667</ixx> <ixy>0.0</ixy> <ixz>0.0</ixz>
+          <iyy>0.041667</iyy> <iyz>0.0</iyz>
+          <izz>0.041667</izz>
+        </inertia>
+      </inertial>
+<!--
+      <collision name="collision_1">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+        <max_contacts>60</max_contacts>
+      </collision>
+      <visual name="visual_1">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </visual>
+-->
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>1.0 1.0 1.0</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1000000.000000</kp>
+              <kd>100.000000</kd>
+              <max_vel>1.000000</max_vel>
+              <min_depth>0.000000</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.000000</mu>
+              <mu2>1.000000</mu2>
+              <fdir1>1.000000 0.000000 0.000000</fdir1>
+            </ode>
+          </friction>
+        </surface>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>1.0 1.0 1.0</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+    <link name="link1">
+      <pose>0 1.5 0.5 0 0 0</pose>
+      <inertial>
+        <pose>.4 0 0 0 0 0</pose>
+        <mass>300.0</mass>
+        <inertia>
+          <ixx>0.041667</ixx> <ixy>0.0</ixy> <ixz>0.0</ixz>
+          <iyy>0.041667</iyy> <iyz>0.0</iyz>
+          <izz>0.041667</izz>
+        </inertia>
+      </inertial>
+<!--
+      <collision name="collision_1">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+        <max_contacts>60</max_contacts>
+      </collision>
+      <visual name="visual_1">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </visual>
+-->
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>1.0 1.0 1.0</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1000000.000000</kp>
+              <kd>100.000000</kd>
+              <max_vel>1.000000</max_vel>
+              <min_depth>0.000000</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.000000</mu>
+              <mu2>0.000000</mu2>
+              <fdir1>1.000000 0.000000 0.000000</fdir1>
+            </ode>
+          </friction>
+        </surface>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>1.0 1.0 1.0</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+    <allow_auto_disable>false</allow_auto_disable>
+  </model>
+</sdf>

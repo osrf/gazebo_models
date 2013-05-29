@@ -1,0 +1,55 @@
+<sdf version='1.4'>
+  <model name='simple_box'>
+    <link name='link1'>
+      <pose>0.000000 0.000000 0.000000 0.000000 0.000000 0.000000</pose>
+      <inertial>
+        <pose>0.463636 0.000000 0.463636 0.000000 0.000000 0.000000</pose>
+        <mass>1.100000</mass>
+        <inertia>
+          <ixx>0.059546</ixx>
+          <ixy>0.000000</ixy>
+          <ixz>-0.044546</ixz>
+          <iyy>0.115091</iyy>
+          <iyz>0.000000</iyz>
+          <izz>0.081546</izz>
+        </inertia>
+      </inertial>
+      <collision name='link1_collision'>
+        <pose>0.000000 0.000000 0.500000 0.000000 0.000000 0.000000</pose>
+        <geometry>
+          <box>
+            <size>1.000000 1.000000 1.000000</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='link1_collision_link2'>
+        <pose>1.000000 0.000000 1.500000 0.000000 0.000000 0.000000</pose>
+        <geometry>
+          <box>
+            <size>1.000000 1.000000 1.000000</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='link1_vis'>
+        <pose>0.000000 0.000000 0.500000 0.000000 0.000000 0.000000</pose>
+        <geometry>
+          <box>
+            <size>1.000000 1.000000 1.000000</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='link1_vis_link2'>
+        <pose>1.000000 0.000000 1.500000 0.000000 0.000000 0.000000</pose>
+        <geometry>
+          <box>
+            <size>1.000000 1.000000 1.000000</size>
+          </box>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0.000000</linear>
+        <angular>0.000000</angular>
+      </velocity_decay>
+    </link>
+  </model>
+</sdf>

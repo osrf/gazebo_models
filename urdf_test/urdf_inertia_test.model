@@ -1,0 +1,46 @@
+<robot name="simple_box">
+  <link name="link1">
+    <inertial>
+      <origin xyz="0.4 0 0.4" /> 
+      <mass value="1.0" />
+      <inertia  ixx="0.01" ixy="0.0"  ixz="0.0"  iyy="0.02"  iyz="0.0"  izz="0.03" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.5"/>
+      <geometry>
+        <box size="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.5"/>
+      <geometry>
+        <box size="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="link2">
+    <inertial>
+      <origin xyz="0.1 0 0.1" /> 
+      <mass value="0.1" />
+      <inertia  ixx="0.005" ixy="0.0"  ixz="0.0"  iyy="0.006"  iyz="0.0"  izz="0.007" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.5"/>
+      <geometry>
+        <box size="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.5"/>
+      <geometry>
+        <box size="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fixed_joint" type="fixed" >
+    <parent link="link1" />
+    <child link="link2" />
+    <origin xyz="1 0 1" rpy="0 0 0" />
+  </joint>
+</robot>
+
