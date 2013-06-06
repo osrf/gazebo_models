@@ -14,6 +14,7 @@ exec_program(date ARGS -u +%Y-%m-%-dT%H:%M:%S OUTPUT_VARIABLE CURRENT_DATE)
 
 set (dirs
 asphalt_plane
+blue_ring
 bookshelf
 bowl
 brick_box_3x1x3
@@ -30,6 +31,11 @@ double_pendulum_with_base
 dumpster
 fast_food
 fire_hose_long
+frc_2013
+frisbee
+ftc_2013
+ftc_robot
+ftc_robot2
 gas_station
 grey_wall
 ground_plane
@@ -60,6 +66,7 @@ polaris_ranger_ev
 powerplant
 pr2
 pr2_gripper
+red_ring
 saucepan
 simple_arm
 simple_arm_gripper
@@ -70,6 +77,7 @@ stereo_camera
 stop_sign
 sun
 table
+tower
 turtlebot
 utility_cart
 willowgarage
