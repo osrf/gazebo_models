@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="wirelessReceiver">
+    <pose>0 0 0.01 0 0 0</pose>
+    <link name="link">
+      <inertial>
+        <mass>0.1</mass>
+      </inertial>
+      <visual name="visual">
+        <pose>0 -0.075 -0.03 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://wireless_receiver/meshes/wireless_receiver.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name="collision-box">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.15 0.06</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <sensor name="wirelessReceiver" type="wirelessReceiver">
+        <always_on>1</always_on>
+        <update_rate>5</update_rate>
+        <visualize>true</visualize>
+        <transceiver>
+          <frequency>2442.0</frequency>
+          <power>14.5</power>
+          <gain>2.5</gain>
+        </transceiver>
+      </sensor>
+    </link>
+  </model>
+</sdf>
