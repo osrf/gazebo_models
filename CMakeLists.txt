@@ -73,6 +73,8 @@ table
 turtlebot
 utility_cart
 willowgarage
+wirelessReceiver
+wirelessTransmitter
 youbot
 )
 
