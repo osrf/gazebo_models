@@ -26,12 +26,14 @@
 
       <sensor name="wirelessReceiver" type="wirelessReceiver">
         <always_on>1</always_on>
-        <update_rate>5</update_rate>
+        <update_rate>1</update_rate>
         <visualize>true</visualize>
         <transceiver>
-          <frequency>2442.0</frequency>
+          <frequency_from>2412.0</frequency_from>
+          <frequency_to>2484.0</frequency_to>
           <power>14.5</power>
           <gain>2.5</gain>
+          <sensitivity>-90.0</sensitivity>
         </transceiver>
       </sensor>
     </link>
