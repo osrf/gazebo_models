@@ -46,7 +46,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://door_debris_2x4/meshes/2x4x48.dae</uri>
+            <uri>model://drc_practice_2x4/meshes/2x4x48.dae</uri>
           </mesh>
         </geometry>
       </visual>

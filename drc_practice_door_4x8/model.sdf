@@ -6,7 +6,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://door_debris_4x8ftdoor/meshes/4x8ftdoor.dae</uri>
+            <uri>model://drc_practice_door_4x8/meshes/4x8ftdoor.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -14,7 +14,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://door_debris_4x8ftdoor/meshes/4x8ftdoor.dae</uri>
+            <uri>model://drc_practice_door_4x8/meshes/4x8ftdoor.dae</uri>
           </mesh>
         </geometry>
       </visual>

@@ -7,7 +7,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://door_debris_blockwall/meshes/block_wall.dae</uri>
+            <uri>model://drc_practice_block_wall/meshes/block_wall.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -35,7 +35,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://door_debris_blockwall/meshes/block_wall.dae</uri>
+            <uri>model://drc_practice_block_wall/meshes/block_wall.dae</uri>
           </mesh>
         </geometry>
       </visual>

@@ -23,7 +23,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://door_debris_4x8ftbase/meshes/4x8ftbase.dae</uri>
+            <uri>model://drc_practice_base_4x8/meshes/4x8ftbase.dae</uri>
           </mesh>
         </geometry>
       </visual>

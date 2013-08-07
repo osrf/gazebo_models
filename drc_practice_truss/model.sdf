@@ -8,7 +8,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://truss/meshes/truss.dae</uri>
+            <uri>model://drc_practice_truss/meshes/truss.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -28,7 +28,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://truss/meshes/truss.dae</uri>
+            <uri>model://drc_practice_truss/meshes/truss.dae</uri>
           </mesh>
         </geometry>
       </visual>
