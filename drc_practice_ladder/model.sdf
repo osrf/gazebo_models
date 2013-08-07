@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="ladder">
+    <static>true</static>
+    <link name="link">
+      <pose>0 0 0 3.14159 0 0 </pose>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://industrial_ladder/meshes/Ladder.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://industrial_ladder/meshes/Ladder.STL</uri>
+          </mesh>
+        </geometry>
+        <material>Gazebo/Black</material>
+      </visual>
+    </link>
+  </model>
+</sdf>

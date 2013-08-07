@@ -34,6 +34,7 @@ drc_practice_4x4x40
 drc_practice_base_4x8
 drc_practice_block_wall
 drc_practice_door_4x8
+drc_practice_ladder
 drc_practice_truss
 dumpster
 fast_food
