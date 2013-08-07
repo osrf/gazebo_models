@@ -3,11 +3,10 @@
   <model name="ladder">
     <static>true</static>
     <link name="link">
-      <pose>0 0 0 3.14159 0 0 </pose>
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://industrial_ladder/meshes/Ladder.STL</uri>
+            <uri>model://drc_practice_ladder/meshes/ladder.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -15,7 +14,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://industrial_ladder/meshes/Ladder.STL</uri>
+            <uri>model://drc_practice_ladder/meshes/ladder.dae</uri>
           </mesh>
         </geometry>
         <material>Gazebo/Black</material>
