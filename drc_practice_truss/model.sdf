@@ -4,6 +4,20 @@
     <link name="link">
       <inertial>
         <mass>3.18</mass>
+        <!--
+          The dimensions of this truss are as follows:
+            x: 0.25 m
+            y: 1.50 m
+            z: 0.25 m
+          Approximating truss as round tube:
+            Iyy ~= m*(0.25/2)^2
+            Ixx=Izz ~= 1/2 m(0.25/2)^2 + 1/12 m(1.5)^2
+        -->
+        <inertia>
+          <ixx>0.621</ixx>
+          <ixy>0.0</ixy><iyy>0.050</iyy>
+          <ixz>0.0</ixz><iyz>0.0</iyz><izz>0.621</izz>
+        </inertia>
       </inertial> 
       <collision name="collision">
         <geometry>
@@ -32,6 +46,16 @@
           </mesh>
         </geometry>
       </visual>
+      <!-- visual used for measuring mesh size ->
+      <visual name="visual_box">
+        <transparency>0.5</transparency>
+        <geometry>
+          <box>
+            <size>0.25 1.5 0.25</size>
+          </box>
+        </geometry>
+      </visual>
+      -->
     </link>
   </model>
 </sdf>
