@@ -6,25 +6,26 @@
       <inertial>
         <mass>0.1</mass>
       </inertial>
-      <visual name="visual">
-        <pose>-0.075 -0.05 -0.02 0 0 0</pose>
+
+      <visual name="base">
         <geometry>
-          <mesh>
-            <uri>model://wireless_transmitter/meshes/router.dae</uri>
-          </mesh>
+          <box>
+            <size>.05 .05 .05</size>
+          </box>
         </geometry>
       </visual>
 
-<!--      <collision name="collision-box">
-        <pose>0 0 0 0 0 0</pose>
+      <visual name="antenna">
+      <pose>0 0 .04 0 0 0</pose>
         <geometry>
-          <box>
-            <size>0.15 0.1 0.041</size>
-          </box>
+          <cylinder>
+            <radius>.005</radius>
+            <length>.07</length>
+          </cylinder>
         </geometry>
-      </collision> -->
+      </visual>
 
-      <sensor name="wirelessTransmitter" type="wirelessTransmitter">
+      <sensor name="wirelessTransmitter" type="wireless_transmitter">
         <always_on>1</always_on>
         <update_rate>1</update_rate>
         <visualize>true</visualize>
