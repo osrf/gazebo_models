@@ -15,6 +15,6 @@
       <quadratic>0.001</quadratic>
     </attenuation>
 
-    <direction>0.5 0.1 -0.9</direction>
+    <direction>-0.5 0.1 -0.9</direction>
   </light>
 </sdf>
