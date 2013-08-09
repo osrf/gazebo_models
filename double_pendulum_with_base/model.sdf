@@ -148,8 +148,8 @@
         <mass>0.01</mass>
         <inertia>
           <ixx>0.0001</ixx> <ixy>0.0</ixy> <ixz>0.0</ixz>
-          <iyy>0.00000002</iyy> <iyz>0.0</iyz>
-          <izz>0.00000003</izz>
+          <iyy>0.000000002</iyy> <iyz>0.0</iyz>
+          <izz>0.000000003</izz>
         </inertia>
       </inertial>
       <visual name="vis_lower_joint">
