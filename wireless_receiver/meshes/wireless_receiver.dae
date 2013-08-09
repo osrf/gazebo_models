@@ -11,7 +11,7 @@
    </asset>
    <library_images>
       <image id="material_9_1_8-image" name="material_9_1_8-image">
-         <init_from>./texture0.png</init_from>
+         <init_from>wireless_nic.png</init_from>
       </image>
    </library_images>
    <library_materials>
