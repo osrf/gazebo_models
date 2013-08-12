@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="drc_practice_road_course">
+    <static>true</static>
+    <link name="road">
+      <pose>-36.5 0 0.0 0 0 -0.475</pose>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://drc_practice_road_course/meshes/roadcourse.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://drc_practice_road_course/meshes/roadcourse.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
