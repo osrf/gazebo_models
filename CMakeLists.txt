@@ -27,6 +27,7 @@ cordless_drill
 create
 cube_20k
 double_pendulum_with_base
+drc_practice_road_course
 dumpster
 fast_food
 fire_hose_long
