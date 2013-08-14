@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="ladder">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://drc_practice_ladder/meshes/ladder.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://drc_practice_ladder/meshes/ladder.dae</uri>
+          </mesh>
+        </geometry>
+        <material>Gazebo/Black</material>
+      </visual>
+    </link>
+  </model>
+</sdf>
