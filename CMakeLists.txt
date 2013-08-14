@@ -28,6 +28,9 @@ create
 cube_20k
 double_pendulum_with_base
 drc_practice_road_course
+drc_practice_orange_jersey_barrier
+drc_practice_white_jersey_barrier
+drc_practice_yellow_parking_block
 dumpster
 fast_food
 fire_hose_long
