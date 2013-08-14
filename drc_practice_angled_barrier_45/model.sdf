@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="drc_practice_angled_barrier_45">
+    <static>true</static>
+    <include>
+      <name>one</name>
+      <uri>model://drc_practice_orange_jersey_barrier</uri>
+      <pose>0 0 0 0 0 -1.5707</pose>
+    </include>
+    <include>
+      <name>two</name>
+      <uri>model://drc_practice_white_jersey_barrier</uri>
+      <pose>1.7646 -0.008563 0 0 0 -1.5707</pose>
+    </include>
+    <include>
+      <name>three</name>
+      <uri>model://drc_practice_orange_jersey_barrier</uri>
+      <pose>3.529222 -0.016171 0 0 0 -1.5707</pose>
+    </include>
+    <include>
+      <name>four</name>
+      <uri>model://drc_practice_white_jersey_barrier</uri>
+      <pose>5.2559 -0.59667 0 0 0 -2.356196</pose>
+    </include>
+    <include>
+      <name>five</name>
+      <uri>model://drc_practice_orange_jersey_barrier</uri>
+      <pose>6.498182 -1.850039 0 0 0 -2.356196</pose>
+    </include>
+    <include>
+      <name>six</name>
+      <uri>model://drc_practice_white_jersey_barrier</uri>
+      <pose>7.740308 -3.102611 0 0 0 -2.356196</pose>
+    </include>
+    <include>
+      <name>seven</name>
+      <uri>model://drc_practice_orange_jersey_barrier</uri>
+      <pose>8.982557 -4.356097 0 0 0 -2.356196</pose>
+    </include>
+    <include>
+      <name>eight</name>
+      <uri>model://drc_practice_white_jersey_barrier</uri>
+      <pose>10.22479 -5.609784 0 0 0 -2.356196</pose>
+    </include>
+    <include>
+      <name>nine</name>
+      <uri>model://drc_practice_blue_cylinder</uri>
+      <pose>11.028822 -6.442031 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>ten</name>
+      <uri>model://drc_practice_blue_cylinder</uri>
+      <pose>11.028822 -6.442031 0.866 0 0 0</pose>
+    </include>
+  </model>
+</sdf>
