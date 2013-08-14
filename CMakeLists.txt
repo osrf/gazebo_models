@@ -27,6 +27,15 @@ cordless_drill
 create
 cube_20k
 double_pendulum_with_base
+drc_practice_2x4
+drc_practice_2x6
+drc_practice_4x4x20
+drc_practice_4x4x40
+drc_practice_base_4x8
+drc_practice_block_wall
+drc_practice_door_4x8
+drc_practice_ladder
+drc_practice_truss
 dumpster
 fast_food
 fire_hose_long
@@ -104,3 +113,4 @@ message (STATUS "Install path: ${CMAKE_INSTALL_PREFIX}/models")
 
 # This must always be last!
 include(CPack)
+
