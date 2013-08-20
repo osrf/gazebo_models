@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <model name="shark">
+    <pose>0 0 1 0 0 0</pose>
+    <link name="body_front">
+      <pose>0 0 0 0 1.5707 0</pose>
+      <inertial>
+        <mass>950</mass>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.7</radius>
+            <length>2</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.7</radius>
+            <length>2</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="head">
+      <pose>1.5 0 0 0 1.5707 0</pose>
+      <inertial>
+        <mass>50</mass>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.5</radius>
+            <length>1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.5</radius>
+            <length>1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name="head_yaw" type="revolute"> 
+      <pose>0 0 -0.5 0 0 0</pose>
+      <child>head</child>
+      <parent>body_front</parent>
+      <axis>
+        <limit>
+          <lower>-0.7</lower>
+          <upper>0.7</upper>
+        </limit>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    <static>false</static>
+  </model>
+
+</sdf>
