@@ -2,7 +2,7 @@
 <sdf version="1.4">
   <model name="ball_valve">
     <link name="handle">
-      <pose>0 0 0.008537 0 0 0</pose>
+      <pose>0 0.0275 0.02222 -1.5708 3.1415 0</pose>
       <inertial>
         <mass>0.0802</mass>
         <pose>0.0 0.0435 0.0035 0 0 0</pose>
@@ -54,11 +54,30 @@
       </visual>
     </link>
 
+    <link name="attachment">
+      <pose>0 0 0.02222 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://drc_practice_ball_valve/meshes/attachment.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://drc_practice_ball_valve/meshes/attachment.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
     <joint name="ball" type="revolute">
-      <parent>world</parent>
+      <parent>attachment</parent>
       <child>handle</child>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz>0 1 0</xyz>
         <limit>
           <lower>0</lower>
           <upper>1.58</upper>

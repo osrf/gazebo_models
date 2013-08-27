@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <model name="hand_wheel_valve">
+    <link name="handle">
+      <pose>0 0 0.04445 0 0 0 </pose>
+      <inertial>
+        <mass>0.0644</mass>
+        <inertia>
+          <ixx>0.000031</ixx>
+          <ixy>0.0000</ixy>
+          <ixz>0.0000</ixz>
+          <iyy>0.000031</iyy>
+          <iyz>0.0000</iyz>
+          <izz>0.000059</izz>
+        </inertia>
+      </inertial> 
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://drc_practice_hand_wheel_valve/meshes/hand_wheel_valve.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.01</restitution_coefficient>
+            <threshold>5.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>5</mu>
+              <mu2>5</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <soft_cfm>0.01</soft_cfm>
+              <kp>1000000.0</kp>
+              <kd>100000.0</kd>
+              <max_vel>0.01</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface> 
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://drc_practice_hand_wheel_valve/meshes/hand_wheel_valve.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="joint" type="revolute">
+      <parent>world</parent>
+      <child>handle</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-12.56</lower>
+          <upper>12.56</upper>
+        </limit>
+        <dynamics>
+          <!--velocity dependent viscous damping coefficient of the joint-->
+          <damping>10</damping>
+          <!--default 0, static friction value of the joint-->
+          <friction>10 </friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+  </model>
+</sdf>
