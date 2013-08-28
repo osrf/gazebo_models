@@ -2,8 +2,7 @@
 <sdf version="1.4">
   <model name="valve_wall">
     <static>true</static>
-    <link name="wall">
-      <pose>0 0 0 0 0 0</pose>
+    <link name="link">
       <collision name="collision">
         <pose>0.6096 0.000475 1.217 0 0 0</pose>
         <geometry>

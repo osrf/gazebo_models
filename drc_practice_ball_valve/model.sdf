@@ -54,8 +54,15 @@
       </visual>
     </link>
 
+    <!--
+         This is just a visual until SDF collide_bitmask is implemented.
+         Without collide_bitmask, the "attachment" will collide with a 
+         wall that separates the handle from the attachment causing jitter
+    -->
     <link name="attachment">
       <pose>0 0 0.02222 0 0 0</pose>
+      <kinematic>true</kinematic>
+      <!--
       <collision name="collision">
         <geometry>
           <mesh>
@@ -63,6 +70,7 @@
           </mesh>
         </geometry>
       </collision>
+      -->
 
       <visual name="visual">
         <geometry>
@@ -74,7 +82,7 @@
     </link>
 
     <joint name="ball" type="revolute">
-      <parent>attachment</parent>
+      <parent>world</parent>
       <child>handle</child>
       <axis>
         <xyz>0 1 0</xyz>
