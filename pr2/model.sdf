@@ -2108,6 +2108,9 @@
           <effort>0.000000</effort>
           <velocity>4.000000</velocity>
         </limit>
+        <dynamics>
+          <damping>10.0</damping>
+        </dynamics>
       </axis>
     </joint>
     <joint name='bl_caster_l_wheel_joint' type='revolute'>
@@ -2121,6 +2124,9 @@
           <effort>0.000000</effort>
           <velocity>4.000000</velocity>
         </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
       </axis>
     </joint>
     <joint name='bl_caster_r_wheel_joint' type='revolute'>
@@ -2134,6 +2140,9 @@
           <effort>0.000000</effort>
           <velocity>4.000000</velocity>
         </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
       </axis>
     </joint>
     <joint name='br_caster_rotation_joint' type='revolute'>
@@ -2147,6 +2156,9 @@
           <effort>0.000000</effort>
           <velocity>4.000000</velocity>
         </limit>
+        <dynamics>
+          <damping>10.0</damping>
+        </dynamics>
       </axis>
     </joint>
     <joint name='br_caster_l_wheel_joint' type='revolute'>
@@ -2160,6 +2172,9 @@
           <effort>0.000000</effort>
           <velocity>4.000000</velocity>
         </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
       </axis>
     </joint>
     <joint name='br_caster_r_wheel_joint' type='revolute'>
@@ -2173,6 +2188,9 @@
           <effort>0.000000</effort>
           <velocity>4.000000</velocity>
         </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
       </axis>
     </joint>
     <joint name='fl_caster_rotation_joint' type='revolute'>
@@ -2186,6 +2204,9 @@
           <effort>0.000000</effort>
           <velocity>4.000000</velocity>
         </limit>
+        <dynamics>
+          <damping>10.0</damping>
+        </dynamics>
       </axis>
     </joint>
     <joint name='fl_caster_l_wheel_joint' type='revolute'>
@@ -2199,6 +2220,9 @@
           <effort>0.000000</effort>
           <velocity>4.000000</velocity>
         </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
       </axis>
     </joint>
     <joint name='fl_caster_r_wheel_joint' type='revolute'>
@@ -2212,6 +2236,9 @@
           <effort>0.000000</effort>
           <velocity>4.000000</velocity>
         </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
       </axis>
     </joint>
     <joint name='fr_caster_rotation_joint' type='revolute'>
@@ -2225,6 +2252,9 @@
           <effort>0.000000</effort>
           <velocity>4.000000</velocity>
         </limit>
+        <dynamics>
+          <damping>10.0</damping>
+        </dynamics>
       </axis>
     </joint>
     <joint name='fr_caster_l_wheel_joint' type='revolute'>
@@ -2238,6 +2268,9 @@
           <effort>0.000000</effort>
           <velocity>4.000000</velocity>
         </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
       </axis>
     </joint>
     <joint name='fr_caster_r_wheel_joint' type='revolute'>
@@ -2251,6 +2284,9 @@
           <effort>0.000000</effort>
           <velocity>4.000000</velocity>
         </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
       </axis>
     </joint>
     <joint name='torso_lift_joint' type='prismatic'>
