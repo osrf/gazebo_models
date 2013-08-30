@@ -20,6 +20,8 @@ brick_box_3x1x3
 cabinet
 camera
 cinder_block
+cinder_block_2
+cinder_block_wide
 coke_can
 construction_barrel
 construction_cone
@@ -36,6 +38,7 @@ drc_practice_block_wall
 drc_practice_door_4x8
 drc_practice_ladder
 drc_practice_truss
+drc_practice_wood_slats
 dumpster
 fast_food
 fire_hose_long
