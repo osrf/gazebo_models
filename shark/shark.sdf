@@ -5,7 +5,12 @@
     <link name="body_front">
       <pose>0 0 0 0 1.5707 0</pose>
       <inertial>
-        <mass>950</mass>
+        <mass>1000</mass>
+        <inertia>
+          <ixx>455</ixx>
+          <iyy>455</iyy>
+          <izz>245</izz>
+        </inertia>
       </inertial>
       <collision name="collision">
         <geometry>
@@ -14,26 +19,66 @@
             <length>2</length>
           </cylinder>
         </geometry>
+        <surface>
+          <contact><ode><min_depth>0.01</min_depth></ode></contact>
+        </surface>
       </collision>
-      <visual name="collision">
+      <collision name="dorsal_fin_collision">
+        <pose>-0.75 0 -0.3 0 -0.3 0</pose>
+        <geometry>
+          <box><size>0.75 0.2 0.75</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
         <geometry>
           <cylinder>
             <radius>0.7</radius>
             <length>2</length>
           </cylinder>
         </geometry>
-        <material>
-          <script>
-            <name>Gazebo/Grey</name>
-          </script>
-        </material>
+        <material><script><name>Gazebo/Grey</name></script></material>
+      </visual>
+      <visual name="dorsal_fin_visual">
+        <pose>-0.75 0 -0.3 0 -0.3 0</pose>
+        <geometry>
+          <box><size>0.75 0.2 0.75</size></box>
+        </geometry>
+      </visual>
+    </link>
+    <link name="body_back">
+      <pose>-1.75 0 0 0 1.5707 0</pose>
+      <inertial>
+        <mass>750</mass>
+        <inertia>
+          <ixx>170</ixx>
+          <iyy>170</iyy>
+          <izz>60</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.4</radius>
+            <length>1.5</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact><ode><min_depth>0.01</min_depth></ode></contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.4</radius>
+            <length>1.5</length>
+          </cylinder>
+        </geometry>
+        <material><script><name>Gazebo/Grey</name></script></material>
       </visual>
     </link>
     <link name="head">
       <pose>1.5 0 0 0 1.5707 0</pose>
-      <inertial>
-        <mass>50</mass>
-      </inertial>
+      <inertial><mass>50</mass></inertial>
       <collision name="collision">
         <geometry>
           <cylinder>
@@ -41,25 +86,62 @@
             <length>1</length>
           </cylinder>
         </geometry>
+        <surface>
+          <contact><ode><min_depth>0.05</min_depth></ode></contact>
+        </surface>
       </collision>
-      <visual name="collision">
+      <visual name="visual">
         <geometry>
           <cylinder>
             <radius>0.5</radius>
             <length>1</length>
           </cylinder>
         </geometry>
-        <material>
-          <script>
-            <name>Gazebo/Grey</name>
-          </script>
-        </material>
+        <material><script><name>Gazebo/Grey</name></script></material>
+      </visual>
+    </link>
+    <link name="tail">
+      <pose>-2.75 0 0 0 0 0</pose>
+      <inertial><mass>250</mass></inertial>
+      <collision name="collision">
+        <geometry><box><size>1 0.2 2</size></box></geometry>
+        <surface>
+          <contact><ode><min_depth>0.05</min_depth></ode></contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>1 0.2 2</size></box></geometry>
+        <material><script><name>Gazebo/Grey</name></script></material>
       </visual>
     </link>
     <joint name="head_yaw" type="revolute"> 
       <pose>0 0 -0.5 0 0 0</pose>
       <child>head</child>
       <parent>body_front</parent>
+      <axis>
+        <limit>
+          <lower>-0.7</lower>
+          <upper>0.7</upper>
+        </limit>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    <joint name="body_yaw" type="revolute"> 
+      <pose>0 0 0.75 0 0 0</pose>
+      <child>body_back</child>
+      <parent>body_front</parent>
+      <axis>
+        <limit>
+          <lower>-0.7</lower>
+          <upper>0.7</upper>
+        </limit>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    <joint name="tail_yaw" type="revolute"> 
+      <pose>0.5 0 0 0 0 0</pose>
+      <child>tail</child>
+      <parent>body_back</parent>
       <axis>
         <limit>
           <lower>-0.7</lower>
