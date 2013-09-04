@@ -72,7 +72,6 @@ jersey_barrier
 kinect
 kitchen_dining
 lamp_post
-LICENSE
 mailbox
 monkey_wrench
 mud_box
