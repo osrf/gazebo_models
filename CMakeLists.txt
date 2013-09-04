@@ -32,6 +32,7 @@ drc_practice_2x6
 drc_practice_4x4x20
 drc_practice_4x4x40
 drc_practice_ball_valve
+drc_practice_ball_valve_wall
 drc_practice_base_4x8
 drc_practice_block_wall
 drc_practice_door_4x8
