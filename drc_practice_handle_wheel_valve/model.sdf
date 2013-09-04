@@ -53,16 +53,6 @@
           </mesh>
         </geometry>
       </visual>
-
-      <visual name="visual_attachment">
-      <pose>-0.02722 0 0 0 0 -1.5707</pose>
-        <geometry>
-          <mesh>
-            <uri>model://drc_practice_ball_valve/meshes/attachment.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
-
     </link>
 
     <!--
