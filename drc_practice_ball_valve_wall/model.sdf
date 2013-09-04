@@ -4,8 +4,21 @@
     <include>
       <uri>model://drc_practice_valve_wall</uri>
       <name>wall</name>
+      <static>false</static>
     </include>
-  
+
+    <joint name="wall-joint" type="revolute">
+      <parent>world</parent>
+      <child>ball_valve_wall::wall::link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+      </axis>
+    </joint>
+
     <include>
       <uri>model://drc_practice_ball_valve</uri>
       <name>valve_0</name>

@@ -2,7 +2,7 @@
 <sdf version="1.4">
   <model name="wheel_valve_large">
     <link name="handle">
-      <pose>0 0.0300 0.177428906 0 0 0</pose>
+      <pose>0 0.0300 0 0 0 0</pose>
       <inertial>
         <mass>7.8219</mass>
         <pose>0 -0.0615 0 0 0 0</pose>
@@ -51,8 +51,24 @@
           </mesh>
         </geometry>
       </visual>
+
+      <visual name="visual_attachment">
+        <pose>0 -0.04 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1.6 1.6 1.6</scale>
+            <uri>model://drc_practice_ball_valve/meshes/attachment.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
     </link>
 
+    <!--
+         This is just a visual until SDF collide_bitmask is implemented.
+         Without collide_bitmask, the "attachment" will collide with a 
+         wall that separates the handle from the attachment causing jitter
+    -->
+    <!--
     <link name="attachment">
       <pose>0 0 0.177428906 0 0 0</pose>
       <collision name="collision">
@@ -72,9 +88,10 @@
         </geometry>
       </visual>
     </link>
+-->
 
     <joint name="joint" type="revolute">
-      <parent>attachment</parent>
+      <parent>world</parent>
       <child>handle</child>
       <axis>
         <xyz>0 1 0</xyz>

@@ -52,6 +52,16 @@
           </mesh>
         </geometry>
       </visual>
+
+      <visual name="visual_attachment">
+      <pose>0 0 -0.02722 1.5707 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://drc_practice_ball_valve/meshes/attachment.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
     </link>
 
     <!--
@@ -59,10 +69,10 @@
          Without collide_bitmask, the "attachment" will collide with a 
          wall that separates the handle from the attachment causing jitter
     -->
+      <!--
     <link name="attachment">
       <pose>0 0 0.02222 0 0 0</pose>
       <kinematic>true</kinematic>
-      <!--
       <collision name="collision">
         <geometry>
           <mesh>
@@ -70,7 +80,6 @@
           </mesh>
         </geometry>
       </collision>
-      -->
 
       <visual name="visual">
         <geometry>
@@ -80,6 +89,7 @@
         </geometry>
       </visual>
     </link>
+      -->
 
     <joint name="ball" type="revolute">
       <parent>world</parent>
