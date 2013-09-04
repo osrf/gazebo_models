@@ -18,7 +18,6 @@ beer
 bookshelf
 bowl
 brick_box_3x1x3
-build
 cabinet
 camera
 cinder_block
@@ -33,22 +32,28 @@ drc_practice_2x4
 drc_practice_2x6
 drc_practice_4x4x20
 drc_practice_4x4x40
+drc_practice_angled_barrier_135
+drc_practice_angled_barrier_45
 drc_practice_ball_valve
 drc_practice_ball_valve_wall
 drc_practice_base_4x8
 drc_practice_block_wall
+drc_practice_blue_cylinder
 drc_practice_door_4x8
 drc_practice_handle_wheel_valve
 drc_practice_handle_wheel_valve_wall
 drc_practice_hand_wheel_valve
 drc_practice_hand_wheel_valve_wall
 drc_practice_ladder
+drc_practice_orange_jersey_barrier
 drc_practice_truss
 drc_practice_valve_wall
 drc_practice_wheel_valve
 drc_practice_wheel_valve_large
 drc_practice_wheel_valve_large_wall
 drc_practice_wheel_valve_wall
+drc_practice_white_jersey_barrier
+drc_practice_yellow_parking_block
 dumpster
 fast_food
 fire_hose_long
@@ -98,7 +103,8 @@ table
 turtlebot
 utility_cart
 willowgarage
-youbot)
+youbot
+)
 
 set (MODEL_URI_LIST "" CACHE INTERNAL "Model URI List" FORCE)
 
@@ -128,5 +134,3 @@ message (STATUS "Install path: ${CMAKE_INSTALL_PREFIX}/models")
 
 # This must always be last!
 include(CPack)
-
-
