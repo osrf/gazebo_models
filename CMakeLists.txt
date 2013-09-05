@@ -21,6 +21,8 @@ brick_box_3x1x3
 cabinet
 camera
 cinder_block
+cinder_block_2
+cinder_block_wide
 coke_can
 construction_barrel
 construction_cone
@@ -46,6 +48,7 @@ drc_practice_orange_jersey_barrier
 drc_practice_truss
 drc_practice_wheel_valve
 drc_practice_white_jersey_barrier
+drc_practice_wood_slats
 drc_practice_yellow_parking_block
 dumpster
 fast_food
@@ -65,7 +68,6 @@ jersey_barrier
 kinect
 kitchen_dining
 lamp_post
-LICENSE
 mailbox
 monkey_wrench
 mud_box
