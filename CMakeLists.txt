@@ -27,6 +27,7 @@ construction_cone
 cordless_drill
 create
 cube_20k
+door_handle
 double_pendulum_with_base
 drc_practice_2x4
 drc_practice_2x6
