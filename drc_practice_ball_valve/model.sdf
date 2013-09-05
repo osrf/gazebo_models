@@ -58,8 +58,6 @@
          This is just a visual until SDF collide_bitmask is implemented.
          Without collide_bitmask, the "attachment" will collide with a 
          wall that separates the handle from the attachment causing jitter
-
-         Update by scpeters: I reinstated the collision.
     -->
       <!--
     <link name="attachment">
@@ -82,6 +80,7 @@
           </mesh>
         </geometry>
       </collision>
+
       <visual name="visual">
         <geometry>
           <mesh>
