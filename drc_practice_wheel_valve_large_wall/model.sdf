@@ -9,7 +9,7 @@
 
     <joint name="wall-joint" type="revolute">
       <parent>world</parent>
-      <child>wheel_valve_large_wall::wall::link</child>
+      <child>wall::link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>

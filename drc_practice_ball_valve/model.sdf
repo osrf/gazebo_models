@@ -5,14 +5,14 @@
       <pose>0 0.0275 0.02222 -1.5708 3.1415 0</pose>
       <inertial>
         <mass>0.0802</mass>
-        <pose>0.0 0.0435 0.0035 0 0 0</pose>
+        <pose>0.0 0.0435 0.0055 0 0 0</pose>
         <inertia>
-          <ixx>0.0</ixx>
+          <ixx>0.000038</ixx>
+          <iyy>0.000004</iyy>
+          <izz>0.00004</izz>
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>0.0</iyy>
           <iyz>0.0</iyz>
-          <izz>0.0</izz>
         </inertia>
       </inertial> 
       <collision name="collision">
@@ -62,7 +62,17 @@
       <!--
     <link name="attachment">
       <pose>0 0 0.02222 0 0 0</pose>
-      <kinematic>true</kinematic>
+      <inertial>
+        <mass>0.802</mass>
+        <inertia>
+          <ixx>0.00017</ixx>
+          <iyy>0.00017</iyy>
+          <izz>0.00007</izz>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+        </inertia>
+      </inertial> 
       <collision name="collision">
         <geometry>
           <mesh>
@@ -92,7 +102,7 @@
         </limit>
         <dynamics>
           <!--velocity dependent viscous damping coefficient of the joint-->
-          <damping>100</damping>
+          <damping>0.3</damping>
           <!--default 0, static friction value of the joint-->
           <friction>10</friction>
         </dynamics>
