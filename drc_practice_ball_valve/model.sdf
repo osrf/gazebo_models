@@ -61,6 +61,7 @@
 
          Update by scpeters: I reinstated the collision.
     -->
+      <!--
     <link name="attachment">
       <pose>0 0 0.02222 0 0 0</pose>
       <inertial>
@@ -89,9 +90,10 @@
         </geometry>
       </visual>
     </link>
+      -->
 
     <joint name="ball" type="revolute">
-      <parent>attachment</parent>
+      <parent>world</parent>
       <child>handle</child>
       <axis>
         <xyz>0 1 0</xyz>
