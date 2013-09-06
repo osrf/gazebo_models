@@ -10,9 +10,9 @@
           <ixx> 0.0039</ixx>
           <ixy> 0.00</ixy>
           <ixz> 0.00</ixz>
-          <iyy> 0.2766</iyy>
+          <iyy> 0.28</iyy>
           <iyz> 0.00</iyz>
-          <izz> 0.28</izz>
+          <izz> 0.2766</izz>
         </inertia>
       </inertial> 
       <collision name="collision">
