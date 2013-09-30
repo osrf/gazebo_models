@@ -3,7 +3,7 @@
   <model name="hinged_door">
 
     <link name="frame">
-      <pose>0.060 -0.0005 0 0 0 0</pose>
+      <pose>0.06 -0.0005 0 0 0 0</pose>
       <collision name="collision_1">
         <pose>-0.025145 -0.03429 1.0541 0 0 0</pose>
         <geometry>
@@ -32,6 +32,7 @@
       </collision>
 
       <visual name="visual">
+	<pose>0 -0.06858 0 0 0 0 </pose>
         <geometry>
           <mesh>
             <uri>model://hinged_door/meshes/frame.dae</uri>
@@ -64,6 +65,7 @@
       </collision>
 
       <visual name="visual">
+	<pose>0 -0.06858 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://hinged_door/meshes/door.dae</uri>
@@ -78,7 +80,7 @@
         <pose>0.015 -0.015 0 -1.57 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://door_handle/meshes/door_handle.dae</uri>
+            <uri>model://door_handle/meshes/handle.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -87,7 +89,7 @@
         <pose>0.015 -0.015 0 -1.57 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://door_handle/meshes/door_handle.dae</uri>
+            <uri>model://door_handle/meshes/handle.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -96,7 +98,7 @@
         <pose>0.015 -0.055 0 1.57 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://door_handle/meshes/door_handle.dae</uri>
+            <uri>model://door_handle/meshes/handle.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -105,7 +107,7 @@
         <pose>0.015 -0.055 0 1.57 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://door_handle/meshes/door_handle.dae</uri>
+            <uri>model://door_handle/meshes/handle.dae</uri>
           </mesh>
         </geometry>
       </visual>
