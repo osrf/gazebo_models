@@ -7,7 +7,7 @@ material BrickBox/Diffuse
     {
       texture_unit
       {
-        texture simple_box.jpg
+        texture simple_box.png
         filtering anistropic
         max_anisotropy 16
       }

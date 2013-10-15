@@ -7,7 +7,7 @@ material Dumpster/Diffuse
     {
       texture_unit
       {
-        texture Dumpster_Diffuse.tga
+        texture Dumpster_Diffuse.png
       }
     }
   }
@@ -22,7 +22,7 @@ material Dumpster/Specular
     {
       texture_unit
       {
-        texture Dumpster_Spec.tga
+        texture Dumpster_Spec.png
       }
     }
   }

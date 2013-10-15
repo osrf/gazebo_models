@@ -136,7 +136,7 @@
   </library_lights>
   <library_images>
     <image id="Construction_Cone_Diffuse_tga">
-      <init_from>Construction_Cone_Diffuse.tga</init_from>
+      <init_from>../materials/textures/Construction_Cone_Diffuse.png</init_from>
     </image>
   </library_images>
   <library_visual_scenes>

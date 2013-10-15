@@ -153,10 +153,10 @@
   </library_lights>
   <library_images>
     <image id="Barrier_Diffuse_tga">
-      <init_from>jersey_barrier_diffuse.tga</init_from>
+      <init_from>../materials/textures/jersey_barrier_diffuse.png</init_from>
     </image>
     <image id="Barrier_Spec_tga">
-      <init_from>jersey_barrier_spec.tga</init_from>
+      <init_from>../materials/textures/jersey_barrier_spec.png</init_from>
     </image>
   </library_images>
   <library_visual_scenes>

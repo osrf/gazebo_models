@@ -65,7 +65,7 @@
 	</library_effects>
 	<library_images>
 		<image id="create_tga-img" name="create_tga-img">
-      <init_from>create_body.tga</init_from>
+      <init_from>../materials/textures/create_body.png</init_from>
 		</image>
 	</library_images>
 	<library_materials>

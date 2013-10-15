@@ -6,7 +6,7 @@ material Beer/Diffuse
     {
       texture_unit
       {
-        texture beer.jpg
+        texture beer.png
         filtering anistropic
         max_anisotropy 16
       }

@@ -12,10 +12,10 @@
   </asset>
   <library_images>
     <image id="__auto_2_jpg" name="__auto_2_jpg">
-      <init_from>cinder_block.jpg</init_from>
+      <init_from>../materials/textures/cinder_block.png</init_from>
     </image>
     <image id="cinder_block_jpg" name="cinder_block_jpg">
-      <init_from>cinder_block.jpg</init_from>
+      <init_from>../materials/textures/cinder_block.png</init_from>
     </image>
   </library_images>
   <library_effects>

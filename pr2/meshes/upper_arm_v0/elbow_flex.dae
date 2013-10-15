@@ -107,7 +107,7 @@
   </library_effects>
   <library_images>
     <image id="file4" name="file4">
-      <init_from>elbow_flex_color.tif</init_from>
+      <init_from>../../materials/textures/elbow_flex_color.png</init_from>
       <extra>
         <technique profile="OpenCOLLADAMaya">
           <dgnode_type>kFile</dgnode_type>
@@ -117,7 +117,7 @@
       </extra>
     </image>
     <image id="file3" name="file3">
-      <init_from>elbow_flex_normals.tif</init_from>
+      <init_from>../../materials/textures/elbow_flex_normals.png</init_from>
       <extra>
         <technique profile="OpenCOLLADAMaya">
           <dgnode_type>kFile</dgnode_type>

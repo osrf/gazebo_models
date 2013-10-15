@@ -9,7 +9,7 @@ material Polaris/Diffuse
 
       texture_unit
       {
-        texture Ranger_Diffuse.tga
+        texture Ranger_Diffuse.png
       }
 
       rtshader_system

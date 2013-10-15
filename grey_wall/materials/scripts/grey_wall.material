@@ -7,7 +7,7 @@ material vrc/grey_wall
 		{
 			texture_unit
 			{
-				texture grey_wall.jpg
+				texture grey_wall.png
 				filtering anistropic
 				max_anisotropy 16
 				scale 1 1

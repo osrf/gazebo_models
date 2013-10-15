@@ -13584,88 +13584,88 @@
     </library_effects>
     <library_images>
         <image id="ID9">
-            <init_from>__auto_.jpg</init_from>
+            <init_from>../materials/textures/__auto_.png</init_from>
         </image>
         <image id="ID38">
-            <init_from>__auto_1.jpg</init_from>
+            <init_from>../materials/textures/__auto_1.png</init_from>
         </image>
         <image id="ID51">
-            <init_from>__auto_2.jpg</init_from>
+            <init_from>../materials/textures/__auto_2.png</init_from>
         </image>
         <image id="ID64">
-            <init_from>__auto_3.jpg</init_from>
+            <init_from>../materials/textures/__auto_3.png</init_from>
         </image>
         <image id="ID117">
-            <init_from>__auto_6.jpg</init_from>
+            <init_from>../materials/textures/__auto_6.png</init_from>
         </image>
         <image id="ID130">
-            <init_from>__auto_7.jpg</init_from>
+            <init_from>../materials/textures/__auto_7.png</init_from>
         </image>
         <image id="ID143">
-            <init_from>__auto_8.jpg</init_from>
+            <init_from>../materials/textures/__auto_8.png</init_from>
         </image>
         <image id="ID156">
-            <init_from>__auto_9.jpg</init_from>
+            <init_from>../materials/textures/__auto_9.png</init_from>
         </image>
         <image id="ID169">
-            <init_from>__auto_10.jpg</init_from>
+            <init_from>../materials/textures/__auto_10.png</init_from>
         </image>
         <image id="ID182">
-            <init_from>__auto_11.jpg</init_from>
+            <init_from>../materials/textures/__auto_11.png</init_from>
         </image>
         <image id="ID209">
-            <init_from>__auto_12.jpg</init_from>
+            <init_from>../materials/textures/__auto_12.png</init_from>
         </image>
         <image id="ID222">
-            <init_from>__auto_13.jpg</init_from>
+            <init_from>../materials/textures/__auto_13.png</init_from>
         </image>
         <image id="ID594">
-            <init_from>__auto_17.jpg</init_from>
+            <init_from>../materials/textures/__auto_17.png</init_from>
         </image>
         <image id="ID609">
-            <init_from>__auto_19.jpg</init_from>
+            <init_from>../materials/textures/__auto_19.png</init_from>
         </image>
         <image id="ID619">
-            <init_from>__auto_20.jpg</init_from>
+            <init_from>../materials/textures/__auto_20.png</init_from>
         </image>
         <image id="ID632">
-            <init_from>__auto_21.jpg</init_from>
+            <init_from>../materials/textures/__auto_21.png</init_from>
         </image>
         <image id="ID641">
-            <init_from>__auto_22.jpg</init_from>
+            <init_from>../materials/textures/__auto_22.png</init_from>
         </image>
         <image id="ID662">
-            <init_from>__auto_23.jpg</init_from>
+            <init_from>../materials/textures/__auto_23.png</init_from>
         </image>
         <image id="ID801">
-            <init_from>__auto_25.jpg</init_from>
+            <init_from>../materials/textures/__auto_25.png</init_from>
         </image>
         <image id="ID960">
-            <init_from>__auto_26.jpg</init_from>
+            <init_from>../materials/textures/__auto_26.png</init_from>
         </image>
         <image id="ID981">
-            <init_from>__auto_27.jpg</init_from>
+            <init_from>../materials/textures/__auto_27.png</init_from>
         </image>
         <image id="ID1240">
-            <init_from>__auto_32.jpg</init_from>
+            <init_from>../materials/textures/__auto_32.png</init_from>
         </image>
         <image id="ID1395">
-            <init_from>__auto_33.jpg</init_from>
+            <init_from>../materials/textures/__auto_33.png</init_from>
         </image>
         <image id="ID1700">
-            <init_from>__auto_34.jpg</init_from>
+            <init_from>../materials/textures/__auto_34.png</init_from>
         </image>
         <image id="ID1735">
-            <init_from>__auto_35.jpg</init_from>
+            <init_from>../materials/textures/__auto_35.png</init_from>
         </image>
         <image id="ID1900">
-            <init_from>__auto_36.jpg</init_from>
+            <init_from>../materials/textures/__auto_36.png</init_from>
         </image>
         <image id="ID1913">
-            <init_from>__auto_37.jpg</init_from>
+            <init_from>../materials/textures/__auto_37.png</init_from>
         </image>
         <image id="ID1934">
-            <init_from>__auto_38.jpg</init_from>
+            <init_from>../materials/textures/__auto_38.png</init_from>
         </image>
     </library_images>
     <scene>

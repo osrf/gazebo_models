@@ -7,7 +7,7 @@ material Mailbox/Diffuse
     {
       texture_unit
       {
-        texture Mailbox_Diffuse.tga
+        texture Mailbox_Diffuse.png
       }
     }
   }
@@ -22,7 +22,7 @@ material Mailbox/Specular
     {
       texture_unit
       {
-        texture Mailbox_Spec.tga
+        texture Mailbox_Spec.png
       }
     }
   }

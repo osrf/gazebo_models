@@ -65,7 +65,7 @@
 	</library_effects>
 	<library_images>
 		<image id="plate_2_tga-img" name="plate_2_tga-img">
-			<init_from>plate_2_logo.tga</init_from>
+			<init_from>../materials/textures/plate_2_logo.png</init_from>
 		</image>
 	</library_images>
 	<library_materials>

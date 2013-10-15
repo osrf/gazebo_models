@@ -3007,13 +3007,13 @@
     </library_effects>
     <library_images>
         <image id="ID7">
-            <init_from>frame/Metal_Aluminum_Anodized.jpg</init_from>
+            <init_from>../materials/textures/Metal_Aluminum_Anodized.png</init_from>
         </image>
         <image id="ID228">
-            <init_from>frame/Metal_Rough.jpg</init_from>
+            <init_from>../materials/textures/Metal_Rough.png</init_from>
         </image>
         <image id="ID257">
-            <init_from>frame/Metal_Aluminum_Anodized.jpg</init_from>
+            <init_from>../materials/textures/Metal_Aluminum_Anodized.png</init_from>
         </image>
     </library_images>
     <scene>
