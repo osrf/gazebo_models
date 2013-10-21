@@ -90,6 +90,7 @@ office_building
 pioneer2dx
 pioneer3at
 polaris_ranger_ev
+polaris_ranger_xp900
 powerplant
 pr2
 pr2_gripper
