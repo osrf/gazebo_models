@@ -716,9 +716,9 @@
         </geometry>
         <material>
           <script>
-            <uri>model://polaris_ranger_xp900/materials/scripts</uri>
-            <uri>model://polaris_ranger_xp900/materials/textures</uri>
-            <name>PolarisXP900/FNR_switch_F</name>
+            <uri>model://polaris_ranger_ev/materials/scripts</uri>
+            <uri>model://polaris_ranger_ev/materials/textures</uri>
+            <name>FNR_switch_F</name>
           </script>
         </material>
       </visual>
@@ -731,9 +731,9 @@
         </geometry>
         <material>
           <script>
-            <uri>model://polaris_ranger_xp900/materials/scripts</uri>
-            <uri>model://polaris_ranger_xp900/materials/textures</uri>
-            <name>PolarisXP900/FNR_switch_R</name>
+            <uri>model://polaris_ranger_ev/materials/scripts</uri>
+            <uri>model://polaris_ranger_ev/materials/textures</uri>
+            <name>FNR_switch_R</name>
           </script>
         </material>
       </visual>
