@@ -1,0 +1,59 @@
+material fire_hose_long_curled/fire_hose_canvas
+{
+  receive_shadows off
+	technique
+	{
+		pass
+		{
+			ambient 0.7 0.7 0.7 1.0
+			diffuse 1.0 1.0 1.0 1.0			
+			specular 0.0 0.0 0.0 0.0
+
+			texture_unit
+			{
+				texture canvas.jpg
+				filtering trilinear
+        scale 1.00 1.00
+			}
+		}
+	}
+}
+
+material fire_hose_long_curled/fire_hose_coupling
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.7 0.7 0.7 1.0
+			diffuse 1.0 1.0 1.0 1.0
+			specular 0.0 0.0 0.0 0.0
+      emissive 0.2 0.2 0.2
+
+			texture_unit
+			{
+				texture coupling_hexagon.png
+				filtering trilinear
+			}
+		}
+	}
+}
+
+material fire_hose_long_curled/fire_hose_red_coupling
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.7 0.7 0.7 1.0
+			diffuse 1.0 1.0 1.0 1.0
+			specular 0.0 0.0 0.0 0.0
+
+			texture_unit
+			{
+				texture connector.png
+				filtering trilinear
+			}
+		}
+	}
+}
