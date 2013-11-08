@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <sdf version="1.4">
-  <model name="Fire hydrant">
+  <model name="fire_hydrant">
     <static>true</static>
     <link name="link">
       <collision name="collision">
