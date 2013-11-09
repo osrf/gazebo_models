@@ -98,6 +98,7 @@ simple_arm
 simple_arm_gripper
 simple_gripper
 speed_limit_sign
+standpipe
 starting_pen
 stereo_camera
 stop_sign
