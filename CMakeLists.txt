@@ -61,6 +61,7 @@ drc_practice_yellow_parking_block
 dumpster
 fast_food
 fire_hose_long
+fire_hose_long_curled
 fire_hydrant
 gas_station
 grey_wall
@@ -99,7 +100,6 @@ simple_arm
 simple_arm_gripper
 simple_gripper
 speed_limit_sign
-standpipe
 starting_pen
 stereo_camera
 stop_sign
