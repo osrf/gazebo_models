@@ -3,14 +3,14 @@
   <model name="cinder_block_2">
     <link name="link">
       <inertial>
-        <pose>0 0 0.1016  0 0 0</pose>
+        <pose>0 0 0.0714375  0 0 0</pose>
         <!-- volume about 0.0085 m^3, density 2000 kg/m^3 -->
         <mass>5</mass>
         <!-- approximate as uniform box 0.37 x 0.17 x 0.20 m -->
         <inertia>
-          <ixx>0.028705</ixx>
-          <ixy>0.0000</ixy><iyy>0.073708</iyy>
-          <ixz>0.0000</ixz><iyz>0.0000</iyz><izz>0.06908</izz>
+          <ixx>0.06908</ixx>
+          <ixy>0.0000</ixy><iyy>0.028705</iyy>
+          <ixz>0.0000</ixz><iyz>0.0000</iyz><izz>0.073708</izz>
         </inertia>
       </inertial>
       <visual name="visual">

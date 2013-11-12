@@ -8,9 +8,9 @@
           <ixx>4.7978</ixx>
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>4.7978</iyy>
+          <iyy>0.4699</iyy>
           <iyz>-0.002</iyz>
-          <izz>0.4699</izz>
+          <izz>4.7978</izz>
         </inertia>
       </inertial> 
       <collision name="collision">
