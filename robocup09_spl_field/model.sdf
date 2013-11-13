@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.4">
-  <model name="RoboCupSplField">
+  <model name="RoboCup09SplField">
     <static>true</static>
 
     <link name="carpet">
@@ -40,22 +40,6 @@
 
     <link name="SideLine1">
       <pose>0 2 0.011 0 0 0</pose>
-      <collision name="collision">
-        <geometry>
-          <plane>
-            <normal>0 0 1</normal>
-            <size>6.05 0.05</size>
-          </plane>
-        </geometry>
-        <surface>
-          <friction>
-            <ode>
-              <mu>100</mu>
-              <mu2>50</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
       <visual name="visual">
         <cast_shadows>false</cast_shadows>
         <geometry>
@@ -75,22 +59,6 @@
 
     <link name="SideLine2">
       <pose>0 -2 0.011 0 0 0</pose>
-      <collision name="collision">
-        <geometry>
-          <plane>
-            <normal>0 0 1</normal>
-            <size>6.05 0.05</size>
-          </plane>
-        </geometry>
-        <surface>
-          <friction>
-            <ode>
-              <mu>100</mu>
-              <mu2>50</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
       <visual name="visual">
         <cast_shadows>false</cast_shadows>
         <geometry>
@@ -110,22 +78,6 @@
 
     <link name="EndLine1">
       <pose>-3 0 0.011 0 0 0</pose>
-      <collision name="collision">
-        <geometry>
-          <plane>
-            <normal>0 0 1</normal>
-            <size>0.05 4.05</size>
-          </plane>
-        </geometry>
-        <surface>
-          <friction>
-            <ode>
-              <mu>100</mu>
-              <mu2>50</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
       <visual name="visual">
         <cast_shadows>false</cast_shadows>
         <geometry>
@@ -145,22 +97,6 @@
 
     <link name="EndLine2">
       <pose>3 0 0.011 0 0 0</pose>
-      <collision name="collision">
-        <geometry>
-          <plane>
-            <normal>0 0 1</normal>
-            <size>0.05 4.05</size>
-          </plane>
-        </geometry>
-        <surface>
-          <friction>
-            <ode>
-              <mu>100</mu>
-              <mu2>50</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
       <visual name="visual">
         <cast_shadows>false</cast_shadows>
         <geometry>
@@ -180,22 +116,6 @@
 
     <link name="HalfwayLine">
       <pose>0 0 0.011 0 0 0</pose>
-      <collision name="collision">
-        <geometry>
-          <plane>
-            <normal>0 0 1</normal>
-            <size>0.05 4.05</size>
-          </plane>
-        </geometry>
-        <surface>
-          <friction>
-            <ode>
-              <mu>100</mu>
-              <mu2>50</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
       <visual name="visual">
         <cast_shadows>false</cast_shadows>
         <geometry>
@@ -215,22 +135,6 @@
 
     <link name="Area1LineY">
       <pose>-2.40 0 0.011 0 0 0</pose>
-      <collision name="collision">
-        <geometry>
-          <plane>
-            <normal>0 0 1</normal>
-            <size>0.05 3</size>
-          </plane>
-        </geometry>
-        <surface>
-          <friction>
-            <ode>
-              <mu>100</mu>
-              <mu2>50</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
       <visual name="visual">
         <cast_shadows>false</cast_shadows>
         <geometry>
@@ -250,22 +154,6 @@
 
     <link name="Area2LineY">
       <pose>-2.70 1.50 0.011 0 0 0</pose>
-      <collision name="collision">
-        <geometry>
-          <plane>
-            <normal>0 0 1</normal>
-            <size>0.65 0.05</size>
-          </plane>
-        </geometry>
-        <surface>
-          <friction>
-            <ode>
-              <mu>100</mu>
-              <mu2>50</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
       <visual name="visual">
         <cast_shadows>false</cast_shadows>
         <geometry>
@@ -285,22 +173,6 @@
 
     <link name="Area3LineY">
       <pose>-2.70 -1.50 0.011 0 0 0</pose>
-      <collision name="collision">
-        <geometry>
-          <plane>
-            <normal>0 0 1</normal>
-            <size>0.65 0.05</size>
-          </plane>
-        </geometry>
-        <surface>
-          <friction>
-            <ode>
-              <mu>100</mu>
-              <mu2>50</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
       <visual name="visual">
         <cast_shadows>false</cast_shadows>
         <geometry>
@@ -320,22 +192,6 @@
 
     <link name="Area1LineB">
       <pose>2.40 0 0.011 0 0 0</pose>
-      <collision name="collision">
-        <geometry>
-          <plane>
-            <normal>0 0 1</normal>
-            <size>0.05 3</size>
-          </plane>
-        </geometry>
-        <surface>
-          <friction>
-            <ode>
-              <mu>100</mu>
-              <mu2>50</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
       <visual name="visual">
         <cast_shadows>false</cast_shadows>
         <geometry>
@@ -355,22 +211,6 @@
 
     <link name="Area2LineB">
       <pose>2.70 1.50 0.011 0 0 0</pose>
-      <collision name="collision">
-        <geometry>
-          <plane>
-            <normal>0 0 1</normal>
-            <size>0.65 0.05</size>
-          </plane>
-        </geometry>
-        <surface>
-          <friction>
-            <ode>
-              <mu>100</mu>
-              <mu2>50</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
       <visual name="visual">
         <cast_shadows>false</cast_shadows>
         <geometry>
@@ -390,22 +230,6 @@
 
     <link name="Area3LineB">
       <pose>2.70 -1.50 0.011 0 0 0</pose>
-      <collision name="collision">
-        <geometry>
-          <plane>
-            <normal>0 0 1</normal>
-            <size>0.65 0.05</size>
-          </plane>
-        </geometry>
-        <surface>
-          <friction>
-            <ode>
-              <mu>100</mu>
-              <mu2>50</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
       <visual name="visual">
         <cast_shadows>false</cast_shadows>
         <geometry>
@@ -425,20 +249,12 @@
 
     <link name="PenaltyB">
       <pose>-1.20 0 0.01 0 0 0</pose>
-      <collision name="collision">
-        <geometry>
-          <cylinder>
-            <radius>0.05</radius>
-            <length>0.001</length>
-          </cylinder>
-        </geometry>
-      </collision>
       <visual name="visual">
         <cast_shadows>false</cast_shadows>
         <geometry>
           <cylinder>
             <radius>0.05</radius>
-            <length>0.001</length>
+            <length>0.0005</length>
           </cylinder>
         </geometry>
         <material>
@@ -452,20 +268,12 @@
 
     <link name="PenaltyY">
       <pose>1.20 0 0.01 0 0 0</pose>
-      <collision name="collision">
-        <geometry>
-          <cylinder>
-            <radius>0.05</radius>
-            <length>0.001</length>
-          </cylinder>
-        </geometry>
-      </collision>
       <visual name="visual">
         <cast_shadows>false</cast_shadows>
         <geometry>
           <cylinder>
             <radius>0.05</radius>
-            <length>0.001</length>
+            <length>0.0005</length>
           </cylinder>
         </geometry>
         <material>
@@ -479,20 +287,12 @@
 
     <link name="CenterPoint">
       <pose>0 0 0.01 0 0 0</pose>
-      <collision name="collision">
-        <geometry>
-          <cylinder>
-            <radius>0.05</radius>
-            <length>0.001</length>
-          </cylinder>
-        </geometry>
-      </collision>
       <visual name="visual">
         <cast_shadows>false</cast_shadows>
         <geometry>
           <cylinder>
             <radius>0.05</radius>
-            <length>0.001</length>
+            <length>0.0005</length>
           </cylinder>
         </geometry>
         <material>
@@ -506,20 +306,12 @@
 
     <link name="CenterCircle">
       <pose>0 0 -0.01 0 0 0</pose>
-      <collision name="collision">
-        <geometry>
-          <cylinder>
-            <radius>0.575</radius>
-            <length>0.011</length>
-          </cylinder>
-        </geometry>
-      </collision>
       <visual name="visual">
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
             <scale>1 1 0.75</scale>
-            <uri>model://robocup_spl_goal/meshes/circle.dae</uri>
+            <uri>model://robocup09_spl_field/meshes/circle.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -554,7 +346,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Yellow</name>
+            <name>Gazebo/ZincYellow</name>
           </script>
         </material>
       </visual>
@@ -565,11 +357,19 @@
       <inertial>
         <mass>0.1</mass>
       </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>0.41 0.41 0.41</scale>
+            <uri>model://robocup09_spl_field/meshes/triangle.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="visual">
         <geometry>
           <mesh>
             <scale>0.41 0.41 0.41</scale>
-            <uri>model://robocup_spl_goal/meshes/triangle.dae</uri>
+            <uri>model://robocup09_spl_field/meshes/triangle.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -604,7 +404,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Yellow</name>
+            <name>Gazebo/ZincYellow</name>
           </script>
         </material>
       </visual>
@@ -615,11 +415,19 @@
       <inertial>
         <mass>0.1</mass>
       </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>0.41 0.41 0.41</scale>
+            <uri>model://robocup09_spl_field/meshes/triangle.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="visual">
         <geometry>
           <mesh>
             <scale>0.41 0.41 0.41</scale>
-            <uri>model://robocup_spl_goal/meshes/triangle.dae</uri>
+            <uri>model://robocup09_spl_field/meshes/triangle.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -632,7 +440,7 @@
     </link>
 
     <link name="crossbarY">
-      <pose>-3 0 0.785 1.57 1.57 0</pose>
+      <pose>-3 0 0.785 1.5708 1.5708 0</pose>
       <inertial>
         <mass>0.1</mass>
       </inertial>
@@ -654,28 +462,55 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Yellow</name>
+            <name>Gazebo/ZincYellow</name>
           </script>
         </material>
       </visual>
     </link>
 
-    <link name="netY">
-      <pose>-3.25 0 0.41 0 -1.11 0</pose>
+    <link name="netYupper">
+      <pose>-3.055 0 0.610 0 1.5708 0</pose>
       <inertial>
         <mass>0.1</mass>
       </inertial>
       <collision name="collision">
         <geometry>
           <box>
-            <size>0.88 1.4 0.025</size>
+            <size>0.395 1.4 0.01</size>
           </box>
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
           <box>
-            <size>0.88 1.4 0.025</size>
+            <size>0.395 1.4 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Net</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="netYlower">
+      <pose>-3.25 0 0.22 0 -0.785 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.55 1.4 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.55 1.4 0.01</size>
           </box>
         </geometry>
         <material>
@@ -721,11 +556,19 @@
       <inertial>
         <mass>0.1</mass>
       </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>0.41 0.41 0.41</scale>
+            <uri>model://robocup09_spl_field/meshes/triangle.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="visual">
         <geometry>
           <mesh>
             <scale>0.41 0.41 0.41</scale>
-            <uri>model://robocup_spl_goal/meshes/triangle.dae</uri>
+            <uri>model://robocup09_spl_field/meshes/triangle.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -771,11 +614,19 @@
       <inertial>
         <mass>0.1</mass>
       </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>0.41 0.41 0.41</scale>
+            <uri>model://robocup09_spl_field/meshes/triangle.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="visual">
         <geometry>
           <mesh>
             <scale>0.41 0.41 0.41</scale>
-            <uri>model://robocup_spl_goal/meshes/triangle.dae</uri>
+            <uri>model://robocup09_spl_field/meshes/triangle.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -788,7 +639,7 @@
     </link>
 
     <link name="crossbarB">
-      <pose>3 0 0.785 1.57 1.57 0</pose>
+      <pose>3 0 0.785 1.5708 1.5708 0</pose>
       <inertial>
         <mass>0.1</mass>
       </inertial>
@@ -816,22 +667,49 @@
       </visual>
     </link>
 
-    <link name="netB">
-      <pose>3.25 0 0.41 0 1.11 0</pose>
+    <link name="netBupper">
+      <pose>3.055 0 0.610 0 1.5708 0</pose>
       <inertial>
         <mass>0.1</mass>
       </inertial>
       <collision name="collision">
         <geometry>
           <box>
-            <size>0.88 1.4 0.025</size>
+            <size>0.395 1.4 0.01</size>
           </box>
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
           <box>
-            <size>0.88 1.4 0.025</size>
+            <size>0.395 1.4 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Net</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="netBlower">
+      <pose>3.25 0 0.22 0 0.785 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.55 1.4 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.55 1.4 0.01</size>
           </box>
         </geometry>
         <material>
