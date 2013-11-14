@@ -326,8 +326,8 @@
         </geometry>
         <material>
           <script>
-            <uri>model://robocup14_spl_goal/materials/scripts/</uri>
-            <uri>model://robocup14_spl_goal/materials/textures/</uri>
+            <uri>model://robocup09_spl_field/materials/scripts/</uri>
+            <uri>model://robocup09_spl_field/materials/textures/</uri>
             <name>RoboCup/Net</name>
           </script>
         </material>
@@ -354,8 +354,8 @@
         </geometry>
         <material>
           <script>
-            <uri>model://robocup14_spl_goal/materials/scripts/</uri>
-            <uri>model://robocup14_spl_goal/materials/textures/</uri>
+            <uri>model://robocup09_spl_field/materials/scripts/</uri>
+            <uri>model://robocup09_spl_field/materials/textures/</uri>
             <name>RoboCup/Net</name>
           </script>
         </material>
@@ -382,8 +382,8 @@
         </geometry>
         <material>
           <script>
-            <uri>model://robocup14_spl_goal/materials/scripts/</uri>
-            <uri>model://robocup14_spl_goal/materials/textures/</uri>
+            <uri>model://robocup09_spl_field/materials/scripts/</uri>
+            <uri>model://robocup09_spl_field/materials/textures/</uri>
             <name>RoboCup/Net</name>
           </script>
         </material>
