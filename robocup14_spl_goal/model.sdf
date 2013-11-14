@@ -326,8 +326,9 @@
         </geometry>
         <material>
           <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Net</name>
+            <uri>model://robocup14_spl_goal/materials/scripts/</uri>
+            <uri>model://robocup14_spl_goal/materials/textures/</uri>
+            <name>RoboCup/Net</name>
           </script>
         </material>
       </visual>
@@ -353,8 +354,9 @@
         </geometry>
         <material>
           <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Net</name>
+            <uri>model://robocup14_spl_goal/materials/scripts/</uri>
+            <uri>model://robocup14_spl_goal/materials/textures/</uri>
+            <name>RoboCup/Net</name>
           </script>
         </material>
       </visual>
@@ -380,8 +382,9 @@
         </geometry>
         <material>
           <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Net</name>
+            <uri>model://robocup14_spl_goal/materials/scripts/</uri>
+            <uri>model://robocup14_spl_goal/materials/textures/</uri>
+            <name>RoboCup/Net</name>
           </script>
         </material>
       </visual>
