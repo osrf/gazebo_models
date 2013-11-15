@@ -347,7 +347,6 @@
             <uri>model://drc_practice_ladder/meshes/ladder.dae</uri>
           </mesh>
         </geometry>
-        <material>Gazebo/Black</material>
       </visual>
     </link>
   </model>
