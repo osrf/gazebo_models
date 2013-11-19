@@ -61,6 +61,8 @@ drc_practice_yellow_parking_block
 dumpster
 fast_food
 fire_hose_long
+fire_hose_long_curled
+fire_hydrant
 gas_station
 grey_wall
 ground_plane
