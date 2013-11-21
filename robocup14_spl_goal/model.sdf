@@ -1,13 +1,10 @@
 <?xml version="1.0" ?>
 <sdf version="1.4">
-  <model name="RoboCup14SplGoal">
+  <model name="RoboCup 14 SPL Goal">
     <static>true</static>
 
-    <link name="leftPost">
+    <link name="left_post">
       <pose>0 0.8 0.45 0 0 0</pose>
-      <inertial>
-        <mass>0.1</mass>
-      </inertial>
       <collision name="collision">
         <geometry>
           <cylinder>
@@ -32,11 +29,8 @@
       </visual>
     </link>
 
-    <link name="leftSupportHorizLower">
+    <link name="left_support_horiz_lower">
       <pose>0.24 0.8 0.01 0 0 0</pose>
-      <inertial>
-        <mass>0.1</mass>
-      </inertial>
       <collision name="collision">
         <geometry>
           <box>
@@ -59,11 +53,8 @@
       </visual>
     </link>
 
-    <link name="leftSupportHorizUpper">
+    <link name="left_support_horiz_upper">
       <pose>0.24 0.8 0.79 0 0 0</pose>
-      <inertial>
-        <mass>0.1</mass>
-      </inertial>
       <collision name="collision">
         <geometry>
           <box>
@@ -84,13 +75,10 @@
           </script>
         </material>
       </visual>
-    </link>    
+    </link>
 
-    <link name="leftSupportVertical">
+    <link name="left_support_vertical">
       <pose>0.44 0.8 0.4 0 1.5708 0</pose>
-      <inertial>
-        <mass>0.1</mass>
-      </inertial>
       <collision name="collision">
         <geometry>
           <box>
@@ -113,11 +101,8 @@
       </visual>
     </link>
 
-    <link name="rightSupportHorizLower">
+    <link name="right_support_horiz_lower">
       <pose>0.24 -0.8 0.01 0 0 0</pose>
-      <inertial>
-        <mass>0.1</mass>
-      </inertial>
       <collision name="collision">
         <geometry>
           <box>
@@ -140,11 +125,8 @@
       </visual>
     </link>
 
-    <link name="rightSupportHorizUpper">
+    <link name="right_support_horiz_upper">
       <pose>0.24 -0.8 0.79 0 0 0</pose>
-      <inertial>
-        <mass>0.1</mass>
-      </inertial>
       <collision name="collision">
         <geometry>
           <box>
@@ -165,13 +147,10 @@
           </script>
         </material>
       </visual>
-    </link>    
+    </link>
 
-    <link name="rightSupportVertical">
+    <link name="right_support_vertical">
       <pose>0.44 -0.8 0.4 0 1.5708 0</pose>
-      <inertial>
-        <mass>0.1</mass>
-      </inertial>
       <collision name="collision">
         <geometry>
           <box>
@@ -194,11 +173,8 @@
       </visual>
     </link>
 
-    <link name="centerSupportHorizLower">
+    <link name="center_support_horiz_lower">_h
       <pose>0.44 0 0.01 0 1.5708 0</pose>
-      <inertial>
-        <mass>0.1</mass>
-      </inertial>
       <collision name="collision">
         <geometry>
           <box>
@@ -221,11 +197,8 @@
       </visual>
     </link>
 
-    <link name="centerSupportHorizUpper">
+    <link name="center_support_horiz_upper">_
       <pose>0.44 0 0.79 0 1.5708 0</pose>
-      <inertial>
-        <mass>0.1</mass>
-      </inertial>
       <collision name="collision">
         <geometry>
           <box>
@@ -246,13 +219,10 @@
           </script>
         </material>
       </visual>
-    </link>    
+    </link>
 
-    <link name="rightPost">
+    <link name="right_post">
       <pose>0 -0.8 0.45 0 0 0</pose>
-      <inertial>
-        <mass>0.1</mass>
-      </inertial>
       <collision name="collision">
         <geometry>
           <cylinder>
@@ -279,9 +249,6 @@
 
     <link name="crossbar">
       <pose>0 0 0.85 1.57 1.57 0</pose>
-      <inertial>
-        <mass>0.1</mass>
-      </inertial>
       <collision name="collision">
         <geometry>
           <cylinder>
@@ -306,11 +273,8 @@
       </visual>
     </link>
 
-    <link name="centerNet">
+    <link name="center_net">
       <pose>0.44 0 0.40 0 0 0</pose>
-      <inertial>
-        <mass>0.1</mass>
-      </inertial>
       <collision name="collision">
         <geometry>
           <box>
@@ -334,11 +298,8 @@
       </visual>
     </link>
 
-    <link name="leftNet">
+    <link name="left_net">
       <pose>0.24 0.8 0.40 0 0 0</pose>
-      <inertial>
-        <mass>0.1</mass>
-      </inertial>
       <collision name="collision">
         <geometry>
           <box>
@@ -362,11 +323,8 @@
       </visual>
     </link>
 
-    <link name="rightNet">
+    <link name="right_net">
       <pose>0.24 -0.8 0.40 0 0 0</pose>
-      <inertial>
-        <mass>0.1</mass>
-      </inertial>
       <collision name="collision">
         <geometry>
           <box>
@@ -388,7 +346,7 @@
           </script>
         </material>
       </visual>
-    </link>    
+    </link>
 
   </model>
 </sdf>
