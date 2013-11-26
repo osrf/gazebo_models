@@ -12545,25 +12545,25 @@
   </library_effects>
   <library_images>
     <image id="ID143">
-      <init_from>__auto_2.jpg</init_from>
+      <init_from>../materials/textures/__auto_2.png</init_from>
     </image>
     <image id="ID738">
-      <init_from>Stone_Brushed_Khaki_.jpg</init_from>
+      <init_from>../materials/textures/Stone_Brushed_Khaki_.png</init_from>
     </image>
     <image id="ID757">
-      <init_from>__auto_12.jpg</init_from>
+      <init_from>../materials/textures/__auto_12.png</init_from>
     </image>
     <image id="ID874">
-      <init_from>__Wood_Bamboo_Medium_1.jpg</init_from>
+      <init_from>../materials/textures/__Wood_Bamboo_Medium_1.png</init_from>
     </image>
     <image id="ID893">
-      <init_from>Wood_Bamboo_Medium_.jpg</init_from>
+      <init_from>../materials/textures/Wood_Bamboo_Medium_.png</init_from>
     </image>
     <image id="ID1298">
-      <init_from>Wood_Cherry_Original_.jpg</init_from>
+      <init_from>../materials/textures/Wood_Cherry_Original_.png</init_from>
     </image>
     <image id="ID1700">
-      <init_from>Carpet_Berber_Pattern_Gray_.jpg</init_from>
+      <init_from>../materials/textures/Carpet_Berber_Pattern_Gray_.png</init_from>
     </image>
   </library_images>
   <scene>

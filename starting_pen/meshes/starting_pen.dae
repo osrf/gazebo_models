@@ -154,10 +154,10 @@
   </library_lights>
   <library_images>
     <image id="Starting_Pen_Diffuse_tga">
-      <init_from>Starting_Pen_Diffuse.tga</init_from>
+      <init_from>../materials/textures/Starting_Pen_Diffuse.png</init_from>
     </image>
     <image id="Starting_Pen_Spec_tga">
-      <init_from>Starting_Pen_Spec.tga</init_from>
+      <init_from>../materials/textures/Starting_Pen_Spec.png</init_from>
     </image>
   </library_images>
   <library_visual_scenes>

@@ -254,16 +254,16 @@
   </library_lights>
   <library_images>
     <image id="Speed_30_tga">
-      <init_from>Speed_16.tga</init_from>
+      <init_from>../materials/textures/Speed_16.png</init_from>
     </image>
     <image id="Speed_Spec_tga">
-      <init_from>Speed_Spec.tga</init_from>
+      <init_from>../materials/textures/Speed_Spec.png</init_from>
     </image>
     <image id="StopSign_Diffuse_tga">
-      <init_from>StopSign_Diffuse.tga</init_from>
+      <init_from>../materials/textures/StopSign_Diffuse.png</init_from>
     </image>
     <image id="StopSign_Spec_tga">
-      <init_from>StopSign_Spec.tga</init_from>
+      <init_from>../materials/textures/StopSign_Spec.png</init_from>
     </image>
   </library_images>
   <library_visual_scenes>

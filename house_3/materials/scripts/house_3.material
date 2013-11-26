@@ -7,7 +7,7 @@ material House_3/Diffuse
     {
       texture_unit
       {
-        texture House_3_Diffuse.tga
+        texture House_3_Diffuse.png
       }
     }
   }

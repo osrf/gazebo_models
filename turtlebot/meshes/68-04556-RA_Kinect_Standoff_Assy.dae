@@ -12,7 +12,7 @@
     </asset>
     <library_images>
         <image id="texture0" name="texture0">
-            <init_from>68-04552-1000-RA_Turtlebot_M-F_Standoff_color.png</init_from>
+            <init_from>../materials/textures/68-04552-1000-RA_Turtlebot_M-F_Standoff_color.png</init_from>
         </image>
     </library_images>
     <library_materials>

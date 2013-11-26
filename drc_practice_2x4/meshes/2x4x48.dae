@@ -441,13 +441,13 @@
     </library_effects>
     <library_images>
         <image id="ID9">
-            <init_from>pine.jpg</init_from>
+            <init_from>../materials/textures/pine.png</init_from>
         </image>
         <image id="ID52">
-            <init_from>pine.jpg</init_from>
+            <init_from>../materials/textures/pine.png</init_from>
         </image>
         <image id="ID61">
-            <init_from>pine.jpg</init_from>
+            <init_from>../materials/textures/pine.png</init_from>
         </image>
     </library_images>
     <scene>

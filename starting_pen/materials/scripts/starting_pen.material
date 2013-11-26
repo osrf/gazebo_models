@@ -10,7 +10,7 @@ material StartingPen/Floor
 
       texture_unit
       {
-        texture metal_ripped.jpg
+        texture metal_ripped.png
         filtering anistorpic
         max_anisotropy 16
       }

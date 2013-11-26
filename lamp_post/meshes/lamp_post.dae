@@ -164,13 +164,13 @@
   </library_lights>
   <library_images>
     <image id="Lamp_Post_Diffuse_tga">
-      <init_from>Lamp_Post_Diffuse.tga</init_from>
+      <init_from>../materials/textures/Lamp_Post_Diffuse.png</init_from>
     </image>
     <image id="Lamp_Post_Emissive_tga">
-      <init_from>Lamp_Post_Emissive.tga</init_from>
+      <init_from>../materials/textures/Lamp_Post_Emissive.png</init_from>
     </image>
     <image id="Lamp_Post_Spec_tga">
-      <init_from>Lamp_Post_Spec.tga</init_from>
+      <init_from>../materials/textures/Lamp_Post_Spec.png</init_from>
     </image>
   </library_images>
   <library_visual_scenes>

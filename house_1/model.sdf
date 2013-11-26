@@ -24,7 +24,7 @@
           </script>
 
           <shader type="normal_map_object_space">
-            <normal_map>House_1_Normal.tga</normal_map>
+            <normal_map>House_1_Normal.png</normal_map>
           </shader>
         </material>
       </visual>

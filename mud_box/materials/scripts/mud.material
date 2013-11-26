@@ -10,7 +10,7 @@ material vrc/mud
 
 			texture_unit
 			{
-				texture mud_soft_leaves.jpg
+				texture mud_soft_leaves.png
 				filtering anistropic
 				max_anisotropy 16
 			}
