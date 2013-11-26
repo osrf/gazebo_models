@@ -5,7 +5,7 @@ material PolarisXP900/Diffuse
   {
     pass
     {
-			ambient 1.0 1.0 1.0 1.000000
+      ambient 1.0 1.0 1.0 1.000000
 
       texture_unit
       {
