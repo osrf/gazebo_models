@@ -49,11 +49,15 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="front_left_main_wheel_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_main_wheel_joint" type="continuous">
     <parent link="base"/>
     <child link="front_left_main_wheel"/>
     <axis xyz="0 0 1"/>
     <origin rpy="1.57079632679 0 0" xyz="2 2 0"/>
+    <dynamics damping="1.0"/>
   </joint>
   <gazebo reference="main_wheel">
     <material>Gazebo/Blue</material>
@@ -82,11 +86,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_1_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_1_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_1"/>
     <origin rpy="0 0 0" xyz="1.000000 0.000000 0.000000"/>
     <axis xyz="0.000000 0.707107 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_2">
     <inertial>
@@ -111,11 +119,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_2_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_2_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_2"/>
     <origin rpy="0 0 0" xyz="0.965926 0.258819 0.000000"/>
     <axis xyz="-0.183013 0.683013 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_3">
     <inertial>
@@ -140,11 +152,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_3_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_3_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_3"/>
     <origin rpy="0 0 0" xyz="0.866025 0.500000 0.000000"/>
     <axis xyz="-0.353553 0.612372 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_4">
     <inertial>
@@ -169,11 +185,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_4_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_4_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_4"/>
     <origin rpy="0 0 0" xyz="0.707107 0.707107 0.000000"/>
     <axis xyz="-0.500000 0.500000 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_5">
     <inertial>
@@ -198,11 +218,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_5_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_5_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_5"/>
     <origin rpy="0 0 0" xyz="0.500000 0.866025 0.000000"/>
     <axis xyz="-0.612372 0.353553 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_6">
     <inertial>
@@ -227,11 +251,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_6_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_6_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_6"/>
     <origin rpy="0 0 0" xyz="0.258819 0.965926 0.000000"/>
     <axis xyz="-0.683013 0.183013 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_7">
     <inertial>
@@ -256,11 +284,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_7_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_7_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_7"/>
     <origin rpy="0 0 0" xyz="0.000000 1.000000 0.000000"/>
     <axis xyz="-0.707107 0.000000 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_8">
     <inertial>
@@ -285,11 +317,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_8_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_8_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_8"/>
     <origin rpy="0 0 0" xyz="-0.258819 0.965926 0.000000"/>
     <axis xyz="-0.683013 -0.183013 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_9">
     <inertial>
@@ -314,11 +350,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_9_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_9_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_9"/>
     <origin rpy="0 0 0" xyz="-0.500000 0.866025 0.000000"/>
     <axis xyz="-0.612372 -0.353553 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_10">
     <inertial>
@@ -343,11 +383,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_10_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_10_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_10"/>
     <origin rpy="0 0 0" xyz="-0.707107 0.707107 0.000000"/>
     <axis xyz="-0.500000 -0.500000 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_11">
     <inertial>
@@ -372,11 +416,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_11_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_11_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_11"/>
     <origin rpy="0 0 0" xyz="-0.866025 0.500000 0.000000"/>
     <axis xyz="-0.353553 -0.612372 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_12">
     <inertial>
@@ -401,11 +449,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_12_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_12_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_12"/>
     <origin rpy="0 0 0" xyz="-0.965926 0.258819 0.000000"/>
     <axis xyz="-0.183013 -0.683013 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_13">
     <inertial>
@@ -430,11 +482,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_13_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_13_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_13"/>
     <origin rpy="0 0 0" xyz="-1.000000 0.000000 0.000000"/>
     <axis xyz="0.000000 -0.707107 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_14">
     <inertial>
@@ -459,11 +515,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_14_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_14_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_14"/>
     <origin rpy="0 0 0" xyz="-0.965926 -0.258819 0.000000"/>
     <axis xyz="0.183013 -0.683013 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_15">
     <inertial>
@@ -488,11 +548,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_15_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_15_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_15"/>
     <origin rpy="0 0 0" xyz="-0.866025 -0.500000 0.000000"/>
     <axis xyz="0.353553 -0.612372 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_16">
     <inertial>
@@ -517,11 +581,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_16_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_16_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_16"/>
     <origin rpy="0 0 0" xyz="-0.707107 -0.707107 0.000000"/>
     <axis xyz="0.500000 -0.500000 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_17">
     <inertial>
@@ -546,11 +614,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_17_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_17_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_17"/>
     <origin rpy="0 0 0" xyz="-0.500000 -0.866025 0.000000"/>
     <axis xyz="0.612372 -0.353553 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_18">
     <inertial>
@@ -575,11 +647,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_18_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_18_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_18"/>
     <origin rpy="0 0 0" xyz="-0.258819 -0.965926 0.000000"/>
     <axis xyz="0.683013 -0.183013 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_19">
     <inertial>
@@ -604,11 +680,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_19_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_19_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_19"/>
     <origin rpy="0 0 0" xyz="0.000000 -1.000000 0.000000"/>
     <axis xyz="0.707107 0.000000 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_20">
     <inertial>
@@ -633,11 +713,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_20_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_20_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_20"/>
     <origin rpy="0 0 0" xyz="0.258819 -0.965926 0.000000"/>
     <axis xyz="0.683013 0.183013 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_21">
     <inertial>
@@ -662,11 +746,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_21_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_21_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_21"/>
     <origin rpy="0 0 0" xyz="0.500000 -0.866025 0.000000"/>
     <axis xyz="0.612372 0.353553 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_22">
     <inertial>
@@ -691,11 +779,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_22_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_22_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_22"/>
     <origin rpy="0 0 0" xyz="0.707107 -0.707107 0.000000"/>
     <axis xyz="0.500000 0.500000 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_23">
     <inertial>
@@ -720,11 +812,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_23_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_23_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_23"/>
     <origin rpy="0 0 0" xyz="0.866025 -0.500000 0.000000"/>
     <axis xyz="0.353553 0.612372 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_left_wheel_24">
     <inertial>
@@ -749,11 +845,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_left_wheel_24_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_left_wheel_24_joint" type="continuous">
     <parent link="front_left_main_wheel"/>
     <child link="front_left_wheel_24"/>
     <origin rpy="0 0 0" xyz="0.965926 -0.258819 0.000000"/>
     <axis xyz="0.183013 0.683013 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_main_wheel">
     <inertial>
@@ -774,11 +874,15 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="front_right_main_wheel_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_main_wheel_joint" type="continuous">
     <parent link="base"/>
     <child link="front_right_main_wheel"/>
     <axis xyz="0 0 1"/>
     <origin rpy="1.57079632679 0 0" xyz="2 -2 0"/>
+    <dynamics damping="1.0"/>
   </joint>
   <gazebo reference="main_wheel">
     <material>Gazebo/Blue</material>
@@ -807,11 +911,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_1_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_1_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_1"/>
     <origin rpy="0 0 0" xyz="1.000000 0.000000 0.000000"/>
     <axis xyz="0.000000 0.707107 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_2">
     <inertial>
@@ -836,11 +944,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_2_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_2_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_2"/>
     <origin rpy="0 0 0" xyz="0.965926 0.258819 0.000000"/>
     <axis xyz="-0.183013 0.683013 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_3">
     <inertial>
@@ -865,11 +977,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_3_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_3_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_3"/>
     <origin rpy="0 0 0" xyz="0.866025 0.500000 0.000000"/>
     <axis xyz="-0.353553 0.612372 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_4">
     <inertial>
@@ -894,11 +1010,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_4_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_4_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_4"/>
     <origin rpy="0 0 0" xyz="0.707107 0.707107 0.000000"/>
     <axis xyz="-0.500000 0.500000 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_5">
     <inertial>
@@ -923,11 +1043,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_5_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_5_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_5"/>
     <origin rpy="0 0 0" xyz="0.500000 0.866025 0.000000"/>
     <axis xyz="-0.612372 0.353553 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_6">
     <inertial>
@@ -952,11 +1076,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_6_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_6_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_6"/>
     <origin rpy="0 0 0" xyz="0.258819 0.965926 0.000000"/>
     <axis xyz="-0.683013 0.183013 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_7">
     <inertial>
@@ -981,11 +1109,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_7_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_7_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_7"/>
     <origin rpy="0 0 0" xyz="0.000000 1.000000 0.000000"/>
     <axis xyz="-0.707107 0.000000 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_8">
     <inertial>
@@ -1010,11 +1142,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_8_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_8_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_8"/>
     <origin rpy="0 0 0" xyz="-0.258819 0.965926 0.000000"/>
     <axis xyz="-0.683013 -0.183013 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_9">
     <inertial>
@@ -1039,11 +1175,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_9_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_9_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_9"/>
     <origin rpy="0 0 0" xyz="-0.500000 0.866025 0.000000"/>
     <axis xyz="-0.612372 -0.353553 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_10">
     <inertial>
@@ -1068,11 +1208,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_10_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_10_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_10"/>
     <origin rpy="0 0 0" xyz="-0.707107 0.707107 0.000000"/>
     <axis xyz="-0.500000 -0.500000 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_11">
     <inertial>
@@ -1097,11 +1241,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_11_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_11_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_11"/>
     <origin rpy="0 0 0" xyz="-0.866025 0.500000 0.000000"/>
     <axis xyz="-0.353553 -0.612372 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_12">
     <inertial>
@@ -1126,11 +1274,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_12_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_12_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_12"/>
     <origin rpy="0 0 0" xyz="-0.965926 0.258819 0.000000"/>
     <axis xyz="-0.183013 -0.683013 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_13">
     <inertial>
@@ -1155,11 +1307,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_13_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_13_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_13"/>
     <origin rpy="0 0 0" xyz="-1.000000 0.000000 0.000000"/>
     <axis xyz="0.000000 -0.707107 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_14">
     <inertial>
@@ -1184,11 +1340,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_14_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_14_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_14"/>
     <origin rpy="0 0 0" xyz="-0.965926 -0.258819 0.000000"/>
     <axis xyz="0.183013 -0.683013 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_15">
     <inertial>
@@ -1213,11 +1373,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_15_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_15_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_15"/>
     <origin rpy="0 0 0" xyz="-0.866025 -0.500000 0.000000"/>
     <axis xyz="0.353553 -0.612372 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_16">
     <inertial>
@@ -1242,11 +1406,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_16_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_16_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_16"/>
     <origin rpy="0 0 0" xyz="-0.707107 -0.707107 0.000000"/>
     <axis xyz="0.500000 -0.500000 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_17">
     <inertial>
@@ -1271,11 +1439,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_17_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_17_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_17"/>
     <origin rpy="0 0 0" xyz="-0.500000 -0.866025 0.000000"/>
     <axis xyz="0.612372 -0.353553 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_18">
     <inertial>
@@ -1300,11 +1472,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_18_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_18_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_18"/>
     <origin rpy="0 0 0" xyz="-0.258819 -0.965926 0.000000"/>
     <axis xyz="0.683013 -0.183013 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_19">
     <inertial>
@@ -1329,11 +1505,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_19_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_19_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_19"/>
     <origin rpy="0 0 0" xyz="0.000000 -1.000000 0.000000"/>
     <axis xyz="0.707107 0.000000 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_20">
     <inertial>
@@ -1358,11 +1538,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_20_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_20_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_20"/>
     <origin rpy="0 0 0" xyz="0.258819 -0.965926 0.000000"/>
     <axis xyz="0.683013 0.183013 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_21">
     <inertial>
@@ -1387,11 +1571,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_21_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_21_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_21"/>
     <origin rpy="0 0 0" xyz="0.500000 -0.866025 0.000000"/>
     <axis xyz="0.612372 0.353553 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_22">
     <inertial>
@@ -1416,11 +1604,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_22_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_22_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_22"/>
     <origin rpy="0 0 0" xyz="0.707107 -0.707107 0.000000"/>
     <axis xyz="0.500000 0.500000 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_23">
     <inertial>
@@ -1445,11 +1637,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_23_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_23_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_23"/>
     <origin rpy="0 0 0" xyz="0.866025 -0.500000 0.000000"/>
     <axis xyz="0.353553 0.612372 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="front_right_wheel_24">
     <inertial>
@@ -1474,11 +1670,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="front_right_wheel_24_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="front_right_wheel_24_joint" type="continuous">
     <parent link="front_right_main_wheel"/>
     <child link="front_right_wheel_24"/>
     <origin rpy="0 0 0" xyz="0.965926 -0.258819 0.000000"/>
     <axis xyz="0.183013 0.683013 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_main_wheel">
     <inertial>
@@ -1499,11 +1699,15 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="rear_left_main_wheel_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_main_wheel_joint" type="continuous">
     <parent link="base"/>
     <child link="rear_left_main_wheel"/>
     <axis xyz="0 0 1"/>
     <origin rpy="1.57079632679 0 0" xyz="-2 2 0"/>
+    <dynamics damping="1.0"/>
   </joint>
   <gazebo reference="main_wheel">
     <material>Gazebo/Blue</material>
@@ -1532,11 +1736,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_1_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_1_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_1"/>
     <origin rpy="0 0 0" xyz="1.000000 0.000000 0.000000"/>
     <axis xyz="0.000000 0.707107 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_2">
     <inertial>
@@ -1561,11 +1769,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_2_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_2_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_2"/>
     <origin rpy="0 0 0" xyz="0.965926 0.258819 0.000000"/>
     <axis xyz="-0.183013 0.683013 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_3">
     <inertial>
@@ -1590,11 +1802,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_3_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_3_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_3"/>
     <origin rpy="0 0 0" xyz="0.866025 0.500000 0.000000"/>
     <axis xyz="-0.353553 0.612372 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_4">
     <inertial>
@@ -1619,11 +1835,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_4_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_4_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_4"/>
     <origin rpy="0 0 0" xyz="0.707107 0.707107 0.000000"/>
     <axis xyz="-0.500000 0.500000 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_5">
     <inertial>
@@ -1648,11 +1868,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_5_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_5_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_5"/>
     <origin rpy="0 0 0" xyz="0.500000 0.866025 0.000000"/>
     <axis xyz="-0.612372 0.353553 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_6">
     <inertial>
@@ -1677,11 +1901,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_6_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_6_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_6"/>
     <origin rpy="0 0 0" xyz="0.258819 0.965926 0.000000"/>
     <axis xyz="-0.683013 0.183013 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_7">
     <inertial>
@@ -1706,11 +1934,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_7_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_7_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_7"/>
     <origin rpy="0 0 0" xyz="0.000000 1.000000 0.000000"/>
     <axis xyz="-0.707107 0.000000 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_8">
     <inertial>
@@ -1735,11 +1967,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_8_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_8_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_8"/>
     <origin rpy="0 0 0" xyz="-0.258819 0.965926 0.000000"/>
     <axis xyz="-0.683013 -0.183013 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_9">
     <inertial>
@@ -1764,11 +2000,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_9_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_9_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_9"/>
     <origin rpy="0 0 0" xyz="-0.500000 0.866025 0.000000"/>
     <axis xyz="-0.612372 -0.353553 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_10">
     <inertial>
@@ -1793,11 +2033,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_10_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_10_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_10"/>
     <origin rpy="0 0 0" xyz="-0.707107 0.707107 0.000000"/>
     <axis xyz="-0.500000 -0.500000 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_11">
     <inertial>
@@ -1822,11 +2066,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_11_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_11_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_11"/>
     <origin rpy="0 0 0" xyz="-0.866025 0.500000 0.000000"/>
     <axis xyz="-0.353553 -0.612372 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_12">
     <inertial>
@@ -1851,11 +2099,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_12_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_12_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_12"/>
     <origin rpy="0 0 0" xyz="-0.965926 0.258819 0.000000"/>
     <axis xyz="-0.183013 -0.683013 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_13">
     <inertial>
@@ -1880,11 +2132,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_13_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_13_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_13"/>
     <origin rpy="0 0 0" xyz="-1.000000 0.000000 0.000000"/>
     <axis xyz="0.000000 -0.707107 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_14">
     <inertial>
@@ -1909,11 +2165,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_14_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_14_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_14"/>
     <origin rpy="0 0 0" xyz="-0.965926 -0.258819 0.000000"/>
     <axis xyz="0.183013 -0.683013 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_15">
     <inertial>
@@ -1938,11 +2198,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_15_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_15_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_15"/>
     <origin rpy="0 0 0" xyz="-0.866025 -0.500000 0.000000"/>
     <axis xyz="0.353553 -0.612372 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_16">
     <inertial>
@@ -1967,11 +2231,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_16_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_16_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_16"/>
     <origin rpy="0 0 0" xyz="-0.707107 -0.707107 0.000000"/>
     <axis xyz="0.500000 -0.500000 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_17">
     <inertial>
@@ -1996,11 +2264,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_17_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_17_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_17"/>
     <origin rpy="0 0 0" xyz="-0.500000 -0.866025 0.000000"/>
     <axis xyz="0.612372 -0.353553 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_18">
     <inertial>
@@ -2025,11 +2297,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_18_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_18_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_18"/>
     <origin rpy="0 0 0" xyz="-0.258819 -0.965926 0.000000"/>
     <axis xyz="0.683013 -0.183013 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_19">
     <inertial>
@@ -2054,11 +2330,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_19_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_19_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_19"/>
     <origin rpy="0 0 0" xyz="0.000000 -1.000000 0.000000"/>
     <axis xyz="0.707107 0.000000 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_20">
     <inertial>
@@ -2083,11 +2363,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_20_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_20_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_20"/>
     <origin rpy="0 0 0" xyz="0.258819 -0.965926 0.000000"/>
     <axis xyz="0.683013 0.183013 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_21">
     <inertial>
@@ -2112,11 +2396,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_21_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_21_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_21"/>
     <origin rpy="0 0 0" xyz="0.500000 -0.866025 0.000000"/>
     <axis xyz="0.612372 0.353553 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_22">
     <inertial>
@@ -2141,11 +2429,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_22_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_22_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_22"/>
     <origin rpy="0 0 0" xyz="0.707107 -0.707107 0.000000"/>
     <axis xyz="0.500000 0.500000 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_23">
     <inertial>
@@ -2170,11 +2462,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_23_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_23_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_23"/>
     <origin rpy="0 0 0" xyz="0.866025 -0.500000 0.000000"/>
     <axis xyz="0.353553 0.612372 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_left_wheel_24">
     <inertial>
@@ -2199,11 +2495,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_left_wheel_24_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_left_wheel_24_joint" type="continuous">
     <parent link="rear_left_main_wheel"/>
     <child link="rear_left_wheel_24"/>
     <origin rpy="0 0 0" xyz="0.965926 -0.258819 0.000000"/>
     <axis xyz="0.183013 0.683013 -0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_main_wheel">
     <inertial>
@@ -2224,11 +2524,15 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="rear_right_main_wheel_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_main_wheel_joint" type="continuous">
     <parent link="base"/>
     <child link="rear_right_main_wheel"/>
     <axis xyz="0 0 1"/>
     <origin rpy="1.57079632679 0 0" xyz="-2 -2 0"/>
+    <dynamics damping="1.0"/>
   </joint>
   <gazebo reference="main_wheel">
     <material>Gazebo/Blue</material>
@@ -2257,11 +2561,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_1_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_1_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_1"/>
     <origin rpy="0 0 0" xyz="1.000000 0.000000 0.000000"/>
     <axis xyz="0.000000 0.707107 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_2">
     <inertial>
@@ -2286,11 +2594,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_2_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_2_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_2"/>
     <origin rpy="0 0 0" xyz="0.965926 0.258819 0.000000"/>
     <axis xyz="-0.183013 0.683013 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_3">
     <inertial>
@@ -2315,11 +2627,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_3_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_3_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_3"/>
     <origin rpy="0 0 0" xyz="0.866025 0.500000 0.000000"/>
     <axis xyz="-0.353553 0.612372 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_4">
     <inertial>
@@ -2344,11 +2660,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_4_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_4_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_4"/>
     <origin rpy="0 0 0" xyz="0.707107 0.707107 0.000000"/>
     <axis xyz="-0.500000 0.500000 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_5">
     <inertial>
@@ -2373,11 +2693,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_5_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_5_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_5"/>
     <origin rpy="0 0 0" xyz="0.500000 0.866025 0.000000"/>
     <axis xyz="-0.612372 0.353553 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_6">
     <inertial>
@@ -2402,11 +2726,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_6_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_6_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_6"/>
     <origin rpy="0 0 0" xyz="0.258819 0.965926 0.000000"/>
     <axis xyz="-0.683013 0.183013 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_7">
     <inertial>
@@ -2431,11 +2759,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_7_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_7_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_7"/>
     <origin rpy="0 0 0" xyz="0.000000 1.000000 0.000000"/>
     <axis xyz="-0.707107 0.000000 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_8">
     <inertial>
@@ -2460,11 +2792,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_8_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_8_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_8"/>
     <origin rpy="0 0 0" xyz="-0.258819 0.965926 0.000000"/>
     <axis xyz="-0.683013 -0.183013 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_9">
     <inertial>
@@ -2489,11 +2825,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_9_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_9_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_9"/>
     <origin rpy="0 0 0" xyz="-0.500000 0.866025 0.000000"/>
     <axis xyz="-0.612372 -0.353553 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_10">
     <inertial>
@@ -2518,11 +2858,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_10_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_10_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_10"/>
     <origin rpy="0 0 0" xyz="-0.707107 0.707107 0.000000"/>
     <axis xyz="-0.500000 -0.500000 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_11">
     <inertial>
@@ -2547,11 +2891,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_11_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_11_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_11"/>
     <origin rpy="0 0 0" xyz="-0.866025 0.500000 0.000000"/>
     <axis xyz="-0.353553 -0.612372 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_12">
     <inertial>
@@ -2576,11 +2924,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_12_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_12_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_12"/>
     <origin rpy="0 0 0" xyz="-0.965926 0.258819 0.000000"/>
     <axis xyz="-0.183013 -0.683013 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_13">
     <inertial>
@@ -2605,11 +2957,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_13_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_13_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_13"/>
     <origin rpy="0 0 0" xyz="-1.000000 0.000000 0.000000"/>
     <axis xyz="0.000000 -0.707107 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_14">
     <inertial>
@@ -2634,11 +2990,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_14_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_14_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_14"/>
     <origin rpy="0 0 0" xyz="-0.965926 -0.258819 0.000000"/>
     <axis xyz="0.183013 -0.683013 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_15">
     <inertial>
@@ -2663,11 +3023,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_15_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_15_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_15"/>
     <origin rpy="0 0 0" xyz="-0.866025 -0.500000 0.000000"/>
     <axis xyz="0.353553 -0.612372 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_16">
     <inertial>
@@ -2692,11 +3056,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_16_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_16_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_16"/>
     <origin rpy="0 0 0" xyz="-0.707107 -0.707107 0.000000"/>
     <axis xyz="0.500000 -0.500000 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_17">
     <inertial>
@@ -2721,11 +3089,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_17_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_17_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_17"/>
     <origin rpy="0 0 0" xyz="-0.500000 -0.866025 0.000000"/>
     <axis xyz="0.612372 -0.353553 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_18">
     <inertial>
@@ -2750,11 +3122,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_18_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_18_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_18"/>
     <origin rpy="0 0 0" xyz="-0.258819 -0.965926 0.000000"/>
     <axis xyz="0.683013 -0.183013 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_19">
     <inertial>
@@ -2779,11 +3155,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_19_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_19_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_19"/>
     <origin rpy="0 0 0" xyz="0.000000 -1.000000 0.000000"/>
     <axis xyz="0.707107 0.000000 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_20">
     <inertial>
@@ -2808,11 +3188,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_20_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_20_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_20"/>
     <origin rpy="0 0 0" xyz="0.258819 -0.965926 0.000000"/>
     <axis xyz="0.683013 0.183013 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_21">
     <inertial>
@@ -2837,11 +3221,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_21_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_21_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_21"/>
     <origin rpy="0 0 0" xyz="0.500000 -0.866025 0.000000"/>
     <axis xyz="0.612372 0.353553 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_22">
     <inertial>
@@ -2866,11 +3254,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_22_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_22_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_22"/>
     <origin rpy="0 0 0" xyz="0.707107 -0.707107 0.000000"/>
     <axis xyz="0.500000 0.500000 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_23">
     <inertial>
@@ -2895,11 +3287,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_23_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_23_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_23"/>
     <origin rpy="0 0 0" xyz="0.866025 -0.500000 0.000000"/>
     <axis xyz="0.353553 0.612372 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="rear_right_wheel_24">
     <inertial>
@@ -2924,11 +3320,15 @@
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+  <gazebo reference="rear_right_wheel_24_joint">
+    <cfm_damping>1</cfm_damping>
+  </gazebo>
   <joint name="rear_right_wheel_24_joint" type="continuous">
     <parent link="rear_right_main_wheel"/>
     <child link="rear_right_wheel_24"/>
     <origin rpy="0 0 0" xyz="0.965926 -0.258819 0.000000"/>
     <axis xyz="0.183013 0.683013 0.707107"/>
+    <dynamics damping="1.0"/>
   </joint>
 </robot>
 
