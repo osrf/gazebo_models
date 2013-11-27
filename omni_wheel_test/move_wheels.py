@@ -21,7 +21,7 @@ def set_joint_effort_client(joint_name, effort, start_time, duration):
 if __name__ == '__main__':
     rospy.init_node('gazebo_test_joint')
 
-    if len(sys.argv) < 2:
+    if len(sys.argv) < 5:
       print "for example run:"
       print "  move_wheels.py 500 -500 -500 500  #to move side ways"
       print "  move_wheels.py 500 500 -500 -500  #to rotate in place"
