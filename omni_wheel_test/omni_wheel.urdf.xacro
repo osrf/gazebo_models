@@ -1,0 +1,145 @@
+<robot
+      xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz"
+      xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model"
+      xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+      xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+      xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom"
+      xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#joint"
+      xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+      xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+      xmlns:rendering="http://playerstage.sourceforge.net/gazebo/xmlschema/#rendering"
+      xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics"
+      xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics"
+      name="omni_wheel_base">
+
+  <property name="M_PI" value="3.1415926535897931" />
+
+  <link name="base">
+    <inertial>
+      <mass value="10.0" />
+      <origin xyz="0 0 0" /> 
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="1.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="4.0 2.0 0.1" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="4.0 2.0 0.1" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="base">
+    <material>Gazebo/Blue</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <xacro:main_wheel prefix="front_left" parent="base" side="1">
+    <origin xyz="2 2 0" rpy="${M_PI/2} 0 0"/>
+  </xacro:main_wheel>
+  <xacro:main_wheel prefix="front_right" parent="base" side="-1">
+    <origin xyz="2 -2 0" rpy="${M_PI/2} 0 0"/>
+  </xacro:main_wheel>
+  <xacro:main_wheel prefix="rear_left" parent="base" side="-1">
+    <origin xyz="-2 2 0" rpy="${M_PI/2} 0 0"/>
+  </xacro:main_wheel>
+  <xacro:main_wheel prefix="rear_right" parent="base" side="1">
+    <origin xyz="-2 -2 0" rpy="${M_PI/2} 0 0"/>
+  </xacro:main_wheel>
+
+  <xacro:macro name="main_wheel" params="prefix *origin parent side">
+    <link name="${prefix}_main_wheel">
+      <inertial>
+        <origin xyz="0 0 0" /> 
+        <mass value="1.0" />
+        <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="1.0"  iyz="0.0"  izz="1.0" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="1" length="0.1" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0 " />
+        <geometry>
+          <cylinder radius="1" length="0.1" />
+        </geometry>
+      </collision>
+    </link>
+    <joint name="${prefix}_main_wheel_joint" type="continuous" >
+      <parent link="${parent}" />
+      <child link="${prefix}_main_wheel" />
+      <axis xyz="0 0 1"/>
+      <insert_block name="origin"/>
+    </joint>
+    <gazebo reference="main_wheel">
+      <material>Gazebo/Blue</material>
+      <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+
+<!-- copy and pasted section from spreadsheet -->
+<xacro:subwheel prefix="${prefix}" subwheel_name="1">	<axis xyz="0.000000 0.707107 ${side*0.707107}"/>	<origin xyz="1.000000 0.000000 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="2">	<axis xyz="-0.183013 0.683013 ${side*0.707107}"/>	<origin xyz="0.965926 0.258819 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="3">	<axis xyz="-0.353553 0.612372 ${side*0.707107}"/>	<origin xyz="0.866025 0.500000 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="4">	<axis xyz="-0.500000 0.500000 ${side*0.707107}"/>	<origin xyz="0.707107 0.707107 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="5">	<axis xyz="-0.612372 0.353553 ${side*0.707107}"/>	<origin xyz="0.500000 0.866025 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="6">	<axis xyz="-0.683013 0.183013 ${side*0.707107}"/>	<origin xyz="0.258819 0.965926 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="7">	<axis xyz="-0.707107 0.000000 ${side*0.707107}"/>	<origin xyz="0.000000 1.000000 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="8">	<axis xyz="-0.683013 -0.183013 ${side*0.707107}"/>	<origin xyz="-0.258819 0.965926 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="9">	<axis xyz="-0.612372 -0.353553 ${side*0.707107}"/>	<origin xyz="-0.500000 0.866025 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="10">	<axis xyz="-0.500000 -0.500000 ${side*0.707107}"/>	<origin xyz="-0.707107 0.707107 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="11">	<axis xyz="-0.353553 -0.612372 ${side*0.707107}"/>	<origin xyz="-0.866025 0.500000 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="12">	<axis xyz="-0.183013 -0.683013 ${side*0.707107}"/>	<origin xyz="-0.965926 0.258819 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="13">	<axis xyz="0.000000 -0.707107 ${side*0.707107}"/>	<origin xyz="-1.000000 0.000000 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="14">	<axis xyz="0.183013 -0.683013 ${side*0.707107}"/>	<origin xyz="-0.965926 -0.258819 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="15">	<axis xyz="0.353553 -0.612372 ${side*0.707107}"/>	<origin xyz="-0.866025 -0.500000 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="16">	<axis xyz="0.500000 -0.500000 ${side*0.707107}"/>	<origin xyz="-0.707107 -0.707107 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="17">	<axis xyz="0.612372 -0.353553 ${side*0.707107}"/>	<origin xyz="-0.500000 -0.866025 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="18">	<axis xyz="0.683013 -0.183013 ${side*0.707107}"/>	<origin xyz="-0.258819 -0.965926 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="19">	<axis xyz="0.707107 0.000000 ${side*0.707107}"/>	<origin xyz="0.000000 -1.000000 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="20">	<axis xyz="0.683013 0.183013 ${side*0.707107}"/>	<origin xyz="0.258819 -0.965926 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="21">	<axis xyz="0.612372 0.353553 ${side*0.707107}"/>	<origin xyz="0.500000 -0.866025 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="22">	<axis xyz="0.500000 0.500000 ${side*0.707107}"/>	<origin xyz="0.707107 -0.707107 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="23">	<axis xyz="0.353553 0.612372 ${side*0.707107}"/>	<origin xyz="0.866025 -0.500000 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+<xacro:subwheel prefix="${prefix}" subwheel_name="24">	<axis xyz="0.183013 0.683013 ${side*0.707107}"/>	<origin xyz="0.965926 -0.258819 0.000000" rpy="0 0 0"/>	</xacro:subwheel>
+
+  </xacro:macro>
+
+  <xacro:macro name="subwheel" params="prefix subwheel_name *origin *axis">
+    <link name="${prefix}_wheel_${subwheel_name}">
+      <inertial>
+        <origin xyz="0 0 0" /> 
+        <mass value="1.0" />
+        <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="1.0"  iyz="0.0"  izz="1.0" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <sphere radius="0.3" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0 " />
+        <geometry>
+          <sphere radius="0.3" />
+        </geometry>
+      </collision>
+    </link>
+    <gazebo reference="${prefix}_wheel_${subwheel_name}">
+      <material>Gazebo/Red</material>
+      <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+    <joint name="${prefix}_wheel_${subwheel_name}_joint" type="continuous" >
+      <parent link="${prefix}_main_wheel" />
+      <child link="${prefix}_wheel_${subwheel_name}" />
+      <insert_block name="axis"/>
+      <insert_block name="origin"/>
+    </joint>
+  </xacro:macro>
+
+</robot>
