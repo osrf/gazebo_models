@@ -365,7 +365,7 @@
     </link>
 
     <link name="front_left_wheel">
-      <pose>1.08598 0.71003 0.35515 -1.52 0.0 0.0</pose>
+      <pose>1.20223 0.71562 0.34697 -1.52 0.0 0.0</pose>
       <inertial>
         <mass>12</mass>
         <inertia>
@@ -377,8 +377,8 @@
       <collision name="collision">
         <geometry>
           <cylinder>
-            <radius>0.34</radius>
-            <length>0.23</length>
+            <radius>0.3175</radius>
+            <length>0.2794</length>
           </cylinder>
         </geometry>
         <max_contacts>1</max_contacts>
@@ -405,6 +405,7 @@
         <geometry>
           <mesh>
             <uri>model://polaris_ranger_xp900/meshes/polaris.dae</uri>
+            <scale>1.003700111 0.886200464 0.886200464</scale>
             <submesh>
               <name>Wheel_Front_Left</name>
               <center>true</center>
@@ -422,7 +423,7 @@
     </link>
 
     <link name="front_right_wheel">
-      <pose>1.08598 -0.71003 0.35515 1.52 0.0 0.0</pose>
+      <pose>1.20223 -0.71562 0.34697 1.52 0.0 0.0</pose>
       <inertial>
         <mass>12</mass>
         <inertia>
@@ -434,8 +435,8 @@
       <collision name="collision">
         <geometry>
           <cylinder>
-            <radius>0.34</radius>
-            <length>0.23</length>
+            <radius>0.3175</radius>
+            <length>0.2794</length>
           </cylinder>
         </geometry>
         <max_contacts>1</max_contacts>
@@ -463,6 +464,7 @@
         <geometry>
           <mesh>
             <uri>model://polaris_ranger_xp900/meshes/polaris.dae</uri>
+            <scale>1.003700111 0.886200464 0.886200464</scale>
             <submesh>
               <name>Wheel_Front_Right</name>
               <center>true</center>
@@ -480,7 +482,7 @@
     </link>
 
     <link name="rear_left_wheel">
-      <pose>-0.97752 0.71003 0.35515 -1.52 0.0 0.0</pose>
+      <pose>-0.99377 0.71562 0.34697 -1.52 0.0 0.0</pose>
       <inertial>
         <mass>12</mass>
         <inertia>
@@ -492,8 +494,8 @@
       <collision name="collision">
         <geometry>
           <cylinder>
-            <radius>0.34</radius>
-            <length>0.23</length>
+            <radius>0.3175</radius>
+            <length>0.2794</length>
           </cylinder>
         </geometry>
         <max_contacts>1</max_contacts>
@@ -521,6 +523,7 @@
         <geometry>
           <mesh>
             <uri>model://polaris_ranger_xp900/meshes/polaris.dae</uri>
+            <scale>1.003700111 0.886200464 0.886200464</scale>
             <submesh>
               <name>Wheels_Rear_Left</name>
               <center>true</center>
@@ -539,7 +542,7 @@
 
 
     <link name="rear_right_wheel">
-      <pose>-0.97752 -0.71003 0.35515 1.52 0.0 0.0</pose>
+      <pose>-0.99377 -0.71562 0.34697 1.52 0.0 0.0</pose>
       <inertial>
         <mass>12</mass>
         <inertia>
@@ -551,8 +554,8 @@
       <collision name="collision">
         <geometry>
           <cylinder>
-            <radius>0.34</radius>
-            <length>0.23</length>
+            <radius>0.3175</radius>
+            <length>0.2794</length>
           </cylinder>
         </geometry>
         <max_contacts>1</max_contacts>
@@ -579,6 +582,7 @@
         <geometry>
           <mesh>
             <uri>model://polaris_ranger_xp900/meshes/polaris.dae</uri>
+            <scale>1.003700111 0.886200464 0.886200464</scale>
             <submesh>
               <name>Wheels_Rear_Right</name>
               <center>true</center>
@@ -684,7 +688,7 @@
     </link>
 
     <link name="front_right_wheel_steering_block">
-      <pose>1.08598 -0.5 0.35515 1.570796 0.0 0.0</pose>
+      <pose>1.20223 -0.5 0.35515 1.570796 0.0 0.0</pose>
       <inertial>
         <mass>1</mass>
         <inertia>
@@ -703,7 +707,7 @@
       </collision>
     </link>
     <link name="front_left_wheel_steering_block">
-      <pose>1.08598 0.5 0.35515 1.570796 0.0 0.0</pose>
+      <pose>1.20223 0.5 0.35515 1.570796 0.0 0.0</pose>
       <inertial>
         <mass>1</mass>
         <inertia>
@@ -883,8 +887,8 @@
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-0.8727</lower>
-          <upper>0.8727</upper>
+          <lower>-0.7727</lower>
+          <upper>0.7727</upper>
         </limit>
         <dynamics>
           <damping>50.0</damping>
@@ -914,8 +918,8 @@
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-0.8727</lower>
-          <upper>0.8727</upper>
+          <lower>-0.7727</lower>
+          <upper>0.7727</upper>
         </limit>
         <dynamics>
           <damping>50.0</damping>
