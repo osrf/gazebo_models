@@ -97,6 +97,10 @@ polaris_ranger_xp900_no_roll_cage
 powerplant
 pr2
 pr2_gripper
+robocup_spl_ball
+robocup09_spl_field
+robocup14_spl_field
+robocup14_spl_goal
 saucepan
 simple_arm
 simple_arm_gripper

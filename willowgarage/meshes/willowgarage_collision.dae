@@ -5333,13 +5333,13 @@
     </library_effects>
     <library_images>
         <image id="ID105">
-            <init_from>__auto_12.jpg</init_from>
+            <init_from>../materials/textures/__auto_12.png</init_from>
         </image>
         <image id="ID254">
-            <init_from>__auto_12.jpg</init_from>
+            <init_from>../materials/textures/__auto_12.png</init_from>
         </image>
         <image id="ID495">
-            <init_from>__auto_12.jpg</init_from>
+            <init_from>../materials/textures/__auto_12.png</init_from>
         </image>
     </library_images>
     <scene>

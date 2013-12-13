@@ -7,7 +7,7 @@ material GasStation/Diffuse
     {
       texture_unit
       {
-        texture GasStation_Diffuse.tga
+        texture GasStation_Diffuse.png
       }
     }
   }
@@ -22,7 +22,7 @@ material GasStation/Specular
     {
       texture_unit
       {
-        texture GasStation_Spec.tga
+        texture GasStation_Spec.png
       }
     }
   }
@@ -37,7 +37,7 @@ material GasStation/Normal
     {
       texture_unit
       {
-        texture GasStation_Normal.tga
+        texture GasStation_Normal.png
       }
     }
   }

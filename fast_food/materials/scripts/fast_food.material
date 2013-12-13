@@ -7,7 +7,7 @@ material FastFood/Diffuse
     {
       texture_unit
       {
-        texture FastFood_Diffuse.tga
+        texture FastFood_Diffuse.png
       }
     }
   }
@@ -22,7 +22,7 @@ material FastFood/Specular
     {
       texture_unit
       {
-        texture FastFood_Spec.tga
+        texture FastFood_Spec.png
       }
     }
   }
@@ -37,7 +37,7 @@ material FastFood/Normal
     {
       texture_unit
       {
-        texture FastFood_Normal.tga
+        texture FastFood_Normal.png
       }
     }
   }

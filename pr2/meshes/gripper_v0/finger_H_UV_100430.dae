@@ -68,7 +68,7 @@
   </library_effects>
   <library_images>
     <image id="file4" name="file4">
-      <init_from>file:///C:/Users/WakiMudi/Documents/maya/projects/willow_textures/projection1-finger_H_20K.tif</init_from>
+      <init_from>../../materials/textures/projection1-finger_H_20K.png</init_from>
       <extra>
         <technique profile="OpenCOLLADAMaya">
           <dgnode_type>kFile</dgnode_type>

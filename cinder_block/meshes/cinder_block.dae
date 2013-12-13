@@ -136,7 +136,7 @@
   </library_lights>
   <library_images>
     <image id="CinderBlock_Diffuse_tga">
-      <init_from>cinder_block_diffuse.tga</init_from>
+      <init_from>../materials/textures/cinder_block_diffuse.png</init_from>
     </image>
   </library_images>
   <library_visual_scenes>

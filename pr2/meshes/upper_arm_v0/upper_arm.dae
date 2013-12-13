@@ -95,7 +95,7 @@
   </library_effects>
   <library_images>
     <image id="file2" name="file2">
-      <init_from>upper_arm_color.tif</init_from>
+      <init_from>../../materials/textures/upper_arm_color.png</init_from>
       <extra>
         <technique profile="OpenCOLLADAMaya">
           <dgnode_type>kFile</dgnode_type>
@@ -105,7 +105,7 @@
       </extra>
     </image>
     <image id="file1" name="file1">
-      <init_from>upper_arm_normals.tif</init_from>
+      <init_from>../../materials/textures/upper_arm_normals.png</init_from>
       <extra>
         <technique profile="OpenCOLLADAMaya">
           <dgnode_type>kFile</dgnode_type>

@@ -655,7 +655,7 @@
     </library_effects>
     <library_images>
         <image id="ID5">
-            <init_from>wood_slats.jpg</init_from>
+            <init_from>../materials/textures/wood_slats.png</init_from>
         </image>
     </library_images>
     <scene>

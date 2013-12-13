@@ -7,7 +7,7 @@ material StopSign/Diffuse
     {
       texture_unit
       {
-        texture StopSign_Diffuse.tga
+        texture StopSign_Diffuse.png
       }
     }
   }
@@ -22,7 +22,7 @@ material StopSign/Specular
     {
       texture_unit
       {
-        texture StopSign_Spec.tga
+        texture StopSign_Spec.png
       }
     }
   }

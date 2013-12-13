@@ -153,10 +153,10 @@
   </library_lights>
   <library_images>
     <image id="Construction_Barrel_Diffuse_tga">
-      <init_from>Construction_Barrel_Diffuse.tga</init_from>
+      <init_from>../materials/textures/Construction_Barrel_Diffuse.png</init_from>
     </image>
     <image id="Construction_Barrel_Spec_tga">
-      <init_from>Construction_Barrel_Spec.tga</init_from>
+      <init_from>../materials/textures/Construction_Barrel_Spec.png</init_from>
     </image>
   </library_images>
   <library_visual_scenes>
