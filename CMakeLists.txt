@@ -17,6 +17,7 @@ asphalt_plane
 beer
 bookshelf
 bowl
+breakable_test
 brick_box_3x1x3
 cabinet
 camera
