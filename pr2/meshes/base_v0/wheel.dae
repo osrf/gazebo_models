@@ -95,7 +95,7 @@
   </library_effects>
   <library_images>
     <image id="file6" name="file6">
-      <init_from>wheel_color.tif</init_from>
+      <init_from>../../materials/textures/wheel_color.png</init_from>
       <extra>
         <technique profile="OpenCOLLADAMaya">
           <dgnode_type>kFile</dgnode_type>
@@ -105,7 +105,7 @@
       </extra>
     </image>
     <image id="file5" name="file5">
-      <init_from>wheel_normals.tif</init_from>
+      <init_from>../../materials/textures/wheel_normals.png</init_from>
       <extra>
         <technique profile="OpenCOLLADAMaya">
           <dgnode_type>kFile</dgnode_type>

@@ -65,7 +65,7 @@
 	</library_effects>
 	<library_images>
 		<image id="kinect_tga-img" name="kinect_tga-img">
-			<init_from>kinect.tga</init_from>
+			<init_from>../materials/textures/kinect.png</init_from>
 		</image>
 	</library_images>
 	<library_materials>

@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <sdf version="1.3">
   <model name="Gas Station">
+    <static>true</static>
     <link name="link">
       <pose>0 0 0 0 0 0</pose>
       <collision name="collision">
@@ -23,7 +24,7 @@
             <name>GasStation/Diffuse</name>
           </script>
           <shader type="normal_map_object_space">
-            <normal_map>GasStation_Normal.tga</normal_map>
+            <normal_map>GasStation_Normal.png</normal_map>
           </shader>
         </material>
       </visual>

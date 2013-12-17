@@ -1,0 +1,60 @@
+material StartingPen/Floor
+{
+  receive_shadows on
+  technique
+  {
+    pass
+    {
+      ambient 1 1 1 1
+      diffuse 1 1 1 1
+
+      texture_unit
+      {
+        texture metal_ripped.png
+        filtering anistorpic
+        max_anisotropy 16
+      }
+    }
+  }
+}
+
+material StartingPen/FloorStripped
+{
+  receive_shadows on
+  technique
+  {
+    pass
+    {
+      ambient 1 1 1 1
+      diffuse 1 1 1 1
+
+      texture_unit
+      {
+        texture metal_stripped.png
+        filtering anistorpic
+        max_anisotropy 16
+      }
+    }
+  }
+}
+
+material StartingPen/OSRF
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      ambient 1 1 1 1
+      diffuse 1 1 1 1
+      emissive .5 .5 .5 1.0
+
+      texture_unit
+      {
+        texture osrf.png
+        filtering anistorpic
+        max_anisotropy 16
+      }
+    }
+  }
+}

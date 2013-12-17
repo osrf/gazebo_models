@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="wood_slats">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://drc_practice_wood_slats/meshes/wood_slats.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.01</restitution_coefficient>
+            <threshold>5.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>5</mu>
+              <mu2>5</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <soft_cfm>0.001 </soft_cfm><!--"sponginess", 0.0=hard-->
+              <soft_erp> </soft_erp>
+              <kp>10000.0 </kp>
+              <kd>1000.0 </kd>
+              <max_vel>0.01 </max_vel>
+              <min_depth>0.001 </min_depth>
+            </ode>
+          </contact>
+        </surface> 
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://drc_practice_wood_slats/meshes/wood_slats.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+
+</sdf>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="door_4x8">
+    <static>true</static>
+    <link name="door">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://drc_practice_door_4x8/meshes/4x8ftdoor.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://drc_practice_door_4x8/meshes/4x8ftdoor.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

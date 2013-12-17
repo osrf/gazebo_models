@@ -7,7 +7,12 @@ material House_1/Diffuse
     {
       texture_unit
       {
-        texture House_1_Diffuse.tga
+        texture House_1_Diffuse.png
+      }
+
+      rtshader_system
+      {
+        lighting_stage normal_map House_1_Normal.png tangent_space 0
       }
     }
   }
@@ -22,7 +27,7 @@ material House_1/Specular
     {
       texture_unit
       {
-        texture House_1_Spec.tga
+        texture House_1_Spec.png
       }
     }
   }
@@ -37,7 +42,7 @@ material House_1/Normal
     {
       texture_unit
       {
-        texture House_1_Normal.tga
+        texture House_1_Normal.png
       }
     }
   }

@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<gazebo version="1.2">
+<sdf version="1.4">
   <model name="simple_arm">
     <link name="arm_base">
       <inertial>
@@ -30,7 +30,10 @@
           </box>
         </geometry>
         <material>
-          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Blue</name></script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Blue</name>
+          </script>
         </material>
       </visual>
       <collision name="arm_base_geom_arm_trunk">
@@ -51,7 +54,10 @@
           </cylinder>
         </geometry>
         <material>
-          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Red</name></script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
         </material>
       </visual>
     </link>
@@ -87,7 +93,10 @@
           </cylinder>
         </geometry>
         <material>
-          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Yellow</name></script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
         </material>
       </visual>
       <collision name="arm_shoulder_pan_geom_arm_shoulder">
@@ -106,7 +115,10 @@
           </box>
         </geometry>
         <material>
-          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Yellow</name></script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
         </material>
       </visual>
     </link>
@@ -142,7 +154,10 @@
           </cylinder>
         </geometry>
         <material>
-          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Red</name></script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
         </material>
       </visual>
       <collision name="arm_elbow_pan_geom_arm_elbow">
@@ -161,7 +176,10 @@
           </box>
         </geometry>
         <material>
-          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Yellow</name></script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
         </material>
       </visual>
       <collision name="arm_elbow_pan_geom_arm_wrist">
@@ -182,7 +200,10 @@
           </cylinder>
         </geometry>
         <material>
-          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Red</name></script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
         </material>
       </visual>
     </link>
@@ -218,7 +239,10 @@
           </cylinder>
         </geometry>
         <material>
-          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Yellow</name></script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
         </material>
       </visual>
     </link>
@@ -254,25 +278,21 @@
           </cylinder>
         </geometry>
         <material>
-          <script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Red</name></script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
         </material>
       </visual>
     </link>
-    <joint name="arm_base_joint" type="revolute">
-      <parent>world</parent>
-      <child>arm_base</child>
-      <axis>
-        <limit>
-          <lower>0</lower>
-          <upper>0</upper>
-        </limit>
-        <xyz>0 0 1</xyz>
-      </axis>
-    </joint>
     <joint name="arm_shoulder_pan_joint" type="revolute">
-      <parent>world</parent>
+      <parent>arm_base</parent>
       <child>arm_shoulder_pan</child>
       <axis>
+        <dynamics>
+          <damping>1.000000</damping>
+          <friction>0.000000</friction>
+        </dynamics>
         <xyz>0 0 1</xyz>
       </axis>
     </joint>
@@ -280,6 +300,10 @@
       <parent>arm_shoulder_pan</parent>
       <child>arm_elbow_pan</child>
       <axis>
+        <dynamics>
+          <damping>1.000000</damping>
+          <friction>0.000000</friction>
+        </dynamics>
         <xyz>0 0 1</xyz>
       </axis>
     </joint>
@@ -287,6 +311,10 @@
       <parent>arm_elbow_pan</parent>
       <child>arm_wrist_lift</child>
       <axis>
+        <dynamics>
+          <damping>1.000000</damping>
+          <friction>0.000000</friction>
+        </dynamics>
         <limit>
           <lower>-0.8</lower>
           <upper>0.1</upper>
@@ -298,6 +326,10 @@
       <parent>arm_wrist_lift</parent>
       <child>arm_wrist_roll</child>
       <axis>
+        <dynamics>
+          <damping>1.000000</damping>
+          <friction>0.000000</friction>
+        </dynamics>
         <limit>
           <lower>-2.999994</lower>
           <upper>2.999994</upper>
@@ -305,5 +337,18 @@
         <xyz>0 0 1</xyz>
       </axis>
     </joint>
-  </model>
-</gazebo>
+    <!-- comment out link attachment to the world
+    <joint name="arm_base_joint" type="revolute">
+      <parent>world</parent>
+      <child>arm_base</child>
+      <axis>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    -->
+    </model>
+  </sdf>

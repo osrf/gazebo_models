@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="wheel_valve_wall">
+    <include>
+      <uri>model://drc_practice_valve_wall</uri>
+      <name>wall</name>
+      <static>false</static>
+    </include>
+
+    <joint name="wall-joint" type="revolute">
+      <parent>world</parent>
+      <child>wall::link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+      </axis>
+    </joint>
+ 
+    <include>
+      <uri>model://drc_practice_wheel_valve</uri>
+      <name>valve_0</name>
+      <pose>0.919587 -0.0092 0.285 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://drc_practice_wheel_valve</uri>
+      <name>valve_1</name>
+      <pose>0.919587 -0.0092 0.8954 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://drc_practice_wheel_valve</uri>
+      <name>valve_2</name>
+      <pose>0.919587 -0.0092 1.5058 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://drc_practice_wheel_valve</uri>
+      <name>valve_3</name>
+      <pose>0.919587 -0.0092 2.1162 0 0 0</pose>
+    </include>
+
+
+
+    <include>
+      <uri>model://drc_practice_wheel_valve</uri>
+      <name>valve_4</name>
+      <pose>0.614335 -0.0092 0.5896 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://drc_practice_wheel_valve</uri>
+      <name>valve_5</name>
+      <pose>0.614335 -0.0092 1.2 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://drc_practice_wheel_valve</uri>
+      <name>valve_6</name>
+      <pose>0.614335 -0.0092 1.8104 0 0 0</pose>
+    </include>
+
+
+
+    <include>
+      <uri>model://drc_practice_wheel_valve</uri>
+      <name>valve_7</name>
+      <pose>0.309083 -0.0092 0.285 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://drc_practice_wheel_valve</uri>
+      <name>valve_8</name>
+      <pose>0.309083 -0.0092 0.8954 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://drc_practice_wheel_valve</uri>
+      <name>valve_9</name>
+      <pose>0.309083 -0.0092 1.5058 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://drc_practice_wheel_valve</uri>
+      <name>valve_10</name>
+      <pose>0.309083 -0.0092 2.1162 0 0 0</pose>
+    </include>
+  </model>
+</sdf>

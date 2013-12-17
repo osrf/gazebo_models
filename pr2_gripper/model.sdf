@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<gazebo version='1.2'>
+<sdf version='1.4'>
   <model name='pr2_gripper'>
     <pose>-0.771000 0.188000 -0.790675 3.141593 -1.570796 3.141593</pose>
     <link name='r_wrist_roll_link'>
@@ -713,5 +713,4 @@
     </joint>
     <static>0</static>
   </model>
-</gazebo>
-Success
+</sdf>

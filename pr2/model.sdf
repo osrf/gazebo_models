@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<gazebo version='1.2'>
+<sdf version='1.4'>
   <model name='pr2'>
     <static>0</static>
     <link name='base_footprint'>
@@ -3033,4 +3033,4 @@
       </axis>
     </joint>
   </model>
-</gazebo>
+</sdf>

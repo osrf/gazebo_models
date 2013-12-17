@@ -17,7 +17,7 @@
         <technique sid="common">
           <blinn>
             <emission>
-              <color>0 0 0 1</color>
+              <color>0.4 0.4 0.4 1</color>
             </emission>
             <ambient>
               <color>1 1 1 1</color>

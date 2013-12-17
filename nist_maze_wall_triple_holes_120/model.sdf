@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<gazebo version="1.2">
+<sdf version="1.4">
   <model name="nist">
     <static>true</static>
     <link name="nist_maze_wall_triple_holes_120_link">
@@ -22,4 +22,4 @@
       </visual>
     </link>
   </model>
-</gazebo>
+</sdf>
