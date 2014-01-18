@@ -1,0 +1,32 @@
+material RoboCup/Grass
+{
+  technique
+  {
+    pass
+    {
+      ambient 1.0 1.0 1.0 1.0
+      diffuse 1.0 1.0 1.0 1.0
+      specular 0.2 0.2 0.2 1.0 12.5
+
+      texture_unit
+      {
+        scale 1 1
+        texture field.png
+        filtering trilinear
+      }
+    }
+  }
+}
+
+material RoboCup/FieldBorder
+{
+  technique
+  {
+    pass ambient
+    {
+      ambient 0.2578 0.4023 0.1836
+      diffuse 0.2578 0.4023 0.1836
+      specular 0.1 0.1 0.1 1 1
+    }
+  }
+}
