@@ -25,16 +25,11 @@
       </collision>
       <visual name="visual">
         <geometry>
-          <sphere>
-            <radius>0.0325</radius>
-          </sphere>
+          <mesh>
+            <scale>0.04 0.04 0.04</scale>
+            <uri>model://robocup_3Dsim_ball/meshes/ball.dae</uri>
+          </mesh>
         </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/RedBright</name>
-          </script>
-        </material>
       </visual>
     </link>
 
