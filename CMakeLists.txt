@@ -97,6 +97,9 @@ polaris_ranger_xp900
 powerplant
 pr2
 pr2_gripper
+robocup_3Dsim_ball
+robocup_3Dsim_field
+robocup_3Dsim_goal
 robocup_spl_ball
 robocup09_spl_field
 robocup14_spl_field

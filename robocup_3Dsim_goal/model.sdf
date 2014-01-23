@@ -1,10 +1,10 @@
 <?xml version="1.0" ?>
 <sdf version="1.4">
-  <model name="RoboCup 2014 SPL Goal">
+  <model name="RoboCup 3D Simulator Goal">
     <static>true</static>
 
     <link name="left_post">
-      <pose>0 0.8 0.45 0 0 0</pose>
+      <pose>0 1.05 0.45 0 0 0</pose>
       <collision name="collision">
         <geometry>
           <cylinder>
@@ -30,7 +30,7 @@
     </link>
 
     <link name="left_support_horiz_lower">
-      <pose>0.24 0.8 0.01 0 0 0</pose>
+      <pose>0.24 1.05 0.01 0 0 0</pose>
       <collision name="collision">
         <geometry>
           <box>
@@ -54,7 +54,7 @@
     </link>
 
     <link name="left_support_horiz_upper">
-      <pose>0.24 0.8 0.79 0 0 0</pose>
+      <pose>0.24 1.05 0.79 0 0 0</pose>
       <collision name="collision">
         <geometry>
           <box>
@@ -78,7 +78,7 @@
     </link>
 
     <link name="left_support_vertical">
-      <pose>0.44 0.8 0.4 0 1.5708 0</pose>
+      <pose>0.44 1.05 0.4 0 1.5708 0</pose>
       <collision name="collision">
         <geometry>
           <box>
@@ -102,7 +102,7 @@
     </link>
 
     <link name="right_support_horiz_lower">
-      <pose>0.24 -0.8 0.01 0 0 0</pose>
+      <pose>0.24 -1.05 0.01 0 0 0</pose>
       <collision name="collision">
         <geometry>
           <box>
@@ -126,7 +126,7 @@
     </link>
 
     <link name="right_support_horiz_upper">
-      <pose>0.24 -0.8 0.79 0 0 0</pose>
+      <pose>0.24 -1.05 0.79 0 0 0</pose>
       <collision name="collision">
         <geometry>
           <box>
@@ -150,7 +150,7 @@
     </link>
 
     <link name="right_support_vertical">
-      <pose>0.44 -0.8 0.4 0 1.5708 0</pose>
+      <pose>0.44 -1.05 0.4 0 1.5708 0</pose>
       <collision name="collision">
         <geometry>
           <box>
@@ -178,14 +178,14 @@
       <collision name="collision">
         <geometry>
           <box>
-            <size>0.02 1.58 0.02</size>
+            <size>0.02 2.08 0.02</size>
           </box>
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
           <box>
-            <size>0.02 1.58 0.02</size>
+            <size>0.02 2.08 0.02</size>
           </box>
         </geometry>
         <material>
@@ -202,14 +202,14 @@
       <collision name="collision">
         <geometry>
           <box>
-            <size>0.02 1.58 0.02</size>
+            <size>0.02 2.08 0.02</size>
           </box>
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
           <box>
-            <size>0.02 1.58 0.02</size>
+            <size>0.02 2.08 0.02</size>
           </box>
         </geometry>
         <material>
@@ -222,7 +222,7 @@
     </link>
 
     <link name="right_post">
-      <pose>0 -0.8 0.45 0 0 0</pose>
+      <pose>0 -1.05 0.45 0 0 0</pose>
       <collision name="collision">
         <geometry>
           <cylinder>
@@ -253,7 +253,7 @@
         <geometry>
           <cylinder>
             <radius>0.05</radius>
-            <length>1.5</length>
+            <length>2.0</length>
           </cylinder>
         </geometry>
       </collision>
@@ -261,7 +261,7 @@
         <geometry>
           <cylinder>
             <radius>0.05</radius>
-            <length>1.5</length>
+            <length>2.0</length>
           </cylinder>
         </geometry>
         <material>
@@ -278,14 +278,14 @@
       <collision name="collision">
         <geometry>
           <box>
-            <size>0.01 1.6 0.80</size>
+            <size>0.01 2.1 0.80</size>
           </box>
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
           <box>
-            <size>0.01 1.6 0.80</size>
+            <size>0.01 2.1 0.80</size>
           </box>
         </geometry>
         <material>
@@ -299,7 +299,7 @@
     </link>
 
     <link name="left_net">
-      <pose>0.24 0.8 0.40 0 0 0</pose>
+      <pose>0.24 1.05 0.40 0 0 0</pose>
       <collision name="collision">
         <geometry>
           <box>
@@ -324,7 +324,7 @@
     </link>
 
     <link name="right_net">
-      <pose>0.24 -0.8 0.40 0 0 0</pose>
+      <pose>0.24 -1.05 0.40 0 0 0</pose>
       <collision name="collision">
         <geometry>
           <box>
