@@ -4,7 +4,7 @@
     <static>false</static>
 
     <link name="ball">
-      <pose>0 0 0.02 0 0 0</pose>
+      <pose>0 0 0.04 0 0 0</pose>
       <inertial>
         <mass>0.0026</mass>
         <!-- inertia based on solid sphere 2/5 mr^2 -->
