@@ -105,6 +105,7 @@ robocup_spl_ball
 robocup09_spl_field
 robocup14_spl_field
 robocup14_spl_goal
+robonaut
 saucepan
 simple_arm
 simple_arm_gripper
