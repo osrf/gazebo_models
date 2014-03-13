@@ -1,5 +1,5 @@
-<?xml version="1.0"?>
-<sdf version="1.4">
+<?xml version="1.0" ?>
+<sdf version="1.5">
   <model name="polaris_ranger_ev">
     <link name="chassis">
       <inertial>
@@ -8,11 +8,14 @@
         <mass>720.0</mass>
         <inertia>
           <ixx>140</ixx>
-          <ixy>0.0</ixy><iyy>550</iyy>
-          <ixz>0.0</ixz><iyz>0.0</iyz><izz>550</izz>
+          <ixy>0.0</ixy>
+          <iyy>550</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>550</izz>
         </inertia>
         <!-- chassis c.o.g. near lateral/longitudinal center, height of 0.4 m -->
-        <pose>0.1 0 0.4  0 0 0</pose>
+        <pose>0.1 0 0.4 0 0 0</pose>
       </inertial>
       <visual name="visual">
         <!-- rotate mesh to get to X-forward -->
@@ -35,7 +38,7 @@
         </material>
       </visual>
       <collision name="chassis_bottom">
-        <pose>0.1 0.0 0.37  0 0 0</pose> 
+        <pose>0.1 0.0 0.37 0 0 0</pose>
         <geometry>
           <box>
             <size>1.5 1.34 0.06</size>
@@ -43,7 +46,7 @@
         </geometry>
       </collision>
       <collision name="cargo_bottom">
-        <pose>-0.9 0.0 0.9 0.0 0.0 0.0</pose> 
+        <pose>-0.9 0.0 0.9 0.0 0.0 0.0</pose>
         <geometry>
           <box>
             <size>0.9 1.2 0.01</size>
@@ -51,7 +54,7 @@
         </geometry>
       </collision>
       <collision name="cargo_front">
-        <pose>-0.45 0.0 1.025 0.0 0.0 0.0</pose> 
+        <pose>-0.45 0.0 1.025 0.0 0.0 0.0</pose>
         <geometry>
           <box>
             <size>0.05 1.2 0.25</size>
@@ -59,7 +62,7 @@
         </geometry>
       </collision>
       <collision name="cargo_back">
-        <pose>-1.35 0.0 1.025 0.0 0.0 0.0</pose> 
+        <pose>-1.35 0.0 1.025 0.0 0.0 0.0</pose>
         <geometry>
           <box>
             <size>0.05 1.2 0.25</size>
@@ -67,7 +70,7 @@
         </geometry>
       </collision>
       <collision name="cargo_left">
-        <pose>-0.9 0.6 1.025 0.0 0.0 0.0</pose> 
+        <pose>-0.9 0.6 1.025 0.0 0.0 0.0</pose>
         <geometry>
           <box>
             <size>0.9 0.05 0.25</size>
@@ -75,7 +78,7 @@
         </geometry>
       </collision>
       <collision name="cargo_right">
-        <pose>-0.9 -0.6 1.025 0.0 0.0 0.0</pose> 
+        <pose>-0.9 -0.6 1.025 0.0 0.0 0.0</pose>
         <geometry>
           <box>
             <size>0.9 0.05 0.25</size>
@@ -83,7 +86,7 @@
         </geometry>
       </collision>
       <collision name="seat">
-        <pose>-0.1 0.0 0.560  0 0 0</pose> 
+        <pose>-0.1 0.0 0.560 0 0 0</pose>
         <geometry>
           <box>
             <size>0.6 1.22 0.50</size>
@@ -98,7 +101,7 @@
         </surface>
       </collision>
       <collision name="mud_seat">
-        <pose>-0.1 0.0 0.81  0 0 0</pose> 
+        <pose>-0.1 0.0 0.81 0 0 0</pose>
         <geometry>
           <box>
             <size>0.6 1.15 0.1</size>
@@ -118,7 +121,7 @@
         </contact>
       </sensor>
       <collision name="seat_back">
-        <pose>-0.3 0.0 1.125 0.0 -0.2 0.0</pose> 
+        <pose>-0.3 0.0 1.125 0.0 -0.2 0.0</pose>
         <geometry>
           <box>
             <size>0.06 1.0 0.4</size>
@@ -126,7 +129,7 @@
         </geometry>
       </collision>
       <collision name="engine">
-        <pose>1.05 0.0 0.7 0.0 0.0 0.0</pose> 
+        <pose>1.05 0.0 0.7 0.0 0.0 0.0</pose>
         <geometry>
           <box>
             <size>0.58 1.0 0.8</size>
@@ -153,7 +156,7 @@
         </geometry>
       </collision-->
       <collision name="handle_left_middle">
-        <pose>-0.30 0.61 1.055  0 -0.20 0</pose>
+        <pose>-0.30 0.61 1.055 0 -0.20 0</pose>
         <geometry>
           <cylinder>
             <radius>0.02</radius>
@@ -180,7 +183,7 @@
         </geometry>
       </collision-->
       <collision name="handle_right_middle">
-        <pose>-0.30 -0.61 1.055  0 -0.20 0</pose>
+        <pose>-0.30 -0.61 1.055 0 -0.20 0</pose>
         <geometry>
           <cylinder>
             <radius>0.02</radius>
@@ -191,7 +194,7 @@
       <!-- End simple collision shapes for entry/exit handles -->
       <!-- Begin simple collision shapes for roll cage -->
       <collision name="rollcage_top_left">
-        <pose>0.0 0.61 1.92  0 1.61 0</pose>
+        <pose>0.0 0.61 1.92 0 1.61 0</pose>
         <geometry>
           <cylinder>
             <radius>0.03</radius>
@@ -200,7 +203,7 @@
         </geometry>
       </collision>
       <collision name="rollcage_top_right">
-        <pose>0.0 -0.61 1.92  0 1.61 0</pose>
+        <pose>0.0 -0.61 1.92 0 1.61 0</pose>
         <geometry>
           <cylinder>
             <radius>0.03</radius>
@@ -209,7 +212,7 @@
         </geometry>
       </collision>
       <collision name="rollcage_top_front">
-        <pose>0.325 0.0 1.89  1.570796 0 0</pose>
+        <pose>0.325 0.0 1.89 1.570796 0 0</pose>
         <geometry>
           <cylinder>
             <radius>0.03</radius>
@@ -218,7 +221,7 @@
         </geometry>
       </collision>
       <collision name="rollcage_top_back">
-        <pose>-0.330 0.0 1.92  1.570796 0 0</pose>
+        <pose>-0.330 0.0 1.92 1.570796 0 0</pose>
         <geometry>
           <cylinder>
             <radius>0.03</radius>
@@ -227,7 +230,7 @@
         </geometry>
       </collision>
       <collision name="rollcage_front_left">
-        <pose>0.54 0.61 1.45  0 -0.44 0</pose>
+        <pose>0.54 0.61 1.45 0 -0.44 0</pose>
         <geometry>
           <cylinder>
             <radius>0.03</radius>
@@ -236,7 +239,7 @@
         </geometry>
       </collision>
       <collision name="rollcage_front_right">
-        <pose>0.54 -0.61 1.45  0 -0.44 0</pose>
+        <pose>0.54 -0.61 1.45 0 -0.44 0</pose>
         <geometry>
           <cylinder>
             <radius>0.03</radius>
@@ -245,7 +248,7 @@
         </geometry>
       </collision>
       <collision name="fender_front_right">
-        <pose>0.64 -0.61 0.70  0 0.35 0</pose>
+        <pose>0.64 -0.61 0.70 0 0.35 0</pose>
         <geometry>
           <cylinder>
             <radius>0.03</radius>
@@ -254,7 +257,7 @@
         </geometry>
       </collision>
       <collision name="fender_front_left">
-        <pose>0.64 0.61 0.70  0 0.35 0</pose>
+        <pose>0.64 0.61 0.70 0 0.35 0</pose>
         <geometry>
           <cylinder>
             <radius>0.03</radius>
@@ -263,7 +266,7 @@
         </geometry>
       </collision>
       <collision name="rollcage_back_left">
-        <pose>-0.37 0.61 1.25  0 -0.14 0</pose>
+        <pose>-0.37 0.61 1.25 0 -0.14 0</pose>
         <geometry>
           <cylinder>
             <radius>0.03</radius>
@@ -272,7 +275,7 @@
         </geometry>
       </collision>
       <collision name="rollcage_back_right">
-        <pose>-0.37 -0.61 1.25  0 -0.14 0</pose>
+        <pose>-0.37 -0.61 1.25 0 -0.14 0</pose>
         <geometry>
           <cylinder>
             <radius>0.03</radius>
@@ -281,7 +284,7 @@
         </geometry>
       </collision>
       <collision name="rollcage_back_midleft">
-        <pose>-0.37 0.155 1.25  0 -0.14 0</pose>
+        <pose>-0.37 0.155 1.25 0 -0.14 0</pose>
         <geometry>
           <cylinder>
             <radius>0.023</radius>
@@ -290,7 +293,7 @@
         </geometry>
       </collision>
       <collision name="rollcage_back_midright">
-        <pose>-0.37 -0.155 1.25  0 -0.14 0</pose>
+        <pose>-0.37 -0.155 1.25 0 -0.14 0</pose>
         <geometry>
           <cylinder>
             <radius>0.023</radius>
@@ -299,7 +302,7 @@
         </geometry>
       </collision>
       <collision name="rollcage_back_upper_left">
-        <pose>-0.38 0.61 1.82  0 0.40 0</pose>
+        <pose>-0.38 0.61 1.82 0 0.40 0</pose>
         <geometry>
           <cylinder>
             <radius>0.03</radius>
@@ -308,7 +311,7 @@
         </geometry>
       </collision>
       <collision name="rollcage_back_upper_right">
-        <pose>-0.38 -0.61 1.82  0 0.40 0</pose>
+        <pose>-0.38 -0.61 1.82 0 0.40 0</pose>
         <geometry>
           <cylinder>
             <radius>0.03</radius>
@@ -317,7 +320,7 @@
         </geometry>
       </collision>
       <collision name="rollcage_back_upper_midleft">
-        <pose>-0.38 0.155 1.82  0 0.40 0</pose>
+        <pose>-0.38 0.155 1.82 0 0.40 0</pose>
         <geometry>
           <cylinder>
             <radius>0.023</radius>
@@ -326,7 +329,7 @@
         </geometry>
       </collision>
       <collision name="rollcage_back_upper_midright">
-        <pose>-0.38 -0.155 1.82  0 0.40 0</pose>
+        <pose>-0.38 -0.155 1.82 0 0.40 0</pose>
         <geometry>
           <cylinder>
             <radius>0.023</radius>
@@ -378,13 +381,17 @@
       <link_name>atlas::pelvis</link_name>
     </plugin-->
     <link name="rear_right_wheel">
-      <pose>-0.85 -0.6 0.32  1.52 0.0 0.0</pose>
+      <pose>-0.85 -0.6 0.32 1.52 0.0 0.0</pose>
       <inertial>
-        <mass>12</mass><!-- estimated from http://www.rzrforums.net/wheels-tires/1729-tire-wheel-weights-most-sizes.html -->
+        <mass>12</mass>
+        <!-- estimated from http://www.rzrforums.net/wheels-tires/1729-tire-wheel-weights-most-sizes.html -->
         <inertia>
           <ixx>0.5</ixx>
-          <ixy>0.0</ixy><iyy>0.5</iyy>
-          <ixz>0.0</ixz><iyz>0.0</iyz><izz>1.0</izz>
+          <ixy>0.0</ixy>
+          <iyy>0.5</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>1.0</izz>
         </inertia>
       </inertial>
       <collision name="collision">
@@ -435,13 +442,17 @@
       </visual>
     </link>
     <link name="rear_left_wheel">
-      <pose>-0.85 0.6 0.32  -1.52 0.0 0.0</pose>
+      <pose>-0.85 0.6 0.32 -1.52 0.0 0.0</pose>
       <inertial>
-        <mass>12</mass><!-- estimated from http://www.rzrforums.net/wheels-tires/1729-tire-wheel-weights-most-sizes.html -->
+        <mass>12</mass>
+        <!-- estimated from http://www.rzrforums.net/wheels-tires/1729-tire-wheel-weights-most-sizes.html -->
         <inertia>
           <ixx>0.5</ixx>
-          <ixy>0.0</ixy><iyy>0.5</iyy>
-          <ixz>0.0</ixz><iyz>0.0</iyz><izz>1.0</izz>
+          <ixy>0.0</ixy>
+          <iyy>0.5</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>1.0</izz>
         </inertia>
       </inertial>
       <collision name="collision">
@@ -470,7 +481,6 @@
           </contact>
         </surface>
       </collision>
-
       <visual name="visual">
         <!-- rotate mesh to get to X-forward -->
         <pose>0 0 0 0 -1.570796 0</pose>
@@ -492,15 +502,18 @@
         </material>
       </visual>
     </link>
-
     <link name="front_right_wheel">
       <pose>1.03 -0.6 0.32 1.52 0.0 0.0</pose>
       <inertial>
-        <mass>12</mass><!-- estimated from http://www.rzrforums.net/wheels-tires/1729-tire-wheel-weights-most-sizes.html -->
+        <mass>12</mass>
+        <!-- estimated from http://www.rzrforums.net/wheels-tires/1729-tire-wheel-weights-most-sizes.html -->
         <inertia>
           <ixx>0.5</ixx>
-          <ixy>0.0</ixy><iyy>0.5</iyy>
-          <ixz>0.0</ixz><iyz>0.0</iyz><izz>1.0</izz>
+          <ixy>0.0</ixy>
+          <iyy>0.5</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>1.0</izz>
         </inertia>
       </inertial>
       <collision name="collision">
@@ -529,7 +542,6 @@
           </contact>
         </surface>
       </collision>
-
       <visual name="visual">
         <pose>0 0 0 0 -1.570796 0</pose>
         <geometry>
@@ -550,15 +562,17 @@
         </material>
       </visual>
     </link>
-
     <link name="front_right_wheel_steering_block">
       <pose>1.03 -0.5 0.32 1.570796 0.0 0.0</pose>
       <inertial>
         <mass>1</mass>
         <inertia>
           <ixx>1.0</ixx>
-          <ixy>0.0</ixy><iyy>1.0</iyy>
-          <ixz>0.0</ixz><iyz>0.0</iyz><izz>1.0</izz>
+          <ixy>0.0</ixy>
+          <iyy>1.0</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>1.0</izz>
         </inertia>
       </inertial>
       <collision name="collision">
@@ -571,13 +585,17 @@
       </collision>
     </link>
     <link name="front_left_wheel">
-      <pose>1.03 0.6 0.32  -1.52 0.0 0.0</pose>
+      <pose>1.03 0.6 0.32 -1.52 0.0 0.0</pose>
       <inertial>
-        <mass>12</mass><!-- estimated from http://www.rzrforums.net/wheels-tires/1729-tire-wheel-weights-most-sizes.html -->
+        <mass>12</mass>
+        <!-- estimated from http://www.rzrforums.net/wheels-tires/1729-tire-wheel-weights-most-sizes.html -->
         <inertia>
           <ixx>0.5</ixx>
-          <ixy>0.0</ixy><iyy>0.5</iyy>
-          <ixz>0.0</ixz><iyz>0.0</iyz><izz>1.0</izz>
+          <ixy>0.0</ixy>
+          <iyy>0.5</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>1.0</izz>
         </inertia>
       </inertial>
       <collision name="collision">
@@ -607,7 +625,7 @@
         </surface>
       </collision>
       <visual name="visual">
-        <pose>0 0 0  3.14159 1.570796 0</pose>
+        <pose>0 0 0 3.14159 1.570796 0</pose>
         <geometry>
           <mesh>
             <uri>model://polaris_ranger_ev/meshes/polaris.dae</uri>
@@ -632,8 +650,11 @@
         <mass>1</mass>
         <inertia>
           <ixx>1.0</ixx>
-          <ixy>0.0</ixy><iyy>1.0</iyy>
-          <ixz>0.0</ixz><iyz>0.0</iyz><izz>1.0</izz>
+          <ixy>0.0</ixy>
+          <iyy>1.0</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>1.0</izz>
         </inertia>
       </inertial>
       <collision name="collision">
@@ -646,7 +667,7 @@
       </collision>
     </link>
     <!-- gas/brake pedals, steering wheel and hand brake -->
-    <link name='gas_pedal'>
+    <link name="gas_pedal">
       <pose>0.63 0.10 0.58 0 0 0</pose>
       <gravity>false</gravity>
       <inertial>
@@ -661,7 +682,7 @@
           <izz>0.01</izz>
         </inertia>
       </inertial>
-      <collision name='gas_pedal_collision'>
+      <collision name="gas_pedal_collision">
         <pose>-0.0385 0 -0.086 0 2.016 0</pose>
         <geometry>
           <box>
@@ -690,8 +711,7 @@
         </material>
       </visual>
     </link>
-
-    <link name='brake_pedal'>
+    <link name="brake_pedal">
       <gravity>false</gravity>
       <pose>0.64 0.27 0.58 0 0 0</pose>
       <inertial>
@@ -706,7 +726,7 @@
           <izz>0.01</izz>
         </inertia>
       </inertial>
-      <collision name='brake_pedal_collision'>
+      <collision name="brake_pedal_collision">
         <pose>-0.040 0 -0.086 0 1.999 0</pose>
         <geometry>
           <box>
@@ -735,12 +755,11 @@
         </material>
       </visual>
     </link>
-
-    <link name='steering_wheel'>
-      <pose>0.34 0.30 1.29  0 -0.87 0</pose> 
+    <link name="steering_wheel">
+      <pose>0.34 0.30 1.29 0 -0.87 0</pose>
       <inertial>
         <mass>1.0</mass>
-        <pose>-0.002 0 0  0 0 0</pose>
+        <pose>-0.002 0 0 0 0 0</pose>
         <inertia>
           <ixx>0.012</ixx>
           <ixy>0</ixy>
@@ -750,10 +769,9 @@
           <izz>0.024</izz>
         </inertia>
       </inertial>
-
       <collision name="collision">
         <!-- rotate mesh to get to X-forward -->
-        <pose>0 0 0  -0.69 0 -1.570796</pose>
+        <pose>0 0 0 -0.69 0 -1.570796</pose>
         <geometry>
           <mesh>
             <uri>model://polaris_ranger_ev/meshes/polaris.dae</uri>
@@ -771,10 +789,9 @@
           </contact>
         </surface>
       </collision>
-
       <visual name="visual">
         <!-- rotate mesh to get to X-forward -->
-        <pose>0 0 0  -0.69 0 -1.570796</pose>
+        <pose>0 0 0 -0.69 0 -1.570796</pose>
         <geometry>
           <mesh>
             <uri>model://polaris_ranger_ev/meshes/polaris.dae</uri>
@@ -803,10 +820,9 @@
         </geometry>
       </visual-->
     </link>
-
-    <link name='hand_brake'>
+    <link name="hand_brake">
       <!--pose>0.50 0.00 1.05 0.0 3.2 0.0</pose-->
-      <pose>0.53 0.07 1.05  0 0 0</pose>
+      <pose>0.53 0.07 1.05 0 0 0</pose>
       <inertial>
         <mass>0.5</mass>
         <inertia>
@@ -820,7 +836,7 @@
       </inertial>
       <collision name="hand_brake_collision">
         <!--pose>0 0 -0.10 0 0 0</pose-->
-        <pose>0 0 0.05  -0.2 0 -1.570796</pose>
+        <pose>0 0 0.05 -0.2 0 -1.570796</pose>
         <geometry>
           <mesh>
             <uri>model://polaris_ranger_ev/meshes/polaris.dae</uri>
@@ -837,7 +853,7 @@
       </collision>
       <visual name="hand_brake_visual">
         <!--pose>0 0 -0.10 0 0 0</pose-->
-        <pose>0 0 0.05  -0.2 0 -1.570796</pose>
+        <pose>0 0 0.05 -0.2 0 -1.570796</pose>
         <geometry>
           <mesh>
             <uri>model://polaris_ranger_ev/meshes/polaris.dae</uri>
@@ -864,9 +880,8 @@
         </material>
       </visual>
     </link>
-
-    <link name='FNR_switch'>
-      <pose>0.56 -0.02 1.08  0 0.25 0</pose> 
+    <link name="FNR_switch">
+      <pose>0.56 -0.02 1.08 0 0.25 0</pose>
       <inertial>
         <mass>0.1</mass>
         <inertia>
@@ -920,7 +935,6 @@
         </material>
       </visual>
     </link>
-
     <joint type="revolute" name="front_left_steering_joint">
       <child>front_left_wheel_steering_block</child>
       <parent>chassis</parent>
@@ -934,6 +948,7 @@
         <dynamics>
           <damping>50.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <physics>
         <ode>
@@ -950,9 +965,9 @@
       <parent>front_left_wheel_steering_block</parent>
       <axis>
         <xyz>0 1 0.05</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-
     <joint type="revolute" name="front_right_steering_joint">
       <child>front_right_wheel_steering_block</child>
       <parent>chassis</parent>
@@ -966,6 +981,7 @@
         <dynamics>
           <damping>50.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <physics>
         <ode>
@@ -977,33 +993,31 @@
         </ode>
       </physics>
     </joint>
-
     <joint type="revolute" name="front_right_wheel_joint">
       <child>front_right_wheel</child>
       <parent>front_right_wheel_steering_block</parent>
       <axis>
         <xyz>0 1 -0.05</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-
-
     <joint type="revolute" name="rear_left_wheel_joint">
       <child>rear_left_wheel</child>
       <parent>chassis</parent>
       <axis>
         <xyz>0 1 0.05</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-
     <joint type="revolute" name="rear_right_wheel_joint">
       <pose>0.0 0.0 -0.1 0 0 0</pose>
       <child>rear_right_wheel</child>
       <parent>chassis</parent>
       <axis>
         <xyz>0 1 -0.05</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-
     <joint type="revolute" name="rear_differential_joint">
       <child>rear_right_wheel</child>
       <parent>rear_left_wheel</parent>
@@ -1013,6 +1027,7 @@
         <dynamics>
           <damping>70</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <physics>
         <ode>
@@ -1022,8 +1037,7 @@
         </ode>
       </physics>
     </joint>
-
-    <joint name='gas_joint' type='prismatic'>
+    <joint name="gas_joint" type="prismatic">
       <parent>chassis</parent>
       <child>gas_pedal</child>
       <axis>
@@ -1035,6 +1049,7 @@
         <dynamics>
           <damping>3.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <physics>
         <ode>
@@ -1042,7 +1057,7 @@
         </ode>
       </physics>
     </joint>
-    <joint name='brake_joint' type='prismatic'>
+    <joint name="brake_joint" type="prismatic">
       <parent>chassis</parent>
       <child>brake_pedal</child>
       <axis>
@@ -1054,6 +1069,7 @@
         <dynamics>
           <damping>3.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <physics>
         <ode>
@@ -1061,8 +1077,8 @@
         </ode>
       </physics>
     </joint>
-    <joint name='steering_joint' type='revolute'>
-      <pose>-0.002 0 0  0 0 0</pose>
+    <joint name="steering_joint" type="revolute">
+      <pose>-0.002 0 0 0 0 0</pose>
       <parent>chassis</parent>
       <child>steering_wheel</child>
       <axis>
@@ -1074,6 +1090,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <physics>
         <ode>
@@ -1081,7 +1098,7 @@
         </ode>
       </physics>
     </joint>
-    <joint name='hand_brake_joint' type='revolute'>
+    <joint name="hand_brake_joint" type="revolute">
       <parent>chassis</parent>
       <child>hand_brake</child>
       <axis>
@@ -1093,14 +1110,15 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
-        <physics>
-          <ode>
-            <cfm_damping>1</cfm_damping>
-          </ode>
-        </physics>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
     </joint>
-    <joint name='FNR_switch_joint' type='revolute'>
+    <joint name="FNR_switch_joint" type="revolute">
       <parent>chassis</parent>
       <child>FNR_switch</child>
       <axis>
@@ -1112,13 +1130,13 @@
         <dynamics>
           <damping>0.01</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
-        <physics>
-          <ode>
-            <cfm_damping>1</cfm_damping>
-          </ode>
-        </physics>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
     </joint>
-
   </model>
 </sdf>

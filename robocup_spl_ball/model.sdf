@@ -1,8 +1,7 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="RoboCup SPL Ball">
     <static>false</static>
-
     <link name="ball">
       <inertial>
         <mass>0.0056</mass>
@@ -37,6 +36,5 @@
         </material>
       </visual>
     </link>
-
   </model>
 </sdf>

@@ -1,5 +1,5 @@
-<?xml version='1.0'?>
-<sdf version="1.4">
+<?xml version="1.0" ?>
+<sdf version="1.5">
   <model name="fire_hose_long">
     <pose>0 0 10 0.708 0 0</pose>
     <joint name="joint_01_world" type="revolute">
@@ -11,6 +11,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="nozzle">
@@ -93,6 +94,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="link_01">
@@ -143,6 +145,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="sphere_02">
@@ -191,6 +194,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="link_02">
@@ -241,6 +245,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="sphere_03">
@@ -289,6 +294,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="link_03">
@@ -339,6 +345,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="sphere_04">
@@ -387,6 +394,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="link_04">
@@ -437,6 +445,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="sphere_05">
@@ -485,6 +494,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="link_05">
@@ -535,6 +545,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="sphere_06">
@@ -583,6 +594,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="link_06">
@@ -633,6 +645,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="sphere_07">
@@ -681,6 +694,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="link_07">
@@ -731,6 +745,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="sphere_08">
@@ -779,6 +794,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="link_08">
@@ -829,6 +845,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="sphere_09">
@@ -877,6 +894,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="link_09">
@@ -927,6 +945,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="sphere_10">
@@ -975,6 +994,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="link_10">
@@ -1025,6 +1045,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="sphere_11">
@@ -1073,6 +1094,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="link_11">
@@ -1123,6 +1145,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="sphere_12">
@@ -1171,6 +1194,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="link_12">
@@ -1221,6 +1245,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="sphere_13">
@@ -1269,6 +1294,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="link_13">
@@ -1319,6 +1345,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="sphere_14">
@@ -1367,6 +1394,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="link_14">
@@ -1417,6 +1445,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="sphere_15">
@@ -1465,6 +1494,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="link_15">
@@ -1515,6 +1545,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="sphere_16">
@@ -1563,6 +1594,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="link_16">
@@ -1613,6 +1645,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="sphere_17">
@@ -1661,6 +1694,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="link_17">
@@ -1711,6 +1745,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="sphere_18">
@@ -1759,6 +1794,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="link_18">
@@ -1809,6 +1845,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="sphere_19">
@@ -1857,6 +1894,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="link_19">
@@ -1907,6 +1945,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="sphere_20">
@@ -1955,6 +1994,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <link name="coupling">
@@ -2004,6 +2044,7 @@
           <damping>10.000000</damping>
           <friction>0.000000</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
   </model>

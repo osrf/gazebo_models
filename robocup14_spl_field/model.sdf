@@ -1,8 +1,7 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="RoboCup 14 SPL Field">
     <static>true</static>
-
     <link name="field">
       <pose>0 0 0.01 0 0 0</pose>
       <collision name="collision">
@@ -21,7 +20,6 @@
           </friction>
         </surface>
       </collision>
-
       <visual name="carpet">
         <cast_shadows>false</cast_shadows>
         <geometry>
@@ -38,7 +36,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="sideline_1">
         <pose>0 3 0.011 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -55,7 +52,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="sideline_2">
         <pose>0 -3 0.011 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -72,7 +68,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="endline_1">
         <pose>-4.5 0 0.011 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -89,7 +84,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="endline_2">
         <pose>4.5 0 0.011 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -106,7 +100,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="halfway_line">
         <pose>0 0 0.011 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -123,7 +116,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="area_1_line_a">
         <pose>-3.90 0 0.011 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -140,8 +132,6 @@
           </script>
         </material>
       </visual>
-
-
       <visual name="area_2_line_a">
         <pose>-4.20 1.10 0.011 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -158,7 +148,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="area_3_line_a">
         <pose>-4.20 -1.10 0.011 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -175,7 +164,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="area_1_line_b">
         <pose>3.90 0 0.011 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -192,7 +180,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="area_2_line_b">
         <pose>4.20 1.10 0.011 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -209,7 +196,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="area_3_line_b">
         <pose>4.20 -1.10 0.011 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -226,8 +212,6 @@
           </script>
         </material>
       </visual>
-
-
       <visual name="penalty_a">
         <pose>-3.20 0 0.01 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -244,7 +228,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="penalty_b">
         <pose>3.20 0 0.01 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -261,7 +244,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="center_point">
         <pose>0 0 0.01 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -278,7 +260,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="center_circle">
         <pose>0 0 0.005 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -296,6 +277,5 @@
         </material>
       </visual>
     </link>
-
   </model>
 </sdf>

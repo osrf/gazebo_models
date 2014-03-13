@@ -1,0 +1,659 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="RoboCup 09 SPL Field">
+    <static>true</static>
+
+    <link name="field">
+      <pose>0 0 0.01 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>7.40 5.40</size>
+          </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <visual name="carpet">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>7.40 5.40</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://robocup09_spl_field/materials/scripts/</uri>
+            <uri>model://robocup09_spl_field/materials/textures/</uri>
+            <name>RoboCup/Carpet</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="sideline_1">
+        <pose>0 2 0.011 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>6.05 0.05</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="sideline_2">
+        <pose>0 -2 0.011 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>6.05 0.05</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="endline_1">
+        <pose>-3 0 0.011 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>0.05 4.05</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="endline_2">
+        <pose>3 0 0.011 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>0.05 4.05</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="halfway_line">
+        <pose>0 0 0.011 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>0.05 4.05</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="area_1_line_y">
+        <pose>-2.40 0 0.011 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>0.05 3</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="area_2_line_y">
+        <pose>-2.70 1.50 0.011 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>0.65 0.05</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="area_3_line_y">
+        <pose>-2.70 -1.50 0.011 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>0.65 0.05</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="area_1_line_b">
+        <pose>2.40 0 0.011 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>0.05 3</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="area_2_line_b">
+        <pose>2.70 1.50 0.011 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>0.65 0.05</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="area_3_line_b">
+        <pose>2.70 -1.50 0.011 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>0.65 0.05</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="penalty_b">
+        <pose>-1.20 0 0.01 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.0005</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="penalty_y">
+        <pose>1.20 0 0.01 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.0005</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="center_point">
+        <pose>0 0 0.01 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.0005</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="center_circle">
+        <pose>0 0 -0.01 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <scale>1 1 0.75</scale>
+            <uri>model://robocup09_spl_field/meshes/circle.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="left_post_y">
+      <pose>-3 0.7 0.41 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.8</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.8</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/ZincYellow</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="left_support_triangle_y">
+      <pose>-3.043 -0.7 0.01 0 0 -1.5708</pose>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>0.41 0.41 0.41</scale>
+            <uri>model://robocup09_spl_field/meshes/triangle.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>0.41 0.41 0.41</scale>
+            <uri>model://robocup09_spl_field/meshes/triangle.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="right_post_y">
+      <pose>-3 -0.7 0.41 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.8</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.8</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/ZincYellow</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="right_support_triangle_y">
+      <pose>-3.043 0.7 0.01 0 0 -1.5708</pose>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>0.41 0.41 0.41</scale>
+            <uri>model://robocup09_spl_field/meshes/triangle.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>0.41 0.41 0.41</scale>
+            <uri>model://robocup09_spl_field/meshes/triangle.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="crossbar_y">
+      <pose>-3 0 0.785 1.5708 1.5708 0</pose>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.025</radius>
+            <length>1.4</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.025</radius>
+            <length>1.4</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/ZincYellow</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="net_y_upper">
+      <pose>-3.055 0 0.610 0 1.5708 0</pose>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.395 1.4 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.395 1.4 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://robocup09_spl_field/materials/scripts/</uri>
+            <uri>model://robocup09_spl_field/materials/textures/</uri>
+            <name>RoboCup/Net</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="net_y_lower">
+      <pose>-3.25 0 0.22 0 -0.785 0</pose>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.55 1.4 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.55 1.4 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://robocup09_spl_field/materials/scripts/</uri>
+            <uri>model://robocup09_spl_field/materials/textures/</uri>
+            <name>RoboCup/Net</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="left_post_b">
+      <pose>3 0.7 0.4 0.01 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.8</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.8</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/SkyBlue</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="left_support_triangle_b">
+      <pose>3.043 -0.7 0.01 0 0 1.5708</pose>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>0.41 0.41 0.41</scale>
+            <uri>model://robocup09_spl_field/meshes/triangle.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>0.41 0.41 0.41</scale>
+            <uri>model://robocup09_spl_field/meshes/triangle.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="right_post_b">
+      <pose>3 -0.7 0.41 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.8</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.8</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/SkyBlue</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="right_support_triangle_b">
+      <pose>3.043 0.7 0.01 0 0 1.5708</pose>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>0.41 0.41 0.41</scale>
+            <uri>model://robocup09_spl_field/meshes/triangle.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>0.41 0.41 0.41</scale>
+            <uri>model://robocup09_spl_field/meshes/triangle.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="crossbar_b">
+      <pose>3 0 0.785 1.5708 1.5708 0</pose>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.025</radius>
+            <length>1.4</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.025</radius>
+            <length>1.4</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/SkyBlue</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="net_b_upper">
+      <pose>3.055 0 0.610 0 1.5708 0</pose>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.395 1.4 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.395 1.4 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://robocup09_spl_field/materials/scripts/</uri>
+            <uri>model://robocup09_spl_field/materials/textures/</uri>
+            <name>RoboCup/Net</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="net_b_lower">
+      <pose>3.25 0 0.22 0 0.785 0</pose>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.55 1.4 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.55 1.4 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://robocup09_spl_field/materials/scripts/</uri>
+            <uri>model://robocup09_spl_field/materials/textures/</uri>
+            <name>RoboCup/Net</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+  </model>
+</sdf>

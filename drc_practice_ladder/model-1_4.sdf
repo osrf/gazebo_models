@@ -1,0 +1,353 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="ladder">
+    <static>true</static>
+    <link name="link">
+      <collision name="step0">
+        <pose>0 -0.96703 0.2860 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.9 0.1016 0.0381</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="step1">
+        <pose>0 -0.79106 0.59054 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.9 0.1016 0.0381</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="step2">
+        <pose>0 -0.61509 0.89508 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.9 0.1016 0.0381</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="step3">
+        <pose>0 -0.43912 1.19962 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.9 0.1016 0.0381</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="step4">
+        <pose>0 -0.26315 1.50416 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.9 0.1016 0.0381</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="step5">
+        <pose>0 -0.08718 1.8087 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.9 0.1016 0.0381</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="step6">
+        <pose>0 0.08879 2.11324 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.9 0.1016 0.0381</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="step7">
+        <pose>0 0.26476 2.41778 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.9 0.1016 0.0381</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="landing">
+        <pose>0 0.73039 2.72432 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.9 0.6096 0.0381</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="left_side_wall">
+        <pose>-0.43217 -0.37451 1.33860 1.0471968 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0508 3.16757588 0.13</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="left_side_landing_wall">
+        <pose>-0.43217 0.69819 2.667 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0508 0.67401 0.1524</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="left_railing_landing_3">
+        <pose>-0.433355 0.66933 3.81 1.5707 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>0.73172</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="left_railing_landing_2">
+        <pose>-0.433355 0.73166 3.5433 1.5707 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>0.5588</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="left_railing_landing_1">
+        <pose>-0.433355 0.73166 3.27660 1.5707 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>0.5588</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="left_railing_landing_0">
+        <pose>-0.433355 0.73166 3.0099 1.5707 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>0.5588</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="left_railing_landing_upright_back">
+        <pose>-0.433355 1.01088 3.27660 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>1.0668</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="left_railing_landing_upright_front">
+        <pose>-0.433355 0.45208 3.27660 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>1.0668</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <collision name="left_railing_upright_4">
+        <pose>-0.433355 0.06990 2.80986 1.0341369 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>0.57</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="left_railing_upright_3">
+        <pose>-0.433355 -0.31006 2.15169 1.0341369 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>0.57</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="left_railing_upright_2">
+        <pose>-0.433355 -0.69110 1.49172 1.0341369 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>0.57</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="left_railing_upright_1">
+        <pose>-0.433355 -1.07320 0.82995 1.0341369 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>0.57</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="left_railing_upright_0">
+        <pose>-0.433355 -1.45316 0.17179 1.0341369 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>0.57</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <collision name="left_railing_long">
+        <pose>-0.433355 -0.7810 1.9068 -0.5235032 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>4.422950887</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+
+
+      <collision name="right_side_wall">
+        <pose>0.43217 -0.37451 1.33860 1.0471968 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0508 3.16757588 0.13</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="right_side_landing_wall">
+        <pose>0.43217 0.69819 2.667 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0508 0.67401 0.1524</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="right_railing_landing_3">
+        <pose>0.433355 0.66933 3.81 1.5707 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>0.73172</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="right_railing_landing_2">
+        <pose>0.433355 0.73166 3.5433 1.5707 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>0.5588</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="right_railing_landing_1">
+        <pose>0.433355 0.73166 3.27660 1.5707 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>0.5588</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="right_railing_landing_0">
+        <pose>0.433355 0.73166 3.0099 1.5707 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>0.5588</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="right_railing_landing_upright_back">
+        <pose>0.433355 1.01088 3.27660 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>1.0668</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="right_railing_landing_upright_front">
+        <pose>0.433355 0.45208 3.27660 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>1.0668</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <collision name="right_railing_upright_4">
+        <pose>0.433355 0.06990 2.80986 1.0341369 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>0.57</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="right_railing_upright_3">
+        <pose>0.433355 -0.31006 2.15169 1.0341369 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>0.57</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="right_railing_upright_2">
+        <pose>0.433355 -0.69110 1.49172 1.0341369 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>0.57</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="right_railing_upright_1">
+        <pose>0.433355 -1.07320 0.82995 1.0341369 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>0.57</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="right_railing_upright_0">
+        <pose>0.433355 -1.45316 0.17179 1.0341369 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>0.57</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <collision name="right_railing_long">
+        <pose>0.433355 -0.7810 1.9068 -0.5235032 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02413</radius>
+            <length>4.422950887</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://drc_practice_ladder/meshes/ladder.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="jersey_barrier">
     <static>true</static>
     <link name="link">
@@ -10,7 +10,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="upright">
         <pose>0 0 0.5715 0 0 0</pose>
         <geometry>
@@ -19,7 +18,6 @@
           </box>
         </geometry>
       </collision>
-
       <collision name="base">
         <pose>0 0 0.032258 0 0 0</pose>
         <geometry>
@@ -28,7 +26,6 @@
           </box>
         </geometry>
       </collision>
-
       <collision name="base2">
         <pose>0 0 0.1 0 0 0</pose>
         <geometry>
@@ -37,7 +34,6 @@
           </box>
         </geometry>
       </collision>
-
       <collision name="base3">
         <pose>0 0 0.2 0 0 0</pose>
         <geometry>
@@ -46,7 +42,6 @@
           </box>
         </geometry>
       </collision>
-
       <collision name="left-angle">
         <pose>0 -0.224 0.2401 0.9 0 0</pose>
         <geometry>
@@ -55,7 +50,6 @@
           </box>
         </geometry>
       </collision>
-
       <collision name="right-angle">
         <pose>0 0.224 0.2401 -0.9 0 0</pose>
         <geometry>
@@ -64,7 +58,6 @@
           </box>
         </geometry>
       </collision>
-
     </link>
   </model>
 </sdf>

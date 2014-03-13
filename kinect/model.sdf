@@ -1,12 +1,11 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="kinect">
     <pose>0 0 0.036 0 0 0</pose>
     <link name="link">
       <inertial>
         <mass>0.1</mass>
       </inertial>
-
       <collision name="collision">
         <geometry>
           <box>

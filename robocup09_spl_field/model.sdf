@@ -1,8 +1,7 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="RoboCup 09 SPL Field">
     <static>true</static>
-
     <link name="field">
       <pose>0 0 0.01 0 0 0</pose>
       <collision name="collision">
@@ -21,7 +20,6 @@
           </friction>
         </surface>
       </collision>
-
       <visual name="carpet">
         <cast_shadows>false</cast_shadows>
         <geometry>
@@ -38,7 +36,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="sideline_1">
         <pose>0 2 0.011 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -55,7 +52,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="sideline_2">
         <pose>0 -2 0.011 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -72,7 +68,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="endline_1">
         <pose>-3 0 0.011 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -89,7 +84,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="endline_2">
         <pose>3 0 0.011 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -106,7 +100,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="halfway_line">
         <pose>0 0 0.011 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -123,7 +116,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="area_1_line_y">
         <pose>-2.40 0 0.011 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -140,7 +132,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="area_2_line_y">
         <pose>-2.70 1.50 0.011 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -157,7 +148,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="area_3_line_y">
         <pose>-2.70 -1.50 0.011 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -174,7 +164,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="area_1_line_b">
         <pose>2.40 0 0.011 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -191,7 +180,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="area_2_line_b">
         <pose>2.70 1.50 0.011 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -208,7 +196,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="area_3_line_b">
         <pose>2.70 -1.50 0.011 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -225,7 +212,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="penalty_b">
         <pose>-1.20 0 0.01 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -242,7 +228,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="penalty_y">
         <pose>1.20 0 0.01 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -259,7 +244,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="center_point">
         <pose>0 0 0.01 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -276,7 +260,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="center_circle">
         <pose>0 0 -0.01 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -294,7 +277,6 @@
         </material>
       </visual>
     </link>
-
     <link name="left_post_y">
       <pose>-3 0.7 0.41 0 0 0</pose>
       <collision name="collision">
@@ -320,7 +302,6 @@
         </material>
       </visual>
     </link>
-
     <link name="left_support_triangle_y">
       <pose>-3.043 -0.7 0.01 0 0 -1.5708</pose>
       <collision name="collision">
@@ -346,7 +327,6 @@
         </material>
       </visual>
     </link>
-
     <link name="right_post_y">
       <pose>-3 -0.7 0.41 0 0 0</pose>
       <collision name="collision">
@@ -372,7 +352,6 @@
         </material>
       </visual>
     </link>
-
     <link name="right_support_triangle_y">
       <pose>-3.043 0.7 0.01 0 0 -1.5708</pose>
       <collision name="collision">
@@ -398,7 +377,6 @@
         </material>
       </visual>
     </link>
-
     <link name="crossbar_y">
       <pose>-3 0 0.785 1.5708 1.5708 0</pose>
       <collision name="collision">
@@ -424,7 +402,6 @@
         </material>
       </visual>
     </link>
-
     <link name="net_y_upper">
       <pose>-3.055 0 0.610 0 1.5708 0</pose>
       <collision name="collision">
@@ -449,7 +426,6 @@
         </material>
       </visual>
     </link>
-
     <link name="net_y_lower">
       <pose>-3.25 0 0.22 0 -0.785 0</pose>
       <collision name="collision">
@@ -474,7 +450,6 @@
         </material>
       </visual>
     </link>
-
     <link name="left_post_b">
       <pose>3 0.7 0.4 0.01 0 0</pose>
       <collision name="collision">
@@ -500,7 +475,6 @@
         </material>
       </visual>
     </link>
-
     <link name="left_support_triangle_b">
       <pose>3.043 -0.7 0.01 0 0 1.5708</pose>
       <collision name="collision">
@@ -526,7 +500,6 @@
         </material>
       </visual>
     </link>
-
     <link name="right_post_b">
       <pose>3 -0.7 0.41 0 0 0</pose>
       <collision name="collision">
@@ -552,7 +525,6 @@
         </material>
       </visual>
     </link>
-
     <link name="right_support_triangle_b">
       <pose>3.043 0.7 0.01 0 0 1.5708</pose>
       <collision name="collision">
@@ -578,7 +550,6 @@
         </material>
       </visual>
     </link>
-
     <link name="crossbar_b">
       <pose>3 0 0.785 1.5708 1.5708 0</pose>
       <collision name="collision">
@@ -604,7 +575,6 @@
         </material>
       </visual>
     </link>
-
     <link name="net_b_upper">
       <pose>3.055 0 0.610 0 1.5708 0</pose>
       <collision name="collision">
@@ -629,7 +599,6 @@
         </material>
       </visual>
     </link>
-
     <link name="net_b_lower">
       <pose>3.25 0 0.22 0 0.785 0</pose>
       <collision name="collision">
@@ -654,6 +623,5 @@
         </material>
       </visual>
     </link>
-
   </model>
 </sdf>

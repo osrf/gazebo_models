@@ -1,7 +1,6 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="hinged_door">
-
     <link name="frame">
       <pose>0.06 -0.0005 0 0 0 0</pose>
       <collision name="collision_1">
@@ -12,7 +11,6 @@
           </box>
         </geometry>
       </collision>
-
       <collision name="collision_2">
         <pose>-0.025145 0.95631 1.0541 0 0 0</pose>
         <geometry>
@@ -21,7 +19,6 @@
           </box>
         </geometry>
       </collision>
-
       <collision name="collision_3">
         <pose>-0.0251450 0.46482 2.07137 0 0 0</pose>
         <geometry>
@@ -30,9 +27,8 @@
           </box>
         </geometry>
       </collision>
-
       <visual name="visual">
-	<pose>0 -0.06858 0 0 0 0 </pose>
+        <pose>0 -0.06858 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://hinged_door/meshes/frame.dae</uri>
@@ -40,7 +36,6 @@
         </geometry>
       </visual>
     </link>
-
     <link name="door">
       <pose>-0.0 0.000 2.040 3.14159 0 1.57</pose>
       <inertial>
@@ -54,7 +49,7 @@
           <iyz>0.0000</iyz>
           <izz>3.0298</izz>
         </inertia>
-      </inertial> 
+      </inertial>
       <collision name="collision">
         <pose>0.4569 0.0349 1.016 0 0 0</pose>
         <geometry>
@@ -63,9 +58,8 @@
           </box>
         </geometry>
       </collision>
-
       <visual name="visual">
-	<pose>0 -0.06858 0 0 0 0</pose>
+        <pose>0 -0.06858 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://hinged_door/meshes/door.dae</uri>
@@ -73,7 +67,6 @@
         </geometry>
       </visual>
     </link>
-
     <link name="handles">
       <pose>0.0 0.8 1.05 0 3.14 1.57</pose>
       <collision name="handle1_collision">
@@ -84,7 +77,6 @@
           </mesh>
         </geometry>
       </collision>
-
       <visual name="handle1_visual">
         <pose>0.015 -0.015 0 -1.57 0 0</pose>
         <geometry>
@@ -93,7 +85,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="handle2_collision">
         <pose>0.015 -0.055 0 1.57 0 0</pose>
         <geometry>
@@ -102,7 +93,6 @@
           </mesh>
         </geometry>
       </collision>
-
       <visual name="handle2_visual">
         <pose>0.015 -0.055 0 1.57 0 0</pose>
         <geometry>
@@ -111,9 +101,7 @@
           </mesh>
         </geometry>
       </visual>
-
     </link>
-
     <joint name="handle" type="revolute">
       <parent>door</parent>
       <child>handles</child>
@@ -126,8 +114,9 @@
         </limit>
         <dynamics>
           <damping>1.0</damping>
-          <friction>10 </friction>
+          <friction>10</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <physics>
         <ode>
@@ -135,7 +124,6 @@
         </ode>
       </physics>
     </joint>
-
     <joint name="hinge" type="revolute">
       <parent>frame</parent>
       <child>door</child>
@@ -144,13 +132,14 @@
         <limit>
           <lower>0</lower>
           <upper>1.58</upper>
-          <effort></effort>
-          <velocity></velocity>
+          <effort />
+          <velocity />
         </limit>
         <dynamics>
           <damping>1.0</damping>
-          <friction>1.0 </friction>
+          <friction>1.0</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <physics>
         <ode>
@@ -158,7 +147,6 @@
         </ode>
       </physics>
     </joint>
-
     <joint name="world_joint" type="revolute">
       <child>frame</child>
       <parent>world</parent>
@@ -171,6 +159,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <physics>
         <ode>
@@ -178,6 +167,5 @@
         </ode>
       </physics>
     </joint>
-
   </model>
 </sdf>

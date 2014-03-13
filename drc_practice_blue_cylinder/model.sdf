@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="drc_practice_blue_cylinder">
     <static>true</static>
     <link name="link">
@@ -10,7 +10,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="collision">
         <geometry>
           <mesh>

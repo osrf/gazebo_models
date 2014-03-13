@@ -1,5 +1,5 @@
-<?xml version="1.0"?>
-<sdf version="1.4">
+<?xml version="1.0" ?>
+<sdf version="1.5">
   <model name="Fast Food">
     <static>true</static>
     <link name="link">
@@ -23,7 +23,6 @@
             <uri>model://fast_food/materials/textures</uri>
             <name>FastFood/Diffuse</name>
           </script>
-
           <shader type="normal_map_object_space">
             <normal_map>FastFood_Normal.png</normal_map>
           </shader>

@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
-<sdf version='1.4'>
-  <model name='pr2_gripper'>
+<sdf version="1.5">
+  <model name="pr2_gripper">
     <pose>-0.771000 0.188000 -0.790675 3.141593 -1.570796 3.141593</pose>
-    <link name='r_wrist_roll_link'>
+    <link name="r_wrist_roll_link">
       <pose>0.771000 -0.188000 0.790675 0.000000 -0.000000 0.000000</pose>
       <inertial>
         <pose>0.056408 0.000451 -0.001014 0.000000 -0.000000 0.000000</pose>
@@ -16,7 +16,7 @@
         </inertia>
         <mass>0.681070</mass>
       </inertial>
-      <collision name='r_wrist_roll_link_geom'>
+      <collision name="r_wrist_roll_link_geom">
         <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
         <geometry>
           <mesh>
@@ -52,7 +52,7 @@
         </surface>
         <laser_retro>0.000000</laser_retro>
       </collision>
-      <visual name='r_wrist_roll_link_geom_visual'>
+      <visual name="r_wrist_roll_link_geom_visual">
         <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
         <geometry>
           <mesh>
@@ -70,7 +70,7 @@
         <laser_retro>0.000000</laser_retro>
         <transparency>0.000000</transparency>
       </visual>
-      <visual name='r_wrist_roll_link_geom_r_gripper_palm_link_visual'>
+      <visual name="r_wrist_roll_link_geom_r_gripper_palm_link_visual">
         <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
         <geometry>
           <mesh>
@@ -86,9 +86,9 @@
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
-      <velocity_decay/>
+      <velocity_decay />
     </link>
-    <link name='r_gripper_l_finger_link'>
+    <link name="r_gripper_l_finger_link">
       <pose>0.847910 -0.178000 0.790675 0.000000 -0.000000 0.000000</pose>
       <inertial>
         <pose>0.035980 0.017300 -0.001640 0.000000 -0.000000 0.000000</pose>
@@ -102,7 +102,7 @@
         </inertia>
         <mass>0.171260</mass>
       </inertial>
-      <collision name='r_gripper_l_finger_link_geom'>
+      <collision name="r_gripper_l_finger_link_geom">
         <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
         <geometry>
           <mesh>
@@ -138,7 +138,7 @@
         </surface>
         <laser_retro>0.000000</laser_retro>
       </collision>
-      <visual name='r_gripper_l_finger_link_geom_visual'>
+      <visual name="r_gripper_l_finger_link_geom_visual">
         <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
         <geometry>
           <mesh>
@@ -154,9 +154,9 @@
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
-      <velocity_decay/>
+      <velocity_decay />
     </link>
-    <link name='r_gripper_l_finger_tip_link'>
+    <link name="r_gripper_l_finger_tip_link">
       <pose>0.939280 -0.173050 0.790675 0.000000 -0.000000 0.000000</pose>
       <inertial>
         <pose>0.004230 0.002840 0.000000 0.000000 -0.000000 0.000000</pose>
@@ -170,7 +170,7 @@
         </inertia>
         <mass>0.044190</mass>
       </inertial>
-      <collision name='r_gripper_l_finger_tip_link_geom'>
+      <collision name="r_gripper_l_finger_tip_link_geom">
         <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
         <geometry>
           <mesh>
@@ -206,7 +206,7 @@
         </surface>
         <laser_retro>0.000000</laser_retro>
       </collision>
-      <visual name='r_gripper_l_finger_tip_link_geom_visual'>
+      <visual name="r_gripper_l_finger_tip_link_geom_visual">
         <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
         <geometry>
           <mesh>
@@ -219,7 +219,7 @@
         <laser_retro>0.000000</laser_retro>
         <transparency>0.000000</transparency>
       </visual>
-      <sensor name='r_gripper_l_finger_tip_contact_sensor' type='contact'>
+      <sensor name="r_gripper_l_finger_tip_contact_sensor" type="contact">
         <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
         <contact>
           <collision>r_gripper_l_finger_tip_link_geom</collision>
@@ -232,9 +232,9 @@
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
-      <velocity_decay/>
+      <velocity_decay />
     </link>
-    <link name='r_gripper_motor_slider_link'>
+    <link name="r_gripper_motor_slider_link">
       <pose>0.939280 -0.188000 0.790675 0.000000 -0.000000 0.000000</pose>
       <inertial>
         <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
@@ -251,9 +251,9 @@
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
-      <velocity_decay/>
+      <velocity_decay />
     </link>
-    <link name='r_gripper_motor_screw_link'>
+    <link name="r_gripper_motor_screw_link">
       <pose>0.939280 -0.188000 0.790675 0.000000 -0.000000 0.000000</pose>
       <inertial>
         <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
@@ -270,9 +270,9 @@
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
-      <velocity_decay/>
+      <velocity_decay />
     </link>
-    <link name='r_gripper_r_finger_link'>
+    <link name="r_gripper_r_finger_link">
       <pose>0.847910 -0.198000 0.790675 0.000000 -0.000000 0.000000</pose>
       <inertial>
         <pose>0.035760 -0.017360 -0.000950 0.000000 -0.000000 0.000000</pose>
@@ -286,7 +286,7 @@
         </inertia>
         <mass>0.173890</mass>
       </inertial>
-      <collision name='r_gripper_r_finger_link_geom'>
+      <collision name="r_gripper_r_finger_link_geom">
         <pose>0.000000 0.000000 0.000000 -3.141590 -0.000000 0.000000</pose>
         <geometry>
           <mesh>
@@ -322,7 +322,7 @@
         </surface>
         <laser_retro>0.000000</laser_retro>
       </collision>
-      <visual name='r_gripper_r_finger_link_geom_visual'>
+      <visual name="r_gripper_r_finger_link_geom_visual">
         <pose>0.000000 0.000000 0.000000 -3.141590 0.000000 0.000000</pose>
         <geometry>
           <mesh>
@@ -338,9 +338,9 @@
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
-      <velocity_decay/>
+      <velocity_decay />
     </link>
-    <link name='r_gripper_r_finger_tip_link'>
+    <link name="r_gripper_r_finger_tip_link">
       <pose>0.939280 -0.202950 0.790675 0.000000 -0.000000 0.000000</pose>
       <inertial>
         <pose>0.004230 -0.002840 0.000000 0.000000 -0.000000 0.000000</pose>
@@ -354,7 +354,7 @@
         </inertia>
         <mass>0.044190</mass>
       </inertial>
-      <collision name='r_gripper_r_finger_tip_link_geom'>
+      <collision name="r_gripper_r_finger_tip_link_geom">
         <pose>0.000000 0.000000 0.000000 -3.141590 -0.000000 0.000000</pose>
         <geometry>
           <mesh>
@@ -390,7 +390,7 @@
         </surface>
         <laser_retro>0.000000</laser_retro>
       </collision>
-      <visual name='r_gripper_r_finger_tip_link_geom_visual'>
+      <visual name="r_gripper_r_finger_tip_link_geom_visual">
         <pose>0.000000 0.000000 0.000000 -3.141590 0.000000 0.000000</pose>
         <geometry>
           <mesh>
@@ -403,7 +403,7 @@
         <laser_retro>0.000000</laser_retro>
         <transparency>0.000000</transparency>
       </visual>
-      <sensor name='r_gripper_r_finger_tip_contact_sensor' type='contact'>
+      <sensor name="r_gripper_r_finger_tip_contact_sensor" type="contact">
         <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
         <contact>
           <collision>r_gripper_r_finger_tip_link_geom</collision>
@@ -416,9 +416,9 @@
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
-      <velocity_decay/>
+      <velocity_decay />
     </link>
-    <link name='torso_lift_motor_screw_link'>
+    <link name="torso_lift_motor_screw_link">
       <pose>-0.150000 0.000000 0.751000 0.000000 -0.000000 0.000000</pose>
       <inertial>
         <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
@@ -435,9 +435,9 @@
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
-      <velocity_decay/>
+      <velocity_decay />
     </link>
-    <link name='r_gripper_l_parallel_link'>
+    <link name="r_gripper_l_parallel_link">
       <pose>0.829910 -0.157000 0.790675 0.000000 -0.000000 0.000000</pose>
       <inertial>
         <pose>0.035980 0.017300 -0.001640 0.000000 -0.000000 0.000000</pose>
@@ -454,9 +454,9 @@
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
-      <velocity_decay/>
+      <velocity_decay />
     </link>
-    <link name='r_gripper_r_parallel_link'>
+    <link name="r_gripper_r_parallel_link">
       <pose>0.829910 -0.219000 0.790675 0.000000 -0.000000 0.000000</pose>
       <inertial>
         <pose>0.035760 -0.017360 -0.000950 0.000000 -0.000000 0.000000</pose>
@@ -473,9 +473,9 @@
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
-      <velocity_decay/>
+      <velocity_decay />
     </link>
-    <joint name='r_gripper_l_finger_joint' type='revolute'>
+    <joint name="r_gripper_l_finger_joint" type="revolute">
       <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
       <parent>r_wrist_roll_link</parent>
       <child>r_gripper_l_finger_link</child>
@@ -491,9 +491,10 @@
           <velocity>0.000000</velocity>
         </limit>
         <xyz>0.000000 0.000000 1.000000</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name='r_gripper_l_finger_tip_joint' type='revolute'>
+    <joint name="r_gripper_l_finger_tip_joint" type="revolute">
       <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
       <parent>r_gripper_l_finger_link</parent>
       <child>r_gripper_l_finger_tip_link</child>
@@ -509,9 +510,10 @@
           <velocity>0.000000</velocity>
         </limit>
         <xyz>0.000000 0.000000 -1.000000</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name='r_gripper_motor_slider_joint' type='prismatic'>
+    <joint name="r_gripper_motor_slider_joint" type="prismatic">
       <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
       <parent>r_wrist_roll_link</parent>
       <child>r_gripper_motor_slider_link</child>
@@ -527,9 +529,10 @@
           <velocity>0.000000</velocity>
         </limit>
         <xyz>1.000000 0.000000 0.000000</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name='r_gripper_motor_screw_joint' type='revolute'>
+    <joint name="r_gripper_motor_screw_joint" type="revolute">
       <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
       <parent>r_gripper_motor_slider_link</parent>
       <child>r_gripper_motor_screw_link</child>
@@ -545,9 +548,10 @@
           <velocity>0.000000</velocity>
         </limit>
         <xyz>0.000000 1.000000 0.000000</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name='r_gripper_r_finger_joint' type='revolute'>
+    <joint name="r_gripper_r_finger_joint" type="revolute">
       <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
       <parent>r_wrist_roll_link</parent>
       <child>r_gripper_r_finger_link</child>
@@ -563,9 +567,10 @@
           <velocity>0.000000</velocity>
         </limit>
         <xyz>0.000000 0.000000 -1.000000</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name='r_gripper_r_finger_tip_joint' type='revolute'>
+    <joint name="r_gripper_r_finger_tip_joint" type="revolute">
       <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
       <parent>r_gripper_r_finger_link</parent>
       <child>r_gripper_r_finger_tip_link</child>
@@ -581,9 +586,10 @@
           <velocity>0.000000</velocity>
         </limit>
         <xyz>0.000000 0.000000 1.000000</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name='r_gripper_r_screw_screw_joint' type='screw'>
+    <joint name="r_gripper_r_screw_screw_joint" type="screw">
       <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
       <parent>r_gripper_r_finger_tip_link</parent>
       <child>r_gripper_motor_screw_link</child>
@@ -600,9 +606,10 @@
           <velocity>0.000000</velocity>
         </limit>
         <xyz>0.000000 1.000000 0.000000</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name='r_gripper_l_screw_screw_joint' type='screw'>
+    <joint name="r_gripper_l_screw_screw_joint" type="screw">
       <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
       <parent>r_gripper_l_finger_tip_link</parent>
       <child>r_gripper_motor_screw_link</child>
@@ -619,9 +626,10 @@
           <velocity>0.000000</velocity>
         </limit>
         <xyz>0.000000 1.000000 0.000000</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name='r_gripper_r_parallel_root_joint' type='revolute'>
+    <joint name="r_gripper_r_parallel_root_joint" type="revolute">
       <pose>0.058910 -0.031000 0.000000 0.000000 -0.000000 0.000000</pose>
       <parent>r_gripper_r_parallel_link</parent>
       <child>r_wrist_roll_link</child>
@@ -637,9 +645,10 @@
           <velocity>0.000000</velocity>
         </limit>
         <xyz>0.000000 0.000000 -1.000000</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name='r_gripper_l_parallel_root_joint' type='revolute'>
+    <joint name="r_gripper_l_parallel_root_joint" type="revolute">
       <pose>0.058910 0.031000 0.000000 0.000000 -0.000000 0.000000</pose>
       <parent>r_gripper_l_parallel_link</parent>
       <child>r_wrist_roll_link</child>
@@ -655,9 +664,10 @@
           <velocity>0.000000</velocity>
         </limit>
         <xyz>0.000000 0.000000 1.000000</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name='r_gripper_r_parallel_tip_joint' type='revolute'>
+    <joint name="r_gripper_r_parallel_tip_joint" type="revolute">
       <pose>-0.018000 -0.021000 0.000000 0.000000 -0.000000 0.000000</pose>
       <parent>r_gripper_r_parallel_link</parent>
       <child>r_gripper_r_finger_tip_link</child>
@@ -673,9 +683,10 @@
           <velocity>0.000000</velocity>
         </limit>
         <xyz>0.000000 0.000000 1.000000</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name='r_gripper_l_parallel_tip_joint' type='revolute'>
+    <joint name="r_gripper_l_parallel_tip_joint" type="revolute">
       <pose>-0.018000 0.021000 0.000000 0.000000 -0.000000 0.000000</pose>
       <parent>r_gripper_l_parallel_link</parent>
       <child>r_gripper_l_finger_tip_link</child>
@@ -691,9 +702,10 @@
           <velocity>0.000000</velocity>
         </limit>
         <xyz>0.000000 0.000000 1.000000</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name='r_gripper_joint' type='prismatic'>
+    <joint name="r_gripper_joint" type="prismatic">
       <pose>0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000</pose>
       <parent>r_gripper_r_finger_tip_link</parent>
       <child>r_gripper_l_finger_tip_link</child>
@@ -709,6 +721,7 @@
           <velocity>0.000000</velocity>
         </limit>
         <xyz>0.000000 1.000000 0.000000</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <static>0</static>

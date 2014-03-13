@@ -1,10 +1,9 @@
-<?xml version="1.0"?>
-<sdf version='1.4'>
+<?xml version="1.0" ?>
+<sdf version="1.5">
   <model name="powerplant">
     <static>true</static>
     <link name="link">
       <pose>0 0 0.01 0 0 0</pose>
-
       <collision name="wall1">
         <geometry>
           <mesh>
@@ -12,7 +11,6 @@
           </mesh>
         </geometry>
       </collision>
-
       <visual name="visual1">
         <geometry>
           <mesh>
@@ -21,7 +19,6 @@
         </geometry>
       </visual>
     </link>
-
     <!--
     <link name="door1">
       <pose>8 -42.5 0 0 0 0</pose>
@@ -29,6 +26,5 @@
       </collision>
     </link>
 -->
-
   </model>
 </sdf>

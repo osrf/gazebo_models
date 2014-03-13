@@ -1,0 +1,2071 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="fire_hose_long_curled">
+    <pose>-1.81 -4.23 0.055 0 0 0</pose>
+    <link name="coupling">
+      <inertial>
+        <pose>-0.07 0 0.0 0 0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name="coupling_collision">
+        <pose>-0.01 0 0 0 -1.570790 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.4 0.4 0.8</scale>
+            <uri>model://fire_hose_long_curled/meshes/coupling_hexagon.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="coupling_vis">
+        <pose>-0.01 0 0 0 -1.570790 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.4 0.4 0.8</scale>
+            <uri>model://fire_hose_long_curled/meshes/coupling_hexagon.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_coupling</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="attachment_vis">
+        <pose>-0.1225 0 0 0 -1.570790 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://fire_hose_long_curled/meshes/connector.dae</uri>
+          </mesh>
+          <!--
+          <cylinder>
+            <length>0.025</length>
+            <radius>0.055</radius>
+          </cylinder>
+-->
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_red_coupling</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="attachment_col">
+        <pose>-0.1225 0 0 0 -1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.025</length>
+            <radius>0.055</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <link name="link_00">
+      <gravity>true</gravity>
+      <pose>0.1 0 0 0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <pose>0.1 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <visual name="sphere">
+        <geometry>
+          <sphere>
+            <radius>0.025</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="link_01">
+      <gravity>true</gravity>
+      <pose>0.1 0 0 0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <pose>0.1 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="link_02">
+      <gravity>true</gravity>
+      <pose>0.3 0 0 0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <pose>0.1 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="sphere">
+        <geometry>
+          <sphere>
+            <radius>0.025</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="link_03">
+      <gravity>true</gravity>
+      <pose>0.5 0 0 0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <pose>0.1 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="sphere">
+        <geometry>
+          <sphere>
+            <radius>0.025</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="link_04">
+      <gravity>true</gravity>
+      <pose>0.7 0 0 0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <pose>0.1 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="sphere">
+        <geometry>
+          <sphere>
+            <radius>0.025</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="link_05">
+      <gravity>true</gravity>
+      <pose>0.9 0 0 0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <pose>0.1 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="sphere">
+        <geometry>
+          <sphere>
+            <radius>0.025</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="link_06">
+      <gravity>true</gravity>
+      <pose>1.1 0 0 0 0 -.785</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <pose>0.0875 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0.0875 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.175</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0.0875 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.175</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="sphere">
+        <geometry>
+          <sphere>
+            <radius>0.025</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="link_07">
+      <gravity>true</gravity>
+      <pose>1.227 -.127 0 0 0 -2.3415</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <pose>0.0875 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0.0875 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.175</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0.0875 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.175</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="sphere">
+        <geometry>
+          <sphere>
+            <radius>0.025</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="link_08">
+      <gravity>true</gravity>
+      <pose>1.1 -.254 0 0 0 -3.1415</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <pose>0.1 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="sphere">
+        <geometry>
+          <sphere>
+            <radius>0.025</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="link_09">
+      <gravity>true</gravity>
+      <pose>0.9 -.254 0 0 0 -3.1415</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <pose>0.1 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="sphere">
+        <geometry>
+          <sphere>
+            <radius>0.025</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="link_10">
+      <gravity>true</gravity>
+      <pose>0.7 -.254 0 0 0 -3.1415</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <pose>0.1 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="sphere">
+        <geometry>
+          <sphere>
+            <radius>0.025</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="link_11">
+      <gravity>true</gravity>
+      <pose>0.5 -.254 0 0 0 -3.1415</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <pose>0.1 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="sphere">
+        <geometry>
+          <sphere>
+            <radius>0.025</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="link_12">
+      <gravity>true</gravity>
+      <pose>0.3 -.254 0 0 0 -3.1415</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <pose>0.1 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="sphere">
+        <geometry>
+          <sphere>
+            <radius>0.025</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="link_13">
+      <gravity>true</gravity>
+      <pose>0.1 -.254 0 0 0 -2.356</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <pose>0.0875 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0.0875 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.175</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0.0875 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.175</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="sphere">
+        <geometry>
+          <sphere>
+            <radius>0.025</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="link_14">
+      <gravity>true</gravity>
+      <pose>-0.027 -.381 0 0 0 -.785</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <pose>0.0875 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0.0875 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.175</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0.0875 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.175</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="sphere">
+        <geometry>
+          <sphere>
+            <radius>0.025</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="link_15">
+      <gravity>true</gravity>
+      <pose>0.1 -.508 0 0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <pose>0.1 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="sphere">
+        <geometry>
+          <sphere>
+            <radius>0.025</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="link_16">
+      <gravity>true</gravity>
+      <pose>0.3 -.508 0 0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <pose>0.1 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="sphere">
+        <geometry>
+          <sphere>
+            <radius>0.025</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="link_17">
+      <gravity>true</gravity>
+      <pose>0.5 -.508 0 0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <pose>0.1 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="sphere">
+        <geometry>
+          <sphere>
+            <radius>0.025</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="link_18">
+      <gravity>true</gravity>
+      <pose>0.7 -.508 0 0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <pose>0.1 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="sphere">
+        <geometry>
+          <sphere>
+            <radius>0.025</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="link_19">
+      <gravity>true</gravity>
+      <pose>0.9 -.508 0 0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <pose>0.1 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0.1 0 0 0 1.570790 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2</length>
+            <radius>0.025</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="sphere">
+        <geometry>
+          <sphere>
+            <radius>0.025</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fire_hose_long_curled/materials/scripts</uri>
+            <uri>model://fire_hose_long_curled/materials/textures</uri>
+            <name>fire_hose_long_curled/fire_hose_canvas</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="nozzle">
+      <pose>1.10 -.508 0 0 0 3.1415</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name="nozzle_collision">
+        <geometry>
+          <mesh>
+            <scale>1.0 0.5 0.5</scale>
+            <uri>model://fire_hose_long_curled/meshes/nozzle.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="nozzle_vis">
+        <geometry>
+          <mesh>
+            <scale>1.0 0.5 0.5</scale>
+            <uri>model://fire_hose_long_curled/meshes/nozzle.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="joint_00" type="revolute">
+      <parent>coupling</parent>
+      <child>link_00</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="joint_01" type="universal">
+      <child>link_01</child>
+      <parent>link_00</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="joint_02" type="universal">
+      <child>link_02</child>
+      <parent>link_01</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="joint_03" type="universal">
+      <child>link_03</child>
+      <parent>link_02</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="joint_04" type="universal">
+      <child>link_04</child>
+      <parent>link_03</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="joint_05" type="universal">
+      <child>link_05</child>
+      <parent>link_04</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="joint_06" type="universal">
+      <child>link_06</child>
+      <parent>link_05</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.72</lower>
+          <upper>2.35</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>1 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="joint_07" type="universal">
+      <child>link_07</child>
+      <parent>link_06</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.0</lower>
+          <upper>3.00</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>-1 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="joint_08" type="universal">
+      <child>link_08</child>
+      <parent>link_07</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.72</lower>
+          <upper>2.35</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="joint_09" type="universal">
+      <child>link_09</child>
+      <parent>link_08</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="joint_10" type="universal">
+      <child>link_10</child>
+      <parent>link_09</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="joint_11" type="universal">
+      <child>link_11</child>
+      <parent>link_10</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="joint_12" type="universal">
+      <child>link_12</child>
+      <parent>link_11</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="joint_13" type="universal">
+      <child>link_13</child>
+      <parent>link_12</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.35</lower>
+          <upper>0.72</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>-1 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="joint_14" type="universal">
+      <child>link_14</child>
+      <parent>link_13</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.00</lower>
+          <upper>0.0</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>1 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="joint_15" type="universal">
+      <child>link_15</child>
+      <parent>link_14</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.35</lower>
+          <upper>0.72</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="joint_16" type="universal">
+      <child>link_16</child>
+      <parent>link_15</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="joint_17" type="universal">
+      <child>link_17</child>
+      <parent>link_16</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="joint_18" type="universal">
+      <child>link_18</child>
+      <parent>link_17</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="joint_19" type="universal">
+      <child>link_19</child>
+      <parent>link_18</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="joint_20" type="universal">
+      <child>nozzle</child>
+      <parent>link_19</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="world" type="universal">
+      <child>nozzle</child>
+      <parent>world</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+  </model>
+</sdf>

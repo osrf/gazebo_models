@@ -1,6 +1,6 @@
-<?xml version='1.0'?>
-<sdf version='1.4'>
-  <model name='standpipe'>
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="standpipe">
     <static>true</static>
     <link name="standpipe">
       <pose>0 0 0.1 0 1.57078 0</pose>
@@ -21,7 +21,6 @@
           </friction>
         </surface>
       </collision>
-
       <collision name="collision">
         <pose>0 0 0.15 0 0 0</pose>
         <geometry>
@@ -38,7 +37,6 @@
           </friction>
         </surface>
       </collision>
-
       <visual name="visual">
         <pose>0 0 0.15 0 0 0</pose>
         <geometry>

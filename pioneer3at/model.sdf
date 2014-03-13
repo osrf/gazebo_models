@@ -1,13 +1,12 @@
-<?xml version='1.0'?>
-<sdf version="1.4">
+<?xml version="1.0" ?>
+<sdf version="1.5">
   <model name="pioneer3at">
     <pose>0 0 0.180 0 0 0</pose>
     <static>false</static>
-
     <link name="chassis">
       <inertial>
         <mass>14.0</mass>
-        <inertia>          
+        <inertia>
           <!-- http://en.wikipedia.org/wiki/List_of_moment_of_inertia_tensors
           MATLAB:
           m=14; h=0.19; w=0.4; d=0.5; 
@@ -38,7 +37,6 @@
         </geometry>
       </visual>
     </link>
-
     <link name="right_front_wheel">
       <pose>0.125 -0.201 -0.06 1.5707 0 0</pose>
       <collision name="collision">
@@ -67,7 +65,6 @@
         </geometry>
       </visual>
     </link>
-
     <link name="left_front_wheel">
       <pose>0.125 0.201 -0.06 1.5707 0 0</pose>
       <collision name="collision">
@@ -96,7 +93,6 @@
         </geometry>
       </visual>
     </link>
-
     <link name="right_rear_wheel">
       <pose>-0.125 -0.201 -0.06 1.5707 0 0</pose>
       <collision name="collision">
@@ -125,7 +121,6 @@
         </geometry>
       </visual>
     </link>
-
     <link name="left_rear_wheel">
       <pose>-0.125 0.201 -0.06 1.5707 0 0</pose>
       <collision name="collision">
@@ -154,14 +149,13 @@
         </geometry>
       </visual>
     </link>
-
-
     <joint type="revolute" name="right_front">
       <pose>0 0 0 0 0 0</pose>
       <child>right_front_wheel</child>
       <parent>chassis</parent>
       <axis>
         <xyz>0 1 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint type="revolute" name="right_rear">
@@ -170,6 +164,7 @@
       <parent>chassis</parent>
       <axis>
         <xyz>0 1 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint type="revolute" name="left_front">
@@ -178,6 +173,7 @@
       <parent>chassis</parent>
       <axis>
         <xyz>0 1 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint type="revolute" name="left_rear">
@@ -186,9 +182,9 @@
       <parent>chassis</parent>
       <axis>
         <xyz>0 1 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-
     <plugin name="SkidSteerDrivePlugin" filename="libSkidSteerDrivePlugin.so">
       <right_front>right_front</right_front>
       <right_rear>right_rear</right_rear>
@@ -196,7 +192,6 @@
       <left_rear>left_rear</left_rear>
       <MaxForce>5.0</MaxForce>
     </plugin>
-
     <!--    
       <include>
         <uri>model://hokuyo</uri>
@@ -214,7 +209,5 @@
         </axis>
       </joint>
     -->
-
-
   </model>
 </sdf>
