@@ -75,6 +75,8 @@ house_2
 house_3
 husky
 irobot_hand
+iss
+iss_half
 jersey_barrier
 kinect
 kitchen_dining
