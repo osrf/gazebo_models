@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="door_handle">
     <link name="handle">
       <collision name="collision">
@@ -9,7 +9,6 @@
           </mesh>
         </geometry>
       </collision>
-
       <visual name="visual">
         <geometry>
           <mesh>

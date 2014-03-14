@@ -1,10 +1,9 @@
-<?xml version="1.0"?>
-<sdf version='1.4'>
+<?xml version="1.0" ?>
+<sdf version="1.5">
   <model name="monkey wrench">
     <static>false</static>
     <link name="link">
       <pose>0 0 0 0 0 0</pose>
-
       <!--
       <collision name="shaft">
         <pose>0 0 0 0 0 0</pose>
@@ -33,7 +32,6 @@
           </mesh>
         </geometry>
       </collision>
-
       <visual name="visual">
         <geometry>
           <mesh>

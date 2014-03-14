@@ -1,5 +1,5 @@
-<?xml version="1.0"?>
-<sdf version="1.4">
+<?xml version="1.0" ?>
+<sdf version="1.5">
   <model name="pioneer2dx">
     <link name="chassis">
       <pose>0 0 0.16 0 0 0</pose>
@@ -160,6 +160,7 @@
       <parent>chassis</parent>
       <axis>
         <xyz>0 1 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint type="revolute" name="right_wheel_hinge">
@@ -168,14 +169,13 @@
       <parent>chassis</parent>
       <axis>
         <xyz>0 1 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-
     <plugin filename="libDiffDrivePlugin.so" name="diff_drive">
       <left_joint>left_wheel_hinge</left_joint>
       <right_joint>right_wheel_hinge</right_joint>
       <torque>5</torque>
     </plugin>
-
   </model>
 </sdf>

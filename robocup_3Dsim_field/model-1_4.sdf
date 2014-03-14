@@ -1,0 +1,115 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="RoboCup 3D Simulation Field">
+    <static>true</static>
+
+    <link name="field">
+      <pose>0 0 0.01 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>30.0 20.0</size>
+          </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <visual name="base1">
+        <pose>0 11 0.001 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>34.0 2.0</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://robocup_3Dsim_field/materials/scripts/</uri>
+            <uri>model://robocup_3Dsim_field/materials/textures/</uri>
+            <name>RoboCup/FieldBorder</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="base2">
+        <pose>0 -11 0.001 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>34.0 2.0</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://robocup_3Dsim_field/materials/scripts/</uri>
+            <uri>model://robocup_3Dsim_field/materials/textures/</uri>
+            <name>RoboCup/FieldBorder</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="base3">
+        <pose>16 0 0.001 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>2.0 20.0</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://robocup_3Dsim_field/materials/scripts/</uri>
+            <uri>model://robocup_3Dsim_field/materials/textures/</uri>
+            <name>RoboCup/FieldBorder</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="base4">
+        <pose>-16 0 0.001 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>2.0 20.0</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://robocup_3Dsim_field/materials/scripts/</uri>
+            <uri>model://robocup_3Dsim_field/materials/textures/</uri>
+            <name>RoboCup/FieldBorder</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="carpet">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>30.0 20.0</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://robocup_3Dsim_field/materials/scripts/</uri>
+            <uri>model://robocup_3Dsim_field/materials/textures/</uri>
+            <name>RoboCup/Grass</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

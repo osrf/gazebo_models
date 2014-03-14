@@ -1,5 +1,5 @@
-<?xml version="1.0"?>
-<sdf version="1.4">
+<?xml version="1.0" ?>
+<sdf version="1.5">
   <model name="Construction Cone">
     <link name="link">
       <collision name="collision">

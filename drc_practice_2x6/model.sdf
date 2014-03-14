@@ -1,20 +1,19 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
-
+<sdf version="1.5">
   <model name="lumber_2x6x48">
     <link name="link">
       <self_collide>false</self_collide>
       <inertial>
         <mass>2.22</mass>
         <inertia>
-          <ixx> 0.0039</ixx>
-          <ixy> 0.00</ixy>
-          <ixz> 0.00</ixz>
-          <iyy> 0.28</iyy>
-          <iyz> 0.00</iyz>
-          <izz> 0.2766</izz>
+          <ixx>0.0039</ixx>
+          <ixy>0.00</ixy>
+          <ixz>0.00</ixz>
+          <iyy>0.28</iyy>
+          <iyz>0.00</iyz>
+          <izz>0.2766</izz>
         </inertia>
-      </inertial> 
+      </inertial>
       <collision name="collision">
         <geometry>
           <box>
@@ -34,15 +33,15 @@
           </friction>
           <contact>
             <ode>
-              <soft_cfm>0.01 </soft_cfm><!--"sponginess", 0.0=hard-->
+              <soft_cfm>0.01</soft_cfm>
+              <!--"sponginess", 0.0=hard-->
               <kp>10000.0</kp>
               <kd>1000.0</kd>
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
-        </surface> 
+        </surface>
       </collision>
-
       <visual name="visual">
         <geometry>
           <mesh>
@@ -52,5 +51,4 @@
       </visual>
     </link>
   </model>
-
 </sdf>

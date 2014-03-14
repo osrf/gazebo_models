@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="ragdoll">
     <pose>0 0 1.4 0 0 0</pose>
     <link name="hip">
@@ -1503,8 +1503,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>0 0 1.000000</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="l_thigh_lift_joint" type="revolute">
@@ -1515,8 +1521,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>0 1.000000 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="l_calf_joint" type="revolute">
@@ -1527,8 +1539,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>0 1.000000 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="l_ankle_joint" type="revolute">
@@ -1539,8 +1557,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>0 1.000000 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="l_foot_joint" type="revolute">
@@ -1551,8 +1575,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>1.000000 0 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="r_thigh_pan_joint" type="revolute">
@@ -1563,8 +1593,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>0 0 1.000000</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="r_thigh_lift_joint" type="revolute">
@@ -1575,8 +1611,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>0 1.000000 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="r_calf_joint" type="revolute">
@@ -1587,8 +1629,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>0 1.000000 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="r_ankle_joint" type="revolute">
@@ -1599,8 +1647,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>0 1.000000 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="r_foot_joint" type="revolute">
@@ -1611,8 +1665,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>1.000000 0 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="torso_joint" type="revolute">
@@ -1623,8 +1683,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>0 1.000000 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="l_shoulder_joint" type="revolute">
@@ -1635,8 +1701,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>1.000000 0 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="l_upper_arm_joint" type="revolute">
@@ -1647,8 +1719,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>0 1.000000 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="l_forearm_joint" type="revolute">
@@ -1659,8 +1737,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>0 1.000000 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="l_wrist_joint" type="revolute">
@@ -1671,8 +1755,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>0 1.000000 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="l_hand_joint" type="revolute">
@@ -1683,8 +1773,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>0 1.000000 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="neck_joint" type="revolute">
@@ -1695,8 +1791,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>0 0 1.000000</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="head_joint" type="revolute">
@@ -1707,8 +1809,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>0 1.000000 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="r_shoulder_joint" type="revolute">
@@ -1719,8 +1827,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>1.000000 0 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="r_upper_arm_joint" type="revolute">
@@ -1731,8 +1845,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>0 1.000000 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="r_forearm_joint" type="revolute">
@@ -1743,8 +1863,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>0 1.000000 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="r_wrist_joint" type="revolute">
@@ -1755,8 +1881,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>0 1.000000 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="r_hand_joint" type="revolute">
@@ -1767,8 +1899,14 @@
           <damping>0</damping>
           <friction>0</friction>
         </dynamics>
-        <limit><lower>-1.570800</lower><upper>1.570800</upper><effort>0.000000</effort><velocity>0.000000</velocity></limit>
+        <limit>
+          <lower>-1.570800</lower>
+          <upper>1.570800</upper>
+          <effort>0.000000</effort>
+          <velocity>0.000000</velocity>
+        </limit>
         <xyz>0 1.000000 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <static>0</static>

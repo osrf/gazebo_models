@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="simple_arm">
     <link name="arm_base">
       <inertial>
@@ -294,6 +294,7 @@
           <friction>0.000000</friction>
         </dynamics>
         <xyz>0 0 1</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="arm_elbow_pan_joint" type="revolute">
@@ -305,6 +306,7 @@
           <friction>0.000000</friction>
         </dynamics>
         <xyz>0 0 1</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="arm_wrist_lift_joint" type="prismatic">
@@ -320,6 +322,7 @@
           <upper>0.1</upper>
         </limit>
         <xyz>0 0 1</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <joint name="arm_wrist_roll_joint" type="revolute">
@@ -335,6 +338,7 @@
           <upper>2.999994</upper>
         </limit>
         <xyz>0 0 1</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <!-- comment out link attachment to the world
@@ -350,5 +354,5 @@
       </axis>
     </joint>
     -->
-    </model>
-  </sdf>
+  </model>
+</sdf>

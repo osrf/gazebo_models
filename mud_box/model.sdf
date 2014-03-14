@@ -1,5 +1,5 @@
-<?xml version="1.0"?>
-<sdf version="1.4">
+<?xml version="1.0" ?>
+<sdf version="1.5">
   <model name="mud_box">
     <static>true</static>
     <link name="link">
@@ -74,7 +74,6 @@
           </script>
         </material>
       </visual>
-
     </link>
   </model>
 </sdf>

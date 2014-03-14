@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="block_wall">
+    <pose>0 0 0.30924 0 0 0</pose>
+    <static>true</static>
+    <link name="blocks">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://drc_practice_block_wall/meshes/block_wall.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>100000</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+               <soft_cfm>0.0</soft_cfm><!--"sponginess", 0.0=hard-->
+               <soft_erp>0.2</soft_erp>
+               <max_vel>0.0</max_vel>
+               <min_depth>0.0</min_depth>
+            </ode>
+          </contact>
+        </surface> 
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://drc_practice_block_wall/meshes/block_wall.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+
+</sdf>

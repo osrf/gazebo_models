@@ -1,5 +1,5 @@
-<?xml version="1.0"?>
-<sdf version="1.4">
+<?xml version="1.0" ?>
+<sdf version="1.5">
   <model name="House 2">
     <static>true</static>
     <link name="link">
@@ -23,7 +23,6 @@
             <uri>model://house_1/materials/textures</uri>
             <name>House_2/Diffuse</name>
           </script>
-
           <shader type="normal_map_object_space">
             <normal_map>model://house_1/materials/textures/House_1_Normal.png</normal_map>
           </shader>

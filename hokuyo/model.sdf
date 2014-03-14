@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="hokuyo">
     <pose>0 0 0.035 0 0 0</pose>
     <link name="link">
@@ -13,7 +13,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="collision-base">
         <pose>0 0 -0.0145 0 0 0</pose>
         <geometry>
@@ -22,7 +21,6 @@
           </box>
         </geometry>
       </collision>
-
       <collision name="collision-top">
         <pose>0 0 0.0205 0 0 0</pose>
         <geometry>
@@ -32,8 +30,6 @@
           </cylinder>
         </geometry>
       </collision>
-
-
       <sensor name="laser" type="ray">
         <pose>0.01 0 0.0175 0 -0 0</pose>
         <ray>
@@ -51,7 +47,6 @@
             <resolution>0.01</resolution>
           </range>
         </ray>
-
         <plugin name="laser" filename="libRayPlugin.so" />
         <always_on>1</always_on>
         <update_rate>30</update_rate>

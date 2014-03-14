@@ -1,8 +1,8 @@
-<?xml version="1.0"?>
-<sdf version="1.4">
+<?xml version="1.0" ?>
+<sdf version="1.5">
   <model name="hand_wheel_valve">
     <link name="handle">
-      <pose>0 0 0.04445 0 0 0 </pose>
+      <pose>0 0 0.04445 0 0 0</pose>
       <inertial>
         <mass>0.0644</mass>
         <inertia>
@@ -13,7 +13,7 @@
           <iyz>0.0000</iyz>
           <izz>0.000059</izz>
         </inertia>
-      </inertial> 
+      </inertial>
       <collision name="collision">
         <geometry>
           <mesh>
@@ -40,9 +40,8 @@
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
-        </surface> 
+        </surface>
       </collision>
-
       <visual name="visual">
         <geometry>
           <mesh>
@@ -51,7 +50,6 @@
         </geometry>
       </visual>
     </link>
-
     <joint name="joint" type="revolute">
       <parent>world</parent>
       <child>handle</child>
@@ -65,8 +63,9 @@
           <!--velocity dependent viscous damping coefficient of the joint-->
           <damping>10</damping>
           <!--default 0, static friction value of the joint-->
-          <friction>10 </friction>
+          <friction>10</friction>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <physics>
         <ode>

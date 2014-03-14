@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="lumber_4x4x40">
     <link name="link">
       <inertial>
@@ -12,7 +12,7 @@
           <iyz>0.00</iyz>
           <izz>0.2366</izz>
         </inertia>
-      </inertial> 
+      </inertial>
       <collision name="collision">
         <geometry>
           <box>
@@ -37,9 +37,8 @@
               <kd>1000.0</kd>
             </ode>
           </contact>
-        </surface> 
+        </surface>
       </collision>
-
       <visual name="visual">
         <geometry>
           <mesh>
@@ -49,5 +48,4 @@
       </visual>
     </link>
   </model>
-
 </sdf>

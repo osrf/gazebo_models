@@ -1,8 +1,7 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="RoboCup 3D Simulation Ball">
     <static>false</static>
-
     <link name="ball">
       <pose>0 0 0.02 0 0 0</pose>
       <inertial>
@@ -33,6 +32,5 @@
         </geometry>
       </visual>
     </link>
-
   </model>
 </sdf>

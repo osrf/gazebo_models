@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="lumber_4x4x20">
+    <link name="link">
+      <inertial>
+        <mass>1.37</mass>
+        <inertia>
+          <ixx>0.0018</ixx>
+          <ixy>0.00</ixy>
+          <ixz>0.00</ixz>
+          <iyy>0.0303</iyy>
+          <iyz>0.00</iyz>
+          <izz>0.0303</izz>
+        </inertia>
+      </inertial> 
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.508 0.0888 0.0888</size>
+          </box>
+        </geometry>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.00</restitution_coefficient>
+            <threshold>2</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>10</mu>
+              <mu2>10</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <soft_cfm>0.001</soft_cfm>
+              <kp>100000.0</kp>
+              <kd>1000.0</kd>
+            </ode>
+          </contact>
+        </surface> 
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://drc_practice_4x4x20/meshes/4x4x20.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+
+</sdf>

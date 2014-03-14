@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="fire_hose_long_curled">
     <pose>-1.81 -4.23 0.055 0 0 0</pose>
     <link name="coupling">
@@ -1451,6 +1451,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <physics>
         <ode>
@@ -1470,6 +1471,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>0 0 1</xyz>
@@ -1480,6 +1482,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis2>
       <physics>
         <ode>
@@ -1499,6 +1502,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>0 0 1</xyz>
@@ -1509,6 +1513,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis2>
       <physics>
         <ode>
@@ -1528,6 +1533,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>0 0 1</xyz>
@@ -1538,6 +1544,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis2>
       <physics>
         <ode>
@@ -1557,6 +1564,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>0 0 1</xyz>
@@ -1567,6 +1575,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis2>
       <physics>
         <ode>
@@ -1586,6 +1595,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>0 0 1</xyz>
@@ -1596,6 +1606,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis2>
       <physics>
         <ode>
@@ -1615,6 +1626,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>1 1 0</xyz>
@@ -1625,6 +1637,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis2>
       <physics>
         <ode>
@@ -1644,6 +1657,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>-1 1 0</xyz>
@@ -1654,6 +1668,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis2>
       <physics>
         <ode>
@@ -1673,6 +1688,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>0 0 1</xyz>
@@ -1683,6 +1699,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis2>
       <physics>
         <ode>
@@ -1702,6 +1719,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>0 0 1</xyz>
@@ -1712,6 +1730,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis2>
       <physics>
         <ode>
@@ -1731,6 +1750,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>0 0 1</xyz>
@@ -1741,6 +1761,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis2>
       <physics>
         <ode>
@@ -1760,6 +1781,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>0 0 1</xyz>
@@ -1770,6 +1792,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis2>
       <physics>
         <ode>
@@ -1789,6 +1812,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>0 0 1</xyz>
@@ -1799,6 +1823,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis2>
       <physics>
         <ode>
@@ -1818,6 +1843,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>-1 1 0</xyz>
@@ -1828,6 +1854,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis2>
       <physics>
         <ode>
@@ -1847,6 +1874,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>1 1 0</xyz>
@@ -1857,6 +1885,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis2>
       <physics>
         <ode>
@@ -1876,6 +1905,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>0 1 0</xyz>
@@ -1886,6 +1916,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis2>
       <physics>
         <ode>
@@ -1905,6 +1936,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>0 0 1</xyz>
@@ -1915,6 +1947,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis2>
       <physics>
         <ode>
@@ -1934,6 +1967,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>0 0 1</xyz>
@@ -1944,6 +1978,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis2>
       <physics>
         <ode>
@@ -1963,6 +1998,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>0 0 1</xyz>
@@ -1973,6 +2009,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis2>
       <physics>
         <ode>
@@ -1992,6 +2029,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>0 0 1</xyz>
@@ -2002,6 +2040,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis2>
       <physics>
         <ode>
@@ -2021,6 +2060,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>0 0 1</xyz>
@@ -2031,6 +2071,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis2>
       <physics>
         <ode>
@@ -2050,6 +2091,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>0 0 1</xyz>
@@ -2060,6 +2102,7 @@
         <dynamics>
           <damping>1.0</damping>
         </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis2>
       <physics>
         <ode>

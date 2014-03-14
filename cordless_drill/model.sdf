@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="drill">
     <link name="link">
       <inertial>
-        <pose>-0.00637 -0.008 0.13254 0 0 0</pose>        
+        <pose>-0.00637 -0.008 0.13254 0 0 0</pose>
         <inertia>
           <ixx>0.01331127</ixx>
           <ixy>-0.00030365</ixy>

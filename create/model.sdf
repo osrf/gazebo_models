@@ -1,7 +1,6 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="create">
-
     <link name="base">
       <inertial>
         <pose>0.001453 -0.000453 0.029787 0 0 0</pose>
@@ -15,7 +14,6 @@
         </inertia>
         <mass>2.234000</mass>
       </inertial>
-
       <collision name="base_collision">
         <pose>0 0 0.047800 0 0 0</pose>
         <geometry>
@@ -33,7 +31,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="front_wheel_collision">
         <pose>0.130000 0 0.017000 0 1.570700 1.570700</pose>
         <geometry>
@@ -61,7 +58,6 @@
           </sphere>
         </geometry>
       </visual>
-
       <collision name="rear_wheel_collision">
         <pose>-0.13 0 0.017 0 1.5707 1.5707</pose>
         <geometry>
@@ -89,8 +85,6 @@
           </sphere>
         </geometry>
       </visual>
-
-
       <sensor name="left_cliff_sensor" type="ray">
         <pose>0.070000 0.140000 0.027000 0 1.570790 0</pose>
         <ray>
@@ -109,7 +103,6 @@
           </range>
         </ray>
       </sensor>
-
       <sensor name="leftfront_cliff_sensor" type="ray">
         <pose>0.150000 0.040000 0.027000 0 1.570790 0</pose>
         <ray>
@@ -128,7 +121,6 @@
           </range>
         </ray>
       </sensor>
-
       <sensor name="right_cliff_sensor" type="ray">
         <pose>0.070000 -0.140000 0.027000 0 1.570790 0</pose>
         <ray>
@@ -147,7 +139,6 @@
           </range>
         </ray>
       </sensor>
-
       <sensor name="rightfront_cliff_sensor" type="ray">
         <pose>0.150000 -0.040000 0.027000 0 1.570790 0</pose>
         <ray>
@@ -166,7 +157,6 @@
           </range>
         </ray>
       </sensor>
-
       <sensor name="wall_sensor" type="ray">
         <pose>0.090000 -0.120000 0.059000 0 0 -1.000000</pose>
         <ray>
@@ -186,8 +176,6 @@
         </ray>
       </sensor>
     </link>
-
-
     <link name="left_wheel">
       <pose>0 0.130000 0.032000 0 0 0</pose>
       <inertial>
@@ -231,7 +219,6 @@
         </geometry>
       </visual>
     </link>
-
     <link name="right_wheel">
       <pose>0 -0.130000 0.032000 0 0 0</pose>
       <inertial>
@@ -275,22 +262,21 @@
         </geometry>
       </visual>
     </link>
-
     <joint name="left_wheel" type="revolute">
       <parent>base</parent>
       <child>left_wheel</child>
       <axis>
         <xyz>0 1 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-
     <joint name="right_wheel" type="revolute">
       <parent>base</parent>
       <child>right_wheel</child>
       <axis>
         <xyz>0 1 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-
   </model>
 </sdf>

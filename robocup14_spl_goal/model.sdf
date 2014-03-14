@@ -1,8 +1,7 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="RoboCup 2014 SPL Goal">
     <static>true</static>
-
     <link name="left_post">
       <pose>0 0.8 0.45 0 0 0</pose>
       <collision name="collision">
@@ -28,7 +27,6 @@
         </material>
       </visual>
     </link>
-
     <link name="left_support_horiz_lower">
       <pose>0.24 0.8 0.01 0 0 0</pose>
       <collision name="collision">
@@ -52,7 +50,6 @@
         </material>
       </visual>
     </link>
-
     <link name="left_support_horiz_upper">
       <pose>0.24 0.8 0.79 0 0 0</pose>
       <collision name="collision">
@@ -76,7 +73,6 @@
         </material>
       </visual>
     </link>
-
     <link name="left_support_vertical">
       <pose>0.44 0.8 0.4 0 1.5708 0</pose>
       <collision name="collision">
@@ -100,7 +96,6 @@
         </material>
       </visual>
     </link>
-
     <link name="right_support_horiz_lower">
       <pose>0.24 -0.8 0.01 0 0 0</pose>
       <collision name="collision">
@@ -124,7 +119,6 @@
         </material>
       </visual>
     </link>
-
     <link name="right_support_horiz_upper">
       <pose>0.24 -0.8 0.79 0 0 0</pose>
       <collision name="collision">
@@ -148,7 +142,6 @@
         </material>
       </visual>
     </link>
-
     <link name="right_support_vertical">
       <pose>0.44 -0.8 0.4 0 1.5708 0</pose>
       <collision name="collision">
@@ -172,8 +165,8 @@
         </material>
       </visual>
     </link>
-
-    <link name="center_support_horiz_lower">_h
+    <link name="center_support_horiz_lower">
+      _h
       <pose>0.44 0 0.01 0 1.5708 0</pose>
       <collision name="collision">
         <geometry>
@@ -196,8 +189,8 @@
         </material>
       </visual>
     </link>
-
-    <link name="center_support_horiz_upper">_
+    <link name="center_support_horiz_upper">
+      _
       <pose>0.44 0 0.79 0 1.5708 0</pose>
       <collision name="collision">
         <geometry>
@@ -220,7 +213,6 @@
         </material>
       </visual>
     </link>
-
     <link name="right_post">
       <pose>0 -0.8 0.45 0 0 0</pose>
       <collision name="collision">
@@ -246,7 +238,6 @@
         </material>
       </visual>
     </link>
-
     <link name="crossbar">
       <pose>0 0 0.85 1.57 1.57 0</pose>
       <collision name="collision">
@@ -272,7 +263,6 @@
         </material>
       </visual>
     </link>
-
     <link name="center_net">
       <pose>0.44 0 0.40 0 0 0</pose>
       <collision name="collision">
@@ -297,7 +287,6 @@
         </material>
       </visual>
     </link>
-
     <link name="left_net">
       <pose>0.24 0.8 0.40 0 0 0</pose>
       <collision name="collision">
@@ -322,7 +311,6 @@
         </material>
       </visual>
     </link>
-
     <link name="right_net">
       <pose>0.24 -0.8 0.40 0 0 0</pose>
       <collision name="collision">
@@ -347,6 +335,5 @@
         </material>
       </visual>
     </link>
-
   </model>
 </sdf>

@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="turtlebot">
     <link name="rack">
       <inertial>
@@ -14,8 +14,6 @@
         </inertia>
         <mass>2.234000</mass>
       </inertial>
-
-
       <collision name="plate_0_collision">
         <pose>-0.043340 0 0.084757 0 0 0</pose>
         <geometry>
@@ -32,7 +30,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="plate_1_collision">
         <pose>-0.002660 0 0.141907 0 0 0</pose>
         <geometry>
@@ -49,7 +46,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="plate_2_collision">
         <pose>-0.002660 0 0.199108 0 0 0</pose>
         <geometry>
@@ -66,7 +62,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="plate_3_collision">
         <pose>-0.015820 0 0.405457 0 0 0</pose>
         <geometry>
@@ -83,7 +78,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="spacer_0_collision">
         <pose>-0.002540 0.111468 0.079992 0 0 0</pose>
         <geometry>
@@ -101,7 +95,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="spacer_1_collision">
         <pose>-0.002540 -0.111468 0.079992 0 0 0</pose>
         <geometry>
@@ -119,7 +112,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="spacer_2_collision">
         <pose>-0.072390 -0.111468 0.079992 0 0 0</pose>
         <geometry>
@@ -137,7 +129,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="spacer_3_collision">
         <pose>-0.072390 0.111468 0.079992 0 0 0</pose>
         <geometry>
@@ -155,7 +146,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="standoff_2in_0_collision">
         <pose>0.067640 0.131420 0.087980 0 0 0</pose>
         <geometry>
@@ -173,7 +163,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="standoff_2in_1_collision">
         <pose>0.067640 -0.131420 0.087980 0 0 0</pose>
         <geometry>
@@ -191,7 +180,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="standoff_2in_2_collision">
         <pose>-0.052832 -0.131420 0.087980 0 0 0</pose>
         <geometry>
@@ -209,7 +197,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="standoff_2in_3_collision">
         <pose>-0.052832 0.131420 0.087980 0 0 0</pose>
         <geometry>
@@ -227,7 +214,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="standoff_2in_4_collision">
         <pose>0.067640 0.131420 0.145130 0 0 0</pose>
         <geometry>
@@ -245,7 +231,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="standoff_2in_5_collision">
         <pose>0.067640 -0.131420 0.145130 0 0 0</pose>
         <geometry>
@@ -263,7 +248,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="standoff_2in_6_collision">
         <pose>-0.052832 -0.131420 0.145130 0 0 0</pose>
         <geometry>
@@ -281,7 +265,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="standoff_2in_7_collision">
         <pose>-0.052832 0.131420 0.145130 0 0 0</pose>
         <geometry>
@@ -299,7 +282,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="standoff_8in_0_collision">
         <pose>0.067640 0.131420 0.202280 0 0 0</pose>
         <geometry>
@@ -317,7 +299,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="standoff_8in_1_collision">
         <pose>0.067640 -0.131420 0.202280 0 0 0</pose>
         <geometry>
@@ -335,7 +316,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="standoff_8in_2_collision">
         <pose>-0.052832 -0.131420 0.202280 0 0 0</pose>
         <geometry>
@@ -353,7 +333,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="standoff_8in_3_collision">
         <pose>-0.052832 0.131420 0.202280 0 0 0</pose>
         <geometry>
@@ -371,7 +350,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="standoff_kinect_0_collision">
         <pose>-0.105098 0.098000 0.202308 0 0 0</pose>
         <geometry>
@@ -389,7 +367,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <collision name="standoff_kinect_1_collision">
         <pose>-0.105098 -0.098000 0.202308 0 0 0</pose>
         <geometry>
@@ -407,7 +384,6 @@
           </mesh>
         </geometry>
       </visual>
-
       <sensor name="laser" type="ray">
         <pose>-0.065000 0 0.092000 0 0 0</pose>
         <ray>
@@ -436,17 +412,14 @@
         <update_rate>20</update_rate>
       </sensor>
     </link>
-
     <include>
       <uri>model://create</uri>
     </include>
-
     <include>
       <uri>model://kinect</uri>
       <pose>-0.087098 0 0.303857 0 0 0</pose>
     </include>
-
-    <joint name='create_rack' type='revolute'>
+    <joint name="create_rack" type="revolute">
       <parent>create::base</parent>
       <child>rack</child>
       <axis>
@@ -455,10 +428,10 @@
           <lower>0</lower>
           <upper>0</upper>
         </limit>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-
-    <joint name='kinect_rack' type='revolute'>
+    <joint name="kinect_rack" type="revolute">
       <parent>kinect::link</parent>
       <child>rack</child>
       <axis>
@@ -467,8 +440,8 @@
           <lower>0</lower>
           <upper>0</upper>
         </limit>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-
   </model>
 </sdf>

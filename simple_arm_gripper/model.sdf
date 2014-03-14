@@ -1,17 +1,14 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="simple_arm_gripper">
     <include>
       <uri>model://simple_arm</uri>
     </include>
-
     <include>
       <uri>model://simple_gripper</uri>
       <pose>1.8 0 1 0 0 0</pose>
     </include>
-
-    <plugin name="simple_arm_plugin" filename="libJointTrajectoryPlugin.so"/>
-
+    <plugin name="simple_arm_plugin" filename="libJointTrajectoryPlugin.so" />
     <joint name="arm_gripper_joint" type="revolute">
       <parent>simple_arm::arm_wrist_roll</parent>
       <child>simple_gripper::riser</child>
@@ -21,6 +18,7 @@
           <upper>0</upper>
         </limit>
         <xyz>0 0 1</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
   </model>

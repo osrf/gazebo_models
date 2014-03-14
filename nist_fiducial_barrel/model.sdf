@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="nist_fiducial_barrel">
     <static>true</static>
     <link name="nist_fiducial_barrel_link">
@@ -10,7 +10,8 @@
             <uri>model://nist_fiducial_barrel/meshes/nist_fiducial_barrel.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
-        </geometry>e
+        </geometry>
+        e
       </collision>
       <visual name="visual">
         <geometry>

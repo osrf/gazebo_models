@@ -1,8 +1,7 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="RoboCup 3D Simulation Field">
     <static>true</static>
-
     <link name="field">
       <pose>0 0 0.01 0 0 0</pose>
       <collision name="collision">
@@ -21,7 +20,6 @@
           </friction>
         </surface>
       </collision>
-
       <visual name="base1">
         <pose>0 11 0.001 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -39,7 +37,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="base2">
         <pose>0 -11 0.001 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -57,7 +54,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="base3">
         <pose>16 0 0.001 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -75,7 +71,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="base4">
         <pose>-16 0 0.001 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
@@ -93,7 +88,6 @@
           </script>
         </material>
       </visual>
-
       <visual name="carpet">
         <cast_shadows>false</cast_shadows>
         <geometry>

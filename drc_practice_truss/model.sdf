@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="truss">
     <link name="link">
       <inertial>
@@ -12,7 +12,7 @@
           <iyz>-0.002</iyz>
           <izz>4.7978</izz>
         </inertia>
-      </inertial> 
+      </inertial>
       <collision name="collision">
         <geometry>
           <mesh>
@@ -30,9 +30,8 @@
               <mu2>10</mu2>
             </ode>
           </friction>
-        </surface> 
+        </surface>
       </collision>
-
       <visual name="visual">
         <geometry>
           <mesh>

@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="willowgarage">
     <static>true</static>
     <pose>-20 -20 0 0 0 0</pose>
