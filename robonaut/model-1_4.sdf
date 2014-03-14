@@ -1,3 +1,4 @@
+<?xml version='1.0'?>
 <sdf version='1.4'>
   <model name='r2'>
     <link name='/r2/robot_world'>
