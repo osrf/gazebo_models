@@ -3,14 +3,16 @@
   <model name="cinder_block_wide">
     <link name="link">
       <inertial>
-        <pose>0 0 0.1016  0 0 0</pose>
-        <!-- volume about 0.0085 m^3, density 2000 kg/m^3 -->
+        <pose>0 0 0.0714375 0 0 0</pose>
         <mass>5</mass>
-        <!-- approximate as uniform box 0.37 x 0.17 x 0.20 m -->
+        <!-- approximate as uniform box 0.387 x 0.387 x 0.092 m -->
         <inertia>
-          <ixx>0.028705</ixx>
-          <ixy>0.0000</ixy><iyy>0.073708</iyy>
-          <ixz>0.0000</ixz><iyz>0.0000</iyz><izz>0.06908</izz>
+          <ixx>0.06814656666666667</ixx>
+          <ixy>0.0000</ixy>
+          <iyy>0.06814656666666667</iyy>
+          <ixz>0.0000</ixz>
+          <iyz>0.0000</iyz>
+          <izz>0.1248075</izz>
         </inertia>
       </inertial>
       <visual name="visual">
@@ -35,6 +37,12 @@
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
 
@@ -52,6 +60,12 @@
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
 
@@ -69,6 +83,12 @@
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
 
@@ -86,6 +106,12 @@
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
 
@@ -103,6 +129,12 @@
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
     </link>
