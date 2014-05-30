@@ -37,6 +37,12 @@
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name="right">
@@ -53,6 +59,12 @@
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name="front">
@@ -69,6 +81,12 @@
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name="middle">
@@ -85,6 +103,12 @@
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name="back">
@@ -101,6 +125,12 @@
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
     </link>
