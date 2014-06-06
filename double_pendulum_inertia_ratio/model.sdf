@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+    <model name="double_pendulum_inertia_ratio">
+      
+      <pose>0 0 0.9  0.785398163397448 0 0</pose>
+      <link name="upper_link">
+        <pose>0 0 -0.05  0 0 0</pose>
+        <inertial>
+          <mass>0.027</mass>
+          <inertia>
+            <ixx>2.2725e-05</ixx>
+            <iyy>2.2725e-05</iyy>
+            <izz>4.5e-07</izz>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyz>0.0</iyz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.01 0.01 0.1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.01 0.01 0.1</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <joint name="upper_joint" type="revolute">
+        <pose>0 0 0.05  0 0 0</pose>
+        <parent>world</parent>
+        <child>upper_link</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+        </axis>
+      </joint>
+      <link name="lower_link">
+        <pose>0 0.176776695296637 -0.276776695296637  0.785398163397448 0 0</pose>
+        <inertial>
+          <mass>3.375</mass>
+          <inertia>
+            <ixx>0.071015625</ixx>
+            <iyy>0.071015625</iyy>
+            <izz>0.00140625</izz>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyz>0.0</iyz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.05 0.05 0.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.05 0.05 0.5</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <joint name="lower_joint" type="revolute">
+        <pose>0 0 0.25  0 0 0</pose>
+        <parent>upper_link</parent>
+        <child>lower_link</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+        </axis>
+      </joint>
+    </model>
+</sdf>
