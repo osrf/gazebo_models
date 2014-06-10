@@ -44,7 +44,11 @@
   wheel_ixx    = wheel_mass * (wheel_radius**2 / 4.0 + wheel_width**2 / 12.0)
   wheel_iyy    = wheel_mass * (wheel_radius**2 / 4.0 + wheel_width**2 / 12.0)
   wheel_izz    = wheel_mass/2.0 * wheel_radius**2
-  # suspension stiffness and damping
+  # suspension stiffness, damping, and limits
+  susp_travel    = 0.5 * wheel_radius
+  susp_height    = 0.5
+  susp_lower     = -susp_height * susp_travel
+  susp_upper     = susp_lower + susp_travel
   susp_damping   = 1.0
   susp_stiffness = 0.0
   susp_spring_center = 0.0
@@ -131,11 +135,12 @@
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower><%= susp_spring_center %></lower>
-          <upper><%= susp_spring_center %></upper>
-          <stiffness><%= susp_stiffness %></stiffness>
-          <dissipation><%= susp_damping %></dissipation>
+          <lower><%= susp_lower %></lower>
+          <upper><%= susp_upper %></upper>
         </limit>
+        <dynamics>
+          <damping><%= susp_damping %></damping>
+        </dynamics>
       </axis>
       <physics>
         <ode>
