@@ -50,7 +50,7 @@
   susp_lower     = -susp_height * susp_travel
   susp_upper     = susp_lower + susp_travel
   susp_damping   = 1.0
-  susp_stiffness = 0.0
+  susp_stiffness = 1.0
   susp_spring_center = 0.0
 %>
 <sdf version="1.5">
@@ -140,6 +140,8 @@
         </limit>
         <dynamics>
           <damping><%= susp_damping %></damping>
+          <spring_stiffness><%= susp_stiffness %></spring_stiffness>
+          <spring_reference><%= susp_spring_center %></spring_reference>
         </dynamics>
       </axis>
       <physics>

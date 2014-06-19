@@ -8,9 +8,9 @@
         <pose>0.1 0 0  0 0 0</pose>
         <mass>10</mass>
         <inertia>
-          <ixx>0.21666666666666667</ixx>
-          <iyy>0.8416666666666667</iyy>
-          <izz>1.0416666666666667</izz>
+          <ixx>0.216666666666667</ixx>
+          <iyy>0.841666666666667</iyy>
+          <izz>1.04166666666667</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyz>0</iyz>
@@ -38,14 +38,14 @@
       </visual>
     </link>
     
-    <link name="susp_front_left">
-      <pose>0.5 0.298 0.15  0 0 0</pose>
+    <link name="susp_rear_right">
+      <pose>-0.5 -0.298 0.15  0 0 0</pose>
       <inertial>
         <mass>0.5</mass>
         <inertia>
-          <ixx>0.00020833333333333337</ixx>
-          <iyy>0.00020833333333333337</iyy>
-          <izz>0.00020833333333333337</izz>
+          <ixx>0.000208333333333333</ixx>
+          <iyy>0.000208333333333333</iyy>
+          <izz>0.000208333333333333</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyz>0</iyz>
@@ -72,9 +72,9 @@
         </material>
       </visual>
     </link>
-    <joint name="susp_front_left_prismatic" type="prismatic">
+    <joint name="susp_rear_right_prismatic" type="prismatic">
       <parent>chassis</parent>
-      <child>susp_front_left</child>
+      <child>susp_rear_right</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
@@ -83,6 +83,8 @@
         </limit>
         <dynamics>
           <damping>1.0</damping>
+          <spring_stiffness>1.0</spring_stiffness>
+          <spring_reference>0.0</spring_reference>
         </dynamics>
       </axis>
       <physics>
@@ -91,13 +93,13 @@
         </ode>
       </physics>
     </joint>
-    <link name="wheel_front_left">
-      <pose>0.5 0.298 0.15  -1.5707963267948966 0 0</pose>
+    <link name="wheel_rear_right">
+      <pose>-0.5 -0.298 0.15  -1.5707963267949 0 0</pose>
       <inertial>
         <mass>0.5</mass>
         <inertia>
-          <ixx>0.0030791666666666667</ixx>
-          <iyy>0.0030791666666666667</iyy>
+          <ixx>0.00307916666666667</ixx>
+          <iyy>0.00307916666666667</iyy>
           <izz>0.005625</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
@@ -127,9 +129,9 @@
         </material>
       </visual>
     </link>
-    <joint name="wheel_front_left_spin" type="revolute">
-      <parent>susp_front_left</parent>
-      <child>wheel_front_left</child>
+    <joint name="wheel_rear_right_spin" type="revolute">
+      <parent>susp_rear_right</parent>
+      <child>wheel_rear_right</child>
       <axis>
         <xyz>0 0 1</xyz>
       </axis>
@@ -140,9 +142,9 @@
       <inertial>
         <mass>0.5</mass>
         <inertia>
-          <ixx>0.00020833333333333337</ixx>
-          <iyy>0.00020833333333333337</iyy>
-          <izz>0.00020833333333333337</izz>
+          <ixx>0.000208333333333333</ixx>
+          <iyy>0.000208333333333333</iyy>
+          <izz>0.000208333333333333</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyz>0</iyz>
@@ -180,6 +182,8 @@
         </limit>
         <dynamics>
           <damping>1.0</damping>
+          <spring_stiffness>1.0</spring_stiffness>
+          <spring_reference>0.0</spring_reference>
         </dynamics>
       </axis>
       <physics>
@@ -189,12 +193,12 @@
       </physics>
     </joint>
     <link name="wheel_front_right">
-      <pose>0.5 -0.298 0.15  -1.5707963267948966 0 0</pose>
+      <pose>0.5 -0.298 0.15  -1.5707963267949 0 0</pose>
       <inertial>
         <mass>0.5</mass>
         <inertia>
-          <ixx>0.0030791666666666667</ixx>
-          <iyy>0.0030791666666666667</iyy>
+          <ixx>0.00307916666666667</ixx>
+          <iyy>0.00307916666666667</iyy>
           <izz>0.005625</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
@@ -237,9 +241,9 @@
       <inertial>
         <mass>0.5</mass>
         <inertia>
-          <ixx>0.00020833333333333337</ixx>
-          <iyy>0.00020833333333333337</iyy>
-          <izz>0.00020833333333333337</izz>
+          <ixx>0.000208333333333333</ixx>
+          <iyy>0.000208333333333333</iyy>
+          <izz>0.000208333333333333</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyz>0</iyz>
@@ -277,6 +281,8 @@
         </limit>
         <dynamics>
           <damping>1.0</damping>
+          <spring_stiffness>1.0</spring_stiffness>
+          <spring_reference>0.0</spring_reference>
         </dynamics>
       </axis>
       <physics>
@@ -286,12 +292,12 @@
       </physics>
     </joint>
     <link name="wheel_rear_left">
-      <pose>-0.5 0.298 0.15  -1.5707963267948966 0 0</pose>
+      <pose>-0.5 0.298 0.15  -1.5707963267949 0 0</pose>
       <inertial>
         <mass>0.5</mass>
         <inertia>
-          <ixx>0.0030791666666666667</ixx>
-          <iyy>0.0030791666666666667</iyy>
+          <ixx>0.00307916666666667</ixx>
+          <iyy>0.00307916666666667</iyy>
           <izz>0.005625</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
@@ -329,14 +335,14 @@
       </axis>
     </joint>
     
-    <link name="susp_rear_right">
-      <pose>-0.5 -0.298 0.15  0 0 0</pose>
+    <link name="susp_front_left">
+      <pose>0.5 0.298 0.15  0 0 0</pose>
       <inertial>
         <mass>0.5</mass>
         <inertia>
-          <ixx>0.00020833333333333337</ixx>
-          <iyy>0.00020833333333333337</iyy>
-          <izz>0.00020833333333333337</izz>
+          <ixx>0.000208333333333333</ixx>
+          <iyy>0.000208333333333333</iyy>
+          <izz>0.000208333333333333</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyz>0</iyz>
@@ -363,9 +369,9 @@
         </material>
       </visual>
     </link>
-    <joint name="susp_rear_right_prismatic" type="prismatic">
+    <joint name="susp_front_left_prismatic" type="prismatic">
       <parent>chassis</parent>
-      <child>susp_rear_right</child>
+      <child>susp_front_left</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
@@ -374,6 +380,8 @@
         </limit>
         <dynamics>
           <damping>1.0</damping>
+          <spring_stiffness>1.0</spring_stiffness>
+          <spring_reference>0.0</spring_reference>
         </dynamics>
       </axis>
       <physics>
@@ -382,13 +390,13 @@
         </ode>
       </physics>
     </joint>
-    <link name="wheel_rear_right">
-      <pose>-0.5 -0.298 0.15  -1.5707963267948966 0 0</pose>
+    <link name="wheel_front_left">
+      <pose>0.5 0.298 0.15  -1.5707963267949 0 0</pose>
       <inertial>
         <mass>0.5</mass>
         <inertia>
-          <ixx>0.0030791666666666667</ixx>
-          <iyy>0.0030791666666666667</iyy>
+          <ixx>0.00307916666666667</ixx>
+          <iyy>0.00307916666666667</iyy>
           <izz>0.005625</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
@@ -418,9 +426,9 @@
         </material>
       </visual>
     </link>
-    <joint name="wheel_rear_right_spin" type="revolute">
-      <parent>susp_rear_right</parent>
-      <child>wheel_rear_right</child>
+    <joint name="wheel_front_left_spin" type="revolute">
+      <parent>susp_front_left</parent>
+      <child>wheel_front_left</child>
       <axis>
         <xyz>0 0 1</xyz>
       </axis>
