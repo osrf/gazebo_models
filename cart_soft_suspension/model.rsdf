@@ -49,9 +49,9 @@
   susp_height    = 0.5
   susp_lower     = -susp_height * susp_travel
   susp_upper     = susp_lower + susp_travel
-  susp_damping   = 1.0
-  susp_stiffness = 1.0
-  susp_spring_center = 0.0
+  susp_damping   = 100
+  susp_stiffness = 2500
+  susp_spring_center = 0.05
 %>
 <sdf version="1.5">
   <model name="cart_soft_suspension">
@@ -133,7 +133,7 @@
       <parent>chassis</parent>
       <%= "<child>susp_" + k + "</child>" %>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz>0 0 -1</xyz>
         <limit>
           <lower><%= susp_lower %></lower>
           <upper><%= susp_upper %></upper>
