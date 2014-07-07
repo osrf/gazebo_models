@@ -1,0 +1,125 @@
+<?xml version="1.0" ?>
+<%
+  # Vehicle with rigid suspension
+  # Consists of box chassis with 4 non-steerable wheels
+  # SI units (length in meters)
+
+  # Geometry
+  chassis_dx   = 1.0
+  chassis_dy   = 0.5
+  chassis_dz   = 0.1
+  wheel_radius = 0.15
+  wheel_width  = 0.08
+  chassis_z0   = wheel_radius
+  wheel_x0     = chassis_dx*0.5
+  wheel_y0     = chassis_dy*0.5 + wheel_width*0.6
+
+  wheel_locations = {
+    "front_left"  => {:x0 => wheel_x0, :y0 => wheel_y0 },
+    "front_right" => {:x0 => wheel_x0, :y0 => -wheel_y0 },
+    "rear_left"   => {:x0 => -wheel_x0, :y0 => wheel_y0 },
+    "rear_right"  => {:x0 => -wheel_x0, :y0 => -wheel_y0 },
+  }
+
+  # inertia
+  chassis_mass = 10
+  chassis_ixx  = chassis_mass/12.0 * (chassis_dy**2 + chassis_dz**2)
+  chassis_iyy  = chassis_mass/12.0 * (chassis_dz**2 + chassis_dx**2)
+  chassis_izz  = chassis_mass/12.0 * (chassis_dx**2 + chassis_dy**2)
+  # chassis c.g. offset from center of box
+  chassis_cgx  = chassis_dx*0.1
+  chassis_cgy  = 0 
+  chassis_cgz  = 0 
+  wheel_mass   = 0.5
+  wheel_ixx    = wheel_mass * (wheel_radius**2 / 4.0 + wheel_width**2 / 12.0)
+  wheel_iyy    = wheel_mass * (wheel_radius**2 / 4.0 + wheel_width**2 / 12.0)
+  wheel_izz    = wheel_mass/2.0 * wheel_radius**2
+%>
+<sdf version="1.5">
+  <model name="cart_rigid_suspension">
+    <link name="chassis">
+      <pose>0 0 <%= chassis_z0 %>  0 0 0</pose>
+      <inertial>
+        <pose><%= chassis_cgx %> <%= chassis_cgy %> <%= chassis_cgz %>  0 0 0</pose>
+        <mass><%= chassis_mass %></mass>
+        <inertia>
+          <ixx><%= chassis_ixx %></ixx>
+          <iyy><%= chassis_iyy %></iyy>
+          <izz><%= chassis_izz %></izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size><%= chassis_dx %> <%= chassis_dy %> <%= chassis_dz %></size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size><%= chassis_dx %> <%= chassis_dy %> <%= chassis_dz %></size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <%
+      wheel_locations.keys.each do |k|
+        x0 = wheel_locations[k][:x0]
+        y0 = wheel_locations[k][:y0]
+    %>
+    <%= "<link name=" + '"wheel_' + k + '">' %>
+      <pose><%= x0 %> <%= y0 %> <%= wheel_radius %>  <%= -Math::PI/2 %> 0 0</pose>
+      <inertial>
+        <mass><%= wheel_mass %></mass>
+        <inertia>
+          <ixx><%= wheel_ixx %></ixx>
+          <iyy><%= wheel_iyy %></iyy>
+          <izz><%= wheel_izz %></izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius><%= wheel_radius %></radius>
+            <length><%= wheel_width %></length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius><%= wheel_radius %></radius>
+            <length><%= wheel_width %></length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <%= "<joint name=" + '"wheel_' + k + '_spin" type="revolute">' %>
+      <parent>chassis</parent>
+      <%= "<child>wheel_" + k + "</child>" %>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    <% end %>
+  </model>
+</sdf>
