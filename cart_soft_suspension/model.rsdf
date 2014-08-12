@@ -1,0 +1,198 @@
+<?xml version="1.0" ?>
+<%
+  # Vehicle with soft suspension
+  # Consists of box chassis with 4 non-steerable wheels,
+  # connected by prismatic joints to an intermediate body
+  # SI units (length in meters)
+
+  # Geometry
+  chassis_dx   = 1.0
+  chassis_dy   = 0.5
+  chassis_dz   = 0.1
+  susp_dx      = 0.05
+  susp_dy      = susp_dx
+  susp_dz      = susp_dx
+  wheel_radius = 0.15
+  wheel_width  = 0.08
+  chassis_z0   = wheel_radius
+  wheel_x0     = chassis_dx*0.5
+  wheel_y0     = chassis_dy*0.5 + wheel_width*0.6
+
+  wheel_locations = {
+    "front_left"  => {:x0 => wheel_x0, :y0 => wheel_y0 },
+    "front_right" => {:x0 => wheel_x0, :y0 => -wheel_y0 },
+    "rear_left"   => {:x0 => -wheel_x0, :y0 => wheel_y0 },
+    "rear_right"  => {:x0 => -wheel_x0, :y0 => -wheel_y0 },
+  }
+
+  # inertia
+  chassis_mass = 10
+  chassis_ixx  = chassis_mass/12.0 * (chassis_dy**2 + chassis_dz**2)
+  chassis_iyy  = chassis_mass/12.0 * (chassis_dz**2 + chassis_dx**2)
+  chassis_izz  = chassis_mass/12.0 * (chassis_dx**2 + chassis_dy**2)
+  # chassis c.g. offset from center of box
+  chassis_cgx  = chassis_dx*0.1
+  chassis_cgy  = 0
+  chassis_cgz  = 0
+  # intermediate body (non-spinning unsprung inertia)
+  susp_mass    = 0.5
+  susp_ixx     = susp_mass/12.0 * (susp_dy**2 + susp_dz**2)
+  susp_iyy     = susp_mass/12.0 * (susp_dz**2 + susp_dx**2)
+  susp_izz     = susp_mass/12.0 * (susp_dx**2 + susp_dy**2)
+  # wheel inertia
+  wheel_mass   = 0.5
+  wheel_ixx    = wheel_mass * (wheel_radius**2 / 4.0 + wheel_width**2 / 12.0)
+  wheel_iyy    = wheel_mass * (wheel_radius**2 / 4.0 + wheel_width**2 / 12.0)
+  wheel_izz    = wheel_mass/2.0 * wheel_radius**2
+  # suspension stiffness, damping, and limits
+  susp_travel    = 0.5 * wheel_radius
+  susp_height    = 0.5
+  susp_lower     = -susp_height * susp_travel
+  susp_upper     = susp_lower + susp_travel
+  susp_damping   = 100
+  susp_stiffness = 2500
+  susp_spring_center = 0.05
+%>
+<sdf version="1.5">
+  <model name="cart_soft_suspension">
+    <link name="chassis">
+      <pose>0 0 <%= chassis_z0 %>  0 0 0</pose>
+      <inertial>
+        <pose><%= chassis_cgx %> <%= chassis_cgy %> <%= chassis_cgz %>  0 0 0</pose>
+        <mass><%= chassis_mass %></mass>
+        <inertia>
+          <ixx><%= chassis_ixx %></ixx>
+          <iyy><%= chassis_iyy %></iyy>
+          <izz><%= chassis_izz %></izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size><%= chassis_dx %> <%= chassis_dy %> <%= chassis_dz %></size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size><%= chassis_dx %> <%= chassis_dy %> <%= chassis_dz %></size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <%
+      wheel_locations.keys.each do |k|
+        x0 = wheel_locations[k][:x0]
+        y0 = wheel_locations[k][:y0]
+    %>
+    <%= "<link name=" + '"susp_' + k + '">' %>
+      <pose><%= x0 %> <%= y0 %> <%= wheel_radius %>  0 0 0</pose>
+      <inertial>
+        <mass><%= susp_mass %></mass>
+        <inertia>
+          <ixx><%= susp_ixx %></ixx>
+          <iyy><%= susp_iyy %></iyy>
+          <izz><%= susp_izz %></izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size><%= susp_dx %> <%= susp_dy %> <%= susp_dz %></size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size><%= susp_dx %> <%= susp_dy %> <%= susp_dz %></size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <%= "<joint name=" + '"susp_' + k + '_prismatic" type="prismatic">' %>
+      <parent>chassis</parent>
+      <%= "<child>susp_" + k + "</child>" %>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower><%= susp_lower %></lower>
+          <upper><%= susp_upper %></upper>
+        </limit>
+        <dynamics>
+          <damping><%= susp_damping %></damping>
+          <spring_stiffness><%= susp_stiffness %></spring_stiffness>
+          <spring_reference><%= susp_spring_center %></spring_reference>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+    <%= "<link name=" + '"wheel_' + k + '">' %>
+      <pose><%= x0 %> <%= y0 %> <%= wheel_radius %>  <%= -Math::PI/2 %> 0 0</pose>
+      <inertial>
+        <mass><%= wheel_mass %></mass>
+        <inertia>
+          <ixx><%= wheel_ixx %></ixx>
+          <iyy><%= wheel_iyy %></iyy>
+          <izz><%= wheel_izz %></izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius><%= wheel_radius %></radius>
+            <length><%= wheel_width %></length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius><%= wheel_radius %></radius>
+            <length><%= wheel_width %></length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <%= "<joint name=" + '"wheel_' + k + '_spin" type="revolute">' %>
+      <%= "<parent>susp_" + k + "</parent>" %>
+      <%= "<child>wheel_" + k + "</child>" %>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    <% end %>
+  </model>
+</sdf>
