@@ -1,6 +1,14 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
   <model name="simple_gripper">
+    <joint name="riser_world" type="revolute">
+      <child>riser</child>
+      <parent>world</parent>
+      <axis>
+        <limit><lower>0</lower><upper>0</upper></limit>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
     <link name="riser">
       <pose>-0.15 0.0 0.5 0 0 0</pose>
       <inertial>
@@ -13,9 +21,18 @@
           </box>
         </geometry>
         <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
           <contact>
             <ode>
-              <max_vel>0.0</max_vel>
+              <kp>10000000.0</kp>
+              <kd>1.0</kd>
+              <min_depth>0.001</min_depth>
+              <max_vel>0.1</max_vel>
             </ode>
           </contact>
         </surface>
@@ -40,9 +57,18 @@
           </box>
         </geometry>
         <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
           <contact>
             <ode>
-              <max_vel>0.0</max_vel>
+              <kp>10000000.0</kp>
+              <kd>1.0</kd>
+              <min_depth>0.001</min_depth>
+              <max_vel>0.1</max_vel>
             </ode>
           </contact>
         </surface>
@@ -69,13 +95,16 @@
         <surface>
           <friction>
             <ode>
-              <mu>0.1</mu>
-              <mu2>0</mu2>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
             </ode>
           </friction>
           <contact>
             <ode>
-              <max_vel>0.0</max_vel>
+              <kp>10000000.0</kp>
+              <kd>1.0</kd>
+              <min_depth>0.001</min_depth>
+              <max_vel>0.1</max_vel>
             </ode>
           </contact>
         </surface>
@@ -102,13 +131,16 @@
         <surface>
           <friction>
             <ode>
-              <mu>.1</mu>
-              <mu2>0</mu2>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
             </ode>
           </friction>
           <contact>
             <ode>
-              <max_vel>0.0</max_vel>
+              <kp>10000000.0</kp>
+              <kd>1.0</kd>
+              <min_depth>0.001</min_depth>
+              <max_vel>0.1</max_vel>
             </ode>
           </contact>
         </surface>
@@ -135,13 +167,16 @@
         <surface>
           <friction>
             <ode>
-              <mu>0.1</mu>
-              <mu2>0</mu2>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
             </ode>
           </friction>
           <contact>
             <ode>
-              <max_vel>0.0</max_vel>
+              <kp>10000000.0</kp>
+              <kd>1.0</kd>
+              <min_depth>0.001</min_depth>
+              <max_vel>0.1</max_vel>
             </ode>
           </contact>
         </surface>
@@ -168,13 +203,16 @@
         <surface>
           <friction>
             <ode>
-              <mu>0.1</mu>
-              <mu2>0</mu2>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
             </ode>
           </friction>
           <contact>
             <ode>
-              <max_vel>0.0</max_vel>
+              <kp>10000000.0</kp>
+              <kd>1.0</kd>
+              <min_depth>0.001</min_depth>
+              <max_vel>0.1</max_vel>
             </ode>
           </contact>
         </surface>

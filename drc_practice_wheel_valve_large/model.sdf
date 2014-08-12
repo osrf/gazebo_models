@@ -79,7 +79,7 @@
     </link>
 -->
     <joint name="joint" type="revolute">
-      <parent>world</parent>
+      <parent>wall::link</parent>
       <child>handle</child>
       <axis>
         <xyz>0 1 0</xyz>
