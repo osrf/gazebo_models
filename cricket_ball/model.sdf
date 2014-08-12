@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="cricket ball">
+  <model name="cricket_ball">
     <link name="link">
       <pose>0 0 0.0375 0 0 0</pose>
       <inertial>
