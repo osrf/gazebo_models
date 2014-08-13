@@ -1,25 +1,43 @@
 <?xml version="1.0" ?>
+<%
+  # Wood block with dimensions 5 x 5 x 5 cm
+  # SI units (length in meters)
 
+  # Geometry
+  dx = 0.05
+  dy = 0.05
+  dz = 0.05
+
+  # Material
+  # Assume soft wood with density of 500 kg / m^3
+  density = 500
+
+  # Inertia
+  mass = density * dx * dy * dz
+  ixx  = mass/12.0 * (dy**2 + dz**2)
+  iyy  = mass/12.0 * (dz**2 + dx**2)
+  izz  = mass/12.0 * (dx**2 + dy**2)
+%>
 <sdf version="1.5">
   <model name="wood_cube_5cm">
     <link name="link">
-      <pose>0 0 0.025 0 0 0</pose>
+      <pose>0 0 <%= dz/2 %> 0 0 0</pose>
       <inertial>
-        <mass>0.0625</mass>
+        <mass><%= mass %></mass>
         <inertia>
-          <ixx>2.6041666666666672e-05</ixx>
+          <ixx><%= ixx %></ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>2.6041666666666672e-05</iyy>
+          <iyy><%= iyy %></iyy>
           <iyz>0</iyz>
-          <izz>2.6041666666666672e-05</izz>
+          <izz><%= izz %></izz>
         </inertia>
       </inertial>
 
       <collision name="collision">
         <geometry>
           <box>
-            <size>0.05 0.05 0.05</size>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
           </box>
         </geometry>
       </collision>
@@ -27,7 +45,7 @@
       <visual name="visual">
         <geometry>
           <box>
-            <size>0.05 0.05 0.05</size>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
           </box>
         </geometry>
         <material>
