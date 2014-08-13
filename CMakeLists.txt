@@ -29,6 +29,7 @@ construction_barrel
 construction_cone
 cordless_drill
 create
+cricket_ball
 cube_20k
 door_handle
 double_pendulum_with_base
@@ -122,6 +123,11 @@ table_marble
 turtlebot
 utility_cart
 willowgarage
+wood_block_10_2_1cm
+wood_cube_10cm
+wood_cube_2_5cm
+wood_cube_5cm
+wood_cube_7_5cm
 youbot
 )
 
