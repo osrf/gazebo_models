@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="stone_10_2_5_1cm">
+    <link name="link">
+      <pose>0 0 0.005 0 0 0</pose>
+      <inertial>
+        <mass>0.0125</mass>
+        <inertia>
+          <ixx>7.552083333333335e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.0520833333333334e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.1067708333333336e-05</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.1 0.025 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.1 0.025 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Rocky</name>
+          </script>
+        </material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

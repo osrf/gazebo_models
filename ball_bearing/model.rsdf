@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<%
+  # Marble with diameter 1.5 cm
+  # SI units (length in meters)
+
+  # Geometry
+
+  d = 0.006
+  r = d/2
+
+  # Inertia
+  # TODO: measure mass of objects
+  mass = 0.001
+  ixx  = 2.0*mass*r**2/3.0
+  iyy  = 2.0*mass*r**2/3.0
+  izz  = 2.0*mass*r**2/3.0
+%>
+<sdf version="1.5">
+  <model name="ball_bearing">
+    <link name="link">
+      <pose>0 0 <%= r %> 0 0 0</pose>
+      <inertial>
+        <mass><%= mass %></mass>
+        <inertia>
+          <ixx><%= ixx %></ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy><%= iyy %></iyy>
+          <iyz>0</iyz>
+          <izz><%= izz %></izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <sphere>
+            <radius><%= r ></radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <sphere>
+            <radius><%= r ></radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Chrome</name>
+          </script>
+        </material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

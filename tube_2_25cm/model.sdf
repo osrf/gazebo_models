@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="tube_2_25cm">
+    <link name="link">
+      <pose>0 0 0.05725 0 0 0</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>1.1632239583333333e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.1632239583333333e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1.4140625000000002e-07</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          #TODO: replace with mesh of a tube
+          <cylinder>
+            <radius> 0.0125 </radius>
+            <height> 0.1145 </height>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius> 0.0125 </radius>
+            <height> 0.1145 </height>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Chrome</name>
+          </script>
+        </material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

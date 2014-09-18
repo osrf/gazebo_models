@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="plastic_cup">
+    <link name="link">
+      <pose>0 0 0.065 0 0 0</pose>
+      <inertial>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>6.94381858974359e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6.94381858974359e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1.9430384615384619e-07</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius> 0.007 </radius>
+            <height> 0.13 </height>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius> 0.007 </radius>
+            <height> 0.13 </height>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>
