@@ -6,19 +6,19 @@
       <inertial>
         <mass>0.001</mass>
         <inertia>
-          <ixx>6.000000000000001e-09</ixx>
+          <ixx>3.6000000000000004e-09</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>6.000000000000001e-09</iyy>
+          <iyy>3.6000000000000004e-09</iyy>
           <iyz>0</iyz>
-          <izz>6.000000000000001e-09</izz>
+          <izz>3.6000000000000004e-09</izz>
         </inertia>
       </inertial>
 
       <collision name="collision">
         <geometry>
           <sphere>
-            <radius><%= r ></radius>
+            <radius>0.003</radius>
           </sphere>
         </geometry>
       </collision>
@@ -26,7 +26,7 @@
       <visual name="visual">
         <geometry>
           <sphere>
-            <radius><%= r ></radius>
+            <radius>0.003</radius>
           </sphere>
         </geometry>
         <material>
