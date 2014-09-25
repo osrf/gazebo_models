@@ -2,6 +2,7 @@
 <sdf version="1.5">
   <model name="cinder_block_wide">
     <link name="link">
+      <self_collide>true</self_collide>
       <inertial>
         <pose>0 0 0.0714375 0 0 0</pose>
         <mass>5</mass>
