@@ -2,10 +2,10 @@
 <sdf version="1.5">
   <model name="handle_wheel_valve">
     <link name="handle">
-      <pose>0 0.0200 0.015 0 0 1.57</pose>
+      <!--<pose>0 0.0300 0 0 0 0</pose> -->
       <inertial>
+        <pose>0 0.0600 0 0 0 0</pose>
         <mass>4.6114</mass>
-        <pose>0.0126 0.0036 0 0 0 0</pose>
         <inertia>
           <ixx>0.0252</ixx>
           <ixy>-0.0009</ixy>
@@ -34,7 +34,7 @@
           </friction>
           <contact>
             <ode>
-              <soft_cfm>0.01</soft_cfm>
+              <!--<soft_cfm>0.01</soft_cfm>-->
               <soft_erp />
               <kp>1000000.0</kp>
               <kd>100000.0</kd>
@@ -89,15 +89,15 @@
         </limit>
         <dynamics>
           <!--velocity dependent viscous damping coefficient of the joint-->
-          <damping>100</damping>
+          <damping>0</damping>
           <!--default 0, static friction value of the joint-->
-          <friction>100</friction>
+          <friction>0</friction>
         </dynamics>
         <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <physics>
         <ode>
-          <cfm_damping>1</cfm_damping>
+          <implicit_spring_damper>1</implicit_spring_damper>
         </ode>
       </physics>
     </joint>
