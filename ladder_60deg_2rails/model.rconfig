@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+  <%
+    ladder_angle = 60 # degrees
+    handrails = 2
+   %>
+
+<model>
+  <name>Ladder <%= ladder_angle %> Degrees <%= handrails %> Handrails </name>
+  <version>1.0</version>
+  <sdf version="1.3">model.sdf</sdf>
+
+  <author>
+    <name>Jackie Kay</name>
+    <email>jackie@osrfoundation.com</email>
+  </author>
+
+  <description>
+    A ladder with <%= handrails %> and a <%= ladder_angle %> degree incline from the floor.
+  </description>
+
+</model>
+

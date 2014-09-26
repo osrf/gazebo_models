@@ -129,6 +129,12 @@ wood_cube_2_5cm
 wood_cube_5cm
 wood_cube_7_5cm
 youbot
+ladder_60deg_0rails
+ladder_60deg_1rails
+ladder_60deg_2rails
+ladder_75deg_0rails
+ladder_75deg_1rails
+ladder_75deg_2rails
 )
 
 set (MODEL_URI_LIST "" CACHE INTERNAL "Model URI List" FORCE)
