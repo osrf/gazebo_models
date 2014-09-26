@@ -1,16 +1,8 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="drc_practice_hinged_door">
+  <model name="drc_practice_weighted_door">
     <link name="frame">
       <pose>0.06 -0.0005 0 0 0 0</pose>
-      <!-- <collision name="collision_1">
-        <pose>-0.025145 -0.03429 1.0541 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.05029 0.06858 2.10820</size>
-          </box>
-        </geometry>
-      </collision> -->
       <collision name="collision_2">
         <pose>-0.025145 -0.03429 1.0541 0 0 0</pose>
         <geometry>
@@ -19,22 +11,6 @@
           </box>
         </geometry>
       </collision>
-      <!-- <collision name="collision_3">
-        <pose>-0.0251450 0.46482 2.07137 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.05029 0.92964 0.07366</size>
-          </box>
-        </geometry>
-      </collision>
-      <visual name="visual">
-        <pose>0 -0.06858 0 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <uri>model://hinged_door/meshes/frame.dae</uri>
-          </mesh>
-        </geometry>
-      </visual> -->
 
       <visual name="visual">
         <pose>-0.025145 -0.03429 1.0541 0 0 0</pose>
@@ -52,7 +28,10 @@
       </visual>
 
     </link>
+
+
     <link name="door">
+
       <pose>-0.0 0.000 2.040 3.14159 0 1.57</pose>
       <inertial>
         <mass>41.3256</mass>
@@ -140,6 +119,7 @@
         </ode>
       </physics>
     </joint>
+
     <joint name="hinge" type="revolute">
       <parent>frame</parent>
       <child>door</child>
@@ -152,8 +132,8 @@
           <velocity />
         </limit>
         <dynamics>
-          <damping>1.0</damping>
-          <friction>1.0</friction>
+          <damping>15.53652360379284</damping>
+          <friction>15.53652360379284</friction>
         </dynamics>
         <use_parent_model_frame>true</use_parent_model_frame>
       </axis>

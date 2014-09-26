@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="drc_practice_hinged_door">
+  <model name="drc_practice_weighted_door">
     <link name="frame">
       <pose>0.06 -0.0005 0 0 0 0</pose>
       <collision name="collision_2">
@@ -140,7 +140,7 @@
         </limit>
         <dynamics>
           <damping><%= damping_coeff %></damping>
-          <friction>1.0</friction>
+          <friction><%= damping_coeff %></friction>
         </dynamics>
         <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
