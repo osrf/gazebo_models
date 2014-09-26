@@ -1,0 +1,174 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="drc_practice_hinged_door">
+    <link name="frame">
+      <pose>0.06 -0.0005 0 0 0 0</pose>
+      <collision name="collision_2">
+        <pose>-0.025145 -0.03429 1.0541 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05029 0.06858 2.10820</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <pose>-0.025145 -0.03429 1.0541 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05029 0.06858 2.10820</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+
+    </link>
+
+    <% door_width =  0.9144%>
+
+    <link name="door">
+
+      <pose>-0.0 0.000 2.040 3.14159 0 1.57</pose>
+      <inertial>
+        <mass>41.3256</mass>
+        <pose>0.4569 0.0349 1.016 0 0 0</pose>
+        <inertia>
+          <ixx>14.2053</ixx>
+          <ixy>0.0004</ixy>
+          <ixz>0.0000</ixz>
+          <iyy>17.1997</iyy>
+          <iyz>0.0000</iyz>
+          <izz>3.0298</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0.4569 0.0349 1.016 0 0 0</pose>
+        <geometry>
+          <box>
+            <size><%= door_width %> 0.04445 2.032</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose>0 -0.06858 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://hinged_door/meshes/door.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="handles">
+      <pose>0.0 0.8 1.05 0 3.14 1.57</pose>
+      <collision name="handle1_collision">
+        <pose>0.015 -0.015 0 -1.57 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://door_handle/meshes/handle.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="handle1_visual">
+        <pose>0.015 -0.015 0 -1.57 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://door_handle/meshes/handle.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="handle2_collision">
+        <pose>0.015 -0.055 0 1.57 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://door_handle/meshes/handle.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="handle2_visual">
+        <pose>0.015 -0.055 0 1.57 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://door_handle/meshes/handle.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="handle" type="revolute">
+      <parent>door</parent>
+      <child>handles</child>
+      <pose>0.015 0 0 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.58</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>10</friction>
+        </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+    <% lbs_force = 3
+       newtons = 4.44822*3
+       torque = newtons*door_width
+       angular_vel = Math::PI/4
+       damping_coeff = torque/angular_vel
+     %>
+    <joint name="hinge" type="revolute">
+      <parent>frame</parent>
+      <child>door</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.58</lower>
+          <upper>0</upper>
+          <effort />
+          <velocity />
+        </limit>
+        <dynamics>
+          <damping><%= damping_coeff %></damping>
+          <friction>1.0</friction>
+        </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="world_joint" type="revolute">
+      <child>frame</child>
+      <parent>world</parent>
+      <axis>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+  </model>
+</sdf>
