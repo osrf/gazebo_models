@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <%
-  # Cricket ball, diameter 7.5cm
+  # Cricket ball with radius 3.75 cm
   # SI units (length in meters)
 
   # Geometry
