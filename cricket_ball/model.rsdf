@@ -1,23 +1,25 @@
 <?xml version="1.0" ?>
 <%
-  # Wood block with dimensions 5 x 5 x 5 cm
+  # Cricket ball, diameter 7.5cm
   # SI units (length in meters)
 
   # Geometry
-  dx = 0.05
-  dy = 0.05
-  dz = 0.05
+
+  d = 0.075
+  r = d/2
 
   # Inertia
-  mass = 0.0565
-  ixx  = mass/12.0 * (dy**2 + dz**2)
-  iyy  = mass/12.0 * (dz**2 + dx**2)
-  izz  = mass/12.0 * (dx**2 + dy**2)
+  # TODO: measure mass of objects
+  mass = 0.1467
+  ixx  = 2.0*mass*r**2/5.0
+  iyy  = 2.0*mass*r**2/5.0
+  izz  = 2.0*mass*r**2/5.0
 %>
+
 <sdf version="1.5">
-  <model name="wood_cube_5cm">
+  <model name="cricket_ball">
     <link name="link">
-      <pose>0 0 <%= dz/2 %> 0 0 0</pose>
+      <pose>0 0 <%= r %> 0 0 0</pose>
       <inertial>
         <mass><%= mass %></mass>
         <inertia>
@@ -32,22 +34,22 @@
 
       <collision name="collision">
         <geometry>
-          <box>
-            <size><%= dx %> <%= dy %> <%= dz %></size>
-          </box>
+          <sphere>
+            <radius><%= r %></radius>
+          </sphere>
         </geometry>
       </collision>
 
       <visual name="visual">
         <geometry>
-          <box>
-            <size><%= dx %> <%= dy %> <%= dz %></size>
-          </box>
+          <sphere>
+            <radius><%= r %></radius>
+          </sphere>
         </geometry>
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Wood</name>
+            <name>Gazebo/Red</name>
           </script>
         </material>
       </visual>

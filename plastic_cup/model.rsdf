@@ -17,7 +17,7 @@
   # http://www.wolframalpha.com/input/?i=conical+frustum+moment+of+inertia+tensor+of+solid
 
   #Need to calculate moment if bottom of frustum is closed
-  mass = 0.002
+  mass = 0.0599
   ixx  = ( 2.0*h**2 * (a**2 + 3*a*b + 6*b**2) + 3*(a**4 + a**3*b + a**2*b**2 + a*b**3 + b**4) ) / ( 20.0*(a**2 + a*b + b**2) )*mass
   iyy  = ixx
   izz  = 3*(a**4 + a**3*b + a**2*b**2 + a*b**3 + b**4)/( 10*(a**2 + a*b + b**2 ) )*mass
