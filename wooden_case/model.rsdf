@@ -16,7 +16,6 @@
 %>
 <sdf version="1.5">
   <model name="wooden_case">
-    <static>true</static>
     <link name="back_side">
 
     <%
@@ -364,27 +363,62 @@
     </link>
 
 
-<!--
-  <joint name="back_top" type="fixed">
-    <parent>back_side</parent>
-    <child>top_side</child>
-  </joint>
-  <joint name="back_left" type="fixed">
-    <parent>back_side</parent>
-    <child>left_side</child>
-  </joint>
-  <joint name="back_right" type="fixed">
-    <parent>back_side</parent>
-    <child>right_side</child>
-  </joint>
-  <joint name="back_bottom" type="fixed">
-    <parent>back_side</parent>
-    <child>bottom_side</child>
-  </joint>
-  <joint name="bottom_front" type="fixed">
-    <parent>bottom_side</parent>
-    <child>front_side</child>
-  </joint> -->
+
+    <joint name="back_top" type="revolute">
+      <parent>back_side</parent>
+      <child>top_side</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit> 
+      </axis>
+    </joint>
+    <joint name="back_left" type="revolute">
+      <parent>back_side</parent>
+      <child>left_side</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit> 
+      </axis>
+    </joint>
+    <joint name="back_right" type="revolute">
+      <parent>back_side</parent>
+      <child>right_side</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit> 
+      </axis>
+    </joint>
+    <joint name="back_bottom" type="revolute">
+      <parent>back_side</parent>
+      <child>bottom_side</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit> 
+      </axis>
+    </joint>
+    <joint name="bottom_front" type="revolute">
+      <parent>bottom_side</parent>
+      <child>front_side</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit> 
+      </axis>
+    </joint>
 
   </model>
 </sdf>
