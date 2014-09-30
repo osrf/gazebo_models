@@ -9,7 +9,6 @@
   r = d/2
 
   # Inertia
-  # TODO: measure mass of objects
   mass = 0.0062
   ixx  = 2.0*mass*r**2/5.0
   iyy  = 2.0*mass*r**2/5.0

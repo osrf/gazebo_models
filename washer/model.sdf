@@ -17,10 +17,9 @@
 
       <collision name="collision">
         <geometry>
-          #TODO: replace with mesh of a washer
           <cylinder>
             <radius> 0.0175 </radius>
-            <height> 0.002 </height>
+            <length> 0.002 </length>
           </cylinder>
         </geometry>
       </collision>
@@ -29,7 +28,7 @@
         <geometry>
           <cylinder>
             <radius> 0.0175 </radius>
-            <height> 0.002 </height>
+            <length> 0.002 </length>
           </cylinder>
         </geometry>
         <material>

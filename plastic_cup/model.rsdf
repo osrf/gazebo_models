@@ -13,7 +13,6 @@
   a = d2/2.0
 
   # Inertia
-  # TODO: weigh object and get mass
   # http://www.wolframalpha.com/input/?i=conical+frustum+moment+of+inertia+tensor+of+solid
 
   #Need to calculate moment if bottom of frustum is closed
@@ -43,7 +42,7 @@
         <geometry>
           <cylinder>
             <radius> <%= b %> </radius>
-            <height> <%= h  %> </height>
+            <length> <%= h  %> </length>
           </cylinder>
         </geometry>
       </collision>
@@ -52,7 +51,7 @@
         <geometry>
           <cylinder>
             <radius> <%= b %> </radius>
-            <height> <%= h  %> </height>
+            <length> <%= h  %> </length>
           </cylinder>
         </geometry>
         <material>

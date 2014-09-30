@@ -9,7 +9,6 @@
   dz = 0.01
 
   # Inertia
-  # TODO: weigh object and get mass
   mass = 0.0628
   ixx  = mass/12.0 * (dy**2 + dz**2)
   iyy  = mass/12.0 * (dz**2 + dx**2)
