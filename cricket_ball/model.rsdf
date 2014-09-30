@@ -1,21 +1,24 @@
 <?xml version="1.0" ?>
 <%
-  # Cricket ball with radius 3.75 cm
+  # Cricket ball, diameter 7.5cm
   # SI units (length in meters)
 
   # Geometry
-  radius = 0.0375
 
-  # Inertia of solid sphere
-  mass = 0.16
-  ixx  = mass * 0.4 * radius**2
-  iyy  = mass * 0.4 * radius**2
-  izz  = mass * 0.4 * radius**2
+  d = 0.075
+  r = d/2
+
+  # Inertia
+  mass = 0.1467
+  ixx  = 2.0*mass*r**2/5.0
+  iyy  = 2.0*mass*r**2/5.0
+  izz  = 2.0*mass*r**2/5.0
 %>
+
 <sdf version="1.5">
   <model name="cricket_ball">
     <link name="link">
-      <pose>0 0 <%= radius %> 0 0 0</pose>
+      <pose>0 0 <%= r %> 0 0 0</pose>
       <inertial>
         <mass><%= mass %></mass>
         <inertia>
@@ -31,7 +34,7 @@
       <collision name="collision">
         <geometry>
           <sphere>
-            <radius><%= radius %></radius>
+            <radius><%= r %></radius>
           </sphere>
         </geometry>
       </collision>
@@ -39,7 +42,7 @@
       <visual name="visual">
         <geometry>
           <sphere>
-            <radius><%= radius %></radius>
+            <radius><%= r %></radius>
           </sphere>
         </geometry>
         <material>

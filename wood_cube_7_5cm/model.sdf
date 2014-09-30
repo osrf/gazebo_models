@@ -1,18 +1,17 @@
 <?xml version="1.0" ?>
-
 <sdf version="1.5">
   <model name="wood_cube_7_5cm">
     <link name="link">
       <pose>0 0 0.0375 0 0 0</pose>
       <inertial>
-        <mass>0.2109375</mass>
+        <mass>0.2249</mass>
         <inertia>
-          <ixx>0.00019775390624999999</ixx>
+          <ixx>0.00021084374999999999</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.00019775390624999999</iyy>
+          <iyy>0.00021084374999999999</iyy>
           <iyz>0</iyz>
-          <izz>0.00019775390624999999</izz>
+          <izz>0.00021084374999999999</izz>
         </inertia>
       </inertial>
 
