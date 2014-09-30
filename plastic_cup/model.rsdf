@@ -6,10 +6,10 @@
   # Height
   h  = 0.13
   # Base diameter
-  d1 = 0.014
+  d1 = 0.055
   b = d1/2.0
   # Top diameter
-  d2 = 0.035
+  d2 = 0.075
   a = d2/2.0
 
   # Inertia
@@ -43,7 +43,7 @@
         <geometry>
           <cylinder>
             <radius> <%= b %> </radius>
-            <height> <%= h  %> </height>
+            <length> <%= h  %> </length>
           </cylinder>
         </geometry>
       </collision>
@@ -52,7 +52,7 @@
         <geometry>
           <cylinder>
             <radius> <%= b %> </radius>
-            <height> <%= h  %> </height>
+            <length> <%= h  %> </length>
           </cylinder>
         </geometry>
         <material>

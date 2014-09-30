@@ -40,7 +40,7 @@
           #TODO: replace with mesh of a tube
           <cylinder>
             <radius> <%= r2 %> </radius>
-            <height> <%= h  %> </height>
+            <length> <%= h  %> </length>
           </cylinder>
         </geometry>
       </collision>
@@ -49,7 +49,7 @@
         <geometry>
           <cylinder>
             <radius> <%= r2 %> </radius>
-            <height> <%= h  %> </height>
+            <length> <%= h  %> </length>
           </cylinder>
         </geometry>
         <material>

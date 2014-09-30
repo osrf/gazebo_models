@@ -6,20 +6,20 @@
       <inertial>
         <mass>0.002</mass>
         <inertia>
-          <ixx>6.94381858974359e-06</ixx>
+          <ixx>1.0113394080234834e-05</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>6.94381858974359e-06</iyy>
+          <iyy>1.0113394080234834e-05</iyy>
           <iyz>0</iyz>
-          <izz>1.9430384615384619e-07</izz>
+          <izz>1.0977079256360078e-06</izz>
         </inertia>
       </inertial>
 
       <collision name="collision">
         <geometry>
           <cylinder>
-            <radius> 0.007 </radius>
-            <height> 0.13 </height>
+            <radius> 0.0275 </radius>
+            <length> 0.13 </length>
           </cylinder>
         </geometry>
       </collision>
@@ -27,8 +27,8 @@
       <visual name="visual">
         <geometry>
           <cylinder>
-            <radius> 0.007 </radius>
-            <height> 0.13 </height>
+            <radius> 0.0275 </radius>
+            <length> 0.13 </length>
           </cylinder>
         </geometry>
         <material>
