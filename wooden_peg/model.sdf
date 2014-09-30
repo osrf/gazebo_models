@@ -20,7 +20,7 @@
           #TODO: replace with mesh of a tube
           <cylinder>
             <radius> 0.00975 </radius>
-            <height> 0.08 </height>
+            <length> 0.08 </length>
           </cylinder>
         </geometry>
       </collision>
@@ -29,7 +29,7 @@
         <geometry>
           <cylinder>
             <radius> 0.00975 </radius>
-            <height> 0.08 </height>
+            <length> 0.08 </length>
           </cylinder>
         </geometry>
         <material>

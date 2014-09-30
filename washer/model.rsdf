@@ -37,10 +37,9 @@
 
       <collision name="collision">
         <geometry>
-          #TODO: replace with mesh of a washer
           <cylinder>
             <radius> <%= r2 %> </radius>
-            <height> <%= h  %> </height>
+            <length> <%= h  %> </length>
           </cylinder>
         </geometry>
       </collision>
@@ -49,7 +48,7 @@
         <geometry>
           <cylinder>
             <radius> <%= r2 %> </radius>
-            <height> <%= h  %> </height>
+            <length> <%= h  %> </length>
           </cylinder>
         </geometry>
         <material>
