@@ -6,10 +6,10 @@
       <inertial>
         <mass>0.0121</mass>
         <inertia>
-          <ixx>1.166104225e-05</ixx>
+          <ixx>3.908975583333333e-06</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1.166104225e-05</iyy>
+          <iyy>3.908975583333333e-06</iyy>
           <iyz>0</iyz>
           <izz>6.58845e-08</izz>
         </inertia>
