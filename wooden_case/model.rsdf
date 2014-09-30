@@ -1,0 +1,390 @@
+<?xml version="1.0" ?>
+<%
+  # Wood block with dimensions 5 x 5 x 5 cm
+  # SI units (length in meters)
+
+  # Geometry
+  width = 0.57
+  height = 0.35
+  depth = 0.15
+  thickness = 0.02
+
+  # Material
+  # Assume soft wood with density of 500 kg / m^3
+  density = 500
+
+%>
+<sdf version="1.5">
+  <model name="wooden_case">
+    <static>true</static>
+    <link name="back_side">
+
+    <%
+      dx = thickness
+      dy = width
+      dz = height
+      # Inertia
+      mass = density * dx * dy * dz
+      ixx  = mass/12.0 * (dy**2 + dz**2)
+      iyy  = mass/12.0 * (dz**2 + dx**2)
+      izz  = mass/12.0 * (dx**2 + dy**2)
+     %>
+
+      <pose>0 0 <%= dz/2 %> 0 0 0</pose>
+      <inertial>
+        <mass><%= mass %></mass>
+        <inertia>
+          <ixx><%= ixx %></ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy><%= iyy %></iyy>
+          <iyz>0</iyz>
+          <izz><%= izz %></izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+
+    <link name="front_side">
+
+    <%
+      dx = thickness
+      dy = width
+      dz = height
+      # Inertia
+      mass = density * dx * dy * dz
+      ixx  = mass/12.0 * (dy**2 + dz**2)
+      iyy  = mass/12.0 * (dz**2 + dx**2)
+      izz  = mass/12.0 * (dx**2 + dy**2)
+     %>
+
+      <pose><%= depth+height/2 %> 0  <%= thickness/2%> 0 <%= Math::PI/2 %> 0</pose>
+      <inertial>
+        <mass><%= mass %></mass>
+        <inertia>
+          <ixx><%= ixx %></ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy><%= iyy %></iyy>
+          <iyz>0</iyz>
+          <izz><%= izz %></izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="bottom_side">
+    <%
+      dx = depth
+      dy = width
+      dz = thickness
+      # Inertia
+      mass = density * dx * dy * dz
+      ixx  = mass/12.0 * (dy**2 + dz**2)
+      iyy  = mass/12.0 * (dz**2 + dx**2)
+      izz  = mass/12.0 * (dx**2 + dy**2)
+     %>
+
+      <pose><%= dx/2 %> 0 <%= dz/2 %> 0 0 0</pose>
+      <inertial>
+        <mass><%= mass %></mass>
+        <inertia>
+          <ixx><%= ixx %></ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy><%= iyy %></iyy>
+          <iyz>0</iyz>
+          <izz><%= izz %></izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="top_side">
+    <%
+      dx = depth
+      dy = width
+      dz = thickness
+      # Inertia
+      mass = density * dx * dy * dz
+      ixx  = mass/12.0 * (dy**2 + dz**2)
+      iyy  = mass/12.0 * (dz**2 + dx**2)
+      izz  = mass/12.0 * (dx**2 + dy**2)
+     %>
+
+      <pose><%= dx/2 %> 0 <%= dz/2 + height %> 0 0 0</pose>
+      <inertial>
+        <mass><%= mass %></mass>
+        <inertia>
+          <ixx><%= ixx %></ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy><%= iyy %></iyy>
+          <iyz>0</iyz>
+          <izz><%= izz %></izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="top_side">
+    <%
+      dx = depth
+      dy = width
+      dz = thickness
+      # Inertia
+      mass = density * dx * dy * dz
+      ixx  = mass/12.0 * (dy**2 + dz**2)
+      iyy  = mass/12.0 * (dz**2 + dx**2)
+      izz  = mass/12.0 * (dx**2 + dy**2)
+     %>
+
+      <pose><%= dx/2 %> 0 <%= dz/2 + height %> 0 0 0</pose>
+      <inertial>
+        <mass><%= mass %></mass>
+        <inertia>
+          <ixx><%= ixx %></ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy><%= iyy %></iyy>
+          <iyz>0</iyz>
+          <izz><%= izz %></izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="left_side">
+    <%
+      dx = depth
+      dy = thickness
+      dz = height
+      # Inertia
+      mass = density * dx * dy * dz
+      ixx  = mass/12.0 * (dy**2 + dz**2)
+      iyy  = mass/12.0 * (dz**2 + dx**2)
+      izz  = mass/12.0 * (dx**2 + dy**2)
+     %>
+
+      <pose><%= depth/2 %> <%= -width/2 %> <%= thickness/2 + height/2 %> 0 0 0</pose>
+      <inertial>
+        <mass><%= mass %></mass>
+        <inertia>
+          <ixx><%= ixx %></ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy><%= iyy %></iyy>
+          <iyz>0</iyz>
+          <izz><%= izz %></izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="right_side">
+    <%
+      dx = depth
+      dy = thickness
+      dz = height
+      # Inertia
+      mass = density * dx * dy * dz
+      ixx  = mass/12.0 * (dy**2 + dz**2)
+      iyy  = mass/12.0 * (dz**2 + dx**2)
+      izz  = mass/12.0 * (dx**2 + dy**2)
+     %>
+
+      <pose><%= depth/2 %> <%= width/2 %> <%= thickness/2 + height/2 %> 0 0 0</pose>
+      <inertial>
+        <mass><%= mass %></mass>
+        <inertia>
+          <ixx><%= ixx %></ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy><%= iyy %></iyy>
+          <iyz>0</iyz>
+          <izz><%= izz %></izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+
+<!--
+  <joint name="back_top" type="fixed">
+    <parent>back_side</parent>
+    <child>top_side</child>
+  </joint>
+  <joint name="back_left" type="fixed">
+    <parent>back_side</parent>
+    <child>left_side</child>
+  </joint>
+  <joint name="back_right" type="fixed">
+    <parent>back_side</parent>
+    <child>right_side</child>
+  </joint>
+  <joint name="back_bottom" type="fixed">
+    <parent>back_side</parent>
+    <child>bottom_side</child>
+  </joint>
+  <joint name="bottom_front" type="fixed">
+    <parent>bottom_side</parent>
+    <child>front_side</child>
+  </joint> -->
+
+  </model>
+</sdf>

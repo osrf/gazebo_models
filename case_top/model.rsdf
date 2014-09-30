@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<%
+  # SI units (length in meters)
+
+  # Geometry
+
+  d = 0.084
+  r = d/2.0
+  height = 0.0115
+
+  # Inertia: approximate as a thin-walled cylindrical tube (not accurate)
+  mass = 0.0142
+  ixx  = mass*(r**2/2 + height**2/12)
+  iyy  = mass*(r**2/2 + height**2/12)
+  izz  = mass*r**2
+%>
+<sdf version="1.5">
+  <model name="case_top">
+    <link name="link">
+      <pose>0 0 <%= height/2 %> 0 0 0</pose>
+      <inertial>
+        <mass><%= mass %></mass>
+        <inertia>
+          <ixx><%= ixx %></ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy><%= iyy %></iyy>
+          <iyz>0</iyz>
+          <izz><%= izz %></izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius><%= r %></radius>
+            <length><%= height %></length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius><%= r %></radius>
+            <length><%= height %></length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Chrome</name>
+          </script>
+        </material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>
