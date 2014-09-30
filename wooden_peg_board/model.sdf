@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 
 <sdf version="1.5">
-  <model name="peg_board">
+  <model name="wooden_peg_board">
     <link name="base">
       <pose>0 0 0.00523 0 0 0</pose>
       <inertial>
@@ -46,6 +46,24 @@
         </material>
       </visual>
     </link>
+
+    <include>
+      <name>peg</name>
+      <uri>model://wooden_peg</uri>
+      <pose>0 0.038 0 0 0 0</pose>
+    </include>
+
+    <joint name="board_peg" type="revolute">
+      <parent>base</parent>
+      <child>peg</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
 
   </model>
 </sdf>
