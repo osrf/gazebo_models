@@ -4,20 +4,19 @@
     <link name="link">
       <pose>0 0 0.031 0 0 0</pose>
       <inertial>
-        <mass>0.001</mass>
+        <mass>0.0121</mass>
         <inertia>
-          <ixx>9.637224999999999e-07</ixx>
+          <ixx>3.908975583333333e-06</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>9.637224999999999e-07</iyy>
+          <iyy>3.908975583333333e-06</iyy>
           <iyz>0</iyz>
-          <izz>5.444999999999999e-09</izz>
+          <izz>6.58845e-08</izz>
         </inertia>
       </inertial>
 
       <collision name="collision">
         <geometry>
-          #TODO: replace with mesh of a tube
           <cylinder>
             <radius> 0.0033 </radius>
             <length> 0.062 </length>

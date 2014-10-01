@@ -36,7 +36,6 @@
 
       <collision name="collision">
         <geometry>
-          #TODO: replace with mesh of a tube
           <cylinder>
             <radius> <%= r2 %> </radius>
             <length> <%= h  %> </length>

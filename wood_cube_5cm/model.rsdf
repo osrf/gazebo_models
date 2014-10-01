@@ -8,12 +8,8 @@
   dy = 0.05
   dz = 0.05
 
-  # Material
-  # Assume soft wood with density of 500 kg / m^3
-  density = 500
-
   # Inertia
-  mass = density * dx * dy * dz
+  mass = 0.0565
   ixx  = mass/12.0 * (dy**2 + dz**2)
   iyy  = mass/12.0 * (dz**2 + dx**2)
   izz  = mass/12.0 * (dx**2 + dy**2)

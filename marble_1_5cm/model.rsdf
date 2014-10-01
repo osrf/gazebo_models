@@ -8,7 +8,6 @@
   d = 0.015
   r = d/2
 
-
   # Inertia
   mass = 0.0062
   ixx  = 2.0*mass*r**2/5.0
