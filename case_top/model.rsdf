@@ -32,19 +32,17 @@
 
       <collision name="collision">
         <geometry>
-          <cylinder>
-            <radius><%= r %></radius>
-            <length><%= height %></length>
-          </cylinder>
+          <mesh>
+            <uri>model://case_top/meshes/case_top.stl</uri>
+          </mesh>
         </geometry>
       </collision>
 
       <visual name="visual">
         <geometry>
-          <cylinder>
-            <radius><%= r %></radius>
-            <length><%= height %></length>
-          </cylinder>
+          <mesh>
+            <uri>model://case_top/meshes/case_top.stl</uri>
+          </mesh>
         </geometry>
         <material>
           <script>

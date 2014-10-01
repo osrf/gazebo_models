@@ -17,19 +17,17 @@
 
       <collision name="collision">
         <geometry>
-          <cylinder>
-            <radius>0.04</radius>
-            <length>0.02817</length>
-          </cylinder>
+          <mesh>
+            <uri>model://case_base/meshes/case_base.stl</uri>
+          </mesh>
         </geometry>
       </collision>
 
       <visual name="visual">
         <geometry>
-          <cylinder>
-            <radius>0.04</radius>
-            <length>0.02817</length>
-          </cylinder>
+          <mesh>
+            <uri>model://case_base/meshes/case_base.stl</uri>
+          </mesh>
         </geometry>
         <material>
           <script>
