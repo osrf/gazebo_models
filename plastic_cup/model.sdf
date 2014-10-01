@@ -17,19 +17,17 @@
 
       <collision name="collision">
         <geometry>
-          <cylinder>
-            <radius> 0.007 </radius>
-            <length> 0.13 </length>
-          </cylinder>
+          <mesh>
+            <uri>model://plastic_cup/meshes/plastic_cup.stl</uri>
+          </mesh>
         </geometry>
       </collision>
 
       <visual name="visual">
         <geometry>
-          <cylinder>
-            <radius> 0.007 </radius>
-            <length> 0.13 </length>
-          </cylinder>
+          <mesh>
+            <uri>model://plastic_cup/meshes/plastic_cup.stl</uri>
+          </mesh>
         </geometry>
         <material>
           <script>

@@ -40,19 +40,17 @@
 
       <collision name="collision">
         <geometry>
-          <cylinder>
-            <radius> <%= b %> </radius>
-            <length> <%= h  %> </length>
-          </cylinder>
+          <mesh>
+            <uri>model://plastic_cup/meshes/plastic_cup.stl</uri>
+          </mesh>
         </geometry>
       </collision>
 
       <visual name="visual">
         <geometry>
-          <cylinder>
-            <radius> <%= b %> </radius>
-            <length> <%= h  %> </length>
-          </cylinder>
+          <mesh>
+            <uri>model://plastic_cup/meshes/plastic_cup.stl</uri>
+          </mesh>
         </geometry>
         <material>
           <script>
