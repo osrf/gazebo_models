@@ -1,24 +1,39 @@
 <?xml version="1.0" ?>
+<%
+  # SI units (length in meters)
+
+  # Geometry
+
+  d = 0.08
+  r = d/2.0
+  height = 0.02817
+
+  # Inertia: approximate as a thin-walled cylindrical tube (not accurate)
+  mass = 0.0223
+  ixx  = mass*(r**2/2 + height**2/12)
+  iyy  = mass*(r**2/2 + height**2/12)
+  izz  = mass*r**2
+%>
 <sdf version="1.5">
-  <model name="case_top">
+  <model name="round_tin_base">
     <link name="link">
-      <pose>0 0 0.00575 0 0 0</pose>
+      <pose>0 0 <%= height/2 %> 0 0 0</pose>
       <inertial>
-        <mass>0.0142</mass>
+        <mass><%= mass %></mass>
         <inertia>
-          <ixx>1.2680895833333335e-05</ixx>
+          <ixx><%= ixx %></ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1.2680895833333335e-05</iyy>
+          <iyy><%= iyy %></iyy>
           <iyz>0</iyz>
-          <izz>2.5048800000000003e-05</izz>
+          <izz><%= izz %></izz>
         </inertia>
       </inertial>
 
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://case_top/meshes/case_top.stl</uri>
+            <uri>model://round_tin_base/meshes/round_tin_base.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -26,7 +41,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://case_top/meshes/case_top.stl</uri>
+            <uri>model://round_tin_base/meshes/round_tin_base.stl</uri>
           </mesh>
         </geometry>
         <material>

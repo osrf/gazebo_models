@@ -15,7 +15,7 @@
   izz  = mass*r**2
 %>
 <sdf version="1.5">
-  <model name="case_top">
+  <model name="round_tin_top">
     <link name="link">
       <pose>0 0 <%= height/2 %> 0 0 0</pose>
       <inertial>
@@ -33,7 +33,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://case_top/meshes/case_top.stl</uri>
+            <uri>model://round_tin_top/meshes/round_tin_top.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -41,7 +41,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://case_top/meshes/case_top.stl</uri>
+            <uri>model://round_tin_top/meshes/round_tin_top.stl</uri>
           </mesh>
         </geometry>
         <material>
