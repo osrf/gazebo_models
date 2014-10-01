@@ -4,7 +4,7 @@
 
   # Geometry
   # Height
-  h  = 0.13
+  h  = 0.002
   # Inner diameter
   d1 = 0.014
   r1 = d1/2.0
