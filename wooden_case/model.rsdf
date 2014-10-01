@@ -13,30 +13,32 @@
   # Assume soft wood with density of 500 kg / m^3
   density = 500
 
-  # Canonical order: back, front, bottom, top, left, right
-  boxes_x = [thickness, height, depth, depth, depth, depth]
-  boxes_y = [width, width, width, width, thickness, thickness]
-  boxes_z = [height, thickness, thickness, thickness, height, height]
+  # Canonical order: back, bottom, top, left, right
+  boxes_x = [thickness, depth, depth, depth, depth]
+  boxes_y = [width, width, width, thickness, thickness]
+  boxes_z = [height, thickness, thickness, height, height]
   
   box_dims = [boxes_x, boxes_y, boxes_z]
   
-  boxes_pos_x = [0, depth+height/2, boxes_x[2]/2, boxes_x[3]/2, depth/2, depth/2]
-  boxes_pos_y = [0, 0, 0, 0, -width/2, width/2]
-  boxes_pos_z = [boxes_z[0]/2, thickness/2, boxes_z[2]/2, boxes_z[3]/2+height, thickness/2+height/2, thickness/2+height/2]
+  boxes_pos_x = [0, boxes_x[1]/2, boxes_x[2]/2, depth/2, depth/2]
+  boxes_pos_y = [0, 0, 0, -width/2, width/2]
+  boxes_pos_z = [boxes_z[0]/2, boxes_z[1]/2, boxes_z[2]/2+height, thickness/2+height/2, thickness/2+height/2]
   box_positions = [boxes_pos_x, boxes_pos_y, boxes_pos_z]
 
-  ixxs = Array.new(6)
-  iyys = Array.new(6)
-  izzs = Array.new(6)
-  masses = Array.new(6)
+  ixxs = Array.new(boxes_x.length)
+  iyys = Array.new(boxes_x.length)
+  izzs = Array.new(boxes_x.length)
+  masses = Array.new(boxes_x.length)
 
 
-  total_COM = box_positions.map { |a| a.inject{|sum, x| sum + x}/a.length }
+  total_COM = box_positions.map { |a| a.inject{|sum, x| sum + x}/Float(a.length) }
+  #puts total_COM.to_s
+  # Comes out to about 0.1, 0, 0.15
 %>
 <sdf version="1.5">
   <model name="wooden_case">
-    <link name="link">
-    <%for i in (0..5) %>
+    <link name="case">
+    <%for i in (0..boxes_x.length-1) %>
     <%
       dx = box_dims[0][i]
       dy = box_dims[1][i]
@@ -79,38 +81,101 @@
 
       total_mass = masses.inject{|sum, x| sum + x}
       ixx = 0
+      ixy = 0
       iyy = 0
+      iyz = 0
       izz = 0
+      ixz = 0
       for i in (0..boxes_pos_x.length-1)
         ixx+=masses[i]*( (boxes_pos_y[i] - total_COM[1])**2 + (boxes_pos_z[i] - total_COM[2])**2 ) + ixxs[i]
+        ixy+=masses[i]*( (boxes_pos_z[i] - total_COM[2])**2 )
         iyy+=masses[i]*( (boxes_pos_x[i] - total_COM[0])**2 + (boxes_pos_z[i] - total_COM[2])**2 ) + iyys[i]
+        iyz+=masses[i]*( (boxes_pos_x[i] - total_COM[0])**2)
         izz+=masses[i]*( (boxes_pos_y[i] - total_COM[1])**2 + (boxes_pos_x[i] - total_COM[0])**2 ) + izzs[i]
+        ixz+=masses[i]*( (boxes_pos_y[i] - total_COM[1])**2)
       end
     %>
     <inertial>
+      <pose><%= total_COM.join(' ')%></pose>
       <mass><%= total_mass %></mass>
       <inertia>
         <ixx><%= ixx %></ixx>
-        <ixy>0</ixy>
-        <ixz>0</ixz>
+        <ixy><%= ixy %></ixy>
+        <ixz><%= ixz %></ixz>
         <iyy><%= iyy %></iyy>
-        <iyz>0</iyz>
+        <iyz><%= iyz %></iyz>
         <izz><%= izz %></izz>
       </inertia>
     </inertial>
 
     </link>
-    <!--<joint name="bottom_front" type="revolute">
-      <parent>bottom_side</parent>
-      <child>front_side</child>
+
+    <link name = "front">
+
+      <%
+        dx = height
+        dy = width
+        dz = thickness
+        x_pos = depth + dx/2
+        y_pos = 0
+        z_pos = dz/2
+        mass = dx*dy*dz*density
+
+        ixx = masses[i]/12.0 * (dy**2 + dz**2)
+        iyy = masses[i]/12.0 * (dz**2 + dx**2)
+        izz = masses[i]/12.0 * (dx**2 + dy**2)
+       %>
+
+      <collision name="collision" >
+        <pose><%= x_pos.to_s+' '+y_pos.to_s+' '+z_pos.to_s %> 0 0 0</pose>
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+
+      </collision>
+
+      <visual name="visual" >
+        <pose><%= x_pos.to_s+' '+y_pos.to_s+' '+z_pos.to_s %> 0 0 0</pose>
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+
+      <inertial>
+        <mass><%= mass %></mass>
+        <pose><%= x_pos.to_s+' '+y_pos.to_s+' '+z_pos.to_s %> 0 0 0</pose>
+        <inertia>
+          <ixx><%= ixx %></ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy><%= iyy %></iyy>
+          <iyz>0</iyz>
+          <izz><%= izz %></izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name="case_front" type="revolute">
+      <parent>case</parent>
+      <child>front</child>
+      <pose><%= depth %> 0 0 0 0 0</pose>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz>0 1 0</xyz>
         <limit>
-          <upper>0</upper>
-          <lower>0</lower>
+          <lower><%= -Math::PI/2 %></lower>
+          <upper><%= 0 %></upper>
         </limit> 
       </axis>
-    </joint> -->
+    </joint>
 
   </model>
 </sdf>

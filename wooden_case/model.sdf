@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
   <model name="wooden_case">
-    <link name="link">
+    <link name="case">
 
       <collision name="collision0">
         <pose>0 0 0.175 0 0 0</pose>
@@ -30,20 +30,20 @@
 
 
       <collision name="collision1">
-        <pose>0.32499999999999996 0 0.01 0 0 0</pose>
+        <pose>0.075 0 0.01 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.35 0.57 0.02</size>
+            <size>0.15 0.57 0.02</size>
           </box>
         </geometry>
 
       </collision>
 
       <visual name="visual1" >
-        <pose>0.32499999999999996 0 0.01 0 0 0</pose>
+        <pose>0.075 0 0.01 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.35 0.57 0.02</size>
+            <size>0.15 0.57 0.02</size>
           </box>
         </geometry>
         <material>
@@ -56,7 +56,7 @@
 
 
       <collision name="collision2">
-        <pose>0.075 0 0.01 0 0 0</pose>
+        <pose>0.075 0 0.36 0 0 0</pose>
         <geometry>
           <box>
             <size>0.15 0.57 0.02</size>
@@ -66,7 +66,7 @@
       </collision>
 
       <visual name="visual2" >
-        <pose>0.075 0 0.01 0 0 0</pose>
+        <pose>0.075 0 0.36 0 0 0</pose>
         <geometry>
           <box>
             <size>0.15 0.57 0.02</size>
@@ -82,20 +82,20 @@
 
 
       <collision name="collision3">
-        <pose>0.075 0 0.36 0 0 0</pose>
+        <pose>0.075 -0.285 0.185 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.15 0.57 0.02</size>
+            <size>0.15 0.02 0.35</size>
           </box>
         </geometry>
 
       </collision>
 
       <visual name="visual3" >
-        <pose>0.075 0 0.36 0 0 0</pose>
+        <pose>0.075 -0.285 0.185 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.15 0.57 0.02</size>
+            <size>0.15 0.02 0.35</size>
           </box>
         </geometry>
         <material>
@@ -108,32 +108,6 @@
 
 
       <collision name="collision4">
-        <pose>0.075 -0.285 0.185 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.15 0.02 0.35</size>
-          </box>
-        </geometry>
-
-      </collision>
-
-      <visual name="visual4" >
-        <pose>0.075 -0.285 0.185 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.15 0.02 0.35</size>
-          </box>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Wood</name>
-          </script>
-        </material>
-      </visual>
-
-
-      <collision name="collision5">
         <pose>0.075 0.285 0.185 0 0 0</pose>
         <geometry>
           <box>
@@ -143,7 +117,7 @@
 
       </collision>
 
-      <visual name="visual5" >
+      <visual name="visual4" >
         <pose>0.075 0.285 0.185 0 0 0</pose>
         <geometry>
           <box>
@@ -160,29 +134,73 @@
 
 
     <inertial>
-      <mass>6.749999999999998</mass>
+      <pose>0.06 0.0 0.183</pose>
+      <mass>4.754999999999999</mass>
       <inertia>
-        <ixx>0.3681793124999999</ixx>
-        <ixy>0</ixy>
-        <ixz>0</ixz>
-        <iyy>0.27542362499999995</iyy>
-        <iyz>0</iyz>
-        <izz>0.38654181249999986</izz>
+        <ixx>0.2692829699999999</ixx>
+        <ixy>0.05250746999999999</ixy>
+        <ixz>0.08528624999999998</ixz>
+        <iyy>0.09669334499999997</iyy>
+        <iyz>0.007802999999999998</iyz>
+        <izz>0.19867862499999997</izz>
       </inertia>
     </inertial>
 
     </link>
-    <!--<joint name="bottom_front" type="revolute">
-      <parent>bottom_side</parent>
-      <child>front_side</child>
+
+    <link name = "front">
+
+
+      <collision name="collision" >
+        <pose>0.32499999999999996 0 0.01 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.35 0.57 0.02</size>
+          </box>
+        </geometry>
+
+      </collision>
+
+      <visual name="visual" >
+        <pose>0.32499999999999996 0 0.01 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.35 0.57 0.02</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+
+      <inertial>
+        <mass>1.9949999999999999</mass>
+        <pose>0.32499999999999996 0 0.01 0 0 0</pose>
+        <inertia>
+          <ixx>0.014231874999999996</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.005376874999999998</iyy>
+          <iyz>0</iyz>
+          <izz>0.019573749999999994</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name="case_front" type="revolute">
+      <parent>case</parent>
+      <child>front</child>
+      <pose>0.15 0 0 0 0 0</pose>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz>0 1 0</xyz>
         <limit>
+          <lower>-1.5707963267948966</lower>
           <upper>0</upper>
-          <lower>0</lower>
         </limit> 
       </axis>
-    </joint> -->
+    </joint>
 
   </model>
 </sdf>

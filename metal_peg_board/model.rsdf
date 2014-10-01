@@ -122,6 +122,7 @@
      %>
 
     <inertial>
+      <pose><%= total_COM.join(' ') %> 0 0 0</pose>
       <mass><%= total_mass %></mass>
       <inertia>
         <ixx><%= ixx %></ixx>
