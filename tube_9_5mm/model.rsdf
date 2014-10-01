@@ -36,19 +36,17 @@
 
       <collision name="collision">
         <geometry>
-          <cylinder>
-            <radius> <%= r2 %> </radius>
-            <length> <%= h  %> </length>
-          </cylinder>
+          <mesh>
+            <uri>model://tube_9_5mm/meshes/tube_9_5.stl</uri>
+          </mesh>
         </geometry>
       </collision>
 
       <visual name="visual">
         <geometry>
-          <cylinder>
-            <radius> <%= r2 %> </radius>
-            <length> <%= h  %> </length>
-          </cylinder>
+          <mesh>
+            <uri>model://tube_9_5mm/meshes/tube_9_5.stl</uri>
+          </mesh>
         </geometry>
         <material>
           <script>

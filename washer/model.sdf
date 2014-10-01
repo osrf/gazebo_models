@@ -17,26 +17,18 @@
 
       <collision name="collision">
         <geometry>
-          <cylinder>
-            <radius> 0.0175 </radius>
-            <length> 0.002 </length>
-          </cylinder>
+          <mesh>
+            <uri>model://washer/meshes/washer.stl</uri>
+          </mesh>
         </geometry>
       </collision>
 
       <visual name="visual">
         <geometry>
-          <cylinder>
-            <radius> 0.0175 </radius>
-            <length> 0.002 </length>
-          </cylinder>
+          <mesh>
+            <uri>model://washer/meshes/washer.stl</uri>
+          </mesh>
         </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Chrome</name>
-          </script>
-        </material>
       </visual>
 
     </link>

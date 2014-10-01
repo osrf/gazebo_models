@@ -17,19 +17,17 @@
 
       <collision name="collision">
         <geometry>
-          <cylinder>
-            <radius> 0.0125 </radius>
-            <length> 0.1145 </length>
-          </cylinder>
+          <mesh>
+            <uri>model://tube_2_25cm/meshes/tube_2_25.stl</uri>
+          </mesh>
         </geometry>
       </collision>
 
       <visual name="visual">
         <geometry>
-          <cylinder>
-            <radius> 0.0125 </radius>
-            <length> 0.1145 </length>
-          </cylinder>
+          <mesh>
+            <uri>model://tube_2_25cm/meshes/tube_2_25.stl</uri>
+          </mesh>
         </geometry>
         <material>
           <script>

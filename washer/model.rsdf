@@ -4,7 +4,7 @@
 
   # Geometry
   # Height
-  h  = 0.002
+  h  = 0.13
   # Inner diameter
   d1 = 0.014
   r1 = d1/2.0
@@ -36,26 +36,18 @@
 
       <collision name="collision">
         <geometry>
-          <cylinder>
-            <radius> <%= r2 %> </radius>
-            <length> <%= h  %> </length>
-          </cylinder>
+          <mesh>
+            <uri>model://washer/meshes/washer.stl</uri>
+          </mesh>
         </geometry>
       </collision>
 
       <visual name="visual">
         <geometry>
-          <cylinder>
-            <radius> <%= r2 %> </radius>
-            <length> <%= h  %> </length>
-          </cylinder>
+          <mesh>
+            <uri>model://washer/meshes/washer.stl</uri>
+          </mesh>
         </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Chrome</name>
-          </script>
-        </material>
       </visual>
 
     </link>
