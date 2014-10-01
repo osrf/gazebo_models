@@ -2,22 +2,11 @@
 
 <sdf version="1.5">
   <model name="wooden_peg_board">
-    <link name="base">
+    <link name="link">
       <pose>0 0 0.00523 0 0 0</pose>
-      <inertial>
-        <mass>0.2765</mass>
-        <inertia>
-          <ixx>0.0025148009472833336</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.00024037001228333334</iyy>
-          <iyz>0</iyz>
-          <izz>0.002750128908333333</izz>
-        </inertia>
-      </inertial>
 
-      <collision name="collision">
-        <geometry>
+      <collision name="collision_base">
+        <geometry> <!-- base -->
           <box>
             <size>0.1016 0.3302 0.01046</size>
           </box>
@@ -32,7 +21,7 @@
         </surface>
       </collision>
 
-      <visual name="visual">
+      <visual name="visual_base">
         <geometry>
           <box>
             <size>0.1016 0.3302 0.01046</size>
@@ -45,25 +34,55 @@
           </script>
         </material>
       </visual>
-    </link>
 
-    <include>
+    <!--<include>
       <name>peg</name>
       <uri>model://wooden_peg</uri>
-      <pose>0 0.038 0 0 0 0</pose>
-    </include>
+    </include>-->
 
-    <joint name="board_peg" type="revolute">
-      <parent>base</parent>
-      <child>peg</child>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <upper>0</upper>
-          <lower>0</lower>
-        </limit>
-      </axis>
-    </joint>
 
+      
+
+    <collision name="collision_peg">
+      <pose>0 0.038 0.04523 0 0 0</pose>
+      <geometry>
+        <cylinder>
+          <radius> 0.00975 </radius>
+          <length> 0.08 </length>
+        </cylinder>
+      </geometry>
+    </collision>
+
+
+    <visual name="visual_peg">
+      <pose>0 0.038 0.04523 0 0 0</pose>
+      <geometry>
+        <cylinder>
+          <radius> 0.00975 </radius>
+          <length> 0.08 </length>
+        </cylinder>
+      </geometry>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/Wood</name>
+        </script>
+      </material>
+    </visual>
+
+
+    <inertial>
+      <mass>0.2795</mass>
+      <inertia>
+        <ixx>0.0037602616429083338</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>0.0005373635291583333</iyy>
+        <iyz>0</iyz>
+        <izz>0.0040593831208333335</izz>
+      </inertia>
+    </inertial>
+
+    </link>
   </model>
 </sdf>

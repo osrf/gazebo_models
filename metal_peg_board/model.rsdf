@@ -2,39 +2,26 @@
 
 <sdf version="1.5">
   <model name="metal_peg_board">
-    <link name="base">
+    <link name="link">
       <%
-        # Wood block with dimensions 10 x 10 x 10 cm
-        # SI units (length in meters)
-
         # Geometry
-        dx = 0.1016
-        dy = 0.3302
-        dz = 0.01046
+        base_depth = 0.1016
+        base_width = 0.3302
+        base_height = 0.01046
+        base_COM = [base_depth/2, base_width/2, base_height/2]
 
         # Inertia
-        mass = 0.2765
-        ixx  = mass/12.0 * (dy**2 + dz**2)
-        iyy  = mass/12.0 * (dz**2 + dx**2)
-        izz  = mass/12.0 * (dx**2 + dy**2)
+        base_mass = 0.2765
+        base_ixx  = base_mass/12.0 * (base_width**2 + base_height**2)
+        base_iyy  = base_mass/12.0 * (base_height**2 + base_depth**2)
+        base_izz  = base_mass/12.0 * (base_depth**2 + base_width**2)
       %>
-      <pose>0 0 <%= dz/2 %> 0 0 0</pose>
-      <inertial>
-        <mass><%= mass %></mass>
-        <inertia>
-          <ixx><%= ixx %></ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy><%= iyy %></iyy>
-          <iyz>0</iyz>
-          <izz><%= izz %></izz>
-        </inertia>
-      </inertial>
+      <pose>0 0 <%= base_height/2 %> 0 0 0</pose>
 
-      <collision name="collision">
-        <geometry>
+      <collision name="collision_base">
+        <geometry> <!-- base -->
           <box>
-            <size><%= dx %> <%= dy %> <%= dz %></size>
+            <size><%= base_depth %> <%= base_width %> <%= base_height %></size>
           </box>
         </geometry>
         <surface>
@@ -47,10 +34,10 @@
         </surface>
       </collision>
 
-      <visual name="visual">
+      <visual name="visual_base">
         <geometry>
           <box>
-            <size><%= dx %> <%= dy %> <%= dz %></size>
+            <size><%= base_depth %> <%= base_width %> <%= base_height %></size>
           </box>
         </geometry>
         <material>
@@ -60,25 +47,92 @@
           </script>
         </material>
       </visual>
-    </link>
 
-    <include>
+    <!--<include>
       <name>peg</name>
-      <uri>model://metal_peg</uri>
-      <pose>0 0.038 0 0 0 0</pose>
-    </include>
+      <uri>model://wooden_peg</uri>
+    </include>-->
 
-    <joint name="board_peg" type="revolute">
-      <parent>base</parent>
-      <child>peg</child>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <upper>0</upper>
-          <lower>0</lower>
-        </limit>
-      </axis>
-    </joint>
+    <%
+      # SI units (length in meters)
 
+      # Geometry
+      # Height
+
+      peg_height = 0.062
+      # diameter
+      peg_diameter = 0.0066
+      peg_radius = peg_diameter/2.0      
+
+      peg_offset_y = 0.038
+
+      # Inertia
+      peg_mass = 0.003
+      peg_mass = 0.001
+      peg_COM = [0, peg_offset_y, peg_height/2 + base_height/2]
+
+      peg_ixx  = peg_mass/12.0 * 3*(peg_radius**2  + peg_height**2 )
+      peg_iyy  = peg_mass/12.0 * 3*(peg_radius**2  + peg_height**2 )
+      peg_izz  = peg_mass/2.0 * peg_radius**2
+    %>
+      
+
+    <collision name="collision_peg">
+      <pose>0 <%= peg_offset_y %> <%= peg_height/2 + base_height/2%> 0 0 0</pose>
+      <geometry>
+        <cylinder>
+          <radius> <%= peg_radius %> </radius>
+          <length> <%= peg_height  %> </length>
+        </cylinder>
+      </geometry>
+    </collision>
+
+
+    <visual name="visual_peg">
+      <pose>0 0.038 <%= peg_height/2 + base_height/2%> 0 0 0</pose>
+      <geometry>
+        <cylinder>
+          <radius> <%= peg_radius %> </radius>
+          <length> <%= peg_height  %> </length>
+        </cylinder>
+      </geometry>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/Chrome</name>
+        </script>
+      </material>
+    </visual>
+
+    <% #Moment of inertia calculation:
+       total_mass = base_mass + peg_mass
+       total_COM = [0, 0, 0]
+       for i in (0..2)
+         total_COM[i] = (peg_COM[i]+ base_COM[i])/2
+       end
+
+       ixx = peg_mass*( (peg_COM[1] - total_COM[1])**2 + (peg_COM[2] - total_COM[2])**2 ) + peg_ixx
+       ixx+=base_mass*( (base_COM[1] - total_COM[1])**2 + (base_COM[2] - total_COM[2])**2 ) + base_ixx
+
+       iyy = peg_mass*( (peg_COM[0] - total_COM[0])**2 + (peg_COM[2] - total_COM[2])**2 ) + peg_iyy
+       iyy+=base_mass*( (base_COM[0] - total_COM[0])**2 + (base_COM[2] - total_COM[2])**2 ) + base_iyy
+
+       izz = peg_mass*( (peg_COM[0] - total_COM[0])**2 + (peg_COM[1] - total_COM[1])**2 ) + peg_izz
+       izz+=base_mass*( (base_COM[0] - total_COM[0])**2 + (base_COM[1] - total_COM[1])**2 ) + base_izz
+     %>
+
+    <inertial>
+      <mass><%= total_mass %></mass>
+      <inertia>
+        <ixx><%= ixx %></ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy><%= iyy %></iyy>
+        <iyz>0</iyz>
+        <izz><%= izz %></izz>
+      </inertia>
+    </inertial>
+
+    </link>
   </model>
 </sdf>

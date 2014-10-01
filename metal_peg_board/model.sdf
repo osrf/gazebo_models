@@ -2,22 +2,11 @@
 
 <sdf version="1.5">
   <model name="metal_peg_board">
-    <link name="base">
+    <link name="link">
       <pose>0 0 0.00523 0 0 0</pose>
-      <inertial>
-        <mass>0.2765</mass>
-        <inertia>
-          <ixx>0.0025148009472833336</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.00024037001228333334</iyy>
-          <iyz>0</iyz>
-          <izz>0.002750128908333333</izz>
-        </inertia>
-      </inertial>
 
-      <collision name="collision">
-        <geometry>
+      <collision name="collision_base">
+        <geometry> <!-- base -->
           <box>
             <size>0.1016 0.3302 0.01046</size>
           </box>
@@ -32,7 +21,7 @@
         </surface>
       </collision>
 
-      <visual name="visual">
+      <visual name="visual_base">
         <geometry>
           <box>
             <size>0.1016 0.3302 0.01046</size>
@@ -45,25 +34,54 @@
           </script>
         </material>
       </visual>
-    </link>
 
-    <include>
+    <!--<include>
       <name>peg</name>
-      <uri>model://metal_peg</uri>
-      <pose>0 0.038 0 0 0 0</pose>
-    </include>
+      <uri>model://wooden_peg</uri>
+    </include>-->
 
-    <joint name="board_peg" type="revolute">
-      <parent>base</parent>
-      <child>peg</child>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <upper>0</upper>
-          <lower>0</lower>
-        </limit>
-      </axis>
-    </joint>
+      
 
+    <collision name="collision_peg">
+      <pose>0 0.038 0.03623 0 0 0</pose>
+      <geometry>
+        <cylinder>
+          <radius> 0.0033 </radius>
+          <length> 0.062 </length>
+        </cylinder>
+      </geometry>
+    </collision>
+
+
+    <visual name="visual_peg">
+      <pose>0 0.038 0.03623 0 0 0</pose>
+      <geometry>
+        <cylinder>
+          <radius> 0.0033 </radius>
+          <length> 0.062 </length>
+        </cylinder>
+      </geometry>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/Chrome</name>
+        </script>
+      </material>
+    </visual>
+
+
+    <inertial>
+      <mass>0.2775</mass>
+      <inertia>
+        <ixx>0.0037031462385333333</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>0.0004870350097833333</iyy>
+        <iyz>0</iyz>
+        <izz>0.004049878447083334</izz>
+      </inertia>
+    </inertial>
+
+    </link>
   </model>
 </sdf>

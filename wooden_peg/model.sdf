@@ -17,7 +17,6 @@
 
       <collision name="collision">
         <geometry>
-          #TODO: replace with mesh of a tube
           <cylinder>
             <radius> 0.00975 </radius>
             <length> 0.08 </length>

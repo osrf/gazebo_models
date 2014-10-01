@@ -4,22 +4,21 @@
 
   # Geometry
   # Height
-  h  = 0.08
+  peg_height  = 0.08
   # diameter
   d = 0.0195
-  r = d/2.0
+  peg_radius = d/2.0
 
   # Inertia
-  # TODO: weigh object and get mass
   mass = 0.003
-  ixx  = mass/12.0 * 3*(r**2  + h**2 )
-  iyy  = mass/12.0 * 3*(r**2  + h**2 )
-  izz  = mass/2.0 * r**2
+  ixx  = mass/12.0 * 3*(peg_radius**2  + peg_height**2 )
+  iyy  = mass/12.0 * 3*(peg_radius**2  + peg_height**2 )
+  izz  = mass/2.0 * peg_radius**2
 %>
 <sdf version="1.5">
   <model name="wooden_peg">
     <link name="link">
-      <pose>0 0 <%= h/2 %> 0 0 0</pose>
+      <pose>0 0 <%= peg_height/2 %> 0 0 0</pose>
       <inertial>
         <mass><%= mass %></mass>
         <inertia>
@@ -34,10 +33,9 @@
 
       <collision name="collision">
         <geometry>
-          #TODO: replace with mesh of a tube
           <cylinder>
-            <radius> <%= r %> </radius>
-            <length> <%= h  %> </length>
+            <radius> <%= peg_radius %> </radius>
+            <length> <%= peg_height  %> </length>
           </cylinder>
         </geometry>
       </collision>
@@ -45,8 +43,8 @@
       <visual name="visual">
         <geometry>
           <cylinder>
-            <radius> <%= r %> </radius>
-            <length> <%= h  %> </length>
+            <radius> <%= peg_radius %> </radius>
+            <length> <%= peg_height  %> </length>
           </cylinder>
         </geometry>
         <material>
