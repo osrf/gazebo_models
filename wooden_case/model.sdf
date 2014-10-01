@@ -1,22 +1,10 @@
-0 0 0.175
-0 0 0.175
-0.32499999999999996 0 0.01
-0.32499999999999996 0 0.01
-0.075 0 0.01
-0.075 0 0.01
-0.075 0 0.36
-0.075 0 0.36
-0.075 -0.285 0.185
-0.075 -0.285 0.185
-0.075 0.285 0.185
-0.075 0.285 0.185
 <?xml version="1.0" ?>
 <sdf version="1.5">
   <model name="wooden_case">
     <link name="link">
 
       <collision name="collision0">
-        <pose> 0 0 0</pose>
+        <pose>0 0 0.175 0 0 0</pose>
         <geometry>
           <box>
             <size>0.02 0.57 0.35</size>
@@ -25,8 +13,8 @@
 
       </collision>
 
-      <visual name="visual0"
-        <pose> 0 0 0</pose>
+      <visual name="visual0" >
+        <pose>0 0 0.175 0 0 0</pose>
         <geometry>
           <box>
             <size>0.02 0.57 0.35</size>
@@ -39,24 +27,23 @@
           </script>
         </material>
       </visual>
-    </link>
 
 
       <collision name="collision1">
-        <pose> 0 0 0</pose>
+        <pose>0.32499999999999996 0 0.01 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.02 0.57 0.35</size>
+            <size>0.35 0.57 0.02</size>
           </box>
         </geometry>
 
       </collision>
 
-      <visual name="visual1"
-        <pose> 0 0 0</pose>
+      <visual name="visual1" >
+        <pose>0.32499999999999996 0 0.01 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.02 0.57 0.35</size>
+            <size>0.35 0.57 0.02</size>
           </box>
         </geometry>
         <material>
@@ -66,11 +53,10 @@
           </script>
         </material>
       </visual>
-    </link>
 
 
       <collision name="collision2">
-        <pose> 0 0 0</pose>
+        <pose>0.075 0 0.01 0 0 0</pose>
         <geometry>
           <box>
             <size>0.15 0.57 0.02</size>
@@ -79,8 +65,8 @@
 
       </collision>
 
-      <visual name="visual2"
-        <pose> 0 0 0</pose>
+      <visual name="visual2" >
+        <pose>0.075 0 0.01 0 0 0</pose>
         <geometry>
           <box>
             <size>0.15 0.57 0.02</size>
@@ -93,11 +79,10 @@
           </script>
         </material>
       </visual>
-    </link>
 
 
       <collision name="collision3">
-        <pose> 0 0 0</pose>
+        <pose>0.075 0 0.36 0 0 0</pose>
         <geometry>
           <box>
             <size>0.15 0.57 0.02</size>
@@ -106,8 +91,8 @@
 
       </collision>
 
-      <visual name="visual3"
-        <pose> 0 0 0</pose>
+      <visual name="visual3" >
+        <pose>0.075 0 0.36 0 0 0</pose>
         <geometry>
           <box>
             <size>0.15 0.57 0.02</size>
@@ -120,11 +105,10 @@
           </script>
         </material>
       </visual>
-    </link>
 
 
       <collision name="collision4">
-        <pose> 0 0 0</pose>
+        <pose>0.075 -0.285 0.185 0 0 0</pose>
         <geometry>
           <box>
             <size>0.15 0.02 0.35</size>
@@ -133,8 +117,8 @@
 
       </collision>
 
-      <visual name="visual4"
-        <pose> 0 0 0</pose>
+      <visual name="visual4" >
+        <pose>0.075 -0.285 0.185 0 0 0</pose>
         <geometry>
           <box>
             <size>0.15 0.02 0.35</size>
@@ -147,11 +131,10 @@
           </script>
         </material>
       </visual>
-    </link>
 
 
       <collision name="collision5">
-        <pose> 0 0 0</pose>
+        <pose>0.075 0.285 0.185 0 0 0</pose>
         <geometry>
           <box>
             <size>0.15 0.02 0.35</size>
@@ -160,8 +143,8 @@
 
       </collision>
 
-      <visual name="visual5"
-        <pose> 0 0 0</pose>
+      <visual name="visual5" >
+        <pose>0.075 0.285 0.185 0 0 0</pose>
         <geometry>
           <box>
             <size>0.15 0.02 0.35</size>
@@ -174,21 +157,21 @@
           </script>
         </material>
       </visual>
-    </link>
 
 
     <inertial>
       <mass>6.749999999999998</mass>
       <inertia>
-        <ixx>0.3884784374999999</ixx>
+        <ixx>0.3681793124999999</ixx>
         <ixy>0</ixy>
         <ixz>0</ixz>
         <iyy>0.27542362499999995</iyy>
         <iyz>0</iyz>
-        <izz>0.3662426874999999</izz>
+        <izz>0.38654181249999986</izz>
       </inertia>
     </inertial>
 
+    </link>
     <!--<joint name="bottom_front" type="revolute">
       <parent>bottom_side</parent>
       <child>front_side</child>

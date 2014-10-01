@@ -14,9 +14,9 @@
   density = 500
 
   # Canonical order: back, front, bottom, top, left, right
-  boxes_x = [thickness, thickness, depth, depth, depth, depth]
+  boxes_x = [thickness, height, depth, depth, depth, depth]
   boxes_y = [width, width, width, width, thickness, thickness]
-  boxes_z = [height, height, thickness, thickness, height, height]
+  boxes_z = [height, thickness, thickness, thickness, height, height]
   
   box_dims = [boxes_x, boxes_y, boxes_z]
   
@@ -49,7 +49,7 @@
      %>
 
       <collision name=<%= '"collision'+i.to_s+ '"' %>>
-        <pose><%puts boxes_pos_x[i].to_s+' '+boxes_pos_y[i].to_s+' '+boxes_pos_z[i].to_s %> 0 0 0</pose>
+        <pose><%= boxes_pos_x[i].to_s+' '+boxes_pos_y[i].to_s+' '+boxes_pos_z[i].to_s %> 0 0 0</pose>
         <geometry>
           <box>
             <size><%= dx %> <%= dy %> <%= dz %></size>
@@ -58,8 +58,8 @@
 
       </collision>
 
-      <visual name=<%= '"visual'+i.to_s+ '"' %>
-        <pose><%puts boxes_pos_x[i].to_s+' '+boxes_pos_y[i].to_s+' '+boxes_pos_z[i].to_s %> 0 0 0</pose>
+      <visual name=<%= '"visual'+i.to_s+ '"' %> >
+        <pose><%= boxes_pos_x[i].to_s+' '+boxes_pos_y[i].to_s+' '+boxes_pos_z[i].to_s %> 0 0 0</pose>
         <geometry>
           <box>
             <size><%= dx %> <%= dy %> <%= dz %></size>
@@ -72,7 +72,6 @@
           </script>
         </material>
       </visual>
-    </link>
 
     <% end %>
 
@@ -100,6 +99,7 @@
       </inertia>
     </inertial>
 
+    </link>
     <!--<joint name="bottom_front" type="revolute">
       <parent>bottom_side</parent>
       <child>front_side</child>
