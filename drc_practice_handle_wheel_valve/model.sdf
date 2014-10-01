@@ -2,7 +2,6 @@
 <sdf version="1.5">
   <model name="handle_wheel_valve">
     <link name="handle">
-      <!--<pose>0 0.0300 0 0 0 0</pose> -->
       <inertial>
         <pose>0 0.0600 0 0 0 0</pose>
         <mass>4.6114</mass>
@@ -34,7 +33,7 @@
           </friction>
           <contact>
             <ode>
-              <!--<soft_cfm>0.01</soft_cfm>-->
+              <soft_cfm>0.01</soft_cfm>
               <soft_erp />
               <kp>1000000.0</kp>
               <kd>100000.0</kd>
