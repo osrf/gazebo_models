@@ -3,7 +3,7 @@
   <model name="handle_wheel_valve">
     <link name="handle">
       <inertial>
-        <pose>0.06 0 0 0 0 0</pose>
+        <pose>0.03 0 0.01 0 0 0</pose>
         <mass>4.6114</mass>
         <inertia>
           <ixx>0.0252</ixx>
