@@ -70,7 +70,7 @@
 
     <joint name="board_peg" type="revolute">
       <parent>base</parent>
-      <child>peg</child>
+      <child>peg::link</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
