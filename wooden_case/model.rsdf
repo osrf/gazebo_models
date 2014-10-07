@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <%
-  # Wood block with dimensions 5 x 5 x 5 cm
+  # Wooden case for ARAT models
   # SI units (length in meters)
 
   # Geometry
@@ -44,7 +44,6 @@
 %>
 <sdf version="1.5">
   <model name="wooden_case">
-    <pose>0 0 <%= block_size[2] %>  0 0 0</pose>
     <link name="base">
      <%
       # Compute inertia
@@ -103,6 +102,7 @@
       iyy = lumped_iyy
       izz = lumped_izz
      %>
+      <pose>0 0 <%= block_size[2] %>  0 0 0</pose>
       <inertial>
         <pose><%= c.join(' ') %>  0 0 0</pose>
         <mass><%= mass %></mass>
@@ -150,21 +150,18 @@
       <% end %>
     </link>
 
-<!--
-    <link name="front_side">
-
-    <%
-      dx = thickness
-      dy = width
-      dz = height
-      # Inertia
-      mass = density * dx * dy * dz
-      ixx  = mass/12.0 * (dy**2 + dz**2)
-      iyy  = mass/12.0 * (dz**2 + dx**2)
-      izz  = mass/12.0 * (dx**2 + dy**2)
-     %>
-
-      <pose><%= depth+height/2 %> 0  <%= thickness/2%> 0 <%= Math::PI/2 %> 0</pose>
+    <link name="lid">
+     <% # Size and inertia of box lid
+        dx = height
+        dy = width
+        dz = t
+        pos = [(dx+depth + block_size[2]-t)/2, 0, t/2]
+        mass = density * dx * dy * dz
+        ixx = mass/12.0 * (dy**2 + dz**2)
+        iyy = mass/12.0 * (dz**2 + dx**2)
+        izz = mass/12.0 * (dx**2 + dy**2)
+      %>
+      <pose><%= pos.join(' ') %>  0 0 0</pose>
       <inertial>
         <mass><%= mass %></mass>
         <inertia>
@@ -176,8 +173,7 @@
           <izz><%= izz %></izz>
         </inertia>
       </inertial>
-
-      <collision name="collision">
+      <collision name='collision'>
         <geometry>
           <box>
             <size><%= dx %> <%= dy %> <%= dz %></size>
@@ -187,8 +183,7 @@
           <%= surface %>
         </surface>
       </collision>
-
-      <visual name="visual">
+      <visual name='visual'>
         <geometry>
           <box>
             <size><%= dx %> <%= dy %> <%= dz %></size>
@@ -203,319 +198,18 @@
       </visual>
     </link>
 
-    <link name="bottom_side">
-    <%
-      dx = depth
-      dy = width
-      dz = thickness
-      # Inertia
-      mass = density * dx * dy * dz
-      ixx  = mass/12.0 * (dy**2 + dz**2)
-      iyy  = mass/12.0 * (dz**2 + dx**2)
-      izz  = mass/12.0 * (dx**2 + dy**2)
-     %>
-
-      <pose><%= dx/2 %> 0 <%= dz/2 %> 0 0 0</pose>
-      <inertial>
-        <mass><%= mass %></mass>
-        <inertia>
-          <ixx><%= ixx %></ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy><%= iyy %></iyy>
-          <iyz>0</iyz>
-          <izz><%= izz %></izz>
-        </inertia>
-      </inertial>
-
-      <collision name="collision">
-        <geometry>
-          <box>
-            <size><%= dx %> <%= dy %> <%= dz %></size>
-          </box>
-        </geometry>
-        <surface>
-          <%= surface %>
-        </surface>
-      </collision>
-
-      <visual name="visual">
-        <geometry>
-          <box>
-            <size><%= dx %> <%= dy %> <%= dz %></size>
-          </box>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Wood</name>
-          </script>
-        </material>
-      </visual>
-    </link>
-
-    <link name="top_side">
-    <%
-      dx = depth
-      dy = width
-      dz = thickness
-      # Inertia
-      mass = density * dx * dy * dz
-      ixx  = mass/12.0 * (dy**2 + dz**2)
-      iyy  = mass/12.0 * (dz**2 + dx**2)
-      izz  = mass/12.0 * (dx**2 + dy**2)
-     %>
-
-      <pose><%= dx/2 %> 0 <%= dz/2 + height %> 0 0 0</pose>
-      <inertial>
-        <mass><%= mass %></mass>
-        <inertia>
-          <ixx><%= ixx %></ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy><%= iyy %></iyy>
-          <iyz>0</iyz>
-          <izz><%= izz %></izz>
-        </inertia>
-      </inertial>
-
-      <collision name="collision">
-        <geometry>
-          <box>
-            <size><%= dx %> <%= dy %> <%= dz %></size>
-          </box>
-        </geometry>
-        <surface>
-          <%= surface %>
-        </surface>
-      </collision>
-
-      <visual name="visual">
-        <geometry>
-          <box>
-            <size><%= dx %> <%= dy %> <%= dz %></size>
-          </box>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Wood</name>
-          </script>
-        </material>
-      </visual>
-    </link>
-
-    <link name="top_side">
-    <%
-      dx = depth
-      dy = width
-      dz = thickness
-      # Inertia
-      mass = density * dx * dy * dz
-      ixx  = mass/12.0 * (dy**2 + dz**2)
-      iyy  = mass/12.0 * (dz**2 + dx**2)
-      izz  = mass/12.0 * (dx**2 + dy**2)
-     %>
-
-      <pose><%= dx/2 %> 0 <%= dz/2 + height %> 0 0 0</pose>
-      <inertial>
-        <mass><%= mass %></mass>
-        <inertia>
-          <ixx><%= ixx %></ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy><%= iyy %></iyy>
-          <iyz>0</iyz>
-          <izz><%= izz %></izz>
-        </inertia>
-      </inertial>
-
-      <collision name="collision">
-        <geometry>
-          <box>
-            <size><%= dx %> <%= dy %> <%= dz %></size>
-          </box>
-        </geometry>
-        <surface>
-          <%= surface %>
-        </surface>
-      </collision>
-
-      <visual name="visual">
-        <geometry>
-          <box>
-            <size><%= dx %> <%= dy %> <%= dz %></size>
-          </box>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Wood</name>
-          </script>
-        </material>
-      </visual>
-    </link>
-
-    <link name="left_side">
-    <%
-      dx = depth
-      dy = thickness
-      dz = height
-      # Inertia
-      mass = density * dx * dy * dz
-      ixx  = mass/12.0 * (dy**2 + dz**2)
-      iyy  = mass/12.0 * (dz**2 + dx**2)
-      izz  = mass/12.0 * (dx**2 + dy**2)
-     %>
-
-      <pose><%= depth/2 %> <%= -width/2 %> <%= thickness/2 + height/2 %> 0 0 0</pose>
-      <inertial>
-        <mass><%= mass %></mass>
-        <inertia>
-          <ixx><%= ixx %></ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy><%= iyy %></iyy>
-          <iyz>0</iyz>
-          <izz><%= izz %></izz>
-        </inertia>
-      </inertial>
-
-      <collision name="collision">
-        <geometry>
-          <box>
-            <size><%= dx %> <%= dy %> <%= dz %></size>
-          </box>
-        </geometry>
-        <surface>
-          <%= surface %>
-        </surface>
-      </collision>
-
-      <visual name="visual">
-        <geometry>
-          <box>
-            <size><%= dx %> <%= dy %> <%= dz %></size>
-          </box>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Wood</name>
-          </script>
-        </material>
-      </visual>
-    </link>
-
-    <link name="right_side">
-    <%
-      dx = depth
-      dy = thickness
-      dz = height
-      # Inertia
-      mass = density * dx * dy * dz
-      ixx  = mass/12.0 * (dy**2 + dz**2)
-      iyy  = mass/12.0 * (dz**2 + dx**2)
-      izz  = mass/12.0 * (dx**2 + dy**2)
-     %>
-
-      <pose><%= depth/2 %> <%= width/2 %> <%= thickness/2 + height/2 %> 0 0 0</pose>
-      <inertial>
-        <mass><%= mass %></mass>
-        <inertia>
-          <ixx><%= ixx %></ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy><%= iyy %></iyy>
-          <iyz>0</iyz>
-          <izz><%= izz %></izz>
-        </inertia>
-      </inertial>
-
-      <collision name="collision">
-        <geometry>
-          <box>
-            <size><%= dx %> <%= dy %> <%= dz %></size>
-          </box>
-        </geometry>
-        <surface>
-          <%= surface %>
-        </surface>
-      </collision>
-
-      <visual name="visual">
-        <geometry>
-          <box>
-            <size><%= dx %> <%= dy %> <%= dz %></size>
-          </box>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Wood</name>
-          </script>
-        </material>
-      </visual>
-    </link>
-
-
-
-    <joint name="back_top" type="revolute">
-      <parent>back_side</parent>
-      <child>top_side</child>
+    <joint name="lid_hinge" type="revolute">
+      <pose><%= -h/2 %> 0 <%= t %>  0 0 0</pose>
+      <parent>base</parent>
+      <child>lid</child>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz>0 1 0</xyz>
         <limit>
-          <upper>0</upper>
-          <lower>0</lower>
-        </limit> 
+          <upper><%=  Math::PI/6 %></upper>
+          <lower><%= -Math::PI/2 %></lower>
+        </limit>
       </axis>
     </joint>
-    <joint name="back_left" type="revolute">
-      <parent>back_side</parent>
-      <child>left_side</child>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <upper>0</upper>
-          <lower>0</lower>
-        </limit> 
-      </axis>
-    </joint>
-    <joint name="back_right" type="revolute">
-      <parent>back_side</parent>
-      <child>right_side</child>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <upper>0</upper>
-          <lower>0</lower>
-        </limit> 
-      </axis>
-    </joint>
-    <joint name="back_bottom" type="revolute">
-      <parent>back_side</parent>
-      <child>bottom_side</child>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <upper>0</upper>
-          <lower>0</lower>
-        </limit> 
-      </axis>
-    </joint>
-    <joint name="bottom_front" type="revolute">
-      <parent>bottom_side</parent>
-      <child>front_side</child>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <upper>0</upper>
-          <lower>0</lower>
-        </limit> 
-      </axis>
-    </joint>
-    -->
 
   </model>
 </sdf>
