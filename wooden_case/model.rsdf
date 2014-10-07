@@ -4,33 +4,104 @@
   # SI units (length in meters)
 
   # Geometry
-  width = 0.57
-  height = 0.35
-  depth = 0.15
-  thickness = 0.02
+  inchToMeter = 0.0254
+  width     = 23 * inchToMeter
+  height    = 14 * inchToMeter
+  depth     =  5 * inchToMeter
+  thickness =  0.75 * inchToMeter
 
+  height_offset = 0.022
+
+  d = depth
+  h = height
+  t = thickness
+  w = width
+
+  left_center = w / 2.0 - t/2.0
+  left_length = h - t * 2.0
+  base_pieces = {
+    "back"   => {:size => [t, w-2*t, h-2*t], :pos => [-0.5*(d-t), 0, h/2]},
+    "bottom" => {:size => [d, w, t],         :pos => [0, 0, t / 2.0]},
+    "top"    => {:size => [d, w, t],         :pos => [0, 0, h - t / 2.0]},
+    "left"   => {:size => [d, t, h - 2*t],   :pos => [0, -0.5*(w-t), 0.5*h]},
+    "right"  => {:size => [d, t, h - 2*t],   :pos => [0,  0.5*(w-t), 0.5*h]},
+  }
   # Material
   # Assume soft wood with density of 500 kg / m^3
   density = 500
 
+  # Surface parameters
+  surface = "
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>"
 %>
 <sdf version="1.5">
   <model name="wooden_case">
-    <link name="back_side">
+    <pose>0 0 <%= height_offset %>  0 0 0</pose>
+    <link name="base">
+     <%
+      # Compute inertia
 
-    <%
-      dx = thickness
-      dy = width
-      dz = height
-      # Inertia
-      mass = density * dx * dy * dz
-      ixx  = mass/12.0 * (dy**2 + dz**2)
-      iyy  = mass/12.0 * (dz**2 + dx**2)
-      izz  = mass/12.0 * (dx**2 + dy**2)
+      # Compute mass of each component
+      # mass: total mass
+      mass = 0
+      base_pieces.keys.each do |k|
+        dx = base_pieces[k][:size][0]
+        dy = base_pieces[k][:size][1]
+        dz = base_pieces[k][:size][2]
+        m = density * dx * dy * dz
+        mass += m
+        base_pieces[k][:mass] = m
+
+        ixx = m/12.0 * (dy**2 + dz**2)
+        iyy = m/12.0 * (dz**2 + dx**2)
+        izz = m/12.0 * (dx**2 + dy**2)
+        base_pieces[k][:ixx] = ixx
+        base_pieces[k][:iyy] = iyy
+        base_pieces[k][:izz] = izz
+      end
+
+      # Compute lumped center of mass
+      cx_sum = 0.0
+      cy_sum = 0.0
+      cz_sum = 0.0
+      base_pieces.keys.each do |k|
+        m = base_pieces[k][:mass]
+        pos = base_pieces[k][:pos]
+        cx_sum += m * pos[0]
+        cy_sum += m * pos[1]
+        cz_sum += m * pos[2]
+      end
+      c = [cx_sum / mass, cy_sum / mass, cz_sum / mass]
+
+      # Compute lumped moments of inertia with respect to center of mass
+      lumped_ixx  = 0.0
+      lumped_iyy  = 0.0
+      lumped_izz  = 0.0
+      base_pieces.keys.each do |k|
+        m = base_pieces[k][:mass]
+        pos = base_pieces[k][:pos]
+        ixx = base_pieces[k][:ixx]
+        iyy = base_pieces[k][:iyy]
+        izz = base_pieces[k][:izz]
+        cx = pos[0] - c[0]
+        cy = pos[1] - c[1]
+        cz = pos[2] - c[2]
+
+        lumped_ixx += ixx + m*(cy*cy + cz*cz)
+        lumped_iyy += iyy + m*(cz*cz + cx*cx)
+        lumped_izz += izz + m*(cx*cx + cy*cy)
+      end
+      ixx = lumped_ixx
+      iyy = lumped_iyy
+      izz = lumped_izz
      %>
-
-      <pose>0 0 <%= dz/2 %> 0 0 0</pose>
       <inertial>
+        <pose><%= c.join(' ') %>  0 0 0</pose>
         <mass><%= mass %></mass>
         <inertia>
           <ixx><%= ixx %></ixx>
@@ -41,17 +112,26 @@
           <izz><%= izz %></izz>
         </inertia>
       </inertial>
-
-      <collision name="collision">
+      <%  base_pieces.keys.each do |k|
+            name = k
+            dx = base_pieces[k][:size][0]
+            dy = base_pieces[k][:size][1]
+            dz = base_pieces[k][:size][2]
+            pose = base_pieces[k][:pos].join(' ') + "  0 0 0"
+       %>
+      <%= "<collision name='collision_#{name}'>" %>
+        <pose><%= pose %></pose>
         <geometry>
           <box>
             <size><%= dx %> <%= dy %> <%= dz %></size>
           </box>
         </geometry>
-
+        <surface>
+          <%= surface %>
+        </surface>
       </collision>
-
-      <visual name="visual">
+      <%= "<visual name='visual_#{name}'>" %>
+        <pose><%= pose %></pose>
         <geometry>
           <box>
             <size><%= dx %> <%= dy %> <%= dz %></size>
@@ -64,9 +144,10 @@
           </script>
         </material>
       </visual>
+      <% end %>
     </link>
 
-
+<!--
     <link name="front_side">
 
     <%
@@ -99,7 +180,9 @@
             <size><%= dx %> <%= dy %> <%= dz %></size>
           </box>
         </geometry>
-
+        <surface>
+          <%= surface %>
+        </surface>
       </collision>
 
       <visual name="visual">
@@ -148,7 +231,9 @@
             <size><%= dx %> <%= dy %> <%= dz %></size>
           </box>
         </geometry>
-
+        <surface>
+          <%= surface %>
+        </surface>
       </collision>
 
       <visual name="visual">
@@ -197,7 +282,9 @@
             <size><%= dx %> <%= dy %> <%= dz %></size>
           </box>
         </geometry>
-
+        <surface>
+          <%= surface %>
+        </surface>
       </collision>
 
       <visual name="visual">
@@ -246,7 +333,9 @@
             <size><%= dx %> <%= dy %> <%= dz %></size>
           </box>
         </geometry>
-
+        <surface>
+          <%= surface %>
+        </surface>
       </collision>
 
       <visual name="visual">
@@ -295,7 +384,9 @@
             <size><%= dx %> <%= dy %> <%= dz %></size>
           </box>
         </geometry>
-
+        <surface>
+          <%= surface %>
+        </surface>
       </collision>
 
       <visual name="visual">
@@ -344,7 +435,9 @@
             <size><%= dx %> <%= dy %> <%= dz %></size>
           </box>
         </geometry>
-
+        <surface>
+          <%= surface %>
+        </surface>
       </collision>
 
       <visual name="visual">
@@ -419,6 +512,7 @@
         </limit> 
       </axis>
     </joint>
+    -->
 
   </model>
 </sdf>

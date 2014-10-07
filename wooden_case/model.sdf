@@ -1,35 +1,45 @@
 <?xml version="1.0" ?>
+
 <sdf version="1.5">
   <model name="wooden_case">
-    <link name="back_side">
-
-
-      <pose>0 0 0.175 0 0 0</pose>
+    <pose>0 0 0.022  0 0 0</pose>
+    <link name="base">
+     
       <inertial>
-        <mass>1.9949999999999997</mass>
+        <pose>-0.023255761523046096 0.0 0.17779999999999999  0 0 0</pose>
+        <mass>3.8330366887499987</mass>
         <inertia>
-          <ixx>0.07438024999999998</ixx>
+          <ixx>0.20299083898373982</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.020432124999999995</iyy>
+          <iyy>0.06611156384785727</iyy>
           <iyz>0</iyz>
-          <izz>0.05408112499999999</izz>
+          <izz>0.14832011248406013</izz>
         </inertia>
       </inertial>
-
-      <collision name="collision">
+      
+      <collision name='collision_back'>
+        <pose>-0.053975 0 0.17779999999999999  0 0 0</pose>
         <geometry>
           <box>
-            <size>0.02 0.57 0.35</size>
+            <size>0.019049999999999997 0.5460999999999999 0.3175</size>
           </box>
         </geometry>
-
+        <surface>
+          
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
       </collision>
-
-      <visual name="visual">
+      <visual name='visual_back'>
+        <pose>-0.053975 0 0.17779999999999999  0 0 0</pose>
         <geometry>
           <box>
-            <size>0.02 0.57 0.35</size>
+            <size>0.019049999999999997 0.5460999999999999 0.3175</size>
           </box>
         </geometry>
         <material>
@@ -39,38 +49,176 @@
           </script>
         </material>
       </visual>
+      
+      <collision name='collision_bottom'>
+        <pose>0 0 0.009524999999999999  0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.127 0.5841999999999999 0.019049999999999997</size>
+          </box>
+        </geometry>
+        <surface>
+          
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='visual_bottom'>
+        <pose>0 0 0.009524999999999999  0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.127 0.5841999999999999 0.019049999999999997</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+      
+      <collision name='collision_top'>
+        <pose>0 0 0.34607499999999997  0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.127 0.5841999999999999 0.019049999999999997</size>
+          </box>
+        </geometry>
+        <surface>
+          
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='visual_top'>
+        <pose>0 0 0.34607499999999997  0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.127 0.5841999999999999 0.019049999999999997</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+      
+      <collision name='collision_left'>
+        <pose>0 -0.28257499999999997 0.17779999999999999  0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.127 0.019049999999999997 0.3175</size>
+          </box>
+        </geometry>
+        <surface>
+          
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='visual_left'>
+        <pose>0 -0.28257499999999997 0.17779999999999999  0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.127 0.019049999999999997 0.3175</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+      
+      <collision name='collision_right'>
+        <pose>0 0.28257499999999997 0.17779999999999999  0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.127 0.019049999999999997 0.3175</size>
+          </box>
+        </geometry>
+        <surface>
+          
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='visual_right'>
+        <pose>0 0.28257499999999997 0.17779999999999999  0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.127 0.019049999999999997 0.3175</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+      
     </link>
 
-
+<!--
     <link name="front_side">
 
+    
 
-      <pose>0.32499999999999996 0  0.01 0 1.5707963267948966 0</pose>
+      <pose>0.30479999999999996 0  0.009524999999999999 0 1.5707963267948966 0</pose>
       <inertial>
-        <mass>1.9949999999999997</mass>
+        <mass>1.9787379779999994</mass>
         <inertia>
-          <ixx>0.07438024999999998</ixx>
+          <ixx>0.07712807338064147</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.020432124999999995</iyy>
+          <iyy>0.02091101644673426</iyy>
           <iyz>0</iyz>
-          <izz>0.05408112499999999</izz>
+          <izz>0.05633673842708406</izz>
         </inertia>
       </inertial>
 
       <collision name="collision">
         <geometry>
           <box>
-            <size>0.02 0.57 0.35</size>
+            <size>0.019049999999999997 0.5841999999999999 0.35559999999999997</size>
           </box>
         </geometry>
-
+        <surface>
+          
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
       </collision>
 
       <visual name="visual">
         <geometry>
           <box>
-            <size>0.02 0.57 0.35</size>
+            <size>0.019049999999999997 0.5841999999999999 0.35559999999999997</size>
           </box>
         </geometry>
         <material>
@@ -83,33 +231,42 @@
     </link>
 
     <link name="bottom_side">
+    
 
-      <pose>0.075 0 0.01 0 0 0</pose>
+      <pose>0.0635 0 0.009524999999999999 0 0 0</pose>
       <inertial>
-        <mass>0.8549999999999999</mass>
+        <mass>0.7066921349999998</mass>
         <inertia>
-          <ixx>0.023177624999999997</ixx>
+          <ixx>0.020120263723958594</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.0016316249999999998</iyy>
+          <iyy>0.000971224815661403</iyy>
           <iyz>0</iyz>
-          <izz>0.024752249999999996</izz>
+          <izz>0.02104874514919969</izz>
         </inertia>
       </inertial>
 
       <collision name="collision">
         <geometry>
           <box>
-            <size>0.15 0.57 0.02</size>
+            <size>0.127 0.5841999999999999 0.019049999999999997</size>
           </box>
         </geometry>
-
+        <surface>
+          
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
       </collision>
 
       <visual name="visual">
         <geometry>
           <box>
-            <size>0.15 0.57 0.02</size>
+            <size>0.127 0.5841999999999999 0.019049999999999997</size>
           </box>
         </geometry>
         <material>
@@ -122,33 +279,42 @@
     </link>
 
     <link name="top_side">
+    
 
-      <pose>0.075 0 0.36 0 0 0</pose>
+      <pose>0.0635 0 0.365125 0 0 0</pose>
       <inertial>
-        <mass>0.8549999999999999</mass>
+        <mass>0.7066921349999998</mass>
         <inertia>
-          <ixx>0.023177624999999997</ixx>
+          <ixx>0.020120263723958594</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.0016316249999999998</iyy>
+          <iyy>0.000971224815661403</iyy>
           <iyz>0</iyz>
-          <izz>0.024752249999999996</izz>
+          <izz>0.02104874514919969</izz>
         </inertia>
       </inertial>
 
       <collision name="collision">
         <geometry>
           <box>
-            <size>0.15 0.57 0.02</size>
+            <size>0.127 0.5841999999999999 0.019049999999999997</size>
           </box>
         </geometry>
-
+        <surface>
+          
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
       </collision>
 
       <visual name="visual">
         <geometry>
           <box>
-            <size>0.15 0.57 0.02</size>
+            <size>0.127 0.5841999999999999 0.019049999999999997</size>
           </box>
         </geometry>
         <material>
@@ -161,33 +327,42 @@
     </link>
 
     <link name="top_side">
+    
 
-      <pose>0.075 0 0.36 0 0 0</pose>
+      <pose>0.0635 0 0.365125 0 0 0</pose>
       <inertial>
-        <mass>0.8549999999999999</mass>
+        <mass>0.7066921349999998</mass>
         <inertia>
-          <ixx>0.023177624999999997</ixx>
+          <ixx>0.020120263723958594</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.0016316249999999998</iyy>
+          <iyy>0.000971224815661403</iyy>
           <iyz>0</iyz>
-          <izz>0.024752249999999996</izz>
+          <izz>0.02104874514919969</izz>
         </inertia>
       </inertial>
 
       <collision name="collision">
         <geometry>
           <box>
-            <size>0.15 0.57 0.02</size>
+            <size>0.127 0.5841999999999999 0.019049999999999997</size>
           </box>
         </geometry>
-
+        <surface>
+          
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
       </collision>
 
       <visual name="visual">
         <geometry>
           <box>
-            <size>0.15 0.57 0.02</size>
+            <size>0.127 0.5841999999999999 0.019049999999999997</size>
           </box>
         </geometry>
         <material>
@@ -200,33 +375,42 @@
     </link>
 
     <link name="left_side">
+    
 
-      <pose>0.075 -0.285 0.185 0 0 0</pose>
+      <pose>0.0635 -0.29209999999999997 0.187325 0 0 0</pose>
       <inertial>
-        <mass>0.5249999999999999</mass>
+        <mass>0.4301604299999999</mass>
         <inertia>
-          <ixx>0.005376874999999998</ixx>
+          <ixx>0.004545873140594406</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.006343749999999998</iyy>
+          <iyy>0.005111035747262899</iyy>
           <iyz>0</iyz>
-          <izz>0.0010018749999999997</izz>
+          <izz>0.0005911803225765063</izz>
         </inertia>
       </inertial>
 
       <collision name="collision">
         <geometry>
           <box>
-            <size>0.15 0.02 0.35</size>
+            <size>0.127 0.019049999999999997 0.35559999999999997</size>
           </box>
         </geometry>
-
+        <surface>
+          
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
       </collision>
 
       <visual name="visual">
         <geometry>
           <box>
-            <size>0.15 0.02 0.35</size>
+            <size>0.127 0.019049999999999997 0.35559999999999997</size>
           </box>
         </geometry>
         <material>
@@ -239,33 +423,42 @@
     </link>
 
     <link name="right_side">
+    
 
-      <pose>0.075 0.285 0.185 0 0 0</pose>
+      <pose>0.0635 0.29209999999999997 0.187325 0 0 0</pose>
       <inertial>
-        <mass>0.5249999999999999</mass>
+        <mass>0.4301604299999999</mass>
         <inertia>
-          <ixx>0.005376874999999998</ixx>
+          <ixx>0.004545873140594406</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.006343749999999998</iyy>
+          <iyy>0.005111035747262899</iyy>
           <iyz>0</iyz>
-          <izz>0.0010018749999999997</izz>
+          <izz>0.0005911803225765063</izz>
         </inertia>
       </inertial>
 
       <collision name="collision">
         <geometry>
           <box>
-            <size>0.15 0.02 0.35</size>
+            <size>0.127 0.019049999999999997 0.35559999999999997</size>
           </box>
         </geometry>
-
+        <surface>
+          
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
       </collision>
 
       <visual name="visual">
         <geometry>
           <box>
-            <size>0.15 0.02 0.35</size>
+            <size>0.127 0.019049999999999997 0.35559999999999997</size>
           </box>
         </geometry>
         <material>
@@ -334,6 +527,7 @@
         </limit> 
       </axis>
     </joint>
+    -->
 
   </model>
 </sdf>
