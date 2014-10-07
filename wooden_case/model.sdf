@@ -10,10 +10,10 @@
         <mass>3.9626366887499986</mass>
         <inertia>
           <ixx>0.2135364168029657</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
+          <ixy>0.0</ixy>
+          <ixz>0.0007793770806417083</ixz>
           <iyy>0.07089428398599372</iyy>
-          <iyz>0</iyz>
+          <iyz>0.0</iyz>
           <izz>0.15460392299497075</izz>
         </inertia>
       </inertial>
