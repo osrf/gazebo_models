@@ -3,15 +3,8 @@
   <model name="drc_practice_hinged_door">
     <link name="frame">
       <pose>0.06 -0.0005 0 0 0 0</pose>
-      <!-- <collision name="collision_1">
-        <pose>-0.025145 -0.03429 1.0541 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.05029 0.06858 2.10820</size>
-          </box>
-        </geometry>
-      </collision> -->
-      <collision name="collision_2">
+
+      <!--<collision name="collision_2">
         <pose>-0.025145 -0.03429 1.0541 0 0 0</pose>
         <geometry>
           <box>
@@ -19,14 +12,24 @@
           </box>
         </geometry>
       </collision>
-      <!-- <collision name="collision_3">
+      <collision name="collision_3">
         <pose>-0.0251450 0.46482 2.07137 0 0 0</pose>
         <geometry>
           <box>
             <size>0.05029 0.92964 0.07366</size>
           </box>
         </geometry>
+      </collision>-->
+
+      <collision name="collision">
+        <pose>0 -0.06858 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://hinged_door/meshes/frame.dae</uri>
+          </mesh>
+        </geometry>
       </collision>
+
       <visual name="visual">
         <pose>0 -0.06858 0 0 0 0</pose>
         <geometry>
@@ -34,9 +37,16 @@
             <uri>model://hinged_door/meshes/frame.dae</uri>
           </mesh>
         </geometry>
-      </visual> -->
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
 
-      <visual name="visual">
+      </visual>
+
+      <!--<visual name="visual">
         <pose>-0.025145 -0.03429 1.0541 0 0 0</pose>
         <geometry>
           <box>
@@ -49,7 +59,7 @@
             <name>Gazebo/White</name>
           </script>
         </material>
-      </visual>
+      </visual>-->
 
     </link>
     <link name="door">
@@ -83,8 +93,21 @@
         </geometry>
       </visual>
     </link>
+
     <link name="handles">
       <pose>0.0 0.8 1.05 0 3.14 1.57</pose>
+      <inertial>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx></ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy></iyy>
+          <iyz>0</iyz>
+          <izz></izz>
+        </inertia>
+      </inertial>
+
       <collision name="handle1_collision">
         <pose>0.015 -0.015 0 -1.57 0 0</pose>
         <geometry>
