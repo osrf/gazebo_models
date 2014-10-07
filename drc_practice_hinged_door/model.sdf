@@ -4,49 +4,16 @@
     <link name="frame">
       <pose>0.06 -0.0005 0 0 0 0</pose>
 
-      <!--<collision name="collision_2">
+      <collision name="collision_2">
         <pose>-0.025145 -0.03429 1.0541 0 0 0</pose>
         <geometry>
           <box>
             <size>0.05029 0.06858 2.10820</size>
           </box>
-        </geometry>
-      </collision>
-      <collision name="collision_3">
-        <pose>-0.0251450 0.46482 2.07137 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.05029 0.92964 0.07366</size>
-          </box>
-        </geometry>
-      </collision>-->
-
-      <collision name="collision">
-        <pose>0 -0.06858 0 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <uri>model://hinged_door/meshes/frame.dae</uri>
-          </mesh>
         </geometry>
       </collision>
 
       <visual name="visual">
-        <pose>0 -0.06858 0 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <uri>model://hinged_door/meshes/frame.dae</uri>
-          </mesh>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/White</name>
-          </script>
-        </material>
-
-      </visual>
-
-      <!--<visual name="visual">
         <pose>-0.025145 -0.03429 1.0541 0 0 0</pose>
         <geometry>
           <box>
@@ -59,7 +26,7 @@
             <name>Gazebo/White</name>
           </script>
         </material>
-      </visual>-->
+      </visual>
 
     </link>
     <link name="door">
