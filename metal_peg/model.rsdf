@@ -1,5 +1,7 @@
 <?xml version="1.0" ?>
 <%
+  # SI units (length in meters)
+
   # Geometry
   # Height
   peg_height = 0.062
@@ -8,7 +10,7 @@
   peg_radius = peg_diameter/2.0
 
   # Inertia
-  peg_mass = 0.001
+  peg_mass = 0.0121
   peg_ixx  = peg_mass/12.0 * 3*(peg_radius**2  + peg_height**2 )
   peg_iyy  = peg_mass/12.0 * 3*(peg_radius**2  + peg_height**2 )
   peg_izz  = peg_mass/2.0 * peg_radius**2
@@ -18,7 +20,7 @@
     <link name="link">
       <pose>0 0 <%= peg_height/2 %> 0 0 0</pose>
       <inertial>
-        <peg_mass><%= peg_mass %></peg_mass>
+        <mass><%= peg_mass %></mass>
         <inertia>
           <peg_ixx><%= peg_ixx %></peg_ixx>
           <ixy>0</ixy>

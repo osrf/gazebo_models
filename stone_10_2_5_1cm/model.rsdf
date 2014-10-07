@@ -8,12 +8,8 @@
   dy = 0.025
   dz = 0.01
 
-  # Material
-  density = 500
-
   # Inertia
-  # TODO: weigh object and get mass
-  mass = density * dx * dy * dz
+  mass = 0.0628
   ixx  = mass/12.0 * (dy**2 + dz**2)
   iyy  = mass/12.0 * (dz**2 + dx**2)
   izz  = mass/12.0 * (dx**2 + dy**2)

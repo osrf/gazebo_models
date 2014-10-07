@@ -13,7 +13,7 @@
   r2 = d2/2.0
 
   # Inertia
-  mass = 0.001
+  mass = 0.0354
   ixx  = mass/12.0 * ( 3*(r1**2 + r2**2) + h**2 )
   iyy  = mass/12.0 * ( 3*(r1**2 + r2**2) + h**2 )
   izz  = mass/2.0 * (r1**2 + r2**2)
@@ -36,7 +36,6 @@
 
       <collision name="collision">
         <geometry>
-          #TODO: replace with mesh of a tube
           <cylinder>
             <radius> <%= r2 %> </radius>
             <length> <%= h  %> </length>

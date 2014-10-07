@@ -10,7 +10,7 @@
   peg_radius = d/2.0
 
   # Inertia
-  mass = 0.003
+  mass = 0.0175
   ixx  = mass/12.0 * 3*(peg_radius**2  + peg_height**2 )
   iyy  = mass/12.0 * 3*(peg_radius**2  + peg_height**2 )
   izz  = mass/2.0 * peg_radius**2
