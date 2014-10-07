@@ -1,23 +1,24 @@
 <?xml version="1.0" ?>
-<%
-  # SI units (length in meters)
 
-  # Geometry
-
-  d = 0.084
-  r = d/2.0
-  height = 0.0115
-
-  # Inertia: approximate as a thin-walled cylindrical tube (not accurate)
-  mass = 0.0142
-  ixx  = mass*(r**2/2 + height**2/12)
-  iyy  = mass*(r**2/2 + height**2/12)
-  izz  = mass*r**2
-%>
 <sdf version="1.5">
-  <model name="round_tin_top">
-    <link name="link">
-      <pose>0 0 <%= height/2 %> 0 0 0</pose>
+  <model name="wooden_board">
+    <link name="base">
+      <%
+        # Wood block with dimensions 33 x 10 x 1 cm
+        # SI units (length in meters)
+
+        # Geometry
+        dx = 0.1016
+        dy = 0.3302
+        dz = 0.01046
+
+        # Inertia
+        mass = 0.2765
+        ixx  = mass/12.0 * (dy**2 + dz**2)
+        iyy  = mass/12.0 * (dz**2 + dx**2)
+        izz  = mass/12.0 * (dx**2 + dy**2)
+      %>
+      <pose>0 0 <%= dz/2 %> 0 0 0</pose>
       <inertial>
         <mass><%= mass %></mass>
         <inertia>
@@ -32,9 +33,9 @@
 
       <collision name="collision">
         <geometry>
-          <mesh>
-            <uri>model://round_tin_top/meshes/round_tin_top.stl</uri>
-          </mesh>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
         </geometry>
         <surface>
           <contact>
@@ -48,18 +49,18 @@
 
       <visual name="visual">
         <geometry>
-          <mesh>
-            <uri>model://round_tin_top/meshes/round_tin_top.stl</uri>
-          </mesh>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
         </geometry>
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Gray</name>
+            <name>Gazebo/Wood</name>
           </script>
         </material>
       </visual>
-
     </link>
+
   </model>
 </sdf>
