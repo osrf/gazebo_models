@@ -2,19 +2,19 @@
 
 <sdf version="1.5">
   <model name="wooden_case">
-    <pose>0 0 0.022  0 0 0</pose>
+    <pose>0 0 0.024  0 0 0</pose>
     <link name="base">
      
       <inertial>
-        <pose>-0.023255761523046096 0.0 0.17779999999999999  0 0 0</pose>
-        <mass>3.8330366887499987</mass>
+        <pose>-0.02218446808213116 0.0 0.17159249678128843  0 0 0</pose>
+        <mass>3.9626366887499986</mass>
         <inertia>
-          <ixx>0.20299083898373982</ixx>
+          <ixx>0.2135364168029657</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.06611156384785727</iyy>
+          <iyy>0.07089428398599372</iyy>
           <iyz>0</iyz>
-          <izz>0.14832011248406013</izz>
+          <izz>0.15460392299497075</izz>
         </inertia>
       </inertial>
       
@@ -168,6 +168,70 @@
         <geometry>
           <box>
             <size>0.127 0.019049999999999997 0.3175</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+      
+      <collision name='collision_block_left'>
+        <pose>0.009500000000000001 -0.21509999999999996 -0.012  0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.108 0.05 0.024</size>
+          </box>
+        </geometry>
+        <surface>
+          
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='visual_block_left'>
+        <pose>0.009500000000000001 -0.21509999999999996 -0.012  0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.108 0.05 0.024</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+      
+      <collision name='collision_block_right'>
+        <pose>0.009500000000000001 0.21509999999999996 -0.012  0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.108 0.05 0.024</size>
+          </box>
+        </geometry>
+        <surface>
+          
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='visual_block_right'>
+        <pose>0.009500000000000001 0.21509999999999996 -0.012  0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.108 0.05 0.024</size>
           </box>
         </geometry>
         <material>

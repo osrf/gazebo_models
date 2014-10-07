@@ -10,21 +10,24 @@
   depth     =  5 * inchToMeter
   thickness =  0.75 * inchToMeter
 
-  height_offset = 0.022
-
   d = depth
   h = height
   t = thickness
   w = width
 
-  left_center = w / 2.0 - t/2.0
-  left_length = h - t * 2.0
+  # blocks on bottom of case
+  block_size = [0.108, 0.050, 0.024]
+  block_dx = 0.5*(depth - block_size[0])
+  block_dy = 0.5*(w - block_size[1]) - 0.052
+  block_dz = -0.5 * block_size[2]
   base_pieces = {
     "back"   => {:size => [t, w-2*t, h-2*t], :pos => [-0.5*(d-t), 0, h/2]},
     "bottom" => {:size => [d, w, t],         :pos => [0, 0, t / 2.0]},
     "top"    => {:size => [d, w, t],         :pos => [0, 0, h - t / 2.0]},
     "left"   => {:size => [d, t, h - 2*t],   :pos => [0, -0.5*(w-t), 0.5*h]},
     "right"  => {:size => [d, t, h - 2*t],   :pos => [0,  0.5*(w-t), 0.5*h]},
+    "block_left"  => {:size => block_size,   :pos => [block_dx, -block_dy, block_dz]},
+    "block_right" => {:size => block_size,   :pos => [block_dx,  block_dy, block_dz]},
   }
   # Material
   # Assume soft wood with density of 500 kg / m^3
@@ -41,7 +44,7 @@
 %>
 <sdf version="1.5">
   <model name="wooden_case">
-    <pose>0 0 <%= height_offset %>  0 0 0</pose>
+    <pose>0 0 <%= block_size[2] %>  0 0 0</pose>
     <link name="base">
      <%
       # Compute inertia
