@@ -1,5 +1,4 @@
 <?xml version="1.0" ?>
-
 <sdf version="1.5">
   <model name="round_tin_base">
     <link name="link">
@@ -19,7 +18,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://round_tin_base/meshes/round_tin_base.stl</uri>
+            <uri>model://round_tin_base/meshes/round_tin_base.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -35,7 +34,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://round_tin_base/meshes/round_tin_base.stl</uri>
+            <uri>model://round_tin_base/meshes/round_tin_base.dae</uri>
           </mesh>
         </geometry>
         <material>

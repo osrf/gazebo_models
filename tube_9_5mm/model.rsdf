@@ -37,7 +37,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://tube_9_5mm/meshes/tube_9_5.stl</uri>
+            <uri>model://tube_9_5mm/meshes/tube_9_5.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -53,7 +53,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://tube_9_5mm/meshes/tube_9_5.stl</uri>
+            <uri>model://tube_9_5mm/meshes/tube_9_5.dae</uri>
           </mesh>
         </geometry>
         <material>

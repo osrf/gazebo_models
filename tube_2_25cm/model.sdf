@@ -1,5 +1,4 @@
 <?xml version="1.0" ?>
-
 <sdf version="1.5">
   <model name="tube_2_25cm">
     <link name="link">
@@ -19,7 +18,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://tube_2_25cm/meshes/tube_2_25.stl</uri>
+            <uri>model://tube_2_25cm/meshes/tube_2_25.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -35,7 +34,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://tube_2_25cm/meshes/tube_2_25.stl</uri>
+            <uri>model://tube_2_25cm/meshes/tube_2_25.dae</uri>
           </mesh>
         </geometry>
         <material>

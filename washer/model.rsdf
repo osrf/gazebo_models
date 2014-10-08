@@ -37,7 +37,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://washer/meshes/washer.stl</uri>
+            <uri>model://washer/meshes/washer.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -53,7 +53,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://washer/meshes/washer.stl</uri>
+            <uri>model://washer/meshes/washer.dae</uri>
           </mesh>
         </geometry>
         <material>

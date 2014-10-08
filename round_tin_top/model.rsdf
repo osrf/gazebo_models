@@ -33,7 +33,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://round_tin_top/meshes/round_tin_top.stl</uri>
+            <uri>model://round_tin_top/meshes/round_tin_top.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -49,7 +49,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://round_tin_top/meshes/round_tin_top.stl</uri>
+            <uri>model://round_tin_top/meshes/round_tin_top.dae</uri>
           </mesh>
         </geometry>
         <material>

@@ -41,7 +41,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://plastic_cup/meshes/plastic_cup.stl</uri>
+            <uri>model://plastic_cup/meshes/plastic_cup.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -57,7 +57,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://plastic_cup/meshes/plastic_cup.stl</uri>
+            <uri>model://plastic_cup/meshes/plastic_cup.dae</uri>
           </mesh>
         </geometry>
         <material>
