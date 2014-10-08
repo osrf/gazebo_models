@@ -1,0 +1,199 @@
+sh_ffj0_position_controller:
+  joint: FFJ0
+  pid:
+    d: 0.0
+    i: 0.0
+    i_clamp: 0.0
+    p: 60.0
+    position_deadband: 0.0
+  type: sr_mechanism_controllers/SrhJointPositionController
+
+sh_ffj3_position_controller:
+  joint: FFJ3
+  pid:
+    d: 0.0
+    i: 0.0
+    i_clamp: 0.0
+    p: 60.0
+    position_deadband: 0.0
+  type: sr_mechanism_controllers/SrhJointPositionController
+
+sh_ffj4_position_controller:
+  joint: FFJ4
+  pid:
+    d: 0.0
+    i: 0.0
+    i_clamp: 0.0
+    p: 60.0
+    position_deadband: 0.0
+  type: sr_mechanism_controllers/SrhJointPositionController
+
+sh_lfj0_position_controller:
+  joint: LFJ0
+  pid:
+    d: 0.0
+    i: 0.0
+    i_clamp: 0.0
+    p: 60.0
+    position_deadband: 0.0
+  type: sr_mechanism_controllers/SrhJointPositionController
+
+sh_lfj3_position_controller:
+  joint: LFJ3
+  pid:
+    d: 0.0
+    i: 0.0
+    i_clamp: 0.0
+    p: 60.0
+    position_deadband: 0.0
+  type: sr_mechanism_controllers/SrhJointPositionController
+
+sh_lfj4_position_controller:
+  joint: LFJ4
+  pid:
+    d: 0.0
+    i: 0.0
+    i_clamp: 0.0
+    p: 60.0
+    position_deadband: 0.0
+  type: sr_mechanism_controllers/SrhJointPositionController
+
+sh_lfj5_position_controller:
+  joint: LFJ5
+  pid:
+    d: 0.0
+    i: 0.0
+    i_clamp: 0.0
+    p: 60.0
+    position_deadband: 0.0
+  type: sr_mechanism_controllers/SrhJointPositionController
+
+sh_mfj0_position_controller:
+  joint: MFJ0
+  pid:
+    d: 0.0
+    i: 0.0
+    i_clamp: 0.0
+    p: 60.0
+    position_deadband: 0.0
+  type: sr_mechanism_controllers/SrhJointPositionController
+
+sh_mfj3_position_controller:
+  joint: MFJ3
+  pid:
+    d: 0.0
+    i: 0.0
+    i_clamp: 0.0
+    p: 60.0
+    position_deadband: 0.0
+  type: sr_mechanism_controllers/SrhJointPositionController
+
+sh_mfj4_position_controller:
+  joint: MFJ4
+  pid:
+    d: 0.0
+    i: 0.0
+    i_clamp: 0.0
+    p: 60.0
+    position_deadband: 0.0
+  type: sr_mechanism_controllers/SrhJointPositionController
+
+sh_rfj0_position_controller:
+  joint: RFJ0
+  pid:
+    d: 0.0
+    i: 0.0
+    i_clamp: 0.0
+    p: 60.0
+    position_deadband: 0.0
+  type: sr_mechanism_controllers/SrhJointPositionController
+
+sh_rfj3_position_controller:
+  joint: RFJ3
+  pid:
+    d: 0.0
+    i: 0.0
+    i_clamp: 0.0
+    p: 60.0
+    position_deadband: 0.0
+  type: sr_mechanism_controllers/SrhJointPositionController
+
+sh_rfj4_position_controller:
+  joint: RFJ4
+  pid:
+    d: 0.0
+    i: 0.0
+    i_clamp: 0.0
+    p: 60.0
+    position_deadband: 0.0
+  type: sr_mechanism_controllers/SrhJointPositionController
+
+sh_thj1_position_controller:
+  joint: THJ1
+  pid:
+    d: 0.0
+    i: 0.0
+    i_clamp: 0.0
+    p: 60.0
+    position_deadband: 0.0
+  type: sr_mechanism_controllers/SrhJointPositionController
+
+sh_thj2_position_controller:
+  joint: THJ2
+  pid:
+    d: 0.0
+    i: 0.0
+    i_clamp: 0.0
+    p: 60.0
+    position_deadband: 0.0
+  type: sr_mechanism_controllers/SrhJointPositionController
+
+sh_thj3_position_controller:
+  joint: THJ3
+  pid:
+    d: 0.0
+    i: 0.0
+    i_clamp: 0.0
+    p: 60.0
+    position_deadband: 0.0
+  type: sr_mechanism_controllers/SrhJointPositionController
+
+sh_thj4_position_controller:
+  joint: THJ4
+  pid:
+    d: 0.0
+    i: 0.0
+    i_clamp: 0.0
+    p: 60.0
+    position_deadband: 0.0
+  type: sr_mechanism_controllers/SrhJointPositionController
+
+sh_thj5_position_controller:
+  joint: THJ5
+  pid:
+    d: 0.0
+    i: 0.0
+    i_clamp: 0.0
+    p: 60.0
+    position_deadband: 0.0
+  type: sr_mechanism_controllers/SrhJointPositionController
+
+sh_wrj1_position_controller:
+  joint: WRJ1
+  pid:
+    d: 0.0
+    i: 0.0
+    i_clamp: 0.0
+    p: 60.0
+    position_deadband: 0.0
+  type: sr_mechanism_controllers/SrhJointPositionController
+
+sh_wrj2_position_controller:
+  joint: WRJ2
+  pid:
+    d: 0.0
+    i: 0.0
+    i_clamp: 0.0
+    p: 60.0
+    position_deadband: 0.0
+  type: sr_mechanism_controllers/SrhJointPositionController

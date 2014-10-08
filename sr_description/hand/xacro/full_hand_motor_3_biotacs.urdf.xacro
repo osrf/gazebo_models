@@ -1,0 +1,86 @@
+<robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find sr_description)/hand/xacro/forearm/forearm_motor.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/hand/xacro/wrist/wrist.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/hand/xacro/palm/palm.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/hand/xacro/finger/classic_finger_biotac.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/hand/xacro/finger/classic_finger.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/hand/xacro/finger/little_finger.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/hand/xacro/thumb/thumb_biotac.urdf.xacro" />
+
+  <!-- Right Hand -->
+  <xacro:macro name="shadowhand_motor">
+
+    <xacro:forearm>
+    </xacro:forearm>
+
+    <xacro:wrist parent="forearm">
+      <origin xyz="0 -0.010 0.213" rpy="0 0 0" />
+    </xacro:wrist>
+
+    <xacro:palm parent="wrist">
+    </xacro:palm>
+
+    <xacro:finger_biotac link_prefix="ff" joint_prefix="FF" parent="palm">
+      <origin xyz="0.033 0 0.095" rpy="0 0 0" />
+      <axis xyz="0 -1 0" />
+    </xacro:finger_biotac>
+
+    <xacro:finger_biotac link_prefix="mf" joint_prefix="MF" parent="palm">
+      <origin xyz="0.011 0 0.099" rpy="0 0 0" />
+      <axis xyz="0 -1 0" />
+    </xacro:finger_biotac>
+
+    <xacro:finger link_prefix="rf" joint_prefix="RF" parent="palm">
+      <origin xyz="-0.011 0 0.095" rpy="0 0 0" />
+      <axis xyz="0 1 0" />
+    </xacro:finger>
+
+    <xacro:little_finger link_prefix="lf" joint_prefix="LF" parent="palm">
+    </xacro:little_finger>
+
+    <xacro:thumb parent="palm">
+    </xacro:thumb>
+
+  </xacro:macro>
+
+  <!-- Left Hand -->
+  <xacro:macro name="shadowhand_left_motor">
+
+    <xacro:forearm>
+    </xacro:forearm>
+
+    <xacro:wrist_left parent="forearm">
+      <origin xyz="0 -0.010 0.213" rpy="0 0 0" />
+    </xacro:wrist_left>
+
+    <xacro:palm_left parent="wrist">
+    </xacro:palm_left>
+
+    <xacro:finger link_prefix="ff" joint_prefix="FF" parent="palm">
+      <origin xyz="-0.033 0 0.095" rpy="0 0 0" />
+      <axis xyz="0 -1 0" />
+    </xacro:finger>
+
+    <xacro:finger link_prefix="mf" joint_prefix="MF" parent="palm">
+      <origin xyz="-0.011 0 0.099" rpy="0 0 0" />
+      <axis xyz="0 -1 0" />
+    </xacro:finger>
+
+    <xacro:finger link_prefix="rf" joint_prefix="RF" parent="palm">
+      <origin xyz="0.011 0 0.095" rpy="0 0 0" />
+      <axis xyz="0 1 0" />
+    </xacro:finger>
+
+    <xacro:little_finger_left link_prefix="lf" joint_prefix="LF" parent="palm">
+    </xacro:little_finger_left>
+
+    <xacro:thumb_left parent="palm">
+    </xacro:thumb_left>
+
+  </xacro:macro>
+
+</robot>

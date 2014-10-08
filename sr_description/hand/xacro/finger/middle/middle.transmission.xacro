@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="middle_transmission">
+
+    <transmission type="sr_mechanism_model/J0Transmission" name="${link_prefix}middle_transmission">
+      <actuator name="${joint_prefix}J0" />
+      <joint1 name="${joint_prefix}J1" />
+      <joint2 name="${joint_prefix}J2" />
+      <mechanicalReduction>1</mechanicalReduction>
+      <motorTorqueConstant>1</motorTorqueConstant>
+      <pulsesPerRevolution>90000</pulsesPerRevolution>
+    </transmission>
+
+  </xacro:macro>
+
+</robot>

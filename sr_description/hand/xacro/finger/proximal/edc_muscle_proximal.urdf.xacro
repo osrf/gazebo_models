@@ -1,0 +1,70 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro"
+        xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#slider"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+       xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom">
+
+  <xacro:include filename="$(find sr_description)/hand/xacro/finger/proximal/edc_muscle_proximal.transmission.xacro" />
+
+  <xacro:macro name="proximal" params="link_prefix joint_prefix parent">
+
+    <link name="${link_prefix}proximal">
+      <inertial>
+	<mass value="0.014" />
+	<origin xyz="0 0 0.0225" />
+	<inertia  ixx="0.00001" ixy="0.0"  ixz="0.0"  iyy="0.00001"  iyz="0.0"
+	izz="0.00001" />
+      </inertial>
+      <visual>
+	<origin xyz="0 0 0" rpy="0 0 0" />
+	<geometry name="proximal_visual">
+      <mesh filename="package://sr_description/hand/model/F3.dae" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="Grey" />
+      </visual>
+      <collision>
+	<origin xyz="0 0 0.025" rpy="0 0 0 " />
+	<geometry name="proximal_collision_geom">
+	  <box size="0.008 0.008 0.04" />
+	</geometry>
+      </collision>
+    </link>
+
+    <gazebo reference="${link_prefix}proximal">
+      <sensor type="contact" name="${link_prefix}proximal_contact" >
+        <always_on>1</always_on>
+        <update_rate>1000.0</update_rate>
+        <contact>
+          <collision>${link_prefix}proximal_collision</collision>
+          <topic>${link_prefix}proximal_collision</topic>
+        </contact>
+        <plugin name="${link_prefix}proximal_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+          <updateRate>100.0</updateRate>
+	  <frameName>${link_prefix}proximal</frameName>
+	  <bumperTopicName>contacts/${link_prefix}/proximal</bumperTopicName>
+        </plugin>
+      </sensor>
+      <material>LightGrey</material>
+    </gazebo>
+
+    <joint name="${joint_prefix}J3" type="revolute">
+      <parent link="${parent}"/>
+      <child link="${link_prefix}proximal"/>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <axis xyz="1 0 0" />
+      <limit lower="0" upper="${M_PI/2}" effort="1000.0"
+      velocity="10.0"/>
+      <dynamics damping="10.0"/>
+    </joint>
+    <gazebo reference="${joint_prefix}J3">
+    <provideFeedback>1</provideFeedback>
+    <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <xacro:proximal_transmission />
+
+  </xacro:macro>
+
+</robot>

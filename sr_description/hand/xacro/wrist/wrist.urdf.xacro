@@ -1,0 +1,67 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find sr_description)/hand/xacro/wrist/wrist.transmission.xacro" />
+
+  <!-- Right Hand -->
+  <xacro:macro name="wrist" params="parent *origin">
+    <xacro:wrist_base parent="${parent}" mesh="wrist.dae">
+      <insert_block name="origin" />
+    </xacro:wrist_base>
+  </xacro:macro>
+
+  <!-- Left Hand -->
+  <xacro:macro name="wrist_left" params="parent *origin">
+    <xacro:wrist_base parent="${parent}" mesh="wrist_left.mesh">
+      <insert_block name="origin" />
+    </xacro:wrist_base>
+  </xacro:macro>
+
+  <!-- Macro to used to generate left and right handed versions.
+  DO NOT use out side of here ie treat as a private macro -->
+  <xacro:macro name="wrist_base" params="parent *origin mesh">
+
+    <link name="wrist" >
+      <inertial>
+	<origin xyz="0 0.0 0.0" rpy="0 0 0" />
+	<!--<insert_block name="origin" />-->
+	<mass value="0.1" />
+	<inertia  ixx="0.000120" ixy="0.0"  ixz="0.0"  iyy="0.000148"  iyz="0.0" izz="0.0000438" />
+      </inertial>
+      <visual>
+	<origin xyz="0 0 0" rpy="0 0 0" />
+	<geometry name="wrist_visual">
+      <mesh filename="package://sr_description/hand/model/${mesh}" scale="0.001 0.001 0.001" />
+	</geometry>
+	<material name="LightGrey" />
+      </visual>
+      <collision>
+	<origin xyz="0 0 0" rpy="0 0 0" />
+	<geometry name="wrist_collision_geom">
+	  <box size="0.02 0.02 0.02" />
+	</geometry>
+      </collision>
+    </link>
+    <gazebo reference="wrist">
+      <material>PR2/Grey2</material>
+      <selfCollide>false</selfCollide>
+    </gazebo>
+
+    <joint name="WRJ2" type="revolute">
+      <parent link="${parent}"/>
+      <child link="wrist"/>
+      <!--<origin xyz="0 -0.010 0.213" rpy="0 0 0" />-->
+      <insert_block name="origin" />
+      <axis xyz="0 1 0" />
+      <limit lower="-0.52359877559829882" upper="0.17453292519943295" effort="1000.0" velocity="10.0"/>
+      <dynamics damping="30.0"/>
+    </joint>
+    <gazebo reference="WRJ2">
+      <provideFeedback>1</provideFeedback>
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <xacro:shadowhand_wrist_transmission />
+
+  </xacro:macro>
+
+</robot>

@@ -1,0 +1,30 @@
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+       xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#slider"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+       xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom">
+
+  <xacro:include filename="$(find sr_description)/hand/xacro/finger/lfmetacarpal/lfmetacarpal.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/hand/xacro/finger/classic_finger.urdf.xacro" />
+
+  <!-- Right Handed -->
+  <xacro:macro name="little_finger" params="link_prefix joint_prefix parent">
+    <xacro:lfmetacarpal parent="${parent}" />
+    <xacro:finger link_prefix="${link_prefix}" joint_prefix="${joint_prefix}" parent="lfmetacarpal">
+      <origin xyz="0 0 0.06579" rpy="0 0 0" />
+      <axis xyz="0 1 0" />
+    </xacro:finger>
+  </xacro:macro>
+
+  <!-- Left Handed -->
+  <xacro:macro name="little_finger_left" params="link_prefix joint_prefix parent">
+    <xacro:lfmetacarpal_left parent="${parent}" />
+    <xacro:finger link_prefix="${link_prefix}" joint_prefix="${joint_prefix}" parent="lfmetacarpal">
+      <origin xyz="0 0 0.06579" rpy="0 0 0" />
+      <axis xyz="0 -1 0" />
+    </xacro:finger>
+  </xacro:macro>
+
+</robot>

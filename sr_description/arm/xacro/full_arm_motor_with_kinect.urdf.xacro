@@ -1,0 +1,36 @@
+<robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:xacro="http://www.ros.org/wiki/xacro"
+       name="full_arm_motor">
+
+  <xacro:include filename="$(find sr_description)/arm/xacro/base/shadowarm_base.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/arm/xacro/trunk/shadowarm_trunk.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/arm/xacro/upper_arm/shadowarm_upperarm.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/arm/xacro/lower_arm/shadowarm_lowerarm.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/arm/xacro/hand_support/shadowarm_handsupport_motor.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/other/xacro/kinect/shadowarm_kinect.urdf.xacro" />
+
+  <xacro:macro name="sr_arm_motor">
+
+    <xacro:shadowarm_base>
+    </xacro:shadowarm_base>
+
+    <xacro:shadowarm_trunk parent="shadowarm_base">
+    </xacro:shadowarm_trunk>
+
+    <xacro:shadowarm_upperarm parent="shadowarm_trunk">
+    </xacro:shadowarm_upperarm>
+
+    <xacro:shadowarm_side_kinect parent="shadowarm_trunk">
+    </xacro:shadowarm_side_kinect>
+
+    <xacro:shadowarm_lowerarm parent="shadowarm_upperarm">
+    </xacro:shadowarm_lowerarm>
+
+    <xacro:shadowarm_handsupport_motor parent="shadowarm_lowerarm">
+    </xacro:shadowarm_handsupport_motor>
+
+  </xacro:macro>
+
+</robot>

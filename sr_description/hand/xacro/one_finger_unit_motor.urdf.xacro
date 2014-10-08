@@ -1,0 +1,49 @@
+<robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find sr_description)/hand/xacro/forearm/forearm_motor.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/hand/xacro/finger/classic_finger.urdf.xacro" />
+
+  <xacro:macro name="shadowhand_motor">
+
+    <xacro:forearm>
+    </xacro:forearm>
+
+    <link name="dummy_palm">
+      <inertial>
+	<mass value="0.010" />
+	<origin xyz="0 0 0" />
+	<inertia  ixx="0.00001" ixy="0.0"  ixz="0.0"  iyy="0.00001"  iyz="0.0" izz="0.00001" />
+      </inertial>
+      <visual>
+	<origin xyz="0 0 0.0505" rpy="0 0 0" />
+	<geometry name="dummy_palm_visual">
+	  <box size="0.015 0.015 0.110" />
+	</geometry>
+      <material name="Grey" />
+      </visual>
+      <collision>
+	<origin xyz="0 0 0.0" rpy="0 0 0" />
+	<geometry name="dummy_palm_collision_geom">
+	  <box size="0.015 0.015 0.110" />
+	</geometry>
+      </collision>
+    </link>
+
+    <joint name="forearm_to_dummy" type="fixed">
+      <parent link="forearm"/>
+      <child link="dummy_palm"/>
+      <origin xyz="0.011 0.010 0.22" rpy="0 0 3.14"/>
+    </joint>
+
+    <!-- mfknuckle is at [0.011 -0.01 0.346] from the bottom of forearm -->
+    <xacro:finger link_prefix="mf" joint_prefix="MF" parent="dummy_palm">
+      <origin xyz="0.0 0 0.116" rpy="0 0 0" />
+      <axis xyz="0 -1 0" />
+    </xacro:finger>
+
+  </xacro:macro>
+
+</robot>

@@ -1,0 +1,35 @@
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<property name="M_PI" value="3.1415926535897931" />
+
+<xacro:macro name="shadowarm_base">
+
+    <link name="shadowarm_base">
+      <inertial>
+	<origin xyz="0 0 0.0" rpy="0 0 0" />
+	<mass value="0.4" />
+	<inertia  ixx="0.001" ixy="0.0"  ixz="0.0"  iyy="0.001"  iyz="0.0"
+	izz="0.001" />
+      </inertial>
+      <visual>
+	<origin xyz="0 0 0" rpy="0 0 0" />
+	<geometry name="shadowarm_visual">
+          <mesh filename="package://sr_description/arm/model/arm_base.dae" scale="0.001 0.001 0.001" />
+        </geometry>
+        <material name="Grey" />
+      </visual>
+      <collision>
+	<origin xyz="0 0 0.0" rpy="0 0 0" />
+	<geometry name="shadowarm_collision_geom">
+          <mesh filename="package://sr_description/arm/model/arm_base.dae" scale="0.001 0.001 0.001" />
+	</geometry>
+      </collision>
+    </link>
+    <gazebo reference="shadowarm_base">
+      <material>Gazebo/Grey</material>
+      <selfCollide>false</selfCollide>
+    </gazebo>
+
+</xacro:macro>
+
+</robot>

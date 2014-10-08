@@ -1,0 +1,67 @@
+<robot name="desk" xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body" xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom" xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#slider" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="desk">
+  <link name="world"/>
+  <link name="desk_pillar">
+    <inertial>
+      <origin xyz="0 0 0.5"/>
+      <mass value="10.0"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.51"/>
+      <geometry name="desk_visual">
+        <cylinder length="0.97" radius="0.1"/>
+      </geometry>
+      <material name="Green"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.51"/>
+      <geometry name="desk_collision">
+        <cylinder length=".97" radius="0.05"/>
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="desk_pillar">
+    <material>Gazebo/Green</material>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+
+  <link name="desk_support">
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="10.0"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.01"/>
+      <geometry name="desk_s_visual">
+        <cylinder length="0.02" radius="1.0"/>
+      </geometry>
+      <material name="Green"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.01"/>
+      <geometry name="desk_s_collision">
+        <cylinder length="0.002" radius="0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="desk_support">
+    <material>Gazebo/Green</material>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+
+  <joint name="desk_joint" type="fixed">
+    <parent link="desk_support"/>
+    <child link="desk_pillar"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="desk_to_world_joint" type="fixed">
+    <parent link="world"/>
+    <child link="desk_support"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+
+  </xacro:macro>
+</robot>

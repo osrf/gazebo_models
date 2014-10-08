@@ -1,0 +1,49 @@
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find sr_description)/arm/xacro/lower_arm/shadowarm_lowerarm.transmission.xacro" />
+
+  <xacro:macro name="shadowarm_lowerarm" params="parent">
+    <link name="shadowarm_lowerarm">
+      <inertial>
+	<origin xyz="0 0 0" rpy="0 0 0" />
+	<mass value="0.5" />
+	<inertia  ixx="0.0001" ixy="0.0"  ixz="0.0"  iyy="0.0001"  iyz="0.0"
+	izz="0.0001" />
+      </inertial>
+      <visual>
+	<origin xyz="0.03 0 0.036" rpy="0 0 0" />
+	<geometry name="shadowarm_visual">
+          <mesh filename="package://sr_description/arm/model/elbow_flex.dae" scale="0.001 0.001 0.001" />
+        </geometry>
+        <material name="Grey" />
+      </visual>
+      <collision>
+	<origin xyz="0.03 0 0.036" rpy="0 0 0" />
+	<geometry name="shadowarm_collision_geom">
+          <mesh filename="package://sr_description/arm/model/elbow_flex.dae" scale="0.001 0.001 0.001" />
+        </geometry>
+      </collision>
+    </link>
+    <gazebo reference="shadowarm_lowerarm">
+      <material>LightGrey</material>
+      <selfCollide>false</selfCollide>
+    </gazebo>
+
+    <joint name="ElbowJSwing" type="revolute">
+      <parent link="${parent}"/>
+      <child link="shadowarm_lowerarm"/>
+      <origin xyz="0 0 0.369" rpy="0 0 0" />
+      <axis xyz="0 -1 0" />
+      <limit lower="0.52" upper="2.09439510239" effort="1000.0" velocity="10.0"/>
+      <dynamics damping="20.0"/>
+    </joint>
+    <gazebo reference="ElbowJSwing">
+      <provideFeedback>1</provideFeedback>
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <xacro:shadowarm_lowerarm_transmission />
+
+  </xacro:macro>
+
+</robot>

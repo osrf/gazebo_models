@@ -1,0 +1,28 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find sr_description)/hand/xacro/thumb/thbase.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/hand/xacro/thumb/thproximal.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/hand/xacro/thumb/thhub.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/hand/xacro/thumb/thmiddle.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/hand/xacro/thumb/thdistal_ellipsoid.urdf.xacro" />
+
+  <xacro:macro name="thumb_ellipsoid" params="parent">
+
+    <xacro:thbase parent="${parent}">
+    </xacro:thbase>
+
+    <xacro:thproximal parent="thbase">
+    </xacro:thproximal>
+
+    <xacro:thhub parent="thproximal">
+    </xacro:thhub>
+
+    <xacro:thmiddle parent="thhub">
+    </xacro:thmiddle>
+
+    <xacro:thdistal parent="thmiddle">
+    </xacro:thdistal>
+
+  </xacro:macro>
+
+</robot>

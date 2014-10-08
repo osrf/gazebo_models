@@ -1,0 +1,5 @@
+<robot name="desk" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find sr_description)/materials.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/other/xacro/desk/desk.urdf.xacro" />
+  <xacro:desk />
+</robot>

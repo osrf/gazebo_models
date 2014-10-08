@@ -1,0 +1,49 @@
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find sr_description)/arm/xacro/trunk/shadowarm_trunk.transmission.xacro" />
+
+  <xacro:macro name="shadowarm_trunk" params="parent">
+    <link name="shadowarm_trunk">
+      <inertial>
+        <origin xyz="0 0 0.0" rpy="0 0 0" />
+        <mass value="0.5" />
+        <inertia  ixx="0.001" ixy="0.0"  ixz="0.0"  iyy="0.001"  iyz="0.0" izz="0.001" />
+      </inertial>
+      <visual>
+	<origin xyz="0 0 0.005" rpy="0 0 0" />
+	<geometry name="shadowarm_visual">
+          <mesh filename="package://sr_description/arm/model/arm_trunk.dae" scale="0.001 0.001 0.001" />
+        </geometry>
+        <material name="Grey" />
+      </visual>
+      <collision>
+	<origin xyz="0 0 0.005" rpy="0 0 0" />
+	<geometry name="shadowarm_collision_geom">
+          <mesh filename="package://sr_description/arm/model/arm_trunk.dae" scale="0.001 0.001 0.001" />
+        </geometry>
+      </collision>
+    </link>
+    <gazebo reference="shadowarm_trunk">
+      <material>LightGrey</material>
+      <selfCollide>false</selfCollide>
+    </gazebo>
+
+    <joint name="ShoulderJRotate" type="revolute">
+      <parent link="${parent}"/>
+      <child link="shadowarm_trunk"/>
+      <origin xyz="0 0 0.01" rpy="0.0 0.0 0.0" />
+      <axis xyz="0 0 1" />
+      <limit lower="-${M_PI/4}" upper="${M_PI/2}"
+      effort="1000.0" velocity="10.0"/>
+      <dynamics damping="30.0"/>
+    </joint>
+    <gazebo reference="ShoulderJRotate">
+      <provideFeedback>1</provideFeedback>
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <xacro:shadowarm_trunk_transmission />
+
+  </xacro:macro>
+
+</robot>

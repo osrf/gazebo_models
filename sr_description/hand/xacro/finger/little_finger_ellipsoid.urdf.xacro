@@ -1,0 +1,92 @@
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+       xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#slider"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+       xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom">
+
+  <xacro:include filename="$(find sr_description)/hand/xacro/finger/knuckle/knuckle.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/hand/xacro/finger/proximal/proximal.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/hand/xacro/finger/middle/middle.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/hand/xacro/finger/distal/distal_ellipsoid.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/hand/xacro/finger/lfmetacarpal/lfmetacarpal.urdf.xacro" />
+
+  <xacro:macro name="little_finger_ellipsoid" params="link_prefix joint_prefix parent">
+
+    <xacro:lfmetacarpal parent="${parent}" >
+    </xacro:lfmetacarpal>
+
+    <link name="lfknuckle">
+      <inertial>
+	<origin xyz="0 0 0.06579" rpy="0 0 0" />
+	<mass value="0.008" />
+	<inertia  ixx="0.1" ixy="0.0"  ixz="0.0"  iyy="0.1"  iyz="0.0"
+	izz="0.1" />
+      </inertial>
+      <visual>
+	<origin xyz="0 0 0" rpy="0 0 0" />
+	<geometry name="knuckle_visual">
+      <mesh filename="package://sr_description/hand/model/knuckle.dae" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="LightGrey" />
+      </visual>
+      <collision>
+	<origin xyz="0 0 0" rpy="0 0 0" />
+	<geometry name="knuckle_collision_geom">
+	  <box size="0.005 0.005 0.005" />
+	</geometry>
+      </collision>
+    </link>
+
+    <gazebo reference="lfknuckle">
+      <sensor type="contact" name="lfknuckle_contact" >
+        <always_on>1</always_on>
+        <update_rate>1000.0</update_rate>
+        <contact>
+          <collision>lfknuckle_collision</collision>
+          <topic>lfknuckle_collision</topic>
+        </contact>
+        <plugin name="lfknuckle_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+          <updateRate>100.0</updateRate>
+	  <frameName>lfknuckle</frameName>
+	  <bumperTopicName>contacts/lf/knuckle</bumperTopicName>
+        </plugin>
+      </sensor>
+      <material>Gazebo/Grey</material>
+    </gazebo>
+
+    <joint name="LFJ4" type="revolute">
+      <parent link="lfmetacarpal"/>
+      <child link="lfknuckle"/>
+      <origin xyz="0 0 0.06579" rpy="0 0 0" />
+      <axis xyz="0 1 0" />
+      <limit lower="-0.3491" upper="0.3491"
+      effort="1000.0" velocity="10.0"/>
+      <dynamics damping="10.0"/>
+    </joint>
+    <gazebo reference="LFJ4">
+      <provideFeedback>1</provideFeedback>
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <transmission type="sr_mechanism_model/SimpleTransmission" name="lfknuckle_transmission">
+      <actuator name="LFJ4" />
+      <joint name="LFJ4" />
+      <mechanicalReduction>1</mechanicalReduction>
+      <motorTorqueConstant>1</motorTorqueConstant>
+      <pulsesPerRevolution>90000</pulsesPerRevolution>
+    </transmission>
+
+    <xacro:proximal link_prefix="${link_prefix}" joint_prefix="${joint_prefix}" parent="${link_prefix}knuckle" >
+    </xacro:proximal>
+
+    <xacro:middle link_prefix="${link_prefix}" joint_prefix="${joint_prefix}" parent="${link_prefix}proximal" >
+    </xacro:middle>
+
+    <xacro:distal link_prefix="${link_prefix}" joint_prefix="${joint_prefix}" parent="${link_prefix}middle" >
+    </xacro:distal>
+
+  </xacro:macro>
+
+</robot>

@@ -1,0 +1,83 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro"
+        xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#slider"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+       xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom">
+
+  <xacro:include filename="$(find sr_description)/hand/xacro/finger/lfmetacarpal/lfmetacarpal.transmission.xacro" />
+
+  <!-- Right Handed -->
+  <xacro:macro name="lfmetacarpal" params="parent">
+      <xacro:lfmetacarpal_base parent="${parent}" reflect="1" mesh="lfmetacarpal.dae" />
+  </xacro:macro>
+
+  <!-- Left Handed -->
+  <xacro:macro name="lfmetacarpal_left" params="parent">
+      <xacro:lfmetacarpal_base parent="${parent}" reflect="-1" mesh="lfmetacarpal_left.mesh" />
+  </xacro:macro>
+
+  <!-- Macro to used to generate left and right handed versions.
+  DO NOT use out side of here ie treat as a private macro -->
+  <xacro:macro name="lfmetacarpal_base" params="parent reflect mesh">
+
+    <link name="lfmetacarpal">
+      <inertial>
+        <origin xyz="0 0 0.04" rpy="0 0 0" />
+	    <mass value="0.075" />
+	    <inertia  ixx="5e-6" ixy="0.0"  ixz="0.0"
+                iyy="5e-6"  iyz="0.0"
+                izz="3e-6" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry name="lfmetacarpal_visual">
+          <mesh filename="package://sr_description/hand/model/${mesh}" scale="0.001 0.001 0.001" />
+        </geometry>
+        <material name="Grey" />
+      </visual>
+      <collision>
+          <origin xyz="0 0 0.04" rpy="0 0 0" />
+        <geometry name="lfmetacarpal_collision_geom">
+          <box size="0.008 0.008 0.03" />
+        </geometry>
+      </collision>
+    </link>
+
+    <gazebo reference="lfmetacarpal">
+      <sensor type="contact" name="lfmetacarpal_contact" >
+        <always_on>1</always_on>
+        <update_rate>1000.0</update_rate>
+        <contact>
+          <collision>lfmetacarpal_collision</collision>
+          <topic>lfmetacarpal_collision</topic>
+        </contact>
+        <plugin name="lfmetacarpal_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+          <updateRate>100.0</updateRate>
+	  <frameName>lfmetacarpal</frameName>
+	  <bumperTopicName>contacts/lf/metacarpal</bumperTopicName>
+        </plugin>
+      </sensor>
+      <material>LightGrey</material>
+    </gazebo>
+
+    <joint name="LFJ5" type="revolute">
+      <parent link="${parent}"/>
+      <child link="lfmetacarpal"/>
+      <origin xyz="${reflect*-0.033} 0 0.02071" rpy="0 0 0" />
+      <axis xyz="0.573576436 0 ${reflect*0.819152044}" />
+      <limit lower="0" upper="0.785398163" effort="1000.0"
+      velocity="10.0" />
+      <dynamics damping="10.0"/>
+    </joint>
+    <gazebo reference="LFJ5">
+    <provideFeedback>1</provideFeedback>
+    <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <xacro:lfmetacarpal_transmission />
+
+  </xacro:macro>
+
+</robot>

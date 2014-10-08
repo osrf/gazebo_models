@@ -1,0 +1,46 @@
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find sr_description)/arm/xacro/hand_support/shadowarm_handsupport_muscle.transmission.xacro" />
+
+  <xacro:macro name="shadowarm_handsupport_muscle" params="parent">
+
+    <link name="shadowarm_handsupport">
+      <inertial>
+	<origin xyz="0 0 0" rpy="0 0 0" />
+	<mass value="0.75" />
+	<inertia  ixx="0.001" ixy="0.0"  ixz="0.0"  iyy="0.001"  iyz="0.0"  izz="0.001" />
+      </inertial>
+      <visual>
+	<origin xyz="0 0 -0.04" rpy="${M_PI/2} 0 0"/>
+	<geometry name="shadowarm_handsupport_visual">
+	  <mesh filename="package://sr_description/arm/model/elbow_rotate_muscle.mesh" scale="0.001 0.001 0.001" />
+	</geometry>
+	<material name="LightGrey" />
+      </visual>
+      <collision>
+	<origin xyz="0 0 0" rpy="0 0 0"/>
+	<geometry name="shadowarm_handsupport_collision">
+	  <cylinder radius="0.06" length="0.001"/>
+	</geometry>
+      </collision>
+    </link>
+    <gazebo reference="shadowarm_handsupport">
+      <material>Gazebo/Grey</material>
+      <selfCollide>false</selfCollide>
+    </gazebo>
+
+    <joint name="ElbowJRotate" type="revolute">
+      <parent link="${parent}"/>
+      <child link="shadowarm_handsupport"/>
+      <origin xyz="0.08 0 0.131" rpy="0 0 0" />
+      <axis xyz="0 0 -1" />
+      <limit lower="-${M_PI/2}" upper="${M_PI/2}"
+      effort="1000.0" velocity="10.0"/>
+      <dynamics damping="20.0"/>
+    </joint>
+
+    <xacro:shadowarm_handsupport_muscle_transmission />
+
+  </xacro:macro>
+
+</robot>

@@ -1,0 +1,2426 @@
+<sdf version='1.5'>
+  <model name='arm_and_hand'>
+    <link name='shadowarm_handsupport'>
+      <pose>0.08 0 0.125 0 -0 0</pose>
+      <inertial>
+        <pose>0.072 -5.72442e-05 0.959943 0 -0 0</pose>
+        <mass>3.75</mass>
+        <inertia>
+          <ixx>0.864997</ixx>
+          <ixy>3.86398e-06</ixy>
+          <ixz>-0.0647961</ixz>
+          <iyy>0.869857</iyy>
+          <iyz>5.15167e-05</iyz>
+          <izz>0.00596</izz>
+        </inertia>
+      </inertial>
+      <collision name='shadowarm_handsupport_collision'>
+        <pose>0 0 -0.005 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.001</length>
+            <radius>0.06</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='shadowarm_handsupport_collision_forearm'>
+        <pose>0.0899999 -7.15552e-05 1.19993 -1.57159 0.00159265 -1.57159</pose>
+        <geometry>
+          <cylinder>
+            <length>0.18</length>
+            <radius>0.06</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='shadowarm_handsupport_visual'>
+        <pose>0 0 -0.04 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/arm/model/elbow_rotate_motor.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='shadowarm_handsupport_visual_forearm'>
+        <pose>0 0 1.2 -1.57159 0.00159265 -1.57159</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/forearm.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>LightGrey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='ElbowJRotate' type='revolute'>
+      <child>shadowarm_handsupport</child>
+      <parent>world</parent>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>30</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='wrist'>
+      <pose>0.293008 -0.00018528 1.33483 -1.57159 0.00159265 -1.57159</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.00012</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000148</iyy>
+          <iyz>0</iyz>
+          <izz>4.38e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='wrist_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.02 0.02</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wrist_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/wrist.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>PR2/Grey2</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='WRJ2' type='revolute'>
+      <child>wrist</child>
+      <parent>shadowarm_handsupport</parent>
+      <axis>
+        <xyz>-0.000795058 0.00159329 -0.999998</xyz>
+        <limit>
+          <lower>-0.523599</lower>
+          <upper>0.174533</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>30</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='palm'>
+      <pose>0.327008 -0.000212312 1.3348 -1.57159 0.00159265 -1.57159</pose>
+      <inertial>
+        <pose>0 0 0.035 0 -0 0</pose>
+        <mass>0.3</mass>
+        <inertia>
+          <ixx>0.0005</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0005</iyy>
+          <iyz>0</iyz>
+          <izz>0.0003</izz>
+        </inertia>
+      </inertial>
+      <collision name='palm_collision'>
+        <pose>0.005 0 0.035 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.02 0.07</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='palm_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/palm.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>LightGrey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <sensor name='palm_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>palm_collision</collision>
+          <topic>palm_collision</topic>
+        </contact>
+        <plugin name='palm_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>palm</frameName>
+          <bumperTopicName>contacts/palm</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='WRJ1' type='revolute'>
+      <child>palm</child>
+      <parent>wrist</parent>
+      <axis>
+        <xyz>-0.000796326 -0.999998 -0.00159265</xyz>
+        <limit>
+          <lower>-0.7854</lower>
+          <upper>0.5236</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>30</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='ffknuckle'>
+      <pose>0.421981 -0.0332878 1.33468 -1.57159 0.00159265 -1.57159</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.008</mass>
+        <inertia>
+          <ixx>1e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='ffknuckle_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.005 0.005 0.005</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='ffknuckle_visual'>
+        <pose>0 0 0.0005 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/knuckle.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <sensor name='ffknuckle_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>ffknuckle_collision</collision>
+          <topic>ffknuckle_collision</topic>
+        </contact>
+        <plugin name='ffknuckle_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>ffknuckle</frameName>
+          <bumperTopicName>contacts/ff/knuckle</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='FFJ4' type='revolute'>
+      <child>ffknuckle</child>
+      <parent>palm</parent>
+      <axis>
+        <xyz>0.000795058 -0.00159329 0.999998</xyz>
+        <limit>
+          <lower>-0.3491</lower>
+          <upper>0.3491</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='ffproximal'>
+      <pose>0.421981 -0.0332878 1.33468 -1.57159 0.00159265 -1.57159</pose>
+      <inertial>
+        <pose>0 0 0.0225 0 -0 0</pose>
+        <mass>0.014</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='ffproximal_collision'>
+        <pose>0 0 0.025 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.008 0.008 0.04</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='ffproximal_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/F3.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>LightGrey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <sensor name='ffproximal_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>ffproximal_collision</collision>
+          <topic>ffproximal_collision</topic>
+        </contact>
+        <plugin name='ffproximal_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>ffproximal</frameName>
+          <bumperTopicName>contacts/ff/proximal</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='FFJ3' type='revolute'>
+      <child>ffproximal</child>
+      <parent>ffknuckle</parent>
+      <axis>
+        <xyz>-0.000796326 -0.999998 -0.00159265</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='ffmiddle'>
+      <pose>0.466981 -0.0333236 1.33464 -1.57159 0.00159265 -1.57159</pose>
+      <inertial>
+        <pose>0 0 0.0125 0 -0 0</pose>
+        <mass>0.012</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='ffmiddle_collision'>
+        <pose>0 0 0.0125 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.008 0.008 0.015</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='ffmiddle_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/F2.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>LightGrey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <sensor name='ffmiddle_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>ffmiddle_collision</collision>
+          <topic>ffmiddle_collision</topic>
+        </contact>
+        <plugin name='ffmiddle_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>ffmiddle</frameName>
+          <bumperTopicName>contacts/ff/middle</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='FFJ2' type='revolute'>
+      <child>ffmiddle</child>
+      <parent>ffproximal</parent>
+      <axis>
+        <xyz>-0.000796326 -0.999998 -0.00159265</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='ffdistal'>
+      <pose>0.491981 -0.0333434 1.33462 -1.57159 0.00159265 -1.57159</pose>
+      <inertial>
+        <pose>0 0 0.0141818 0 -0 0</pose>
+        <mass>0.011</mass>
+        <inertia>
+          <ixx>1.02536e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.02536e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.01e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='ffdistal_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/F1.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='ffdistal_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/F1.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>LightGrey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>1</self_collide>
+      <sensor name='ffdistal_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>ffdistal_collision</collision>
+          <topic>ffdistal_collision</topic>
+        </contact>
+        <plugin name='ffdistal_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>ffdistal</frameName>
+          <bumperTopicName>contacts/ff/distal</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='FFJ1' type='revolute'>
+      <child>ffdistal</child>
+      <parent>ffmiddle</parent>
+      <axis>
+        <xyz>-0.000796326 -0.999998 -0.00159265</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='lfmetacarpal'>
+      <pose>0.347744 0.0327712 1.33484 -1.57159 0.00159265 -1.57159</pose>
+      <inertial>
+        <pose>0 0 0.04 0 -0 0</pose>
+        <mass>0.075</mass>
+        <inertia>
+          <ixx>1e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='lfmetacarpal_collision'>
+        <pose>0 0 0.04 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.008 0.008 0.03</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='lfmetacarpal_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/lfmetacarpal.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>LightGrey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <sensor name='lfmetacarpal_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>lfmetacarpal_collision</collision>
+          <topic>lfmetacarpal_collision</topic>
+        </contact>
+        <plugin name='lfmetacarpal_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>lfmetacarpal</frameName>
+          <bumperTopicName>contacts/lf/metacarpal</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='LFJ5' type='revolute'>
+      <child>lfmetacarpal</child>
+      <parent>palm</parent>
+      <axis>
+        <xyz>0.818695 -0.574227 -0.00156582</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.785398</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='lfknuckle'>
+      <pose>0.413534 0.0327189 1.33479 -1.57159 0.00159265 -1.57159</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.008</mass>
+        <inertia>
+          <ixx>1e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='lfknuckle_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.005 0.005 0.005</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='lfknuckle_visual'>
+        <pose>0 0 0.0005 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/knuckle.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <sensor name='lfknuckle_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>lfknuckle_collision</collision>
+          <topic>lfknuckle_collision</topic>
+        </contact>
+        <plugin name='lfknuckle_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>lfknuckle</frameName>
+          <bumperTopicName>contacts/lf/knuckle</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='LFJ4' type='revolute'>
+      <child>lfknuckle</child>
+      <parent>lfmetacarpal</parent>
+      <axis>
+        <xyz>-0.000795058 0.00159329 -0.999998</xyz>
+        <limit>
+          <lower>-0.3491</lower>
+          <upper>0.3491</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='lfproximal'>
+      <pose>0.413534 0.0327189 1.33479 -1.57159 0.00159265 -1.57159</pose>
+      <inertial>
+        <pose>0 0 0.0225 0 -0 0</pose>
+        <mass>0.014</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='lfproximal_collision'>
+        <pose>0 0 0.025 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.008 0.008 0.04</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='lfproximal_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/F3.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>LightGrey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <sensor name='lfproximal_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>lfproximal_collision</collision>
+          <topic>lfproximal_collision</topic>
+        </contact>
+        <plugin name='lfproximal_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>lfproximal</frameName>
+          <bumperTopicName>contacts/lf/proximal</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='LFJ3' type='revolute'>
+      <child>lfproximal</child>
+      <parent>lfknuckle</parent>
+      <axis>
+        <xyz>-0.000796326 -0.999998 -0.00159265</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='lfmiddle'>
+      <pose>0.458534 0.0326831 1.33475 -1.57159 0.00159265 -1.57159</pose>
+      <inertial>
+        <pose>0 0 0.0125 0 -0 0</pose>
+        <mass>0.012</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='lfmiddle_collision'>
+        <pose>0 0 0.0125 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.008 0.008 0.015</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='lfmiddle_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/F2.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>LightGrey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <sensor name='lfmiddle_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>lfmiddle_collision</collision>
+          <topic>lfmiddle_collision</topic>
+        </contact>
+        <plugin name='lfmiddle_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>lfmiddle</frameName>
+          <bumperTopicName>contacts/lf/middle</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='LFJ2' type='revolute'>
+      <child>lfmiddle</child>
+      <parent>lfproximal</parent>
+      <axis>
+        <xyz>-0.000796326 -0.999998 -0.00159265</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='lfdistal'>
+      <pose>0.483534 0.0326632 1.33473 -1.57159 0.00159265 -1.57159</pose>
+      <inertial>
+        <pose>0 0 0.0141818 0 -0 0</pose>
+        <mass>0.011</mass>
+        <inertia>
+          <ixx>1.02536e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.02536e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.01e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='lfdistal_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/F1.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='lfdistal_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/F1.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>LightGrey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>1</self_collide>
+      <sensor name='lfdistal_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>lfdistal_collision</collision>
+          <topic>lfdistal_collision</topic>
+        </contact>
+        <plugin name='lfdistal_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>lfdistal</frameName>
+          <bumperTopicName>contacts/lf/distal</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='LFJ1' type='revolute'>
+      <child>lfdistal</child>
+      <parent>lfmiddle</parent>
+      <axis>
+        <xyz>-0.000796326 -0.999998 -0.00159265</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='mfknuckle'>
+      <pose>0.425999 -0.011291 1.33471 -1.57159 0.00159265 -1.57159</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.008</mass>
+        <inertia>
+          <ixx>1e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='mfknuckle_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.005 0.005 0.005</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='mfknuckle_visual'>
+        <pose>0 0 0.0005 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/knuckle.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <sensor name='mfknuckle_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>mfknuckle_collision</collision>
+          <topic>mfknuckle_collision</topic>
+        </contact>
+        <plugin name='mfknuckle_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>mfknuckle</frameName>
+          <bumperTopicName>contacts/mf/knuckle</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='MFJ4' type='revolute'>
+      <child>mfknuckle</child>
+      <parent>palm</parent>
+      <axis>
+        <xyz>0.000795058 -0.00159329 0.999998</xyz>
+        <limit>
+          <lower>-0.3491</lower>
+          <upper>0.3491</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='mfproximal'>
+      <pose>0.425999 -0.011291 1.33471 -1.57159 0.00159265 -1.57159</pose>
+      <inertial>
+        <pose>0 0 0.0225 0 -0 0</pose>
+        <mass>0.014</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='mfproximal_collision'>
+        <pose>0 0 0.025 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.008 0.008 0.04</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='mfproximal_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/F3.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>LightGrey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <sensor name='mfproximal_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>mfproximal_collision</collision>
+          <topic>mfproximal_collision</topic>
+        </contact>
+        <plugin name='mfproximal_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>mfproximal</frameName>
+          <bumperTopicName>contacts/mf/proximal</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='MFJ3' type='revolute'>
+      <child>mfproximal</child>
+      <parent>mfknuckle</parent>
+      <axis>
+        <xyz>-0.000796326 -0.999998 -0.00159265</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='mfmiddle'>
+      <pose>0.470999 -0.0113268 1.33467 -1.57159 0.00159265 -1.57159</pose>
+      <inertial>
+        <pose>0 0 0.0125 0 -0 0</pose>
+        <mass>0.012</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='mfmiddle_collision'>
+        <pose>0 0 0.0125 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.008 0.008 0.015</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='mfmiddle_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/F2.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>LightGrey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <sensor name='mfmiddle_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>mfmiddle_collision</collision>
+          <topic>mfmiddle_collision</topic>
+        </contact>
+        <plugin name='mfmiddle_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>mfmiddle</frameName>
+          <bumperTopicName>contacts/mf/middle</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='MFJ2' type='revolute'>
+      <child>mfmiddle</child>
+      <parent>mfproximal</parent>
+      <axis>
+        <xyz>-0.000796326 -0.999998 -0.00159265</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='mfdistal'>
+      <pose>0.495999 -0.0113467 1.33465 -1.57159 0.00159265 -1.57159</pose>
+      <inertial>
+        <pose>0 0 0.0141818 0 -0 0</pose>
+        <mass>0.011</mass>
+        <inertia>
+          <ixx>1.02536e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.02536e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.01e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='mfdistal_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/F1.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='mfdistal_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/F1.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>LightGrey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>1</self_collide>
+      <sensor name='mfdistal_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>mfdistal_collision</collision>
+          <topic>mfdistal_collision</topic>
+        </contact>
+        <plugin name='mfdistal_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>mfdistal</frameName>
+          <bumperTopicName>contacts/mf/distal</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='MFJ1' type='revolute'>
+      <child>mfdistal</child>
+      <parent>mfmiddle</parent>
+      <axis>
+        <xyz>-0.000796326 -0.999998 -0.00159265</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='rfknuckle'>
+      <pose>0.422016 0.0107121 1.33475 -1.57159 0.00159265 -1.57159</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.008</mass>
+        <inertia>
+          <ixx>1e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='rfknuckle_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.005 0.005 0.005</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rfknuckle_visual'>
+        <pose>0 0 0.0005 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/knuckle.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <sensor name='rfknuckle_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>rfknuckle_collision</collision>
+          <topic>rfknuckle_collision</topic>
+        </contact>
+        <plugin name='rfknuckle_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>rfknuckle</frameName>
+          <bumperTopicName>contacts/rf/knuckle</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='RFJ4' type='revolute'>
+      <child>rfknuckle</child>
+      <parent>palm</parent>
+      <axis>
+        <xyz>-0.000795058 0.00159329 -0.999998</xyz>
+        <limit>
+          <lower>-0.3491</lower>
+          <upper>0.3491</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='rfproximal'>
+      <pose>0.422016 0.0107121 1.33475 -1.57159 0.00159265 -1.57159</pose>
+      <inertial>
+        <pose>0 0 0.0225 0 -0 0</pose>
+        <mass>0.014</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='rfproximal_collision'>
+        <pose>0 0 0.025 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.008 0.008 0.04</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rfproximal_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/F3.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>LightGrey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <sensor name='rfproximal_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>rfproximal_collision</collision>
+          <topic>rfproximal_collision</topic>
+        </contact>
+        <plugin name='rfproximal_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>rfproximal</frameName>
+          <bumperTopicName>contacts/rf/proximal</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='RFJ3' type='revolute'>
+      <child>rfproximal</child>
+      <parent>rfknuckle</parent>
+      <axis>
+        <xyz>-0.000796326 -0.999998 -0.00159265</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='rfmiddle'>
+      <pose>0.467016 0.0106764 1.33471 -1.57159 0.00159265 -1.57159</pose>
+      <inertial>
+        <pose>0 0 0.0125 0 -0 0</pose>
+        <mass>0.012</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='rfmiddle_collision'>
+        <pose>0 0 0.0125 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.008 0.008 0.015</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rfmiddle_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/F2.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>LightGrey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <sensor name='rfmiddle_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>rfmiddle_collision</collision>
+          <topic>rfmiddle_collision</topic>
+        </contact>
+        <plugin name='rfmiddle_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>rfmiddle</frameName>
+          <bumperTopicName>contacts/rf/middle</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='RFJ2' type='revolute'>
+      <child>rfmiddle</child>
+      <parent>rfproximal</parent>
+      <axis>
+        <xyz>-0.000796326 -0.999998 -0.00159265</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='rfdistal'>
+      <pose>0.492016 0.0106565 1.33469 -1.57159 0.00159265 -1.57159</pose>
+      <inertial>
+        <pose>0 0 0.0141818 0 -0 0</pose>
+        <mass>0.011</mass>
+        <inertia>
+          <ixx>1.02536e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.02536e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.01e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='rfdistal_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/F1.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rfdistal_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/F1.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>LightGrey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>1</self_collide>
+      <sensor name='rfdistal_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>rfdistal_collision</collision>
+          <topic>rfdistal_collision</topic>
+        </contact>
+        <plugin name='rfdistal_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>rfdistal</frameName>
+          <bumperTopicName>contacts/rf/distal</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='RFJ1' type='revolute'>
+      <child>rfdistal</child>
+      <parent>rfmiddle</parent>
+      <axis>
+        <xyz>-0.000796326 -0.999998 -0.00159265</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='thbase'>
+      <pose>0.355987 -0.0342489 1.34323 -1.57249 0.000563088 -2.35699</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='thbase_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='thbase_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>LightGrey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <sensor name='thbase_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>thbase_collision</collision>
+          <topic>thbase_collision</topic>
+        </contact>
+        <plugin name='thbase_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>thbase</frameName>
+          <bumperTopicName>contacts/th/base</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='THJ5' type='revolute'>
+      <child>thbase</child>
+      <parent>palm</parent>
+      <axis>
+        <xyz>-0.706543 0.707668 0.00168926</xyz>
+        <limit>
+          <lower>-1.047</lower>
+          <upper>1.047</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='thproximal'>
+      <pose>0.355987 -0.0342489 1.34323 -1.57249 0.000563088 -2.35699</pose>
+      <inertial>
+        <pose>0 0 0.019 0 -0 0</pose>
+        <mass>0.016</mass>
+        <inertia>
+          <ixx>1e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='thproximal_collision'>
+        <pose>0 0 0.019 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.008 0.008 0.02</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='thproximal_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/TH3_z.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>LightGrey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <sensor name='thproximal_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>thproximal_collision</collision>
+          <topic>thproximal_collision</topic>
+        </contact>
+        <plugin name='thproximal_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>thproximal</frameName>
+          <bumperTopicName>contacts/th/proximal</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='THJ4' type='revolute'>
+      <child>thproximal</child>
+      <parent>thbase</parent>
+      <axis>
+        <xyz>-0.707669 -0.706543 -0.000563088</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.309</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='thhub'>
+      <pose>0.382836 -0.0611402 1.34316 -1.57249 0.000563088 -2.35699</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>1e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='thhub_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='thhub_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>LightGrey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <sensor name='thhub_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>thhub_collision</collision>
+          <topic>thhub_collision</topic>
+        </contact>
+        <plugin name='thhub_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>thhub</frameName>
+          <bumperTopicName>contacts/th/hub</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='THJ3' type='revolute'>
+      <child>thhub</child>
+      <parent>thproximal</parent>
+      <axis>
+        <xyz>-0.707669 -0.706543 -0.000563088</xyz>
+        <limit>
+          <lower>-0.2618</lower>
+          <upper>0.2618</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='thmiddle'>
+      <pose>0.382836 -0.0611402 1.34316 -1.57249 0.000563088 -2.35699</pose>
+      <inertial>
+        <pose>0 0 0.016 0 -0 0</pose>
+        <mass>0.016</mass>
+        <inertia>
+          <ixx>1e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='thmiddle_collision'>
+        <pose>0 0 0.016 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.008 0.008 0.015</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='thmiddle_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/TH2_z.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>LightGrey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <sensor name='thmiddle_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>thmiddle_collision</collision>
+          <topic>thmiddle_collision</topic>
+        </contact>
+        <plugin name='thmiddle_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>thmiddle</frameName>
+          <bumperTopicName>contacts/th/middle</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='THJ2' type='revolute'>
+      <child>thmiddle</child>
+      <parent>thhub</parent>
+      <axis>
+        <xyz>0.000795058 -0.00159329 0.999998</xyz>
+        <limit>
+          <lower>-0.6981</lower>
+          <upper>0.6981</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='thdistal'>
+      <pose>0.405445 -0.0837856 1.34311 -2.81984 -1.56902 -1.10794</pose>
+      <inertial>
+        <pose>0 0 0.0145588 0 -0 0</pose>
+        <mass>0.017</mass>
+        <inertia>
+          <ixx>1.11779e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.11779e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='thdistal_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/TH1_z.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='thdistal_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://sr_description/hand/model/TH1_z.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>LightGrey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>1</self_collide>
+      <sensor name='thdistal_contact' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <contact>
+          <collision>thdistal_collision</collision>
+          <topic>thdistal_collision</topic>
+        </contact>
+        <plugin name='thdistal_gazebo_ros_bumper_controller' filename='libgazebo_ros_bumper.so'>
+          <updateRate>100.0</updateRate>
+          <frameName>thdistal</frameName>
+          <bumperTopicName>contacts/th/distal</bumperTopicName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='THJ1' type='revolute'>
+      <child>thdistal</child>
+      <parent>thmiddle</parent>
+      <axis>
+        <xyz>0.000795058 -0.00159329 0.999998</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.571</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+  </model>
+</sdf>

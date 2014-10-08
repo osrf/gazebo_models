@@ -1,0 +1,85 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro"
+        xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#slider"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+       xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom">
+
+  <xacro:include filename="$(find sr_description)/hand/xacro/thumb/thbase.transmission.xacro" />
+
+  <!-- Right Hand -->
+  <xacro:macro name="thbase" params="parent">
+      <xacro:thbase_base parent="${parent}" reflect="1" joint_yaw="0" />
+  </xacro:macro>
+
+  <!-- Left Hand -->
+  <xacro:macro name="thbase_left" params="parent">
+      <xacro:thbase_base parent="${parent}" reflect="-1" joint_yaw="${M_PI}" />
+  </xacro:macro>
+
+  <!-- Macro to used to generate left and right handed versions.
+  DO NOT use out side of here ie treat as a private macro -->
+  <xacro:macro name="thbase_base" params="parent reflect joint_yaw">
+
+    <link name="thbase">
+      <inertial>
+	<mass value="0.010" />
+	  <origin xyz="0 0 0" rpy="0 0 0"/>
+	<inertia  ixx="1e-6" ixy="0.0"  ixz="0.0"
+            iyy="1e-6"  iyz="0.0"
+	          izz="1e-6" />
+      </inertial>
+      <visual>
+	<origin xyz="0 0 0" rpy="0 0 0" />
+	<geometry name="thbase_visual">
+	  <box size="0.001 0.001 0.001" />
+	</geometry>
+      <material name="shadow_thbase_material">
+	  <color rgba="0.5 0.5 0.5 1.0"/>
+	</material>
+      </visual>
+      <collision>
+	<origin xyz="0 0 0" rpy="0 0 0 " />
+	<geometry name="thbase_collision_geom">
+	  <box size="0.001 0.001 0.001" />
+	</geometry>
+      </collision>
+    </link>
+
+    <gazebo reference="thbase">
+      <sensor type="contact" name="thbase_contact" >
+        <always_on>1</always_on>
+        <update_rate>1000.0</update_rate>
+        <contact>
+          <collision>thbase_collision</collision>
+          <topic>thbase_collision</topic>
+        </contact>
+        <plugin name="thbase_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+          <updateRate>100.0</updateRate>
+	  <frameName>thbase</frameName>
+	  <bumperTopicName>contacts/th/base</bumperTopicName>
+        </plugin>
+      </sensor>
+      <material>LightGrey</material>
+    </gazebo>
+
+    <joint name="THJ5" type="revolute">
+      <parent link="${parent}"/>
+      <child link="thbase"/>
+      <origin xyz="${reflect*0.034} -0.0085 0.029" rpy="0 ${M_PI/4} ${joint_yaw}" />
+      <axis xyz="0 0 ${reflect*-1}" />
+      <limit lower="-1.047" upper="1.047" effort="1000.0"
+      velocity="10.0" />
+      <dynamics damping="10.0"/>
+    </joint>
+    <gazebo reference="THJ5">
+      <provideFeedback>1</provideFeedback>
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <xacro:thbase_transmission />
+
+  </xacro:macro>
+
+</robot>

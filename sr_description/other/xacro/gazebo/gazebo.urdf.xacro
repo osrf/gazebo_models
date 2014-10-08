@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface">
+
+  <!--
+  <gazebo>
+    <plugin name="sr_gazebo_ros_controller_manager" filename="libsr_gazebo_ros_controller_manager.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>1400.0</updateRate>
+      <robotParam>sh_description</robotParam>
+    </plugin>
+  </gazebo>
+  -->
+</robot>

@@ -1,0 +1,73 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro"
+        xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#slider"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+       xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom">
+
+  <xacro:include filename="$(find sr_description)/hand/xacro/thumb/thmiddle.transmission.xacro" />
+
+  <xacro:macro name="thmiddle" params="parent">
+
+    <link name="thmiddle">
+      <inertial>
+	<mass value="0.016" />
+	<origin xyz="0 0 0.016" rpy="0 0 0"/>
+	<inertia  ixx="1e-6" ixy="0.0"  ixz="0.0"
+            iyy="1e-6"  iyz="0.0"
+            izz="1e-6" />
+      </inertial>
+      <visual>
+	<origin xyz="0 0 0" rpy="0 0 0" />
+	<geometry name="thmiddle_visual">
+	<mesh filename="package://sr_description/hand/model/TH2_z.dae" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="shadow_thmiddle_material">
+	  <color rgba="0.2 0.2 0.2 1.0"/>
+	</material>
+      </visual>
+      <collision>
+	<origin xyz="0 0 0.016" rpy="0 0 0 " />
+	<geometry name="thmiddle_collision_geom">
+	  <box size="0.008 0.008 0.015" />
+	</geometry>
+      </collision>
+    </link>
+
+    <gazebo reference="thmiddle">
+      <sensor type="contact" name="thmiddle_contact" >
+        <always_on>1</always_on>
+        <update_rate>1000.0</update_rate>
+        <contact>
+          <collision>thmiddle_collision</collision>
+          <topic>thmiddle_collision</topic>
+        </contact>
+        <plugin name="thmiddle_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+          <updateRate>100.0</updateRate>
+	  <frameName>thmiddle</frameName>
+	  <bumperTopicName>contacts/th/middle</bumperTopicName>
+        </plugin>
+      </sensor>
+      <material>LightGrey</material>
+    </gazebo>
+
+    <joint name="THJ2" type="revolute">
+      <parent link="${parent}"/>
+      <child link="thmiddle"/>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <axis xyz="0 -1 0" />
+      <limit lower="-0.6981" upper="0.6981" effort="1000.0"
+      velocity="10.0" />
+      <dynamics damping="10.0"/>
+    </joint>
+    <gazebo reference="THJ2">
+      <provideFeedback>1</provideFeedback>
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <xacro:thmiddle_transmission />
+
+  </xacro:macro>
+
+</robot>

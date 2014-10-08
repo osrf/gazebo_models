@@ -1,0 +1,167 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro"
+        xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#slider"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+       xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom">
+
+  <xacro:include filename="$(find sr_description)/hand/xacro/finger/biotac/edc_muscle_biotac.transmission.xacro" />
+
+  <xacro:macro name="biotac_middle" params="link_prefix joint_prefix parent">
+
+    <link name="${link_prefix}adapter">
+      <inertial>
+        <origin xyz="0 0 0.0125" rpy="0 0 0" />
+        <mass value="0.012" />
+        <inertia  ixx="0.1" ixy="0.0"  ixz="0.0"  iyy="0.1"  iyz="0.0" izz="0.01" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 1.571" />
+        <geometry name="${link_prefix}adapter_visual">
+          <mesh filename="package://sr_description/hand/model/biotacs/F2_biotac_adapter.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+        <material name="LightGrey" />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0.0125" rpy="0 0 0" />
+        <geometry name="${link_prefix}adapter_collision_geom">
+          <box size="0.008 0.008 0.03" />
+        </geometry>
+      </collision>
+    </link>
+
+
+    <gazebo reference="${link_prefix}adapter">
+      <sensor type="contact" name="${link_prefix}adapter_contact" >
+        <always_on>1</always_on>
+        <update_rate>1000.0</update_rate>
+        <contact>
+          <collision>${link_prefix}adapter_collision</collision>
+          <topic>${link_prefix}adapter_collision</topic>
+        </contact>
+        <plugin name="${link_prefix}adapter_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+          <updateRate>100.0</updateRate>
+	  <frameName>${link_prefix}adapter</frameName>
+	  <bumperTopicName>contacts/${link_prefix}/adapter</bumperTopicName>
+        </plugin>
+      </sensor>
+      <material>Gazebo/Grey</material>
+    </gazebo>
+
+    <joint name="${joint_prefix}J2" type="revolute">
+      <parent link="${parent}"/>
+      <child link="${link_prefix}adapter"/>
+      <origin xyz="0 0 0.045" rpy="0 0 0" />
+      <axis xyz="1 0 0" />
+      <limit lower="0" upper="${M_PI/2}" effort="1000.0"
+      velocity="10.0" />
+      <dynamics damping="10.0"/>
+    </joint>
+    <gazebo reference="${joint_prefix}J2">
+    <provideFeedback>1</provideFeedback>
+    <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <link name="${link_prefix}_J1_dummy">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.01" />
+        <inertia  ixx="0.1" ixy="0.0"  ixz="0.0"  iyy="0.1"  iyz="0.0" izz="0.01" />
+      </inertial>
+    </link>
+
+    <joint name="${joint_prefix}J1" type="revolute">
+      <parent link="${link_prefix}adapter"/>
+      <child link="${link_prefix}_J1_dummy"/>
+      <origin xyz="0 0 0.02" rpy="0 0 0" />
+      <axis xyz="1 0 0" />
+      <limit lower="${20*M_PI/180}" upper="${20.1*M_PI/180}" effort="1000.0" velocity="10.0" />
+      <dynamics damping="10.0"/>
+    </joint>
+    <gazebo reference="${joint_prefix}J1">
+    <provideFeedback>1</provideFeedback>
+    <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <xacro:middle_transmission />
+
+    <link name="${link_prefix}biotac">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.10" />
+        <inertia  ixx="0.1" ixy="0.0"  ixz="0.0"  iyy="0.1"  iyz="0.0" izz="0.01" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry name="${link_prefix}biotac_visual">
+          <!-- <mesh filename="package://sr_description/hand/model/biotacs/biotac.stl" scale="0.0254 0.0254 0.0254" /> -->
+          <mesh filename="package://sr_description/hand/model/biotacs/biotac_decimated.dae" scale="0.0254 0.0254 0.0254" />
+        </geometry>
+        <material name="BiotacGreen" />
+      </visual>
+      <collision>
+        <geometry name="${link_prefix}biotac_collision_geom">
+          <!-- <mesh filename="package://sr_description/hand/model/biotacs/biotac.stl" scale="0.0254 0.0254 0.0254" /> -->
+          <mesh filename="package://sr_description/hand/model/biotacs/biotac_decimated.dae" scale="0.0254 0.0254 0.0254" />
+        </geometry>
+      </collision>
+    </link>
+
+    <gazebo reference="${link_prefix}biotac">
+      <sensor type="contact" name="${link_prefix}biotac_contact" >
+        <always_on>1</always_on>
+        <update_rate>1000.0</update_rate>
+        <contact>
+          <collision>${link_prefix}biotac_collision</collision>
+          <topic>${link_prefix}biotac_collision</topic>
+        </contact>
+        <plugin name="${link_prefix}biotac_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+          <updateRate>100.0</updateRate>
+	  <frameName>${link_prefix}biotac</frameName>
+	  <bumperTopicName>contacts/${link_prefix}/biotac</bumperTopicName>
+        </plugin>
+      </sensor>
+      <selfCollide>true</selfCollide>
+      <material>BiotacGreen</material>
+    </gazebo>
+
+    <joint name="${joint_prefix}_biotac_joint" type="fixed">
+      <parent link="${link_prefix}adapter"/>
+      <child link="${link_prefix}biotac"/>
+      <origin xyz="0 0.0 0.008" rpy="0 0 0" />
+    </joint>
+
+  <!-- extra link to imaginary sphere in fingertip for FK/IK calculations -->
+    <!-- remove visual and collision once the correct position is found -->
+    <link name="${link_prefix}tip">
+      <inertial>
+       <mass value="0.001" />
+       <origin xyz="0 0 0" rpy="0 0 0" />
+       <inertia  ixx="1" ixy="0"  ixz="0"  iyy="1"  iyz="0" izz="1" />
+      </inertial>
+      <visual>
+        <geometry>
+          <sphere radius="0.002" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="0.001 0.001 0.001" />
+        </geometry>
+      </collision>
+    </link>
+
+    <gazebo reference="${link_prefix}tip">
+      <material name="Gazebo/RedGlow"/>
+    </gazebo>
+
+    <joint name="${link_prefix}tip_fixed_joint" type="fixed">
+      <parent link="${link_prefix}adapter"/>
+      <child link="${link_prefix}tip"/>
+      <origin xyz="0.0 -0.009 ${0.008+0.044}" rpy="0 0 -1.571" /> <!-- approximated only FIXME -->
+    </joint>
+
+  </xacro:macro>
+
+</robot>

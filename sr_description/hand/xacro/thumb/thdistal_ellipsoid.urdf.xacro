@@ -1,0 +1,86 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro"
+       xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#slider"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+       xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom">
+
+  <xacro:include filename="$(find sr_description)/hand/xacro/thumb/thdistal.transmission.xacro" />
+
+  <xacro:macro name="thdistal" params="parent">
+
+    <link name="thdistal">
+      <inertial>
+	<mass value="0.016" />
+	<origin xyz="0 0 0.01375" rpy="0 0 0"/>
+	<inertia  ixx="0.1" ixy="0.0"  ixz="0.0"  iyy="0.1"  iyz="0.0"
+		  izz="0.1" />
+      </inertial>
+      <visual>
+	<origin xyz="0 0.002 0.0025" rpy="0 0 0" />
+	<geometry name="thdistal_visual">
+	  <mesh filename="package://sr_description/hand/model/distal_ellipsoid.dae" scale="0.001 0.001 0.001" />
+	</geometry>
+	<material name="shadow_thdistal_material">
+	  <color rgba="0.2 0.2 0.2 1.0"/>
+	</material>
+      </visual>
+      <collision>
+	<origin xyz="0 0.002 0.0025" rpy="0 0 0 " />
+	<geometry name="thdistal_collision_geom">
+	  <mesh filename="package://sr_description/hand/model/distal_ellipsoid.dae" scale="0.001 0.001 0.001" />
+	</geometry>
+      </collision>
+    </link>
+
+    <gazebo reference="thdistal">
+      <sensor type="contact" name="thdistal_contact" >
+        <always_on>1</always_on>
+        <update_rate>1000.0</update_rate>
+        <contact>
+          <collision>thdistal_collision</collision>
+          <topic>thdistal_collision</topic>
+        </contact>
+        <plugin name="thdistal_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+          <updateRate>100.0</updateRate>
+	  <frameName>thdistal</frameName>
+	  <bumperTopicName>contacts/th/distal</bumperTopicName>
+        </plugin>
+      </sensor>
+      <selfCollide>true</selfCollide>
+      <material>LightGrey</material>
+    </gazebo>
+
+    <joint name="THJ1" type="revolute">
+      <parent link="${parent}"/>
+      <child link="thdistal"/>
+      <origin xyz="0 0 0.032" rpy="0 0 -1.570796327" />
+      <axis xyz="1 0 0" />
+      <limit lower="0" upper="1.571" effort="1000.0"
+	     velocity="10.0" />
+      <dynamics damping="10.0"/>
+    </joint>
+    <gazebo reference="THJ1">
+      <provideFeedback>1</provideFeedback>
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <link name="thtip">
+      <inertial>
+	<mass value="0.001" />
+	<inertia  ixx="0.00001" ixy="0.0"  ixz="0.0"  iyy="0.00001"  iyz="0.0" izz="0.00001" />
+      </inertial>
+    </link>
+    <joint name="thtip" type="fixed">
+      <parent link="thdistal"/>
+      <child link="thtip"/>
+      <origin xyz="0 0 0.0275" rpy="0 0 0" />
+    </joint>
+
+
+    <xacro:thdistal_transmission />
+
+  </xacro:macro>
+
+</robot>

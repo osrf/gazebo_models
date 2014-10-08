@@ -1,0 +1,50 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find sr_description)/hand/xacro/thumb/thbase.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/hand/xacro/thumb/thproximal.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/hand/xacro/thumb/thhub.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/hand/xacro/thumb/thmiddle.urdf.xacro" />
+  <xacro:include filename="$(find sr_description)/hand/xacro/thumb/thdistal.urdf.xacro" />
+
+  <!-- Right Hand -->
+  <xacro:macro name="thumb" params="parent">
+
+    <xacro:thbase parent="${parent}">
+    </xacro:thbase>
+
+    <xacro:thproximal parent="thbase">
+    </xacro:thproximal>
+
+    <xacro:thumb_common />
+
+  </xacro:macro>
+
+  <!-- Left Hand -->
+  <xacro:macro name="thumb_left" params="parent">
+
+    <xacro:thbase_left parent="${parent}">
+    </xacro:thbase_left>
+
+    <xacro:thproximal_left parent="thbase">
+    </xacro:thproximal_left>
+
+    <xacro:thumb_common />
+
+  </xacro:macro>
+
+  <!-- Macro for common parts in left and right handed versions.
+  DO NOT use out side of here ie treat as a private macro -->
+  <xacro:macro name="thumb_common">
+
+    <xacro:thhub parent="thproximal">
+    </xacro:thhub>
+
+    <xacro:thmiddle parent="thhub">
+    </xacro:thmiddle>
+
+    <xacro:thdistal parent="thmiddle">
+    </xacro:thdistal>
+
+  </xacro:macro>
+
+</robot>

@@ -1,0 +1,81 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro"
+        xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#slider"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+       xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom">
+
+  <xacro:include filename="$(find sr_description)/hand/xacro/palm/edc_muscle_palm.transmission.xacro" />
+
+  <!-- Right Hand -->
+  <xacro:macro name="palm" params="parent">
+    <xacro:palm_base parent="${parent}" mesh="palm.dae" />
+  </xacro:macro>
+
+  <!-- Left Hand -->
+  <xacro:macro name="palm_left" params="parent">
+    <xacro:palm_base parent="${parent}" mesh="palm_left.mesh" />
+  </xacro:macro>
+
+  <!-- Macro to used to generate left and right handed versions.
+  DO NOT use out side of here ie treat as a private macro -->
+  <xacro:macro name="palm_base" params="parent mesh">
+
+    <link name="palm" >
+      <inertial>
+	<origin xyz="0 0 0.035" rpy="0 0 0" />
+	<mass value="0.3" />
+	<inertia  ixx="0.5" ixy="0.0"  ixz="0.0"  iyy="0.5"  iyz="0.0"	izz="0.3" />
+      </inertial>
+      <visual>
+	<origin xyz="0 0 0" rpy="0 0 0" />
+	<geometry name="palm_visual">
+      <mesh filename="package://sr_description/hand/model/${mesh}" scale="0.001 0.001 0.001" />
+	</geometry>
+	<material name="Grey"/>
+      </visual>
+      <collision>
+	<origin xyz="0.005 0 0.035" rpy="0 0 0" />
+	<geometry name="palm_collision_geom">
+	  <box size="0.05 0.02 0.07" />
+	</geometry>
+      </collision>
+    </link>
+
+    <gazebo reference="palm">
+      <sensor type="contact" name="palm_contact" >
+        <always_on>1</always_on>
+        <update_rate>1000.0</update_rate>
+        <contact>
+          <collision>palm_collision</collision>
+          <topic>palm_collision</topic>
+        </contact>
+        <plugin name="palm_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+          <updateRate>100.0</updateRate>
+	  <frameName>palm</frameName>
+	  <bumperTopicName>contacts/palm</bumperTopicName>
+        </plugin>
+      </sensor>
+      <material>LightGrey</material>
+    </gazebo>
+
+    <joint name="WRJ1" type="revolute">
+      <parent link="${parent}"/>
+      <child link="palm"/>
+      <origin xyz="0 0 0.034" rpy="0 0 0" />
+      <axis xyz="1 0 0" />
+      <limit lower="-0.78539816339744828" upper="0.6108652381980153"
+      effort="1000.0" velocity="10.0"/>
+      <dynamics damping="30.0"/>
+    </joint>
+    <gazebo reference="WRJ1">
+      <provideFeedback>1</provideFeedback>
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <xacro:shadowhand_palm_transmission />
+
+  </xacro:macro>
+
+</robot>

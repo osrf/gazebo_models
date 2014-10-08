@@ -1,0 +1,34 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <property name="M_PI" value="3.1415926535897931" />
+
+  <xacro:macro name="forearm">
+
+    <link name="forearm">
+      <inertial>
+	<origin xyz="0 0 0.09" rpy="0 0 0"/>
+	<mass value="3.0" />
+	<inertia  ixx="0.001" ixy="0.0"  ixz="0.0"  iyy="0.001"  iyz="0.0"  izz="0.001" />
+      </inertial>
+      <visual>
+	<origin xyz="0 0 0" rpy="0 0 0" />
+	<geometry name="shadow_forearm_geom">
+	  <mesh filename="package://sr_description/hand/model/forearm.dae" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<material name="Grey" />
+      </visual>
+      <collision>
+	<origin xyz="0 0 0.09" rpy="0 0 0" />
+	<geometry name="shadow_forearm_collision">
+	  <cylinder radius="0.06" length="0.180"/>
+	</geometry>
+      </collision>
+    </link>
+    <gazebo reference="forearm">
+      <material>LightGrey</material>
+      <selfCollide>false</selfCollide>
+    </gazebo>
+
+  </xacro:macro>
+
+</robot>

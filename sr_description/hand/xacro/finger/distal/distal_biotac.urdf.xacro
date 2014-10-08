@@ -1,0 +1,72 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro"
+	xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+	xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#slider"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+       xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom">
+
+  <xacro:include filename="$(find sr_description)/hand/xacro/finger/distal/distal.transmission.xacro" />
+
+  <xacro:macro name="distal" params="link_prefix joint_prefix parent">
+
+    <link name="${link_prefix}distal">
+      <inertial>
+	<mass value="0.010" />
+	<origin xyz="0 0 0.013" />
+	<inertia  ixx="0.00001" ixy="0.0"  ixz="0.0"  iyy="0.00001"  iyz="0.0"
+	izz="0.00001" />
+      </inertial>
+      <visual>
+	<origin xyz="0 0 0" rpy="0 0 0" />
+	<geometry name="${link_prefix}distal_visual">
+      <mesh filename="package://sr_description/hand/model/F1.mesh" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="Grey" />
+      </visual>
+      <collision>
+	<origin xyz="0 0 0" rpy="0 0 0" />
+	<geometry name="${link_prefix}distal_collision_geom">
+	  <mesh filename="package://sr_description/hand/model/F1.mesh" scale="0.001 0.001 0.001" />
+	</geometry>
+      </collision>
+    </link>
+
+    <gazebo reference="${link_prefix}distal">
+      <sensor type="contact" name="${link_prefix}distal_contact" >
+        <always_on>1</always_on>
+        <update_rate>1000.0</update_rate>
+        <contact>
+          <collision>${link_prefix}distal_collision</collision>
+          <topic>${link_prefix}distal_collision</topic>
+        </contact>
+        <plugin name="${link_prefix}distal_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+          <updateRate>100.0</updateRate>
+	  <frameName>${link_prefix}distal</frameName>
+	  <bumperTopicName>contacts/${link_prefix}/distal</bumperTopicName>
+        </plugin>
+      </sensor>
+      <selfCollide>true</selfCollide>
+      <material>LightGrey</material>
+    </gazebo>
+
+    <joint name="${joint_prefix}J1" type="revolute">
+      <parent link="${parent}"/>
+      <child link="${link_prefix}distal"/>
+      <origin xyz="0 0 0.025" rpy="0 0 0" />
+      <axis xyz="1 0 0" />
+      <limit lower="0.34906585" upper="0.34906585" effort="1000.0"
+      velocity="10.0" />
+      <dynamics damping="10.0"/>
+    </joint>
+    <gazebo reference="${joint_prefix}J1">
+    <provideFeedback>1</provideFeedback>
+    <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+<!--
+    <xacro:distal_transmission />
+-->
+  </xacro:macro>
+
+</robot>
