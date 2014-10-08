@@ -1,5 +1,5 @@
 <sdf version='1.5'>
-  <model name='arm_and_hand'>
+  <model name='sr_description'>
     <link name='shadowarm_lowerarm'>
       <pose>0 0 0.369 0 -0 0</pose>
       <inertial>
