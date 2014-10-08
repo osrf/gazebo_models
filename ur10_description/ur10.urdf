@@ -30,12 +30,12 @@
   <link name="base_link">
     <visual>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur10/visual/Base.dae"/>
+        <mesh filename="package://ur10_description/meshes/ur10/visual/Base.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur10/collision/Base.dae"/>
+        <mesh filename="package://ur10_description/meshes/ur10/collision/Base.dae"/>
       </geometry>
     </collision>
     <inertial>
@@ -55,12 +55,12 @@
   <link name="shoulder_link">
     <visual>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur10/visual/Shoulder.dae"/>
+        <mesh filename="package://ur10_description/meshes/ur10/visual/Shoulder.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur10/collision/Shoulder.dae"/>
+        <mesh filename="package://ur10_description/meshes/ur10/collision/Shoulder.dae"/>
       </geometry>
     </collision>
     <inertial>
@@ -80,12 +80,12 @@
   <link name="upper_arm_link">
     <visual>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur10/visual/UpperArm.dae"/>
+        <mesh filename="package://ur10_description/meshes/ur10/visual/UpperArm.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur10/collision/UpperArm.dae"/>
+        <mesh filename="package://ur10_description/meshes/ur10/collision/UpperArm.dae"/>
       </geometry>
     </collision>
     <inertial>
@@ -105,12 +105,12 @@
   <link name="forearm_link">
     <visual>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur10/visual/Forearm.dae"/>
+        <mesh filename="package://ur10_description/meshes/ur10/visual/Forearm.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur10/collision/Forearm.dae"/>
+        <mesh filename="package://ur10_description/meshes/ur10/collision/Forearm.dae"/>
       </geometry>
     </collision>
     <inertial>
@@ -130,12 +130,12 @@
   <link name="wrist_1_link">
     <visual>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur10/visual/Wrist1.dae"/>
+        <mesh filename="package://ur10_description/meshes/ur10/visual/Wrist1.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur10/collision/Wrist1.dae"/>
+        <mesh filename="package://ur10_description/meshes/ur10/collision/Wrist1.dae"/>
       </geometry>
     </collision>
     <inertial>
@@ -155,12 +155,12 @@
   <link name="wrist_2_link">
     <visual>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur10/visual/Wrist2.dae"/>
+        <mesh filename="package://ur10_description/meshes/ur10/visual/Wrist2.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur10/collision/Wrist2.dae"/>
+        <mesh filename="package://ur10_description/meshes/ur10/collision/Wrist2.dae"/>
       </geometry>
     </collision>
     <inertial>
@@ -180,12 +180,12 @@
   <link name="wrist_3_link">
     <visual>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur10/visual/Wrist3.dae"/>
+        <mesh filename="package://ur10_description/meshes/ur10/visual/Wrist3.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://ur_description/meshes/ur10/collision/Wrist3.dae"/>
+        <mesh filename="package://ur10_description/meshes/ur10/collision/Wrist3.dae"/>
       </geometry>
     </collision>
     <inertial>
