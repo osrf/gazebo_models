@@ -1,27 +1,24 @@
 <?xml version="1.0" ?>
-<%
-  # SI units (length in meters)
 
-  # Geometry
-  # Height
-  h  = 0.002
-  # Inner diameter
-  d1 = 0.014
-  r1 = d1/2.0
-  # Outer diameter
-  d2 = 0.035
-  r2 = d2/2.0
-
-  # Inertia
-  mass = 0.0122
-  ixx  = mass/12.0 * ( 3*(r1**2 + r2**2) + h**2 )
-  iyy  = mass/12.0 * ( 3*(r1**2 + r2**2) + h**2 )
-  izz  = mass/2.0 * (r1**2 + r2**2)
-%>
 <sdf version="1.5">
-  <model name="washer">
-    <link name="link">
-      <pose>0 0 <%= h/2 %> 0 0 0</pose>
+  <model name="wooden_board">
+    <link name="base">
+      <%
+        # Wood block with dimensions 33 x 10 x 1 cm
+        # SI units (length in meters)
+
+        # Geometry
+        dx = 0.1016
+        dy = 0.3302
+        dz = 0.01046
+
+        # Inertia
+        mass = 0.2765
+        ixx  = mass/12.0 * (dy**2 + dz**2)
+        iyy  = mass/12.0 * (dz**2 + dx**2)
+        izz  = mass/12.0 * (dx**2 + dy**2)
+      %>
+      <pose>0 0 <%= dz/2 %> 0 0 0</pose>
       <inertial>
         <mass><%= mass %></mass>
         <inertia>
@@ -36,9 +33,9 @@
 
       <collision name="collision">
         <geometry>
-          <mesh>
-            <uri>model://washer/meshes/washer.dae</uri>
-          </mesh>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
         </geometry>
         <surface>
           <contact>
@@ -52,19 +49,18 @@
 
       <visual name="visual">
         <geometry>
-          <mesh>
-            <uri>model://washer/meshes/washer.dae</uri>
-          </mesh>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
         </geometry>
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
         </material>
-
       </visual>
-
     </link>
+
   </model>
 </sdf>

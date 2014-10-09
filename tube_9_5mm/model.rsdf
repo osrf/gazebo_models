@@ -36,24 +36,30 @@
 
       <collision name="collision">
         <geometry>
-          <cylinder>
-            <radius> <%= r2 %> </radius>
-            <length> <%= h  %> </length>
-          </cylinder>
+          <mesh>
+            <uri>model://tube_9_5mm/meshes/tube_9_5.dae</uri>
+          </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
       </collision>
 
       <visual name="visual">
         <geometry>
-          <cylinder>
-            <radius> <%= r2 %> </radius>
-            <length> <%= h  %> </length>
-          </cylinder>
+          <mesh>
+            <uri>model://tube_9_5mm/meshes/tube_9_5.dae</uri>
+          </mesh>
         </geometry>
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Chrome</name>
+            <name>Gazebo/Grey</name>
           </script>
         </material>
       </visual>

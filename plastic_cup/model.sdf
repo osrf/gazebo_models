@@ -6,35 +6,41 @@
       <inertial>
         <mass>0.0599</mass>
         <inertia>
-          <ixx>0.00020796736676282054</ixx>
+          <ixx>0.0003028961527030333</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.00020796736676282054</iyy>
+          <iyy>0.0003028961527030333</iyy>
           <iyz>0</iyz>
-          <izz>5.819400192307694e-06</izz>
+          <izz>3.2876352372798436e-05</izz>
         </inertia>
       </inertial>
 
       <collision name="collision">
         <geometry>
-          <cylinder>
-            <radius> 0.007 </radius>
-            <length> 0.13 </length>
-          </cylinder>
+          <mesh>
+            <uri>model://plastic_cup/meshes/plastic_cup.dae</uri>
+          </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
       </collision>
 
       <visual name="visual">
         <geometry>
-          <cylinder>
-            <radius> 0.007 </radius>
-            <length> 0.13 </length>
-          </cylinder>
+          <mesh>
+            <uri>model://plastic_cup/meshes/plastic_cup.dae</uri>
+          </mesh>
         </geometry>
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/White</name>
+            <name>Gazebo/GreyTransparent</name>
           </script>
         </material>
       </visual>

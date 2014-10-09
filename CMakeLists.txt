@@ -123,6 +123,7 @@ table_marble
 turtlebot
 utility_cart
 willowgarage
+washer
 wood_block_10_2_1cm
 wood_cube_10cm
 wood_cube_2_5cm
