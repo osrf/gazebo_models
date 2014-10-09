@@ -1,14 +1,30 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
   <model name="drc_practice_hinged_door">
+
     <link name="frame">
+
       <pose>0.06 -0.0005 0 0 0 0</pose>
 
+      <inertial>
+        <pose> -0.025145 -0.03429 1.0541 0 0 0</pose>
+        <mass>19</mass>
+        <inertia>
+          <ixx>7.044583222633334</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>7.041140846491667</iyy>
+          <iyz>0</iyz>
+          <izz>0.011451142458333334</izz>
+        </inertia>
+
+      </inertial>
+
       <collision name="collision_2">
-        <pose>-0.025145 -0.03429 1.0541 0 0 0</pose>
+        <pose> -0.025145 -0.03429 1.0541 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.05029 0.06858 2.10820</size>
+            <size>0.05029 0.06858 2.1082</size>
           </box>
         </geometry>
       </collision>
@@ -17,7 +33,7 @@
         <pose>-0.025145 -0.03429 1.0541 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.05029 0.06858 2.10820</size>
+            <size>0.05029 0.06858 2.1082</size>
           </box>
         </geometry>
         <material>
@@ -30,17 +46,19 @@
 
     </link>
     <link name="door">
-      <pose>-0.0 0.000 2.040 3.14159 0 1.57</pose>
+      <pose>-0.0 0.000 2.040 3.14159 0 0</pose>
+
+
       <inertial>
         <mass>41.3256</mass>
         <pose>0.4569 0.0349 1.016 0 0 0</pose>
         <inertia>
-          <ixx>14.2053</ixx>
-          <ixy>0.0004</ixy>
-          <ixz>0.0000</ixz>
-          <iyy>17.1997</iyy>
-          <iyz>0.0000</iyz>
-          <izz>3.0298</izz>
+          <ixx>14.226337119849498</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>17.098988253568</iyy>
+          <iyz>0</iyz>
+          <izz>2.8862596710175</izz>
         </inertia>
       </inertial>
       <collision name="collision">
@@ -62,16 +80,17 @@
     </link>
 
     <link name="handles">
-      <pose>0.0 0.8 1.05 0 3.14 1.57</pose>
+      <pose>0.8144 0 1.05 0 3.14 0</pose>
+
       <inertial>
-        <mass>0.5</mass>
+        <mass>2</mass>
         <inertia>
-          <ixx></ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy></iyy>
-          <iyz>0</iyz>
-          <izz></izz>
+          <ixx>0.011011481198666666</ixx>
+          <ixy>-0.0</ixy>
+          <ixz>-0.006470568</ixz>
+          <iyy>0.019018105065333336</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.008243720166666666</izz>
         </inertia>
       </inertial>
 
@@ -138,8 +157,6 @@
         <limit>
           <lower>-1.58</lower>
           <upper>0</upper>
-          <effort />
-          <velocity />
         </limit>
         <dynamics>
           <damping>1.0</damping>

@@ -1,22 +1,48 @@
 <?xml version="1.0" ?>
 <sdf version="1.4">
   <model name="drc_practice_weighted_door">
+
     <link name="frame">
+
+    <% frame_pose = [-0.025145, -0.03429, 1.0541]
+
+       frame_size = [0.05029, 0.06858, 2.10820]
+       mass = 19 
+       %>
       <pose>0.06 -0.0005 0 0 0 0</pose>
+
+      <inertial>
+        <pose> <%= frame_pose.join(' ') %> 0 0 0</pose>
+        <mass><%= mass %></mass>
+        <% ixx = mass*(frame_size[1]**2+frame_size[2]**2)/12 
+           iyy = mass*(frame_size[0]**2+frame_size[2]**2)/12 
+           izz = mass*(frame_size[0]**2+frame_size[1]**2)/12
+         %>
+        <inertia>
+          <ixx><%= ixx %></ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy><%= iyy %></iyy>
+          <iyz>0</iyz>
+          <izz><%= izz %></izz>
+        </inertia>
+
+      </inertial>
+
       <collision name="collision_2">
-        <pose>-0.025145 -0.03429 1.0541 0 0 0</pose>
+        <pose> <%= frame_pose.join(' ') %> 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.05029 0.06858 2.10820</size>
+            <size><%= frame_size.join(' ') %></size>
           </box>
         </geometry>
       </collision>
 
       <visual name="visual">
-        <pose>-0.025145 -0.03429 1.0541 0 0 0</pose>
+        <pose><%= frame_pose.join(' ') %> 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.05029 0.06858 2.10820</size>
+            <size><%= frame_size.join(' ') %></size>
           </box>
         </geometry>
         <material>
@@ -28,29 +54,35 @@
       </visual>
 
     </link>
-
-    <% door_width =  0.9144%>
-
     <link name="door">
+      <pose>-0.0 0.000 2.040 3.14159 0 0</pose>
 
-      <pose>-0.0 0.000 2.040 3.14159 0 1.57</pose>
+      <% pose_offset = [0.4569, 0.0349, 1.016]
+         door_size = [0.9144, 0.04445, 2.032]
+         mass = 41.3256
+       %>
+
       <inertial>
-        <mass>41.3256</mass>
-        <pose>0.4569 0.0349 1.016 0 0 0</pose>
+        <mass><%= mass %></mass>
+        <pose><%= pose_offset.join(' ') %> 0 0 0</pose>
         <inertia>
-          <ixx>14.2053</ixx>
-          <ixy>0.0004</ixy>
-          <ixz>0.0000</ixz>
-          <iyy>17.1997</iyy>
-          <iyz>0.0000</iyz>
-          <izz>3.0298</izz>
+          <% ixx = mass*(door_size[1]**2+door_size[2]**2)/12 
+             iyy = mass*(door_size[0]**2+door_size[2]**2)/12 
+             izz = mass*(door_size[0]**2+door_size[1]**2)/12
+           %>
+          <ixx><%= ixx %></ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy><%= iyy %></iyy>
+          <iyz>0</iyz>
+          <izz><%= izz %></izz>
         </inertia>
       </inertial>
       <collision name="collision">
-        <pose>0.4569 0.0349 1.016 0 0 0</pose>
+        <pose><%= pose_offset.join(' ') %> 0 0 0</pose>
         <geometry>
           <box>
-            <size><%= door_width %> 0.04445 2.032</size>
+            <size><%= door_size.join(' ') %></size>
           </box>
         </geometry>
       </collision>
@@ -63,8 +95,46 @@
         </geometry>
       </visual>
     </link>
+
     <link name="handles">
-      <pose>0.0 0.8 1.05 0 3.14 1.57</pose>
+      <% handle_cylinder_dims = [0.03556/2, 0.082956] # radius, height
+         handle_cylinder_pos  = [0, 0, handle_cylinder_dims[1]/2]
+         handle_box_dims = [0.156, 0.03556, 0.011]
+         handle_box_pos  = [handle_box_dims[0]/2, 0, handle_cylinder_dims[1]]
+         handle_pose = [door_size[0]-0.1, -0.07, 1.05, 0, 0, Math::PI]
+         mass = [1, 1] # box, cylinder
+         total_mass = mass[0]+mass[1]
+         com = (0..2).map{ |i| (handle_cylinder_pos[i]+handle_box_pos[i])/2 }
+       %>
+      <pose><%= handle_pose.join(' ') %></pose>
+
+      <inertial>
+        <% ixx_box = mass[0]*(handle_box_dims[1]**2+handle_box_dims[2]**2)/12
+           iyy_box = mass[0]*(handle_box_dims[0]**2+handle_box_dims[2]**2)/12 
+           izz_box = mass[0]*(handle_box_dims[0]**2+handle_box_dims[1]**2)/12
+
+           ixx_cyl = mass[1]*(3*handle_cylinder_dims[1]**2+handle_cylinder_dims[1]**2)/12
+           iyy_cyl = mass[1]*(3*handle_cylinder_dims[1]**2+handle_cylinder_dims[1]**2)/12 
+           izz_cyl = mass[1]*(handle_cylinder_dims[0]**2)/12
+
+           ixx = ixx_box + mass[0]*(handle_box_pos[1]**2+handle_box_pos[2]**2) + ixx_cyl + mass[1]*(handle_cylinder_pos[1]**2+handle_cylinder_pos[2]**2)
+           iyy = iyy_box + mass[0]*(handle_box_pos[0]**2+handle_box_pos[2]**2) + iyy_cyl + mass[1]*(handle_cylinder_pos[0]**2+handle_cylinder_pos[2]**2)
+           izz = izz_box + mass[0]*(handle_box_pos[0]**2+handle_box_pos[1]**2) + izz_cyl + mass[1]*(handle_cylinder_pos[0]**2+handle_cylinder_pos[1]**2)
+           ixy = -mass[0]*handle_box_pos[0]*handle_box_pos[1] - mass[1]*handle_cylinder_pos[0]*handle_cylinder_pos[1]
+           ixz = -mass[0]*handle_box_pos[0]*handle_box_pos[2] - mass[1]*handle_cylinder_pos[0]*handle_cylinder_pos[2]
+           iyz = -mass[0]*handle_box_pos[1]*handle_box_pos[2] - mass[1]*handle_cylinder_pos[1]*handle_cylinder_pos[2]
+         %>
+        <mass><%= total_mass %></mass>
+        <inertia>
+          <ixx><%= ixx %></ixx>
+          <ixy><%= ixy %></ixy>
+          <ixz><%= ixz %></ixz>
+          <iyy><%= iyy %></iyy>
+          <iyz><%= iyz %></iyz>
+          <izz><%= izz %></izz>
+        </inertia>
+      </inertial>
+
       <collision name="handle1_collision">
         <pose>0.015 -0.015 0 -1.57 0 0</pose>
         <geometry>
@@ -98,6 +168,7 @@
         </geometry>
       </visual>
     </link>
+
     <joint name="handle" type="revolute">
       <parent>door</parent>
       <child>handles</child>
@@ -123,7 +194,7 @@
 
     <% lbs_force = 3
        newtons = 4.44822*3
-       torque = newtons*door_width
+       torque = newtons*door_size[0]
        angular_vel = Math::PI/4
        damping_coeff = torque/angular_vel
      %>
