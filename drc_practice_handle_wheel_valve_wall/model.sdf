@@ -21,7 +21,7 @@
     <include>
       <uri>model://drc_practice_handle_wheel_valve</uri>
       <name>valve_0</name>
-      <pose>0.614335 -0.0092 0.9 0 0 0</pose>
+      <pose>0.614335 -0.0092 0.9 3.14159 0 1.5707</pose>
     </include>
     <joint name="handle-joint" type="revolute">
       <parent>wall::link</parent>

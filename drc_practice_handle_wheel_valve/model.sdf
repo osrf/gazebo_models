@@ -81,7 +81,7 @@
       <parent>world</parent>
       <child>handle</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>1 0 0</xyz>
         <limit>
           <lower>-12.56</lower>
           <upper>12.56</upper>
