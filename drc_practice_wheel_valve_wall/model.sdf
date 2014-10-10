@@ -4,7 +4,6 @@
     <include>
       <uri>model://drc_practice_valve_wall</uri>
       <name>wall</name>
-      <static>true</static>
     </include>
     <joint name="wall-joint" type="revolute">
       <parent>world</parent>
