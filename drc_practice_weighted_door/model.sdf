@@ -4,11 +4,13 @@
 
     <link name="frame">
 
+    
       <pose>0.06 -0.0005 0 0 0 0</pose>
 
       <inertial>
         <pose> -0.025145 -0.03429 1.0541 0 0 0</pose>
         <mass>19</mass>
+        
         <inertia>
           <ixx>7.044583222633334</ixx>
           <ixy>0</ixy>
@@ -48,11 +50,13 @@
     <link name="door">
       <pose>-0.0 0.000 2.040 3.14159 0 0</pose>
 
+      
 
       <inertial>
         <mass>41.3256</mass>
         <pose>0.4569 0.0349 1.016 0 0 0</pose>
         <inertia>
+          
           <ixx>14.226337119849498</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
@@ -80,9 +84,12 @@
     </link>
 
     <link name="handles">
+      
       <pose>0.8144 -0.07 1.05 0 0 3.141592653589793</pose>
 
       <inertial>
+        <pose>0 -0.035 0 0 0 0</pose>
+        
         <mass>2</mass>
         <inertia>
           <ixx>0.011011481198666666</ixx>
@@ -133,10 +140,10 @@
       <child>handles</child>
       <pose>0.015 0 0 0 0 0</pose>
       <axis>
-        <xyz>1 0 0</xyz>
+        <xyz>0 1 0</xyz>
         <limit>
-          <lower>0</lower>
-          <upper>1.58</upper>
+          <lower>-1.58</lower>
+          <upper>0</upper>
         </limit>
         <dynamics>
           <damping>1.0</damping>
@@ -151,6 +158,7 @@
       </physics>
     </joint>
 
+    
     <joint name="hinge" type="revolute">
       <parent>frame</parent>
       <child>door</child>
@@ -159,8 +167,6 @@
         <limit>
           <lower>-1.58</lower>
           <upper>0</upper>
-          <effort />
-          <velocity />
         </limit>
         <dynamics>
           <damping>15.53652360379284</damping>
