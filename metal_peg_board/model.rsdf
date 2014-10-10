@@ -11,7 +11,7 @@
     <include>
       <name>peg</name>
       <uri>model://metal_peg</uri>
-      <pose>0 0.038 0 0 0 0</pose>
+      <pose>0 0.116 0 0 0 0</pose>
     </include>
 
     <joint name="board_peg" type="revolute">

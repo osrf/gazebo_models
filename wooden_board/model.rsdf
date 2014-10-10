@@ -17,6 +17,17 @@
         ixx  = mass/12.0 * (dy**2 + dz**2)
         iyy  = mass/12.0 * (dz**2 + dx**2)
         izz  = mass/12.0 * (dx**2 + dy**2)
+
+        inchToMeter = 0.0254
+        tee_nut_diameter = 0.5 * inchToMeter 
+        tee_nut_radius = tee_nut_diameter / 2
+        tee_nut_length = dz*1.01
+        tee_nut_pos = {
+          "tee_nut_1" => [0.0, -0.116, 0.0],
+          "tee_nut_2" => [0.0, -0.038, 0.0],
+          "tee_nut_3" => [0.0,  0.038, 0.0],
+          "tee_nut_4" => [0.0,  0.116, 0.0],
+        }
       %>
       <pose>0 0 <%= dz/2 %> 0 0 0</pose>
       <inertial>
@@ -60,6 +71,27 @@
           </script>
         </material>
       </visual>
+
+      <% tee_nut_pos.keys.each do |k|
+          name = k
+          pos  = tee_nut_pos[k]
+      %>
+      <%= "<visual name='#{name}'>" %>
+        <pose><%= pos.join(' ') %>  0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius><%= tee_nut_radius %></radius>
+            <length><%= tee_nut_length %></length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+      <% end %>
     </link>
 
   </model>
