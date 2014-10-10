@@ -46,6 +46,72 @@
           </script>
         </material>
       </visual>
+
+      
+      <visual name='tee_nut_1'>
+        <pose>0.0 -0.116 0.0  0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.00635</radius>
+            <length>0.0105646</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+      
+      <visual name='tee_nut_2'>
+        <pose>0.0 -0.038 0.0  0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.00635</radius>
+            <length>0.0105646</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+      
+      <visual name='tee_nut_3'>
+        <pose>0.0 0.038 0.0  0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.00635</radius>
+            <length>0.0105646</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+      
+      <visual name='tee_nut_4'>
+        <pose>0.0 0.116 0.0  0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.00635</radius>
+            <length>0.0105646</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+      
     </link>
 
   </model>
