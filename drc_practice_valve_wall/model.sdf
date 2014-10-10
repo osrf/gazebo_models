@@ -2,6 +2,20 @@
 <sdf version="1.5">
   <model name="valve_wall">
     <link name="link">
+
+      <inertial>
+        <pose>0.6096 0.00476 1.2192 0 0 0</pose>
+        <mass>2.5</mass>
+        <inertia>
+          <ixx>1.23872608133</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.548384</iyy>
+          <iyz>0</iyz>
+          <izz>0.30969568133</izz>
+        </inertia>
+      </inertial>
+
       <collision name="collision">
         <pose>0.6096 0.00476 1.2192 0 0 0</pose>
         <geometry>
