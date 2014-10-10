@@ -109,6 +109,7 @@
       <pose><%= handle_pose.join(' ') %></pose>
 
       <inertial>
+        <pose>0 -0.035 0 0 0 0</pose>
         <% ixx_box = mass[0]*(handle_box_dims[1]**2+handle_box_dims[2]**2)/12
            iyy_box = mass[0]*(handle_box_dims[0]**2+handle_box_dims[2]**2)/12 
            izz_box = mass[0]*(handle_box_dims[0]**2+handle_box_dims[1]**2)/12
@@ -173,10 +174,10 @@
       <child>handles</child>
       <pose>0.015 0 0 0 0 0</pose>
       <axis>
-        <xyz>1 0 0</xyz>
+        <xyz>0 1 0</xyz>
         <limit>
-          <lower>0</lower>
-          <upper>1.58</upper>
+          <lower>-1.58</lower>
+          <upper>0</upper>
         </limit>
         <dynamics>
           <damping>1.0</damping>
