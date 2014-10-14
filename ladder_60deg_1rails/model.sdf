@@ -382,13 +382,13 @@
       </link>
     
          <link name="left_railing_long" >
-           <pose>-0.45 0.3428203230275511 1.806217782649107 -0.5235987755982989 0 0 </pose>
+           <pose>-0.45 0.34282032302755117 1.8062177826491068 -0.5235987755982989 0 0 </pose>
 
             <collision name="collision">
               <geometry>
                 <cylinder>
                   <radius>0.02413</radius>
-                  <length>4.387862045841156</length>
+                  <length>4.171281292110204</length>
                 </cylinder>
               </geometry>
             </collision>
@@ -397,7 +397,7 @@
               <geometry>
                 <cylinder>
                   <radius>0.02413</radius>
-                  <length>4.387862045841156</length>
+                  <length>4.171281292110204</length>
                 </cylinder>
               </geometry>
               <material>
@@ -409,13 +409,13 @@
             </visual>
          </link>
               <link name="left_railing_upright0" >
-                <pose> -0.45 -0.3031088913245535 0.17500000000000002 1.0471975511965976 0 0 </pose>
+                <pose> -0.45 -0.2749630657015592 0.15875 1.0471975511965976 0 0 </pose>
      
                 <collision name="collision">
                   <geometry>
                     <cylinder>
                       <radius>0.02413</radius>
-                      <length>0.54587</length>
+                      <length>0.5412177826491069</length>
                     </cylinder>
                   </geometry>
                 </collision>
@@ -424,7 +424,7 @@
                   <geometry>
                     <cylinder>
                       <radius>0.02413</radius>
-                      <length>0.54587</length>
+                      <length>0.5412177826491069</length>
                     </cylinder>
                   </geometry>
                   <material>
@@ -436,13 +436,13 @@
                 </visual>
               </link> 
               <link name="left_railing_upright1" >
-                <pose> -0.45 0.15877132402714728 0.975 1.0471975511965976 0 0 </pose>
+                <pose> -0.45 0.18691714965014153 0.95875 1.0471975511965976 0 0 </pose>
      
                 <collision name="collision">
                   <geometry>
                     <cylinder>
                       <radius>0.02413</radius>
-                      <length>0.54587</length>
+                      <length>0.5412177826491069</length>
                     </cylinder>
                   </geometry>
                 </collision>
@@ -451,7 +451,7 @@
                   <geometry>
                     <cylinder>
                       <radius>0.02413</radius>
-                      <length>0.54587</length>
+                      <length>0.5412177826491069</length>
                     </cylinder>
                   </geometry>
                   <material>
@@ -463,13 +463,13 @@
                 </visual>
               </link> 
               <link name="left_railing_upright2" >
-                <pose> -0.45 0.6206515393788481 1.775 1.0471975511965976 0 0 </pose>
+                <pose> -0.45 0.6487973650018424 1.7587499999999998 1.0471975511965976 0 0 </pose>
      
                 <collision name="collision">
                   <geometry>
                     <cylinder>
                       <radius>0.02413</radius>
-                      <length>0.54587</length>
+                      <length>0.5412177826491069</length>
                     </cylinder>
                   </geometry>
                 </collision>
@@ -478,7 +478,7 @@
                   <geometry>
                     <cylinder>
                       <radius>0.02413</radius>
-                      <length>0.54587</length>
+                      <length>0.5412177826491069</length>
                     </cylinder>
                   </geometry>
                   <material>
@@ -490,13 +490,13 @@
                 </visual>
               </link> 
               <link name="left_railing_upright3" >
-                <pose> -0.45 1.0825317547305489 2.5749999999999997 1.0471975511965976 0 0 </pose>
+                <pose> -0.45 1.1106775803535431 2.55875 1.0471975511965976 0 0 </pose>
      
                 <collision name="collision">
                   <geometry>
                     <cylinder>
                       <radius>0.02413</radius>
-                      <length>0.54587</length>
+                      <length>0.5412177826491069</length>
                     </cylinder>
                   </geometry>
                 </collision>
@@ -505,7 +505,7 @@
                   <geometry>
                     <cylinder>
                       <radius>0.02413</radius>
-                      <length>0.54587</length>
+                      <length>0.5412177826491069</length>
                     </cylinder>
                   </geometry>
                   <material>
@@ -519,13 +519,13 @@
 
          <link name="left_railing_landing_top" >
            
-           <pose> -0.45 1.6856406460551023 3.67 1.5707963267948966 0 0 </pose>
+           <pose> -0.45 1.6856406460551023 3.6124355652982136 1.5707963267948966 0 0 </pose>
 
            <collision name="collision">
              <geometry>
                <cylinder>
                  <radius>0.02413</radius>
-                 <length>0.6</length>
+                 <length>0.64826</length>
                </cylinder>
              </geometry>
            </collision>
@@ -534,7 +534,7 @@
              <geometry>
                <cylinder>
                  <radius>0.02413</radius>
-                 <length>0.6</length>
+                 <length>0.64826</length>
                </cylinder>
              </geometry>
              <material>
@@ -547,12 +547,12 @@
          </link>
 
             <link name="left_railing_landing_upright_0">
-              <pose>-0.45 1.3856406460551023 3.0349999999999997 0 0 0</pose>
+              <pose>-0.45 1.3856406460551023 3.0062177826491068 0 0 0</pose>
               <collision name="collision">
                 <geometry>
                   <cylinder>
                     <radius>0.02413</radius>
-                    <length>1.2699999999999996</length>
+                    <length>1.2124355652982137</length>
                   </cylinder>
                 </geometry>
               </collision>
@@ -561,7 +561,7 @@
                 <geometry>
                   <cylinder>
                     <radius>0.02413</radius>
-                    <length>1.2699999999999996</length>
+                    <length>1.2124355652982137</length>
                   </cylinder>
                 </geometry>
                 <material>
@@ -573,12 +573,12 @@
               </visual>
             </link>
             <link name="left_railing_landing_upright_1">
-              <pose>-0.45 1.9856406460551024 3.0349999999999997 0 0 0</pose>
+              <pose>-0.45 1.9856406460551024 3.0062177826491068 0 0 0</pose>
               <collision name="collision">
                 <geometry>
                   <cylinder>
                     <radius>0.02413</radius>
-                    <length>1.2699999999999996</length>
+                    <length>1.2124355652982137</length>
                   </cylinder>
                 </geometry>
               </collision>
@@ -587,7 +587,7 @@
                 <geometry>
                   <cylinder>
                     <radius>0.02413</radius>
-                    <length>1.2699999999999996</length>
+                    <length>1.2124355652982137</length>
                   </cylinder>
                 </geometry>
                 <material>

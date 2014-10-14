@@ -24,6 +24,9 @@
     landing_ixx = landing_mass/12.0 * (landing_y**2+step_size[2]**2)
     landing_iyy = landing_mass/12.0 * (step_size[2]**2+step_size[0]**2)
     landing_izz = landing_mass/12.0 * (step_size[0]**2+landing_y**2)
+
+    rail_step_dist = 0.5 # In the x-direction
+    rail_radius = 0.02413
    %>
 
   <model name= <%= '"'+model_name+'"' %> >
@@ -147,21 +150,17 @@
       </link>
     <% end %>
     
+
     <% #Railing 
-       # TODO: fix rail offset
-       rail_height = 0.4
-       rail_radius = 0.02413
-       delta_h = rail_height/Math.cos(ladder_rad)
-       delta_w = rail_height/Math.sin(ladder_rad)
-       rail_length = Math.sqrt((height+delta_h)**2 + (width+delta_w)**2)
-       #rail_length = Math.sqrt(height**2 + width**2) + rail_height/Math.tan(ladder_rad) + rail_height*Math.tan(ladder_rad)
+       rail_height = rail_step_dist*Math.tan(ladder_rad)/2
+       rail_length = Math.sqrt(height**2 + width**2) + rail_step_dist*Math.cos(ladder_rad) + rail_height*Math.sin(ladder_rad)
        if handrails > 0
          for i in (0..handrails-1) 
            side = i == 0 ? 'left' : 'right'
            rail_x = step_size[0]/2 * (i*2-1)
      %>      
          <link name=<%= '"'+side+'_railing_long"'%> >
-           <pose><%= rail_x%> <%= width/2 - delta_w/2  %> <%= height/2 + delta_h/2 %> <%= ladder_rad-Math::PI/2%> 0 0 </pose>
+           <pose><%= rail_x%> <%= (width - rail_step_dist)/2 - rail_step_dist/4 %> <%= (height+rail_step_dist*Math.tan(ladder_rad))/2 - rail_height/2 %> <%= ladder_rad-Math::PI/2%> 0 0 </pose>
 
             <collision name="collision">
               <geometry>
@@ -187,9 +186,10 @@
               </material>
             </visual>
          </link>
+
          <% for j in (0..num_steps/2-1)
-              upright_y = j * width / (num_steps/2-1) - rail_height*Math.sin(ladder_rad)/2
-              upright_z = j * height / (num_steps/2-1) + rail_height*Math.cos(ladder_rad)/2
+              upright_y = j * width / (num_steps/2-1) - rail_step_dist*Math.sin(ladder_rad)/2 + wall_sides[2]*Math.sin(ladder_rad)/4
+              upright_z = j * height / (num_steps/2-1) + rail_step_dist*Math.cos(ladder_rad)/2 - wall_sides[2]*Math.cos(ladder_rad)/4
           %>
               <link name=<%= '"'+side+'_railing_upright'+j.to_s+'"' %> >
                 <pose> <%= rail_x %> <%= upright_y %> <%= upright_z%> <%= ladder_rad %> 0 0 </pose>
@@ -198,7 +198,7 @@
                   <geometry>
                     <cylinder>
                       <radius><%= rail_radius%></radius>
-                      <length><%= rail_height%></length>
+                      <length><%= rail_step_dist*Math.sin(ladder_rad)%></length>
                     </cylinder>
                   </geometry>
                 </collision>
@@ -207,7 +207,7 @@
                   <geometry>
                     <cylinder>
                       <radius><%= rail_radius%></radius>
-                      <length><%= rail_height%></length>
+                      <length><%= rail_step_dist*Math.sin(ladder_rad)%></length>
                     </cylinder>
                   </geometry>
                   <material>
@@ -222,13 +222,13 @@
 
          <link name=<%= '"'+side+'_railing_landing_top"' %> >
            
-           <pose> <%= rail_x %> <%= width+landing_y/2 %> <%= height+rail_height/Math.cos(ladder_rad) - wall_sides[2] %> <%= Math::PI/2 %> 0 0 </pose>
+           <pose> <%= rail_x %> <%= width+landing_y/2 - rail_step_dist/4 %> <%= height+rail_height+rail_radius %> <%= Math::PI/2 %> 0 0 </pose>
 
            <collision name="collision">
              <geometry>
                <cylinder>
                  <radius><%= rail_radius%></radius>
-                 <length><%= landing_y%></length>
+                 <length><%= landing_y+rail_radius+rail_step_dist/2%></length>
                </cylinder>
              </geometry>
            </collision>
@@ -237,7 +237,7 @@
              <geometry>
                <cylinder>
                  <radius><%= rail_radius%></radius>
-                 <length><%= landing_y%></length>
+                 <length><%= landing_y + rail_radius+rail_step_dist/2%></length>
                </cylinder>
              </geometry>
              <material>
@@ -251,7 +251,7 @@
 
          <% for j in (0..1)
               rail_y = width
-              rail_z = rail_height/Math.cos(ladder_rad) - wall_sides[2]
+              rail_z = rail_height
           %>
             <link name=<%= '"'+side+'_railing_landing_upright_'+j.to_s+'"' %>>
               <pose><%= rail_x %> <%= width + j*landing_y %> <%= height+rail_z/2 %> 0 0 0</pose>
