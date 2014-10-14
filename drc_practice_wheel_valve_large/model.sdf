@@ -5,7 +5,7 @@
       <pose>0 0.0300 0 0 0 0</pose>
       <inertial>
         <mass>7.8219</mass>
-        <pose>0 -0.0615 0 0 0 0</pose>
+        <pose>0 0.0615 0 0 0 0</pose>
         <inertia>
           <ixx>0.0695</ixx>
           <ixy>0.0000</ixy>
@@ -54,7 +54,7 @@
     </link>
     <!--
          This is just a visual until SDF collide_bitmask is implemented.
-         Without collide_bitmask, the "attachment" will collide with a 
+         Without collide_bitmask, the "attachment" will collide with a
          wall that separates the handle from the attachment causing jitter
     -->
     <!--
@@ -89,15 +89,15 @@
         </limit>
         <dynamics>
           <!--velocity dependent viscous damping coefficient of the joint-->
-          <damping>1000</damping>
+          <damping>0</damping>
           <!--default 0, static friction value of the joint-->
-          <friction>100</friction>
+          <friction>0</friction>
         </dynamics>
         <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <physics>
         <ode>
-          <cfm_damping>1</cfm_damping>
+          <implicit_spring_damper>1</implicit_spring_damper>
         </ode>
       </physics>
     </joint>
