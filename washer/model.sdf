@@ -4,40 +4,46 @@
     <link name="link">
       <pose>0 0 0.001 0 0 0</pose>
       <inertial>
-        <mass>0.0005</mass>
+        <mass>0.0122</mass>
         <inertia>
-          <ixx>4.457291666666667e-08</ixx>
+          <ixx>1.087579166666667e-06</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>4.457291666666667e-08</iyy>
+          <iyy>1.087579166666667e-06</iyy>
           <iyz>0</iyz>
-          <izz>8.881250000000002e-08</izz>
+          <izz>2.1670250000000002e-06</izz>
         </inertia>
       </inertial>
 
       <collision name="collision">
         <geometry>
-          #TODO: replace with mesh of a washer
-          <cylinder>
-            <radius> 0.0175 </radius>
-            <height> 0.002 </height>
-          </cylinder>
+          <mesh>
+            <uri>model://washer/meshes/washer.dae</uri>
+          </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
       </collision>
 
       <visual name="visual">
         <geometry>
-          <cylinder>
-            <radius> 0.0175 </radius>
-            <height> 0.002 </height>
-          </cylinder>
+          <mesh>
+            <uri>model://washer/meshes/washer.dae</uri>
+          </mesh>
         </geometry>
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Chrome</name>
+            <name>Gazebo/Grey</name>
           </script>
         </material>
+
       </visual>
 
     </link>

@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.5">
+  <model name="metal_peg_board">
+    <include>
+      <name>wooden_board</name>
+      <uri>model://wooden_board</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>peg</name>
+      <uri>model://metal_peg</uri>
+      <pose>0 0.116 0 0 0 0</pose>
+    </include>
+
+    <joint name="board_peg" type="revolute">
+      <parent>wooden_board::base</parent>
+      <child>peg::link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+  </model>
+</sdf>

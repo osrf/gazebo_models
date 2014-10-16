@@ -1,0 +1,118 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.5">
+  <model name="wooden_board">
+    <link name="base">
+      
+      <pose>0 0 0.00523 0 0 0</pose>
+      <inertial>
+        <mass>0.2765</mass>
+        <inertia>
+          <ixx>0.0025148009472833336</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00024037001228333334</iyy>
+          <iyz>0</iyz>
+          <izz>0.002750128908333333</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.1016 0.3302 0.01046</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.1016 0.3302 0.01046</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+
+      
+      <visual name='tee_nut_1'>
+        <pose>0.0 -0.116 0.0  0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.00635</radius>
+            <length>0.0105646</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+      
+      <visual name='tee_nut_2'>
+        <pose>0.0 -0.038 0.0  0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.00635</radius>
+            <length>0.0105646</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+      
+      <visual name='tee_nut_3'>
+        <pose>0.0 0.038 0.0  0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.00635</radius>
+            <length>0.0105646</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+      
+      <visual name='tee_nut_4'>
+        <pose>0.0 0.116 0.0  0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.00635</radius>
+            <length>0.0105646</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+      
+    </link>
+
+  </model>
+</sdf>
