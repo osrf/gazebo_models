@@ -1,0 +1,605 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+
+  <model name= "ladder_60deg_1rails" >
+    <static>true</static>
+         <link name="step0" >
+           <pose>0 0.15396007178390025 0.26666666666666666 0 0 0 </pose>
+           <inertial>
+             <mass> 9.7548192</mass>
+             <inertia>
+             <ixx> 0.009571241631672</ixx>
+             <iyy> 0.6596303120915761</iyy>
+             <izz> 0.666841521540096</izz>
+             <ixy>0</ixy>
+             <ixz>0</ixz>
+             <iyz>0</iyz>
+             </inertia>
+           </inertial>
+
+           <collision name="collision">
+             <geometry>
+              <box>
+                <size>  0.9  0.1016  0.0381  </size>
+              </box>
+             </geometry>
+           </collision>
+
+          <visual name="visual">
+            <geometry>
+              <box>
+                <size>  0.9  0.1016  0.0381  </size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Grey</name>
+              </script> 
+            </material>
+          </visual>
+        </link>
+         <link name="step1" >
+           <pose>0 0.3079201435678005 0.5333333333333333 0 0 0 </pose>
+           <inertial>
+             <mass> 9.7548192</mass>
+             <inertia>
+             <ixx> 0.009571241631672</ixx>
+             <iyy> 0.6596303120915761</iyy>
+             <izz> 0.666841521540096</izz>
+             <ixy>0</ixy>
+             <ixz>0</ixz>
+             <iyz>0</iyz>
+             </inertia>
+           </inertial>
+
+           <collision name="collision">
+             <geometry>
+              <box>
+                <size>  0.9  0.1016  0.0381  </size>
+              </box>
+             </geometry>
+           </collision>
+
+          <visual name="visual">
+            <geometry>
+              <box>
+                <size>  0.9  0.1016  0.0381  </size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Grey</name>
+              </script> 
+            </material>
+          </visual>
+        </link>
+         <link name="step2" >
+           <pose>0 0.46188021535170076 0.8 0 0 0 </pose>
+           <inertial>
+             <mass> 9.7548192</mass>
+             <inertia>
+             <ixx> 0.009571241631672</ixx>
+             <iyy> 0.6596303120915761</iyy>
+             <izz> 0.666841521540096</izz>
+             <ixy>0</ixy>
+             <ixz>0</ixz>
+             <iyz>0</iyz>
+             </inertia>
+           </inertial>
+
+           <collision name="collision">
+             <geometry>
+              <box>
+                <size>  0.9  0.1016  0.0381  </size>
+              </box>
+             </geometry>
+           </collision>
+
+          <visual name="visual">
+            <geometry>
+              <box>
+                <size>  0.9  0.1016  0.0381  </size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Grey</name>
+              </script> 
+            </material>
+          </visual>
+        </link>
+         <link name="step3" >
+           <pose>0 0.615840287135601 1.0666666666666667 0 0 0 </pose>
+           <inertial>
+             <mass> 9.7548192</mass>
+             <inertia>
+             <ixx> 0.009571241631672</ixx>
+             <iyy> 0.6596303120915761</iyy>
+             <izz> 0.666841521540096</izz>
+             <ixy>0</ixy>
+             <ixz>0</ixz>
+             <iyz>0</iyz>
+             </inertia>
+           </inertial>
+
+           <collision name="collision">
+             <geometry>
+              <box>
+                <size>  0.9  0.1016  0.0381  </size>
+              </box>
+             </geometry>
+           </collision>
+
+          <visual name="visual">
+            <geometry>
+              <box>
+                <size>  0.9  0.1016  0.0381  </size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Grey</name>
+              </script> 
+            </material>
+          </visual>
+        </link>
+         <link name="step4" >
+           <pose>0 0.7698003589195013 1.3333333333333333 0 0 0 </pose>
+           <inertial>
+             <mass> 9.7548192</mass>
+             <inertia>
+             <ixx> 0.009571241631672</ixx>
+             <iyy> 0.6596303120915761</iyy>
+             <izz> 0.666841521540096</izz>
+             <ixy>0</ixy>
+             <ixz>0</ixz>
+             <iyz>0</iyz>
+             </inertia>
+           </inertial>
+
+           <collision name="collision">
+             <geometry>
+              <box>
+                <size>  0.9  0.1016  0.0381  </size>
+              </box>
+             </geometry>
+           </collision>
+
+          <visual name="visual">
+            <geometry>
+              <box>
+                <size>  0.9  0.1016  0.0381  </size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Grey</name>
+              </script> 
+            </material>
+          </visual>
+        </link>
+         <link name="step5" >
+           <pose>0 0.9237604307034015 1.6 0 0 0 </pose>
+           <inertial>
+             <mass> 9.7548192</mass>
+             <inertia>
+             <ixx> 0.009571241631672</ixx>
+             <iyy> 0.6596303120915761</iyy>
+             <izz> 0.666841521540096</izz>
+             <ixy>0</ixy>
+             <ixz>0</ixz>
+             <iyz>0</iyz>
+             </inertia>
+           </inertial>
+
+           <collision name="collision">
+             <geometry>
+              <box>
+                <size>  0.9  0.1016  0.0381  </size>
+              </box>
+             </geometry>
+           </collision>
+
+          <visual name="visual">
+            <geometry>
+              <box>
+                <size>  0.9  0.1016  0.0381  </size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Grey</name>
+              </script> 
+            </material>
+          </visual>
+        </link>
+         <link name="step6" >
+           <pose>0 1.0777205024873018 1.8666666666666667 0 0 0 </pose>
+           <inertial>
+             <mass> 9.7548192</mass>
+             <inertia>
+             <ixx> 0.009571241631672</ixx>
+             <iyy> 0.6596303120915761</iyy>
+             <izz> 0.666841521540096</izz>
+             <ixy>0</ixy>
+             <ixz>0</ixz>
+             <iyz>0</iyz>
+             </inertia>
+           </inertial>
+
+           <collision name="collision">
+             <geometry>
+              <box>
+                <size>  0.9  0.1016  0.0381  </size>
+              </box>
+             </geometry>
+           </collision>
+
+          <visual name="visual">
+            <geometry>
+              <box>
+                <size>  0.9  0.1016  0.0381  </size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Grey</name>
+              </script> 
+            </material>
+          </visual>
+        </link>
+         <link name="step7" >
+           <pose>0 1.231680574271202 2.1333333333333333 0 0 0 </pose>
+           <inertial>
+             <mass> 9.7548192</mass>
+             <inertia>
+             <ixx> 0.009571241631672</ixx>
+             <iyy> 0.6596303120915761</iyy>
+             <izz> 0.666841521540096</izz>
+             <ixy>0</ixy>
+             <ixz>0</ixz>
+             <iyz>0</iyz>
+             </inertia>
+           </inertial>
+
+           <collision name="collision">
+             <geometry>
+              <box>
+                <size>  0.9  0.1016  0.0381  </size>
+              </box>
+             </geometry>
+           </collision>
+
+          <visual name="visual">
+            <geometry>
+              <box>
+                <size>  0.9  0.1016  0.0381  </size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Grey</name>
+              </script> 
+            </material>
+          </visual>
+        </link>
+    <link name="landing">
+      <pose>0 1.6856406460551023 2.4 0 0 0 </pose>
+        <inertial>
+          <mass> 57.607200000000006</mass>
+          <inertia>
+          <ixx> 1.735184598966</ixx>
+          <iyy> 3.8954545989660008</iyy>
+          <izz> 5.616702</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          </inertia>
+        </inertial>
+
+        <collision name="collision">
+          <geometry>
+           <box>
+             <size> 0.9 0.6 0.1016</size>
+           </box>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+          <geometry>
+            <box>
+             <size> 0.9 0.6 0.1016</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script> 
+          </material>
+        </visual>
+    </link>
+
+      <link name="left_side_wall" >
+        <pose>-0.45 0.6928203230275511 1.2 1.0471975511965976 0 0 </pose>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size> 0.0508  2.851281292110204  0.13 </size>
+            </box>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size> 0.0508  2.851281292110204  0.13 </size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script> 
+          </material>
+        </visual>
+
+
+      </link>
+      <link name="right_side_wall" >
+        <pose>0.45 0.6928203230275511 1.2 1.0471975511965976 0 0 </pose>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size> 0.0508  2.851281292110204  0.13 </size>
+            </box>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size> 0.0508  2.851281292110204  0.13 </size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script> 
+          </material>
+        </visual>
+
+
+      </link>
+    
+         <link name="left_railing_long" >
+           <pose>-0.45 0.34282032302755117 1.8062177826491068 -0.5235987755982989 0 0 </pose>
+
+            <collision name="collision">
+              <geometry>
+                <cylinder>
+                  <radius>0.02413</radius>
+                  <length>4.171281292110204</length>
+                </cylinder>
+              </geometry>
+            </collision>
+
+            <visual name="visual">
+              <geometry>
+                <cylinder>
+                  <radius>0.02413</radius>
+                  <length>4.171281292110204</length>
+                </cylinder>
+              </geometry>
+              <material>
+                <script>
+                  <uri>file://media/materials/scripts/gazebo.material</uri>
+                  <name>Gazebo/Grey</name>
+                </script> 
+              </material>
+            </visual>
+         </link>
+              <link name="left_railing_upright0" >
+                <pose> -0.45 -0.2749630657015592 0.15875 1.0471975511965976 0 0 </pose>
+     
+                <collision name="collision">
+                  <geometry>
+                    <cylinder>
+                      <radius>0.02413</radius>
+                      <length>0.5412177826491069</length>
+                    </cylinder>
+                  </geometry>
+                </collision>
+
+                <visual name="visual">
+                  <geometry>
+                    <cylinder>
+                      <radius>0.02413</radius>
+                      <length>0.5412177826491069</length>
+                    </cylinder>
+                  </geometry>
+                  <material>
+                    <script>
+                      <uri>file://media/materials/scripts/gazebo.material</uri>
+                      <name>Gazebo/Grey</name>
+                    </script> 
+                  </material>
+                </visual>
+              </link> 
+              <link name="left_railing_upright1" >
+                <pose> -0.45 0.18691714965014153 0.95875 1.0471975511965976 0 0 </pose>
+     
+                <collision name="collision">
+                  <geometry>
+                    <cylinder>
+                      <radius>0.02413</radius>
+                      <length>0.5412177826491069</length>
+                    </cylinder>
+                  </geometry>
+                </collision>
+
+                <visual name="visual">
+                  <geometry>
+                    <cylinder>
+                      <radius>0.02413</radius>
+                      <length>0.5412177826491069</length>
+                    </cylinder>
+                  </geometry>
+                  <material>
+                    <script>
+                      <uri>file://media/materials/scripts/gazebo.material</uri>
+                      <name>Gazebo/Grey</name>
+                    </script> 
+                  </material>
+                </visual>
+              </link> 
+              <link name="left_railing_upright2" >
+                <pose> -0.45 0.6487973650018424 1.7587499999999998 1.0471975511965976 0 0 </pose>
+     
+                <collision name="collision">
+                  <geometry>
+                    <cylinder>
+                      <radius>0.02413</radius>
+                      <length>0.5412177826491069</length>
+                    </cylinder>
+                  </geometry>
+                </collision>
+
+                <visual name="visual">
+                  <geometry>
+                    <cylinder>
+                      <radius>0.02413</radius>
+                      <length>0.5412177826491069</length>
+                    </cylinder>
+                  </geometry>
+                  <material>
+                    <script>
+                      <uri>file://media/materials/scripts/gazebo.material</uri>
+                      <name>Gazebo/Grey</name>
+                    </script> 
+                  </material>
+                </visual>
+              </link> 
+              <link name="left_railing_upright3" >
+                <pose> -0.45 1.1106775803535431 2.55875 1.0471975511965976 0 0 </pose>
+     
+                <collision name="collision">
+                  <geometry>
+                    <cylinder>
+                      <radius>0.02413</radius>
+                      <length>0.5412177826491069</length>
+                    </cylinder>
+                  </geometry>
+                </collision>
+
+                <visual name="visual">
+                  <geometry>
+                    <cylinder>
+                      <radius>0.02413</radius>
+                      <length>0.5412177826491069</length>
+                    </cylinder>
+                  </geometry>
+                  <material>
+                    <script>
+                      <uri>file://media/materials/scripts/gazebo.material</uri>
+                      <name>Gazebo/Grey</name>
+                    </script> 
+                  </material>
+                </visual>
+              </link> 
+
+         <link name="left_railing_landing_top" >
+           
+           <pose> -0.45 1.6856406460551023 3.6124355652982136 1.5707963267948966 0 0 </pose>
+
+           <collision name="collision">
+             <geometry>
+               <cylinder>
+                 <radius>0.02413</radius>
+                 <length>0.64826</length>
+               </cylinder>
+             </geometry>
+           </collision>
+
+           <visual name="visual">
+             <geometry>
+               <cylinder>
+                 <radius>0.02413</radius>
+                 <length>0.64826</length>
+               </cylinder>
+             </geometry>
+             <material>
+               <script>
+                 <uri>file://media/materials/scripts/gazebo.material</uri>
+                 <name>Gazebo/Grey</name>
+               </script> 
+             </material>
+           </visual>
+         </link>
+
+            <link name="left_railing_landing_upright_0">
+              <pose>-0.45 1.3856406460551023 3.0062177826491068 0 0 0</pose>
+              <collision name="collision">
+                <geometry>
+                  <cylinder>
+                    <radius>0.02413</radius>
+                    <length>1.2124355652982137</length>
+                  </cylinder>
+                </geometry>
+              </collision>
+
+              <visual name="visual">
+                <geometry>
+                  <cylinder>
+                    <radius>0.02413</radius>
+                    <length>1.2124355652982137</length>
+                  </cylinder>
+                </geometry>
+                <material>
+                  <script>
+                    <uri>file://media/materials/scripts/gazebo.material</uri>
+                    <name>Gazebo/Grey</name>
+                  </script> 
+                </material>
+              </visual>
+            </link>
+            <link name="left_railing_landing_upright_1">
+              <pose>-0.45 1.9856406460551024 3.0062177826491068 0 0 0</pose>
+              <collision name="collision">
+                <geometry>
+                  <cylinder>
+                    <radius>0.02413</radius>
+                    <length>1.2124355652982137</length>
+                  </cylinder>
+                </geometry>
+              </collision>
+
+              <visual name="visual">
+                <geometry>
+                  <cylinder>
+                    <radius>0.02413</radius>
+                    <length>1.2124355652982137</length>
+                  </cylinder>
+                </geometry>
+                <material>
+                  <script>
+                    <uri>file://media/materials/scripts/gazebo.material</uri>
+                    <name>Gazebo/Grey</name>
+                  </script> 
+                </material>
+              </visual>
+            </link>
+
+
+
+  </model>
+</sdf>
