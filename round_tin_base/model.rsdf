@@ -9,11 +9,11 @@
   height = 0.02817
 
   # mesh height offset
-  mesh_dz = 0.00017
+  mesh_dz = 0.001
   mesh_pose = "<pose>0 0 #{mesh_dz}  0 0 0</pose>"
 
   # base cylinder height
-  cylinder_height = 0.001
+  cylinder_height = 0.002
   cylinder_pose = "<pose>0 0 #{cylinder_height/2}  0 0 0</pose>"
 
   # Inertia: approximate as a thin-walled cylindrical tube (not accurate)
@@ -56,7 +56,7 @@
         </surface>
       </collision>
 
-      <visual name="visual_mesh">
+      <visual name="visual_cylinder">
         <%= cylinder_pose %>
         <geometry>
           <cylinder>

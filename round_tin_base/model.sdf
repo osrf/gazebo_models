@@ -12,16 +12,16 @@
           <ixz>0</ixz>
           <iyy>1.93146783725e-05</iyy>
           <iyz>0</iyz>
-          <izz>3.5680000000000004e-05</izz>
+          <izz>3.568e-05</izz>
         </inertia>
       </inertial>
 
       <collision name="collision_cylinder">
-        <pose>0 0 0.0005  0 0 0</pose>
+        <pose>0 0 0.001  0 0 0</pose>
         <geometry>
           <cylinder>
             <radius>0.04</radius>
-            <length>0.001</length>
+            <length>0.002</length>
           </cylinder>
         </geometry>
         <surface>
@@ -34,12 +34,12 @@
         </surface>
       </collision>
 
-      <visual name="visual_mesh">
-        <pose>0 0 0.0005  0 0 0</pose>
+      <visual name="visual_cylinder">
+        <pose>0 0 0.001  0 0 0</pose>
         <geometry>
           <cylinder>
             <radius>0.04</radius>
-            <length>0.001</length>
+            <length>0.002</length>
           </cylinder>
         </geometry>
         <material>
@@ -51,7 +51,7 @@
       </visual>
 
       <collision name="collision_mesh">
-        <pose>0 0 0.00017  0 0 0</pose>
+        <pose>0 0 0.001  0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://round_tin_base/meshes/round_tin_base.dae</uri>
@@ -68,7 +68,7 @@
       </collision>
 
       <visual name="visual_mesh">
-        <pose>0 0 0.00017  0 0 0</pose>
+        <pose>0 0 0.001  0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://round_tin_base/meshes/round_tin_base.dae</uri>
