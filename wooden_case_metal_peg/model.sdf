@@ -5,7 +5,6 @@
     <include>
       <name>wooden_case</name>
       <uri>model://wooden_case</uri>
-      <pose>0 0 0 0 0 0</pose>
     </include>
 
     <include>
