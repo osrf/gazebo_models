@@ -155,6 +155,8 @@ wood_cube_5cm
 wood_cube_7_5cm
 wooden_board
 wooden_case
+wooden_case_metal_peg
+wooden_case_wooden_peg
 wooden_peg
 wooden_peg_board
 youbot
