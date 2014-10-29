@@ -142,7 +142,6 @@ stop_sign
 sun
 table
 table_marble
-tmp
 tube_2_25cm
 tube_9_5mm
 turtlebot
