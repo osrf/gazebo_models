@@ -1,22 +1,21 @@
 <?xml version="1.0" ?>
 
 <sdf version="1.5">
-  <model name="metal_peg_board">
+  <model name="wooden_case_wooden_peg">
     <include>
-      <name>wooden_board</name>
-      <uri>model://wooden_board</uri>
-      <pose>0 0 0 0 0 0</pose>
+      <name>wooden_case</name>
+      <uri>model://wooden_case</uri>
     </include>
 
     <include>
       <name>peg</name>
-      <uri>model://metal_peg</uri>
-      <pose>0 0.116 0 0 0 0</pose>
+      <uri>model://wooden_peg</uri>
+      <pose>0.365774 0.216 0.01905 0 0 0</pose>
     </include>
 
-    <joint name="board_peg" type="revolute">
-      <parent>wooden_board::base</parent>
+    <joint name="case_peg" type="revolute">
       <child>peg::link</child>
+      <parent>wooden_case::lid</parent>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
