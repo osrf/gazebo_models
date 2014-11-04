@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.5">
+  <model name="wooden_case_metal_peg">
+    <include>
+      <name>wooden_case</name>
+      <uri>model://wooden_case</uri>
+    </include>
+
+    <include>
+      <name>peg</name>
+      <uri>model://metal_peg</uri>
+      <pose>0.365774 0.216 0.01905 0 0 0</pose>
+    </include>
+
+    <joint name="case_peg" type="revolute">
+      <child>peg::link</child>
+      <parent>wooden_case::lid</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+  </model>
+</sdf>

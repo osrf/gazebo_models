@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.5">
+  <model name="ball_bearing">
+    <link name="link">
+      <pose>0 0 0.003 0 0 0</pose>
+      <inertial>
+        <mass>0.0011</mass>
+        <inertia>
+          <ixx>3.96e-09</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>3.96e-09</iyy>
+          <iyz>0</iyz>
+          <izz>3.96e-09</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <sphere>
+            <radius>0.003</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <sphere>
+            <radius>0.003</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

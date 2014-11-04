@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="wooden_peg">
+    <link name="link">
+      <pose>0 0 0.04 0 0 0</pose>
+      <inertial>
+        <mass>0.0175</mass>
+        <inertia>
+          <ixx>9.749231770833334e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.749231770833334e-06</iyy>
+          <iyz>0</iyz>
+          <izz>8.317968750000001e-07</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius> 0.00975 </radius>
+            <length> 0.08 </length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius> 0.00975 </radius>
+            <length> 0.08 </length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

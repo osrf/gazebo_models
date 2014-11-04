@@ -1,0 +1,254 @@
+<?xml version="1.0" ?>
+<%
+  # Wooden case for ARAT models
+  # SI units (length in meters)
+
+  # Geometry
+  inchToMeter = 0.0254
+  width     = 23 * inchToMeter
+  height    = 14 * inchToMeter
+  depth     =  5 * inchToMeter
+  thickness =  0.75 * inchToMeter
+
+  d = depth
+  h = height
+  t = thickness
+  w = width
+
+  # blocks on bottom of case
+  block_size = [0.108, 0.050, 0.024]
+  block_dx = 0.5*(depth - block_size[0])
+  block_dy = 0.5*(w - block_size[1]) - 0.052
+  block_dz = -0.5 * block_size[2]
+  base_pieces = {
+    "back"   => {:size => [t, w-2*t, h-2*t], :pos => [-0.5*(d-t), 0, h/2]},
+    "bottom" => {:size => [d, w, t],         :pos => [0, 0, t / 2.0]},
+    "top"    => {:size => [d, w, t],         :pos => [0, 0, h - t / 2.0]},
+    "left"   => {:size => [d, t, h - 2*t],   :pos => [0, -0.5*(w-t), 0.5*h]},
+    "right"  => {:size => [d, t, h - 2*t],   :pos => [0,  0.5*(w-t), 0.5*h]},
+    "block_left"  => {:size => block_size,   :pos => [block_dx, -block_dy, block_dz]},
+    "block_right" => {:size => block_size,   :pos => [block_dx,  block_dy, block_dz]},
+  }
+  # Material
+  # Assume soft wood with density of 500 kg / m^3
+  density = 500
+
+  # Surface parameters
+  surface = "
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>"
+%>
+<sdf version="1.5">
+  <model name="wooden_case">
+    <link name="base">
+     <%
+      # Compute inertia
+
+      # Compute mass of each component
+      # mass: total mass
+      mass = 0
+      base_pieces.keys.each do |k|
+        dx = base_pieces[k][:size][0]
+        dy = base_pieces[k][:size][1]
+        dz = base_pieces[k][:size][2]
+        m = density * dx * dy * dz
+        mass += m
+        base_pieces[k][:mass] = m
+
+        ixx = m/12.0 * (dy**2 + dz**2)
+        iyy = m/12.0 * (dz**2 + dx**2)
+        izz = m/12.0 * (dx**2 + dy**2)
+        base_pieces[k][:ixx] = ixx
+        base_pieces[k][:iyy] = iyy
+        base_pieces[k][:izz] = izz
+      end
+
+      # Compute lumped center of mass
+      cx_sum = 0.0
+      cy_sum = 0.0
+      cz_sum = 0.0
+      base_pieces.keys.each do |k|
+        m = base_pieces[k][:mass]
+        pos = base_pieces[k][:pos]
+        cx_sum += m * pos[0]
+        cy_sum += m * pos[1]
+        cz_sum += m * pos[2]
+      end
+      c = [cx_sum / mass, cy_sum / mass, cz_sum / mass]
+
+      # Compute lumped moments of inertia with respect to center of mass
+      lumped_ixx  = 0.0
+      lumped_iyy  = 0.0
+      lumped_izz  = 0.0
+      lumped_ixy  = 0.0
+      lumped_ixz  = 0.0
+      lumped_iyz  = 0.0
+      base_pieces.keys.each do |k|
+        m = base_pieces[k][:mass]
+        pos = base_pieces[k][:pos]
+        ixx = base_pieces[k][:ixx]
+        iyy = base_pieces[k][:iyy]
+        izz = base_pieces[k][:izz]
+        cx = pos[0] - c[0]
+        cy = pos[1] - c[1]
+        cz = pos[2] - c[2]
+
+        lumped_ixx += ixx + m*(cy*cy + cz*cz)
+        lumped_iyy += iyy + m*(cz*cz + cx*cx)
+        lumped_izz += izz + m*(cx*cx + cy*cy)
+        lumped_ixy -= m*cx*cy
+        lumped_ixz -= m*cx*cz
+        lumped_iyz -= m*cy*cz
+      end
+      ixx = lumped_ixx
+      iyy = lumped_iyy
+      izz = lumped_izz
+      ixy = lumped_ixy
+      ixz = lumped_ixz
+      iyz = lumped_iyz
+     %>
+      <pose>0 0 <%= block_size[2] %>  0 0 0</pose>
+      <inertial>
+        <pose><%= c.join(' ') %>  0 0 0</pose>
+        <mass><%= mass %></mass>
+        <inertia>
+          <ixx><%= ixx %></ixx>
+          <ixy><%= ixy %></ixy>
+          <ixz><%= ixz %></ixz>
+          <iyy><%= iyy %></iyy>
+          <iyz><%= iyz %></iyz>
+          <izz><%= izz %></izz>
+        </inertia>
+      </inertial>
+      <%  base_pieces.keys.each do |k|
+            name = k
+            dx = base_pieces[k][:size][0]
+            dy = base_pieces[k][:size][1]
+            dz = base_pieces[k][:size][2]
+            pose = base_pieces[k][:pos].join(' ') + "  0 0 0"
+       %>
+      <%= "<collision name='collision_#{name}'>" %>
+        <pose><%= pose %></pose>
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+        <surface>
+          <%= surface %>
+        </surface>
+      </collision>
+      <%= "<visual name='visual_#{name}'>" %>
+        <pose><%= pose %></pose>
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+      <% end %>
+    </link>
+
+    <link name="lid">
+     <% # Size and inertia of box lid
+        dx = height
+        dy = width
+        dz = t
+        pos = [(dx+depth + block_size[2]-t)/2, 0, t/2]
+        mass = density * dx * dy * dz
+        ixx = mass/12.0 * (dy**2 + dz**2)
+        iyy = mass/12.0 * (dz**2 + dx**2)
+        izz = mass/12.0 * (dx**2 + dy**2)
+
+        tee_nut_diameter = 0.5 * inchToMeter 
+        tee_nut_radius = tee_nut_diameter / 2
+        tee_nut_length = t*1.01
+        tee_nut_pos = {
+          "tee_nut_1" => [0.122, -0.216, 0.0],
+          "tee_nut_2" => [0.122, -0.088, 0.0],
+          "tee_nut_3" => [0.122,  0.088, 0.0],
+          "tee_nut_4" => [0.122,  0.216, 0.0],
+        }
+      %>
+      <pose><%= pos.join(' ') %>  0 0 0</pose>
+      <inertial>
+        <mass><%= mass %></mass>
+        <inertia>
+          <ixx><%= ixx %></ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy><%= iyy %></iyy>
+          <iyz>0</iyz>
+          <izz><%= izz %></izz>
+        </inertia>
+      </inertial>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+        <surface>
+          <%= surface %>
+        </surface>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+      <% tee_nut_pos.keys.each do |k|
+          name = k
+          pos  = tee_nut_pos[k]
+      %>
+      <%= "<visual name='#{name}'>" %>
+        <pose><%= pos.join(' ') %>  0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius><%= tee_nut_radius %></radius>
+            <length><%= tee_nut_length %></length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+      <% end %>
+    </link>
+
+    <joint name="lid_hinge" type="revolute">
+      <pose><%= -h/2 %> 0 <%= t %>  0 0 0</pose>
+      <parent>base</parent>
+      <child>lid</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <upper><%=  Math::PI/6 %></upper>
+          <lower><%= -Math::PI/2 %></lower>
+        </limit>
+      </axis>
+    </joint>
+
+  </model>
+</sdf>

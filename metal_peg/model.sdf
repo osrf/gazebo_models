@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="metal_peg">
+    <link name="link">
+      <pose>0 0 0.031 0 0 0</pose>
+      <inertial>
+        <mass>0.0121</mass>
+        <inertia>
+          <ixx>3.908975583333333e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>3.908975583333333e-06</iyy>
+          <iyz>0</iyz>
+          <izz>6.58845e-08</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius> 0.0033 </radius>
+            <length> 0.062 </length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius> 0.0033 </radius>
+            <length> 0.062 </length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

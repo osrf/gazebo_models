@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<%
+  # SI units (length in meters)
+
+  # Geometry
+  # Height
+  h  = 0.16
+  # Inner diameter
+  d1 = 0.0075
+  r1 = d1/2.0
+  # Outer diameter
+  d2 = 0.0095
+  r2 = d2/2.0
+
+  # Inertia
+  mass = 0.0048
+  ixx  = mass/12.0 * ( 3*(r1**2 + r2**2) + h**2 )
+  iyy  = mass/12.0 * ( 3*(r1**2 + r2**2) + h**2 )
+  izz  = mass/2.0 * (r1**2 + r2**2)
+%>
+<sdf version="1.5">
+  <model name="tube_9_5mm">
+    <link name="link">
+      <pose>0 0 <%= h/2 %> 0 0 0</pose>
+      <inertial>
+        <mass><%= mass %></mass>
+        <inertia>
+          <ixx><%= ixx %></ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy><%= iyy %></iyy>
+          <iyz>0</iyz>
+          <izz><%= izz %></izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://tube_9_5mm/meshes/tube_9_5.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://tube_9_5mm/meshes/tube_9_5.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

@@ -2,10 +2,9 @@
 <sdf version="1.5">
   <model name="handle_wheel_valve">
     <link name="handle">
-      <pose>0 0.0200 0.015 0 0 1.57</pose>
       <inertial>
+        <pose>0.03 0 0.01 0 0 0</pose>
         <mass>4.6114</mass>
-        <pose>0.0126 0.0036 0 0 0 0</pose>
         <inertia>
           <ixx>0.0252</ixx>
           <ixy>-0.0009</ixy>
@@ -54,7 +53,7 @@
     </link>
     <!--
          This is just a visual until SDF collide_bitmask is implemented.
-         Without collide_bitmask, the "attachment" will collide with a 
+         Without collide_bitmask, the "attachment" will collide with a
          wall that separates the handle from the attachment causing jitter
     -->
     <!--
@@ -82,22 +81,22 @@
       <parent>world</parent>
       <child>handle</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>1 0 0</xyz>
         <limit>
           <lower>-12.56</lower>
           <upper>12.56</upper>
         </limit>
         <dynamics>
           <!--velocity dependent viscous damping coefficient of the joint-->
-          <damping>100</damping>
+          <damping>0</damping>
           <!--default 0, static friction value of the joint-->
-          <friction>100</friction>
+          <friction>0</friction>
         </dynamics>
         <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
       <physics>
         <ode>
-          <cfm_damping>1</cfm_damping>
+          <implicit_spring_damper>1</implicit_spring_damper>
         </ode>
       </physics>
     </joint>

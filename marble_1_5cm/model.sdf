@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="marble_1_5cm">
+    <link name="link">
+      <pose>0 0 0.0075 0 0 0</pose>
+      <inertial>
+        <mass>0.0062</mass>
+        <inertia>
+          <ixx>1.395e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.395e-07</iyy>
+          <iyz>0</iyz>
+          <izz>1.395e-07</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <sphere>
+            <radius>0.0075</radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <sphere>
+            <radius>0.0075</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Blue</name>
+          </script>
+        </material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,109 @@
+<?xml version="1.0" ?>
+<%
+  # SI units (length in meters)
+
+  # Geometry
+
+  diameter = 0.084
+  radius = diameter/2.0
+  height = 0.0115
+
+  # mesh height offset
+  mesh_dz = 0.0010
+  mesh_pose = "<pose>0 0 #{mesh_dz}  0 0 0</pose>"
+
+  # base cylinder height
+  cylinder_height = 0.002
+  cylinder_pose = "<pose>0 0 #{cylinder_height/2}  0 0 0</pose>"
+
+  # Inertia: approximate as a thin-walled cylindrical tube (not accurate)
+  mass = 0.0142
+  ixx  = mass*(radius**2/2 + height**2/12)
+  iyy  = ixx
+  izz  = mass*radius**2
+%>
+<sdf version="1.5">
+  <model name="round_tin_top">
+    <link name="link">
+      <inertial>
+        <pose>0 0 <%= height/2 %> 0 0 0</pose>
+        <mass><%= mass %></mass>
+        <inertia>
+          <ixx><%= ixx %></ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy><%= iyy %></iyy>
+          <iyz>0</iyz>
+          <izz><%= izz %></izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision_cylinder">
+        <%= cylinder_pose %>
+        <geometry>
+          <cylinder>
+            <radius><%= radius %></radius>
+            <length><%= cylinder_height %></length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual_cylinder">
+        <%= cylinder_pose %>
+        <geometry>
+          <cylinder>
+            <radius><%= radius %></radius>
+            <length><%= cylinder_height %></length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+
+      <collision name="collision">
+        <%= mesh_pose %>
+        <geometry>
+          <mesh>
+            <uri>model://round_tin_top/meshes/round_tin_top.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <%= mesh_pose %>
+        <geometry>
+          <mesh>
+            <uri>model://round_tin_top/meshes/round_tin_top.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

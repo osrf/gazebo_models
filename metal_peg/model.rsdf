@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<%
+  # SI units (length in meters)
+
+  # Geometry
+  # Height
+  h  = 0.062
+  # diameter
+  d = 0.0066
+  r = d/2.0
+
+  # Inertia
+  mass = 0.0121
+  ixx  = mass/12.0 * (3*r**2  + h**2 )
+  iyy  = mass/12.0 * (3*r**2  + h**2 )
+  izz  = mass/2.0 * r**2
+%>
+<sdf version="1.5">
+  <model name="metal_peg">
+    <link name="link">
+      <pose>0 0 <%= h/2 %> 0 0 0</pose>
+      <inertial>
+        <mass><%= mass %></mass>
+        <inertia>
+          <ixx><%= ixx %></ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy><%= iyy %></iyy>
+          <iyz>0</iyz>
+          <izz><%= izz %></izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius> <%= r %> </radius>
+            <length> <%= h  %> </length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius> <%= r %> </radius>
+            <length> <%= h  %> </length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Chrome</name>
+          </script>
+        </material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

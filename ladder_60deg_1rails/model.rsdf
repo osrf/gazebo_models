@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+  <%
+    # Constant declarations
+    ladder_angle = 60 # degrees
+    ladder_rad = ladder_angle*Math::PI/180
+    handrails = 1
+    num_steps = 8
+    height = 2.4 # meters
+    width = height/Math.tan(ladder_rad)
+    model_name = "ladder_"+ladder_angle.to_s+"deg_"+handrails.to_s+"rails"
+   
+    step_size = [0.9, 0.1016, 0.0381]
+    step_density = 2800
+
+    step_mass = step_density*step_size[0]*step_size[1]*step_size[2]
+    step_ixx = step_mass/12.0 * (step_size[1]**2+step_size[2]**2)
+    step_iyy = step_mass/12.0 * (step_size[2]**2+step_size[0]**2)
+    step_izz = step_mass/12.0 * (step_size[0]**2+step_size[1]**2)
+
+    rail_step_dist = 0.7 # In the x-direction
+    rail_radius = 0.02413
+
+    landing_y = 0.6 #dimension of the landing in y
+    landing_mass = step_density*step_size[0]*landing_y*step_size[2]
+
+    landing_ixx = landing_mass/12.0 * (landing_y**2+step_size[2]**2)
+    landing_iyy = landing_mass/12.0 * (step_size[2]**2+step_size[0]**2)
+    landing_izz = landing_mass/12.0 * (step_size[0]**2+landing_y**2)
+
+    rail_step_dist = 0.7 # In the x-direction
+    rail_radius = 0.02413
+   %>
+
+  <model name= <%= '"'+model_name+'"' %> >
+    <static>true</static>
+      <% # Steps: linearly interpolate positions
+       step_inc_z = height/(num_steps+1)
+       step_inc_y = width/(num_steps+1)
+       step_z = (1..(num_steps)).to_a.collect{ |n| n * step_inc_z }
+       step_y = (1..(num_steps)).to_a.collect{ |n| n * step_inc_y }
+
+       for i in (0..num_steps-1)
+       %>
+         <link name=<%= '"step'+i.to_s+'"'%> >
+           <pose>0 <%= step_y[i]%> <%= step_z[i] %> 0 0 0 </pose>
+           <inertial>
+             <mass> <%= step_mass %></mass>
+             <inertia>
+             <ixx> <%= step_ixx %></ixx>
+             <iyy> <%= step_iyy %></iyy>
+             <izz> <%= step_izz %></izz>
+             <ixy>0</ixy>
+             <ixz>0</ixz>
+             <iyz>0</iyz>
+             </inertia>
+           </inertial>
+
+           <collision name="collision">
+             <geometry>
+              <box>
+                <size> <% for i in (0..2) %> <%= step_size[i] %> <% end %> </size>
+              </box>
+             </geometry>
+           </collision>
+
+          <visual name="visual">
+            <geometry>
+              <box>
+                <size> <% for i in (0..2) %> <%= step_size[i] %> <% end %> </size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Grey</name>
+              </script> 
+            </material>
+          </visual>
+        </link>
+      <% end %>
+    <% #Landing %>
+    <link name="landing">
+      <pose>0 <%= width+landing_y/2 %> <%= height %> 0 0 0 </pose>
+        <inertial>
+          <mass> <%= landing_mass %></mass>
+          <inertia>
+          <ixx> <%= landing_ixx %></ixx>
+          <iyy> <%= landing_iyy %></iyy>
+          <izz> <%= landing_izz %></izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          </inertia>
+        </inertial>
+
+        <collision name="collision">
+          <geometry>
+           <box>
+             <size> <%= step_size[0] %> <%= landing_y %> <%= step_size[1] %></size>
+           </box>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+          <geometry>
+            <box>
+             <size> <%= step_size[0] %> <%= landing_y %> <%= step_size[1] %></size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script> 
+          </material>
+        </visual>
+    </link>
+
+    <% #Walls--0 is the left side, 1 is left
+       for i in (0..1)
+         side = i == 0 ? 'left' : 'right'
+         
+         wall_x = step_size[0]/2 * (i*2-1)
+
+         wall_sides = [0.0508, Math.sqrt(height**2+width**2)+0.08, 0.13]
+     %>
+      <link name=<%= '"'+side+'_side_wall"' %> >
+        <pose><%= wall_x%> <%= width/2%> <%= height/2%> <%= ladder_rad %> 0 0 </pose>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size><% for i in (0..2) %> <%= wall_sides[i] %> <% end %></size>
+            </box>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size><% for i in (0..2) %> <%= wall_sides[i] %> <% end %></size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script> 
+          </material>
+        </visual>
+
+
+      </link>
+    <% end %>
+    
+    <% #Railing 
+       rail_height = rail_step_dist*Math.tan(ladder_rad)
+       rail_length = Math.sqrt(height**2 + width**2) + rail_step_dist*Math.cos(ladder_rad) + rail_height*Math.sin(ladder_rad)
+       if handrails > 0
+         for i in (0..handrails-1) 
+           side = i == 0 ? 'left' : 'right'
+           rail_x = step_size[0]/2 * (i*2-1)
+     %>      
+         <link name=<%= '"'+side+'_railing_long"'%> >
+           <pose><%= rail_x%> <%= (width - rail_step_dist)/2 %> <%= (height+rail_step_dist*Math.tan(ladder_rad))/2 %> <%= ladder_rad-Math::PI/2%> 0 0 </pose>
+
+            <collision name="collision">
+              <geometry>
+                <cylinder>
+                  <radius><%= rail_radius%></radius>
+                  <length><%= rail_length%></length>
+                </cylinder>
+              </geometry>
+            </collision>
+
+            <visual name="visual">
+              <geometry>
+                <cylinder>
+                  <radius><%= rail_radius%></radius>
+                  <length><%= rail_length%></length>
+                </cylinder>
+              </geometry>
+              <material>
+                <script>
+                  <uri>file://media/materials/scripts/gazebo.material</uri>
+                  <name>Gazebo/Grey</name>
+                </script> 
+              </material>
+            </visual>
+         </link>
+         <% for j in (0..num_steps/2-1)
+              upright_y = j * width / (num_steps/2-1) - rail_step_dist*Math.sin(ladder_rad)/2 + wall_sides[2]*Math.sin(ladder_rad)/4
+              upright_z = j * height / (num_steps/2-1) + rail_step_dist*Math.cos(ladder_rad)/2 - wall_sides[2]*Math.cos(ladder_rad)/4
+          %>
+              <link name=<%= '"'+side+'_railing_upright'+j.to_s+'"' %> >
+                <pose> <%= rail_x %> <%= upright_y %> <%= upright_z%> <%= ladder_rad %> 0 0 </pose>
+     
+                <collision name="collision">
+                  <geometry>
+                    <cylinder>
+                      <radius><%= rail_radius%></radius>
+                      <length><%= rail_step_dist*Math.sin(ladder_rad) - wall_sides[2]/2%></length>
+                    </cylinder>
+                  </geometry>
+                </collision>
+
+                <visual name="visual">
+                  <geometry>
+                    <cylinder>
+                      <radius><%= rail_radius%></radius>
+                      <length><%= rail_step_dist*Math.sin(ladder_rad) - wall_sides[2]/2%></length>
+                    </cylinder>
+                  </geometry>
+                  <material>
+                    <script>
+                      <uri>file://media/materials/scripts/gazebo.material</uri>
+                      <name>Gazebo/Grey</name>
+                    </script> 
+                  </material>
+                </visual>
+              </link> 
+         <% end %>
+
+         <link name=<%= '"'+side+'_railing_landing_top"' %> >
+           
+           <pose> <%= rail_x %> <%= width+landing_y/2 %> <%= height+rail_step_dist*Math.tan(ladder_rad) %> <%= Math::PI/2 %> 0 0 </pose>
+
+           <collision name="collision">
+             <geometry>
+               <cylinder>
+                 <radius><%= rail_radius%></radius>
+                 <length><%= landing_y+rail_radius*2%></length>
+               </cylinder>
+             </geometry>
+           </collision>
+
+           <visual name="visual">
+             <geometry>
+               <cylinder>
+                 <radius><%= rail_radius%></radius>
+                 <length><%= landing_y + rail_radius*2%></length>
+               </cylinder>
+             </geometry>
+             <material>
+               <script>
+                 <uri>file://media/materials/scripts/gazebo.material</uri>
+                 <name>Gazebo/Grey</name>
+               </script> 
+             </material>
+           </visual>
+         </link>
+
+         <% for j in (0..1)
+              rail_y = width
+              rail_z = rail_height
+          %>
+            <link name=<%= '"'+side+'_railing_landing_upright_'+j.to_s+'"' %>>
+              <pose><%= rail_x %> <%= width + j*landing_y %> <%= height+rail_z/2 %> 0 0 0</pose>
+              <collision name="collision">
+                <geometry>
+                  <cylinder>
+                    <radius><%= rail_radius%></radius>
+                    <length><%= rail_z%></length>
+                  </cylinder>
+                </geometry>
+              </collision>
+
+              <visual name="visual">
+                <geometry>
+                  <cylinder>
+                    <radius><%= rail_radius%></radius>
+                    <length><%= rail_z%></length>
+                  </cylinder>
+                </geometry>
+                <material>
+                  <script>
+                    <uri>file://media/materials/scripts/gazebo.material</uri>
+                    <name>Gazebo/Grey</name>
+                  </script> 
+                </material>
+              </visual>
+            </link>
+        <% end %>
+
+       <% end %>
+    <% end %>
+
+
+  </model>
+</sdf>

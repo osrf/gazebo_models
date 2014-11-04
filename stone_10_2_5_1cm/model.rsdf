@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<%
+  # Stone block with dimensions 10 x 2.5 x 1 cm
+  # SI units (length in meters)
+
+  # Geometry
+  dx = 0.1
+  dy = 0.025
+  dz = 0.01
+
+  # Inertia
+  mass = 0.0628
+  ixx  = mass/12.0 * (dy**2 + dz**2)
+  iyy  = mass/12.0 * (dz**2 + dx**2)
+  izz  = mass/12.0 * (dx**2 + dy**2)
+%>
+<sdf version="1.5">
+  <model name="stone_10_2_5_1cm">
+    <link name="link">
+      <pose>0 0 <%= dz/2 %> 0 0 0</pose>
+      <inertial>
+        <mass><%= mass %></mass>
+        <inertia>
+          <ixx><%= ixx %></ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy><%= iyy %></iyy>
+          <iyz>0</iyz>
+          <izz><%= izz %></izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Rocky</name>
+          </script>
+        </material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>
