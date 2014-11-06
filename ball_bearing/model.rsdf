@@ -60,6 +60,11 @@
         </material>
       </visual>
 
+      <!-- approximate rolling friction -->
+      <velocity_decay>
+        <linear>0.00</linear>
+        <angular>0.005</angular>
+      </velocity_decay>
     </link>
   </model>
 </sdf>
