@@ -2,7 +2,7 @@
 <sdf version="1.5">
   <model name="wheel_valve_large">
     <link name="handle">
-      <pose>0 0.0300 0 0 0 0</pose>
+      <pose>0 0.0310 0 0 0 0</pose>
       <inertial>
         <mass>7.8219</mass>
         <pose>0 0.0615 0 0 0 0</pose>
@@ -22,22 +22,16 @@
           </mesh>
         </geometry>
         <surface>
-          <bounce>
-            <restitution_coefficient>0.01</restitution_coefficient>
-            <threshold>5.0</threshold>
-          </bounce>
           <friction>
             <ode>
-              <mu>5</mu>
-              <mu2>5</mu2>
+              <mu>1</mu>
+              <mu2>1</mu2>
             </ode>
           </friction>
           <contact>
             <ode>
-              <soft_cfm>0.01</soft_cfm>
-              <soft_erp />
               <kp>1000000.0</kp>
-              <kd>100000.0</kd>
+              <kd>100.0</kd>
               <max_vel>0.01</max_vel>
               <min_depth>0.001</min_depth>
             </ode>
@@ -89,11 +83,11 @@
         </limit>
         <dynamics>
           <!--velocity dependent viscous damping coefficient of the joint-->
-          <damping>0</damping>
+          <damping>0.1</damping>
           <!--default 0, static friction value of the joint-->
-          <friction>0</friction>
+          <friction>0.1</friction>
         </dynamics>
-        <use_parent_model_frame>true</use_parent_model_frame>
+        <use_parent_model_frame>false</use_parent_model_frame>
       </axis>
       <physics>
         <ode>
