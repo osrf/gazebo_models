@@ -18,7 +18,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://cinder_block_wide/meshes/cinder_block.dae</uri>
+            <uri>model://cinder_block_wide/meshes/cinder_block_wide.dae</uri>
           </mesh>
         </geometry>
       </visual>
