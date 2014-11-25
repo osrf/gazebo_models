@@ -145,6 +145,7 @@ table_marble
 tube_2_25cm
 tube_9_5mm
 turtlebot
+ur10
 utility_cart
 washer
 willowgarage
