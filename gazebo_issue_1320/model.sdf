@@ -194,7 +194,7 @@
     <link name="wheel_front_left">
       <pose>0.33 0.33 0.16 0 1.5707 1.5707</pose>
       <inertial>
-        <mass>4</mass>
+        <mass>0.5</mass>
         <inertia>
           <ixx>0.00307916666666667</ixx>
           <iyy>0.00307916666666667</iyy>
