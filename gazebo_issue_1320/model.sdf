@@ -1,0 +1,425 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.5">
+  <model name="cart_soft_suspension">
+    <link name="chassis">
+      <pose>0 0 0.21 0 0 0</pose>
+      <inertial>
+        <pose>0.1 0 0  0 0 0</pose>
+        <mass>40</mass>
+        <inertia>
+          <ixx>0.216666666666667</ixx>
+          <iyy>0.841666666666667</iyy>
+          <izz>1.04166666666667</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>.8 .45 .355</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>30</mu>
+              <mu2>30</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <mesh>
+            <uri>model://gazebo_issue_1320/meshes/odg_alternate_skin.dae</uri>
+            <scale>0.006 0.006 0.006</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    
+    <link name="susp_front_right">
+      <pose>0.33 -0.33 0.16  0 0 0</pose>
+      <inertial>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.000208333333333333</ixx>
+          <iyy>0.000208333333333333</iyy>
+          <izz>0.000208333333333333</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.05</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.05</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name="susp_front_right_prismatic" type="prismatic">
+      <parent>chassis</parent>
+      <child>susp_front_right</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-0.0375</lower>
+          <upper>0.0375</upper>
+        </limit>
+        <dynamics>
+          <damping>100</damping>
+          <spring_stiffness>2500</spring_stiffness>
+          <spring_reference>0.05</spring_reference>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+    <link name="wheel_front_right">
+      <pose>0.33 -0.33 0.16 0 1.5707 1.5707</pose>
+      <inertial>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.00307916666666667</ixx>
+          <iyy>0.00307916666666667</iyy>
+          <izz>0.005625</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>.16</radius>
+            <length>.12</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>30</mu>
+              <mu2>30</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+    </link>
+    <joint name="wheel_front_right_spin" type="revolute">
+      <pose>0 0 0.03 0 0 0</pose>
+      <parent>susp_front_right</parent>
+      <child>wheel_front_right</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    
+    <link name="susp_front_left">
+      <pose>0.33 0.33 0.16  0 0 0</pose>
+      <inertial>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.000208333333333333</ixx>
+          <iyy>0.000208333333333333</iyy>
+          <izz>0.000208333333333333</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.05</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.05</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name="susp_front_left_prismatic" type="prismatic">
+      <parent>chassis</parent>
+      <child>susp_front_left</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-0.0375</lower>
+          <upper>0.0375</upper>
+        </limit>
+        <dynamics>
+          <damping>100</damping>
+          <spring_stiffness>2500</spring_stiffness>
+          <spring_reference>0.05</spring_reference>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+    <link name="wheel_front_left">
+      <pose>0.33 0.33 0.16 0 1.5707 1.5707</pose>
+      <inertial>
+        <mass>4</mass>
+        <inertia>
+          <ixx>0.00307916666666667</ixx>
+          <iyy>0.00307916666666667</iyy>
+          <izz>0.005625</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>.16</radius>
+            <length>.12</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>30</mu>
+              <mu2>30</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+    </link>
+    <joint name="wheel_front_left_spin" type="revolute">
+      <pose>0 0 -0.03 0 0 0</pose>
+      <parent>susp_front_left</parent>
+      <child>wheel_front_left</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    
+    <link name="susp_rear_right">
+      <pose>-0.2 -0.33 0.16  0 0 0</pose>
+      <inertial>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.000208333333333333</ixx>
+          <iyy>0.000208333333333333</iyy>
+          <izz>0.000208333333333333</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.05</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.05</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name="susp_rear_right_prismatic" type="prismatic">
+      <parent>chassis</parent>
+      <child>susp_rear_right</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-0.0375</lower>
+          <upper>0.0375</upper>
+        </limit>
+        <dynamics>
+          <damping>100</damping>
+          <spring_stiffness>2500</spring_stiffness>
+          <spring_reference>0.05</spring_reference>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+    <link name="wheel_rear_right">
+      <pose>-0.2 -0.33 0.16 0 1.5707 1.5707</pose>
+      <inertial>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.00307916666666667</ixx>
+          <iyy>0.00307916666666667</iyy>
+          <izz>0.005625</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>.16</radius>
+            <length>.12</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>30</mu>
+              <mu2>30</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+    </link>
+    <joint name="wheel_rear_right_spin" type="revolute">
+      <pose>0 0 0.03 0 0 0</pose>
+      <parent>susp_rear_right</parent>
+      <child>wheel_rear_right</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    
+    <link name="susp_rear_left">
+      <pose>-0.2 0.33 0.16  0 0 0</pose>
+      <inertial>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.000208333333333333</ixx>
+          <iyy>0.000208333333333333</iyy>
+          <izz>0.000208333333333333</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.05</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.05</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name="susp_rear_left_prismatic" type="prismatic">
+      <parent>chassis</parent>
+      <child>susp_rear_left</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-0.0375</lower>
+          <upper>0.0375</upper>
+        </limit>
+        <dynamics>
+          <damping>100</damping>
+          <spring_stiffness>2500</spring_stiffness>
+          <spring_reference>0.05</spring_reference>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+    <link name="wheel_rear_left">
+      <pose>-0.2 0.33 0.16 0 1.5707 1.5707</pose>
+      <inertial>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.00307916666666667</ixx>
+          <iyy>0.00307916666666667</iyy>
+          <izz>0.005625</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>.16</radius>
+            <length>.12</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>30</mu>
+              <mu2>30</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+    </link>
+    <joint name="wheel_rear_left_spin" type="revolute">
+      <pose>0 0 -0.03 0 0 0</pose>
+      <parent>susp_rear_left</parent>
+      <child>wheel_rear_left</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    
+  </model>
+</sdf>
