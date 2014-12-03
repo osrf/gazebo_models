@@ -1,0 +1,5 @@
+bounce	real	0.8	0.1	1.1	ball-geom
+mu	real	0.0	0.1	0.3	ball-geom
+limit   real    0.54    0.005	0.595
+period  real    1.0     0.2     3.0
+

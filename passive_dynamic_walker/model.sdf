@@ -1,0 +1,821 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+
+  <model name="walker">
+    <pose>0 0 0.025 0 0 0</pose>
+
+    <link name="codpiece">
+      <self_collide>0</self_collide>
+      <pose>-0.0 0.0 .9  -0.000000 0.000000 0</pose>
+      <inertial> 
+        <pose>0 0 0.0 0.000000 -0.000000 0.000000</pose>
+        <inertia>
+          <ixx>.00007333</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00089848</iyy>
+          <iyz>0</iyz>
+          <izz>0.00089848</izz>
+        </inertia>
+        <mass>.044</mass>
+      </inertial>
+      <collision name="codpiece-geom">
+        <pose>0 -0.00000 0.0500000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.55 .1 .1</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10.00000</mu>
+              <mu2>10.0000</mu2>
+              <fdir1>0.000000 0.000000 0.000000</fdir1>
+              <slip1>0.000000</slip1>
+              <slip2>0.000000</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.7000000</restitution_coefficient>
+            <threshold>100000.000000</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <soft_cfm>0.000000</soft_cfm>
+              <soft_erp>0.000000</soft_erp>
+              <kp>1000000000000.000000</kp>
+              <kd>1.000000</kd>
+              <max_vel>0.000000</max_vel>
+              <min_depth>0.001000</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        <laser_retro>0.000000</laser_retro>
+      </collision>
+      <visual name="codpiece-viz">
+        <pose>0 -0.00000 0.0500000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.55 .1 .1</size>
+          </box>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+    </link>
+
+    <link name="back-upper-legs">
+      <self_collide>0</self_collide>
+      <pose>-0.0 0.0 .75 -0.000000 0.000000 0</pose>
+      <inertial> <!-- box dim: w=1, h=.025, d=1 -->
+        <pose>0 0 0.125 0.000000 -0.000000 0.000000</pose>
+        <inertia>
+          <ixx>.0008666</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00124166</iyy>
+          <iyz>0</iyz>
+          <izz>0.000221666</izz>
+        </inertia>
+        <mass>0.04</mass>
+      </inertial>
+      <collision name="back-left-upper-leg-geom">
+        <pose>-.3 -0.00000 0.000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.05 .1 .5</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10.00000</mu>
+              <mu2>10.0000</mu2>
+              <fdir1>0.000000 0.000000 0.000000</fdir1>
+              <slip1>0.000000</slip1>
+              <slip2>0.000000</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.7000000</restitution_coefficient>
+            <threshold>100000.000000</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <soft_cfm>0.000000</soft_cfm>
+              <soft_erp>0.000000</soft_erp>
+              <kp>1000000000000.000000</kp>
+              <kd>1.000000</kd>
+              <max_vel>0.000000</max_vel>
+              <min_depth>0.001000</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        <laser_retro>0.000000</laser_retro>
+      </collision>
+      <collision name="back-right-upper-leg-geom">
+        <pose>.3 -0.00000 0.0000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.05 .1 .5</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10.00000</mu>
+              <mu2>10.0000</mu2>
+              <fdir1>0.000000 0.000000 0.000000</fdir1>
+              <slip1>0.000000</slip1>
+              <slip2>0.000000</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.7000000</restitution_coefficient>
+            <threshold>100000.000000</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <soft_cfm>0.000000</soft_cfm>
+              <soft_erp>0.000000</soft_erp>
+              <kp>1000000000000.000000</kp>
+              <kd>1.000000</kd>
+              <max_vel>0.000000</max_vel>
+              <min_depth>0.001000</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        <laser_retro>0.000000</laser_retro>
+      </collision>
+      <visual name="back-left-upper-leg-viz">
+        <pose>-.3 -0.00000 0.000000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.05 .1 .5</size>
+          </box>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+      <visual name="back-right-upper-leg-viz">
+        <pose>.3 -0.00000 0.000000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.05 .1 .5</size>
+          </box>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+    </link>
+
+    <link name="back-left-lower-leg">
+      <self_collide>0</self_collide>
+      <pose>-0.3 0.0 .25 -0.000000 0.000000 0</pose>
+      <inertial> <!-- box dim: w=1, h=.025, d=1 -->
+        <pose>0 0 -0.0625 0.000000 -0.000000 0.000000</pose>
+        <inertia>
+          <ixx>.00004333</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000042083</iyy>
+          <iyz>0</iyz>
+          <izz>0.00020833</izz>
+        </inertia>
+        <mass>0.02</mass>
+      </inertial>
+      <collision name="back-left-lower-leg-geom">
+        <pose>0 -0.00000 0.000000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.05 .1 .5</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10.00000</mu>
+              <mu2>10.0000</mu2>
+              <fdir1>0.000000 0.000000 0.000000</fdir1>
+              <slip1>0.000000</slip1>
+              <slip2>0.000000</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.7000000</restitution_coefficient>
+            <threshold>100000.000000</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <soft_cfm>0.000000</soft_cfm>
+              <soft_erp>0.000000</soft_erp>
+              <kp>1000000000000.000000</kp>
+              <kd>1.000000</kd>
+              <max_vel>0.000000</max_vel>
+              <min_depth>0.001000</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        <laser_retro>0.000000</laser_retro>
+      </collision>
+      <collision name="back-left-foot-geom">
+        <pose>0 -0.0500000 -0.2400000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <mesh>
+            <uri>model://passive_dynamic_walker/foot.stl</uri>
+            <scale>.5 .2 .1</scale>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10.00000</mu>
+              <mu2>10.0000</mu2>
+              <fdir1>0.000000 0.000000 0.000000</fdir1>
+              <slip1>0.000000</slip1>
+              <slip2>0.000000</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.7000000</restitution_coefficient>
+            <threshold>100000.000000</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <soft_cfm>0.000000</soft_cfm>
+              <soft_erp>0.000000</soft_erp>
+              <kp>1000000000000.000000</kp>
+              <kd>1.000000</kd>
+              <max_vel>0.000000</max_vel>
+              <min_depth>0.001000</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        <laser_retro>0.000000</laser_retro>
+      </collision>            
+      <visual name="back-left-lower-leg-viz">
+        <pose>0 -0.00000 0.000000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.05 .1 .5</size>
+          </box>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+      <visual name="back-left-foot-viz">
+        <pose>0 -0.0500000 -0.2400000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <mesh>
+            <uri>model://passive_dynamic_walker/foot.stl</uri>
+            <scale>.5 .2 .1</scale>
+          </mesh>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+    </link>
+
+    <link name="back-right-lower-leg">
+      <self_collide>0</self_collide>
+      <pose>0.3 0.0 .25 -0.000000 0.000000 0</pose>
+      <inertial> <!-- box dim: w=1, h=.025, d=1 -->
+        <pose>0 0 -0.0625 0.000000 -0.000000 0.000000</pose>
+        <inertia>
+          <ixx>.00004333</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000042083</iyy>
+          <iyz>0</iyz>
+          <izz>0.00020833</izz>
+        </inertia>
+        <mass>0.02</mass>
+      </inertial>
+      <collision name="back-right-lower-leg-geom">
+        <pose>0 -0.00000 0.000000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.05 .1 .5</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10.00000</mu>
+              <mu2>10.0000</mu2>
+              <fdir1>0.000000 0.000000 0.000000</fdir1>
+              <slip1>0.000000</slip1>
+              <slip2>0.000000</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.7000000</restitution_coefficient>
+            <threshold>100000.000000</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <soft_cfm>0.000000</soft_cfm>
+              <soft_erp>0.000000</soft_erp>
+              <kp>1000000000000.000000</kp>
+              <kd>1.000000</kd>
+              <max_vel>0.000000</max_vel>
+              <min_depth>0.001000</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        <laser_retro>0.000000</laser_retro>
+      </collision>
+      <collision name="back-right-foot-geom">
+        <pose>0 -0.050000 -0.2400000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <mesh>
+            <uri>model://passive_dynamic_walker/foot.stl</uri>
+            <scale>.5 .2 .1</scale>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10.00000</mu>
+              <mu2>10.0000</mu2>
+              <fdir1>0.000000 0.000000 0.000000</fdir1>
+              <slip1>0.000000</slip1>
+              <slip2>0.000000</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.7000000</restitution_coefficient>
+            <threshold>100000.000000</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <soft_cfm>0.000000</soft_cfm>
+              <soft_erp>0.000000</soft_erp>
+              <kp>1000000000000.000000</kp>
+              <kd>1.000000</kd>
+              <max_vel>0.000000</max_vel>
+              <min_depth>0.001000</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        <laser_retro>0.000000</laser_retro>
+      </collision>            
+      <visual name="back-right-lower-leg-viz">
+        <pose>0 -0.00000 0.000000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.05 .1 .5</size>
+          </box>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+      <visual name="back-right-foot-viz">
+        <pose>0 -0.050000 -0.2400000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <mesh>
+            <uri>model://passive_dynamic_walker/foot.stl</uri>
+            <scale>.5 .2 .1</scale>
+          </mesh>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+    </link>
+
+    <link name="front-upper-legs">
+      <self_collide>0</self_collide>
+      <pose>0 0 .75000000 -0.000000 0.000000 0</pose>
+      <inertial> 
+        <pose>0 0 0 0.000000 -0.000000 0.000000</pose>
+        <inertia>
+          <ixx>.0008666</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00124166</iyy>
+          <iyz>0</iyz>
+          <izz>0.000441666</izz>
+        </inertia>
+        <mass>0.04</mass>
+      </inertial>
+      <collision name="front-upper-legs-left-geom">
+        <pose>-.1 -0.00000 0.000000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.05 .1 .5</size>
+          </box>
+        </geometry>
+       <surface>
+          <friction>
+            <ode>
+              <mu>10.00000</mu>
+              <mu2>10.0000</mu2>
+              <fdir1>0.000000 0.000000 0.000000</fdir1>
+              <slip1>0.000000</slip1>
+              <slip2>0.000000</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.7000000</restitution_coefficient>
+            <threshold>100000.000000</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <soft_cfm>0.000000</soft_cfm>
+              <soft_erp>0.000000</soft_erp>
+              <kp>1000000000000.000000</kp>
+              <kd>1.000000</kd>
+              <max_vel>0.000000</max_vel>
+              <min_depth>0.001000</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        <laser_retro>0.000000</laser_retro>
+      </collision>
+      <collision name="front-upper-legs-right-geom">
+        <pose>.1 -0.00000 0.000000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.05 .1 .5</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10.00000</mu>
+              <mu2>10.0000</mu2>
+              <fdir1>0.000000 0.000000 0.000000</fdir1>
+              <slip1>0.000000</slip1>
+              <slip2>0.000000</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.7000000</restitution_coefficient>
+            <threshold>100000.000000</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <soft_cfm>0.000000</soft_cfm>
+              <soft_erp>0.000000</soft_erp>
+              <kp>1000000000000.000000</kp>
+              <kd>1.000000</kd>
+              <max_vel>0.000000</max_vel>
+              <min_depth>0.001000</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        <laser_retro>0.000000</laser_retro>
+      </collision>
+      <visual name="front-upper-legs-left-viz">
+        <pose>-.1 -0.00000 0.000000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.05 .1 .5</size>
+          </box>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+      <visual name="front-upper-legs-right-viz">
+        <pose>.1 -0.00000 0.000000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.05 .1 .5</size>
+          </box>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+    </link>
+
+    <link name="front-lower-legs">
+      <self_collide>0</self_collide>
+      <pose>0 0 .25000000 -0.000000 0.000000 0</pose>
+      <inertial> 
+        <pose>0 0 0 0.000000 -0.000000 0.000000</pose>
+        <inertia>
+          <ixx>.0008666</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00124166</iyy>
+          <iyz>0</iyz>
+          <izz>0.00044166</izz>
+        </inertia>
+        <mass>0.04</mass>
+      </inertial>
+      <collision name="front-lower-legs-left-geom">
+        <pose>-.1 -0.00000 0.000000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.05 .1 .5</size>
+          </box>
+        </geometry>
+       <surface>
+          <friction>
+            <ode>
+              <mu>10.00000</mu>
+              <mu2>10.0000</mu2>
+              <fdir1>0.000000 0.000000 0.000000</fdir1>
+              <slip1>0.000000</slip1>
+              <slip2>0.000000</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.7000000</restitution_coefficient>
+            <threshold>100000.000000</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <soft_cfm>0.000000</soft_cfm>
+              <soft_erp>0.000000</soft_erp>
+              <kp>1000000000000.000000</kp>
+              <kd>1.000000</kd>
+              <max_vel>0.000000</max_vel>
+              <min_depth>0.001000</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        <laser_retro>0.000000</laser_retro>
+      </collision>
+      <collision name="front-lower-legs-right-geom">
+        <pose>.1 -0.00000 0.000000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.05 .1 .5</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10.00000</mu>
+              <mu2>10.0000</mu2>
+              <fdir1>0.000000 0.000000 0.000000</fdir1>
+              <slip1>0.000000</slip1>
+              <slip2>0.000000</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.7000000</restitution_coefficient>
+            <threshold>100000.000000</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <soft_cfm>0.000000</soft_cfm>
+              <soft_erp>0.000000</soft_erp>
+              <kp>1000000000000.000000</kp>
+              <kd>1.000000</kd>
+              <max_vel>0.000000</max_vel>
+              <min_depth>0.001000</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        <laser_retro>0.000000</laser_retro>
+      </collision>
+      <collision name="front-legs-left-foot-geom">
+        <pose>-0.1 -0.050000 -0.2400000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <mesh>
+            <uri>model://passive_dynamic_walker/foot.stl</uri>
+            <scale>.5 .2 .1</scale>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10.00000</mu>
+              <mu2>10.0000</mu2>
+              <fdir1>0.000000 0.000000 0.000000</fdir1>
+              <slip1>0.000000</slip1>
+              <slip2>0.000000</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.7000000</restitution_coefficient>
+            <threshold>100000.000000</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <soft_cfm>0.000000</soft_cfm>
+              <soft_erp>0.000000</soft_erp>
+              <kp>1000000000000.000000</kp>
+              <kd>1.000000</kd>
+              <max_vel>0.000000</max_vel>
+              <min_depth>0.001000</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        <laser_retro>0.000000</laser_retro>
+      </collision>
+      <collision name="front-legs-right-foot-geom">
+        <pose>0.1 -0.050000 -0.2400000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <mesh>
+            <uri>model://passive_dynamic_walker/foot.stl</uri>
+            <scale>.5 .2 .1</scale>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10.00000</mu>
+              <mu2>10.0000</mu2>
+              <fdir1>0.000000 0.000000 0.000000</fdir1>
+              <slip1>0.000000</slip1>
+              <slip2>0.000000</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.7000000</restitution_coefficient>
+            <threshold>100000.000000</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <soft_cfm>0.000000</soft_cfm>
+              <soft_erp>0.000000</soft_erp>
+              <kp>1000000000000.000000</kp>
+              <kd>1.000000</kd>
+              <max_vel>0.000000</max_vel>
+              <min_depth>0.001000</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        <laser_retro>0.000000</laser_retro>
+      </collision>
+      <visual name="front-lower-leg-left-viz">
+        <pose>-.1 -0.00000 0.000000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.05 .1 .5</size>
+          </box>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+      <visual name="front-lower-leg-right-viz">
+        <pose>.1 -0.00000 0.000000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.05 .1 .5</size>
+          </box>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+      <visual name="front-connector-viz3">
+        <pose>0 -0.00000 -0.200000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.2 .025 .05</size>
+          </box>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+      <visual name="front-left-foot-viz">
+        <pose>-0.1 -0.050000 -0.2400000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <mesh>
+            <uri>model://passive_dynamic_walker/foot.stl</uri>
+            <scale>.5 .2 .1</scale>
+          </mesh>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+      <visual name="front-right-foot-viz">
+        <pose>0.1 -0.050000 -0.2400000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <mesh>
+            <uri>model://passive_dynamic_walker/foot.stl</uri>
+            <scale>.5 .2 .1</scale>
+          </mesh>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+    </link>
+
+    <joint name="back-left-knee-joint" type="revolute">
+      <pose>0.000000 0.000000 0.25 0.000000 -0.000000 0.000000</pose>
+      <parent>back-upper-legs</parent>
+      <child>back-left-lower-leg</child>
+      <axis>
+        <dynamics>
+          <damping>0.000000</damping>
+          <friction>0.000000</friction>
+        </dynamics>
+        <limit>
+          <effort>10000.000000</effort>
+          <velocity>1000.000000</velocity>
+          <lower>0</lower>
+          <upper>0.17453</upper>
+        </limit>
+        <xyz>1.000000 0.000000 0.000000</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <joint name="back-right-knee-joint" type="revolute">
+      <pose>0.000000 0.000000 0.25 0.000000 -0.000000 0.000000</pose>
+      <parent>back-upper-legs</parent>
+      <child>back-right-lower-leg</child>
+      <axis>
+        <dynamics>
+          <damping>0.000000</damping>
+          <friction>0.000000</friction>
+        </dynamics>
+        <limit>
+          <effort>10000.000000</effort>
+          <velocity>1000.000000</velocity>
+          <lower>0</lower>
+          <upper>0.17453</upper>
+        </limit>
+        <xyz>1.000000 0.000000 0.000000</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <joint name="back-hip-joint" type="revolute">
+      <pose>0.000000 0.000000 0.25 0.000000 -0.000000 0.000000</pose>
+      <parent>codpiece</parent>
+      <child>back-upper-legs</child>
+      <axis>
+        <dynamics>
+          <damping>0.000000</damping>
+          <friction>0.000000</friction>
+        </dynamics>
+        <limit>
+          <effort>10000.000000</effort>
+          <velocity>1000.000000</velocity>
+          <upper>0</upper>
+        </limit>
+        <xyz>1.000000 0.000000 0.000000</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <joint name="front-hip-joint" type="revolute">
+      <pose>0.000000 0.000000 0.25 0.000000 -0.000000 0.000000</pose>
+      <parent>codpiece</parent>
+      <child>front-upper-legs</child>
+      <axis>
+        <dynamics>
+          <damping>0.000000</damping>
+          <friction>0.000000</friction>
+        </dynamics>
+        <limit>
+          <effort>10000.000000</effort>
+          <velocity>1000.000000</velocity>
+          <upper>0</upper>
+        </limit>
+        <xyz>1.000000 0.000000 0.000000</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <joint name="front-knees-joint" type="revolute">
+      <pose>0.000000 0.000000 0.25 0.000000 -0.000000 0.000000</pose>
+      <parent>front-upper-legs</parent>
+      <child>front-lower-legs</child>
+      <axis>
+        <dynamics>
+          <damping>0.000000</damping>
+          <friction>0.000000</friction>
+        </dynamics>
+        <limit>
+          <effort>10000.000000</effort>
+          <velocity>1000.000000</velocity>
+          <lower>0</lower>
+          <upper>0.17453</upper>
+        </limit>
+        <xyz>1.000000 0.000000 0.000000</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+
+
+    <plugin name="walker-plugin" filename="libwalker.so" /> 
+  </model>
+</sdf>
+

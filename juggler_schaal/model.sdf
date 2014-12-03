@@ -1,0 +1,428 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+
+  <model name="juggler_schaal">
+    <pose>0 0 2.000000 -0.000000 0.000000 0</pose>
+    <link name="ball">  
+      <self_collide>1</self_collide>
+      <pose>0.45 0.0 0.0250000 -0.000000 0.000000 0</pose>
+      <inertial> <!-- box dim: w=1, h=.025, d=1 -->
+        <pose>0 0 0 0.000000 -0.000000 0.000000</pose>
+        <inertia>
+          <ixx>.00000025</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000025</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000025</izz>
+        </inertia>
+        <mass>.01</mass>
+      </inertial>
+      <collision name="ball-geom">
+        <pose>0 -0.00000 0.000000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <sphere>
+            <radius>.025</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.00000</mu>
+              <mu2>0.00000</mu2>
+              <fdir1>0.000000 0.000000 0.000000</fdir1>
+              <slip1>0.000000</slip1>
+              <slip2>0.000000</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>1.0000000</restitution_coefficient>
+            <threshold>0.000000</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <soft_cfm>0.000000</soft_cfm>
+              <soft_erp>0.000000</soft_erp>
+              <kp>1000000000000.000000</kp>
+              <kd>1.000000</kd>
+              <max_vel>10000.000000</max_vel>
+              <min_depth>0.001000</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        <laser_retro>0.000000</laser_retro>
+      </collision>
+      <visual name="ball-visual">
+        <pose>-0 -0.00000 0.000000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <sphere>
+            <radius>.025</radius>
+          </sphere>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+    </link>
+
+    <link name="juggler">
+      <self_collide>1</self_collide>
+      <pose>0 0 0.000000 -0.000000 000 0</pose>
+      <inertial> <!-- box dim: w=1, h=.025, d=1 -->
+        <pose>0 0 0 0.000000 -0.000000 0.000000</pose>
+        <inertia>
+          <ixx>.16667</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.085417</iyy>
+          <iyz>0</iyz>
+          <izz>0.16667</izz>
+        </inertia>
+        <mass>1.0</mass>
+      </inertial>
+      <collision name="rod-geom">
+        <pose>0 -.06 0.05 0 1.57080 -0.000000</pose>
+        <geometry>
+          <cylinder>
+            <radius>.01</radius>
+            <length>1</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.00000</mu>
+              <mu2>0.00000</mu2>
+              <fdir1>0.000000 0.000000 0.000000</fdir1>
+              <slip1>0.000000</slip1>
+              <slip2>0.000000</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.0000000</restitution_coefficient>
+            <threshold>100000.000000</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <soft_cfm>0.000000</soft_cfm>
+              <soft_erp>0.000000</soft_erp>
+              <kp>1000000000000.000000</kp>
+              <kd>1.000000</kd>
+              <max_vel>0.000000</max_vel>
+              <min_depth>0.001000</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        <laser_retro>0.000000</laser_retro>
+      </collision>
+      <collision name="cup1-geom1">
+        <pose>0.45 0.035356 0.0400000 .70711 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.1 .1 .01</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.00000</mu>
+              <mu2>0.00000</mu2>
+              <fdir1>0.000000 0.000000 0.000000</fdir1>
+              <slip1>0.000000</slip1>
+              <slip2>0.000000</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.0000000</restitution_coefficient>
+            <threshold>100000.000000</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <soft_cfm>0.000000</soft_cfm>
+              <soft_erp>0.000000</soft_erp>
+              <kp>1000000000000.000000</kp>
+              <kd>1.000000</kd>
+              <max_vel>0.000000</max_vel>
+              <min_depth>0.001000</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        <laser_retro>0.000000</laser_retro>
+      </collision>
+      <collision name="cup1-geom2">
+        <pose>0.45 -0.035356 0.04000 -0.70711000000 -0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.1 .1 .01</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.00000</mu>
+              <mu2>0.00000</mu2>
+              <fdir1>0.000000 0.000000 0.000000</fdir1>
+              <slip1>0.000000</slip1>
+              <slip2>0.000000</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.0000000</restitution_coefficient>
+            <threshold>100000.000000</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <soft_cfm>0.000000</soft_cfm>
+              <soft_erp>0.000000</soft_erp>
+              <kp>1000000000000.000000</kp>
+              <kd>1.000000</kd>
+              <max_vel>0.000000</max_vel>
+              <min_depth>0.001000</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        <laser_retro>0.000000</laser_retro>
+      </collision>
+      <collision name="cup1-geom3">
+        <pose>0.5 -0.0 0.04000 0.000000 -0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.01 .17 .1</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.00000</mu>
+              <mu2>0.00000</mu2>
+              <fdir1>0.000000 0.000000 0.000000</fdir1>
+              <slip1>0.000000</slip1>
+              <slip2>0.000000</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.0000000</restitution_coefficient>
+            <threshold>100000.000000</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <soft_cfm>0.000000</soft_cfm>
+              <soft_erp>0.000000</soft_erp>
+              <kp>1000000000000.000000</kp>
+              <kd>1.000000</kd>
+              <max_vel>0.000000</max_vel>
+              <min_depth>0.001000</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        <laser_retro>0.000000</laser_retro>
+      </collision>
+      <collision name="cup2-geom1">
+        <pose>-0.45 0.035356 0.0400000 .70711 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.1 .1 .01</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.00000</mu>
+              <mu2>0.00000</mu2>
+              <fdir1>0.000000 0.000000 0.000000</fdir1>
+              <slip1>0.000000</slip1>
+              <slip2>0.000000</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.0000000</restitution_coefficient>
+            <threshold>100000.000000</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <soft_cfm>0.000000</soft_cfm>
+              <soft_erp>0.000000</soft_erp>
+              <kp>1000000000000.000000</kp>
+              <kd>1.000000</kd>
+              <max_vel>0.000000</max_vel>
+              <min_depth>0.001000</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        <laser_retro>0.000000</laser_retro>
+      </collision>
+      <collision name="cup2-geom2">
+        <pose>-0.45 -0.035356 0.04000 -0.70711000000 -0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.1 .1 .01</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.00000</mu>
+              <mu2>0.00000</mu2>
+              <fdir1>0.000000 0.000000 0.000000</fdir1>
+              <slip1>0.000000</slip1>
+              <slip2>0.000000</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.0000000</restitution_coefficient>
+            <threshold>100000.000000</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <soft_cfm>0.000000</soft_cfm>
+              <soft_erp>0.000000</soft_erp>
+              <kp>1000000000000.000000</kp>
+              <kd>1.000000</kd>
+              <max_vel>0.000000</max_vel>
+              <min_depth>0.001000</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        <laser_retro>0.000000</laser_retro>
+      </collision>
+      <collision name="cup2-geom3">
+        <pose>-0.5 -0.0 0.04000 0.000000 -0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.01 .17 .1</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.00000</mu>
+              <mu2>0.00000</mu2>
+              <fdir1>0.000000 0.000000 0.000000</fdir1>
+              <slip1>0.000000</slip1>
+              <slip2>0.000000</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.0000000</restitution_coefficient>
+            <threshold>100000.000000</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <soft_cfm>0.000000</soft_cfm>
+              <soft_erp>0.000000</soft_erp>
+              <kp>1000000000000.000000</kp>
+              <kd>1.000000</kd>
+              <max_vel>0.000000</max_vel>
+              <min_depth>0.001000</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        <laser_retro>0.000000</laser_retro>
+      </collision>
+      <visual name="rod-visual">
+        <pose>0 -0.06000 0.0500000 0 1.5708000000 -0.000000</pose>
+        <geometry>
+          <cylinder>
+            <radius>.01</radius>
+            <length>1</length>
+          </cylinder>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+      <visual name="cup1-visual1">
+        <pose>0.45 0.035356 0.0400000 .70711 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.1 .1 .01</size>
+          </box>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+      <visual name="cup1-visual2">
+        <pose>0.45 -0.035356 0.04000 -0.70711000000 -0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.1 .1 .01</size>
+          </box>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+      <visual name="cup1-visual3">
+        <pose>0.5 -0.0 0.04000 0.000000 -0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.01 .17 .1</size>
+          </box>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+      <visual name="cup2-visual1">
+        <pose>-0.45 0.035356 0.0400000 .70711 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.1 .1 .01</size>
+          </box>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+      <visual name="cup2-visual2">
+        <pose>-0.45 -0.035356 0.04000 -0.70711000000 -0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.1 .1 .01</size>
+          </box>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+      <visual name="cup2-visual3">
+        <pose>-0.5 -0.0 0.04000 0.000000 -0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>.01 .17 .1</size>
+          </box>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+    </link>
+
+    <joint name="juggler-joint" type="revolute">
+      <pose>0.000000 -0.0600000 0.05 0.000000 -0.000000 0.000000</pose>
+      <parent>world</parent>
+      <child>juggler</child>
+      <axis>
+        <dynamics>
+          <damping>0.000000</damping>
+          <friction>0.000000</friction>
+        </dynamics>
+        <limit>
+          <lower>-0.548000</lower>
+          <upper>0.548000</upper>
+          <effort>10000.000000</effort>
+          <velocity>1000.000000</velocity>
+        </limit>
+        <xyz>0.000000 1.000000 0.000000</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <plugin name="juggler-plugin" filename="libjuggler.so" /> 
+  </model>
+</sdf>
+

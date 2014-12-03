@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <!-- Just a simple cube -->
+  <model name="block">
+    <link name="body">
+      <pose>0 0 0 0 0 0</pose>
+
+      <!-- Inertial Properties -->
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.00001568</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00001568</iyy>
+          <iyz>0</iyz>
+          <izz>0.00001568</izz>
+        </inertia>
+        <mass>0.12</mass>
+      </inertial>
+      
+      <!-- Collision Mesh -->
+      <collision name="body_col">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.028 0.028 0.028</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10.0</mu>
+              <mu2>10.0</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+            <bullet>
+              <friction>10.0</friction>
+              <friction2>10.0</friction2>
+              <fdir1>0 0 1</fdir1>
+              <rolling_friction>10.0</rolling_friction>
+            </bullet>
+          </friction>
+        </surface>
+      </collision>
+
+      <!-- Visible Mesh -->
+      <visual name="body_vis">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.028 0.028 0.028</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Green</name>
+          </script>
+        </material>
+      </visual>
+
+    </link>
+
+  </model>
+</sdf>

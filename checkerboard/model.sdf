@@ -1,0 +1,139 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="checkerboard">
+    <pose>0 0 -.005 0 0 0</pose>
+    <static>true</static>
+    <link name="link">
+
+      <collision name="check1-geom">
+        <geometry>
+          <box>
+            <size>1 .2 .001</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="check1-visual">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <box>
+            <size>1 .2 .001</size>
+          </box>
+        </geometry>
+      </visual>
+
+      <collision name="check2-geom">
+        <pose>0 -.3 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.3 .2 .001</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="check2-visual">
+        <pose>0 -.3 0 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <box>
+            <size>.3 .2 .001</size>
+          </box>
+        </geometry>
+      </visual>
+
+      <collision name="check3-geomA">
+        <pose>-.3 -.7 -0.0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.3 .2 .001</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="check3-visualA">
+        <pose>-.3 -.7 -.0 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <box>
+            <size>.3 .2 .001</size>
+          </box>
+        </geometry>
+      </visual>
+
+      <collision name="check3-geomB">
+        <pose>.3 -.7 -0.0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.3 .2 .001</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="check3-visualB">
+        <pose>.3 -.7 -.0 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <box>
+            <size>.3 .2 .001</size>
+          </box>
+        </geometry>
+      </visual>
+
+      <collision name="check4-geom">
+        <pose>0 -1.2 -0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.3 .2 .001</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="check4-visual">
+        <pose>0 -1.2 -0 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <box>
+            <size>.3 .2 .001</size>
+          </box>
+        </geometry>
+      </visual>
+
+
+    </link>
+  </model>
+</sdf>

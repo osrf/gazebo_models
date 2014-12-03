@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+
+  <model name="platform-model">
+    <static>1</static>
+    <pose>0 0 2.000000 -0.000000 0.000000 0</pose>
+
+    <link name="platform">  
+      <pose>0.0 0.0 -1.00000 -0.000000 0.000000 0</pose>
+      <collision name="platform-geom">
+        <pose>0 -0.00000 0.000000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>1 1 .01</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.00000</mu>
+              <mu2>0.00000</mu2>
+              <fdir1>0.000000 0.000000 0.000000</fdir1>
+              <slip1>0.000000</slip1>
+              <slip2>0.000000</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>1.0000000</restitution_coefficient>
+            <threshold>0.000000</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <soft_cfm>0.000000</soft_cfm>
+              <soft_erp>0.000000</soft_erp>
+              <kp>1000000000000.000000</kp>
+              <kd>1.000000</kd>
+              <max_vel>0.000000</max_vel>
+              <min_depth>0.001000</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        <laser_retro>0.000000</laser_retro>
+      </collision>
+      <visual name="platform-visual">
+        <pose>-0 -0.00000 0.000000 0.000000 0 -0.000000</pose>
+        <geometry>
+          <box>
+            <size>1 1 .01</size>
+          </box>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+        <laser_retro>0.000000</laser_retro>
+        <transparency>0.000000</transparency>
+      </visual>
+    </link>
+  </model>
+</sdf>
+
