@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
 
-  <model name="juggler">
+  <model name="juggler_wedge">
     <pose>0 0 0 0 0 0</pose>
 
     <link name="ball">
