@@ -4,7 +4,7 @@
     <static>true</static>
     <link name="link">
       <collision name="main_floor">
-        <pose>-0.4 -0.75 0 0 0 0</pose>
+        <pose>-0.4 -0.75 0.0948 0 0 0</pose>
         <geometry>
           <box>
             <size>9.38 22.63 0.19</size>
