@@ -21,6 +21,8 @@ bowl
 breakable_test
 brick_box_3x1x3
 cabinet
+cafe
+cafe_table
 camera
 cart_front_steer
 cart_rigid_suspension

@@ -1,0 +1,105 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="cafe">
+    <static>true</static>
+    <link name="link">
+      <collision name="main_floor">
+        <pose>-0.4 -0.75 0.0948 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>9.38 22.63 0.19</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="wall_1">
+        <pose>-5.03 0.53 1.415 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.12 23.16 2.83</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="wall_2">
+        <pose>4.24 -.31 1.415 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.12 21.48 2.83</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="wall_3">
+        <pose>-1.48 7.43 1.415 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>7.2 0.12 2.83</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="wall_4">
+        <pose>2.09 8.9 1.435 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.12 3.05 2.87</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="wall_5">
+        <pose>3.155 10.4 1.435 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>2.13 0.12 2.87</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="wall_6">
+        <pose>0.615 -10.98 1.415 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>7.36 0.15 2.83</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="wall_7">
+        <pose>-4.62 -10.98 1.415 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.93 0.15 2.83</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="wall_8">
+        <pose>-3.61 -10.98 2.69 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.09 0.15 0.28</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="coke">
+        <pose>-4.385 0.26 .95 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.03 1.03 1.52</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://cafe/meshes/cafe.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
