@@ -21,7 +21,7 @@
             <uri>model://drc_practice_wheel_valve/meshes/valve_wheel.dae</uri>
           </mesh>
         </geometry>
-        -<surface>
+        <surface>
           <bounce>
             <restitution_coefficient>0.01</restitution_coefficient>
             <threshold>5.0</threshold>
