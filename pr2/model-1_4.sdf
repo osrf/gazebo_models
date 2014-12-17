@@ -597,7 +597,7 @@
           </sphere>
         </geometry>
         <material>
-          <script>Gazebo/Red</script>
+          <script><name>Gazebo/Red</name></script>
         </material>
       </visual>
       <collision name='head_tilt_link_geom_head_mount_kinect_rgb_link'>
@@ -616,7 +616,7 @@
           </sphere>
         </geometry>
         <material>
-          <script>Gazebo/Red</script>
+          <script><name>Gazebo/Red</name></script>
         </material>
       </visual>
       <collision name='head_tilt_link_geom_head_mount_link'>
@@ -652,7 +652,7 @@
           </sphere>
         </geometry>
         <material>
-          <script>Gazebo/Red</script>
+          <script><name>Gazebo/Red</name></script>
         </material>
       </visual>
       <collision name='head_tilt_link_geom_head_plate_frame'>

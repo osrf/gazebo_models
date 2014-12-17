@@ -132,8 +132,6 @@
         <limit>
           <lower>0</lower>
           <upper>1.58</upper>
-          <effort />
-          <velocity />
         </limit>
         <dynamics>
           <damping>1.0</damping>

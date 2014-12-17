@@ -36,7 +36,6 @@
           <contact>
             <ode>
               <soft_cfm>0.01</soft_cfm>
-              <soft_erp></soft_erp>
               <kp>1000000.0</kp>
               <kd>100000.0</kd>
               <max_vel>0.01</max_vel>
