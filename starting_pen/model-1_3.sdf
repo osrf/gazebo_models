@@ -55,7 +55,7 @@
           <box>
             <size>4.25 0.45 4.28</size>
           </box>
-        </geometry>hg
+        </geometry>
       </collision>
 
       <collision name="wall_07">

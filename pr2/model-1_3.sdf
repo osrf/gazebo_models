@@ -671,7 +671,7 @@
           </box>
         </geometry>
         <material>
-          <script>Gazebo/Grey</script>
+          <script><name>Gazebo/Grey</name></script>
         </material>
       </visual>
       <sensor name='head_mount_sensor' type='camera'>

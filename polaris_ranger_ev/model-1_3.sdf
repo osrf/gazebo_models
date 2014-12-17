@@ -503,7 +503,6 @@
         <pose>0.121353 -0.088168 0  0 1.570796 7.225663</pose>
         <geometry><cylinder><length>0.105065778087</length><radius>0.01</radius></cylinder></geometry>
       </collision>
-      <velocity_decay>0.1</velocity_decay>
     </link>
     <link name='hand_brake'>
       <pose>0.50 0.00 1.05 0.0 3.2 0.0</pose> 
