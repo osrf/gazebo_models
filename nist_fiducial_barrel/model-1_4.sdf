@@ -10,7 +10,7 @@
             <uri>model://nist_fiducial_barrel/meshes/nist_fiducial_barrel.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
-        </geometry>e
+        </geometry>
       </collision>
       <visual name="visual">
         <geometry>
