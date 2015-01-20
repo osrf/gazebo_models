@@ -74,6 +74,7 @@ fire_hose_long
 fire_hose_long_curled
 fire_hydrant
 gas_station
+grey_tote
 grey_wall
 ground_plane
 hammer
