@@ -75,6 +75,7 @@ fire_hose_long_curled
 fire_hydrant
 first_2015_trash_can
 gas_station
+grey_tote
 grey_wall
 ground_plane
 hammer

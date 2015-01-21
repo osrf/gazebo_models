@@ -1,0 +1,157 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="grey_tote">
+    <link name="link">
+      <inertial>
+        <pose>0 0 0.141549545 0 0 0</pose>
+        <mass>3.53802</mass>
+        <inertia>
+          <ixx>0.068835836</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.139596236</iyy>
+          <iyz>0</iyz>
+          <izz>0.155908748</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="lid">
+        <pose>0 0 0.28958 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.67768 0.41298 0.01588</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="lid_lip_1">
+        <pose>0 0.20063 0.3048 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.65068 0.0105 0.0127</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="lid_lip_2">
+        <pose>0 -0.20063 0.3048 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.65068 0.0105 0.0127</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="lid_lip_3">
+        <pose>0.32585 0 0.3048 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02602 0.31202 0.0127</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="lid_lip_4">
+        <pose>-0.32585 0 0.3048 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02602 0.31202 0.0127</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="side_wall_1">
+        <pose>0 -0.18 0.141549545 0.0611474431 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.58404 0.02602 0.28309909</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="side_wall_2">
+        <pose>0 0.18 0.141549545 -0.0611474431 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.58404 0.02602 0.28309909</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="side_wall_3">
+        <pose>0.305 0 0.141549545 0 0.0611474431 0</pose>
+        <geometry>
+          <box>
+            <size>0.02602 0.33046 0.28309909</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="side_wall_4">
+        <pose>-0.305 0 0.141549545 0 -0.0611474431 0</pose>
+        <geometry>
+          <box>
+            <size>0.02602 0.33046 0.28309909</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="bottom">
+        <pose>0 0 0.01 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.58404 0.33046 0.02</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="corner_1">
+        <pose>0.30202 -0.175 0.141549545 0.0611474431 0.0611474431 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.01268</radius>
+            <length>0.28309909</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <collision name="corner_2">
+        <pose>-0.30202 -0.175 0.141549545 0.0611474431 -0.0611474431 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.01268</radius>
+            <length>0.28309909</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <collision name="corner_3">
+        <pose>-0.30202 0.175 0.141549545 -0.0611474431 -0.0611474431 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.01268</radius>
+            <length>0.28309909</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <collision name="corner_4">
+        <pose>0.30202 0.175 0.141549545 -0.0611474431 0.0611474431 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.01268</radius>
+            <length>0.28309909</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://grey_tote/meshes/tote.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
