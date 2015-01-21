@@ -73,6 +73,7 @@ fast_food
 fire_hose_long
 fire_hose_long_curled
 fire_hydrant
+first_2015_trash_can
 gas_station
 grey_wall
 ground_plane
