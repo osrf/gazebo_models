@@ -1,0 +1,225 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="frc_field_2015">
+    <static>true</static>
+    <link name="link">
+
+      <!-- Visual of the boundary walls -->
+      <visual name="walls_visual">
+        <pose>0 0 0 0 0 1.5707</pose>
+        <geometry>
+          <mesh>
+            <uri>model://frc_field_2015/meshes/walls.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+
+      <!-- The red and blue floor -->
+      <visual name="red_floor_visual">
+        <pose>5.4865 0 -0.005 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>10.973 9.144 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+      <visual name="blue_floor_visual">
+        <pose>-5.4865 0 -0.005 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>10.973 9.144 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="floor_collision">
+        <pose>0 0 -0.005 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>21.946 9.144 0.01</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100.0</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <!-- back walls for each side of the field -->
+      <collision name="red_backwall_collision">
+        <pose>8.26062 0 0.992 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 5.664 1.984</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="blue_backwall_collision">
+        <pose>-8.26062 0 0.992 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 5.664 1.984</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <!-- Angled side walls for each side of the field -->
+      <collision name="red_leftsidewall_collision">
+        <pose>7.353426 3.463458 0.992 0 0 -0.635132</pose>
+        <geometry>
+          <box>
+            <size>2.1844 0.1 1.984</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="red_rightsidewall_collision">
+        <pose>7.353426 -3.463458 0.992 0 0 0.635132</pose>
+        <geometry>
+          <box>
+            <size>2.1844 0.1 1.984</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="blue_leftsidewall_collision">
+        <pose>-7.353426 3.463458 0.992 0 0 0.635132</pose>
+        <geometry>
+          <box>
+            <size>2.1844 0.1 1.984</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="blue_rightsidewall_collision">
+        <pose>-7.353426 -3.463458 0.992 0 0 -0.635132</pose>
+        <geometry>
+          <box>
+            <size>2.1844 0.1 1.984</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <!-- Long left wall -->
+      <collision name="left_wall_collision">
+        <pose>0 4.167748 0.25 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>12.972 0.1 0.5</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <!-- Long right wall -->
+      <collision name="left_wall_collision">
+        <pose>0 -4.167748 0.25 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>12.972 0.1 0.5</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <!-- Middle barrier --> 
+      <visual name="middle_barrier_visual">
+        <pose>0 0 0.080965 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.62228 8.179 0.16193</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="middle_barrier_collision">
+        <pose>0 0 0.080965 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.62228 8.179 0.16193</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="red_middle_barrier_visual">
+        <pose>0.314315 0 0.08573 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.00635 8.179 0.17146</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="red_middle_barrier_collision">
+        <pose>0.314315 0 0.08573 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.00635 8.179 0.17146</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="blue_middle_barrier_visual">
+        <pose>-0.314315 0 0.08573 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.00635 8.179 0.17146</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="blue_middle_barrier_collision">
+        <pose>-0.314315 0 0.08573 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.00635 8.179 0.17146</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="ramps_visual">
+        <pose>0 0 0 0 0 1.5707</pose>
+        <geometry>
+          <mesh>
+            <uri>model://frc_field_2015/meshes/ramps.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="ramps_barrier_collision">
+        <pose>0 0 0 0 0 1.5707</pose>
+        <geometry>
+          <mesh>
+            <uri>model://frc_field_2015/meshes/ramps.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+    </link>
+  </model>
+</sdf>
