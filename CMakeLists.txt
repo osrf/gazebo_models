@@ -102,6 +102,7 @@ metal_peg
 metal_peg_board
 monkey_wrench
 mpl_right_arm
+mpl_right_forearm
 mud_box
 nist_elevated_floor_120
 nist_fiducial_barrel
