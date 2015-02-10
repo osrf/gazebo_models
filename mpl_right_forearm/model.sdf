@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <sdf version='1.5'>
-  <model name='mpl_right_arm'>
+  <model name='mpl_right_forearm'>
     <link name='forearm'>
       <pose>0.00660504 -0.294573 0.119123 -1.21334e-13 2.77556e-17 -0.0115373</pose>
       <inertial>
