@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <sdf version='1.5'>
   <model name='mpl_right_forearm'>
-    <link name='forearm'>
+    <link name='rMaleForearm'>
       <pose>0.00660504 -0.294573 0.119123 -1.21334e-13 2.77556e-17 -0.0115373</pose>
       <inertial>
         <pose>-0.000589428 -0.0733139 0.0215526 0 0 0</pose>
@@ -65,16 +65,16 @@
           </script>
         </material>
       </visual>
-      <sensor name='forearm_contact_sensor' type='contact'>
+      <sensor name='rMaleForearm_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/forearm/contact</topic>
+          <topic>~/rMaleForearm/contact</topic>
         </contact>
       </sensor>
     </link>
 
-    <link name='wristy'>
+    <link name='rWristShell'>
       <pose>0.00449937 -0.479995 0.135123 -1.2164e-13 1.09079e-14 -0.0115373</pose>
       <inertial>
         <pose>-7.08369e-05 -0.0217787 -0.000286168 0 0 0</pose>
@@ -119,15 +119,15 @@
           <specular>0.9 0.9 0.9 1</specular>
         </material>
       </visual>
-      <sensor name='wristy_contact_sensor' type='contact'>
+      <sensor name='rWristShell_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
-          <topic>~/wristy/contact</topic>
+          <topic>~/rWristShell/contact</topic>
         </contact>
       </sensor>
     </link>
 
-    <link name='wristx'>
+    <link name='rWristDev'>
       <pose>0.003916 -0.527636 0.137161 -1.18962e-13 1.21847e-14 -0.0115373</pose>
       <inertial>
         <pose>0.00139174 -0.00975189 -0.00252668 0 0 0</pose>
@@ -210,17 +210,17 @@
           <specular>0.9 0.9 0.9 1</specular>
         </material>
       </visual>
-      <sensor name='wristx_contact_sensor' type='contact'>
+      <sensor name='rWristDev_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
           <collision>collision_2</collision>
-          <topic>~/wristx/contact</topic>
+          <topic>~/rWristDev/contact</topic>
         </contact>
       </sensor>
     </link>
 
-    <link name='wristz'>
+    <link name='rPalm'>
       <pose>0.00375708 -0.557636 0.135067 -2.87105e-13 1.42109e-14 -0.0115373</pose>
       <inertial>
         <pose>0.00368152 -0.0358755 0.00265927 0 0 0</pose>
@@ -304,7 +304,7 @@
       </sensor>
     </link>
 
-    <link name='index0'>
+    <link name='rIndMetaCarpal'>
       <pose>0.0384854 -0.623842 0.136079 -1.14726e-13 0.174533 -0.0115373</pose>
       <inertial>
         <pose>-0.000142572 -0.00548494 0.000206145 0 0 0</pose>
@@ -349,15 +349,15 @@
           </script>
         </material>
       </visual>
-      <sensor name='index0_contact_sensor' type='contact'>
+      <sensor name='rIndMetaCarpal_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
-          <topic>~/index0/contact</topic>
+          <topic>~/rIndMetaCarpal/contact</topic>
         </contact>
       </sensor>
     </link>
 
-    <link name='index1'>
+    <link name='rIndProximal'>
       <pose>0.0383394 -0.641841 0.136068 -1.1474e-13 0.174533 -0.0115373</pose>
       <inertial>
         <pose>0.000406487 -0.0213125 0.000655609 0 0 0</pose>
@@ -402,15 +402,15 @@
           </script>
         </material>
       </visual>
-      <sensor name='index1_contact_sensor' type='contact'>
+      <sensor name='rIndProximal_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
-          <topic>~/index1/contact</topic>
+          <topic>~/rIndProximal/contact</topic>
         </contact>
       </sensor>
     </link>
 
-    <link name='index2'>
+    <link name='rIndMedial'>
       <pose>0.0389938 -0.685352 0.136372 -1.1445e-13 0.174533 -0.0115373</pose>
       <inertial>
         <pose>-0.000841462 -0.012689 0.000572665 0 0 0</pose>
@@ -473,16 +473,16 @@
           </script>
         </material>
       </visual>
-      <sensor name='index2_contact_sensor' type='contact'>
+      <sensor name='rIndMedial_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/index2/contact</topic>
+          <topic>~/rIndMedial/contact</topic>
         </contact>
       </sensor>
     </link>
 
-    <link name='index3'>
+    <link name='rIndDistal'>
       <pose>0.0380858 -0.709843 0.136482 -1.15476e-13 0.174533 -0.0115373</pose>
       <inertial>
         <pose>4.32004e-05 -0.0125318 0.000903476 0 0 0</pose>
@@ -545,14 +545,14 @@
           </script>
         </material>
       </visual>
-      <sensor name='index3_contact_sensor' type='contact'>
+      <sensor name='rIndDistal_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/index3/contact</topic>
+          <topic>~/rIndDistal/contact</topic>
         </contact>
       </sensor>
-      <sensor name='index3_imu_sensor' type='imu'>
+      <sensor name='rIndDistal_imu_sensor' type='imu'>
         <always_on>1</always_on>
         <update_rate>1000</update_rate>
         <imu>
@@ -575,7 +575,7 @@
       </sensor>
     </link>
 
-    <link name='middle0'>
+    <link name='rMidMetaCarpal'>
       <pose>0.0156685 -0.63568 0.140513 0.0872665 1.4183e-14 -0.0115373</pose>
       <inertial>
         <pose>-0.000142567 -0.00548493 0.000206162 0 0 0</pose>
@@ -620,15 +620,15 @@
           </script>
         </material>
       </visual>
-      <sensor name='middle0_contact_sensor' type='contact'>
+      <sensor name='rMidMetaCarpal_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
-          <topic>~/middle0/contact</topic>
+          <topic>~/rMidMetaCarpal/contact</topic>
         </contact>
       </sensor>
     </link>
 
-    <link name='middle1'>
+    <link name='rMidProximal'>
       <pose>0.0155242 -0.653612 0.138944 0.0872665 1.43013e-14 -0.0115373</pose>
       <inertial>
         <pose>0.000406411 -0.0213125 0.00065565 0 0 0</pose>
@@ -673,15 +673,15 @@
           </script>
         </material>
       </visual>
-      <sensor name='middle1_contact_sensor' type='contact'>
+      <sensor name='rMidProximal_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
-          <topic>~/middle1/contact</topic>
+          <topic>~/rMidProximal/contact</topic>
         </contact>
       </sensor>
     </link>
 
-    <link name='middle2'>
+    <link name='rMidMedial'>
       <pose>0.0161097 -0.696999 0.135651 0.0872665 1.32728e-14 -0.0115373</pose>
       <inertial>
         <pose>-0.000841444 -0.012689 0.00057266 0 0 0</pose>
@@ -744,16 +744,16 @@
           </script>
         </material>
       </visual>
-      <sensor name='middle2_contact_sensor' type='contact'>
+      <sensor name='rMidMedial_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/middle2/contact</topic>
+          <topic>~/rMidMedial/contact</topic>
         </contact>
       </sensor>
     </link>
 
-    <link name='middle3'>
+    <link name='rMidDistal'>
       <pose>0.0151931 -0.721397 0.133515 0.0872665 1.51577e-14 -0.0115373</pose>
       <inertial>
         <pose>4.31236e-05 -0.0125318 0.000903446 0 0 0</pose>
@@ -816,14 +816,14 @@
           </script>
         </material>
       </visual>
-      <sensor name='middle3_contact_sensor' type='contact'>
+      <sensor name='rMidDistal_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/middle3/contact</topic>
+          <topic>~/rMidDistal/contact</topic>
         </contact>
       </sensor>
-      <sensor name='middle3_imu_sensor' type='imu'>
+      <sensor name='rMidDistal_imu_sensor' type='imu'>
         <always_on>1</always_on>
         <update_rate>1000</update_rate>
         <imu>
@@ -846,7 +846,7 @@
       </sensor>
     </link>
 
-    <link name='pinky0'>
+    <link name='rLittleMetaCarpal'>
       <pose>-0.0275009 -0.61268 0.129428 -1.14942e-13 -0.174533 -0.0115373</pose>
       <inertial>
         <pose>-0.000142559 -0.00538484 0.000206147 0 0 0</pose>
@@ -891,15 +891,15 @@
           </script>
         </material>
       </visual>
-      <sensor name='pinky0_contact_sensor' type='contact'>
+      <sensor name='rLittleMetaCarpal_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
-          <topic>~/pinky0/contact</topic>
+          <topic>~/rLittleMetaCarpal/contact</topic>
         </contact>
       </sensor>
     </link>
 
-    <link name='pinky1'>
+    <link name='rLittleProximal'>
       <pose>-0.0276458 -0.630579 0.129439 -1.14943e-13 -0.174533 -0.0115373</pose>
       <inertial>
         <pose>0.000458624 -0.0160478 0.000924735 0 0 0</pose>
@@ -944,15 +944,15 @@
           </script>
         </material>
       </visual>
-      <sensor name='pinky1_contact_sensor' type='contact'>
+      <sensor name='rLittleProximal_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
-          <topic>~/pinky0/contact</topic>
+          <topic>~/rLittleMetaCarpal/contact</topic>
         </contact>
       </sensor>
     </link>
 
-    <link name='pinky2'>
+    <link name='rLittleMedial'>
       <pose>-0.0275441 -0.663582 0.130032 -1.14415e-13 -0.174533 -0.0115373</pose>
       <inertial>
         <pose>-0.000270832 -0.00914628 0.000738493 0 0 0</pose>
@@ -997,15 +997,15 @@
           </script>
         </material>
       </visual>
-      <sensor name='pinky2_contact_sensor' type='contact'>
+      <sensor name='rLittleMedial_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
-          <topic>~/pinky2/contact</topic>
+          <topic>~/rLittleMedial/contact</topic>
         </contact>
       </sensor>
     </link>
 
-    <link name='pinky3'>
+    <link name='rLittleDistal'>
       <pose>-0.0277931 -0.681081 0.130023 -1.14622e-13 -0.174533 -0.0115373</pose>
       <inertial>
         <pose>3.85026e-05 -0.0125047 0.000912295 0 0 0</pose>
@@ -1068,14 +1068,14 @@
           </script>
         </material>
       </visual>
-      <sensor name='pinky3_contact_sensor' type='contact'>
+      <sensor name='rLittleDistal_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/pinky3/contact</topic>
+          <topic>~/rLittleDistal/contact</topic>
         </contact>
       </sensor>
-      <sensor name='pinky3_imu_sensor' type='imu'>
+      <sensor name='rLittleDistal_imu_sensor' type='imu'>
         <always_on>1</always_on>
         <update_rate>1000</update_rate>
         <imu>
@@ -1098,7 +1098,7 @@
       </sensor>
     </link>
 
-    <link name='ring0'>
+    <link name='rRingMetaCarpal'>
       <pose>-0.00687963 -0.624218 0.136579 -1.14553e-13 -0.174533 -0.0115373</pose>
       <inertial>
         <pose>-0.000142559 -0.00548494 0.000206147 0 -0 0</pose>
@@ -1143,15 +1143,15 @@
           </script>
         </material>
       </visual>
-      <sensor name='ring0_contact_sensor' type='contact'>
+      <sensor name='rRingMetaCarpal_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
-          <topic>~/ring0/contact</topic>
+          <topic>~/rRingMetaCarpal/contact</topic>
         </contact>
       </sensor>
     </link>
 
-    <link name='ring1'>
+    <link name='rRingProximal'>
       <pose>-0.00702565 -0.642218 0.13659 -1.14538e-13 -0.174533 -0.0115373</pose>
       <inertial>
         <pose>0.000406447 -0.0213125 0.00065563 0 0 0</pose>
@@ -1196,15 +1196,15 @@
           </script>
         </material>
       </visual>
-      <sensor name='ring1_contact_sensor' type='contact'>
+      <sensor name='rRingProximal_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
-          <topic>~/ring1/contact</topic>
+          <topic>~/rRingProximal/contact</topic>
         </contact>
       </sensor>
     </link>
 
-    <link name='ring2'>
+    <link name='rRingMedial'>
       <pose>-0.0065449 -0.685726 0.137271 -1.14828e-13 -0.174533 -0.0115373</pose>
       <inertial>
         <pose>-0.000841518 -0.012689 0.000572674 0 0 0</pose>
@@ -1267,15 +1267,15 @@
           </script>
         </material>
       </visual>
-      <sensor name='ring2_contact_sensor' type='contact'>
+      <sensor name='rRingMedial_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
-          <topic>~/ring2/contact</topic>
+          <topic>~/rRingMedial/contact</topic>
         </contact>
       </sensor>
     </link>
 
-    <link name='ring3'>
+    <link name='rRingDistal'>
       <pose>-0.00745287 -0.710217 0.13716 -1.14821e-13 -0.174533 -0.0115373</pose>
       <inertial>
         <pose>4.31973e-05 -0.0125318 0.000903457 0 0 0</pose>
@@ -1338,14 +1338,14 @@
           </script>
         </material>
       </visual>
-      <sensor name='ring3_contact_sensor' type='contact'>
+      <sensor name='rRingDistal_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/ring3/contact</topic>
+          <topic>~/rRingDistal/contact</topic>
         </contact>
       </sensor>
-      <sensor name='ring3_imu_sensor' type='imu'>
+      <sensor name='rRingDistal_imu_sensor' type='imu'>
         <always_on>1</always_on>
         <update_rate>1000</update_rate>
         <imu>
@@ -1368,7 +1368,7 @@
       </sensor>
     </link>
 
-    <link name='thumb0'>
+    <link name='rPlanetaryAsm'>
       <pose>0.0374985 -0.578725 0.124974 0.0873761 -0.0305803 -0.276903</pose>
       <inertial>
         <pose>0.00863339 -0.000156884 -0.000945846 0 0 0</pose>
@@ -1431,16 +1431,16 @@
           </script>
         </material>
       </visual>
-      <sensor name='thumb0_contact_sensor' type='contact'>
+      <sensor name='rPlanetaryAsm_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/thumb0/contact</topic>
+          <topic>~/rPlanetaryAsm/contact</topic>
         </contact>
       </sensor>
     </link>
 
-    <link name='thumb1'>
+    <link name='rThProximal1'>
       <pose>0.057306 -0.585356 0.126981 0.0873761 -0.0305803 -0.276903</pose>
       <inertial>
         <pose>0.019024 0.000361131 -0.000186763 0 0 0</pose>
@@ -1522,17 +1522,17 @@
           </script>
         </material>
       </visual>
-      <sensor name='thumb1_contact_sensor' type='contact'>
+      <sensor name='rThProximal1_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
           <collision>collision_2</collision>
-          <topic>~/thumb1/contact</topic>
+          <topic>~/rThProximal1/contact</topic>
         </contact>
       </sensor>
     </link>
 
-    <link name='thumb2'>
+    <link name='rThProximal2'>
       <pose>0.0895543 -0.594453 0.127266 0.0873761 -0.0305803 -0.276903</pose>
       <inertial>
         <pose>0.0188965 0.000375725 0.00065381 0 0 0</pose>
@@ -1595,16 +1595,16 @@
           </script>
         </material>
       </visual>
-      <sensor name='thumb2_contact_sensor' type='contact'>
+      <sensor name='rThProximal2_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/thumb2/contact</topic>
+          <topic>~/rThProximal2/contact</topic>
         </contact>
       </sensor>
     </link>
 
-    <link name='thumb3'>
+    <link name='rThDistal'>
       <pose>0.121705 -0.603689 0.129371 0.0873761 -0.0305803 -0.276903</pose>
       <inertial>
         <pose>0.0123437 -0.0014554 0 0 0 0</pose>
@@ -1667,14 +1667,14 @@
           </script>
         </material>
       </visual>
-      <sensor name='thumb3_contact_sensor' type='contact'>
+      <sensor name='rThDistal_contact_sensor' type='contact'>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/thumb3/contact</topic>
+          <topic>~/rThDistal/contact</topic>
         </contact>
       </sensor>
-      <sensor name='thumb3_distal_imu_sensor' type='imu'>
+      <sensor name='rThDistal_distal_imu_sensor' type='imu'>
         <always_on>1</always_on>
         <update_rate>1000</update_rate>
         <imu>
@@ -1697,9 +1697,9 @@
       </sensor>
     </link>
 
-    <joint name='wristy' type='revolute'>
-      <child>wristy</child>
-      <parent>forearm</parent>
+    <joint name='right_wrist_rot' type='revolute'>
+      <child>rWristShell</child>
+      <parent>rMaleForearm</parent>
       <axis>
         <xyz>0.011537 0.999933 -1.2164e-13</xyz>
         <limit>
@@ -1726,9 +1726,9 @@
       </physics>
     </joint>
 
-    <joint name='wristx' type='revolute'>
-      <child>wristx</child>
-      <parent>wristy</parent>
+    <joint name='right_wrist_dev' type='revolute'>
+      <child>rWristDev</child>
+      <parent>rWristShell</parent>
       <axis>
         <xyz>-1.35564e-14 -1.18814e-13 -1</xyz>
         <limit>
@@ -1755,9 +1755,9 @@
       </physics>
     </joint>
 
-    <joint name='wristz' type='revolute'>
-      <child>wristz</child>
-      <parent>wristx</parent>
+    <joint name='right_wrist_fe' type='revolute'>
+      <child>rPalm</child>
+      <parent>rWristDev</parent>
       <axis>
         <xyz>0.999933 -0.011537 -1.42109e-14</xyz>
         <limit>
@@ -1784,9 +1784,9 @@
       </physics>
     </joint>
 
-    <joint name='index0' type='revolute'>
-      <child>index0</child>
-      <parent>wristz</parent>
+    <joint name='right_index_ab_ad' type='revolute'>
+      <child>rIndMetaCarpal</child>
+      <parent>rPalm</parent>
       <axis>
         <xyz>-0.173637 0.00200338 -0.984808</xyz>
         <limit>
@@ -1813,9 +1813,9 @@
       </physics>
     </joint>
 
-    <joint name='index1' type='revolute'>
-      <child>index1</child>
-      <parent>index0</parent>
+    <joint name='right_index_mcp' type='revolute'>
+      <child>rIndProximal</child>
+      <parent>rIndMetaCarpal</parent>
       <axis>
         <xyz>0.984742 -0.0113618 -0.173648</xyz>
         <limit>
@@ -1842,9 +1842,9 @@
       </physics>
     </joint>
 
-    <joint name='index2' type='revolute'>
-      <child>index2</child>
-      <parent>index1</parent>
+    <joint name='right_index_pip' type='revolute'>
+      <child>rIndMedial</child>
+      <parent>rIndProximal</parent>
       <axis>
         <xyz>0.984742 -0.0113618 -0.173648</xyz>
         <limit>
@@ -1871,9 +1871,9 @@
       </physics>
     </joint>
 
-    <joint name='index3' type='revolute'>
-      <child>index3</child>
-      <parent>index2</parent>
+    <joint name='right_index_dip' type='revolute'>
+      <child>rIndDistal</child>
+      <parent>rIndMedial</parent>
       <axis>
         <xyz>0.984742 -0.0113618 -0.173648</xyz>
         <limit>
@@ -1900,9 +1900,9 @@
       </physics>
     </joint>
 
-    <joint name='middle0' type='revolute'>
-      <child>middle0</child>
-      <parent>wristz</parent>
+    <joint name='right_middle_ab_ad' type='revolute'>
+      <child>rMidMetaCarpal</child>
+      <parent>rPalm</parent>
       <axis>
         <xyz>0.00100552 0.0871499 -0.996195</xyz>
         <limit>
@@ -1929,9 +1929,9 @@
       </physics>
     </joint>
 
-    <joint name='middle1' type='revolute'>
-      <child>middle1</child>
-      <parent>middle0</parent>
+    <joint name='right_middle_mcp' type='revolute'>
+      <child>rMidProximal</child>
+      <parent>rMidMetaCarpal</parent>
       <axis>
         <xyz>0.999933 -0.011537 -1.43013e-14</xyz>
         <limit>
@@ -1958,9 +1958,9 @@
       </physics>
     </joint>
 
-    <joint name='middle2' type='revolute'>
-      <child>middle2</child>
-      <parent>middle1</parent>
+    <joint name='right_middle_pip' type='revolute'>
+      <child>rMidMedial</child>
+      <parent>rMidProximal</parent>
       <axis>
         <xyz>0.999933 -0.011537 -1.32727e-14</xyz>
         <limit>
@@ -1987,9 +1987,9 @@
       </physics>
     </joint>
 
-    <joint name='middle3' type='revolute'>
-      <child>middle3</child>
-      <parent>middle2</parent>
+    <joint name='right_middle_dip' type='revolute'>
+      <child>rMidDistal</child>
+      <parent>rMidMedial</parent>
       <axis>
         <xyz>0.999933 -0.011537 -1.51577e-14</xyz>
         <limit>
@@ -2016,9 +2016,9 @@
       </physics>
     </joint>
 
-    <joint name='pinky0' type='revolute'>
-      <child>pinky0</child>
-      <parent>wristz</parent>
+    <joint name='right_little_ab_ad' type='revolute'>
+      <child>rLittleMetaCarpal</child>
+      <parent>rPalm</parent>
       <axis>
         <xyz>0.173637 -0.00200338 -0.984808</xyz>
         <limit>
@@ -2045,9 +2045,9 @@
       </physics>
     </joint>
 
-    <joint name='pinky1' type='revolute'>
-      <child>pinky1</child>
-      <parent>pinky0</parent>
+    <joint name='right_little_mcp' type='revolute'>
+      <child>rLittleProximal</child>
+      <parent>rLittleMetaCarpal</parent>
       <axis>
         <xyz>0.984742 -0.0113618 0.173648</xyz>
         <limit>
@@ -2074,9 +2074,9 @@
       </physics>
     </joint>
 
-    <joint name='pinky2' type='revolute'>
-      <child>pinky2</child>
-      <parent>pinky1</parent>
+    <joint name='right_little_pip' type='revolute'>
+      <child>rLittleMedial</child>
+      <parent>rLittleProximal</parent>
       <axis>
         <xyz>0.984742 -0.0113618 0.173648</xyz>
         <limit>
@@ -2103,9 +2103,9 @@
       </physics>
     </joint>
 
-    <joint name='pinky3' type='revolute'>
-      <child>pinky3</child>
-      <parent>pinky2</parent>
+    <joint name='right_little_dip' type='revolute'>
+      <child>rLittleDistal</child>
+      <parent>rLittleMedial</parent>
       <axis>
         <xyz>0.984742 -0.0113618 0.173648</xyz>
         <limit>
@@ -2133,9 +2133,9 @@
     </joint>
 
 
-    <joint name='ring0' type='revolute'>
-      <child>ring0</child>
-      <parent>wristz</parent>
+    <joint name='right_ring_ab_ad' type='revolute'>
+      <child>rRingMetaCarpal</child>
+      <parent>rPalm</parent>
       <axis>
         <xyz>0.173637 -0.00200338 -0.984808</xyz>
         <limit>
@@ -2162,9 +2162,9 @@
       </physics>
     </joint>
 
-    <joint name='ring1' type='revolute'>
-      <child>ring1</child>
-      <parent>ring0</parent>
+    <joint name='right_ring_mcp' type='revolute'>
+      <child>rRingProximal</child>
+      <parent>rRingMetaCarpal</parent>
       <axis>
         <xyz>0.984742 -0.0113618 0.173648</xyz>
         <limit>
@@ -2191,9 +2191,9 @@
       </physics>
     </joint>
 
-    <joint name='ring2' type='revolute'>
-      <child>ring2</child>
-      <parent>ring1</parent>
+    <joint name='right_ring_pip' type='revolute'>
+      <child>rRingMedial</child>
+      <parent>rRingProximal</parent>
       <axis>
         <xyz>0.984742 -0.0113618 0.173648</xyz>
         <limit>
@@ -2220,9 +2220,9 @@
       </physics>
     </joint>
 
-    <joint name='ring3' type='revolute'>
-      <child>ring3</child>
-      <parent>ring2</parent>
+    <joint name='right_ring_dip' type='revolute'>
+      <child>rRingDistal</child>
+      <parent>rRingMedial</parent>
       <axis>
         <xyz>0.984742 -0.0113618 0.173648</xyz>
         <limit>
@@ -2249,9 +2249,9 @@
       </physics>
     </joint>
 
-    <joint name='thumb0' type='revolute'>
-      <child>thumb0</child>
-      <parent>wristz</parent>
+    <joint name='right_thumb_cmc_ab_ad' type='revolute'>
+      <child>rPlanetaryAsm</child>
+      <parent>rPalm</parent>
       <axis>
         <xyz>0.269769 0.958967 0.0872241</xyz>
         <limit>
@@ -2278,9 +2278,9 @@
       </physics>
     </joint>
 
-    <joint name='thumb1' type='revolute'>
-      <child>thumb1</child>
-      <parent>thumb0</parent>
+    <joint name='right_thumb_cmc_fe' type='revolute'>
+      <child>rThProximal1</child>
+      <parent>rPlanetaryAsm</parent>
       <axis>
         <xyz>0.0531549 0.0756139 -0.995719</xyz>
         <limit>
@@ -2307,9 +2307,9 @@
       </physics>
     </joint>
 
-    <joint name='thumb2' type='revolute'>
-      <child>thumb2</child>
-      <parent>thumb1</parent>
+    <joint name='right_thumb_mcp' type='revolute'>
+      <child>rThProximal2</child>
+      <parent>rThProximal1</parent>
       <axis>
         <xyz>0.0531549 0.0756139 -0.995719</xyz>
         <limit>
@@ -2336,9 +2336,9 @@
       </physics>
     </joint>
 
-    <joint name='thumb3' type='revolute'>
-      <child>thumb3</child>
-      <parent>thumb2</parent>
+    <joint name='right_thumb_dip' type='revolute'>
+      <child>rThDistal</child>
+      <parent>rThProximal2</parent>
       <axis>
         <xyz>0.0531549 0.0756139 -0.995719</xyz>
         <limit>
