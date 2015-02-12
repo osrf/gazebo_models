@@ -27,11 +27,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -46,11 +52,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -100,11 +112,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -135,10 +153,13 @@
           <lower>-1.57</lower>
           <upper>1.57</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>5</damping>
+          <damping>2</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -181,11 +202,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -200,11 +227,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_2'>
@@ -219,11 +252,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -256,10 +295,13 @@
           <lower>-0.261</lower>
           <upper>0.785</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>5</damping>
+          <damping>2</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -302,11 +344,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_palm'>
@@ -325,6 +373,12 @@
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -368,10 +422,13 @@
           <lower>-1.04</lower>
           <upper>1.04</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>5</damping>
+          <damping>2</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -414,11 +471,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -449,10 +512,13 @@
           <lower>-0.345</lower>
           <upper>0</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>0.8</damping>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -495,11 +561,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -530,10 +602,13 @@
           <lower>-0.785</lower>
           <upper>1.57</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>0.8</damping>
+          <damping>0.5</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -576,11 +651,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -594,11 +675,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -630,10 +717,13 @@
           <lower>0</lower>
           <upper>1.72</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>0.8</damping>
+          <damping>0.25</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -676,11 +766,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -694,11 +790,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -751,10 +853,13 @@
           <lower>0</lower>
           <upper>1.38</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>0.8</damping>
+          <damping>0.125</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -797,11 +902,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -832,10 +943,13 @@
           <lower>0</lower>
           <upper>0</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>0.8</damping>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -878,11 +992,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -913,10 +1033,13 @@
           <lower>-0.785</lower>
           <upper>1.57</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>0.8</damping>
+          <damping>0.5</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -959,11 +1082,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -977,11 +1106,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -1013,10 +1148,13 @@
           <lower>0</lower>
           <upper>1.73</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>0.8</damping>
+          <damping>0.25</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -1059,11 +1197,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -1077,11 +1221,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -1134,10 +1284,13 @@
           <lower>0</lower>
           <upper>1.38</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>0.8</damping>
+          <damping>0.125</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -1180,11 +1333,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -1215,10 +1374,13 @@
           <lower>0</lower>
           <upper>0.345</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>0.8</damping>
+          <damping>1.0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -1261,11 +1423,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -1296,10 +1464,13 @@
           <lower>-0.785</lower>
           <upper>1.57</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>0.8</damping>
+          <damping>0.5</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -1342,11 +1513,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -1377,10 +1554,13 @@
           <lower>0</lower>
           <upper>1.72</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>0.8</damping>
+          <damping>0.25</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -1423,11 +1603,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -1441,11 +1627,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -1498,10 +1690,13 @@
           <lower>0</lower>
           <upper>1.38</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>0.8</damping>
+          <damping>0.125</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -1544,11 +1739,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -1579,10 +1780,13 @@
           <lower>0</lower>
           <upper>0.345</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>0.8</damping>
+          <damping>1.0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -1625,11 +1829,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -1660,10 +1870,13 @@
           <lower>-0.785</lower>
           <upper>1.57</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>0.8</damping>
+          <damping>0.5</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -1706,11 +1919,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -1724,11 +1943,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -1759,10 +1984,13 @@
           <lower>0</lower>
           <upper>1.72</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>0.8</damping>
+          <damping>0.25</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -1805,11 +2033,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -1823,11 +2057,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -1880,10 +2120,13 @@
           <lower>0</lower>
           <upper>1.38</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>0.8</damping>
+          <damping>0.125</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -1926,11 +2169,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -1944,11 +2193,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -1980,10 +2235,13 @@
           <lower>0</lower>
           <upper>2.07</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>0.8</damping>
+          <damping>1.0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -2026,11 +2284,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -2045,11 +2309,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_2'>
@@ -2063,11 +2333,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -2100,10 +2376,13 @@
           <lower>0</lower>
           <upper>1.03</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>0.8</damping>
+          <damping>0.5</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -2146,11 +2425,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -2164,11 +2449,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -2200,10 +2491,13 @@
           <lower>0</lower>
           <upper>1.03</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>0.8</damping>
+          <damping>0.25</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -2246,11 +2540,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -2264,11 +2564,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -2321,10 +2627,13 @@
           <lower>-0.819</lower>
           <upper>1.28</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>0.8</damping>
+          <damping>0.125</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
