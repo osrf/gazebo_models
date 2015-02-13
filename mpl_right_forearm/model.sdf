@@ -110,10 +110,11 @@
         </material>
       </visual>
       <sensor name='forearm_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/forearm/contact</topic>
+          <topic>__default_topic</topic>
         </contact>
       </sensor>
     </link>
@@ -169,12 +170,6 @@
           <specular>0.9 0.9 0.9 1</specular>
         </material>
       </visual>
-      <sensor name='wristy_contact_sensor' type='contact'>
-        <contact>
-          <collision>collision</collision>
-          <topic>~/wristy/contact</topic>
-        </contact>
-      </sensor>
     </link>
     <joint name='wristy' type='revolute'>
       <child>wristy</child>
@@ -309,14 +304,6 @@
           <specular>0.9 0.9 0.9 1</specular>
         </material>
       </visual>
-      <sensor name='wristx_contact_sensor' type='contact'>
-        <contact>
-          <collision>collision</collision>
-          <collision>collision_1</collision>
-          <collision>collision_2</collision>
-          <topic>~/wristx/contact</topic>
-        </contact>
-      </sensor>
     </link>
     <joint name='wristx' type='revolute'>
       <child>wristx</child>
@@ -413,44 +400,12 @@
           </friction>
         </surface>
       </collision>
-      <collision name='wristz_collision_wristzEdge'>
-        <pose>-0.05 -0.03 0 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.02 0.05 0.02</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>100000</kp>
-              <kd>100</kd>
-              <max_vel>0.1</max_vel>
-              <min_depth>0.0015</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1</mu>
-              <mu2>1</mu2>
-            </ode>
-          </friction>
-        </surface>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <collision name='wristz_collision_wristz_3'>
-        <pose>0.01 -0.03 0 1.5708 -0 0</pose>
+      <collision name="palmEdge">
+        <pose>-0.028 -0.03 0 1.57 0 -0.1</pose>
         <geometry>
           <cylinder>
-            <length>0.05</length>
-            <radius>0.015</radius>
+            <radius>0.01</radius>
+            <length>0.060</length>
           </cylinder>
         </geometry>
         <surface>
@@ -469,20 +424,13 @@
             </ode>
           </friction>
         </surface>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
       </collision>
-      <collision name='wristz_collision_handTop'>
-        <pose>-0.02 -0.04 0.00875 0 -0 0</pose>
+     <!-- Dorsal surface (top) -->
+      <collision name="handTop">
+        <pose>0.002 -0.045 0.01 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.06 0.08 0.0175</size>
+            <size>0.075 0.08 0.02</size>
           </box>
         </geometry>
         <surface>
@@ -501,20 +449,13 @@
             </ode>
           </friction>
         </surface>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
       </collision>
-      <collision name='wristz_collision_wristz1'>
-        <pose>-0.035 -0.04 -0.00875 0 -0 0</pose>
+      <!-- Palm 1 (closer to thumb) -->
+      <collision name="palm1">
+        <pose>0.023 -0.04 -0.012 0 0 0.1</pose>
         <geometry>
           <box>
-            <size>0.03 0.08 0.0175</size>
+            <size>0.037 0.07 0.02</size>
           </box>
         </geometry>
         <surface>
@@ -533,20 +474,13 @@
             </ode>
           </friction>
         </surface>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
       </collision>
-      <collision name='wristz_collision_wristz0'>
-        <pose>-0.005 -0.04 -0.00875 0 -0 0</pose>
+      <!-- Palm 0 (closer to pinky) -->
+      <collision name="palm0">
+        <pose>-0.018 -0.04 -0.012 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.03 0.08 0.0175</size>
+            <size>0.037 0.07 0.02</size>
           </box>
         </geometry>
         <surface>
@@ -563,14 +497,6 @@
               <mu>1</mu>
               <mu2>1</mu2>
             </ode>
-          </friction>
-        </surface>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
           </friction>
         </surface>
       </collision>
@@ -599,28 +525,32 @@
           </script>
         </material>
       </visual>
-      <sensor name='wristz0_contact_sensor' type='contact'>
+      <sensor name='palm0_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
-          <collision>wristz_collision_wristz0</collision>
-          <topic>~/wristz0/contact</topic>
+          <collision>palm0</collision>
+          <topic>__default_topic__</topic>
         </contact>
       </sensor>
-      <sensor name='wristz1_contact_sensor' type='contact'>
+      <sensor name='palm1_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
-          <collision>wristz_collision_wristz1</collision>
-          <topic>~/wristz1/contact</topic>
+          <collision>palm1</collision>
+          <topic>__default_topic__</topic>
         </contact>
       </sensor>
-      <sensor name='wristzEdge_contact_sensor' type='contact'>
+      <sensor name='palmEdge_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
-          <collision>wristz_collision_wristzEdge</collision>
-          <topic>~/wristzEdge/contact</topic>
+          <collision>palmEdge</collision>
+          <topic>__default_topic__</topic>
         </contact>
       </sensor>
       <sensor name='handTop_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
-          <collision>wristz_collision_handTop</collision>
-          <topic>~/handTop/contact</topic>
+          <collision>handTop</collision>
+          <topic>__default_topic__</topic>
         </contact>
       </sensor>
     </link>
@@ -708,9 +638,10 @@
         </material>
       </visual>
       <sensor name='index0_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
-          <topic>~/index0/contact</topic>
+          <topic>__default_topic__</topic>
         </contact>
       </sensor>
     </link>
@@ -798,9 +729,10 @@
         </material>
       </visual>
       <sensor name='index1_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
-          <topic>~/index1/contact</topic>
+          <topic>__default_topic__</topic>
         </contact>
       </sensor>
     </link>
@@ -912,10 +844,11 @@
         </material>
       </visual>
       <sensor name='index2_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/index2/contact</topic>
+          <topic>__default_topic__</topic>
         </contact>
       </sensor>
     </link>
@@ -1027,10 +960,11 @@
         </material>
       </visual>
       <sensor name='index3_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/index3/contact</topic>
+          <topic>__default_topic__</topic>
         </contact>
       </sensor>
       <sensor name='index3_imu_sensor' type='imu'>
@@ -1139,9 +1073,10 @@
         </material>
       </visual>
       <sensor name='middle0_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
-          <topic>~/middle0/contact</topic>
+          <topic>__default_topic__</topic>
         </contact>
       </sensor>
     </link>
@@ -1229,9 +1164,10 @@
         </material>
       </visual>
       <sensor name='middle1_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
-          <topic>~/middle1/contact</topic>
+          <topic>__default_topic__</topic>
         </contact>
       </sensor>
     </link>
@@ -1343,10 +1279,11 @@
         </material>
       </visual>
       <sensor name='middle2_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/middle2/contact</topic>
+          <topic>__default_topic__</topic>
         </contact>
       </sensor>
     </link>
@@ -1458,10 +1395,11 @@
         </material>
       </visual>
       <sensor name='middle3_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/middle3/contact</topic>
+          <topic>__default_topic__</topic>
         </contact>
       </sensor>
       <sensor name='middle3_imu_sensor' type='imu'>
@@ -1570,9 +1508,10 @@
         </material>
       </visual>
       <sensor name='pinky0_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
-          <topic>~/pinky0/contact</topic>
+          <topic>__default_topic__</topic>
         </contact>
       </sensor>
     </link>
@@ -1660,9 +1599,10 @@
         </material>
       </visual>
       <sensor name='pinky1_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
-          <topic>~/pinky0/contact</topic>
+          <topic>__default_topic__</topic>
         </contact>
       </sensor>
     </link>
@@ -1750,9 +1690,10 @@
         </material>
       </visual>
       <sensor name='pinky2_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
-          <topic>~/pinky2/contact</topic>
+          <topic>__default_topic__</topic>
         </contact>
       </sensor>
     </link>
@@ -1864,10 +1805,11 @@
         </material>
       </visual>
       <sensor name='pinky3_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/pinky3/contact</topic>
+          <topic>__default_topic__</topic>
         </contact>
       </sensor>
       <sensor name='pinky3_imu_sensor' type='imu'>
@@ -1976,9 +1918,10 @@
         </material>
       </visual>
       <sensor name='ring0_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
-          <topic>~/ring0/contact</topic>
+          <topic>__default_topic__</topic>
         </contact>
       </sensor>
     </link>
@@ -2066,9 +2009,10 @@
         </material>
       </visual>
       <sensor name='ring1_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
-          <topic>~/ring1/contact</topic>
+          <topic>__default_topic__</topic>
         </contact>
       </sensor>
     </link>
@@ -2180,9 +2124,10 @@
         </material>
       </visual>
       <sensor name='ring2_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
-          <topic>~/ring2/contact</topic>
+          <topic>__default_topic__</topic>
         </contact>
       </sensor>
     </link>
@@ -2294,10 +2239,11 @@
         </material>
       </visual>
       <sensor name='ring3_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/ring3/contact</topic>
+          <topic>__default_topic__</topic>
         </contact>
       </sensor>
       <sensor name='ring3_imu_sensor' type='imu'>
@@ -2430,6 +2376,7 @@
         </material>
       </visual>
       <sensor name='thumb0_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
@@ -2570,6 +2517,7 @@
         </material>
       </visual>
       <sensor name='thumb1_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
@@ -2686,6 +2634,7 @@
         </material>
       </visual>
       <sensor name='thumb2_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
@@ -2801,10 +2750,11 @@
         </material>
       </visual>
       <sensor name='thumb3_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/thumb3/contact</topic>
+          <topic>__default_topic__</topic>
         </contact>
       </sensor>
       <sensor name='thumb3_distal_imu_sensor' type='imu'>
@@ -3032,8 +2982,8 @@
             <multiplier>0.8375</multiplier>
           </gearbox>
         </motor>
-        <contactSensor id="0">wristz0_contact_sensor</contactSensor>
-        <contactSensor id="1">wristz1_contact_sensor</contactSensor>
+        <contactSensor id="0">palm0_contact_sensor</contactSensor>
+        <contactSensor id="1">palm1_contact_sensor</contactSensor>
         <contactSensor id="2">thumb0_contact_sensor</contactSensor>
         <contactSensor id="3">thumb1_contact_sensor</contactSensor>
         <contactSensor id="4">thumb2_contact_sensor</contactSensor>
@@ -3054,7 +3004,7 @@
         <contactSensor id="19">pinky1_contact_sensor</contactSensor>
         <contactSensor id="20">pinky2_contact_sensor</contactSensor>
         <contactSensor id="21">pinky3_contact_sensor</contactSensor>
-        <contactSensor id="22">wristzEdge_contact_sensor</contactSensor>
+        <contactSensor id="22">palmEdge_contact_sensor</contactSensor>
         <contactSensor id="23">handTop_contact_sensor</contactSensor>
         <imuSensor id="0">thumb3_imu_sensor</imuSensor>
         <imuSensor id="1">index3_imu_sensor</imuSensor>
