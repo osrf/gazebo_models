@@ -413,6 +413,167 @@
           </friction>
         </surface>
       </collision>
+      <collision name='wristz_collision_handedge'>
+        <pose>-0.05 -0.03 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.05 0.02</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>100</kd>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.0015</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='wristz_collision_wristz_3'>
+        <pose>0.01 -0.03 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.015</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>100</kd>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.0015</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='wristz_collision_handtop'>
+        <pose>-0.02 -0.04 0.00875 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.06 0.08 0.0175</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>100</kd>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.0015</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='wristz_collision_wristz1'>
+        <pose>-0.035 -0.04 -0.00875 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.03 0.08 0.0175</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>100</kd>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.0015</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='wristz_collision_wristz0'>
+        <pose>-0.005 -0.04 -0.00875 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.03 0.08 0.0175</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>100</kd>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.0015</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
       <visual name='visual'>
         <geometry>
           <mesh>
@@ -455,14 +616,14 @@
       <sensor name='wristzEdge_contact_sensor' type='contact'>
         <always_on>1</always_on>
         <contact>
-          <collision>wristz_collision_rHandEdge</collision>
+          <collision>wristz_collision_handedge</collision>
           <topic>~/wristzEdge/contact</topic>
         </contact>
       </sensor>
       <sensor name='handTop_contact_sensor' type='contact'>
         <always_on>1</always_on>
         <contact>
-          <collision>wristz_collision_rHandTop</collision>
+          <collision>wristz_collision_handtop</collision>
           <topic>~/handTop/contact</topic>
         </contact>
       </sensor>
