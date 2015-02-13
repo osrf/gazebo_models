@@ -438,10 +438,32 @@
           </script>
         </material>
       </visual>
-      <sensor name='palm_contact_sensor' type='contact'>
+      <sensor name='wristz0_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
-          <collision>collision_palm</collision>
-          <topic>~/palm/contact</topic>
+          <collision>wristz_collision_wristz0</collision>
+          <topic>~/wristz0/contact</topic>
+        </contact>
+      </sensor>
+      <sensor name='wristz1_contact_sensor' type='contact'>
+        <always_on>1</always_on>
+        <contact>
+          <collision>wristz_collision_wristz1</collision>
+          <topic>~/wristz1/contact</topic>
+        </contact>
+      </sensor>
+      <sensor name='wristzEdge_contact_sensor' type='contact'>
+        <always_on>1</always_on>
+        <contact>
+          <collision>wristz_collision_rHandEdge</collision>
+          <topic>~/wristzEdge/contact</topic>
+        </contact>
+      </sensor>
+      <sensor name='handTop_contact_sensor' type='contact'>
+        <always_on>1</always_on>
+        <contact>
+          <collision>wristz_collision_rHandTop</collision>
+          <topic>~/handTop/contact</topic>
         </contact>
       </sensor>
     </link>
@@ -2853,8 +2875,8 @@
             <multiplier>0.8375</multiplier>
           </gearbox>
         </motor>
-        <contactSensor id="0">palm0_contact_sensor</contactSensor>
-        <contactSensor id="1">palm1_contact_sensor</contactSensor>
+        <contactSensor id="0">wristz0_contact_sensor</contactSensor>
+        <contactSensor id="1">wristz1_contact_sensor</contactSensor>
         <contactSensor id="2">thumb0_contact_sensor</contactSensor>
         <contactSensor id="3">thumb1_contact_sensor</contactSensor>
         <contactSensor id="4">thumb2_contact_sensor</contactSensor>
@@ -2875,7 +2897,7 @@
         <contactSensor id="19">pinky1_contact_sensor</contactSensor>
         <contactSensor id="20">pinky2_contact_sensor</contactSensor>
         <contactSensor id="21">pinky3_contact_sensor</contactSensor>
-        <contactSensor id="22">palmEdge_contact_sensor</contactSensor>
+        <contactSensor id="22">wristzEdge_contact_sensor</contactSensor>
         <contactSensor id="23">handTop_contact_sensor</contactSensor>
         <imuSensor id="0">thumb3_imu_sensor</imuSensor>
         <imuSensor id="1">index3_imu_sensor</imuSensor>
