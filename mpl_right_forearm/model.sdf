@@ -2721,7 +2721,7 @@
         <pid cmd_max=" 100.0" cmd_min=" -100.0" d="0" i="0" id="8" p="  10.0"/>
         <pid cmd_max=" 100.0" cmd_min=" -100.0" d="0" i="0" id="9" p="   5.0"/>
         <pid cmd_max=" 100.0" cmd_min=" -100.0" d="0" i="0" id="10" p="   1.0"/>
-        <pid cmd_max=" 100.0" cmd_min=" -100.0" d="0" i="0" id="11" p="  15.0"/>
+        <pid cmd_max="   0.0" cmd_min="    0.0" d="0" i="0" id="11" p="   0.0"/>
         <pid cmd_max=" 100.0" cmd_min=" -100.0" d="0" i="0" id="12" p="  10.0"/>
         <pid cmd_max=" 100.0" cmd_min=" -100.0" d="0" i="0" id="13" p="   5.0"/>
         <pid cmd_max=" 100.0" cmd_min=" -100.0" d="0" i="0" id="14" p="   1.0"/>
@@ -2795,7 +2795,7 @@
         </motor>
         <motor id="9" name="motor_middle0">
           <powered_motor_joint>middle0</powered_motor_joint>
-          <motor_torque>3.82e-3</motor_torque>
+          <motor_torque>0.0</motor_torque>
           <gear_ratio>176.0</gear_ratio>
         </motor>
         <motor id="10" name="motor_middle">
