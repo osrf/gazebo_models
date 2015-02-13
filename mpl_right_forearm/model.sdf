@@ -413,7 +413,7 @@
           </friction>
         </surface>
       </collision>
-      <collision name='wristz_collision_handedge'>
+      <collision name='wristz_collision_wristzEdge'>
         <pose>-0.05 -0.03 0 0 -0 0</pose>
         <geometry>
           <box>
@@ -478,7 +478,7 @@
           </friction>
         </surface>
       </collision>
-      <collision name='wristz_collision_handtop'>
+      <collision name='wristz_collision_handTop'>
         <pose>-0.02 -0.04 0.00875 0 -0 0</pose>
         <geometry>
           <box>
@@ -600,30 +600,26 @@
         </material>
       </visual>
       <sensor name='wristz0_contact_sensor' type='contact'>
-        <always_on>1</always_on>
         <contact>
           <collision>wristz_collision_wristz0</collision>
           <topic>~/wristz0/contact</topic>
         </contact>
       </sensor>
       <sensor name='wristz1_contact_sensor' type='contact'>
-        <always_on>1</always_on>
         <contact>
           <collision>wristz_collision_wristz1</collision>
           <topic>~/wristz1/contact</topic>
         </contact>
       </sensor>
       <sensor name='wristzEdge_contact_sensor' type='contact'>
-        <always_on>1</always_on>
         <contact>
-          <collision>wristz_collision_handedge</collision>
+          <collision>wristz_collision_wristzEdge</collision>
           <topic>~/wristzEdge/contact</topic>
         </contact>
       </sensor>
       <sensor name='handTop_contact_sensor' type='contact'>
-        <always_on>1</always_on>
         <contact>
-          <collision>wristz_collision_handtop</collision>
+          <collision>wristz_collision_handTop</collision>
           <topic>~/handTop/contact</topic>
         </contact>
       </sensor>
