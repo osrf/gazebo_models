@@ -2891,7 +2891,7 @@
           <motor_torque>0.0</motor_torque>
           <gear_ratio>176.0</gear_ratio>
         </motor>-->
-        <motor id="10" name="motor_middle">
+        <motor id="9" name="motor_middle">
           <powered_motor_joint>middle1</powered_motor_joint>
           <motor_torque>3.82e-3</motor_torque>
           <gear_ratio>393.0</gear_ratio>
@@ -2906,7 +2906,7 @@
             <multiplier>0.8375</multiplier>
           </gearbox>
         </motor>
-        <motor id="11" name="motor_ring0">
+        <motor id="10" name="motor_ring0">
           <powered_motor_joint>ring0</powered_motor_joint>
           <motor_torque>3.82e-3</motor_torque>
           <gear_ratio>3520.0</gear_ratio>
@@ -2916,7 +2916,7 @@
             <multiplier>1.0</multiplier>
           </gearbox>
         </motor>
-        <motor id="12" name="motor_ring">
+        <motor id="11" name="motor_ring">
           <powered_motor_joint>ring1</powered_motor_joint>
           <motor_torque>3.82e-3</motor_torque>
           <gear_ratio>393.0</gear_ratio>
@@ -2931,7 +2931,7 @@
             <multiplier>0.8375</multiplier>
           </gearbox>
         </motor>
-        <motor id="13" name="motor_pinky">
+        <motor id="12" name="motor_pinky">
           <powered_motor_joint>pinky1</powered_motor_joint>
           <motor_torque>3.82e-3</motor_torque>
           <gear_ratio>393.0</gear_ratio>
