@@ -450,8 +450,8 @@
           </friction>
         </surface>
       </collision>
-      <!-- Palm 1 (closer to thumb) -->
-      <collision name="palm1">
+      <!-- Palm 0 (closer to thumb) -->
+      <collision name="palm0">
         <pose>0.023 -0.04 -0.012 0 0 0.1</pose>
         <geometry>
           <box>
@@ -475,8 +475,8 @@
           </friction>
         </surface>
       </collision>
-      <!-- Palm 0 (closer to pinky) -->
-      <collision name="palm0">
+      <!-- Palm 1 (closer to pinky) -->
+      <collision name="palm1">
         <pose>-0.018 -0.04 -0.012 0 0 0</pose>
         <geometry>
           <box>
@@ -637,13 +637,6 @@
           </script>
         </material>
       </visual>
-      <sensor name='index0_contact_sensor' type='contact'>
-        <always_on>1</always_on>
-        <contact>
-          <collision>collision</collision>
-          <topic>__default_topic__</topic>
-        </contact>
-      </sensor>
     </link>
     <joint name='index0' type='revolute'>
       <child>index0</child>
@@ -1072,13 +1065,6 @@
           </script>
         </material>
       </visual>
-      <sensor name='middle0_contact_sensor' type='contact'>
-        <always_on>1</always_on>
-        <contact>
-          <collision>collision</collision>
-          <topic>__default_topic__</topic>
-        </contact>
-      </sensor>
     </link>
     <joint name='middle0' type='revolute'>
       <child>middle0</child>
@@ -1507,13 +1493,6 @@
           </script>
         </material>
       </visual>
-      <sensor name='pinky0_contact_sensor' type='contact'>
-        <always_on>1</always_on>
-        <contact>
-          <collision>collision</collision>
-          <topic>__default_topic__</topic>
-        </contact>
-      </sensor>
     </link>
     <joint name='pinky0' type='revolute'>
       <child>pinky0</child>
@@ -1917,13 +1896,6 @@
           </script>
         </material>
       </visual>
-      <sensor name='ring0_contact_sensor' type='contact'>
-        <always_on>1</always_on>
-        <contact>
-          <collision>collision</collision>
-          <topic>__default_topic__</topic>
-        </contact>
-      </sensor>
     </link>
     <joint name='ring0' type='revolute'>
       <child>ring0</child>
@@ -2375,14 +2347,6 @@
           </script>
         </material>
       </visual>
-      <sensor name='thumb0_contact_sensor' type='contact'>
-        <always_on>1</always_on>
-        <contact>
-          <collision>collision</collision>
-          <collision>collision_1</collision>
-          <topic>~/thumb0/contact</topic>
-        </contact>
-      </sensor>
     </link>
     <joint name='thumb0' type='revolute'>
       <child>thumb0</child>
@@ -2984,28 +2948,23 @@
         </motor>
         <contactSensor id="0">palm0_contact_sensor</contactSensor>
         <contactSensor id="1">palm1_contact_sensor</contactSensor>
-        <contactSensor id="2">thumb0_contact_sensor</contactSensor>
-        <contactSensor id="3">thumb1_contact_sensor</contactSensor>
-        <contactSensor id="4">thumb2_contact_sensor</contactSensor>
-        <contactSensor id="5">thumb3_contact_sensor</contactSensor>
-        <contactSensor id="6">index0_contact_sensor</contactSensor>
+        <contactSensor id="2">palmEdge_contact_sensor</contactSensor>
+        <contactSensor id="3">handTop_contact_sensor</contactSensor>
+        <contactSensor id="4">thumb1_contact_sensor</contactSensor>
+        <contactSensor id="5">thumb2_contact_sensor</contactSensor>
+        <contactSensor id="6">thumb3_contact_sensor</contactSensor>
         <contactSensor id="7">index1_contact_sensor</contactSensor>
         <contactSensor id="8">index2_contact_sensor</contactSensor>
         <contactSensor id="9">index3_contact_sensor</contactSensor>
-        <contactSensor id="10">middle0_contact_sensor</contactSensor>
-        <contactSensor id="11">middle1_contact_sensor</contactSensor>
-        <contactSensor id="12">middle2_contact_sensor</contactSensor>
-        <contactSensor id="13">middle3_contact_sensor</contactSensor>
-        <contactSensor id="14">ring0_contact_sensor</contactSensor>
-        <contactSensor id="15">ring1_contact_sensor</contactSensor>
-        <contactSensor id="16">ring2_contact_sensor</contactSensor>
-        <contactSensor id="17">ring3_contact_sensor</contactSensor>
-        <contactSensor id="18">pinky0_contact_sensor</contactSensor>
-        <contactSensor id="19">pinky1_contact_sensor</contactSensor>
-        <contactSensor id="20">pinky2_contact_sensor</contactSensor>
-        <contactSensor id="21">pinky3_contact_sensor</contactSensor>
-        <contactSensor id="22">palmEdge_contact_sensor</contactSensor>
-        <contactSensor id="23">handTop_contact_sensor</contactSensor>
+        <contactSensor id="10">middle1_contact_sensor</contactSensor>
+        <contactSensor id="11">middle2_contact_sensor</contactSensor>
+        <contactSensor id="12">middle3_contact_sensor</contactSensor>
+        <contactSensor id="13">ring1_contact_sensor</contactSensor>
+        <contactSensor id="14">ring2_contact_sensor</contactSensor>
+        <contactSensor id="15">ring3_contact_sensor</contactSensor>
+        <contactSensor id="16">pinky1_contact_sensor</contactSensor>
+        <contactSensor id="17">pinky2_contact_sensor</contactSensor>
+        <contactSensor id="18">pinky3_contact_sensor</contactSensor>
         <imuSensor id="0">thumb3_imu_sensor</imuSensor>
         <imuSensor id="1">index3_imu_sensor</imuSensor>
         <imuSensor id="2">middle3_imu_sensor</imuSensor>
