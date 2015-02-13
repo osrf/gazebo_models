@@ -2886,11 +2886,6 @@
             <multiplier>0.8375</multiplier>
           </gearbox>
         </motor>
-        <!--<motor id="9" name="motor_middle0">
-          <powered_motor_joint>middle0</powered_motor_joint>
-          <motor_torque>0.0</motor_torque>
-          <gear_ratio>176.0</gear_ratio>
-        </motor>-->
         <motor id="9" name="motor_middle">
           <powered_motor_joint>middle1</powered_motor_joint>
           <motor_torque>3.82e-3</motor_torque>
