@@ -109,14 +109,6 @@
           </script>
         </material>
       </visual>
-      <sensor name='forearm_contact_sensor' type='contact'>
-        <always_on>1</always_on>
-        <contact>
-          <collision>collision</collision>
-          <collision>collision_1</collision>
-          <topic>__default_topic</topic>
-        </contact>
-      </sensor>
     </link>
 
     <link name='wristy'>
@@ -529,28 +521,24 @@
         <always_on>1</always_on>
         <contact>
           <collision>palm0</collision>
-          <topic>__default_topic__</topic>
         </contact>
       </sensor>
       <sensor name='palm1_contact_sensor' type='contact'>
         <always_on>1</always_on>
         <contact>
           <collision>palm1</collision>
-          <topic>__default_topic__</topic>
         </contact>
       </sensor>
       <sensor name='palmEdge_contact_sensor' type='contact'>
         <always_on>1</always_on>
         <contact>
           <collision>palmEdge</collision>
-          <topic>__default_topic__</topic>
         </contact>
       </sensor>
       <sensor name='handTop_contact_sensor' type='contact'>
         <always_on>1</always_on>
         <contact>
           <collision>handTop</collision>
-          <topic>__default_topic__</topic>
         </contact>
       </sensor>
     </link>
@@ -725,7 +713,6 @@
         <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
-          <topic>__default_topic__</topic>
         </contact>
       </sensor>
     </link>
@@ -841,7 +828,6 @@
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>__default_topic__</topic>
         </contact>
       </sensor>
     </link>
@@ -957,7 +943,6 @@
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>__default_topic__</topic>
         </contact>
       </sensor>
       <sensor name='index3_imu_sensor' type='imu'>
@@ -1153,7 +1138,6 @@
         <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
-          <topic>__default_topic__</topic>
         </contact>
       </sensor>
     </link>
@@ -1269,7 +1253,6 @@
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>__default_topic__</topic>
         </contact>
       </sensor>
     </link>
@@ -1385,7 +1368,6 @@
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>__default_topic__</topic>
         </contact>
       </sensor>
       <sensor name='middle3_imu_sensor' type='imu'>
@@ -1581,7 +1563,6 @@
         <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
-          <topic>__default_topic__</topic>
         </contact>
       </sensor>
     </link>
@@ -1672,7 +1653,6 @@
         <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
-          <topic>__default_topic__</topic>
         </contact>
       </sensor>
     </link>
@@ -1788,7 +1768,6 @@
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>__default_topic__</topic>
         </contact>
       </sensor>
       <sensor name='pinky3_imu_sensor' type='imu'>
@@ -1984,7 +1963,6 @@
         <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
-          <topic>__default_topic__</topic>
         </contact>
       </sensor>
     </link>
@@ -2099,7 +2077,6 @@
         <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
-          <topic>__default_topic__</topic>
         </contact>
       </sensor>
     </link>
@@ -2215,7 +2192,6 @@
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>__default_topic__</topic>
         </contact>
       </sensor>
       <sensor name='ring3_imu_sensor' type='imu'>
@@ -2486,7 +2462,6 @@
           <collision>collision</collision>
           <collision>collision_1</collision>
           <collision>collision_2</collision>
-          <topic>~/thumb1/contact</topic>
         </contact>
       </sensor>
     </link>
@@ -2602,7 +2577,6 @@
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/thumb2/contact</topic>
         </contact>
       </sensor>
     </link>
@@ -2718,7 +2692,6 @@
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>__default_topic__</topic>
         </contact>
       </sensor>
       <sensor name='thumb3_imu_sensor' type='imu'>
