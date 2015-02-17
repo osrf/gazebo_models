@@ -16,6 +16,38 @@
 <?xml version='1.0'?>
 <sdf version='1.5'>
   <model name='mpl_right_forearm'>
+    <joint name='elbow' type='revolute'>
+      <child>forearm</child>
+      <parent>world</parent>
+      <axis>
+        <xyz>0 0 1.0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>2</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0.01</cfm>
+            <erp>0</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
     <link name='forearm'>
       <pose>0.00660504 -0.294573 0.119123 -1.21334e-13 2.77556e-17 -0.0115373</pose>
       <inertial>
@@ -42,11 +74,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -61,11 +99,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -80,13 +124,6 @@
           </script>
         </material>
       </visual>
-      <sensor name='forearm_contact_sensor' type='contact'>
-        <contact>
-          <collision>collision</collision>
-          <collision>collision_1</collision>
-          <topic>~/forearm/contact</topic>
-        </contact>
-      </sensor>
     </link>
 
     <link name='wristy'>
@@ -115,11 +152,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -134,13 +177,38 @@
           <specular>0.9 0.9 0.9 1</specular>
         </material>
       </visual>
-      <sensor name='wristy_contact_sensor' type='contact'>
-        <contact>
-          <collision>collision</collision>
-          <topic>~/wristy/contact</topic>
-        </contact>
-      </sensor>
     </link>
+    <joint name='wristy' type='revolute'>
+      <child>wristy</child>
+      <parent>forearm</parent>
+      <axis>
+        <xyz>0.011537 0.999933 -1.2164e-13</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>2</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
 
     <link name='wristx'>
       <pose>0.003916 -0.527636 0.137161 -1.18962e-13 1.21847e-14 -0.0115373</pose>
@@ -168,11 +236,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -187,11 +261,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_2'>
@@ -206,11 +286,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -225,15 +311,38 @@
           <specular>0.9 0.9 0.9 1</specular>
         </material>
       </visual>
-      <sensor name='wristx_contact_sensor' type='contact'>
-        <contact>
-          <collision>collision</collision>
-          <collision>collision_1</collision>
-          <collision>collision_2</collision>
-          <topic>~/wristx/contact</topic>
-        </contact>
-      </sensor>
     </link>
+    <joint name='wristx' type='revolute'>
+      <child>wristx</child>
+      <parent>wristy</parent>
+      <axis>
+        <xyz>-1.35564e-14 -1.18814e-13 -1</xyz>
+        <limit>
+          <lower>-0.261</lower>
+          <upper>0.785</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>2</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
 
     <link name='wristz'>
       <pose>0.00375708 -0.557636 0.135067 -2.87105e-13 1.42109e-14 -0.0115373</pose>
@@ -261,11 +370,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_palm'>
@@ -284,6 +399,112 @@
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="palmEdge">
+        <pose>-0.028 -0.03 0 1.57 0 -0.1</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.01</radius>
+            <length>0.060</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>100</kd>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.0015</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+     <!-- Dorsal surface (top) -->
+      <collision name="handTop">
+        <pose>0.002 -0.045 0.01 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.075 0.08 0.02</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>100</kd>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.0015</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <!-- Palm 0 (closer to thumb) -->
+      <collision name="palm0">
+        <pose>0.023 -0.04 -0.012 0 0 0.1</pose>
+        <geometry>
+          <box>
+            <size>0.037 0.07 0.02</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>100</kd>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.0015</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <!-- Palm 1 (closer to pinky) -->
+      <collision name="palm1">
+        <pose>-0.018 -0.04 -0.012 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.037 0.07 0.02</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>100</kd>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.0015</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -311,13 +532,62 @@
           </script>
         </material>
       </visual>
-      <sensor name='palm_contact_sensor' type='contact'>
+      <sensor name='palm0_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
-          <collision>collision_palm</collision>
-          <topic>~/palm/contact</topic>
+          <collision>palm0</collision>
+        </contact>
+      </sensor>
+      <sensor name='palm1_contact_sensor' type='contact'>
+        <always_on>1</always_on>
+        <contact>
+          <collision>palm1</collision>
+        </contact>
+      </sensor>
+      <sensor name='palmEdge_contact_sensor' type='contact'>
+        <always_on>1</always_on>
+        <contact>
+          <collision>palmEdge</collision>
+        </contact>
+      </sensor>
+      <sensor name='handTop_contact_sensor' type='contact'>
+        <always_on>1</always_on>
+        <contact>
+          <collision>handTop</collision>
         </contact>
       </sensor>
     </link>
+    <joint name='wristz' type='revolute'>
+      <child>wristz</child>
+      <parent>wristx</parent>
+      <axis>
+        <xyz>0.999933 -0.011537 -1.42109e-14</xyz>
+        <limit>
+          <lower>-1.04</lower>
+          <upper>1.04</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>2</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
 
     <link name='index0'>
       <pose>0.0384854 -0.623842 0.136079 -1.14726e-13 0.174533 -0.0115373</pose>
@@ -345,11 +615,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -364,13 +640,38 @@
           </script>
         </material>
       </visual>
-      <sensor name='index0_contact_sensor' type='contact'>
-        <contact>
-          <collision>collision</collision>
-          <topic>~/index0/contact</topic>
-        </contact>
-      </sensor>
     </link>
+    <joint name='index0' type='revolute'>
+      <child>index0</child>
+      <parent>wristz</parent>
+      <axis>
+        <xyz>-0.173637 0.00200338 -0.984808</xyz>
+        <limit>
+          <lower>-0.345</lower>
+          <upper>0</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
 
     <link name='index1'>
       <pose>0.0383394 -0.641841 0.136068 -1.1474e-13 0.174533 -0.0115373</pose>
@@ -398,11 +699,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -418,12 +725,43 @@
         </material>
       </visual>
       <sensor name='index1_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
-          <topic>~/index1/contact</topic>
         </contact>
       </sensor>
     </link>
+    <joint name='index1' type='revolute'>
+      <child>index1</child>
+      <parent>index0</parent>
+      <axis>
+        <xyz>0.984742 -0.0113618 -0.173648</xyz>
+        <limit>
+          <lower>-0.785</lower>
+          <upper>1.57</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.5</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
 
     <link name='index2'>
       <pose>0.0389938 -0.685352 0.136372 -1.1445e-13 0.174533 -0.0115373</pose>
@@ -451,11 +789,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -469,11 +813,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -489,13 +839,44 @@
         </material>
       </visual>
       <sensor name='index2_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/index2/contact</topic>
         </contact>
       </sensor>
     </link>
+    <joint name='index2' type='revolute'>
+      <child>index2</child>
+      <parent>index1</parent>
+      <axis>
+        <xyz>0.984742 -0.0113618 -0.173648</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.72</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.25</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
 
     <link name='index3'>
       <pose>0.0380858 -0.709843 0.136482 -1.15476e-13 0.174533 -0.0115373</pose>
@@ -523,11 +904,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -541,11 +928,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -561,10 +954,10 @@
         </material>
       </visual>
       <sensor name='index3_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/index3/contact</topic>
         </contact>
       </sensor>
       <sensor name='index3_imu_sensor' type='imu'>
@@ -589,6 +982,37 @@
         </imu>
       </sensor>
     </link>
+    <joint name='index3' type='revolute'>
+      <child>index3</child>
+      <parent>index2</parent>
+      <axis>
+        <xyz>0.984742 -0.0113618 -0.173648</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.38</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.125</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
 
     <link name='middle0'>
       <pose>0.0156685 -0.63568 0.140513 0.0872665 1.4183e-14 -0.0115373</pose>
@@ -616,11 +1040,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -635,13 +1065,38 @@
           </script>
         </material>
       </visual>
-      <sensor name='middle0_contact_sensor' type='contact'>
-        <contact>
-          <collision>collision</collision>
-          <topic>~/middle0/contact</topic>
-        </contact>
-      </sensor>
     </link>
+    <joint name='middle0' type='revolute'>
+      <child>middle0</child>
+      <parent>wristz</parent>
+      <axis>
+        <xyz>0.00100552 0.0871499 -0.996195</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
 
     <link name='middle1'>
       <pose>0.0155242 -0.653612 0.138944 0.0872665 1.43013e-14 -0.0115373</pose>
@@ -669,11 +1124,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -689,12 +1150,43 @@
         </material>
       </visual>
       <sensor name='middle1_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
-          <topic>~/middle1/contact</topic>
         </contact>
       </sensor>
     </link>
+    <joint name='middle1' type='revolute'>
+      <child>middle1</child>
+      <parent>middle0</parent>
+      <axis>
+        <xyz>0.999933 -0.011537 -1.43013e-14</xyz>
+        <limit>
+          <lower>-0.785</lower>
+          <upper>1.57</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.5</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
 
     <link name='middle2'>
       <pose>0.0161097 -0.696999 0.135651 0.0872665 1.32728e-14 -0.0115373</pose>
@@ -722,11 +1214,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -740,11 +1238,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -760,13 +1264,44 @@
         </material>
       </visual>
       <sensor name='middle2_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/middle2/contact</topic>
         </contact>
       </sensor>
     </link>
+    <joint name='middle2' type='revolute'>
+      <child>middle2</child>
+      <parent>middle1</parent>
+      <axis>
+        <xyz>0.999933 -0.011537 -1.32727e-14</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.73</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.25</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
 
     <link name='middle3'>
       <pose>0.0151931 -0.721397 0.133515 0.0872665 1.51577e-14 -0.0115373</pose>
@@ -794,11 +1329,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -812,11 +1353,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -832,10 +1379,10 @@
         </material>
       </visual>
       <sensor name='middle3_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/middle3/contact</topic>
         </contact>
       </sensor>
       <sensor name='middle3_imu_sensor' type='imu'>
@@ -860,6 +1407,37 @@
         </imu>
       </sensor>
     </link>
+    <joint name='middle3' type='revolute'>
+      <child>middle3</child>
+      <parent>middle2</parent>
+      <axis>
+        <xyz>0.999933 -0.011537 -1.51577e-14</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.38</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.125</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
 
     <link name='pinky0'>
       <pose>-0.0275009 -0.61268 0.129428 -1.14942e-13 -0.174533 -0.0115373</pose>
@@ -887,11 +1465,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -906,13 +1490,38 @@
           </script>
         </material>
       </visual>
-      <sensor name='pinky0_contact_sensor' type='contact'>
-        <contact>
-          <collision>collision</collision>
-          <topic>~/pinky0/contact</topic>
-        </contact>
-      </sensor>
     </link>
+    <joint name='pinky0' type='revolute'>
+      <child>pinky0</child>
+      <parent>wristz</parent>
+      <axis>
+        <xyz>0.173637 -0.00200338 -0.984808</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.345</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
 
     <link name='pinky1'>
       <pose>-0.0276458 -0.630579 0.129439 -1.14943e-13 -0.174533 -0.0115373</pose>
@@ -940,11 +1549,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -960,12 +1575,43 @@
         </material>
       </visual>
       <sensor name='pinky1_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
-          <topic>~/pinky0/contact</topic>
         </contact>
       </sensor>
     </link>
+    <joint name='pinky1' type='revolute'>
+      <child>pinky1</child>
+      <parent>pinky0</parent>
+      <axis>
+        <xyz>0.984742 -0.0113618 0.173648</xyz>
+        <limit>
+          <lower>-0.785</lower>
+          <upper>1.57</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.5</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
 
     <link name='pinky2'>
       <pose>-0.0275441 -0.663582 0.130032 -1.14415e-13 -0.174533 -0.0115373</pose>
@@ -993,11 +1639,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -1013,12 +1665,43 @@
         </material>
       </visual>
       <sensor name='pinky2_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
-          <topic>~/pinky2/contact</topic>
         </contact>
       </sensor>
     </link>
+    <joint name='pinky2' type='revolute'>
+      <child>pinky2</child>
+      <parent>pinky1</parent>
+      <axis>
+        <xyz>0.984742 -0.0113618 0.173648</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.72</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.25</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
 
     <link name='pinky3'>
       <pose>-0.0277931 -0.681081 0.130023 -1.14622e-13 -0.174533 -0.0115373</pose>
@@ -1046,11 +1729,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -1064,11 +1753,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -1084,10 +1779,10 @@
         </material>
       </visual>
       <sensor name='pinky3_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/pinky3/contact</topic>
         </contact>
       </sensor>
       <sensor name='pinky3_imu_sensor' type='imu'>
@@ -1112,6 +1807,37 @@
         </imu>
       </sensor>
     </link>
+    <joint name='pinky3' type='revolute'>
+      <child>pinky3</child>
+      <parent>pinky2</parent>
+      <axis>
+        <xyz>0.984742 -0.0113618 0.173648</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.38</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.125</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
 
     <link name='ring0'>
       <pose>-0.00687963 -0.624218 0.136579 -1.14553e-13 -0.174533 -0.0115373</pose>
@@ -1139,11 +1865,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -1158,13 +1890,38 @@
           </script>
         </material>
       </visual>
-      <sensor name='ring0_contact_sensor' type='contact'>
-        <contact>
-          <collision>collision</collision>
-          <topic>~/ring0/contact</topic>
-        </contact>
-      </sensor>
     </link>
+    <joint name='ring0' type='revolute'>
+      <child>ring0</child>
+      <parent>wristz</parent>
+      <axis>
+        <xyz>0.173637 -0.00200338 -0.984808</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.345</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
 
     <link name='ring1'>
       <pose>-0.00702565 -0.642218 0.13659 -1.14538e-13 -0.174533 -0.0115373</pose>
@@ -1192,11 +1949,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -1212,12 +1975,43 @@
         </material>
       </visual>
       <sensor name='ring1_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
-          <topic>~/ring1/contact</topic>
         </contact>
       </sensor>
     </link>
+    <joint name='ring1' type='revolute'>
+      <child>ring1</child>
+      <parent>ring0</parent>
+      <axis>
+        <xyz>0.984742 -0.0113618 0.173648</xyz>
+        <limit>
+          <lower>-0.785</lower>
+          <upper>1.57</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.5</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
 
     <link name='ring2'>
       <pose>-0.0065449 -0.685726 0.137271 -1.14828e-13 -0.174533 -0.0115373</pose>
@@ -1245,11 +2039,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -1263,11 +2063,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -1283,12 +2089,43 @@
         </material>
       </visual>
       <sensor name='ring2_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
-          <topic>~/ring2/contact</topic>
         </contact>
       </sensor>
     </link>
+    <joint name='ring2' type='revolute'>
+      <child>ring2</child>
+      <parent>ring1</parent>
+      <axis>
+        <xyz>0.984742 -0.0113618 0.173648</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.72</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.25</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
 
     <link name='ring3'>
       <pose>-0.00745287 -0.710217 0.13716 -1.14821e-13 -0.174533 -0.0115373</pose>
@@ -1316,11 +2153,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -1334,11 +2177,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -1354,10 +2203,10 @@
         </material>
       </visual>
       <sensor name='ring3_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/ring3/contact</topic>
         </contact>
       </sensor>
       <sensor name='ring3_imu_sensor' type='imu'>
@@ -1382,6 +2231,37 @@
         </imu>
       </sensor>
     </link>
+    <joint name='ring3' type='revolute'>
+      <child>ring3</child>
+      <parent>ring2</parent>
+      <axis>
+        <xyz>0.984742 -0.0113618 0.173648</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.38</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.125</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
 
     <link name='thumb0'>
       <pose>0.0374985 -0.578725 0.124974 0.0873761 -0.0305803 -0.276903</pose>
@@ -1409,11 +2289,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -1427,11 +2313,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -1446,14 +2338,38 @@
           </script>
         </material>
       </visual>
-      <sensor name='thumb0_contact_sensor' type='contact'>
-        <contact>
-          <collision>collision</collision>
-          <collision>collision_1</collision>
-          <topic>~/thumb0/contact</topic>
-        </contact>
-      </sensor>
     </link>
+    <joint name='thumb0' type='revolute'>
+      <child>thumb0</child>
+      <parent>wristz</parent>
+      <axis>
+        <xyz>0.269769 0.958967 0.0872241</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>2.07</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
 
     <link name='thumb1'>
       <pose>0.057306 -0.585356 0.126981 0.0873761 -0.0305803 -0.276903</pose>
@@ -1481,11 +2397,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -1500,11 +2422,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_2'>
@@ -1518,11 +2446,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -1538,14 +2472,45 @@
         </material>
       </visual>
       <sensor name='thumb1_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
           <collision>collision_2</collision>
-          <topic>~/thumb1/contact</topic>
         </contact>
       </sensor>
     </link>
+    <joint name='thumb1' type='revolute'>
+      <child>thumb1</child>
+      <parent>thumb0</parent>
+      <axis>
+        <xyz>0.0531549 0.0756139 -0.995719</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.03</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.5</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
 
     <link name='thumb2'>
       <pose>0.0895543 -0.594453 0.127266 0.0873761 -0.0305803 -0.276903</pose>
@@ -1573,11 +2538,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -1591,11 +2562,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -1611,13 +2588,44 @@
         </material>
       </visual>
       <sensor name='thumb2_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/thumb2/contact</topic>
         </contact>
       </sensor>
     </link>
+    <joint name='thumb2' type='revolute'>
+      <child>thumb2</child>
+      <parent>thumb1</parent>
+      <axis>
+        <xyz>0.0531549 0.0756139 -0.995719</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.03</upper>
+          <effort>10000</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.25</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
 
     <link name='thumb3'>
       <pose>0.121705 -0.603689 0.129371 0.0873761 -0.0305803 -0.276903</pose>
@@ -1645,11 +2653,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <collision name='collision_1'>
@@ -1663,11 +2677,17 @@
           <contact>
             <ode>
               <kp>100000</kp>
-              <kd>10</kd>
+              <kd>100</kd>
               <max_vel>0.1</max_vel>
               <min_depth>0.0015</min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name='visual'>
@@ -1683,13 +2703,13 @@
         </material>
       </visual>
       <sensor name='thumb3_contact_sensor' type='contact'>
+        <always_on>1</always_on>
         <contact>
           <collision>collision</collision>
           <collision>collision_1</collision>
-          <topic>~/thumb3/contact</topic>
         </contact>
       </sensor>
-      <sensor name='thumb3_distal_imu_sensor' type='imu'>
+      <sensor name='thumb3_imu_sensor' type='imu'>
         <always_on>1</always_on>
         <update_rate>1000</update_rate>
         <imu>
@@ -1711,646 +2731,6 @@
         </imu>
       </sensor>
     </link>
-
-    <joint name='wristy' type='revolute'>
-      <child>wristy</child>
-      <parent>forearm</parent>
-      <axis>
-        <xyz>0.011537 0.999933 -1.2164e-13</xyz>
-        <limit>
-          <lower>-1.57</lower>
-          <upper>1.57</upper>
-          <effort>10000</effort>
-          <velocity>0.5</velocity>
-        </limit>
-        <dynamics>
-          <damping>5</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <provide_feedback>1</provide_feedback>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-          <cfm_damping>1</cfm_damping>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
-    </joint>
-
-    <joint name='wristx' type='revolute'>
-      <child>wristx</child>
-      <parent>wristy</parent>
-      <axis>
-        <xyz>-1.35564e-14 -1.18814e-13 -1</xyz>
-        <limit>
-          <lower>-0.261</lower>
-          <upper>0.785</upper>
-          <effort>10000</effort>
-          <velocity>0.5</velocity>
-        </limit>
-        <dynamics>
-          <damping>5</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <provide_feedback>1</provide_feedback>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-          <cfm_damping>1</cfm_damping>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
-    </joint>
-
-    <joint name='wristz' type='revolute'>
-      <child>wristz</child>
-      <parent>wristx</parent>
-      <axis>
-        <xyz>0.999933 -0.011537 -1.42109e-14</xyz>
-        <limit>
-          <lower>-1.04</lower>
-          <upper>1.04</upper>
-          <effort>10000</effort>
-          <velocity>0.5</velocity>
-        </limit>
-        <dynamics>
-          <damping>5</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <provide_feedback>1</provide_feedback>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-          <cfm_damping>1</cfm_damping>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
-    </joint>
-
-    <joint name='index0' type='revolute'>
-      <child>index0</child>
-      <parent>wristz</parent>
-      <axis>
-        <xyz>-0.173637 0.00200338 -0.984808</xyz>
-        <limit>
-          <lower>-0.345</lower>
-          <upper>0</upper>
-          <effort>10000</effort>
-          <velocity>0.5</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.8</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <provide_feedback>1</provide_feedback>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-          <cfm_damping>1</cfm_damping>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
-    </joint>
-
-    <joint name='index1' type='revolute'>
-      <child>index1</child>
-      <parent>index0</parent>
-      <axis>
-        <xyz>0.984742 -0.0113618 -0.173648</xyz>
-        <limit>
-          <lower>-0.785</lower>
-          <upper>1.57</upper>
-          <effort>10000</effort>
-          <velocity>0.5</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.8</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <provide_feedback>1</provide_feedback>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-          <cfm_damping>1</cfm_damping>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
-    </joint>
-
-    <joint name='index2' type='revolute'>
-      <child>index2</child>
-      <parent>index1</parent>
-      <axis>
-        <xyz>0.984742 -0.0113618 -0.173648</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>1.72</upper>
-          <effort>10000</effort>
-          <velocity>0.5</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.8</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <provide_feedback>1</provide_feedback>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-          <cfm_damping>1</cfm_damping>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
-    </joint>
-
-    <joint name='index3' type='revolute'>
-      <child>index3</child>
-      <parent>index2</parent>
-      <axis>
-        <xyz>0.984742 -0.0113618 -0.173648</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>1.38</upper>
-          <effort>10000</effort>
-          <velocity>0.5</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.8</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <provide_feedback>1</provide_feedback>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-          <cfm_damping>1</cfm_damping>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
-    </joint>
-
-    <joint name='middle0' type='revolute'>
-      <child>middle0</child>
-      <parent>wristz</parent>
-      <axis>
-        <xyz>0.00100552 0.0871499 -0.996195</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>0</upper>
-          <effort>10000</effort>
-          <velocity>0.5</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.8</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <provide_feedback>1</provide_feedback>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-          <cfm_damping>1</cfm_damping>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
-    </joint>
-
-    <joint name='middle1' type='revolute'>
-      <child>middle1</child>
-      <parent>middle0</parent>
-      <axis>
-        <xyz>0.999933 -0.011537 -1.43013e-14</xyz>
-        <limit>
-          <lower>-0.785</lower>
-          <upper>1.57</upper>
-          <effort>10000</effort>
-          <velocity>0.5</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.8</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <provide_feedback>1</provide_feedback>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-          <cfm_damping>1</cfm_damping>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
-    </joint>
-
-    <joint name='middle2' type='revolute'>
-      <child>middle2</child>
-      <parent>middle1</parent>
-      <axis>
-        <xyz>0.999933 -0.011537 -1.32727e-14</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>1.73</upper>
-          <effort>10000</effort>
-          <velocity>0.5</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.8</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <provide_feedback>1</provide_feedback>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-          <cfm_damping>1</cfm_damping>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
-    </joint>
-
-    <joint name='middle3' type='revolute'>
-      <child>middle3</child>
-      <parent>middle2</parent>
-      <axis>
-        <xyz>0.999933 -0.011537 -1.51577e-14</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>1.38</upper>
-          <effort>10000</effort>
-          <velocity>0.5</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.8</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <provide_feedback>1</provide_feedback>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-          <cfm_damping>1</cfm_damping>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
-    </joint>
-
-    <joint name='pinky0' type='revolute'>
-      <child>pinky0</child>
-      <parent>wristz</parent>
-      <axis>
-        <xyz>0.173637 -0.00200338 -0.984808</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>0.345</upper>
-          <effort>10000</effort>
-          <velocity>0.5</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.8</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <provide_feedback>1</provide_feedback>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-          <cfm_damping>1</cfm_damping>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
-    </joint>
-
-    <joint name='pinky1' type='revolute'>
-      <child>pinky1</child>
-      <parent>pinky0</parent>
-      <axis>
-        <xyz>0.984742 -0.0113618 0.173648</xyz>
-        <limit>
-          <lower>-0.785</lower>
-          <upper>1.57</upper>
-          <effort>10000</effort>
-          <velocity>0.5</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.8</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <provide_feedback>1</provide_feedback>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-          <cfm_damping>1</cfm_damping>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
-    </joint>
-
-    <joint name='pinky2' type='revolute'>
-      <child>pinky2</child>
-      <parent>pinky1</parent>
-      <axis>
-        <xyz>0.984742 -0.0113618 0.173648</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>1.72</upper>
-          <effort>10000</effort>
-          <velocity>0.5</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.8</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <provide_feedback>1</provide_feedback>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-          <cfm_damping>1</cfm_damping>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
-    </joint>
-
-    <joint name='pinky3' type='revolute'>
-      <child>pinky3</child>
-      <parent>pinky2</parent>
-      <axis>
-        <xyz>0.984742 -0.0113618 0.173648</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>1.38</upper>
-          <effort>10000</effort>
-          <velocity>0.5</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.8</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <provide_feedback>1</provide_feedback>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-          <cfm_damping>1</cfm_damping>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
-    </joint>
-
-
-    <joint name='ring0' type='revolute'>
-      <child>ring0</child>
-      <parent>wristz</parent>
-      <axis>
-        <xyz>0.173637 -0.00200338 -0.984808</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>0.345</upper>
-          <effort>10000</effort>
-          <velocity>0.5</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.8</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <provide_feedback>1</provide_feedback>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-          <cfm_damping>1</cfm_damping>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
-    </joint>
-
-    <joint name='ring1' type='revolute'>
-      <child>ring1</child>
-      <parent>ring0</parent>
-      <axis>
-        <xyz>0.984742 -0.0113618 0.173648</xyz>
-        <limit>
-          <lower>-0.785</lower>
-          <upper>1.57</upper>
-          <effort>10000</effort>
-          <velocity>0.5</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.8</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <provide_feedback>1</provide_feedback>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-          <cfm_damping>1</cfm_damping>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
-    </joint>
-
-    <joint name='ring2' type='revolute'>
-      <child>ring2</child>
-      <parent>ring1</parent>
-      <axis>
-        <xyz>0.984742 -0.0113618 0.173648</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>1.72</upper>
-          <effort>10000</effort>
-          <velocity>0.5</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.8</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <provide_feedback>1</provide_feedback>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-          <cfm_damping>1</cfm_damping>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
-    </joint>
-
-    <joint name='ring3' type='revolute'>
-      <child>ring3</child>
-      <parent>ring2</parent>
-      <axis>
-        <xyz>0.984742 -0.0113618 0.173648</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>1.38</upper>
-          <effort>10000</effort>
-          <velocity>0.5</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.8</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <provide_feedback>1</provide_feedback>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-          <cfm_damping>1</cfm_damping>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
-    </joint>
-
-    <joint name='thumb0' type='revolute'>
-      <child>thumb0</child>
-      <parent>wristz</parent>
-      <axis>
-        <xyz>0.269769 0.958967 0.0872241</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>2.07</upper>
-          <effort>10000</effort>
-          <velocity>0.5</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.8</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <provide_feedback>1</provide_feedback>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-          <cfm_damping>1</cfm_damping>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
-    </joint>
-
-    <joint name='thumb1' type='revolute'>
-      <child>thumb1</child>
-      <parent>thumb0</parent>
-      <axis>
-        <xyz>0.0531549 0.0756139 -0.995719</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>1.03</upper>
-          <effort>10000</effort>
-          <velocity>0.5</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.8</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <provide_feedback>1</provide_feedback>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-          <cfm_damping>1</cfm_damping>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
-    </joint>
-
-    <joint name='thumb2' type='revolute'>
-      <child>thumb2</child>
-      <parent>thumb1</parent>
-      <axis>
-        <xyz>0.0531549 0.0756139 -0.995719</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>1.03</upper>
-          <effort>10000</effort>
-          <velocity>0.5</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.8</damping>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-      <physics>
-        <provide_feedback>1</provide_feedback>
-        <ode>
-          <implicit_spring_damper>1</implicit_spring_damper>
-          <cfm_damping>1</cfm_damping>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
-    </joint>
-
     <joint name='thumb3' type='revolute'>
       <child>thumb3</child>
       <parent>thumb2</parent>
@@ -2360,10 +2740,13 @@
           <lower>-0.819</lower>
           <upper>1.28</upper>
           <effort>10000</effort>
-          <velocity>0.5</velocity>
+          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <damping>0.8</damping>
+          <damping>0.125</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -2378,8 +2761,6 @@
           </limit>
         </ode>
       </physics>
-
     </joint>
-
   </model>
 </sdf>
