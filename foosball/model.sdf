@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <sdf version='1.5'>
   <model name='Foosball'>
-    <link name='link_0'>
+    <link name='table'>
       <pose>0 0 0 0 -0 0</pose>
       <inertial>
         <mass>1</mass>
@@ -17,7 +17,7 @@
       </inertial>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
-      <visual name='ModelPreview_3::link_0::visual_3'>
+      <visual name='sizeB'>
         <pose>0 0.36195 0.2532 0 -0 0</pose>
         <geometry>
           <box>
@@ -41,7 +41,7 @@
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
-      <visual name='goal_B'>
+      <visual name='goalB'>
         <pose>-0.5969 0 0.2532 3.1415 1.57 -8.5094e-18</pose>
         <geometry>
           <polyline>
@@ -51,8 +51,8 @@
             <point>-0.2032 0.381001</point>
             <point>0.2032 0.381001</point>
             <point>0.2032 0.1016</point>
-            <point>-0.0254001 0.1016</point>
-            <point>-0.0254001 -0.1016</point>
+            <point>-0.1 0.1016</point>
+            <point>-0.1 -0.1016</point>
             <point>0.2032 -0.1016</point>
           </polyline>
         </geometry>
@@ -65,15 +65,15 @@
           <shader type='pixel'>
             <normal_map>__default__</normal_map>
           </shader>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0 0 1</emissive>
+          <ambient>1 1 0.3 1</ambient>
+          <diffuse>1 1 0.7 1</diffuse>
+          <specular>1 1 0.01 1</specular>
+          <emissive>1 1 0 1</emissive>
         </material>
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
-      <visual name='goal_A'>
+      <visual name='goalA'>
         <pose>0.5969 0 0.2532 0 1.57 0</pose>
         <geometry>
           <polyline>
@@ -83,8 +83,8 @@
             <point>-0.2032 0.381001</point>
             <point>0.2032 0.381001</point>
             <point>0.2032 0.1016</point>
-            <point>-0.0254001 0.1016</point>
-            <point>-0.0254001 -0.1016</point>
+            <point>-0.1 0.1016</point>
+            <point>-0.1 -0.1016</point>
             <point>0.2032 -0.1016</point>
           </polyline>
         </geometry>
@@ -97,15 +97,15 @@
           <shader type='pixel'>
             <normal_map>__default__</normal_map>
           </shader>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0 0 1</emissive>
+          <ambient>0.3 1 0.3 1</ambient>
+          <diffuse>0.7 1 0.7 1</diffuse>
+          <specular>0.01 1 0.01 1</specular>
+          <emissive>0 1 0 1</emissive>
         </material>
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
-      <visual name='ModelPreview_12::link_0::visual_5'>
+      <visual name='ground'>
         <pose>0 0 0.15 0 -0 0</pose>
         <geometry>
           <box>
@@ -124,12 +124,20 @@
           <ambient>0.3 0.3 0.3 1</ambient>
           <diffuse>0.7 0.7 0.7 1</diffuse>
           <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0 0 1</emissive>
+          <emissive>0 0.1 0 1</emissive>
         </material>
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
-      <visual name='visual'>
+      <collision name='ground'>
+        <pose>0 0 0.15 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>1.1938 0.6858 0.2</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='base'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
@@ -153,7 +161,7 @@
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
-      <visual name='ModelPreview_4::link_0::visual_4'>
+      <visual name='sideA'>
         <pose>0 -0.36195 0.2532 0 -0 0</pose>
         <geometry>
           <box>
@@ -224,7 +232,12 @@
         </surface>
       </collision>
     </link>
-    <link name='link_0_0'>
+    <link name='shaftB0_bridge'>
+      <pose>-0.522287 0 0.355381 1.57 -0 0</pose>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+    </link>    
+    <link name='shaftB0'>
       <pose>-0.522287 0 0.355381 1.57 -0 0</pose>
       <inertial>
         <mass>1</mass>
@@ -279,20 +292,51 @@
           <shader type='pixel'>
             <normal_map>__default__</normal_map>
           </shader>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0 0 1</emissive>
+          <ambient>1 1 0.3 1</ambient>
+          <diffuse>1 1 0.7 1</diffuse>
+          <specular>1 1 0.01 1</specular>
+          <emissive>1 1 0 1</emissive>
         </material>
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
+      <collision name='player'>
+        <pose>0 0 0 1.57 -0 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
       <visual name='visual'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
             <radius>0.00779907</radius>
-            <length>1</length>
+            <length>1.2</length>
           </cylinder>
         </geometry>
         <material>
@@ -319,7 +363,7 @@
         <geometry>
           <cylinder>
             <radius>0.007799</radius>
-            <length>1</length>
+            <length>1.2</length>
           </cylinder>
         </geometry>
         <surface>
@@ -360,7 +404,12 @@
         </surface>
       </collision>
     </link>
-    <link name='link_0_0_clone'>
+    <link name='shaftA3_bridge'>
+      <pose>-0.223837 0 0.355381 1.57 -0 0</pose>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+    </link>  
+    <link name='shaftA3'>
       <pose>-0.223837 0 0.355381 1.57 -0 0</pose>
       <inertial>
         <mass>1</mass>
@@ -423,6 +472,37 @@
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
+      <collision name='player_2'>
+        <pose>0 0 0.15 1.57 -0 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
       <visual name='player'>
         <pose>0 0 0 1.57 -0 0</pose>
         <geometry>
@@ -470,6 +550,37 @@
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
+      <collision name='player'>
+        <pose>0 0 0 1.57 -0 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
       <visual name='player_3'>
         <pose>0 0 -0.15 1.57 -0 0</pose>
         <geometry>
@@ -517,12 +628,43 @@
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
-      <visual name='ModelPreview_5::link_0_0_clone::visual_0'>
+      <collision name='player_3'>
+        <pose>0 0 -0.15 1.57 -0 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
+      <visual name='ModelPreview_5::shaftA3::visual_0'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
             <radius>0.00779907</radius>
-            <length>1</length>
+            <length>1.2</length>
           </cylinder>
         </geometry>
         <material>
@@ -549,7 +691,7 @@
         <geometry>
           <cylinder>
             <radius>0.007799</radius>
-            <length>1</length>
+            <length>1.2</length>
           </cylinder>
         </geometry>
         <surface>
@@ -590,7 +732,12 @@
         </surface>
       </collision>
     </link>
-    <link name='link_0_0_clone_0'>
+    <link name='shaftA2_bridge'>
+      <pose>-0.223837 0 0.355381 1.57 -0 0</pose>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+    </link>  
+    <link name='shaftA2'>
       <pose>0.074612 0 0.355381 1.57 -0 0</pose>
       <inertial>
         <mass>1</mass>
@@ -653,6 +800,37 @@
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
+      <collision name='player_2'>
+        <pose>0 0 0.13 1.57 -0 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
       <visual name='player_4'>
         <pose>0 0 0.26 1.57 -0 0</pose>
         <geometry>
@@ -700,6 +878,37 @@
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
+      <collision name='player_4'>
+        <pose>0 0 0.26 1.57 -0 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
       <visual name='player_5'>
         <pose>0 0 -0.26 1.57 -0 0</pose>
         <geometry>
@@ -747,12 +956,43 @@
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
-      <visual name='ModelPreview_5::link_0_0_clone_0::visual_0'>
+      <collision name='player_5'>
+        <pose>0 0 -0.26 1.57 -0 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
+      <visual name='ModelPreview_5::shaftA2::visual_0'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
             <radius>0.00779907</radius>
-            <length>1</length>
+            <length>1.2</length>
           </cylinder>
         </geometry>
         <material>
@@ -819,6 +1059,37 @@
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
+      <collision name='player_3'>
+        <pose>0 0 -0.13 1.57 -0 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
       <visual name='player'>
         <pose>0 0 0 1.57 -0 0</pose>
         <geometry>
@@ -866,6 +1137,37 @@
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
+      <collision name='player'>
+        <pose>0 0 0 1.57 -0 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
@@ -873,7 +1175,7 @@
         <geometry>
           <cylinder>
             <radius>0.007799</radius>
-            <length>1</length>
+            <length>1.2</length>
           </cylinder>
         </geometry>
         <surface>
@@ -914,7 +1216,12 @@
         </surface>
       </collision>
     </link>
-    <link name='link_0_0_clone_1'>
+    <link name='shaftB3_bridge'>
+      <pose>-0.223837 0 0.355381 1.57 -0 0</pose>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+    </link> 
+    <link name='shaftB3'>
       <pose>0.223837 0 0.355381 1.57 -0 0</pose>
       <inertial>
         <mass>1</mass>
@@ -969,20 +1276,51 @@
           <shader type='pixel'>
             <normal_map>__default__</normal_map>
           </shader>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0 0 1</emissive>
+          <ambient>1 1 0.3 1</ambient>
+          <diffuse>1 1 0.7 1</diffuse>
+          <specular>1 1 0.01 1</specular>
+          <emissive>1 1 0 1</emissive>
         </material>
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
-      <visual name='ModelPreview_5::link_0_0_clone_1::visual_0'>
+      <collision name='player_3'>
+        <pose>0 0 -0.15 1.57 -0 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
+      <visual name='ModelPreview_5::shaftB3::visual_0'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
             <radius>0.00779907</radius>
-            <length>1</length>
+            <length>1.2</length>
           </cylinder>
         </geometry>
         <material>
@@ -1041,14 +1379,45 @@
           <shader type='pixel'>
             <normal_map>__default__</normal_map>
           </shader>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0 0 1</emissive>
+          <ambient>1 1 0.3 1</ambient>
+          <diffuse>1 1 0.7 1</diffuse>
+          <specular>1 1 0.01 1</specular>
+          <emissive>1 1 0 1</emissive>
         </material>
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
+      <collision name='player'>
+        <pose>0 0 0 1.57 -0 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
       <visual name='player_2'>
         <pose>0 0 0.15 1.57 -0 0</pose>
         <geometry>
@@ -1088,14 +1457,45 @@
           <shader type='pixel'>
             <normal_map>__default__</normal_map>
           </shader>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0 0 1</emissive>
+          <ambient>1 1 0.3 1</ambient>
+          <diffuse>1 1 0.7 1</diffuse>
+          <specular>1 1 0.01 1</specular>
+          <emissive>1 1 0 1</emissive>
         </material>
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
+      <collision name='player_2'>
+        <pose>0 0 0.15 1.57 -0 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
@@ -1103,7 +1503,7 @@
         <geometry>
           <cylinder>
             <radius>0.007799</radius>
-            <length>1</length>
+            <length>1.2</length>
           </cylinder>
         </geometry>
         <surface>
@@ -1144,7 +1544,12 @@
         </surface>
       </collision>
     </link>
-    <link name='link_0_0_clone_2'>
+    <link name='shaftA1_bridge'>
+      <pose>-0.223837 0 0.355381 1.57 -0 0</pose>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+    </link> 
+    <link name='shaftA1'>
       <pose>0.373062 0 0.355381 1.57 -0 0</pose>
       <inertial>
         <mass>1</mass>
@@ -1160,12 +1565,12 @@
       </inertial>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
-      <visual name='ModelPreview_5::link_0_0_clone_2::visual_0'>
+      <visual name='ModelPreview_5::shaftA1::visual_0'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
             <radius>0.00779907</radius>
-            <length>1</length>
+            <length>1.2</length>
           </cylinder>
         </geometry>
         <material>
@@ -1232,6 +1637,37 @@
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
+      <collision name='player'>
+        <pose>0 0 -0.1 1.57 -0 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
       <visual name='player_2'>
         <pose>0 0 0.1 1.57 -0 0</pose>
         <geometry>
@@ -1279,6 +1715,37 @@
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
+      <collision name='player_2'>
+        <pose>0 0 0.1 1.57 -0 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
@@ -1286,7 +1753,7 @@
         <geometry>
           <cylinder>
             <radius>0.007799</radius>
-            <length>1</length>
+            <length>1.2</length>
           </cylinder>
         </geometry>
         <surface>
@@ -1327,7 +1794,12 @@
         </surface>
       </collision>
     </link>
-    <link name='link_0_0_clone_3'>
+    <link name='shaftA0_bridge'>
+      <pose>-0.223837 0 0.355381 1.57 -0 0</pose>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+    </link> 
+    <link name='shaftA0'>
       <pose>0.522287 0 0.355381 1.57 -0 0</pose>
       <inertial>
         <mass>1</mass>
@@ -1343,12 +1815,12 @@
       </inertial>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
-      <visual name='ModelPreview_5::link_0_0_clone_3::visual_0'>
+      <visual name='ModelPreview_5::shaftA0::visual_0'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
             <radius>0.00779907</radius>
-            <length>1</length>
+            <length>1.2</length>
           </cylinder>
         </geometry>
         <material>
@@ -1415,6 +1887,37 @@
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
+      <collision name='player'>
+        <pose>0 0 0 1.57 -0 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
@@ -1422,7 +1925,7 @@
         <geometry>
           <cylinder>
             <radius>0.007799</radius>
-            <length>1</length>
+            <length>1.2</length>
           </cylinder>
         </geometry>
         <surface>
@@ -1463,7 +1966,12 @@
         </surface>
       </collision>
     </link>
-    <link name='link_0_0_clone_4'>
+    <link name='shaftB2_bridge'>
+      <pose>-0.223837 0 0.355381 1.57 -0 0</pose>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+    </link> 
+    <link name='shaftB2'>
       <pose>-0.074612 0 0.355381 1.57 -0 0</pose>
       <inertial>
         <mass>1</mass>
@@ -1479,12 +1987,12 @@
       </inertial>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
-      <visual name='ModelPreview_5::link_0_0_clone_4::visual_0'>
+      <visual name='ModelPreview_5::shaftB2::visual_0'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
             <radius>0.00779907</radius>
-            <length>1</length>
+            <length>1.2</length>
           </cylinder>
         </geometry>
         <material>
@@ -1543,14 +2051,45 @@
           <shader type='pixel'>
             <normal_map>__default__</normal_map>
           </shader>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0 0 1</emissive>
+          <ambient>1 1 0.3 1</ambient>
+          <diffuse>1 1 0.7 1</diffuse>
+          <specular>1 1 0.01 1</specular>
+          <emissive>1 1 0 1</emissive>
         </material>
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
+      <collision name='player'>
+        <pose>0 0 0 1.57 -0 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
       <visual name='player_2'>
         <pose>0 0 0.13 1.57 -0 0</pose>
         <geometry>
@@ -1590,14 +2129,45 @@
           <shader type='pixel'>
             <normal_map>__default__</normal_map>
           </shader>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0 0 1</emissive>
+          <ambient>1 1 0.3 1</ambient>
+          <diffuse>1 1 0.7 1</diffuse>
+          <specular>1 1 0.01 1</specular>
+          <emissive>1 1 0 1</emissive>
         </material>
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
+      <collision name='player_2'>
+        <pose>0 0 0.13 1.57 -0 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
       <visual name='player_3'>
         <pose>0 0 -0.13 1.57 -0 0</pose>
         <geometry>
@@ -1637,14 +2207,45 @@
           <shader type='pixel'>
             <normal_map>__default__</normal_map>
           </shader>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0 0 1</emissive>
+          <ambient>1 1 0.3 1</ambient>
+          <diffuse>1 1 0.7 1</diffuse>
+          <specular>1 1 0.01 1</specular>
+          <emissive>1 1 0 1</emissive>
         </material>
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
+      <collision name='player_3'>
+        <pose>0 0 -0.13 1.57 -0 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
       <visual name='player_4'>
         <pose>0 0 0.26 1.57 -0 0</pose>
         <geometry>
@@ -1684,14 +2285,45 @@
           <shader type='pixel'>
             <normal_map>__default__</normal_map>
           </shader>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0 0 1</emissive>
+          <ambient>1 1 0.3 1</ambient>
+          <diffuse>1 1 0.7 1</diffuse>
+          <specular>1 1 0.01 1</specular>
+          <emissive>1 1 0 1</emissive>
         </material>
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
+      <collision name='player_4'>
+        <pose>0 0 0.26 1.57 -0 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
       <visual name='player_5'>
         <pose>0 0 -0.26 1.57 -0 0</pose>
         <geometry>
@@ -1731,14 +2363,45 @@
           <shader type='pixel'>
             <normal_map>__default__</normal_map>
           </shader>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0 0 1</emissive>
+          <ambient>1 1 0.3 1</ambient>
+          <diffuse>1 1 0.7 1</diffuse>
+          <specular>1 1 0.01 1</specular>
+          <emissive>1 1 0 1</emissive>
         </material>
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
+      <collision name='player_5'>
+        <pose>0 0 -0.26 1.57 -0 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
@@ -1746,7 +2409,7 @@
         <geometry>
           <cylinder>
             <radius>0.007799</radius>
-            <length>1</length>
+            <length>1.2</length>
           </cylinder>
         </geometry>
         <surface>
@@ -1787,7 +2450,12 @@
         </surface>
       </collision>
     </link>
-    <link name='link_0_0_clone_5'>
+    <link name='shaftB1_bridge'>
+      <pose>-0.223837 0 0.355381 1.57 -0 0</pose>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+    </link> 
+    <link name='shaftB1'>
       <pose>-0.40331 0 0.355381 1.57 -0 0</pose>
       <inertial>
         <mass>1</mass>
@@ -1803,12 +2471,12 @@
       </inertial>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
-      <visual name='ModelPreview_5::link_0_0_clone_5::visual_0'>
+      <visual name='ModelPreview_5::shaftB1::visual_0'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
             <radius>0.00779907</radius>
-            <length>1</length>
+            <length>1.2</length>
           </cylinder>
         </geometry>
         <material>
@@ -1867,14 +2535,45 @@
           <shader type='pixel'>
             <normal_map>__default__</normal_map>
           </shader>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0 0 1</emissive>
+          <ambient>1 1 0.3 1</ambient>
+          <diffuse>1 1 0.7 1</diffuse>
+          <specular>1 1 0.01 1</specular>
+          <emissive>1 1 0 1</emissive>
         </material>
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
+      <collision name='player'>
+        <pose>0 0 -0.1 1.57 -0 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
       <visual name='player_2'>
         <pose>0 0 0.1 1.57 -0 0</pose>
         <geometry>
@@ -1914,14 +2613,45 @@
           <shader type='pixel'>
             <normal_map>__default__</normal_map>
           </shader>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0 0 1</emissive>
+          <ambient>1 1 0.3 1</ambient>
+          <diffuse>1 1 0.7 1</diffuse>
+          <specular>1 1 0.01 1</specular>
+          <emissive>1 1 0 1</emissive>
         </material>
         <cast_shadows>1</cast_shadows>
         <transparency>0</transparency>
       </visual>
+      <collision name='player_2'>
+        <pose>0 0 0.1 1.57 -0 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
@@ -1929,7 +2659,7 @@
         <geometry>
           <cylinder>
             <radius>0.007799</radius>
-            <length>1</length>
+            <length>1.2</length>
           </cylinder>
         </geometry>
         <surface>
@@ -1970,15 +2700,27 @@
         </surface>
       </collision>
     </link>
+    <joint name='table_world' type='prismatic'>
+      <parent>world</parent>
+      <child>table</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.1</upper>
+        </limit>
+      </axis>
+      <pose>0 0 0 0 -0 0</pose>
+    </joint>
     <joint name='transA0' type='prismatic'>
-      <parent>link_0</parent>
-      <child>link_0_0_clone_3</child>
+      <parent>world</parent>
+      <child>shaftA0_bridge</child>
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
         <limit>
-          <lower>-0.2</lower>
-          <upper>0.2</upper>
+          <lower>-0.09</lower>
+          <upper>0.09</upper>
           <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
@@ -1990,9 +2732,9 @@
       </axis>
       <pose>0 0 0 0 -0 0</pose>
     </joint>
-    <joint name='link_0_JOINT_0' type='revolute'>
-      <parent>link_0</parent>
-      <child>link_0_0_clone_3</child>
+    <joint name='rotA0' type='revolute'>
+      <parent>shaftA0_bridge</parent>
+      <child>shaftA0</child>
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -2010,7 +2752,287 @@
       </axis>
       <pose>0 0 0 0 -0 0</pose>
     </joint>
-    <static>1</static>
+    <joint name='transB0' type='prismatic'>
+      <parent>world</parent>
+      <child>shaftB0_bridge</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-0.09</lower>
+          <upper>0.09</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+      </axis>
+      <pose>0 0 0 0 -0 0</pose>
+    </joint>
+    <joint name='rotB0' type='revolute'>
+      <parent>shaftB0_bridge</parent>
+      <child>shaftB0</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+      </axis>
+      <pose>0 0 0 0 -0 0</pose>
+    </joint>
+    <joint name='transA1' type='prismatic'>
+      <parent>world</parent>
+      <child>shaftA1_bridge</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-0.23</lower>
+          <upper>0.23</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+      </axis>
+      <pose>0 0 0 0 -0 0</pose>
+    </joint>
+    <joint name='rotA1' type='revolute'>
+      <parent>shaftA1_bridge</parent>
+      <child>shaftA1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+      </axis>
+      <pose>0 0 0 0 -0 0</pose>
+    </joint>
+    <joint name='transB1' type='prismatic'>
+      <parent>world</parent>
+      <child>shaftB1_bridge</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-0.23</lower>
+          <upper>0.23</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+      </axis>
+      <pose>0 0 0 0 -0 0</pose>
+    </joint>
+    <joint name='rotB1' type='revolute'>
+      <parent>shaftB1_bridge</parent>
+      <child>shaftB1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+      </axis>
+      <pose>0 0 0 0 -0 0</pose>
+    </joint>
+    <joint name='transA2' type='prismatic'>
+      <parent>world</parent>
+      <child>shaftA2_bridge</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-0.07</lower>
+          <upper>0.07</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+      </axis>
+      <pose>0 0 0 0 -0 0</pose>
+    </joint>
+    <joint name='rotA2' type='revolute'>
+      <parent>shaftA2_bridge</parent>
+      <child>shaftA2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+      </axis>
+      <pose>0 0 0 0 -0 0</pose>
+    </joint>
+    <joint name='transB2' type='prismatic'>
+      <parent>world</parent>
+      <child>shaftB2_bridge</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-0.07</lower>
+          <upper>0.07</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+      </axis>
+      <pose>0 0 0 0 -0 0</pose>
+    </joint>
+    <joint name='rotB2' type='revolute'>
+      <parent>shaftB2_bridge</parent>
+      <child>shaftB2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+      </axis>
+      <pose>0 0 0 0 -0 0</pose>
+    </joint>
+    <joint name='transA3' type='prismatic'>
+      <parent>world</parent>
+      <child>shaftA3_bridge</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-0.18</lower>
+          <upper>0.18</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+      </axis>
+      <pose>0 0 0 0 -0 0</pose>
+    </joint>
+    <joint name='rotA3' type='revolute'>
+      <parent>shaftA3_bridge</parent>
+      <child>shaftA3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+      </axis>
+      <pose>0 0 0 0 -0 0</pose>
+    </joint>
+    <joint name='transB3' type='prismatic'>
+      <parent>world</parent>
+      <child>shaftB3_bridge</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-0.18</lower>
+          <upper>0.18</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+      </axis>
+      <pose>0 0 0 0 -0 0</pose>
+    </joint>
+    <joint name='rotB3' type='revolute'>
+      <parent>shaftB3_bridge</parent>
+      <child>shaftB3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+      </axis>
+      <pose>0 0 0 0 -0 0</pose>
+    </joint>
+    <static>0</static>
     <allow_auto_disable>1</allow_auto_disable>
   </model>
 </sdf>
