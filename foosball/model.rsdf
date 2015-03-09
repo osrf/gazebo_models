@@ -1,0 +1,593 @@
+<?xml version='1.0'?>
+<%
+  field_length = 1.1938 
+  field_width = 0.6858
+  field_height = 0.4064
+
+  ground_height = 0.2
+  base_height = 0.1
+
+  goal_width = 0.2
+  goal_height = 0.1
+  goal_thickness = 0.114
+  goals = {
+    "A" => {:posX => +1, :rotX => 0},
+    "B" => {:posX => -1, :rotX => Math::PI}
+  }
+
+  side_thickness = 0.0381 
+  sides = {
+    "A" => {:posX => -1},
+    "B" => {:posX => +1}
+  }
+
+  shaft_height = 0.355381
+  rod_length = 1.2
+  rod_radius = 0.00779907
+
+  shaft0_dist = 0.522287
+  shaft1_dist = 0.373062
+  shaft2_dist = 0.074612
+  shaft3_dist = 0.223837
+
+  shaft0_limit = 0.09
+  shaft1_limit = 0.23
+  shaft2_limit = 0.07
+  shaft3_limit = 0.18
+
+  player_height = 0.1
+
+  colors = {
+    "A" => {:R => 0, :G => 1, :B => 0},
+    "B" => {:R => 1, :G => 1, :B => 0}
+  }
+
+  shafts = {
+    "A" => {"0" => {:posX => +shaft0_dist, :limitY => shaft0_limit, :center => true,  :side => false, :mid => false, :sidePosY => 0,    :midPosY => 0},
+            "1" => {:posX => +shaft1_dist, :limitY => shaft1_limit, :center => false, :side => true,  :mid => false, :sidePosY => 0.1,  :midPosY => 0},
+            "2" => {:posX => +shaft2_dist, :limitY => shaft2_limit, :center => true,  :side => true,  :mid => true,  :sidePosY => 0.13, :midPosY => 0.26},
+            "3" => {:posX => +shaft3_dist, :limitY => shaft3_limit, :center => true,  :side => true,  :mid => false, :sidePosY => 0.15, :midPosY => 0}
+    },
+    "B" => {"0" => {:posX => -shaft0_dist, :limitY => shaft0_limit, :center => true,  :side => false, :mid => false, :sidePosY => 0,    :midPosY => 0}, 
+            "1" => {:posX => -shaft1_dist, :limitY => shaft1_limit, :center => false, :side => true,  :mid => false, :sidePosY => 0.1,  :midPosY => 0},
+            "2" => {:posX => -shaft2_dist, :limitY => shaft2_limit, :center => true,  :side => true,  :mid => true,  :sidePosY => 0.13, :midPosY => 0.26},
+            "3" => {:posX => -shaft3_dist, :limitY => shaft3_limit, :center => true,  :side => true,  :mid => false, :sidePosY => 0.15, :midPosY => 0}
+    },
+  }
+%>
+<sdf version='1.5'>
+  <model name='Foosball'>
+    <link name='table'>
+      <pose>0 0 0 0 -0 0</pose>
+
+      <visual name='base'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size><%= field_length + goal_thickness * 2 %> <%= field_width + side_thickness * 2 %> <%= base_height %></size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+
+      <%
+        sides.keys.each do |k|
+          posX = sides[k][:posX]
+      %>
+        <%= '<visual name=' + '"side' + k + '">' %>
+          <pose>0 <%= posX * (field_width + side_thickness)/2 %> <%= (field_height + base_height)/2 %> 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size><%= field_length %> <%= side_thickness %> <%= field_height %></size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <%= '<collision name=' + '"side' + k + '">' %>
+          <pose>0 <%= posX * (field_width + side_thickness)/2 %> <%= (field_height + base_height)/2 %> 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size><%= field_length %> <%= side_thickness %> <%= field_height %></size>
+            </box>
+          </geometry>
+        </collision>
+      <% end %>
+
+      <%
+        goals.keys.each do |k|
+          posX = goals[k][:posX]
+          rotX = goals[k][:rotX]
+      %>
+        <%= '<visual name=' + '"goal' + k + '">' %>
+          <pose><%= posX * field_length/2 %> 0 <%= (field_height + base_height)/2 %> <%= rotX %> <%= Math::PI/2.0 %> 0</pose>
+          <geometry>
+            <polyline>
+              <height><%= goal_thickness %></height>
+              <point><%= field_height/2.0 %> <%= -(field_width + 2*side_thickness)/2.0 %></point>
+              <point><%= -field_height/2.0 %> <%= -(field_width + 2*side_thickness)/2.0 %></point>
+              <point><%= -field_height/2.0 %> <%= (field_width + 2*side_thickness)/2.0 %></point>
+              <point><%= field_height/2.0 %> <%= (field_width + 2*side_thickness)/2.0 %></point>
+              <point><%= field_height/2.0 %> <%= goal_width/2.0 %></point>
+              <point><%= -goal_height %> <%= goal_width/2.0 %></point>
+              <point><%= -goal_height %> <%= -goal_width/2.0 %></point>
+              <point><%= field_height/2.0 %> <%= -goal_width/2.0 %></point>
+            </polyline>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual> 
+        <%= '<collision name=' + '"goal' + k + '">' %>
+          <pose><%= posX * field_length/2 %> 0 <%= (field_height + base_height)/2 %> <%= rotX %> <%= Math::PI/2.0 %> 0</pose>
+          <geometry>
+            <polyline>
+              <height><%= goal_thickness %></height>
+              <point><%= field_height/2.0 %> <%= -(field_width + 2*side_thickness)/2.0 %></point>
+              <point><%= -field_height/2.0 %> <%= -(field_width + 2*side_thickness)/2.0 %></point>
+              <point><%= -field_height/2.0 %> <%= (field_width + 2*side_thickness)/2.0 %></point>
+              <point><%= field_height/2.0 %> <%= (field_width + 2*side_thickness)/2.0 %></point>
+              <point><%= field_height/2.0 %> <%= goal_width/2.0 %></point>
+              <point><%= -goal_height %> <%= goal_width/2.0 %></point>
+              <point><%= -goal_height %> <%= -goal_width/2.0 %></point>
+              <point><%= field_height/2.0 %> <%= -goal_width/2.0 %></point>
+            </polyline>
+          </geometry>
+        </collision>
+      <% end %>
+
+      <visual name='ground'>
+        <pose>0 0 <%= (ground_height + base_height)/2 %> 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size><%= field_length %> <%= field_width %> <%= ground_height %></size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.7 0.7 0.7 1</diffuse>
+          <specular>0.01 0.01 0.01 1</specular>
+          <emissive>0 0.1 0 1</emissive>
+        </material>
+      </visual>
+      <collision name='ground'>
+        <pose>0 0 <%= (ground_height + base_height)/2 %> 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size><%= field_length %> <%= field_width %> <%= ground_height %></size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name='table_world' type='prismatic'>
+      <parent>world</parent>
+      <child>table</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.1</upper>
+        </limit>
+      </axis>
+      <pose>0 0 0 0 -0 0</pose>
+    </joint>
+
+    <%
+      shafts.keys.each do |k|
+        colorR = colors[k][:R]
+        colorG = colors[k][:G]
+        colorB = colors[k][:B]
+        shafts[k].keys.each do |j|
+          posX = shafts[k][j][:posX]
+          limitY = shafts[k][j][:limitY]
+          center = shafts[k][j][:center]
+          mid = shafts[k][j][:mid]
+          side = shafts[k][j][:side]
+          sidePosY = shafts[k][j][:sidePosY]
+          midPosY = shafts[k][j][:midPosY]
+    %>
+      <%= '<link name=' + '"shaft' + k + j + '_bridge">' %>
+        <pose><%= posX %> 0 <%= shaft_height %> <%= Math::PI/2.0 %> -0 0</pose>
+      </link>    
+      <%= '<link name=' + '"shaft' + k + j + '">' %>
+        <pose><%= posX %> 0 <%= shaft_height %> <%= Math::PI/2.0 %> -0 0</pose>
+        <visual name='rod'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius><%= rod_radius %></radius>
+              <length><%= rod_length %></length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='rod'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius><%= rod_radius %></radius>
+              <length><%= rod_length %></length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <% if center %>
+        <visual name='player_center'>
+          <pose>0 0 0 <%= Math::PI/2.0 %> -0 0</pose>
+          <geometry>
+            <polyline>
+              <height><%= player_height %></height>
+              <point>-0.00935486 -0.00548224</point>
+              <point>-0.00935486 0.00548224</point>
+              <point>-0.00887948 0.00844526</point>
+              <point>-0.00755453 0.011014</point>
+              <point>-0.00553179 0.0130368</point>
+              <point>-0.00296304 0.0143617</point>
+              <point>-3.95112e-08 0.0148371</point>
+              <point>0.002963 0.0143617</point>
+              <point>0.00553178 0.0130368</point>
+              <point>0.00755453 0.011014</point>
+              <point>0.00887948 0.00844526</point>
+              <point>0.00935486 0.00548224</point>
+              <point>0.00935486 -0.00548224</point>
+              <point>0.00887948 -0.00844525</point>
+              <point>0.00755453 -0.011014</point>
+              <point>0.00553178 -0.0130368</point>
+              <point>0.002963 -0.0143617</point>
+              <point>-3.95112e-08 -0.0148371</point>
+              <point>-0.00296304 -0.0143617</point>
+              <point>-0.00553179 -0.0130368</point>
+              <point>-0.00755453 -0.011014</point>
+              <point>-0.00887948 -0.00844525</point>
+              <point>-0.00935486 -0.00548224</point>
+            </polyline>
+          </geometry>
+          <material>
+            <emissive><%= colorR %> <%= colorG %> <%= colorB %> 1</emissive>
+          </material>
+        </visual>
+        <collision name='player_center'>
+          <pose>0 0 0 <%= Math::PI/2.0 %> -0 0</pose>
+          <geometry>
+            <polyline>
+              <height><%= player_height %></height>
+              <point>-0.00935486 -0.00548224</point>
+              <point>-0.00935486 0.00548224</point>
+              <point>-0.00887948 0.00844526</point>
+              <point>-0.00755453 0.011014</point>
+              <point>-0.00553179 0.0130368</point>
+              <point>-0.00296304 0.0143617</point>
+              <point>-3.95112e-08 0.0148371</point>
+              <point>0.002963 0.0143617</point>
+              <point>0.00553178 0.0130368</point>
+              <point>0.00755453 0.011014</point>
+              <point>0.00887948 0.00844526</point>
+              <point>0.00935486 0.00548224</point>
+              <point>0.00935486 -0.00548224</point>
+              <point>0.00887948 -0.00844525</point>
+              <point>0.00755453 -0.011014</point>
+              <point>0.00553178 -0.0130368</point>
+              <point>0.002963 -0.0143617</point>
+              <point>-3.95112e-08 -0.0148371</point>
+              <point>-0.00296304 -0.0143617</point>
+              <point>-0.00553179 -0.0130368</point>
+              <point>-0.00755453 -0.011014</point>
+              <point>-0.00887948 -0.00844525</point>
+              <point>-0.00935486 -0.00548224</point>
+            </polyline>
+          </geometry>
+        </collision>
+     <% end %>
+     <% if mid %> 
+       <visual name='player_mid_1'>
+        <pose>0 0 <%= midPosY %> <%= Math::PI/2.0 %> -0 0</pose>
+        <geometry>
+          <polyline>
+            <height><%= player_height %></height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+        <material>
+          <emissive><%= colorR %> <%= colorG %> <%= colorB %> 1</emissive>
+        </material>
+      </visual>
+      <collision name='player_mid_1'>
+        <pose>0 0 <%= midPosY %> <%= Math::PI/2.0 %> -0 0</pose>
+        <geometry>
+          <polyline>
+            <height><%= player_height %></height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
+      <visual name='player_mid_2'>
+        <pose>0 0 <%= -midPosY %> <%= Math::PI/2.0 %> -0 0</pose>
+        <geometry>
+          <polyline>
+            <height><%= player_height %></height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+        <material>
+          <emissive><%= colorR %> <%= colorG %> <%= colorB %> 1</emissive>
+        </material>
+      </visual>
+      <collision name='player_mid_2'>
+        <pose>0 0 <%= -midPosY %> <%= Math::PI/2.0 %> -0 0</pose>
+        <geometry>
+          <polyline>
+            <height><%= player_height %></height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
+     <% end %>
+     <% if side %> 
+       <visual name='player_side_1'>
+        <pose>0 0 <%= sidePosY %> <%= Math::PI/2.0 %> -0 0</pose>
+        <geometry>
+          <polyline>
+            <height><%= player_height %></height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+        <material>
+          <emissive><%= colorR %> <%= colorG %> <%= colorB %> 1</emissive>
+        </material>
+      </visual>
+      <collision name='player_side_1'>
+        <pose>0 0 <%= sidePosY %> <%= Math::PI/2.0 %> -0 0</pose>
+        <geometry>
+          <polyline>
+            <height><%= player_height %></height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
+      <visual name='player_side_2'>
+        <pose>0 0 <%= -sidePosY %> <%= Math::PI/2.0 %> -0 0</pose>
+        <geometry>
+          <polyline>
+            <height><%= player_height %></height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+        <material>
+          <emissive><%= colorR %> <%= colorG %> <%= colorB %> 1</emissive>
+        </material>
+      </visual>
+      <collision name='player_side_2'>
+        <pose>0 0 <%= -sidePosY %> <%= Math::PI/2.0 %> -0 0</pose>
+        <geometry>
+          <polyline>
+            <height><%= player_height %></height>
+            <point>-0.00935486 -0.00548224</point>
+            <point>-0.00935486 0.00548224</point>
+            <point>-0.00887948 0.00844526</point>
+            <point>-0.00755453 0.011014</point>
+            <point>-0.00553179 0.0130368</point>
+            <point>-0.00296304 0.0143617</point>
+            <point>-3.95112e-08 0.0148371</point>
+            <point>0.002963 0.0143617</point>
+            <point>0.00553178 0.0130368</point>
+            <point>0.00755453 0.011014</point>
+            <point>0.00887948 0.00844526</point>
+            <point>0.00935486 0.00548224</point>
+            <point>0.00935486 -0.00548224</point>
+            <point>0.00887948 -0.00844525</point>
+            <point>0.00755453 -0.011014</point>
+            <point>0.00553178 -0.0130368</point>
+            <point>0.002963 -0.0143617</point>
+            <point>-3.95112e-08 -0.0148371</point>
+            <point>-0.00296304 -0.0143617</point>
+            <point>-0.00553179 -0.0130368</point>
+            <point>-0.00755453 -0.011014</point>
+            <point>-0.00887948 -0.00844525</point>
+            <point>-0.00935486 -0.00548224</point>
+          </polyline>
+        </geometry>
+      </collision>
+      <% end %>
+      </link>
+    
+    <%= '<joint name=' + '"trans' + k + j + '" type="prismatic">' %>
+      <parent>world</parent>
+      <%= '<child>shaft' + k + j + '_bridge</child>' %>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower><%= -limitY %></lower>
+          <upper><%= limitY %></upper>
+        </limit>
+      </axis>
+      <pose>0 0 0 0 -0 0</pose>
+    </joint>
+    <%= '<joint name=' + '"rot' + k + j + '" type="revolute">' %>
+      <%= '<parent>shaft' + k + j + '_bridge</parent>' %>
+      <%= '<child>shaft' + k + j + '</child>' %>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+        </limit>
+      </axis>
+      <pose>0 0 0 0 -0 0</pose>
+    </joint>
+    <% end %> <% end %>
+
+    <static>0</static>
+  </model>
+</sdf>
