@@ -229,6 +229,7 @@
           </geometry>
         </collision>
         <% if center %>
+
         <visual name='player_center'>
           <pose>0 0 0 <%= -Math::PI/2.0 %> 0 0</pose>
           <geometry>
@@ -236,40 +237,11 @@
               <uri>model://foosball/meshes/player.stl</uri>
             </mesh>
           </geometry>
-
-<!--
-            <polyline>
-              <height><%= player_height %></height>
-              <point>-0.00935486 -0.00548224</point>
-              <point>-0.00935486 0.00548224</point>
-              <point>-0.00887948 0.00844526</point>
-              <point>-0.00755453 0.011014</point>
-              <point>-0.00553179 0.0130368</point>
-              <point>-0.00296304 0.0143617</point>
-              <point>-3.95112e-08 0.0148371</point>
-              <point>0.002963 0.0143617</point>
-              <point>0.00553178 0.0130368</point>
-              <point>0.00755453 0.011014</point>
-              <point>0.00887948 0.00844526</point>
-              <point>0.00935486 0.00548224</point>
-              <point>0.00935486 -0.00548224</point>
-              <point>0.00887948 -0.00844525</point>
-              <point>0.00755453 -0.011014</point>
-              <point>0.00553178 -0.0130368</point>
-              <point>0.002963 -0.0143617</point>
-              <point>-3.95112e-08 -0.0148371</point>
-              <point>-0.00296304 -0.0143617</point>
-              <point>-0.00553179 -0.0130368</point>
-              <point>-0.00755453 -0.011014</point>
-              <point>-0.00887948 -0.00844525</point>
-              <point>-0.00935486 -0.00548224</point>
-            </polyline>
-          </geometry>
--->
           <material>
             <emissive><%= colorR %> <%= colorG %> <%= colorB %> 1</emissive>
           </material>
         </visual>
+
         <collision name='player_center'>
           <pose>0 0 0 <%= Math::PI/2.0 %> -0 0</pose>
           <geometry>
@@ -302,41 +274,20 @@
           </geometry>
         </collision>
      <% end %>
-     <% if mid %> 
-       <visual name='player_mid_1'>
-        <pose>0 0 <%= midPosY %> <%= Math::PI/2.0 %> -0 0</pose>
-        <geometry>
-          <polyline>
-            <height><%= player_height %></height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
-        <material>
-          <emissive><%= colorR %> <%= colorG %> <%= colorB %> 1</emissive>
-        </material>
-      </visual>
+     <% if mid %>
+
+        <visual name='player_mid_1'>
+        <pose>0 0 <%= midPosY %> <%= -Math::PI/2.0 %> 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <emissive><%= colorR %> <%= colorG %> <%= colorB %> 1</emissive>
+          </material>
+        </visual>
+
       <collision name='player_mid_1'>
         <pose>0 0 <%= midPosY %> <%= Math::PI/2.0 %> -0 0</pose>
         <geometry>
@@ -368,41 +319,20 @@
           </polyline>
         </geometry>
       </collision>
-      <visual name='player_mid_2'>
-        <pose>0 0 <%= -midPosY %> <%= Math::PI/2.0 %> -0 0</pose>
-        <geometry>
-          <polyline>
-            <height><%= player_height %></height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
-        <material>
-          <emissive><%= colorR %> <%= colorG %> <%= colorB %> 1</emissive>
-        </material>
-      </visual>
-      <collision name='player_mid_2'>
+
+        <visual name='player_mid_2'>
+          <pose>0 0 <%= -midPosY %> <%= -Math::PI/2.0 %> 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <emissive><%= colorR %> <%= colorG %> <%= colorB %> 1</emissive>
+          </material>
+        </visual>
+
+       <collision name='player_mid_2'>
         <pose>0 0 <%= -midPosY %> <%= Math::PI/2.0 %> -0 0</pose>
         <geometry>
           <polyline>
@@ -434,41 +364,21 @@
         </geometry>
       </collision>
      <% end %>
-     <% if side %> 
-       <visual name='player_side_1'>
-        <pose>0 0 <%= sidePosY %> <%= Math::PI/2.0 %> -0 0</pose>
-        <geometry>
-          <polyline>
-            <height><%= player_height %></height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
-        <material>
-          <emissive><%= colorR %> <%= colorG %> <%= colorB %> 1</emissive>
-        </material>
-      </visual>
+     <% if side %>
+
+        <visual name='player_side_1'>
+          <pose>0 0 <%= sidePosY %> <%= -Math::PI/2.0 %> 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <emissive><%= colorR %> <%= colorG %> <%= colorB %> 1</emissive>
+          </material>
+        </visual>
+
+
       <collision name='player_side_1'>
         <pose>0 0 <%= sidePosY %> <%= Math::PI/2.0 %> -0 0</pose>
         <geometry>
@@ -500,40 +410,19 @@
           </polyline>
         </geometry>
       </collision>
-      <visual name='player_side_2'>
-        <pose>0 0 <%= -sidePosY %> <%= Math::PI/2.0 %> -0 0</pose>
-        <geometry>
-          <polyline>
-            <height><%= player_height %></height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
-        <material>
-          <emissive><%= colorR %> <%= colorG %> <%= colorB %> 1</emissive>
-        </material>
-      </visual>
+
+        <visual name='player_side_2'>
+          <pose>0 0 <%= -sidePosY %> <%= -Math::PI/2.0 %> 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <emissive><%= colorR %> <%= colorG %> <%= colorB %> 1</emissive>
+          </material>
+        </visual>
+
       <collision name='player_side_2'>
         <pose>0 0 <%= -sidePosY %> <%= Math::PI/2.0 %> -0 0</pose>
         <geometry>
