@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<%
+  # Toy block used for stacking
+  # SI units (length in meters)
+
+  # Geometry
+  dx = 0.081
+  dy = 0.027
+  dz = 0.018
+  z0 = dz / 2.0
+
+  # Assume soft wood with density of 500 kg / m^3
+  density = 500
+
+  # inertia
+  mass = density * dx * dy * dz
+  ixx  = mass/12.0 * (dy**2 + dz**2)
+  iyy  = mass/12.0 * (dz**2 + dx**2)
+  izz  = mass/12.0 * (dx**2 + dy**2)
+%>
+<sdf version="1.5">
+  <model name="wood_block_8_3_2cm">
+    <link name="block">
+      <pose>0 0 <%= z0 %>  0 0 0</pose>
+      <inertial>
+        <mass><%= mass %></mass>
+        <inertia>
+          <ixx><%= ixx %></ixx>
+          <iyy><%= iyy %></iyy>
+          <izz><%= izz %></izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size><%= dx %> <%= dy %> <%= dz %></size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
