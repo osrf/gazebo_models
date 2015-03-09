@@ -78,10 +78,10 @@
               <point>-0.2032 -0.381</point>
               <point>-0.2032 0.381</point>
               <point>0.2032 0.381</point>
-              <point>0.10319999999999999 0.1</point>
+              <point>0.2032 0.1</point>
               <point>-0.1 0.1</point>
               <point>-0.1 -0.1</point>
-              <point>0.10319999999999999 -0.1</point>
+              <point>0.2032 -0.1</point>
             </polyline>
           </geometry>
           <material>
@@ -117,10 +117,10 @@
               <point>-0.2032 -0.381</point>
               <point>-0.2032 0.381</point>
               <point>0.2032 0.381</point>
-              <point>0.10319999999999999 0.1</point>
+              <point>0.2032 0.1</point>
               <point>-0.1 0.1</point>
               <point>-0.1 -0.1</point>
-              <point>0.10319999999999999 -0.1</point>
+              <point>0.2032 -0.1</point>
             </polyline>
           </geometry>
           <material>
@@ -217,8 +217,14 @@
         </collision>
         
         <visual name='player_center'>
-          <pose>0 0 0 1.5707963267948966 -0 0</pose>
+          <pose>0 0 0 -1.5707963267948966 0 0</pose>
           <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.stl</uri>
+            </mesh>
+          </geometry>
+
+<!--
             <polyline>
               <height>0.1</height>
               <point>-0.00935486 -0.00548224</point>
@@ -246,6 +252,7 @@
               <point>-0.00935486 -0.00548224</point>
             </polyline>
           </geometry>
+-->
           <material>
             <emissive>0 1 0 1</emissive>
           </material>
@@ -534,8 +541,14 @@
         </collision>
         
         <visual name='player_center'>
-          <pose>0 0 0 1.5707963267948966 -0 0</pose>
+          <pose>0 0 0 -1.5707963267948966 0 0</pose>
           <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.stl</uri>
+            </mesh>
+          </geometry>
+
+<!--
             <polyline>
               <height>0.1</height>
               <point>-0.00935486 -0.00548224</point>
@@ -563,6 +576,7 @@
               <point>-0.00935486 -0.00548224</point>
             </polyline>
           </geometry>
+-->
           <material>
             <emissive>0 1 0 1</emissive>
           </material>
@@ -892,10 +906,10 @@
     </joint>
     
       <link name="shaftA3_bridge">
-        <pose>0.223837 0 0.355381 1.5707963267948966 -0 0</pose>
+        <pose>-0.223837 0 0.355381 1.5707963267948966 -0 0</pose>
       </link>    
       <link name="shaftA3">
-        <pose>0.223837 0 0.355381 1.5707963267948966 -0 0</pose>
+        <pose>-0.223837 0 0.355381 1.5707963267948966 -0 0</pose>
         <visual name='rod'>
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
@@ -922,8 +936,14 @@
         </collision>
         
         <visual name='player_center'>
-          <pose>0 0 0 1.5707963267948966 -0 0</pose>
+          <pose>0 0 0 -1.5707963267948966 0 0</pose>
           <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.stl</uri>
+            </mesh>
+          </geometry>
+
+<!--
             <polyline>
               <height>0.1</height>
               <point>-0.00935486 -0.00548224</point>
@@ -951,6 +971,7 @@
               <point>-0.00935486 -0.00548224</point>
             </polyline>
           </geometry>
+-->
           <material>
             <emissive>0 1 0 1</emissive>
           </material>
@@ -1179,8 +1200,14 @@
         </collision>
         
         <visual name='player_center'>
-          <pose>0 0 0 1.5707963267948966 -0 0</pose>
+          <pose>0 0 0 -1.5707963267948966 0 0</pose>
           <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.stl</uri>
+            </mesh>
+          </geometry>
+
+<!--
             <polyline>
               <height>0.1</height>
               <point>-0.00935486 -0.00548224</point>
@@ -1208,6 +1235,7 @@
               <point>-0.00935486 -0.00548224</point>
             </polyline>
           </geometry>
+-->
           <material>
             <emissive>1 1 0 1</emissive>
           </material>
@@ -1496,8 +1524,14 @@
         </collision>
         
         <visual name='player_center'>
-          <pose>0 0 0 1.5707963267948966 -0 0</pose>
+          <pose>0 0 0 -1.5707963267948966 0 0</pose>
           <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.stl</uri>
+            </mesh>
+          </geometry>
+
+<!--
             <polyline>
               <height>0.1</height>
               <point>-0.00935486 -0.00548224</point>
@@ -1525,6 +1559,7 @@
               <point>-0.00935486 -0.00548224</point>
             </polyline>
           </geometry>
+-->
           <material>
             <emissive>1 1 0 1</emissive>
           </material>
@@ -1854,10 +1889,10 @@
     </joint>
     
       <link name="shaftB3_bridge">
-        <pose>-0.223837 0 0.355381 1.5707963267948966 -0 0</pose>
+        <pose>0.223837 0 0.355381 1.5707963267948966 -0 0</pose>
       </link>    
       <link name="shaftB3">
-        <pose>-0.223837 0 0.355381 1.5707963267948966 -0 0</pose>
+        <pose>0.223837 0 0.355381 1.5707963267948966 -0 0</pose>
         <visual name='rod'>
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
@@ -1884,8 +1919,14 @@
         </collision>
         
         <visual name='player_center'>
-          <pose>0 0 0 1.5707963267948966 -0 0</pose>
+          <pose>0 0 0 -1.5707963267948966 0 0</pose>
           <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.stl</uri>
+            </mesh>
+          </geometry>
+
+<!--
             <polyline>
               <height>0.1</height>
               <point>-0.00935486 -0.00548224</point>
@@ -1913,6 +1954,7 @@
               <point>-0.00935486 -0.00548224</point>
             </polyline>
           </geometry>
+-->
           <material>
             <emissive>1 1 0 1</emissive>
           </material>
