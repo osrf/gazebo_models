@@ -182,7 +182,7 @@
           <upper>0.1</upper>
         </limit>
       </axis>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
 
     
@@ -215,51 +215,25 @@
             </cylinder>
           </geometry>
         </collision>
-        
+     
 
         <visual name='player_center'>
           <pose>0 0 0 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive>0 1 0 1</emissive>
+            <script><name>Gazebo/Red</name></script>
           </material>
         </visual>
 
         <collision name='player_center'>
-          <pose>0 0 0 1.5707963267948966 -0 0</pose>
-          <geometry>
-            <polyline>
-              <height>0.1</height>
-              <point>-0.00935486 -0.00548224</point>
-              <point>-0.00935486 0.00548224</point>
-              <point>-0.00887948 0.00844526</point>
-              <point>-0.00755453 0.011014</point>
-              <point>-0.00553179 0.0130368</point>
-              <point>-0.00296304 0.0143617</point>
-              <point>-3.95112e-08 0.0148371</point>
-              <point>0.002963 0.0143617</point>
-              <point>0.00553178 0.0130368</point>
-              <point>0.00755453 0.011014</point>
-              <point>0.00887948 0.00844526</point>
-              <point>0.00935486 0.00548224</point>
-              <point>0.00935486 -0.00548224</point>
-              <point>0.00887948 -0.00844525</point>
-              <point>0.00755453 -0.011014</point>
-              <point>0.00553178 -0.0130368</point>
-              <point>0.002963 -0.0143617</point>
-              <point>-3.95112e-08 -0.0148371</point>
-              <point>-0.00296304 -0.0143617</point>
-              <point>-0.00553179 -0.0130368</point>
-              <point>-0.00755453 -0.011014</point>
-              <point>-0.00887948 -0.00844525</point>
-              <point>-0.00935486 -0.00548224</point>
-            </polyline>
-          </geometry>
+          <pose>0 -0.005 0 0 0 0</pose>
+          <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
         </collision>
+
      
      
      
@@ -320,7 +294,7 @@
             </cylinder>
           </geometry>
         </collision>
-        
+     
      
      
 
@@ -328,90 +302,37 @@
           <pose>0 0 0.1 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive>0 1 0 1</emissive>
+            <script><name>Gazebo/Red</name></script>
           </material>
         </visual>
 
 
       <collision name='player_side_1'>
-        <pose>0 0 0.1 1.5707963267948966 -0 0</pose>
-        <geometry>
-          <polyline>
-            <height>0.1</height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
+        <pose>0 -0.005 0.1 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
       </collision>
 
         <visual name='player_side_2'>
           <pose>0 0 -0.1 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive>0 1 0 1</emissive>
+            <script><name>Gazebo/Red</name></script>
           </material>
         </visual>
 
       <collision name='player_side_2'>
-        <pose>0 0 -0.1 1.5707963267948966 -0 0</pose>
-        <geometry>
-          <polyline>
-            <height>0.1</height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
+        <pose>0 -0.005 -0.1 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
       </collision>
+
       
       </link>
     
@@ -470,51 +391,25 @@
             </cylinder>
           </geometry>
         </collision>
-        
+     
 
         <visual name='player_center'>
           <pose>0 0 0 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive>0 1 0 1</emissive>
+            <script><name>Gazebo/Red</name></script>
           </material>
         </visual>
 
         <collision name='player_center'>
-          <pose>0 0 0 1.5707963267948966 -0 0</pose>
-          <geometry>
-            <polyline>
-              <height>0.1</height>
-              <point>-0.00935486 -0.00548224</point>
-              <point>-0.00935486 0.00548224</point>
-              <point>-0.00887948 0.00844526</point>
-              <point>-0.00755453 0.011014</point>
-              <point>-0.00553179 0.0130368</point>
-              <point>-0.00296304 0.0143617</point>
-              <point>-3.95112e-08 0.0148371</point>
-              <point>0.002963 0.0143617</point>
-              <point>0.00553178 0.0130368</point>
-              <point>0.00755453 0.011014</point>
-              <point>0.00887948 0.00844526</point>
-              <point>0.00935486 0.00548224</point>
-              <point>0.00935486 -0.00548224</point>
-              <point>0.00887948 -0.00844525</point>
-              <point>0.00755453 -0.011014</point>
-              <point>0.00553178 -0.0130368</point>
-              <point>0.002963 -0.0143617</point>
-              <point>-3.95112e-08 -0.0148371</point>
-              <point>-0.00296304 -0.0143617</point>
-              <point>-0.00553179 -0.0130368</point>
-              <point>-0.00755453 -0.011014</point>
-              <point>-0.00887948 -0.00844525</point>
-              <point>-0.00935486 -0.00548224</point>
-            </polyline>
-          </geometry>
+          <pose>0 -0.005 0 0 0 0</pose>
+          <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
         </collision>
+
      
      
 
@@ -522,88 +417,36 @@
         <pose>0 0 0.26 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive>0 1 0 1</emissive>
+            <script>
+              <name>Gazebo/Red</name>
+            </script>
           </material>
         </visual>
 
       <collision name='player_mid_1'>
-        <pose>0 0 0.26 1.5707963267948966 -0 0</pose>
-        <geometry>
-          <polyline>
-            <height>0.1</height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
+        <pose>0 -0.005 0.26 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
       </collision>
 
         <visual name='player_mid_2'>
           <pose>0 0 -0.26 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive>0 1 0 1</emissive>
+            <script><name>Gazebo/Red</name></script>
           </material>
         </visual>
 
        <collision name='player_mid_2'>
-        <pose>0 0 -0.26 1.5707963267948966 -0 0</pose>
-        <geometry>
-          <polyline>
-            <height>0.1</height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
+        <pose>0 -0.005 -0.26 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
       </collision>
      
      
@@ -612,90 +455,37 @@
           <pose>0 0 0.13 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive>0 1 0 1</emissive>
+            <script><name>Gazebo/Red</name></script>
           </material>
         </visual>
 
 
       <collision name='player_side_1'>
-        <pose>0 0 0.13 1.5707963267948966 -0 0</pose>
-        <geometry>
-          <polyline>
-            <height>0.1</height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
+        <pose>0 -0.005 0.13 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
       </collision>
 
         <visual name='player_side_2'>
           <pose>0 0 -0.13 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive>0 1 0 1</emissive>
+            <script><name>Gazebo/Red</name></script>
           </material>
         </visual>
 
       <collision name='player_side_2'>
-        <pose>0 0 -0.13 1.5707963267948966 -0 0</pose>
-        <geometry>
-          <polyline>
-            <height>0.1</height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
+        <pose>0 -0.005 -0.13 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
       </collision>
+
       
       </link>
     
@@ -754,51 +544,25 @@
             </cylinder>
           </geometry>
         </collision>
-        
+     
 
         <visual name='player_center'>
           <pose>0 0 0 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive>0 1 0 1</emissive>
+            <script><name>Gazebo/Red</name></script>
           </material>
         </visual>
 
         <collision name='player_center'>
-          <pose>0 0 0 1.5707963267948966 -0 0</pose>
-          <geometry>
-            <polyline>
-              <height>0.1</height>
-              <point>-0.00935486 -0.00548224</point>
-              <point>-0.00935486 0.00548224</point>
-              <point>-0.00887948 0.00844526</point>
-              <point>-0.00755453 0.011014</point>
-              <point>-0.00553179 0.0130368</point>
-              <point>-0.00296304 0.0143617</point>
-              <point>-3.95112e-08 0.0148371</point>
-              <point>0.002963 0.0143617</point>
-              <point>0.00553178 0.0130368</point>
-              <point>0.00755453 0.011014</point>
-              <point>0.00887948 0.00844526</point>
-              <point>0.00935486 0.00548224</point>
-              <point>0.00935486 -0.00548224</point>
-              <point>0.00887948 -0.00844525</point>
-              <point>0.00755453 -0.011014</point>
-              <point>0.00553178 -0.0130368</point>
-              <point>0.002963 -0.0143617</point>
-              <point>-3.95112e-08 -0.0148371</point>
-              <point>-0.00296304 -0.0143617</point>
-              <point>-0.00553179 -0.0130368</point>
-              <point>-0.00755453 -0.011014</point>
-              <point>-0.00887948 -0.00844525</point>
-              <point>-0.00935486 -0.00548224</point>
-            </polyline>
-          </geometry>
+          <pose>0 -0.005 0 0 0 0</pose>
+          <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
         </collision>
+
      
      
      
@@ -807,90 +571,37 @@
           <pose>0 0 0.15 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive>0 1 0 1</emissive>
+            <script><name>Gazebo/Red</name></script>
           </material>
         </visual>
 
 
       <collision name='player_side_1'>
-        <pose>0 0 0.15 1.5707963267948966 -0 0</pose>
-        <geometry>
-          <polyline>
-            <height>0.1</height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
+        <pose>0 -0.005 0.15 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
       </collision>
 
         <visual name='player_side_2'>
           <pose>0 0 -0.15 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive>0 1 0 1</emissive>
+            <script><name>Gazebo/Red</name></script>
           </material>
         </visual>
 
       <collision name='player_side_2'>
-        <pose>0 0 -0.15 1.5707963267948966 -0 0</pose>
-        <geometry>
-          <polyline>
-            <height>0.1</height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
+        <pose>0 -0.005 -0.15 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
       </collision>
+
       
       </link>
     
@@ -949,51 +660,25 @@
             </cylinder>
           </geometry>
         </collision>
-        
+     
 
         <visual name='player_center'>
           <pose>0 0 0 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive>1 1 0 1</emissive>
+            <script><name>Gazebo/Blue</name></script>
           </material>
         </visual>
 
         <collision name='player_center'>
-          <pose>0 0 0 1.5707963267948966 -0 0</pose>
-          <geometry>
-            <polyline>
-              <height>0.1</height>
-              <point>-0.00935486 -0.00548224</point>
-              <point>-0.00935486 0.00548224</point>
-              <point>-0.00887948 0.00844526</point>
-              <point>-0.00755453 0.011014</point>
-              <point>-0.00553179 0.0130368</point>
-              <point>-0.00296304 0.0143617</point>
-              <point>-3.95112e-08 0.0148371</point>
-              <point>0.002963 0.0143617</point>
-              <point>0.00553178 0.0130368</point>
-              <point>0.00755453 0.011014</point>
-              <point>0.00887948 0.00844526</point>
-              <point>0.00935486 0.00548224</point>
-              <point>0.00935486 -0.00548224</point>
-              <point>0.00887948 -0.00844525</point>
-              <point>0.00755453 -0.011014</point>
-              <point>0.00553178 -0.0130368</point>
-              <point>0.002963 -0.0143617</point>
-              <point>-3.95112e-08 -0.0148371</point>
-              <point>-0.00296304 -0.0143617</point>
-              <point>-0.00553179 -0.0130368</point>
-              <point>-0.00755453 -0.011014</point>
-              <point>-0.00887948 -0.00844525</point>
-              <point>-0.00935486 -0.00548224</point>
-            </polyline>
-          </geometry>
+          <pose>0 -0.005 0 0 0 0</pose>
+          <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
         </collision>
+
      
      
      
@@ -1054,7 +739,7 @@
             </cylinder>
           </geometry>
         </collision>
-        
+     
      
      
 
@@ -1062,90 +747,37 @@
           <pose>0 0 0.1 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive>1 1 0 1</emissive>
+            <script><name>Gazebo/Blue</name></script>
           </material>
         </visual>
 
 
       <collision name='player_side_1'>
-        <pose>0 0 0.1 1.5707963267948966 -0 0</pose>
-        <geometry>
-          <polyline>
-            <height>0.1</height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
+        <pose>0 -0.005 0.1 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
       </collision>
 
         <visual name='player_side_2'>
           <pose>0 0 -0.1 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive>1 1 0 1</emissive>
+            <script><name>Gazebo/Blue</name></script>
           </material>
         </visual>
 
       <collision name='player_side_2'>
-        <pose>0 0 -0.1 1.5707963267948966 -0 0</pose>
-        <geometry>
-          <polyline>
-            <height>0.1</height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
+        <pose>0 -0.005 -0.1 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
       </collision>
+
       
       </link>
     
@@ -1204,51 +836,25 @@
             </cylinder>
           </geometry>
         </collision>
-        
+     
 
         <visual name='player_center'>
           <pose>0 0 0 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive>1 1 0 1</emissive>
+            <script><name>Gazebo/Blue</name></script>
           </material>
         </visual>
 
         <collision name='player_center'>
-          <pose>0 0 0 1.5707963267948966 -0 0</pose>
-          <geometry>
-            <polyline>
-              <height>0.1</height>
-              <point>-0.00935486 -0.00548224</point>
-              <point>-0.00935486 0.00548224</point>
-              <point>-0.00887948 0.00844526</point>
-              <point>-0.00755453 0.011014</point>
-              <point>-0.00553179 0.0130368</point>
-              <point>-0.00296304 0.0143617</point>
-              <point>-3.95112e-08 0.0148371</point>
-              <point>0.002963 0.0143617</point>
-              <point>0.00553178 0.0130368</point>
-              <point>0.00755453 0.011014</point>
-              <point>0.00887948 0.00844526</point>
-              <point>0.00935486 0.00548224</point>
-              <point>0.00935486 -0.00548224</point>
-              <point>0.00887948 -0.00844525</point>
-              <point>0.00755453 -0.011014</point>
-              <point>0.00553178 -0.0130368</point>
-              <point>0.002963 -0.0143617</point>
-              <point>-3.95112e-08 -0.0148371</point>
-              <point>-0.00296304 -0.0143617</point>
-              <point>-0.00553179 -0.0130368</point>
-              <point>-0.00755453 -0.011014</point>
-              <point>-0.00887948 -0.00844525</point>
-              <point>-0.00935486 -0.00548224</point>
-            </polyline>
-          </geometry>
+          <pose>0 -0.005 0 0 0 0</pose>
+          <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
         </collision>
+
      
      
 
@@ -1256,88 +862,36 @@
         <pose>0 0 0.26 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive>1 1 0 1</emissive>
+            <script>
+              <name>Gazebo/Blue</name>
+            </script>
           </material>
         </visual>
 
       <collision name='player_mid_1'>
-        <pose>0 0 0.26 1.5707963267948966 -0 0</pose>
-        <geometry>
-          <polyline>
-            <height>0.1</height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
+        <pose>0 -0.005 0.26 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
       </collision>
 
         <visual name='player_mid_2'>
           <pose>0 0 -0.26 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive>1 1 0 1</emissive>
+            <script><name>Gazebo/Blue</name></script>
           </material>
         </visual>
 
        <collision name='player_mid_2'>
-        <pose>0 0 -0.26 1.5707963267948966 -0 0</pose>
-        <geometry>
-          <polyline>
-            <height>0.1</height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
+        <pose>0 -0.005 -0.26 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
       </collision>
      
      
@@ -1346,90 +900,37 @@
           <pose>0 0 0.13 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive>1 1 0 1</emissive>
+            <script><name>Gazebo/Blue</name></script>
           </material>
         </visual>
 
 
       <collision name='player_side_1'>
-        <pose>0 0 0.13 1.5707963267948966 -0 0</pose>
-        <geometry>
-          <polyline>
-            <height>0.1</height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
+        <pose>0 -0.005 0.13 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
       </collision>
 
         <visual name='player_side_2'>
           <pose>0 0 -0.13 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive>1 1 0 1</emissive>
+            <script><name>Gazebo/Blue</name></script>
           </material>
         </visual>
 
       <collision name='player_side_2'>
-        <pose>0 0 -0.13 1.5707963267948966 -0 0</pose>
-        <geometry>
-          <polyline>
-            <height>0.1</height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
+        <pose>0 -0.005 -0.13 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
       </collision>
+
       
       </link>
     
@@ -1488,51 +989,25 @@
             </cylinder>
           </geometry>
         </collision>
-        
+     
 
         <visual name='player_center'>
           <pose>0 0 0 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive>1 1 0 1</emissive>
+            <script><name>Gazebo/Blue</name></script>
           </material>
         </visual>
 
         <collision name='player_center'>
-          <pose>0 0 0 1.5707963267948966 -0 0</pose>
-          <geometry>
-            <polyline>
-              <height>0.1</height>
-              <point>-0.00935486 -0.00548224</point>
-              <point>-0.00935486 0.00548224</point>
-              <point>-0.00887948 0.00844526</point>
-              <point>-0.00755453 0.011014</point>
-              <point>-0.00553179 0.0130368</point>
-              <point>-0.00296304 0.0143617</point>
-              <point>-3.95112e-08 0.0148371</point>
-              <point>0.002963 0.0143617</point>
-              <point>0.00553178 0.0130368</point>
-              <point>0.00755453 0.011014</point>
-              <point>0.00887948 0.00844526</point>
-              <point>0.00935486 0.00548224</point>
-              <point>0.00935486 -0.00548224</point>
-              <point>0.00887948 -0.00844525</point>
-              <point>0.00755453 -0.011014</point>
-              <point>0.00553178 -0.0130368</point>
-              <point>0.002963 -0.0143617</point>
-              <point>-3.95112e-08 -0.0148371</point>
-              <point>-0.00296304 -0.0143617</point>
-              <point>-0.00553179 -0.0130368</point>
-              <point>-0.00755453 -0.011014</point>
-              <point>-0.00887948 -0.00844525</point>
-              <point>-0.00935486 -0.00548224</point>
-            </polyline>
-          </geometry>
+          <pose>0 -0.005 0 0 0 0</pose>
+          <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
         </collision>
+
      
      
      
@@ -1541,90 +1016,37 @@
           <pose>0 0 0.15 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive>1 1 0 1</emissive>
+            <script><name>Gazebo/Blue</name></script>
           </material>
         </visual>
 
 
       <collision name='player_side_1'>
-        <pose>0 0 0.15 1.5707963267948966 -0 0</pose>
-        <geometry>
-          <polyline>
-            <height>0.1</height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
+        <pose>0 -0.005 0.15 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
       </collision>
 
         <visual name='player_side_2'>
           <pose>0 0 -0.15 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive>1 1 0 1</emissive>
+            <script><name>Gazebo/Blue</name></script>
           </material>
         </visual>
 
       <collision name='player_side_2'>
-        <pose>0 0 -0.15 1.5707963267948966 -0 0</pose>
-        <geometry>
-          <polyline>
-            <height>0.1</height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
+        <pose>0 -0.005 -0.15 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
       </collision>
+
       
       </link>
     

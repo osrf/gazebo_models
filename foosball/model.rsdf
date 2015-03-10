@@ -38,8 +38,8 @@
   player_height = 0.1
 
   colors = {
-    "A" => {:R => 0, :G => 1, :B => 0},
-    "B" => {:R => 1, :G => 1, :B => 0}
+     "A" => "Red",
+     "B" => "Blue"
   }
 
   shafts = {
@@ -54,14 +54,17 @@
             "3" => {:posX => +shaft3_dist, :limitY => shaft3_limit, :center => true,  :side => true,  :mid => false, :sidePosY => 0.15, :midPosY => 0}
     },
   }
+
+  player_collision = "<geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>"
+
 %>
 <sdf version='1.5'>
   <model name='Foosball'>
     <link name='table'>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
 
       <visual name='base'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <box>
             <size><%= field_length + goal_thickness * 2 %> <%= field_width + side_thickness * 2 %> <%= base_height %></size>
@@ -80,7 +83,7 @@
           posX = sides[k][:posX]
       %>
         <%= '<visual name=' + '"side' + k + '">' %>
-          <pose>0 <%= posX * (field_width + side_thickness)/2 %> <%= (field_height + base_height)/2 %> 0 -0 0</pose>
+          <pose>0 <%= posX * (field_width + side_thickness)/2 %> <%= (field_height + base_height)/2 %> 0 0 0</pose>
           <geometry>
             <box>
               <size><%= field_length %> <%= side_thickness %> <%= field_height %></size>
@@ -94,7 +97,7 @@
           </material>
         </visual>
         <%= '<collision name=' + '"side' + k + '">' %>
-          <pose>0 <%= posX * (field_width + side_thickness)/2 %> <%= (field_height + base_height)/2 %> 0 -0 0</pose>
+          <pose>0 <%= posX * (field_width + side_thickness)/2 %> <%= (field_height + base_height)/2 %> 0 0 0</pose>
           <geometry>
             <box>
               <size><%= field_length %> <%= side_thickness %> <%= field_height %></size>
@@ -149,7 +152,7 @@
       <% end %>
 
       <visual name='ground'>
-        <pose>0 0 <%= (ground_height + base_height)/2 %> 0 -0 0</pose>
+        <pose>0 0 <%= (ground_height + base_height)/2 %> 0 0 0</pose>
         <geometry>
           <box>
             <size><%= field_length %> <%= field_width %> <%= ground_height %></size>
@@ -163,7 +166,7 @@
         </material>
       </visual>
       <collision name='ground'>
-        <pose>0 0 <%= (ground_height + base_height)/2 %> 0 -0 0</pose>
+        <pose>0 0 <%= (ground_height + base_height)/2 %> 0 0 0</pose>
         <geometry>
           <box>
             <size><%= field_length %> <%= field_width %> <%= ground_height %></size>
@@ -182,14 +185,12 @@
           <upper>0.1</upper>
         </limit>
       </axis>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
 
     <%
       shafts.keys.each do |k|
-        colorR = colors[k][:R]
-        colorG = colors[k][:G]
-        colorB = colors[k][:B]
+        color = colors[k]
         shafts[k].keys.each do |j|
           posX = shafts[k][j][:posX]
           limitY = shafts[k][j][:limitY]
@@ -200,12 +201,12 @@
           midPosY = shafts[k][j][:midPosY]
     %>
       <%= '<link name=' + '"shaft' + k + j + '_bridge">' %>
-        <pose><%= posX %> 0 <%= shaft_height %> <%= Math::PI/2.0 %> -0 0</pose>
+        <pose><%= posX %> 0 <%= shaft_height %> <%= Math::PI/2.0 %> 0 0</pose>
       </link>    
       <%= '<link name=' + '"shaft' + k + j + '">' %>
-        <pose><%= posX %> 0 <%= shaft_height %> <%= Math::PI/2.0 %> -0 0</pose>
+        <pose><%= posX %> 0 <%= shaft_height %> <%= Math::PI/2.0 %> 0 0</pose>
         <visual name='rod'>
-          <pose>0 0 0 0 -0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
             <cylinder>
               <radius><%= rod_radius %></radius>
@@ -220,7 +221,7 @@
           </material>
         </visual>
         <collision name='rod'>
-          <pose>0 0 0 0 -0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
             <cylinder>
               <radius><%= rod_radius %></radius>
@@ -228,51 +229,25 @@
             </cylinder>
           </geometry>
         </collision>
-        <% if center %>
+     <% if center %>
 
         <visual name='player_center'>
           <pose>0 0 0 <%= -Math::PI/2.0 %> 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive><%= colorR %> <%= colorG %> <%= colorB %> 1</emissive>
+            <script><name>Gazebo/<%= color%></name></script>
           </material>
         </visual>
 
         <collision name='player_center'>
-          <pose>0 0 0 <%= Math::PI/2.0 %> -0 0</pose>
-          <geometry>
-            <polyline>
-              <height><%= player_height %></height>
-              <point>-0.00935486 -0.00548224</point>
-              <point>-0.00935486 0.00548224</point>
-              <point>-0.00887948 0.00844526</point>
-              <point>-0.00755453 0.011014</point>
-              <point>-0.00553179 0.0130368</point>
-              <point>-0.00296304 0.0143617</point>
-              <point>-3.95112e-08 0.0148371</point>
-              <point>0.002963 0.0143617</point>
-              <point>0.00553178 0.0130368</point>
-              <point>0.00755453 0.011014</point>
-              <point>0.00887948 0.00844526</point>
-              <point>0.00935486 0.00548224</point>
-              <point>0.00935486 -0.00548224</point>
-              <point>0.00887948 -0.00844525</point>
-              <point>0.00755453 -0.011014</point>
-              <point>0.00553178 -0.0130368</point>
-              <point>0.002963 -0.0143617</point>
-              <point>-3.95112e-08 -0.0148371</point>
-              <point>-0.00296304 -0.0143617</point>
-              <point>-0.00553179 -0.0130368</point>
-              <point>-0.00755453 -0.011014</point>
-              <point>-0.00887948 -0.00844525</point>
-              <point>-0.00935486 -0.00548224</point>
-            </polyline>
-          </geometry>
+          <pose>0 -0.005 0 0 0 0</pose>
+          <%= player_collision %>
         </collision>
+
      <% end %>
      <% if mid %>
 
@@ -280,88 +255,36 @@
         <pose>0 0 <%= midPosY %> <%= -Math::PI/2.0 %> 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive><%= colorR %> <%= colorG %> <%= colorB %> 1</emissive>
+            <script>
+              <name>Gazebo/<%= color%></name>
+            </script>
           </material>
         </visual>
 
       <collision name='player_mid_1'>
-        <pose>0 0 <%= midPosY %> <%= Math::PI/2.0 %> -0 0</pose>
-        <geometry>
-          <polyline>
-            <height><%= player_height %></height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
+        <pose>0 -0.005 <%= midPosY %> 0 0 0</pose>
+        <%= player_collision %>
       </collision>
 
         <visual name='player_mid_2'>
           <pose>0 0 <%= -midPosY %> <%= -Math::PI/2.0 %> 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive><%= colorR %> <%= colorG %> <%= colorB %> 1</emissive>
+            <script><name>Gazebo/<%= color%></name></script>
           </material>
         </visual>
 
        <collision name='player_mid_2'>
-        <pose>0 0 <%= -midPosY %> <%= Math::PI/2.0 %> -0 0</pose>
-        <geometry>
-          <polyline>
-            <height><%= player_height %></height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
+        <pose>0 -0.005 <%= -midPosY %> 0 0 0</pose>
+        <%= player_collision %>
       </collision>
      <% end %>
      <% if side %>
@@ -370,90 +293,36 @@
           <pose>0 0 <%= sidePosY %> <%= -Math::PI/2.0 %> 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive><%= colorR %> <%= colorG %> <%= colorB %> 1</emissive>
+            <script><name>Gazebo/<%= color%></name></script>
           </material>
         </visual>
 
-
       <collision name='player_side_1'>
-        <pose>0 0 <%= sidePosY %> <%= Math::PI/2.0 %> -0 0</pose>
-        <geometry>
-          <polyline>
-            <height><%= player_height %></height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
+        <pose>0 -0.005 <%= sidePosY %> 0 0 0</pose>
+        <%= player_collision %>
       </collision>
 
         <visual name='player_side_2'>
           <pose>0 0 <%= -sidePosY %> <%= -Math::PI/2.0 %> 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://foosball/meshes/player.stl</uri>
+              <uri>model://foosball/meshes/player.dae</uri>
             </mesh>
           </geometry>
           <material>
-            <emissive><%= colorR %> <%= colorG %> <%= colorB %> 1</emissive>
+            <script><name>Gazebo/<%= color%></name></script>
           </material>
         </visual>
 
       <collision name='player_side_2'>
-        <pose>0 0 <%= -sidePosY %> <%= Math::PI/2.0 %> -0 0</pose>
-        <geometry>
-          <polyline>
-            <height><%= player_height %></height>
-            <point>-0.00935486 -0.00548224</point>
-            <point>-0.00935486 0.00548224</point>
-            <point>-0.00887948 0.00844526</point>
-            <point>-0.00755453 0.011014</point>
-            <point>-0.00553179 0.0130368</point>
-            <point>-0.00296304 0.0143617</point>
-            <point>-3.95112e-08 0.0148371</point>
-            <point>0.002963 0.0143617</point>
-            <point>0.00553178 0.0130368</point>
-            <point>0.00755453 0.011014</point>
-            <point>0.00887948 0.00844526</point>
-            <point>0.00935486 0.00548224</point>
-            <point>0.00935486 -0.00548224</point>
-            <point>0.00887948 -0.00844525</point>
-            <point>0.00755453 -0.011014</point>
-            <point>0.00553178 -0.0130368</point>
-            <point>0.002963 -0.0143617</point>
-            <point>-3.95112e-08 -0.0148371</point>
-            <point>-0.00296304 -0.0143617</point>
-            <point>-0.00553179 -0.0130368</point>
-            <point>-0.00755453 -0.011014</point>
-            <point>-0.00887948 -0.00844525</point>
-            <point>-0.00935486 -0.00548224</point>
-          </polyline>
-        </geometry>
+        <pose>0 -0.005 <%= -sidePosY %> 0 0 0</pose>
+        <%= player_collision %>
       </collision>
+
       <% end %>
       </link>
     
@@ -468,7 +337,7 @@
           <upper><%= limitY %></upper>
         </limit>
       </axis>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
     <%= '<joint name=' + '"rot' + k + j + '" type="revolute">' %>
       <%= '<parent>shaft' + k + j + '_bridge</parent>' %>
@@ -480,7 +349,7 @@
           <upper>1000</upper>
         </limit>
       </axis>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
     <% end %> <% end %>
 
