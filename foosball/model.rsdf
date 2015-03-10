@@ -199,12 +199,22 @@
           side = shafts[k][j][:side]
           sidePosY = shafts[k][j][:sidePosY]
           midPosY = shafts[k][j][:midPosY]
+          handlePos = rod_length / 2.0
+          handleCollisionLength = 0.135
+          handleCollisionPos = handlePos + handleCollisionLength / 2.0
+          handleAngle = -Math::PI
+          if k == "A" then
+            handlePos = -handlePos
+            handleCollisionPos = -handleCollisionPos
+            handleAngle = 0
+          end
     %>
       <%= '<link name=' + '"shaft' + k + j + '_bridge">' %>
         <pose><%= posX %> 0 <%= shaft_height %> <%= Math::PI/2.0 %> 0 0</pose>
       </link>    
       <%= '<link name=' + '"shaft' + k + j + '">' %>
         <pose><%= posX %> 0 <%= shaft_height %> <%= Math::PI/2.0 %> 0 0</pose>
+
         <visual name='rod'>
           <pose>0 0 0 0 0 0</pose>
           <geometry>
@@ -220,6 +230,29 @@
             </script>
           </material>
         </visual>
+
+        <visual name='handle'>
+          <pose>0 0 <%= handlePos %> 0 <%= handleAngle %> 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/handle.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+              <script><name>Gazebo/Black</name></script>
+          </material>
+        </visual>
+
+        <collision name='handle'>
+          <pose>0 0 <%= handleCollisionPos  %> 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.022</radius>
+              <length><%= handleCollisionLength %></length>
+            </cylinder>
+          </geometry>
+        </collision>
+
         <collision name='rod'>
           <pose>0 0 0 0 0 0</pose>
           <geometry>
@@ -229,10 +262,12 @@
             </cylinder>
           </geometry>
         </collision>
+
+
      <% if center %>
 
         <visual name='player_center'>
-          <pose>0 0 0 <%= -Math::PI/2.0 %> 0 0</pose>
+          <pose>0 0 0 <%= -Math::PI/2.0 %> 0 0</pose> 
           <geometry>
             <mesh>
               <uri>model://foosball/meshes/player.dae</uri>

@@ -3,10 +3,10 @@
 <sdf version='1.5'>
   <model name='Foosball'>
     <link name='table'>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
 
       <visual name='base'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <box>
             <size>1.4218 0.762 0.1</size>
@@ -22,7 +22,7 @@
 
       
         <visual name="sideA">
-          <pose>0 -0.36195 0.2532 0 -0 0</pose>
+          <pose>0 -0.36195 0.2532 0 0 0</pose>
           <geometry>
             <box>
               <size>1.1938 0.0381 0.4064</size>
@@ -36,7 +36,7 @@
           </material>
         </visual>
         <collision name="sideA">
-          <pose>0 -0.36195 0.2532 0 -0 0</pose>
+          <pose>0 -0.36195 0.2532 0 0 0</pose>
           <geometry>
             <box>
               <size>1.1938 0.0381 0.4064</size>
@@ -45,7 +45,7 @@
         </collision>
       
         <visual name="sideB">
-          <pose>0 0.36195 0.2532 0 -0 0</pose>
+          <pose>0 0.36195 0.2532 0 0 0</pose>
           <geometry>
             <box>
               <size>1.1938 0.0381 0.4064</size>
@@ -59,7 +59,7 @@
           </material>
         </visual>
         <collision name="sideB">
-          <pose>0 0.36195 0.2532 0 -0 0</pose>
+          <pose>0 0.36195 0.2532 0 0 0</pose>
           <geometry>
             <box>
               <size>1.1938 0.0381 0.4064</size>
@@ -149,7 +149,7 @@
       
 
       <visual name='ground'>
-        <pose>0 0 0.15000000000000002 0 -0 0</pose>
+        <pose>0 0 0.15000000000000002 0 0 0</pose>
         <geometry>
           <box>
             <size>1.1938 0.6858 0.2</size>
@@ -163,7 +163,7 @@
         </material>
       </visual>
       <collision name='ground'>
-        <pose>0 0 0.15000000000000002 0 -0 0</pose>
+        <pose>0 0 0.15000000000000002 0 0 0</pose>
         <geometry>
           <box>
             <size>1.1938 0.6858 0.2</size>
@@ -187,12 +187,13 @@
 
     
       <link name="shaftA0_bridge">
-        <pose>0.522287 0 0.355381 1.5707963267948966 -0 0</pose>
+        <pose>0.522287 0 0.355381 1.5707963267948966 0 0</pose>
       </link>    
       <link name="shaftA0">
-        <pose>0.522287 0 0.355381 1.5707963267948966 -0 0</pose>
+        <pose>0.522287 0 0.355381 1.5707963267948966 0 0</pose>
+
         <visual name='rod'>
-          <pose>0 0 0 0 -0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.00779907</radius>
@@ -206,8 +207,31 @@
             </script>
           </material>
         </visual>
+
+        <visual name='handle'>
+          <pose>0 0 -0.6 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/handle.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+              <script><name>Gazebo/Black</name></script>
+          </material>
+        </visual>
+
+        <collision name='handle'>
+          <pose>0 0 -0.6675 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.022</radius>
+              <length>0.135</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
         <collision name='rod'>
-          <pose>0 0 0 0 -0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.00779907</radius>
@@ -215,10 +239,12 @@
             </cylinder>
           </geometry>
         </collision>
+
+
      
 
         <visual name='player_center'>
-          <pose>0 0 0 -1.5707963267948966 0 0</pose>
+          <pose>0 0 0 -1.5707963267948966 0 0</pose> 
           <geometry>
             <mesh>
               <uri>model://foosball/meshes/player.dae</uri>
@@ -250,7 +276,7 @@
           <upper>0.09</upper>
         </limit>
       </axis>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
     <joint name="rotA0" type="revolute">
       <parent>shaftA0_bridge</parent>
@@ -262,16 +288,17 @@
           <upper>1000</upper>
         </limit>
       </axis>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
     
       <link name="shaftA1_bridge">
-        <pose>0.373062 0 0.355381 1.5707963267948966 -0 0</pose>
+        <pose>0.373062 0 0.355381 1.5707963267948966 0 0</pose>
       </link>    
       <link name="shaftA1">
-        <pose>0.373062 0 0.355381 1.5707963267948966 -0 0</pose>
+        <pose>0.373062 0 0.355381 1.5707963267948966 0 0</pose>
+
         <visual name='rod'>
-          <pose>0 0 0 0 -0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.00779907</radius>
@@ -285,8 +312,31 @@
             </script>
           </material>
         </visual>
+
+        <visual name='handle'>
+          <pose>0 0 -0.6 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/handle.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+              <script><name>Gazebo/Black</name></script>
+          </material>
+        </visual>
+
+        <collision name='handle'>
+          <pose>0 0 -0.6675 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.022</radius>
+              <length>0.135</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
         <collision name='rod'>
-          <pose>0 0 0 0 -0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.00779907</radius>
@@ -294,6 +344,8 @@
             </cylinder>
           </geometry>
         </collision>
+
+
      
      
      
@@ -309,7 +361,6 @@
             <script><name>Gazebo/Red</name></script>
           </material>
         </visual>
-
 
       <collision name='player_side_1'>
         <pose>0 -0.005 0.1 0 0 0</pose>
@@ -347,7 +398,7 @@
           <upper>0.23</upper>
         </limit>
       </axis>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
     <joint name="rotA1" type="revolute">
       <parent>shaftA1_bridge</parent>
@@ -359,16 +410,17 @@
           <upper>1000</upper>
         </limit>
       </axis>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
     
       <link name="shaftA2_bridge">
-        <pose>0.074612 0 0.355381 1.5707963267948966 -0 0</pose>
+        <pose>0.074612 0 0.355381 1.5707963267948966 0 0</pose>
       </link>    
       <link name="shaftA2">
-        <pose>0.074612 0 0.355381 1.5707963267948966 -0 0</pose>
+        <pose>0.074612 0 0.355381 1.5707963267948966 0 0</pose>
+
         <visual name='rod'>
-          <pose>0 0 0 0 -0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.00779907</radius>
@@ -382,8 +434,31 @@
             </script>
           </material>
         </visual>
+
+        <visual name='handle'>
+          <pose>0 0 -0.6 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/handle.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+              <script><name>Gazebo/Black</name></script>
+          </material>
+        </visual>
+
+        <collision name='handle'>
+          <pose>0 0 -0.6675 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.022</radius>
+              <length>0.135</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
         <collision name='rod'>
-          <pose>0 0 0 0 -0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.00779907</radius>
@@ -391,10 +466,12 @@
             </cylinder>
           </geometry>
         </collision>
+
+
      
 
         <visual name='player_center'>
-          <pose>0 0 0 -1.5707963267948966 0 0</pose>
+          <pose>0 0 0 -1.5707963267948966 0 0</pose> 
           <geometry>
             <mesh>
               <uri>model://foosball/meshes/player.dae</uri>
@@ -463,7 +540,6 @@
           </material>
         </visual>
 
-
       <collision name='player_side_1'>
         <pose>0 -0.005 0.13 0 0 0</pose>
         <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
@@ -500,7 +576,7 @@
           <upper>0.07</upper>
         </limit>
       </axis>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
     <joint name="rotA2" type="revolute">
       <parent>shaftA2_bridge</parent>
@@ -512,16 +588,17 @@
           <upper>1000</upper>
         </limit>
       </axis>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
     
       <link name="shaftA3_bridge">
-        <pose>-0.223837 0 0.355381 1.5707963267948966 -0 0</pose>
+        <pose>-0.223837 0 0.355381 1.5707963267948966 0 0</pose>
       </link>    
       <link name="shaftA3">
-        <pose>-0.223837 0 0.355381 1.5707963267948966 -0 0</pose>
+        <pose>-0.223837 0 0.355381 1.5707963267948966 0 0</pose>
+
         <visual name='rod'>
-          <pose>0 0 0 0 -0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.00779907</radius>
@@ -535,8 +612,31 @@
             </script>
           </material>
         </visual>
+
+        <visual name='handle'>
+          <pose>0 0 -0.6 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/handle.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+              <script><name>Gazebo/Black</name></script>
+          </material>
+        </visual>
+
+        <collision name='handle'>
+          <pose>0 0 -0.6675 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.022</radius>
+              <length>0.135</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
         <collision name='rod'>
-          <pose>0 0 0 0 -0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.00779907</radius>
@@ -544,10 +644,12 @@
             </cylinder>
           </geometry>
         </collision>
+
+
      
 
         <visual name='player_center'>
-          <pose>0 0 0 -1.5707963267948966 0 0</pose>
+          <pose>0 0 0 -1.5707963267948966 0 0</pose> 
           <geometry>
             <mesh>
               <uri>model://foosball/meshes/player.dae</uri>
@@ -578,7 +680,6 @@
             <script><name>Gazebo/Red</name></script>
           </material>
         </visual>
-
 
       <collision name='player_side_1'>
         <pose>0 -0.005 0.15 0 0 0</pose>
@@ -616,7 +717,7 @@
           <upper>0.18</upper>
         </limit>
       </axis>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
     <joint name="rotA3" type="revolute">
       <parent>shaftA3_bridge</parent>
@@ -628,16 +729,17 @@
           <upper>1000</upper>
         </limit>
       </axis>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
      
       <link name="shaftB0_bridge">
-        <pose>-0.522287 0 0.355381 1.5707963267948966 -0 0</pose>
+        <pose>-0.522287 0 0.355381 1.5707963267948966 0 0</pose>
       </link>    
       <link name="shaftB0">
-        <pose>-0.522287 0 0.355381 1.5707963267948966 -0 0</pose>
+        <pose>-0.522287 0 0.355381 1.5707963267948966 0 0</pose>
+
         <visual name='rod'>
-          <pose>0 0 0 0 -0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.00779907</radius>
@@ -651,8 +753,31 @@
             </script>
           </material>
         </visual>
+
+        <visual name='handle'>
+          <pose>0 0 0.6 0 -3.141592653589793 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/handle.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+              <script><name>Gazebo/Black</name></script>
+          </material>
+        </visual>
+
+        <collision name='handle'>
+          <pose>0 0 0.6675 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.022</radius>
+              <length>0.135</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
         <collision name='rod'>
-          <pose>0 0 0 0 -0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.00779907</radius>
@@ -660,10 +785,12 @@
             </cylinder>
           </geometry>
         </collision>
+
+
      
 
         <visual name='player_center'>
-          <pose>0 0 0 -1.5707963267948966 0 0</pose>
+          <pose>0 0 0 -1.5707963267948966 0 0</pose> 
           <geometry>
             <mesh>
               <uri>model://foosball/meshes/player.dae</uri>
@@ -695,7 +822,7 @@
           <upper>0.09</upper>
         </limit>
       </axis>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
     <joint name="rotB0" type="revolute">
       <parent>shaftB0_bridge</parent>
@@ -707,16 +834,17 @@
           <upper>1000</upper>
         </limit>
       </axis>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
     
       <link name="shaftB1_bridge">
-        <pose>-0.373062 0 0.355381 1.5707963267948966 -0 0</pose>
+        <pose>-0.373062 0 0.355381 1.5707963267948966 0 0</pose>
       </link>    
       <link name="shaftB1">
-        <pose>-0.373062 0 0.355381 1.5707963267948966 -0 0</pose>
+        <pose>-0.373062 0 0.355381 1.5707963267948966 0 0</pose>
+
         <visual name='rod'>
-          <pose>0 0 0 0 -0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.00779907</radius>
@@ -730,8 +858,31 @@
             </script>
           </material>
         </visual>
+
+        <visual name='handle'>
+          <pose>0 0 0.6 0 -3.141592653589793 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/handle.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+              <script><name>Gazebo/Black</name></script>
+          </material>
+        </visual>
+
+        <collision name='handle'>
+          <pose>0 0 0.6675 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.022</radius>
+              <length>0.135</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
         <collision name='rod'>
-          <pose>0 0 0 0 -0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.00779907</radius>
@@ -739,6 +890,8 @@
             </cylinder>
           </geometry>
         </collision>
+
+
      
      
      
@@ -754,7 +907,6 @@
             <script><name>Gazebo/Blue</name></script>
           </material>
         </visual>
-
 
       <collision name='player_side_1'>
         <pose>0 -0.005 0.1 0 0 0</pose>
@@ -792,7 +944,7 @@
           <upper>0.23</upper>
         </limit>
       </axis>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
     <joint name="rotB1" type="revolute">
       <parent>shaftB1_bridge</parent>
@@ -804,16 +956,17 @@
           <upper>1000</upper>
         </limit>
       </axis>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
     
       <link name="shaftB2_bridge">
-        <pose>-0.074612 0 0.355381 1.5707963267948966 -0 0</pose>
+        <pose>-0.074612 0 0.355381 1.5707963267948966 0 0</pose>
       </link>    
       <link name="shaftB2">
-        <pose>-0.074612 0 0.355381 1.5707963267948966 -0 0</pose>
+        <pose>-0.074612 0 0.355381 1.5707963267948966 0 0</pose>
+
         <visual name='rod'>
-          <pose>0 0 0 0 -0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.00779907</radius>
@@ -827,8 +980,31 @@
             </script>
           </material>
         </visual>
+
+        <visual name='handle'>
+          <pose>0 0 0.6 0 -3.141592653589793 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/handle.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+              <script><name>Gazebo/Black</name></script>
+          </material>
+        </visual>
+
+        <collision name='handle'>
+          <pose>0 0 0.6675 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.022</radius>
+              <length>0.135</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
         <collision name='rod'>
-          <pose>0 0 0 0 -0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.00779907</radius>
@@ -836,10 +1012,12 @@
             </cylinder>
           </geometry>
         </collision>
+
+
      
 
         <visual name='player_center'>
-          <pose>0 0 0 -1.5707963267948966 0 0</pose>
+          <pose>0 0 0 -1.5707963267948966 0 0</pose> 
           <geometry>
             <mesh>
               <uri>model://foosball/meshes/player.dae</uri>
@@ -908,7 +1086,6 @@
           </material>
         </visual>
 
-
       <collision name='player_side_1'>
         <pose>0 -0.005 0.13 0 0 0</pose>
         <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
@@ -945,7 +1122,7 @@
           <upper>0.07</upper>
         </limit>
       </axis>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
     <joint name="rotB2" type="revolute">
       <parent>shaftB2_bridge</parent>
@@ -957,16 +1134,17 @@
           <upper>1000</upper>
         </limit>
       </axis>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
     
       <link name="shaftB3_bridge">
-        <pose>0.223837 0 0.355381 1.5707963267948966 -0 0</pose>
+        <pose>0.223837 0 0.355381 1.5707963267948966 0 0</pose>
       </link>    
       <link name="shaftB3">
-        <pose>0.223837 0 0.355381 1.5707963267948966 -0 0</pose>
+        <pose>0.223837 0 0.355381 1.5707963267948966 0 0</pose>
+
         <visual name='rod'>
-          <pose>0 0 0 0 -0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.00779907</radius>
@@ -980,8 +1158,31 @@
             </script>
           </material>
         </visual>
+
+        <visual name='handle'>
+          <pose>0 0 0.6 0 -3.141592653589793 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/handle.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+              <script><name>Gazebo/Black</name></script>
+          </material>
+        </visual>
+
+        <collision name='handle'>
+          <pose>0 0 0.6675 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.022</radius>
+              <length>0.135</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
         <collision name='rod'>
-          <pose>0 0 0 0 -0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.00779907</radius>
@@ -989,10 +1190,12 @@
             </cylinder>
           </geometry>
         </collision>
+
+
      
 
         <visual name='player_center'>
-          <pose>0 0 0 -1.5707963267948966 0 0</pose>
+          <pose>0 0 0 -1.5707963267948966 0 0</pose> 
           <geometry>
             <mesh>
               <uri>model://foosball/meshes/player.dae</uri>
@@ -1023,7 +1226,6 @@
             <script><name>Gazebo/Blue</name></script>
           </material>
         </visual>
-
 
       <collision name='player_side_1'>
         <pose>0 -0.005 0.15 0 0 0</pose>
@@ -1061,7 +1263,7 @@
           <upper>0.18</upper>
         </limit>
       </axis>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
     <joint name="rotB3" type="revolute">
       <parent>shaftB3_bridge</parent>
@@ -1073,7 +1275,7 @@
           <upper>1000</upper>
         </limit>
       </axis>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
      
 
