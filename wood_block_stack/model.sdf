@@ -1,0 +1,115 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.5">
+  <model name="wood_block_stack">
+    
+    <include>
+      <pose>0 0 0.0  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_0_</name>
+    </include>
+    
+    <include>
+      <pose>0 0 0.018  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_1_</name>
+    </include>
+    
+    <include>
+      <pose>0 0 0.036  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_2_</name>
+    </include>
+    
+    <include>
+      <pose>0 0 0.05399999999999999  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_3_</name>
+    </include>
+    
+    <include>
+      <pose>0 0 0.072  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_4_</name>
+    </include>
+    
+    <include>
+      <pose>0 0 0.09  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_5_</name>
+    </include>
+    
+    <include>
+      <pose>0 0 0.10799999999999998  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_6_</name>
+    </include>
+    
+    <include>
+      <pose>0 0 0.126  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_7_</name>
+    </include>
+    
+    <include>
+      <pose>0 0 0.144  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_8_</name>
+    </include>
+    
+    <include>
+      <pose>0 0 0.16199999999999998  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_9_</name>
+    </include>
+    
+    <include>
+      <pose>0 0 0.18  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_10_</name>
+    </include>
+    
+    <include>
+      <pose>0 0 0.19799999999999998  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_11_</name>
+    </include>
+    
+    <include>
+      <pose>0 0 0.21599999999999997  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_12_</name>
+    </include>
+    
+    <include>
+      <pose>0 0 0.23399999999999999  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_13_</name>
+    </include>
+    
+    <include>
+      <pose>0 0 0.252  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_14_</name>
+    </include>
+    
+    <include>
+      <pose>0 0 0.26999999999999996  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_15_</name>
+    </include>
+    
+    <include>
+      <pose>0 0 0.288  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_16_</name>
+    </include>
+    
+    <include>
+      <pose>0 0 0.306  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_17_</name>
+    </include>
+    
+  </model>
+</sdf>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<%
+  # Stack of wood blocks
+  # SI units (length in meters)
+
+  # Geometry of each block
+  dx = 0.081
+  dy = 0.027
+  dz = 0.018
+  z0 = dz / 2.0
+
+  # Geometry of stack
+  blocks = 3
+  layers = 18
+%>
+<sdf version="1.5">
+  <model name="wood_block_stack">
+    <%
+      layers.times do |layer|
+        z = layer * dz
+    %>
+    <include>
+      <pose>0 0 <%= z %>  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_<%= layer %>_</name>
+    </include>
+    <%
+      end
+    %>
+  </model>
+</sdf>
