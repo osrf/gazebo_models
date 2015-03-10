@@ -17,6 +17,11 @@
   ixx  = mass/12.0 * (dy**2 + dz**2)
   iyy  = mass/12.0 * (dz**2 + dx**2)
   izz  = mass/12.0 * (dx**2 + dy**2)
+
+  # surface properties
+  friction = 0.4
+  min_depth = 0.001
+  max_vel = 1.0
 %>
 <sdf version="1.5">
   <model name="wood_block_8_3_2cm">
@@ -43,10 +48,16 @@
         <surface>
           <contact>
             <ode>
-              <max_vel>1e5</max_vel>
-              <min_depth>0.001</min_depth>
+              <max_vel><%= max_vel %></max_vel>
+              <min_depth><%= min_depth %></min_depth>
             </ode>
           </contact>
+          <friction>
+            <ode>
+              <mu><%= friction %></mu>
+              <mu2><%= friction %></mu2>
+            </ode>
+          </friction>
         </surface>
       </collision>
       <visual name="visual">
