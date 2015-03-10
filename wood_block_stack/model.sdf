@@ -4,111 +4,327 @@
   <model name="wood_block_stack">
     
     <include>
-      <pose>0 0 0.0  0 0 0</pose>
+      <pose>0 -0.02727 0.0  0 0 0</pose>
       <uri>model://wood_block_8_3_2cm</uri>
-      <name>wood_block_8_3_2cm_0_</name>
+      <name>wood_block_8_3_2cm_0_0</name>
     </include>
     
     <include>
-      <pose>0 0 0.018  0 0 0</pose>
+      <pose>0 0.0 0.0  0 0 0</pose>
       <uri>model://wood_block_8_3_2cm</uri>
-      <name>wood_block_8_3_2cm_1_</name>
+      <name>wood_block_8_3_2cm_0_1</name>
     </include>
     
     <include>
-      <pose>0 0 0.036  0 0 0</pose>
+      <pose>0 0.02727 0.0  0 0 0</pose>
       <uri>model://wood_block_8_3_2cm</uri>
-      <name>wood_block_8_3_2cm_2_</name>
+      <name>wood_block_8_3_2cm_0_2</name>
     </include>
     
     <include>
-      <pose>0 0 0.05399999999999999  0 0 0</pose>
+      <pose>-0.02727 0 0.018179999999999998  0 0 1.5707963267948966</pose>
       <uri>model://wood_block_8_3_2cm</uri>
-      <name>wood_block_8_3_2cm_3_</name>
+      <name>wood_block_8_3_2cm_1_0</name>
     </include>
     
     <include>
-      <pose>0 0 0.072  0 0 0</pose>
+      <pose>0.0 0 0.018179999999999998  0 0 1.5707963267948966</pose>
       <uri>model://wood_block_8_3_2cm</uri>
-      <name>wood_block_8_3_2cm_4_</name>
+      <name>wood_block_8_3_2cm_1_1</name>
     </include>
     
     <include>
-      <pose>0 0 0.09  0 0 0</pose>
+      <pose>0.02727 0 0.018179999999999998  0 0 1.5707963267948966</pose>
       <uri>model://wood_block_8_3_2cm</uri>
-      <name>wood_block_8_3_2cm_5_</name>
+      <name>wood_block_8_3_2cm_1_2</name>
     </include>
     
     <include>
-      <pose>0 0 0.10799999999999998  0 0 0</pose>
+      <pose>0 -0.02727 0.036359999999999996  0 0 0</pose>
       <uri>model://wood_block_8_3_2cm</uri>
-      <name>wood_block_8_3_2cm_6_</name>
+      <name>wood_block_8_3_2cm_2_0</name>
     </include>
     
     <include>
-      <pose>0 0 0.126  0 0 0</pose>
+      <pose>0 0.0 0.036359999999999996  0 0 0</pose>
       <uri>model://wood_block_8_3_2cm</uri>
-      <name>wood_block_8_3_2cm_7_</name>
+      <name>wood_block_8_3_2cm_2_1</name>
     </include>
     
     <include>
-      <pose>0 0 0.144  0 0 0</pose>
+      <pose>0 0.02727 0.036359999999999996  0 0 0</pose>
       <uri>model://wood_block_8_3_2cm</uri>
-      <name>wood_block_8_3_2cm_8_</name>
+      <name>wood_block_8_3_2cm_2_2</name>
     </include>
     
     <include>
-      <pose>0 0 0.16199999999999998  0 0 0</pose>
+      <pose>-0.02727 0 0.05454  0 0 1.5707963267948966</pose>
       <uri>model://wood_block_8_3_2cm</uri>
-      <name>wood_block_8_3_2cm_9_</name>
+      <name>wood_block_8_3_2cm_3_0</name>
     </include>
     
     <include>
-      <pose>0 0 0.18  0 0 0</pose>
+      <pose>0.0 0 0.05454  0 0 1.5707963267948966</pose>
       <uri>model://wood_block_8_3_2cm</uri>
-      <name>wood_block_8_3_2cm_10_</name>
+      <name>wood_block_8_3_2cm_3_1</name>
     </include>
     
     <include>
-      <pose>0 0 0.19799999999999998  0 0 0</pose>
+      <pose>0.02727 0 0.05454  0 0 1.5707963267948966</pose>
       <uri>model://wood_block_8_3_2cm</uri>
-      <name>wood_block_8_3_2cm_11_</name>
+      <name>wood_block_8_3_2cm_3_2</name>
     </include>
     
     <include>
-      <pose>0 0 0.21599999999999997  0 0 0</pose>
+      <pose>0 -0.02727 0.07271999999999999  0 0 0</pose>
       <uri>model://wood_block_8_3_2cm</uri>
-      <name>wood_block_8_3_2cm_12_</name>
+      <name>wood_block_8_3_2cm_4_0</name>
     </include>
     
     <include>
-      <pose>0 0 0.23399999999999999  0 0 0</pose>
+      <pose>0 0.0 0.07271999999999999  0 0 0</pose>
       <uri>model://wood_block_8_3_2cm</uri>
-      <name>wood_block_8_3_2cm_13_</name>
+      <name>wood_block_8_3_2cm_4_1</name>
     </include>
     
     <include>
-      <pose>0 0 0.252  0 0 0</pose>
+      <pose>0 0.02727 0.07271999999999999  0 0 0</pose>
       <uri>model://wood_block_8_3_2cm</uri>
-      <name>wood_block_8_3_2cm_14_</name>
+      <name>wood_block_8_3_2cm_4_2</name>
     </include>
     
     <include>
-      <pose>0 0 0.26999999999999996  0 0 0</pose>
+      <pose>-0.02727 0 0.0909  0 0 1.5707963267948966</pose>
       <uri>model://wood_block_8_3_2cm</uri>
-      <name>wood_block_8_3_2cm_15_</name>
+      <name>wood_block_8_3_2cm_5_0</name>
     </include>
     
     <include>
-      <pose>0 0 0.288  0 0 0</pose>
+      <pose>0.0 0 0.0909  0 0 1.5707963267948966</pose>
       <uri>model://wood_block_8_3_2cm</uri>
-      <name>wood_block_8_3_2cm_16_</name>
+      <name>wood_block_8_3_2cm_5_1</name>
     </include>
     
     <include>
-      <pose>0 0 0.306  0 0 0</pose>
+      <pose>0.02727 0 0.0909  0 0 1.5707963267948966</pose>
       <uri>model://wood_block_8_3_2cm</uri>
-      <name>wood_block_8_3_2cm_17_</name>
+      <name>wood_block_8_3_2cm_5_2</name>
+    </include>
+    
+    <include>
+      <pose>0 -0.02727 0.10908  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_6_0</name>
+    </include>
+    
+    <include>
+      <pose>0 0.0 0.10908  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_6_1</name>
+    </include>
+    
+    <include>
+      <pose>0 0.02727 0.10908  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_6_2</name>
+    </include>
+    
+    <include>
+      <pose>-0.02727 0 0.12725999999999998  0 0 1.5707963267948966</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_7_0</name>
+    </include>
+    
+    <include>
+      <pose>0.0 0 0.12725999999999998  0 0 1.5707963267948966</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_7_1</name>
+    </include>
+    
+    <include>
+      <pose>0.02727 0 0.12725999999999998  0 0 1.5707963267948966</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_7_2</name>
+    </include>
+    
+    <include>
+      <pose>0 -0.02727 0.14543999999999999  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_8_0</name>
+    </include>
+    
+    <include>
+      <pose>0 0.0 0.14543999999999999  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_8_1</name>
+    </include>
+    
+    <include>
+      <pose>0 0.02727 0.14543999999999999  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_8_2</name>
+    </include>
+    
+    <include>
+      <pose>-0.02727 0 0.16362  0 0 1.5707963267948966</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_9_0</name>
+    </include>
+    
+    <include>
+      <pose>0.0 0 0.16362  0 0 1.5707963267948966</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_9_1</name>
+    </include>
+    
+    <include>
+      <pose>0.02727 0 0.16362  0 0 1.5707963267948966</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_9_2</name>
+    </include>
+    
+    <include>
+      <pose>0 -0.02727 0.1818  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_10_0</name>
+    </include>
+    
+    <include>
+      <pose>0 0.0 0.1818  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_10_1</name>
+    </include>
+    
+    <include>
+      <pose>0 0.02727 0.1818  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_10_2</name>
+    </include>
+    
+    <include>
+      <pose>-0.02727 0 0.19997999999999996  0 0 1.5707963267948966</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_11_0</name>
+    </include>
+    
+    <include>
+      <pose>0.0 0 0.19997999999999996  0 0 1.5707963267948966</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_11_1</name>
+    </include>
+    
+    <include>
+      <pose>0.02727 0 0.19997999999999996  0 0 1.5707963267948966</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_11_2</name>
+    </include>
+    
+    <include>
+      <pose>0 -0.02727 0.21816  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_12_0</name>
+    </include>
+    
+    <include>
+      <pose>0 0.0 0.21816  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_12_1</name>
+    </include>
+    
+    <include>
+      <pose>0 0.02727 0.21816  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_12_2</name>
+    </include>
+    
+    <include>
+      <pose>-0.02727 0 0.23634  0 0 1.5707963267948966</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_13_0</name>
+    </include>
+    
+    <include>
+      <pose>0.0 0 0.23634  0 0 1.5707963267948966</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_13_1</name>
+    </include>
+    
+    <include>
+      <pose>0.02727 0 0.23634  0 0 1.5707963267948966</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_13_2</name>
+    </include>
+    
+    <include>
+      <pose>0 -0.02727 0.25451999999999997  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_14_0</name>
+    </include>
+    
+    <include>
+      <pose>0 0.0 0.25451999999999997  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_14_1</name>
+    </include>
+    
+    <include>
+      <pose>0 0.02727 0.25451999999999997  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_14_2</name>
+    </include>
+    
+    <include>
+      <pose>-0.02727 0 0.2727  0 0 1.5707963267948966</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_15_0</name>
+    </include>
+    
+    <include>
+      <pose>0.0 0 0.2727  0 0 1.5707963267948966</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_15_1</name>
+    </include>
+    
+    <include>
+      <pose>0.02727 0 0.2727  0 0 1.5707963267948966</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_15_2</name>
+    </include>
+    
+    <include>
+      <pose>0 -0.02727 0.29087999999999997  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_16_0</name>
+    </include>
+    
+    <include>
+      <pose>0 0.0 0.29087999999999997  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_16_1</name>
+    </include>
+    
+    <include>
+      <pose>0 0.02727 0.29087999999999997  0 0 0</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_16_2</name>
+    </include>
+    
+    <include>
+      <pose>-0.02727 0 0.30906  0 0 1.5707963267948966</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_17_0</name>
+    </include>
+    
+    <include>
+      <pose>0.0 0 0.30906  0 0 1.5707963267948966</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_17_1</name>
+    </include>
+    
+    <include>
+      <pose>0.02727 0 0.30906  0 0 1.5707963267948966</pose>
+      <uri>model://wood_block_8_3_2cm</uri>
+      <name>wood_block_8_3_2cm_17_2</name>
     </include>
     
   </model>

@@ -12,19 +12,31 @@
   # Geometry of stack
   blocks = 3
   layers = 18
+  spacing = 1.01
 %>
 <sdf version="1.5">
   <model name="wood_block_stack">
     <%
       layers.times do |layer|
-        z = layer * dz
+        z = spacing * layer * dz
+        blocks.times do |block|
+          if layer.even?
+            angle = 0
+            x = 0
+            y = spacing * dy * (block - (blocks-1)/2)
+          else
+            angle = Math::PI / 2
+            x = spacing * dy * (block - (blocks-1)/2)
+            y = 0
+          end
     %>
     <include>
-      <pose>0 0 <%= z %>  0 0 0</pose>
+      <pose><%= x %> <%= y %> <%= z %>  0 0 <%= angle %></pose>
       <uri>model://wood_block_8_3_2cm</uri>
-      <name>wood_block_8_3_2cm_<%= layer %>_</name>
+      <name>wood_block_8_3_2cm_<%= layer %>_<%= block %></name>
     </include>
     <%
+        end
       end
     %>
   </model>
