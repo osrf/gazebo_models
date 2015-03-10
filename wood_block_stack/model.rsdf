@@ -19,11 +19,29 @@
       layers.times do |layer|
         z = layer * dz
     %>
+    <!-- Alternate the layers by 90 degrees -->
+      <%
+        theta = 0
+        if layer % 2 == 1
+          theta = Math::PI/2
+        end
+       %>
+
+      <% blocks.times do |block|
+           if layer % 2 == 0
+             y = block*dy
+             x = dy
+           else
+             x = block*dy
+             y = dy
+           end
+       %>
     <include>
-      <pose>0 0 <%= z %>  0 0 0</pose>
+      <pose><%= x %> <%= y %> <%= z %> 0 0 <%= theta %></pose>
       <uri>model://wood_block_8_3_2cm</uri>
-      <name>wood_block_8_3_2cm_<%= layer %>_</name>
+      <name>wood_block_8_3_2cm_<%= layer %>_<%= block %></name>
     </include>
+      <% end %>
     <%
       end
     %>
