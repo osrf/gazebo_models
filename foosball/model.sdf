@@ -3,170 +3,102 @@
 <sdf version='1.5'>
   <model name='Foosball'>
     <link name='table'>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 0.425 0 0 0</pose>
 
-      <visual name='base'>
-        <pose>0 0 0 0 0 0</pose>
+      <visual name='table'>
+        <pose>0 0 0 1.5707963267948966 0 0</pose>
         <geometry>
-          <box>
-            <size>1.4218 0.762 0.1</size>
-          </box>
+          <mesh>
+            <uri>model://foosball/meshes/table.dae</uri>
+          </mesh>
         </geometry>
         <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Wood</name>
-          </script>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Orange</name>
+            </script>
+
         </material>
       </visual>
 
       
-        <visual name="sideA">
-          <pose>0 -0.36195 0.2532 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>1.1938 0.0381 0.4064</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Wood</name>
-            </script>
-          </material>
-        </visual>
+
         <collision name="sideA">
-          <pose>0 -0.36195 0.2532 0 0 0</pose>
+          <pose>0 -0.375 0.367 0 0 0</pose>
           <geometry>
             <box>
-              <size>1.1938 0.0381 0.4064</size>
+              <size>1.1 0.02 0.19</size>
             </box>
           </geometry>
         </collision>
       
-        <visual name="sideB">
-          <pose>0 0.36195 0.2532 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>1.1938 0.0381 0.4064</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Wood</name>
-            </script>
-          </material>
-        </visual>
+
         <collision name="sideB">
-          <pose>0 0.36195 0.2532 0 0 0</pose>
+          <pose>0 0.375 0.367 0 0 0</pose>
           <geometry>
             <box>
-              <size>1.1938 0.0381 0.4064</size>
+              <size>1.1 0.02 0.19</size>
             </box>
           </geometry>
         </collision>
       
 
       
-        <visual name="goalA">
-          <pose>0.5969 0 0.2532 0 1.5707963267948966 0</pose>
-          <geometry>
-            <polyline>
-              <height>0.114</height>
-              <point>0.2032 -0.381</point>
-              <point>-0.2032 -0.381</point>
-              <point>-0.2032 0.381</point>
-              <point>0.2032 0.381</point>
-              <point>0.2032 0.1</point>
-              <point>-0.1 0.1</point>
-              <point>-0.1 -0.1</point>
-              <point>0.2032 -0.1</point>
-            </polyline>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Wood</name>
-            </script>
-          </material>
-        </visual> 
         <collision name="goalA">
-          <pose>0.5969 0 0.2532 0 1.5707963267948966 0</pose>
+          <pose>0.55 0 0.367 0 1.5707963267948966 0</pose>
           <geometry>
             <polyline>
-              <height>0.114</height>
-              <point>0.2032 -0.381</point>
-              <point>-0.2032 -0.381</point>
-              <point>-0.2032 0.381</point>
-              <point>0.2032 0.381</point>
-              <point>0.2032 0.1</point>
-              <point>-0.1 0.1</point>
-              <point>-0.1 -0.1</point>
-              <point>0.2032 -0.1</point>
+              <height>0.02</height>
+              <point>0.095 -0.385</point>
+              <point>-0.095 -0.385</point>
+              <point>-0.095 0.385</point>
+              <point>0.095 0.385</point>
+              <point>0.095 0.09</point>
+              <point>-0.0019 0.09</point>
+              <point>-0.0019 -0.09</point>
+              <point>0.095 -0.09</point>
             </polyline>
           </geometry>
         </collision>
       
-        <visual name="goalB">
-          <pose>-0.5969 0 0.2532 3.141592653589793 1.5707963267948966 0</pose>
-          <geometry>
-            <polyline>
-              <height>0.114</height>
-              <point>0.2032 -0.381</point>
-              <point>-0.2032 -0.381</point>
-              <point>-0.2032 0.381</point>
-              <point>0.2032 0.381</point>
-              <point>0.2032 0.1</point>
-              <point>-0.1 0.1</point>
-              <point>-0.1 -0.1</point>
-              <point>0.2032 -0.1</point>
-            </polyline>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Wood</name>
-            </script>
-          </material>
-        </visual> 
         <collision name="goalB">
-          <pose>-0.5969 0 0.2532 3.141592653589793 1.5707963267948966 0</pose>
+          <pose>-0.55 0 0.367 3.141592653589793 1.5707963267948966 0</pose>
           <geometry>
             <polyline>
-              <height>0.114</height>
-              <point>0.2032 -0.381</point>
-              <point>-0.2032 -0.381</point>
-              <point>-0.2032 0.381</point>
-              <point>0.2032 0.381</point>
-              <point>0.2032 0.1</point>
-              <point>-0.1 0.1</point>
-              <point>-0.1 -0.1</point>
-              <point>0.2032 -0.1</point>
+              <height>0.02</height>
+              <point>0.095 -0.385</point>
+              <point>-0.095 -0.385</point>
+              <point>-0.095 0.385</point>
+              <point>0.095 0.385</point>
+              <point>0.095 0.09</point>
+              <point>-0.0019 0.09</point>
+              <point>-0.0019 -0.09</point>
+              <point>0.095 -0.09</point>
             </polyline>
           </geometry>
         </collision>
       
 
       <visual name='ground'>
-        <pose>0 0 0.15000000000000002 0 0 0</pose>
+        <pose>0 0 0.28200000000000003 0 0 0</pose>
         <geometry>
           <box>
-            <size>1.1938 0.6858 0.2</size>
+            <size>1.1 0.73 0.02</size>
           </box>
         </geometry>
         <material>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0.1 0 1</emissive>
+          <script>
+            <uri>model://foosball/materials/scripts/</uri>
+            <uri>model://foosball/materials/textures/</uri>
+            <name>Foosball/Field</name>
+          </script>
         </material>
       </visual>
       <collision name='ground'>
-        <pose>0 0 0.15000000000000002 0 0 0</pose>
+        <pose>0 0 0.28200000000000003 0 0 0</pose>
         <geometry>
           <box>
-            <size>1.1938 0.6858 0.2</size>
+            <size>1.1 0.73 0.02</size>
           </box>
         </geometry>
       </collision>
@@ -187,10 +119,10 @@
 
     
       <link name="shaftA0_bridge">
-        <pose>0.522287 0 0.355381 1.5707963267948966 0 0</pose>
-      </link>    
+        <pose>0.508 0 0.8 1.5707963267948966 0 0</pose>
+      </link>
       <link name="shaftA0">
-        <pose>0.522287 0 0.355381 1.5707963267948966 0 0</pose>
+        <pose>0.508 0 0.8 1.5707963267948966 0 0</pose>
 
         <visual name='rod'>
           <pose>0 0 0 0 0 0</pose>
@@ -244,7 +176,7 @@
      
 
         <visual name='player_center'>
-          <pose>0 0 0 -1.5707963267948966 0 0</pose> 
+          <pose>0 0 0 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
               <uri>model://foosball/meshes/player.dae</uri>
@@ -264,7 +196,7 @@
      
      
       </link>
-    
+
     <joint name="transA0" type="prismatic">
       <parent>world</parent>
       <child>shaftA0_bridge</child>
@@ -292,10 +224,10 @@
     </joint>
     
       <link name="shaftA1_bridge">
-        <pose>0.373062 0 0.355381 1.5707963267948966 0 0</pose>
-      </link>    
+        <pose>0.3675 0 0.8 1.5707963267948966 0 0</pose>
+      </link>
       <link name="shaftA1">
-        <pose>0.373062 0 0.355381 1.5707963267948966 0 0</pose>
+        <pose>0.3675 0 0.8 1.5707963267948966 0 0</pose>
 
         <visual name='rod'>
           <pose>0 0 0 0 0 0</pose>
@@ -386,7 +318,7 @@
 
       
       </link>
-    
+
     <joint name="transA1" type="prismatic">
       <parent>world</parent>
       <child>shaftA1_bridge</child>
@@ -414,10 +346,10 @@
     </joint>
     
       <link name="shaftA2_bridge">
-        <pose>0.074612 0 0.355381 1.5707963267948966 0 0</pose>
-      </link>    
+        <pose>0.087 0 0.8 1.5707963267948966 0 0</pose>
+      </link>
       <link name="shaftA2">
-        <pose>0.074612 0 0.355381 1.5707963267948966 0 0</pose>
+        <pose>0.087 0 0.8 1.5707963267948966 0 0</pose>
 
         <visual name='rod'>
           <pose>0 0 0 0 0 0</pose>
@@ -471,7 +403,7 @@
      
 
         <visual name='player_center'>
-          <pose>0 0 0 -1.5707963267948966 0 0</pose> 
+          <pose>0 0 0 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
               <uri>model://foosball/meshes/player.dae</uri>
@@ -564,7 +496,7 @@
 
       
       </link>
-    
+
     <joint name="transA2" type="prismatic">
       <parent>world</parent>
       <child>shaftA2_bridge</child>
@@ -592,10 +524,10 @@
     </joint>
     
       <link name="shaftA3_bridge">
-        <pose>-0.223837 0 0.355381 1.5707963267948966 0 0</pose>
-      </link>    
+        <pose>-0.227 0 0.8 1.5707963267948966 0 0</pose>
+      </link>
       <link name="shaftA3">
-        <pose>-0.223837 0 0.355381 1.5707963267948966 0 0</pose>
+        <pose>-0.227 0 0.8 1.5707963267948966 0 0</pose>
 
         <visual name='rod'>
           <pose>0 0 0 0 0 0</pose>
@@ -649,7 +581,7 @@
      
 
         <visual name='player_center'>
-          <pose>0 0 0 -1.5707963267948966 0 0</pose> 
+          <pose>0 0 0 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
               <uri>model://foosball/meshes/player.dae</uri>
@@ -705,7 +637,7 @@
 
       
       </link>
-    
+
     <joint name="transA3" type="prismatic">
       <parent>world</parent>
       <child>shaftA3_bridge</child>
@@ -733,10 +665,10 @@
     </joint>
      
       <link name="shaftB0_bridge">
-        <pose>-0.522287 0 0.355381 1.5707963267948966 0 0</pose>
-      </link>    
+        <pose>-0.508 0 0.8 1.5707963267948966 0 0</pose>
+      </link>
       <link name="shaftB0">
-        <pose>-0.522287 0 0.355381 1.5707963267948966 0 0</pose>
+        <pose>-0.508 0 0.8 1.5707963267948966 0 0</pose>
 
         <visual name='rod'>
           <pose>0 0 0 0 0 0</pose>
@@ -790,7 +722,7 @@
      
 
         <visual name='player_center'>
-          <pose>0 0 0 -1.5707963267948966 0 0</pose> 
+          <pose>0 0 0 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
               <uri>model://foosball/meshes/player.dae</uri>
@@ -810,7 +742,7 @@
      
      
       </link>
-    
+
     <joint name="transB0" type="prismatic">
       <parent>world</parent>
       <child>shaftB0_bridge</child>
@@ -838,10 +770,10 @@
     </joint>
     
       <link name="shaftB1_bridge">
-        <pose>-0.373062 0 0.355381 1.5707963267948966 0 0</pose>
-      </link>    
+        <pose>-0.3675 0 0.8 1.5707963267948966 0 0</pose>
+      </link>
       <link name="shaftB1">
-        <pose>-0.373062 0 0.355381 1.5707963267948966 0 0</pose>
+        <pose>-0.3675 0 0.8 1.5707963267948966 0 0</pose>
 
         <visual name='rod'>
           <pose>0 0 0 0 0 0</pose>
@@ -932,7 +864,7 @@
 
       
       </link>
-    
+
     <joint name="transB1" type="prismatic">
       <parent>world</parent>
       <child>shaftB1_bridge</child>
@@ -960,10 +892,10 @@
     </joint>
     
       <link name="shaftB2_bridge">
-        <pose>-0.074612 0 0.355381 1.5707963267948966 0 0</pose>
-      </link>    
+        <pose>-0.087 0 0.8 1.5707963267948966 0 0</pose>
+      </link>
       <link name="shaftB2">
-        <pose>-0.074612 0 0.355381 1.5707963267948966 0 0</pose>
+        <pose>-0.087 0 0.8 1.5707963267948966 0 0</pose>
 
         <visual name='rod'>
           <pose>0 0 0 0 0 0</pose>
@@ -1017,7 +949,7 @@
      
 
         <visual name='player_center'>
-          <pose>0 0 0 -1.5707963267948966 0 0</pose> 
+          <pose>0 0 0 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
               <uri>model://foosball/meshes/player.dae</uri>
@@ -1110,7 +1042,7 @@
 
       
       </link>
-    
+
     <joint name="transB2" type="prismatic">
       <parent>world</parent>
       <child>shaftB2_bridge</child>
@@ -1138,10 +1070,10 @@
     </joint>
     
       <link name="shaftB3_bridge">
-        <pose>0.223837 0 0.355381 1.5707963267948966 0 0</pose>
-      </link>    
+        <pose>0.227 0 0.8 1.5707963267948966 0 0</pose>
+      </link>
       <link name="shaftB3">
-        <pose>0.223837 0 0.355381 1.5707963267948966 0 0</pose>
+        <pose>0.227 0 0.8 1.5707963267948966 0 0</pose>
 
         <visual name='rod'>
           <pose>0 0 0 0 0 0</pose>
@@ -1195,7 +1127,7 @@
      
 
         <visual name='player_center'>
-          <pose>0 0 0 -1.5707963267948966 0 0</pose> 
+          <pose>0 0 0 -1.5707963267948966 0 0</pose>
           <geometry>
             <mesh>
               <uri>model://foosball/meshes/player.dae</uri>
@@ -1251,7 +1183,7 @@
 
       
       </link>
-    
+
     <joint name="transB3" type="prismatic">
       <parent>world</parent>
       <child>shaftB3_bridge</child>
