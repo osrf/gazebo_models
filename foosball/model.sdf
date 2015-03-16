@@ -1,23 +1,1216 @@
-<?xml version="1.0" ?>
-<sdf version="1.5">
-  <model name="foosball">
-    <link name="test">
-      <pose>0 0 0 0 0 0</pose>
-      <collision name='collision'>
+<?xml version='1.0'?>
+
+<sdf version='1.5'>
+  <model name='Foosball'>
+    <link name='table'>
+      <pose>0 0 0.425 0 0 0</pose>
+
+      <visual name='table'>
+        <pose>0 0 0 1.5707963267948966 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://foosball/meshes/table.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Orange</name>
+            </script>
+
+        </material>
+      </visual>
+
+      
+
+        <collision name="sideA">
+          <pose>0 -0.375 0.367 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>1.1 0.02 0.19</size>
+            </box>
+          </geometry>
+        </collision>
+      
+
+        <collision name="sideB">
+          <pose>0 0.375 0.367 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>1.1 0.02 0.19</size>
+            </box>
+          </geometry>
+        </collision>
+      
+
+      
+        <collision name="goalA">
+          <pose>0.55 0 0.367 0 1.5707963267948966 0</pose>
+          <geometry>
+            <polyline>
+              <height>0.02</height>
+              <point>0.095 -0.385</point>
+              <point>-0.095 -0.385</point>
+              <point>-0.095 0.385</point>
+              <point>0.095 0.385</point>
+              <point>0.095 0.09</point>
+              <point>-0.0019 0.09</point>
+              <point>-0.0019 -0.09</point>
+              <point>0.095 -0.09</point>
+            </polyline>
+          </geometry>
+        </collision>
+      
+        <collision name="goalB">
+          <pose>-0.55 0 0.367 3.141592653589793 1.5707963267948966 0</pose>
+          <geometry>
+            <polyline>
+              <height>0.02</height>
+              <point>0.095 -0.385</point>
+              <point>-0.095 -0.385</point>
+              <point>-0.095 0.385</point>
+              <point>0.095 0.385</point>
+              <point>0.095 0.09</point>
+              <point>-0.0019 0.09</point>
+              <point>-0.0019 -0.09</point>
+              <point>0.095 -0.09</point>
+            </polyline>
+          </geometry>
+        </collision>
+      
+
+      <visual name='ground'>
+        <pose>0 0 0.28200000000000003 0 0 0</pose>
         <geometry>
           <box>
-            <size>1 1 1</size>
+            <size>1.1 0.73 0.02</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://foosball/materials/scripts/</uri>
+            <uri>model://foosball/materials/textures/</uri>
+            <name>Foosball/Field</name>
+          </script>
+        </material>
+      </visual>
+      <collision name='ground'>
+        <pose>0 0 0.28200000000000003 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.1 0.73 0.02</size>
           </box>
         </geometry>
       </collision>
-
-      <visual name='visual'>
-        <geometry>
-          <box>
-            <size>1 1 1</size>
-          </box>
-        </geometry>
-      </visual>
     </link>
+
+    <joint name='table_world' type='prismatic'>
+      <parent>world</parent>
+      <child>table</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.1</upper>
+        </limit>
+      </axis>
+      <pose>0 0 0 0 0 0</pose>
+    </joint>
+
+    
+      <link name="shaftA0_bridge">
+        <pose>0.508 0 0.8 1.5707963267948966 0 0</pose>
+      </link>
+      <link name="shaftA0">
+        <pose>0.508 0 0.8 1.5707963267948966 0 0</pose>
+
+        <visual name='rod'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.00779907</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+
+        <visual name='handle'>
+          <pose>0 0 -0.6 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/handle.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+              <script><name>Gazebo/Black</name></script>
+          </material>
+        </visual>
+
+        <collision name='handle'>
+          <pose>0 0 -0.6675 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.022</radius>
+              <length>0.135</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <collision name='rod'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.00779907</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+
+     
+
+        <visual name='player_center'>
+          <pose>0 0 0 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Red</name></script>
+          </material>
+        </visual>
+
+        <collision name='player_center'>
+          <pose>0 -0.005 0 0 0 0</pose>
+          <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+        </collision>
+
+     
+     
+     
+      </link>
+
+    <joint name="transA0" type="prismatic">
+      <parent>world</parent>
+      <child>shaftA0_bridge</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-0.09</lower>
+          <upper>0.09</upper>
+        </limit>
+      </axis>
+      <pose>0 0 0 0 0 0</pose>
+    </joint>
+    <joint name="rotA0" type="revolute">
+      <parent>shaftA0_bridge</parent>
+      <child>shaftA0</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+        </limit>
+      </axis>
+      <pose>0 0 0 0 0 0</pose>
+    </joint>
+    
+      <link name="shaftA1_bridge">
+        <pose>0.3675 0 0.8 1.5707963267948966 0 0</pose>
+      </link>
+      <link name="shaftA1">
+        <pose>0.3675 0 0.8 1.5707963267948966 0 0</pose>
+
+        <visual name='rod'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.00779907</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+
+        <visual name='handle'>
+          <pose>0 0 -0.6 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/handle.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+              <script><name>Gazebo/Black</name></script>
+          </material>
+        </visual>
+
+        <collision name='handle'>
+          <pose>0 0 -0.6675 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.022</radius>
+              <length>0.135</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <collision name='rod'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.00779907</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+
+     
+     
+     
+
+        <visual name='player_side_1'>
+          <pose>0 0 0.1 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Red</name></script>
+          </material>
+        </visual>
+
+      <collision name='player_side_1'>
+        <pose>0 -0.005 0.1 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+      </collision>
+
+        <visual name='player_side_2'>
+          <pose>0 0 -0.1 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Red</name></script>
+          </material>
+        </visual>
+
+      <collision name='player_side_2'>
+        <pose>0 -0.005 -0.1 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+      </collision>
+
+      
+      </link>
+
+    <joint name="transA1" type="prismatic">
+      <parent>world</parent>
+      <child>shaftA1_bridge</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-0.23</lower>
+          <upper>0.23</upper>
+        </limit>
+      </axis>
+      <pose>0 0 0 0 0 0</pose>
+    </joint>
+    <joint name="rotA1" type="revolute">
+      <parent>shaftA1_bridge</parent>
+      <child>shaftA1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+        </limit>
+      </axis>
+      <pose>0 0 0 0 0 0</pose>
+    </joint>
+    
+      <link name="shaftA2_bridge">
+        <pose>0.087 0 0.8 1.5707963267948966 0 0</pose>
+      </link>
+      <link name="shaftA2">
+        <pose>0.087 0 0.8 1.5707963267948966 0 0</pose>
+
+        <visual name='rod'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.00779907</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+
+        <visual name='handle'>
+          <pose>0 0 -0.6 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/handle.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+              <script><name>Gazebo/Black</name></script>
+          </material>
+        </visual>
+
+        <collision name='handle'>
+          <pose>0 0 -0.6675 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.022</radius>
+              <length>0.135</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <collision name='rod'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.00779907</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+
+     
+
+        <visual name='player_center'>
+          <pose>0 0 0 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Red</name></script>
+          </material>
+        </visual>
+
+        <collision name='player_center'>
+          <pose>0 -0.005 0 0 0 0</pose>
+          <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+        </collision>
+
+     
+     
+
+        <visual name='player_mid_1'>
+        <pose>0 0 0.26 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Red</name>
+            </script>
+          </material>
+        </visual>
+
+      <collision name='player_mid_1'>
+        <pose>0 -0.005 0.26 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+      </collision>
+
+        <visual name='player_mid_2'>
+          <pose>0 0 -0.26 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Red</name></script>
+          </material>
+        </visual>
+
+       <collision name='player_mid_2'>
+        <pose>0 -0.005 -0.26 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+      </collision>
+     
+     
+
+        <visual name='player_side_1'>
+          <pose>0 0 0.13 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Red</name></script>
+          </material>
+        </visual>
+
+      <collision name='player_side_1'>
+        <pose>0 -0.005 0.13 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+      </collision>
+
+        <visual name='player_side_2'>
+          <pose>0 0 -0.13 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Red</name></script>
+          </material>
+        </visual>
+
+      <collision name='player_side_2'>
+        <pose>0 -0.005 -0.13 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+      </collision>
+
+      
+      </link>
+
+    <joint name="transA2" type="prismatic">
+      <parent>world</parent>
+      <child>shaftA2_bridge</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-0.07</lower>
+          <upper>0.07</upper>
+        </limit>
+      </axis>
+      <pose>0 0 0 0 0 0</pose>
+    </joint>
+    <joint name="rotA2" type="revolute">
+      <parent>shaftA2_bridge</parent>
+      <child>shaftA2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+        </limit>
+      </axis>
+      <pose>0 0 0 0 0 0</pose>
+    </joint>
+    
+      <link name="shaftA3_bridge">
+        <pose>-0.227 0 0.8 1.5707963267948966 0 0</pose>
+      </link>
+      <link name="shaftA3">
+        <pose>-0.227 0 0.8 1.5707963267948966 0 0</pose>
+
+        <visual name='rod'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.00779907</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+
+        <visual name='handle'>
+          <pose>0 0 -0.6 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/handle.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+              <script><name>Gazebo/Black</name></script>
+          </material>
+        </visual>
+
+        <collision name='handle'>
+          <pose>0 0 -0.6675 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.022</radius>
+              <length>0.135</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <collision name='rod'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.00779907</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+
+     
+
+        <visual name='player_center'>
+          <pose>0 0 0 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Red</name></script>
+          </material>
+        </visual>
+
+        <collision name='player_center'>
+          <pose>0 -0.005 0 0 0 0</pose>
+          <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+        </collision>
+
+     
+     
+     
+
+        <visual name='player_side_1'>
+          <pose>0 0 0.15 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Red</name></script>
+          </material>
+        </visual>
+
+      <collision name='player_side_1'>
+        <pose>0 -0.005 0.15 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+      </collision>
+
+        <visual name='player_side_2'>
+          <pose>0 0 -0.15 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Red</name></script>
+          </material>
+        </visual>
+
+      <collision name='player_side_2'>
+        <pose>0 -0.005 -0.15 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+      </collision>
+
+      
+      </link>
+
+    <joint name="transA3" type="prismatic">
+      <parent>world</parent>
+      <child>shaftA3_bridge</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-0.18</lower>
+          <upper>0.18</upper>
+        </limit>
+      </axis>
+      <pose>0 0 0 0 0 0</pose>
+    </joint>
+    <joint name="rotA3" type="revolute">
+      <parent>shaftA3_bridge</parent>
+      <child>shaftA3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+        </limit>
+      </axis>
+      <pose>0 0 0 0 0 0</pose>
+    </joint>
+     
+      <link name="shaftB0_bridge">
+        <pose>-0.508 0 0.8 1.5707963267948966 0 0</pose>
+      </link>
+      <link name="shaftB0">
+        <pose>-0.508 0 0.8 1.5707963267948966 0 0</pose>
+
+        <visual name='rod'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.00779907</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+
+        <visual name='handle'>
+          <pose>0 0 0.6 0 -3.141592653589793 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/handle.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+              <script><name>Gazebo/Black</name></script>
+          </material>
+        </visual>
+
+        <collision name='handle'>
+          <pose>0 0 0.6675 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.022</radius>
+              <length>0.135</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <collision name='rod'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.00779907</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+
+     
+
+        <visual name='player_center'>
+          <pose>0 0 0 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Blue</name></script>
+          </material>
+        </visual>
+
+        <collision name='player_center'>
+          <pose>0 -0.005 0 0 0 0</pose>
+          <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+        </collision>
+
+     
+     
+     
+      </link>
+
+    <joint name="transB0" type="prismatic">
+      <parent>world</parent>
+      <child>shaftB0_bridge</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-0.09</lower>
+          <upper>0.09</upper>
+        </limit>
+      </axis>
+      <pose>0 0 0 0 0 0</pose>
+    </joint>
+    <joint name="rotB0" type="revolute">
+      <parent>shaftB0_bridge</parent>
+      <child>shaftB0</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+        </limit>
+      </axis>
+      <pose>0 0 0 0 0 0</pose>
+    </joint>
+    
+      <link name="shaftB1_bridge">
+        <pose>-0.3675 0 0.8 1.5707963267948966 0 0</pose>
+      </link>
+      <link name="shaftB1">
+        <pose>-0.3675 0 0.8 1.5707963267948966 0 0</pose>
+
+        <visual name='rod'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.00779907</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+
+        <visual name='handle'>
+          <pose>0 0 0.6 0 -3.141592653589793 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/handle.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+              <script><name>Gazebo/Black</name></script>
+          </material>
+        </visual>
+
+        <collision name='handle'>
+          <pose>0 0 0.6675 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.022</radius>
+              <length>0.135</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <collision name='rod'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.00779907</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+
+     
+     
+     
+
+        <visual name='player_side_1'>
+          <pose>0 0 0.1 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Blue</name></script>
+          </material>
+        </visual>
+
+      <collision name='player_side_1'>
+        <pose>0 -0.005 0.1 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+      </collision>
+
+        <visual name='player_side_2'>
+          <pose>0 0 -0.1 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Blue</name></script>
+          </material>
+        </visual>
+
+      <collision name='player_side_2'>
+        <pose>0 -0.005 -0.1 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+      </collision>
+
+      
+      </link>
+
+    <joint name="transB1" type="prismatic">
+      <parent>world</parent>
+      <child>shaftB1_bridge</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-0.23</lower>
+          <upper>0.23</upper>
+        </limit>
+      </axis>
+      <pose>0 0 0 0 0 0</pose>
+    </joint>
+    <joint name="rotB1" type="revolute">
+      <parent>shaftB1_bridge</parent>
+      <child>shaftB1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+        </limit>
+      </axis>
+      <pose>0 0 0 0 0 0</pose>
+    </joint>
+    
+      <link name="shaftB2_bridge">
+        <pose>-0.087 0 0.8 1.5707963267948966 0 0</pose>
+      </link>
+      <link name="shaftB2">
+        <pose>-0.087 0 0.8 1.5707963267948966 0 0</pose>
+
+        <visual name='rod'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.00779907</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+
+        <visual name='handle'>
+          <pose>0 0 0.6 0 -3.141592653589793 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/handle.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+              <script><name>Gazebo/Black</name></script>
+          </material>
+        </visual>
+
+        <collision name='handle'>
+          <pose>0 0 0.6675 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.022</radius>
+              <length>0.135</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <collision name='rod'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.00779907</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+
+     
+
+        <visual name='player_center'>
+          <pose>0 0 0 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Blue</name></script>
+          </material>
+        </visual>
+
+        <collision name='player_center'>
+          <pose>0 -0.005 0 0 0 0</pose>
+          <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+        </collision>
+
+     
+     
+
+        <visual name='player_mid_1'>
+        <pose>0 0 0.26 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Blue</name>
+            </script>
+          </material>
+        </visual>
+
+      <collision name='player_mid_1'>
+        <pose>0 -0.005 0.26 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+      </collision>
+
+        <visual name='player_mid_2'>
+          <pose>0 0 -0.26 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Blue</name></script>
+          </material>
+        </visual>
+
+       <collision name='player_mid_2'>
+        <pose>0 -0.005 -0.26 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+      </collision>
+     
+     
+
+        <visual name='player_side_1'>
+          <pose>0 0 0.13 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Blue</name></script>
+          </material>
+        </visual>
+
+      <collision name='player_side_1'>
+        <pose>0 -0.005 0.13 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+      </collision>
+
+        <visual name='player_side_2'>
+          <pose>0 0 -0.13 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Blue</name></script>
+          </material>
+        </visual>
+
+      <collision name='player_side_2'>
+        <pose>0 -0.005 -0.13 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+      </collision>
+
+      
+      </link>
+
+    <joint name="transB2" type="prismatic">
+      <parent>world</parent>
+      <child>shaftB2_bridge</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-0.07</lower>
+          <upper>0.07</upper>
+        </limit>
+      </axis>
+      <pose>0 0 0 0 0 0</pose>
+    </joint>
+    <joint name="rotB2" type="revolute">
+      <parent>shaftB2_bridge</parent>
+      <child>shaftB2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+        </limit>
+      </axis>
+      <pose>0 0 0 0 0 0</pose>
+    </joint>
+    
+      <link name="shaftB3_bridge">
+        <pose>0.227 0 0.8 1.5707963267948966 0 0</pose>
+      </link>
+      <link name="shaftB3">
+        <pose>0.227 0 0.8 1.5707963267948966 0 0</pose>
+
+        <visual name='rod'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.00779907</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+
+        <visual name='handle'>
+          <pose>0 0 0.6 0 -3.141592653589793 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/handle.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+              <script><name>Gazebo/Black</name></script>
+          </material>
+        </visual>
+
+        <collision name='handle'>
+          <pose>0 0 0.6675 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.022</radius>
+              <length>0.135</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+        <collision name='rod'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.00779907</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+        </collision>
+
+
+     
+
+        <visual name='player_center'>
+          <pose>0 0 0 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Blue</name></script>
+          </material>
+        </visual>
+
+        <collision name='player_center'>
+          <pose>0 -0.005 0 0 0 0</pose>
+          <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+        </collision>
+
+     
+     
+     
+
+        <visual name='player_side_1'>
+          <pose>0 0 0.15 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Blue</name></script>
+          </material>
+        </visual>
+
+      <collision name='player_side_1'>
+        <pose>0 -0.005 0.15 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+      </collision>
+
+        <visual name='player_side_2'>
+          <pose>0 0 -0.15 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Blue</name></script>
+          </material>
+        </visual>
+
+      <collision name='player_side_2'>
+        <pose>0 -0.005 -0.15 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+      </collision>
+
+      
+      </link>
+
+    <joint name="transB3" type="prismatic">
+      <parent>world</parent>
+      <child>shaftB3_bridge</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-0.18</lower>
+          <upper>0.18</upper>
+        </limit>
+      </axis>
+      <pose>0 0 0 0 0 0</pose>
+    </joint>
+    <joint name="rotB3" type="revolute">
+      <parent>shaftB3_bridge</parent>
+      <child>shaftB3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+        </limit>
+      </axis>
+      <pose>0 0 0 0 0 0</pose>
+    </joint>
+     
+
+    <static>0</static>
   </model>
 </sdf>
