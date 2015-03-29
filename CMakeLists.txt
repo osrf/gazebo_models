@@ -75,6 +75,7 @@ fire_hose_long_curled
 fire_hydrant
 first_2015_trash_can
 foosball
+foosball_ball
 frc_field_2015
 gas_station
 grey_tote
