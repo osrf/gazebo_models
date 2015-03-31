@@ -2,7 +2,7 @@
 
   <model name="sand_box">
     <static>true</static>
-    <link name="sand">
+    <!--<link name="sand">
       <gravity>false</gravity>
       <pose>0 0 0.15 0 0 0</pose>
       <visual name="sand_visual">
@@ -19,7 +19,7 @@
           </script>
         </material>
       </visual>
-    </link>
+    </link>-->
 
     <link name='wall_0'>
       <pose>0 -0.5375 0.1875 0 -0 0</pose>
