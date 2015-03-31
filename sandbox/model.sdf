@@ -1,13 +1,14 @@
 <sdf version="1.5">
 
   <model name="sand_box">
+    <static>true</static>
     <link name="sand">
       <gravity>false</gravity>
-      <pose>0 0 0.25 0 0 0</pose>
+      <pose>0 0 0.15 0 0 0</pose>
       <visual name="sand_visual">
         <geometry>
           <box>
-            <size> 2 1.236 0.5</size>
+            <size> 2 1.236 0.3</size>
           </box>
         </geometry>
         <material>
@@ -21,7 +22,7 @@
     </link>
 
     <link name='wall_0'>
-      <pose>0 -0.6555 0.2875 0 -0 0</pose>
+      <pose>0 -0.6555 0.1875 0 -0 0</pose>
       <inertial>
         <mass>1</mass>
         <pose>0 0 0.5 0 -0 0</pose>
@@ -38,7 +39,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>2.15 0.075 0.575</size>
+            <size>2.15 0.075 0.375</size>
           </box>
         </geometry>
         <material>
@@ -52,13 +53,13 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>2.15 0.075 0.575</size>
+            <size>2.15 0.075 0.375</size>
           </box>
         </geometry>
       </collision>
     </link>
     <link name='wall_1'>
-      <pose>0 0.6555 0.2875 0 -0 0</pose>
+      <pose>0 0.6555 0.1875 0 -0 0</pose>
       <inertial>
         <mass>1</mass>
         <pose>0 0 0.5 0 -0 0</pose>
@@ -75,7 +76,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>2.15 0.075 0.575</size>
+            <size>2.15 0.075 0.375</size>
           </box>
         </geometry>
         <material>
@@ -89,14 +90,14 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>2.15 0.075 0.575</size>
+            <size>2.15 0.075 0.375</size>
           </box>
         </geometry>
       </collision>
     </link>
 
     <link name='wall_2'>
-      <pose>-1.0375 0 0.2875 0 0 0</pose>
+      <pose>-1.0375 0 0.1875 0 0 0</pose>
       <inertial>
         <mass>1</mass>
         <pose>0 0 0.5 0 -0 0</pose>
@@ -113,7 +114,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.075 1.386 0.575</size>
+            <size>0.075 1.386 0.375</size>
           </box>
         </geometry>
       </collision>
@@ -121,7 +122,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.075 1.386 0.575</size>
+            <size>0.075 1.386 0.375</size>
           </box>
         </geometry>
         <material>
@@ -134,7 +135,7 @@
     </link>
 
     <link name='wall_3'>
-      <pose>1.0375 0 0.2875 0 0 0</pose>
+      <pose>1.0375 0 0.1875 0 0 0</pose>
       <inertial>
         <mass>1</mass>
         <pose>0 0 0.5 0 -0 0</pose>
@@ -151,7 +152,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.075 1.386 0.575</size>
+            <size>0.075 1.386 0.375</size>
           </box>
         </geometry>
         <material>
@@ -165,7 +166,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.075 1.386 0.575</size>
+            <size>0.075 1.386 0.375</size>
           </box>
         </geometry>
       </collision>

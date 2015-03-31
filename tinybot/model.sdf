@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+
+<sdf version='1.5'>
+  <model name='tinybot'>
+    <link name='link_0'>
+      <inertial>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.002784820447083333</ixx>
+          <ixy>0</ixy>
+          <iyy>0.004077131132416666</iyy>
+          <ixz>0</ixz>
+          <izz>0.0018125125254166666</izz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name='visual'>
+        <geometry>
+          <mesh>
+            <uri>model://tinybot/meshes/tinybot.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+      <collision name='collision'>
+        <geometry>
+          <mesh>
+            <uri>model://tinybot/meshes/tinybot.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>
