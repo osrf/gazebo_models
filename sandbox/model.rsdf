@@ -1,6 +1,6 @@
 <sdf version="1.5">
-  <% box_x = 2
-     box_y = 1.236
+  <% box_x = 1.5
+     box_y = 1.0
      box_z = 0.3
      wall_dim = 0.075
    %>
