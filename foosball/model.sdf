@@ -5,6 +5,7 @@
     <link name='table'>
       <pose>0 0 0.425 0 0 0</pose>
 
+
       <visual name='table'>
         <pose>0 0 0 1.5707963267948966 0 0</pose>
         <geometry>
@@ -45,7 +46,8 @@
       
 
       
-        <collision name="goalA">
+
+      <collision name="goalA">
           <pose>0.55 0 0.34700000000000003 0 1.5707963267948966 0</pose>
           <geometry>
             <polyline>
@@ -62,7 +64,8 @@
           </geometry>
         </collision>
       
-        <collision name="goalB">
+
+      <collision name="goalB">
           <pose>-0.55 0 0.34700000000000003 3.141592653589793 1.5707963267948966 0</pose>
           <geometry>
             <polyline>
@@ -103,6 +106,16 @@
           </box>
         </geometry>
       </collision>
+
+<!--
+      <collision name='corner'>
+        <pose>0 0 0 0 0 0</pose>
+        <box>
+          <size>  </size>
+        </box>
+      </collision>
+-->
+
     </link>
 
     <joint name='table_world' type='prismatic'>
@@ -196,6 +209,42 @@
      
      
      
+
+        <visual name='player_side_1'>
+          <pose>0 0 0.15 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Red</name></script>
+          </material>
+        </visual>
+
+      <collision name='player_side_1'>
+        <pose>0 -0.005 0.15 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+      </collision>
+
+        <visual name='player_side_2'>
+          <pose>0 0 -0.15 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Red</name></script>
+          </material>
+        </visual>
+
+      <collision name='player_side_2'>
+        <pose>0 -0.005 -0.15 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+      </collision>
+
+      
       </link>
 
     <joint name="transA0" type="prismatic">
@@ -205,8 +254,8 @@
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
         <limit>
-          <lower>-0.09</lower>
-          <upper>0.09</upper>
+          <lower>-0.18</lower>
+          <upper>0.18</upper>
         </limit>
       </axis>
       <pose>0 0 0 0 0 0</pose>
@@ -742,6 +791,42 @@
      
      
      
+
+        <visual name='player_side_1'>
+          <pose>0 0 0.15 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Blue</name></script>
+          </material>
+        </visual>
+
+      <collision name='player_side_1'>
+        <pose>0 -0.005 0.15 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+      </collision>
+
+        <visual name='player_side_2'>
+          <pose>0 0 -0.15 -1.5707963267948966 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://foosball/meshes/player.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Blue</name></script>
+          </material>
+        </visual>
+
+      <collision name='player_side_2'>
+        <pose>0 -0.005 -0.15 0 0 0</pose>
+        <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
+      </collision>
+
+      
       </link>
 
     <joint name="transB0" type="prismatic">
@@ -751,8 +836,8 @@
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
         <limit>
-          <lower>-0.09</lower>
-          <upper>0.09</upper>
+          <lower>-0.18</lower>
+          <upper>0.18</upper>
         </limit>
       </axis>
       <pose>0 0 0 0 0 0</pose>
