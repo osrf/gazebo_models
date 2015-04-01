@@ -4,7 +4,7 @@
 
   field_length = 1.1
   field_width = 0.73
-  field_height = 0.19
+  field_height = 0.15 #0.19
 
   ground_height = 0.02
   base_height = 0.544
@@ -85,11 +85,12 @@
           posX = sides[k][:posX]
       %>
 
+
         <%= '<collision name=' + '"side' + k + '">' %>
-          <pose>0 <%= posX * (field_width + side_thickness)/2 %> <%= (field_height + base_height)/2 %> 0 0 0</pose>
+          <pose>0 <%= posX * (field_width - 0.03 + side_thickness)/2 %> <%= (field_height + base_height)/2 %> 0 0 0</pose>
           <geometry>
             <box>
-              <size><%= field_length %> <%= side_thickness %> <%= field_height %></size>
+              <size><%= field_length %> <%= side_thickness  %> <%= field_height %></size>
             </box>
           </geometry>
         </collision>

@@ -13,31 +13,32 @@
           </mesh>
         </geometry>
         <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Orange</name>
-            </script>
-
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Orange</name>
+          </script>
         </material>
       </visual>
 
       
 
+
         <collision name="sideA">
-          <pose>0 -0.375 0.367 0 0 0</pose>
+          <pose>0 -0.36 0.34700000000000003 0 0 0</pose>
           <geometry>
             <box>
-              <size>1.1 0.02 0.19</size>
+              <size>1.1 0.02 0.15</size>
             </box>
           </geometry>
         </collision>
       
 
+
         <collision name="sideB">
-          <pose>0 0.375 0.367 0 0 0</pose>
+          <pose>0 0.36 0.34700000000000003 0 0 0</pose>
           <geometry>
             <box>
-              <size>1.1 0.02 0.19</size>
+              <size>1.1 0.02 0.15</size>
             </box>
           </geometry>
         </collision>
@@ -45,35 +46,35 @@
 
       
         <collision name="goalA">
-          <pose>0.55 0 0.367 0 1.5707963267948966 0</pose>
+          <pose>0.55 0 0.34700000000000003 0 1.5707963267948966 0</pose>
           <geometry>
             <polyline>
               <height>0.02</height>
-              <point>0.095 -0.385</point>
-              <point>-0.095 -0.385</point>
-              <point>-0.095 0.385</point>
-              <point>0.095 0.385</point>
-              <point>0.095 0.09</point>
+              <point>0.075 -0.385</point>
+              <point>-0.075 -0.385</point>
+              <point>-0.075 0.385</point>
+              <point>0.075 0.385</point>
+              <point>0.075 0.09</point>
               <point>-0.0019 0.09</point>
               <point>-0.0019 -0.09</point>
-              <point>0.095 -0.09</point>
+              <point>0.075 -0.09</point>
             </polyline>
           </geometry>
         </collision>
       
         <collision name="goalB">
-          <pose>-0.55 0 0.367 3.141592653589793 1.5707963267948966 0</pose>
+          <pose>-0.55 0 0.34700000000000003 3.141592653589793 1.5707963267948966 0</pose>
           <geometry>
             <polyline>
               <height>0.02</height>
-              <point>0.095 -0.385</point>
-              <point>-0.095 -0.385</point>
-              <point>-0.095 0.385</point>
-              <point>0.095 0.385</point>
-              <point>0.095 0.09</point>
+              <point>0.075 -0.385</point>
+              <point>-0.075 -0.385</point>
+              <point>-0.075 0.385</point>
+              <point>0.075 0.385</point>
+              <point>0.075 0.09</point>
               <point>-0.0019 0.09</point>
               <point>-0.0019 -0.09</point>
-              <point>0.095 -0.09</point>
+              <point>0.075 -0.09</point>
             </polyline>
           </geometry>
         </collision>
