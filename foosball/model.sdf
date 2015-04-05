@@ -24,7 +24,7 @@
       
 
 
-        <collision name="sideA">
+        <collision name="sideRed">
           <pose>0 -0.36 0.34700000000000003 0 0 0</pose>
           <geometry>
             <box>
@@ -35,7 +35,7 @@
       
 
 
-        <collision name="sideB">
+        <collision name="sideBlue">
           <pose>0 0.36 0.34700000000000003 0 0 0</pose>
           <geometry>
             <box>
@@ -47,7 +47,7 @@
 
       
 
-      <collision name="goalA">
+      <collision name="goalRed">
           <pose>0.55 0 0.34700000000000003 0 1.5707963267948966 0</pose>
           <geometry>
             <polyline>
@@ -65,7 +65,7 @@
         </collision>
       
 
-      <collision name="goalB">
+      <collision name="goalBlue">
           <pose>-0.55 0 0.34700000000000003 3.141592653589793 1.5707963267948966 0</pose>
           <geometry>
             <polyline>
@@ -132,10 +132,10 @@
     </joint>
 
     
-      <link name="shaftA0_bridge">
+      <link name="shaftRed0_bridge">
         <pose>0.508 0 0.8 1.5707963267948966 0 0</pose>
       </link>
-      <link name="shaftA0">
+      <link name="shaftRed0">
         <pose>0.508 0 0.8 1.5707963267948966 0 0</pose>
 
         <visual name='rod'>
@@ -247,9 +247,9 @@
       
       </link>
 
-    <joint name="transA0" type="prismatic">
+    <joint name="transRed0" type="prismatic">
       <parent>world</parent>
-      <child>shaftA0_bridge</child>
+      <child>shaftRed0_bridge</child>
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -260,9 +260,9 @@
       </axis>
       <pose>0 0 0 0 0 0</pose>
     </joint>
-    <joint name="rotA0" type="revolute">
-      <parent>shaftA0_bridge</parent>
-      <child>shaftA0</child>
+    <joint name="rotRed0" type="revolute">
+      <parent>shaftRed0_bridge</parent>
+      <child>shaftRed0</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
@@ -273,10 +273,10 @@
       <pose>0 0 0 0 0 0</pose>
     </joint>
     
-      <link name="shaftA1_bridge">
+      <link name="shaftRed1_bridge">
         <pose>0.3675 0 0.8 1.5707963267948966 0 0</pose>
       </link>
-      <link name="shaftA1">
+      <link name="shaftRed1">
         <pose>0.3675 0 0.8 1.5707963267948966 0 0</pose>
 
         <visual name='rod'>
@@ -369,9 +369,9 @@
       
       </link>
 
-    <joint name="transA1" type="prismatic">
+    <joint name="transRed1" type="prismatic">
       <parent>world</parent>
-      <child>shaftA1_bridge</child>
+      <child>shaftRed1_bridge</child>
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -382,9 +382,9 @@
       </axis>
       <pose>0 0 0 0 0 0</pose>
     </joint>
-    <joint name="rotA1" type="revolute">
-      <parent>shaftA1_bridge</parent>
-      <child>shaftA1</child>
+    <joint name="rotRed1" type="revolute">
+      <parent>shaftRed1_bridge</parent>
+      <child>shaftRed1</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
@@ -395,10 +395,10 @@
       <pose>0 0 0 0 0 0</pose>
     </joint>
     
-      <link name="shaftA2_bridge">
+      <link name="shaftRed2_bridge">
         <pose>0.087 0 0.8 1.5707963267948966 0 0</pose>
       </link>
-      <link name="shaftA2">
+      <link name="shaftRed2">
         <pose>0.087 0 0.8 1.5707963267948966 0 0</pose>
 
         <visual name='rod'>
@@ -547,9 +547,9 @@
       
       </link>
 
-    <joint name="transA2" type="prismatic">
+    <joint name="transRed2" type="prismatic">
       <parent>world</parent>
-      <child>shaftA2_bridge</child>
+      <child>shaftRed2_bridge</child>
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -560,9 +560,9 @@
       </axis>
       <pose>0 0 0 0 0 0</pose>
     </joint>
-    <joint name="rotA2" type="revolute">
-      <parent>shaftA2_bridge</parent>
-      <child>shaftA2</child>
+    <joint name="rotRed2" type="revolute">
+      <parent>shaftRed2_bridge</parent>
+      <child>shaftRed2</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
@@ -573,10 +573,10 @@
       <pose>0 0 0 0 0 0</pose>
     </joint>
     
-      <link name="shaftA3_bridge">
+      <link name="shaftRed3_bridge">
         <pose>-0.227 0 0.8 1.5707963267948966 0 0</pose>
       </link>
-      <link name="shaftA3">
+      <link name="shaftRed3">
         <pose>-0.227 0 0.8 1.5707963267948966 0 0</pose>
 
         <visual name='rod'>
@@ -688,9 +688,9 @@
       
       </link>
 
-    <joint name="transA3" type="prismatic">
+    <joint name="transRed3" type="prismatic">
       <parent>world</parent>
-      <child>shaftA3_bridge</child>
+      <child>shaftRed3_bridge</child>
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -701,9 +701,9 @@
       </axis>
       <pose>0 0 0 0 0 0</pose>
     </joint>
-    <joint name="rotA3" type="revolute">
-      <parent>shaftA3_bridge</parent>
-      <child>shaftA3</child>
+    <joint name="rotRed3" type="revolute">
+      <parent>shaftRed3_bridge</parent>
+      <child>shaftRed3</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
@@ -714,10 +714,10 @@
       <pose>0 0 0 0 0 0</pose>
     </joint>
      
-      <link name="shaftB0_bridge">
+      <link name="shaftBlue0_bridge">
         <pose>-0.508 0 0.8 1.5707963267948966 0 0</pose>
       </link>
-      <link name="shaftB0">
+      <link name="shaftBlue0">
         <pose>-0.508 0 0.8 1.5707963267948966 0 0</pose>
 
         <visual name='rod'>
@@ -829,9 +829,9 @@
       
       </link>
 
-    <joint name="transB0" type="prismatic">
+    <joint name="transBlue0" type="prismatic">
       <parent>world</parent>
-      <child>shaftB0_bridge</child>
+      <child>shaftBlue0_bridge</child>
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -842,9 +842,9 @@
       </axis>
       <pose>0 0 0 0 0 0</pose>
     </joint>
-    <joint name="rotB0" type="revolute">
-      <parent>shaftB0_bridge</parent>
-      <child>shaftB0</child>
+    <joint name="rotBlue0" type="revolute">
+      <parent>shaftBlue0_bridge</parent>
+      <child>shaftBlue0</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
@@ -855,10 +855,10 @@
       <pose>0 0 0 0 0 0</pose>
     </joint>
     
-      <link name="shaftB1_bridge">
+      <link name="shaftBlue1_bridge">
         <pose>-0.3675 0 0.8 1.5707963267948966 0 0</pose>
       </link>
-      <link name="shaftB1">
+      <link name="shaftBlue1">
         <pose>-0.3675 0 0.8 1.5707963267948966 0 0</pose>
 
         <visual name='rod'>
@@ -951,9 +951,9 @@
       
       </link>
 
-    <joint name="transB1" type="prismatic">
+    <joint name="transBlue1" type="prismatic">
       <parent>world</parent>
-      <child>shaftB1_bridge</child>
+      <child>shaftBlue1_bridge</child>
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -964,9 +964,9 @@
       </axis>
       <pose>0 0 0 0 0 0</pose>
     </joint>
-    <joint name="rotB1" type="revolute">
-      <parent>shaftB1_bridge</parent>
-      <child>shaftB1</child>
+    <joint name="rotBlue1" type="revolute">
+      <parent>shaftBlue1_bridge</parent>
+      <child>shaftBlue1</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
@@ -977,10 +977,10 @@
       <pose>0 0 0 0 0 0</pose>
     </joint>
     
-      <link name="shaftB2_bridge">
+      <link name="shaftBlue2_bridge">
         <pose>-0.087 0 0.8 1.5707963267948966 0 0</pose>
       </link>
-      <link name="shaftB2">
+      <link name="shaftBlue2">
         <pose>-0.087 0 0.8 1.5707963267948966 0 0</pose>
 
         <visual name='rod'>
@@ -1129,9 +1129,9 @@
       
       </link>
 
-    <joint name="transB2" type="prismatic">
+    <joint name="transBlue2" type="prismatic">
       <parent>world</parent>
-      <child>shaftB2_bridge</child>
+      <child>shaftBlue2_bridge</child>
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -1142,9 +1142,9 @@
       </axis>
       <pose>0 0 0 0 0 0</pose>
     </joint>
-    <joint name="rotB2" type="revolute">
-      <parent>shaftB2_bridge</parent>
-      <child>shaftB2</child>
+    <joint name="rotBlue2" type="revolute">
+      <parent>shaftBlue2_bridge</parent>
+      <child>shaftBlue2</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
@@ -1155,10 +1155,10 @@
       <pose>0 0 0 0 0 0</pose>
     </joint>
     
-      <link name="shaftB3_bridge">
+      <link name="shaftBlue3_bridge">
         <pose>0.227 0 0.8 1.5707963267948966 0 0</pose>
       </link>
-      <link name="shaftB3">
+      <link name="shaftBlue3">
         <pose>0.227 0 0.8 1.5707963267948966 0 0</pose>
 
         <visual name='rod'>
@@ -1270,9 +1270,9 @@
       
       </link>
 
-    <joint name="transB3" type="prismatic">
+    <joint name="transBlue3" type="prismatic">
       <parent>world</parent>
-      <child>shaftB3_bridge</child>
+      <child>shaftBlue3_bridge</child>
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -1283,9 +1283,9 @@
       </axis>
       <pose>0 0 0 0 0 0</pose>
     </joint>
-    <joint name="rotB3" type="revolute">
-      <parent>shaftB3_bridge</parent>
-      <child>shaftB3</child>
+    <joint name="rotBlue3" type="revolute">
+      <parent>shaftBlue3_bridge</parent>
+      <child>shaftBlue3</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
