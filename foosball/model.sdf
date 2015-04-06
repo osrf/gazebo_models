@@ -106,16 +106,6 @@
           </box>
         </geometry>
       </collision>
-
-<!--
-      <collision name='corner'>
-        <pose>0 0 0 0 0 0</pose>
-        <box>
-          <size>  </size>
-        </box>
-      </collision>
--->
-
     </link>
 
     <joint name='table_world' type='prismatic'>
