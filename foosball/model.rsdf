@@ -4,7 +4,7 @@
 
   field_length = 1.1
   field_width = 0.73
-  field_height = 0.15 #0.19
+  field_height = 0.15
 
   ground_height = 0.02
   base_height = 0.544
@@ -13,14 +13,14 @@
   goal_height = 0.0019
   goal_thickness = 0.02
   goals = {
-    "A" => {:posX => +1, :rotX => 0},
-    "B" => {:posX => -1, :rotX => Math::PI}
+    "Red" => {:posX => +1, :rotX => 0},
+    "Blue" => {:posX => -1, :rotX => Math::PI}
   }
 
   side_thickness = 0.02
   sides = {
-    "A" => {:posX => -1},
-    "B" => {:posX => +1}
+    "Red" => {:posX => -1},
+    "Blue" => {:posX => +1}
   }
 
   shaft_height = 0.8
@@ -40,18 +40,18 @@
   player_height = 0.1
 
   colors = {
-     "A" => "Red",
-     "B" => "Blue"
+     "Red" => "Red",
+     "Blue" => "Blue"
   }
 
   shafts = {
-    "A" => {"0" => {:posX => +shaft0_dist, :limitY => shaft0_limit, :center => true,  :side => true,  :mid => false, :sidePosY => 0.15, :midPosY => 0},
+    "Red" => {"0" => {:posX => +shaft0_dist, :limitY => shaft3_limit, :center => true,  :side => true,  :mid => false, :sidePosY => 0.15, :midPosY => 0},
             "1" => {:posX => +shaft1_dist, :limitY => shaft1_limit, :center => false, :side => true,  :mid => false, :sidePosY => 0.1,  :midPosY => 0},
             "2" => {:posX => +shaft2_dist, :limitY => shaft2_limit, :center => true,  :side => true,  :mid => true,  :sidePosY => 0.13, :midPosY => 0.26},
             "3" => {:posX => -shaft3_dist, :limitY => shaft3_limit, :center => true,  :side => true,  :mid => false, :sidePosY => 0.15, :midPosY => 0}
 
     },
-    "B" => {"0" => {:posX => -shaft0_dist, :limitY => shaft0_limit, :center => true,  :side => true,  :mid => false, :sidePosY => 0.15, :midPosY => 0},
+    "Blue" => {"0" => {:posX => -shaft0_dist, :limitY => shaft3_limit, :center => true,  :side => true,  :mid => false, :sidePosY => 0.15, :midPosY => 0},
             "1" => {:posX => -shaft1_dist, :limitY => shaft1_limit, :center => false, :side => true,  :mid => false, :sidePosY => 0.1,  :midPosY => 0},
             "2" => {:posX => -shaft2_dist, :limitY => shaft2_limit, :center => true,  :side => true,  :mid => true,  :sidePosY => 0.13, :midPosY => 0.26},
             "3" => {:posX => +shaft3_dist, :limitY => shaft3_limit, :center => true,  :side => true,  :mid => false, :sidePosY => 0.15, :midPosY => 0}
@@ -175,7 +175,7 @@
           handleCollisionLength = 0.135
           handleCollisionPos = handlePos + handleCollisionLength / 2.0
           handleAngle = -Math::PI
-          if k == "A" then
+          if k == "Red" then
             handlePos = -handlePos
             handleCollisionPos = -handleCollisionPos
             handleAngle = 0
