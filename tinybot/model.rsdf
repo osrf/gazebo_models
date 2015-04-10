@@ -1,22 +1,31 @@
 <?xml version='1.0'?>
 <%
-  x = 0.135116
-  y = 0.055306
-  z = 0.172223
+  # Inertia box
+  inertia_dx = 0.065
+  inertia_dy = 0.059
+  inertia_dz = 0.178
   mass = 0.4
- %>
+  ixx = mass / 12.0 * (inertia_dy**2 + inertia_dz**2)
+  iyy = mass / 12.0 * (inertia_dz**2 + inertia_dx**2)
+  izz = mass / 12.0 * (inertia_dx**2 + inertia_dy**2)
 
+  # Contact parameters
+  min_depth = 0.001
+  max_vel = 0.01
+%>
 <sdf version='1.5'>
   <model name='tinybot'>
     <link name='link_0'>
+      <pose>0 0 0.091  0 0 0</pose>
       <inertial>
+        <pose>0 0.007 0  0 0 0</pose>
         <mass><%= mass %></mass>
         <inertia>
-          <ixx><%= mass/12.0 * (y**2 + z**2) %></ixx>
+          <ixx><%= ixx %></ixx>
           <ixy>0</ixy>
-          <iyy><%= mass/12.0 * (z**2 + x**2) %></iyy>
+          <iyy><%= iyy %></iyy>
           <ixz>0</ixz>
-          <izz><%= mass/12.0 * (x**2 + y**2) %></izz>
+          <izz><%= izz %></izz>
           <iyz>0</iyz>
         </inertia>
       </inertial>
@@ -33,13 +42,163 @@
           </script>
         </material>
       </visual>
-      <collision name='collision'>
+      <collision name='head_collision'>
+        <pose>0 0.001522 0.060318 0 -0 0</pose>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
         <geometry>
-          <mesh>
-            <uri>model://tinybot/meshes/tinybot.stl</uri>
-          </mesh>
+          <box>
+            <size>0.040384 0.039469 0.043901</size>
+          </box>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0</restitution_coefficient>
+            <threshold>1e+06</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <kp>1e+12</kp>
+              <kd>1</kd>
+              <max_vel><%= max_vel %></max_vel>
+              <min_depth><%= min_depth %></min_depth>
+            </ode>
+            <bullet>
+              <split_impulse>1</split_impulse>
+              <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+              <kp>1e+12</kp>
+              <kd>1</kd>
+            </bullet>
+          </contact>
+        </surface>
+      </collision>
+      <collision name='torso_collision'>
+        <pose>0 0 0.007827 0 -0 0</pose>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <geometry>
+          <box>
+            <size>0.059167 0.046744 0.053482</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0</restitution_coefficient>
+            <threshold>1e+06</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <kp>1e+12</kp>
+              <kd>1</kd>
+              <max_vel><%= max_vel %></max_vel>
+              <min_depth><%= min_depth %></min_depth>
+            </ode>
+            <bullet>
+              <split_impulse>1</split_impulse>
+              <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+              <kp>1e+12</kp>
+              <kd>1</kd>
+            </bullet>
+          </contact>
+        </surface>
+      </collision>
+      <collision name='legs_collision'>
+        <pose>0 0.004553 -0.052517 0 -0 0</pose>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <geometry>
+          <box>
+            <size>0.04151 0.009926 0.054264</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0</restitution_coefficient>
+            <threshold>1e+06</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <kp>1e+12</kp>
+              <kd>1</kd>
+              <max_vel><%= max_vel %></max_vel>
+              <min_depth><%= min_depth %></min_depth>
+            </ode>
+            <bullet>
+              <split_impulse>1</split_impulse>
+              <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+              <kp>1e+12</kp>
+              <kd>1</kd>
+            </bullet>
+          </contact>
+        </surface>
+      </collision>
+      <collision name='feet_collision'>
+        <pose>0 0.00772 -0.085129 0 -0 0</pose>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <geometry>
+          <box>
+            <size>0.052682 0.046744 0.009924</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0</restitution_coefficient>
+            <threshold>1e+06</threshold>
+          </bounce>
+          <contact>
+            <ode>
+              <kp>1e+12</kp>
+              <kd>1</kd>
+              <max_vel><%= max_vel %></max_vel>
+              <min_depth><%= min_depth %></min_depth>
+            </ode>
+            <bullet>
+              <split_impulse>1</split_impulse>
+              <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+              <kp>1e+12</kp>
+              <kd>1</kd>
+            </bullet>
+          </contact>
+        </surface>
       </collision>
     </link>
+    <allow_auto_disable>1</allow_auto_disable>
   </model>
 </sdf>
