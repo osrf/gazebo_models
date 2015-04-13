@@ -102,7 +102,6 @@
             </bounce>
             <contact>
               <ode>
-                <max_vel>10000.000000</max_vel>
                 <min_depth>0.0010000</min_depth>
               </ode>
             </contact>
@@ -138,7 +137,6 @@
             </bounce>
             <contact>
               <ode>
-                <max_vel>10000.000000</max_vel>
                 <min_depth>0.0010000</min_depth>
               </ode>
             </contact>
