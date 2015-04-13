@@ -95,6 +95,18 @@
               <size><%= field_length %> <%= side_thickness %> <%= field_height %></size>
             </box>
           </geometry>
+          <surface>
+            <bounce>
+              <restitution_coefficient>0.5</restitution_coefficient>
+              <threshold>0</threshold>
+            </bounce>
+            <contact>
+              <ode>
+                <max_vel>10000.000000</max_vel>
+                <min_depth>0.0010000</min_depth>
+              </ode>
+            </contact>
+          </surface>
         </collision>
       <% end %>
 
@@ -119,6 +131,18 @@
               <point><%= field_height/2.0 %> <%= -goal_width/2.0 %></point>
             </polyline>
           </geometry>
+          <surface>
+            <bounce>
+              <restitution_coefficient>0.5</restitution_coefficient>
+              <threshold>0</threshold>
+            </bounce>
+            <contact>
+              <ode>
+                <max_vel>10000.000000</max_vel>
+                <min_depth>0.0010000</min_depth>
+              </ode>
+            </contact>
+          </surface>
         </collision>
       <% end %>
 
@@ -144,6 +168,13 @@
             <size><%= field_length %> <%= field_width %> <%= ground_height %></size>
           </box>
         </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>0.500</max_vel>
+            </ode>
+          </contact>
+        </surface>
       </collision>
     </link>
 

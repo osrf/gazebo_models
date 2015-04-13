@@ -31,6 +31,18 @@
               <size>1.1 0.02 0.15</size>
             </box>
           </geometry>
+          <surface>
+            <bounce>
+              <restitution_coefficient>0.5</restitution_coefficient>
+              <threshold>0</threshold>
+            </bounce>
+            <contact>
+              <ode>
+                <max_vel>10000.000000</max_vel>
+                <min_depth>0.0010000</min_depth>
+              </ode>
+            </contact>
+          </surface>
         </collision>
       
 
@@ -42,6 +54,18 @@
               <size>1.1 0.02 0.15</size>
             </box>
           </geometry>
+          <surface>
+            <bounce>
+              <restitution_coefficient>0.5</restitution_coefficient>
+              <threshold>0</threshold>
+            </bounce>
+            <contact>
+              <ode>
+                <max_vel>10000.000000</max_vel>
+                <min_depth>0.0010000</min_depth>
+              </ode>
+            </contact>
+          </surface>
         </collision>
       
 
@@ -62,6 +86,18 @@
               <point>0.075 -0.09</point>
             </polyline>
           </geometry>
+          <surface>
+            <bounce>
+              <restitution_coefficient>0.5</restitution_coefficient>
+              <threshold>0</threshold>
+            </bounce>
+            <contact>
+              <ode>
+                <max_vel>10000.000000</max_vel>
+                <min_depth>0.0010000</min_depth>
+              </ode>
+            </contact>
+          </surface>
         </collision>
       
 
@@ -80,6 +116,18 @@
               <point>0.075 -0.09</point>
             </polyline>
           </geometry>
+          <surface>
+            <bounce>
+              <restitution_coefficient>0.5</restitution_coefficient>
+              <threshold>0</threshold>
+            </bounce>
+            <contact>
+              <ode>
+                <max_vel>10000.000000</max_vel>
+                <min_depth>0.0010000</min_depth>
+              </ode>
+            </contact>
+          </surface>
         </collision>
       
 
@@ -105,6 +153,13 @@
             <size>1.1 0.73 0.02</size>
           </box>
         </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>0.500</max_vel>
+            </ode>
+          </contact>
+        </surface>
       </collision>
     </link>
 
