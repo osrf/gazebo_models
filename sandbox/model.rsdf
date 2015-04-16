@@ -1,30 +1,12 @@
 <sdf version="1.5">
-  <% box_x = 1.5
-     box_y = 1.0
-     box_z = 0.3
+  <% box_x = 1.0
+     box_y = 0.75
+     box_z = 0.2
      wall_dim = 0.075
    %>
 
   <model name="sand_box">
     <static>true</static>
-    <!--<link name="sand">
-      <gravity>false</gravity>
-      <pose>0 0 <%=box_z/2 %> 0 0 0</pose>
-      <visual name="sand_visual">
-        <geometry>
-          <box>
-            <size> <%= box_x %> <%= box_y %> <%= box_z %></size>
-          </box>
-        </geometry>
-        <material>
-          <script>
-            <uri>model://sandbox/materials/scripts</uri>
-            <uri>model://sandbox/materials/textures</uri>
-            <name>Sandbox/Sand</name>
-          </script>
-        </material>
-      </visual>
-    </link>-->
 
     <link name='wall_0'>
       <pose>0 <%= -(box_y+wall_dim)/2 %> <%=(box_z+wall_dim)/2%> 0 -0 0</pose>

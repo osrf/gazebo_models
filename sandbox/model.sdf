@@ -2,27 +2,9 @@
 
   <model name="sand_box">
     <static>true</static>
-    <!--<link name="sand">
-      <gravity>false</gravity>
-      <pose>0 0 0.15 0 0 0</pose>
-      <visual name="sand_visual">
-        <geometry>
-          <box>
-            <size> 1.5 1.0 0.3</size>
-          </box>
-        </geometry>
-        <material>
-          <script>
-            <uri>model://sandbox/materials/scripts</uri>
-            <uri>model://sandbox/materials/textures</uri>
-            <name>Sandbox/Sand</name>
-          </script>
-        </material>
-      </visual>
-    </link>-->
 
     <link name='wall_0'>
-      <pose>0 -0.5375 0.1875 0 -0 0</pose>
+      <pose>0 -0.4125 0.1375 0 -0 0</pose>
       <inertial>
         <mass>1</mass>
         <pose>0 0 0.5 0 -0 0</pose>
@@ -39,7 +21,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>1.65 0.075 0.375</size>
+            <size>1.15 0.075 0.275</size>
           </box>
         </geometry>
         <material>
@@ -53,13 +35,13 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>1.65 0.075 0.375</size>
+            <size>1.15 0.075 0.275</size>
           </box>
         </geometry>
       </collision>
     </link>
     <link name='wall_1'>
-      <pose>0 0.5375 0.1875 0 -0 0</pose>
+      <pose>0 0.4125 0.1375 0 -0 0</pose>
       <inertial>
         <mass>1</mass>
         <pose>0 0 0.5 0 -0 0</pose>
@@ -76,7 +58,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>1.65 0.075 0.375</size>
+            <size>1.15 0.075 0.275</size>
           </box>
         </geometry>
         <material>
@@ -90,14 +72,14 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>1.65 0.075 0.375</size>
+            <size>1.15 0.075 0.275</size>
           </box>
         </geometry>
       </collision>
     </link>
 
     <link name='wall_2'>
-      <pose>-0.7875 0 0.1875 0 0 0</pose>
+      <pose>-0.5375 0 0.1375 0 0 0</pose>
       <inertial>
         <mass>1</mass>
         <pose>0 0 0.5 0 -0 0</pose>
@@ -114,7 +96,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.075 1.15 0.375</size>
+            <size>0.075 0.9 0.275</size>
           </box>
         </geometry>
       </collision>
@@ -122,7 +104,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.075 1.15 0.375</size>
+            <size>0.075 0.9 0.275</size>
           </box>
         </geometry>
         <material>
@@ -135,7 +117,7 @@
     </link>
 
     <link name='wall_3'>
-      <pose>0.7875 0 0.1875 0 0 0</pose>
+      <pose>0.5375 0 0.1375 0 0 0</pose>
       <inertial>
         <mass>1</mass>
         <pose>0 0 0.5 0 -0 0</pose>
@@ -152,7 +134,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.075 1.15 0.375</size>
+            <size>0.075 0.9 0.275</size>
           </box>
         </geometry>
         <material>
@@ -166,7 +148,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.075 1.15 0.375</size>
+            <size>0.075 0.9 0.275</size>
           </box>
         </geometry>
       </collision>
@@ -190,7 +172,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>1.5 1.0 0.075</size>
+            <size>1.0 0.75 0.075</size>
           </box>
         </geometry>
       </collision>
@@ -198,7 +180,7 @@
       <visual name='visual'>
         <geometry>
           <box>
-            <size>1.5 1.0 0.075</size>
+            <size>1.0 0.75 0.075</size>
           </box>
         </geometry>
         <material>
