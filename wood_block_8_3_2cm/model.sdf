@@ -1,5 +1,4 @@
 <?xml version="1.0" ?>
-
 <sdf version="1.5">
   <model name="wood_block_8_3_2cm">
     <link name="block">
@@ -17,6 +16,7 @@
         </inertia>
       </inertial>
       <collision name="collision">
+        <max_contacts>3</max_contacts>
         <geometry>
           <box>
             <size>0.081 0.027 0.018</size>

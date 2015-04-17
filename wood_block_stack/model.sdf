@@ -1,331 +1,2975 @@
 <?xml version="1.0" ?>
-
 <sdf version="1.5">
   <model name="wood_block_stack">
-    
-    <include>
-      <pose>0 -0.02727 0.0  0 0 0</pose>
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_0_0</name>
-    </include>
-    
-    <include>
-      <pose>0 0.0 0.0  0 0 0</pose>
+    </include>-->
+    <link name= "block_1">
+      <pose>0 -0.02727 0.009  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_0_1</name>
-    </include>
-    
-    <include>
-      <pose>0 0.02727 0.0  0 0 0</pose>
+    </include>-->
+    <link name= "block_2">
+      <pose>0 0.0 0.009  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_0_2</name>
-    </include>
-    
-    <include>
-      <pose>-0.02727 0 0.018179999999999998  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_3">
+      <pose>0 0.02727 0.009  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_1_0</name>
-    </include>
-    
-    <include>
-      <pose>0.0 0 0.018179999999999998  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_4">
+      <pose>-0.02727 0 0.027179999999999996  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_1_1</name>
-    </include>
-    
-    <include>
-      <pose>0.02727 0 0.018179999999999998  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_5">
+      <pose>0.0 0 0.027179999999999996  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_1_2</name>
-    </include>
-    
-    <include>
-      <pose>0 -0.02727 0.036359999999999996  0 0 0</pose>
+    </include>-->
+    <link name= "block_6">
+      <pose>0.02727 0 0.027179999999999996  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_2_0</name>
-    </include>
-    
-    <include>
-      <pose>0 0.0 0.036359999999999996  0 0 0</pose>
+    </include>-->
+    <link name= "block_7">
+      <pose>0 -0.02727 0.04536  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_2_1</name>
-    </include>
-    
-    <include>
-      <pose>0 0.02727 0.036359999999999996  0 0 0</pose>
+    </include>-->
+    <link name= "block_8">
+      <pose>0 0.0 0.04536  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_2_2</name>
-    </include>
-    
-    <include>
-      <pose>-0.02727 0 0.05454  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_9">
+      <pose>0 0.02727 0.04536  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_3_0</name>
-    </include>
-    
-    <include>
-      <pose>0.0 0 0.05454  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_10">
+      <pose>-0.02727 0 0.06354  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_3_1</name>
-    </include>
-    
-    <include>
-      <pose>0.02727 0 0.05454  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_11">
+      <pose>0.0 0 0.06354  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_3_2</name>
-    </include>
-    
-    <include>
-      <pose>0 -0.02727 0.07271999999999999  0 0 0</pose>
+    </include>-->
+    <link name= "block_12">
+      <pose>0.02727 0 0.06354  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_4_0</name>
-    </include>
-    
-    <include>
-      <pose>0 0.0 0.07271999999999999  0 0 0</pose>
+    </include>-->
+    <link name= "block_13">
+      <pose>0 -0.02727 0.08171999999999999  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_4_1</name>
-    </include>
-    
-    <include>
-      <pose>0 0.02727 0.07271999999999999  0 0 0</pose>
+    </include>-->
+    <link name= "block_14">
+      <pose>0 0.0 0.08171999999999999  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_4_2</name>
-    </include>
-    
-    <include>
-      <pose>-0.02727 0 0.0909  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_15">
+      <pose>0 0.02727 0.08171999999999999  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_5_0</name>
-    </include>
-    
-    <include>
-      <pose>0.0 0 0.0909  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_16">
+      <pose>-0.02727 0 0.09989999999999999  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_5_1</name>
-    </include>
-    
-    <include>
-      <pose>0.02727 0 0.0909  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_17">
+      <pose>0.0 0 0.09989999999999999  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_5_2</name>
-    </include>
-    
-    <include>
-      <pose>0 -0.02727 0.10908  0 0 0</pose>
+    </include>-->
+    <link name= "block_18">
+      <pose>0.02727 0 0.09989999999999999  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_6_0</name>
-    </include>
-    
-    <include>
-      <pose>0 0.0 0.10908  0 0 0</pose>
+    </include>-->
+    <link name= "block_19">
+      <pose>0 -0.02727 0.11807999999999999  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_6_1</name>
-    </include>
-    
-    <include>
-      <pose>0 0.02727 0.10908  0 0 0</pose>
+    </include>-->
+    <link name= "block_20">
+      <pose>0 0.0 0.11807999999999999  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_6_2</name>
-    </include>
-    
-    <include>
-      <pose>-0.02727 0 0.12725999999999998  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_21">
+      <pose>0 0.02727 0.11807999999999999  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_7_0</name>
-    </include>
-    
-    <include>
-      <pose>0.0 0 0.12725999999999998  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_22">
+      <pose>-0.02727 0 0.13626  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_7_1</name>
-    </include>
-    
-    <include>
-      <pose>0.02727 0 0.12725999999999998  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_23">
+      <pose>0.0 0 0.13626  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_7_2</name>
-    </include>
-    
-    <include>
-      <pose>0 -0.02727 0.14543999999999999  0 0 0</pose>
+    </include>-->
+    <link name= "block_24">
+      <pose>0.02727 0 0.13626  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_8_0</name>
-    </include>
-    
-    <include>
-      <pose>0 0.0 0.14543999999999999  0 0 0</pose>
+    </include>-->
+    <link name= "block_25">
+      <pose>0 -0.02727 0.15444  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_8_1</name>
-    </include>
-    
-    <include>
-      <pose>0 0.02727 0.14543999999999999  0 0 0</pose>
+    </include>-->
+    <link name= "block_26">
+      <pose>0 0.0 0.15444  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_8_2</name>
-    </include>
-    
-    <include>
-      <pose>-0.02727 0 0.16362  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_27">
+      <pose>0 0.02727 0.15444  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_9_0</name>
-    </include>
-    
-    <include>
-      <pose>0.0 0 0.16362  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_28">
+      <pose>-0.02727 0 0.17262  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_9_1</name>
-    </include>
-    
-    <include>
-      <pose>0.02727 0 0.16362  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_29">
+      <pose>0.0 0 0.17262  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_9_2</name>
-    </include>
-    
-    <include>
-      <pose>0 -0.02727 0.1818  0 0 0</pose>
+    </include>-->
+    <link name= "block_30">
+      <pose>0.02727 0 0.17262  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_10_0</name>
-    </include>
-    
-    <include>
-      <pose>0 0.0 0.1818  0 0 0</pose>
+    </include>-->
+    <link name= "block_31">
+      <pose>0 -0.02727 0.1908  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_10_1</name>
-    </include>
-    
-    <include>
-      <pose>0 0.02727 0.1818  0 0 0</pose>
+    </include>-->
+    <link name= "block_32">
+      <pose>0 0.0 0.1908  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_10_2</name>
-    </include>
-    
-    <include>
-      <pose>-0.02727 0 0.19997999999999996  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_33">
+      <pose>0 0.02727 0.1908  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_11_0</name>
-    </include>
-    
-    <include>
-      <pose>0.0 0 0.19997999999999996  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_34">
+      <pose>-0.02727 0 0.20897999999999997  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_11_1</name>
-    </include>
-    
-    <include>
-      <pose>0.02727 0 0.19997999999999996  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_35">
+      <pose>0.0 0 0.20897999999999997  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_11_2</name>
-    </include>
-    
-    <include>
-      <pose>0 -0.02727 0.21816  0 0 0</pose>
+    </include>-->
+    <link name= "block_36">
+      <pose>0.02727 0 0.20897999999999997  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_12_0</name>
-    </include>
-    
-    <include>
-      <pose>0 0.0 0.21816  0 0 0</pose>
+    </include>-->
+    <link name= "block_37">
+      <pose>0 -0.02727 0.22716  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_12_1</name>
-    </include>
-    
-    <include>
-      <pose>0 0.02727 0.21816  0 0 0</pose>
+    </include>-->
+    <link name= "block_38">
+      <pose>0 0.0 0.22716  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_12_2</name>
-    </include>
-    
-    <include>
-      <pose>-0.02727 0 0.23634  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_39">
+      <pose>0 0.02727 0.22716  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_13_0</name>
-    </include>
-    
-    <include>
-      <pose>0.0 0 0.23634  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_40">
+      <pose>-0.02727 0 0.24534  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_13_1</name>
-    </include>
-    
-    <include>
-      <pose>0.02727 0 0.23634  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_41">
+      <pose>0.0 0 0.24534  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_13_2</name>
-    </include>
-    
-    <include>
-      <pose>0 -0.02727 0.25451999999999997  0 0 0</pose>
+    </include>-->
+    <link name= "block_42">
+      <pose>0.02727 0 0.24534  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_14_0</name>
-    </include>
-    
-    <include>
-      <pose>0 0.0 0.25451999999999997  0 0 0</pose>
+    </include>-->
+    <link name= "block_43">
+      <pose>0 -0.02727 0.26352  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_14_1</name>
-    </include>
-    
-    <include>
-      <pose>0 0.02727 0.25451999999999997  0 0 0</pose>
+    </include>-->
+    <link name= "block_44">
+      <pose>0 0.0 0.26352  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_14_2</name>
-    </include>
-    
-    <include>
-      <pose>-0.02727 0 0.2727  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_45">
+      <pose>0 0.02727 0.26352  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_15_0</name>
-    </include>
-    
-    <include>
-      <pose>0.0 0 0.2727  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_46">
+      <pose>-0.02727 0 0.2817  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_15_1</name>
-    </include>
-    
-    <include>
-      <pose>0.02727 0 0.2727  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_47">
+      <pose>0.0 0 0.2817  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_15_2</name>
-    </include>
-    
-    <include>
-      <pose>0 -0.02727 0.29087999999999997  0 0 0</pose>
+    </include>-->
+    <link name= "block_48">
+      <pose>0.02727 0 0.2817  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_16_0</name>
-    </include>
-    
-    <include>
-      <pose>0 0.0 0.29087999999999997  0 0 0</pose>
+    </include>-->
+    <link name= "block_49">
+      <pose>0 -0.02727 0.29988  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_16_1</name>
-    </include>
-    
-    <include>
-      <pose>0 0.02727 0.29087999999999997  0 0 0</pose>
+    </include>-->
+    <link name= "block_50">
+      <pose>0 0.0 0.29988  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_16_2</name>
-    </include>
-    
-    <include>
-      <pose>-0.02727 0 0.30906  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_51">
+      <pose>0 0.02727 0.29988  0 0 0</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_17_0</name>
-    </include>
-    
-    <include>
-      <pose>0.0 0 0.30906  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_52">
+      <pose>-0.02727 0 0.31806  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_17_1</name>
-    </include>
-    
-    <include>
-      <pose>0.02727 0 0.30906  0 0 1.5707963267948966</pose>
+    </include>-->
+    <link name= "block_53">
+      <pose>0.0 0 0.31806  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!--<include>
       <uri>model://wood_block_8_3_2cm</uri>
       <name>wood_block_8_3_2cm_17_2</name>
-    </include>
-    
+    </include>-->
+    <link name= "block_54">
+      <pose>0.02727 0 0.31806  0 0 1.5707963267948966</pose>
+      <self_collide>1</self_collide>
+      <inertial>
+        <mass>0.019682999999999996</mass>
+        <inertia>
+          <ixx>1.7271832499999993e-06</ixx>
+          <iyy>1.1293121249999997e-05</iyy>
+          <izz>1.1957422499999997e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <max_contacts>3</max_contacts>
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.081 0.027 0.018</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
   </model>
 </sdf>

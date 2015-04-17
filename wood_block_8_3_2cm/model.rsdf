@@ -40,6 +40,7 @@
         </inertia>
       </inertial>
       <collision name="collision">
+        <max_contacts>3</max_contacts>
         <geometry>
           <box>
             <size><%= dx %> <%= dy %> <%= dz %></size>
