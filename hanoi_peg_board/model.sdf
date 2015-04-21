@@ -9,25 +9,25 @@
       <inertial>
         <mass>750.0</mass>
         <inertia>
-          <ixx>10.056250000000002</ixx>
+          <ixx>2.5562500000000004</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyy>97.71249999999999</iyy>
           <iyz>0</iyz>
-          <izz>107.65625000000001</izz>
+          <izz>100.15625</izz>
         </inertia>
       </inertial>
       <collision name="board_collision">
         <geometry>
           <box>
-            <size>1.25 0.4 0.03</size>
+            <size>1.25 0.2 0.03</size>
           </box>
         </geometry>
       </collision>
-      <visual name="board_visual">
+      <!--<visual name="board_visual">
         <geometry>
           <box>
-            <size>1.25 0.4 0.03</size>
+            <size>1.25 0.2 0.03</size>
           </box>
         </geometry>
         <material>
@@ -36,7 +36,7 @@
             <name>Gazebo/Wood</name>
           </script>
         </material>
-      </visual>
+      </visual>-->
 
       <visual name="vis_peg1">
         <pose> -0.5 0 0.15 0 0 0</pose>
