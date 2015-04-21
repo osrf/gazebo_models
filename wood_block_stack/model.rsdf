@@ -11,7 +11,7 @@
 
   # Geometry of stack
   blocks = 3
-  layers = 18
+  layers = 10
   spacing = 1.01
 %>
 <sdf version="1.5">

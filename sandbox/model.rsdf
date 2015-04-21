@@ -1,32 +1,36 @@
 <sdf version="1.5">
-  <% box_x = 1.0
-     box_y = 0.75
+  <% box_x = 1.5
+     box_y = 0.8
      box_z = 0.2
      wall_dim = 0.075
+     density = 1192
    %>
 
   <model name="sand_box">
-    <static>true</static>
 
     <link name='wall_0'>
+      <% dx = box_x + 2*wall_dim
+         dy = wall_dim
+         dz = box_z+wall_dim
+         mass = density/(dx*dy*dz)
+       %>
       <pose>0 <%= -(box_y+wall_dim)/2 %> <%=(box_z+wall_dim)/2%> 0 -0 0</pose>
       <inertial>
-        <mass>1</mass>
-        <pose>0 0 0.5 0 -0 0</pose>
+        <mass><%= mass %></mass>
         <inertia>
-          <ixx>1</ixx>
+          <ixx><%= mass/12.0 * (dy**2 + dz**2) %></ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1</iyy>
+          <iyy><%= mass/12.0 * (dx**2 + dz**2) %></iyy>
           <iyz>0</iyz>
-          <izz>1</izz>
+          <izz><%= mass/12.0 * (dx**2 + dy**2) %></izz>
         </inertia>
       </inertial>
       <visual name='visual'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size><%=box_x + 2*wall_dim%> <%=wall_dim%> <%=box_z+wall_dim%></size>
+            <size><%= dx%> <%= dy%> <%= dz%></size>
           </box>
         </geometry>
         <material>
@@ -40,30 +44,37 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size><%=box_x + 2*wall_dim%> <%=wall_dim%> <%=box_z+wall_dim%></size>
+            <size><%= dx%> <%= dy%> <%= dz%></size>
           </box>
         </geometry>
       </collision>
     </link>
+
     <link name='wall_1'>
+      <%
+         dx = box_x + 2*wall_dim
+         dy = wall_dim
+         dz = box_z+wall_dim
+         mass = density/(dx*dy*dz)
+       %>
       <pose>0 <%= (box_y+wall_dim)/2 %> <%=(box_z+wall_dim)/2%> 0 -0 0</pose>
       <inertial>
-        <mass>1</mass>
-        <pose>0 0 0.5 0 -0 0</pose>
+        <mass><%= mass %></mass>
         <inertia>
-          <ixx>1</ixx>
+          <ixx><%= mass/12.0 * (dy**2 + dz**2) %></ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1</iyy>
+          <iyy><%= mass/12.0 * (dx**2 + dz**2) %></iyy>
           <iyz>0</iyz>
-          <izz>1</izz>
+          <izz><%= mass/12.0 * (dx**2 + dy**2) %></izz>
         </inertia>
       </inertial>
+
       <visual name='visual'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size><%=box_x + 2*wall_dim%> <%=wall_dim%> <%=box_z+wall_dim%></size>
+            <size><%= dx%> <%= dy%> <%= dz%></size>
           </box>
         </geometry>
         <material>
@@ -77,31 +88,38 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size><%=box_x + 2*wall_dim%> <%=wall_dim%> <%=box_z+wall_dim%></size>
+            <size><%= dx%> <%= dy%> <%= dz%></size>
           </box>
         </geometry>
       </collision>
     </link>
 
     <link name='wall_2'>
+      <%
+         dx = wall_dim
+         dy = box_y + 2*wall_dim
+         dz = box_z+wall_dim
+         mass = density/(dx*dy*dz)
+       %>
+
       <pose><%=-(box_x+wall_dim)/2 %> 0 <%=(box_z+wall_dim)/2 %> 0 0 0</pose>
       <inertial>
-        <mass>1</mass>
-        <pose>0 0 0.5 0 -0 0</pose>
+        <mass><%= mass %></mass>
         <inertia>
-          <ixx>1</ixx>
+          <ixx><%= mass/12.0 * (dy**2 + dz**2) %></ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1</iyy>
+          <iyy><%= mass/12.0 * (dx**2 + dz**2) %></iyy>
           <iyz>0</iyz>
-          <izz>1</izz>
+          <izz><%= mass/12.0 * (dx**2 + dy**2) %></izz>
         </inertia>
       </inertial>
+
       <collision name='collision'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size><%=wall_dim%> <%=box_y + 2*wall_dim%> <%=box_z+wall_dim%></size>
+            <size><%= dx%> <%= dy%> <%= dz%></size>
           </box>
         </geometry>
       </collision>
@@ -109,7 +127,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size><%=wall_dim%> <%=box_y + 2*wall_dim%> <%=box_z+wall_dim%></size>
+            <size><%= dx%> <%= dy%> <%= dz%></size>
           </box>
         </geometry>
         <material>
@@ -122,24 +140,30 @@
     </link>
 
     <link name='wall_3'>
+      <%
+         dx = wall_dim
+         dy = box_y + 2*wall_dim
+         dz = box_z+wall_dim
+         mass = density/(dx*dy*dz)
+       %>
+
       <pose><%=(box_x + wall_dim)/2 %> 0 <%=(box_z+wall_dim)/2 %> 0 0 0</pose>
       <inertial>
-        <mass>1</mass>
-        <pose>0 0 0.5 0 -0 0</pose>
+        <mass><%= mass %></mass>
         <inertia>
-          <ixx>1</ixx>
+          <ixx><%= mass/12.0 * (dy**2 + dz**2) %></ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1</iyy>
+          <iyy><%= mass/12.0 * (dx**2 + dz**2) %></iyy>
           <iyz>0</iyz>
-          <izz>1</izz>
+          <izz><%= mass/12.0 * (dx**2 + dy**2) %></izz>
         </inertia>
       </inertial>
       <visual name='visual'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size><%=wall_dim%> <%=box_y + 2*wall_dim%> <%=box_z+wall_dim%></size>
+            <size><%= dx%> <%= dy%> <%= dz%></size>
           </box>
         </geometry>
         <material>
@@ -153,26 +177,27 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size><%=wall_dim%> <%=box_y + 2*wall_dim%> <%=box_z+wall_dim%></size>
+            <size><%= dx%> <%= dy%> <%= dz%></size>
           </box>
         </geometry>
       </collision>
     </link>
 
     <link name='bottom'>
-      <pose>0 0 0 <%= wall_dim/2%> -0 0</pose>
+      <% mass = density/(box_x*box_y*wall_dim) %>
+      <pose>0 0 <%= wall_dim/2%> 0 0 0</pose>
       <inertial>
+        <mass><%= mass %></mass>
         <inertia>
-          <ixx>1</ixx>
+          <ixx><%= mass/12.0 * (box_y**2 + box_z**2) %></ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1</iyy>
+          <iyy><%= mass/12.0 * (box_x**2 + box_z**2) %></iyy>
           <iyz>0</iyz>
-          <izz>1</izz>
+          <izz><%= mass/12.0 * (box_x**2 + box_y**2) %></izz>
         </inertia>
-        <mass>1</mass>
-        <pose>0 0 0 0 -0 0</pose>
       </inertial>
+
       <collision name='collision'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
@@ -196,6 +221,54 @@
         </material>
       </visual>
     </link>
+
+    <joint name="bottom_wall_0" type="revolute">
+      <parent>bottom</parent>
+      <child>wall_0</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="bottom_wall_1" type="revolute">
+      <parent>bottom</parent>
+      <child>wall_1</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="bottom_wall_2" type="revolute">
+      <parent>bottom</parent>
+      <child>wall_2</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="bottom_wall_3" type="revolute">
+      <parent>bottom</parent>
+      <child>wall_3</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
 
   </model>
 </sdf>

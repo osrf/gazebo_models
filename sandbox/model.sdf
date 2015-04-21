@@ -1,27 +1,25 @@
 <sdf version="1.5">
 
   <model name="sand_box">
-    <static>true</static>
 
     <link name='wall_0'>
-      <pose>0 -0.4125 0.1375 0 -0 0</pose>
+      <pose>0 -0.4375 0.1375 0 -0 0</pose>
       <inertial>
-        <mass>1</mass>
-        <pose>0 0 0.5 0 -0 0</pose>
+        <mass>35026.62993572085</mass>
         <inertia>
-          <ixx>1</ixx>
+          <ixx>237.15947352310997</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1</iyy>
+          <iyy>8167.407407407408</iyy>
           <iyz>0</iyz>
-          <izz>1</izz>
+          <izz>7963.085399449036</izz>
         </inertia>
       </inertial>
       <visual name='visual'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>1.15 0.075 0.275</size>
+            <size>1.65 0.075 0.275</size>
           </box>
         </geometry>
         <material>
@@ -35,30 +33,31 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>1.15 0.075 0.275</size>
+            <size>1.65 0.075 0.275</size>
           </box>
         </geometry>
       </collision>
     </link>
+
     <link name='wall_1'>
-      <pose>0 0.4125 0.1375 0 -0 0</pose>
+      <pose>0 0.4375 0.1375 0 -0 0</pose>
       <inertial>
-        <mass>1</mass>
-        <pose>0 0 0.5 0 -0 0</pose>
+        <mass>35026.62993572085</mass>
         <inertia>
-          <ixx>1</ixx>
+          <ixx>237.15947352310997</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1</iyy>
+          <iyy>8167.407407407408</iyy>
           <iyz>0</iyz>
-          <izz>1</izz>
+          <izz>7963.085399449036</izz>
         </inertia>
       </inertial>
+
       <visual name='visual'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>1.15 0.075 0.275</size>
+            <size>1.65 0.075 0.275</size>
           </box>
         </geometry>
         <material>
@@ -72,31 +71,32 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>1.15 0.075 0.275</size>
+            <size>1.65 0.075 0.275</size>
           </box>
         </geometry>
       </collision>
     </link>
 
     <link name='wall_2'>
-      <pose>-0.5375 0 0.1375 0 0 0</pose>
+
+      <pose>-0.7875 0 0.1375 0 0 0</pose>
       <inertial>
-        <mass>1</mass>
-        <pose>0 0 0.5 0 -0 0</pose>
+        <mass>60835.72567783093</mass>
         <inertia>
-          <ixx>1</ixx>
+          <ixx>4958.745348219032</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1</iyy>
+          <iyy>411.9085592769804</iyy>
           <iyz>0</iyz>
-          <izz>1</izz>
+          <izz>4603.870281765018</izz>
         </inertia>
       </inertial>
+
       <collision name='collision'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.075 0.9 0.275</size>
+            <size>0.075 0.9500000000000001 0.275</size>
           </box>
         </geometry>
       </collision>
@@ -104,7 +104,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.075 0.9 0.275</size>
+            <size>0.075 0.9500000000000001 0.275</size>
           </box>
         </geometry>
         <material>
@@ -117,24 +117,24 @@
     </link>
 
     <link name='wall_3'>
-      <pose>0.5375 0 0.1375 0 0 0</pose>
+
+      <pose>0.7875 0 0.1375 0 0 0</pose>
       <inertial>
-        <mass>1</mass>
-        <pose>0 0 0.5 0 -0 0</pose>
+        <mass>60835.72567783093</mass>
         <inertia>
-          <ixx>1</ixx>
+          <ixx>4958.745348219032</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1</iyy>
+          <iyy>411.9085592769804</iyy>
           <iyz>0</iyz>
-          <izz>1</izz>
+          <izz>4603.870281765018</izz>
         </inertia>
       </inertial>
       <visual name='visual'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.075 0.9 0.275</size>
+            <size>0.075 0.9500000000000001 0.275</size>
           </box>
         </geometry>
         <material>
@@ -148,31 +148,31 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.075 0.9 0.275</size>
+            <size>0.075 0.9500000000000001 0.275</size>
           </box>
         </geometry>
       </collision>
     </link>
 
     <link name='bottom'>
-      <pose>0 0 0 0.0375 -0 0</pose>
+      <pose>0 0 0.0375 0 0 0</pose>
       <inertial>
+        <mass>13244.444444444443</mass>
         <inertia>
-          <ixx>1</ixx>
+          <ixx>750.5185185185187</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1</iyy>
+          <iyy>2527.4814814814813</iyy>
           <iyz>0</iyz>
-          <izz>1</izz>
+          <izz>3189.703703703704</izz>
         </inertia>
-        <mass>1</mass>
-        <pose>0 0 0 0 -0 0</pose>
       </inertial>
+
       <collision name='collision'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>1.0 0.75 0.075</size>
+            <size>1.5 0.8 0.075</size>
           </box>
         </geometry>
       </collision>
@@ -180,7 +180,7 @@
       <visual name='visual'>
         <geometry>
           <box>
-            <size>1.0 0.75 0.075</size>
+            <size>1.5 0.8 0.075</size>
           </box>
         </geometry>
         <material>
@@ -191,6 +191,54 @@
         </material>
       </visual>
     </link>
+
+    <joint name="bottom_wall_0" type="revolute">
+      <parent>bottom</parent>
+      <child>wall_0</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="bottom_wall_1" type="revolute">
+      <parent>bottom</parent>
+      <child>wall_1</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="bottom_wall_2" type="revolute">
+      <parent>bottom</parent>
+      <child>wall_2</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="bottom_wall_3" type="revolute">
+      <parent>bottom</parent>
+      <child>wall_3</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
 
   </model>
 </sdf>
