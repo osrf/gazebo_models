@@ -230,7 +230,7 @@
       <cla_stall>0</cla_stall>
       <upward>1 0 0</upward>
       <forward>0 0 -1</forward>
-      <area>0.45109763960000004</area>
+      <area>0.9021952792000001</area>
       <air_density>1000</air_density>
       <link_name>propeller</link_name>
     </plugin>

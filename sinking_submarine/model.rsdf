@@ -238,7 +238,7 @@
       <cla_stall>0</cla_stall>
       <upward>1 0 0</upward>
       <forward>0 0 -1</forward>
-      <area><%= 2*(blade_dx*blade_dy*2 + blade_dx*blade_dz*2 + blade_dy*blade_dz*2) %></area>
+      <area><%= 4*(blade_dx*blade_dy*2 + blade_dx*blade_dz*2 + blade_dy*blade_dz*2) %></area>
       <air_density><%= fluid_density%></air_density>
       <link_name>propeller</link_name>
     </plugin>
