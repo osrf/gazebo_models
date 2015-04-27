@@ -14,9 +14,7 @@
     body_ixx = mass/12.0 * (3*body_radius**2  + body_length**2 )
     body_iyy = mass/12.0 * (3*body_radius**2  + body_length**2 )
     body_izz = mass/2.0 * body_radius**2
-   %>
-
-  <%
+   
     blade_dx = 0.5
     blade_dy = 0.154178
     blade_dz = 0.05455
@@ -30,6 +28,16 @@
     blade_izz = total_blade_mass/12.0 * (blade_dx**2 + blade_dx**2)
 
     blade_angle = 20 * Math::PI/180
+
+    fluid_density = 1000
+
+    material_block =
+          '<material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Yellow</name>
+            </script>
+          </material>'
    %>
   <model name='buoyant_submarine'>
     <pose>0 0 <%= blade_dx + 1.0 %> <%= Math::PI/2%> 0 0</pose>
@@ -46,39 +54,38 @@
           <izz><%= body_izz %></izz>
         </inertia>
       </inertial>
+
+      <% body_geometry =
+            '<geometry>
+              <cylinder>
+                <radius>'+ body_radius.to_s + '</radius>
+                <length>'+ body_length.to_s + '</length>
+              </cylinder>
+            </geometry>'
+       %>
+
       <visual name='body_visual'>
-        <geometry>
-          <cylinder>
-            <radius><%= body_radius%></radius>
-            <length><%= body_length%></length>
-          </cylinder>
-        </geometry>
+        <%= body_geometry%>
+        <%= material_block%>
       </visual>
       <collision name='body_collision'>
-        <geometry>
-          <cylinder>
-            <radius><%= body_radius%></radius>
-            <length><%= body_length%></length>
-          </cylinder>
-        </geometry>
+        <%= body_geometry%>
       </collision>
+      <% spacer_geometry_pose =
+            '<pose>0 0' + (0.299196 + 1.07935).to_s + '0 0 0</pose>
+            <geometry>
+              <cylinder>
+                <radius>'+ spacer_radius.to_s + '</radius>
+                <length>'+ spacer_length.to_s + '</length>
+              </cylinder>
+            </geometry>'
+       %>
       <visual name='spacer_visual'>
-        <pose>0 0 <%= 0.299196 + 1.07935%> 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius><%= spacer_radius %></radius>
-            <length><%= spacer_length %></length>
-          </cylinder>
-        </geometry>
+        <%= spacer_geometry_pose%>
+        <%= material_block%>
       </visual>
       <collision name='spacer_collision'>
-        <pose>0 0 <%= 0.299196 + 1.07935%> 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius><%= spacer_radius %></radius>
-            <length><%= spacer_length %></length>
-          </cylinder>
-        </geometry>
+        <%= spacer_geometry_pose%>
       </collision>
     </link>
 
@@ -96,73 +103,31 @@
         </inertia>
       </inertial>
 
-      <visual name='blade1_visual'>
-        <pose><%= spacer_radius + blade_dx/2 %> 0 0 <%= blade_angle %> 0 0</pose>
-        <geometry>
-          <box>
-            <size><%= blade_dx%> <%= blade_dy%> <%= blade_dz%></size>
-          </box>
-        </geometry>
-      </visual>
-      <collision name='blade1_collision'>
-        <pose><%= spacer_radius + blade_dx/2 %> 0 0 <%= blade_angle %> 0 0</pose>
-        <geometry>
-          <box>
-            <size><%= blade_dx%> <%= blade_dy%> <%= blade_dz%></size>
-          </box>
-        </geometry>
-      </collision>
-      <visual name='blade2_visual'>
-        <pose>0 <%= spacer_radius + blade_dx/2 %> 0 <%= blade_angle %> 0 <%= Math::PI/2 %></pose>
-        <geometry>
-          <box>
-            <size><%= blade_dx%> <%= blade_dy%> <%= blade_dz%></size>
-          </box>
-        </geometry>
-      </visual>
-      <collision name='blade2_collision'>
-        <pose>0 <%= spacer_radius + blade_dx/2 %> 0 <%= blade_angle %> 0 <%= Math::PI/2 %></pose>
-        <geometry>
-          <box>
-            <size><%= blade_dx%> <%= blade_dy%> <%= blade_dz%></size>
-          </box>
-        </geometry>
-      </collision>
+      <% for i in 1..4 %>
+        <%
+         x = (i%2)*(spacer_radius + blade_dx/2)*(if i > 2 then -1 else 1 end)
+         y = ((i+1)%2)*(spacer_radius + blade_dx/2)*(if i > 2 then -1 else 1 end)
+         blade_roll = (i%2)*blade_angle*(if i > 2 then -1 else 1 end)
+         blade_pitch = ((i+1)%2)*blade_angle*(if i > 2 then -1 else 1 end)
 
-      <visual name='blade3_visual'>
-        <pose><%= -(spacer_radius + blade_dx/2) %> 0 0 <%= -blade_angle %> 0 0</pose>
-        <geometry>
-          <box>
-            <size><%= blade_dx%> <%= blade_dy%> <%= blade_dz%></size>
-          </box>
-        </geometry>
-      </visual>
-      <collision name='blade3_collision'>
-        <pose><%= -(spacer_radius + blade_dx/2) %> 0 0 <%= -blade_angle %> 0 0</pose>
-        <geometry>
-          <box>
-            <size><%= blade_dx%> <%= blade_dy%> <%= blade_dz%></size>
-          </box>
-        </geometry>
-      </collision>
-      <visual name='blade4_visual'>
-        <pose>0 <%= -(spacer_radius + blade_dx/2) %> 0 <%= -blade_angle %> 0 <%= Math::PI/2 %></pose>
-        <geometry>
-          <box>
-            <size><%= blade_dx%> <%= blade_dy%> <%= blade_dz%></size>
-          </box>
-        </geometry>
-      </visual>
-      <collision name='blade4_collision'>
-        <pose>0 <%= -(spacer_radius + blade_dx/2) %> 0 <%= -blade_angle %> 0 <%= Math::PI/2 %></pose>
-        <geometry>
-          <box>
-            <size><%= blade_dx%> <%= blade_dy%> <%= blade_dz%></size>
-          </box>
-        </geometry>
-      </collision>
-
+         geometry_pose =
+           '<pose>' + x.to_s + ' ' + y.to_s + ' 0 ' + blade_roll.to_s + ' ' + blade_pitch.to_s + ' 0</pose>
+            <geometry>
+              <box>
+                <size>' + blade_dx.to_s + ' ' + blade_dy.to_s + ' ' + blade_dz.to_s + '</size>
+              </box>
+            </geometry>'
+         %>
+        <visual name=<%= 'blade' + i.to_s + '_visual'%>>
+          <%= geometry_pose %>
+          <%= material_block%>
+        </visual>
+        <collision name=<%= 'blade' + i.to_s + '_collision'%>>
+          <%= geometry_pose %>
+        </collision>
+      <% end %>
     </link>
+
     <joint name='spinning_joint' type='revolute'>
       <parent>body</parent>
       <child>propeller</child>
@@ -175,44 +140,22 @@
           <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-          <damping>0</damping>
-          <friction>0</friction>
-        </dynamics>
       </axis>
-      <pose>0 0 0 0 -0 0</pose>
-      <physics>
-        <ode>
-          <cfm>0</cfm>
-          <bounce>0</bounce>
-          <velocity>0</velocity>
-          <fudge_factor>0</fudge_factor>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-          <suspension>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </suspension>
-        </ode>
-      </physics>
     </joint>
 
     <allow_auto_disable>1</allow_auto_disable>
 
-    <% fluid_density = 1000 %>
+    <% lift_drag_properties =
+     '<alpha_stall>1</alpha_stall>
+      <alpha>1.1</alpha>
+      <cla_stall>0</cla_stall>
+      <upward>1 0 0</upward>
+      <forward>0 0 -1</forward>' %>
 
     <plugin name="submarine_body" filename="libLiftDragPlugin.so">
       <cla>0.8</cla>
       <cda>0.8</cda>
-      <alpha_stall>1</alpha_stall>
-      <alpha>1.1</alpha>
-      <cla_stall>0</cla_stall>
-      <upward>1 0 0</upward>
-      <forward>0 0 -1</forward>
+      <%= lift_drag_properties%>
       <area><%= 2*Math::PI*body_radius*body_length %></area>
       <air_density><%= fluid_density%></air_density>
       <link_name>body</link_name>
@@ -221,11 +164,7 @@
     <plugin name="submarine_propeller" filename="libLiftDragPlugin.so">
       <cla>1.05</cla>
       <cda>1.05</cda>
-      <alpha_stall>1</alpha_stall>
-      <alpha>1.1</alpha>
-      <cla_stall>0</cla_stall>
-      <upward>1 0 0</upward>
-      <forward>0 0 -1</forward>
+      <%= lift_drag_properties%>
       <area><%= 4*(blade_dx*blade_dy*2 + blade_dx*blade_dz*2 + blade_dy*blade_dz*2) %></area>
       <air_density><%= fluid_density%></air_density>
       <link_name>propeller</link_name>

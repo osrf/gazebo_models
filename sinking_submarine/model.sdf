@@ -15,13 +15,15 @@
           <izz>49.85648188613733</izz>
         </inertia>
       </inertial>
+
+
       <visual name='body_visual'>
         <geometry>
-          <cylinder>
-            <radius>0.3</radius>
-            <length>2.6</length>
-          </cylinder>
-        </geometry>
+              <cylinder>
+                <radius>0.3</radius>
+                <length>2.6</length>
+              </cylinder>
+            </geometry>
         <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -31,20 +33,20 @@
       </visual>
       <collision name='body_collision'>
         <geometry>
-          <cylinder>
-            <radius>0.3</radius>
-            <length>2.6</length>
-          </cylinder>
-        </geometry>
+              <cylinder>
+                <radius>0.3</radius>
+                <length>2.6</length>
+              </cylinder>
+            </geometry>
       </collision>
       <visual name='spacer_visual'>
-        <pose>0 0 1.378546 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.0933402</radius>
-            <length>0.127211</length>
-          </cylinder>
-        </geometry>
+        <pose>0 01.3785460 0 0</pose>
+            <geometry>
+              <cylinder>
+                <radius>0.0933402</radius>
+                <length>0.127211</length>
+              </cylinder>
+            </geometry>
         <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -53,13 +55,13 @@
           </material>
       </visual>
       <collision name='spacer_collision'>
-        <pose>0 0 1.378546 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.0933402</radius>
-            <length>0.127211</length>
-          </cylinder>
-        </geometry>
+        <pose>0 01.3785460 0 0</pose>
+            <geometry>
+              <cylinder>
+                <radius>0.0933402</radius>
+                <length>0.127211</length>
+              </cylinder>
+            </geometry>
       </collision>
     </link>
 
@@ -77,97 +79,96 @@
         </inertia>
       </inertial>
 
-      <visual name='blade1_visual'>
-        <pose>0.3433402 0 0 0.3490658503988659 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.5 0.154178 0.05455</size>
-          </box>
-        </geometry>
-        <material>
+        <visual name=blade1_visual>
+          <pose>0.3433402 0.0 0 0.3490658503988659 0.0 0</pose>
+            <geometry>
+              <box>
+                <size>0.5 0.154178 0.05455</size>
+              </box>
+            </geometry>
+          <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
               <name>Gazebo/Black</name>
             </script>
           </material>
-      </visual>
-      <collision name='blade1_collision'>
-        <pose>0.3433402 0 0 0.3490658503988659 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.5 0.154178 0.05455</size>
-          </box>
-        </geometry>
-      </collision>
-      <visual name='blade2_visual'>
-        <pose>0 0.3433402 0 0.3490658503988659 0 1.5707963267948966</pose>
-        <geometry>
-          <box>
-            <size>0.5 0.154178 0.05455</size>
-          </box>
-        </geometry>
-        <material>
+        </visual>
+        <collision name=blade1_collision>
+          <pose>0.3433402 0.0 0 0.3490658503988659 0.0 0</pose>
+            <geometry>
+              <box>
+                <size>0.5 0.154178 0.05455</size>
+              </box>
+            </geometry>
+        </collision>
+        <visual name=blade2_visual>
+          <pose>0.0 0.3433402 0 0.0 0.3490658503988659 0</pose>
+            <geometry>
+              <box>
+                <size>0.5 0.154178 0.05455</size>
+              </box>
+            </geometry>
+          <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
               <name>Gazebo/Black</name>
             </script>
           </material>
-      </visual>
-      <collision name='blade2_collision'>
-        <pose>0 0.3433402 0 0.3490658503988659 0 1.5707963267948966</pose>
-        <geometry>
-          <box>
-            <size>0.5 0.154178 0.05455</size>
-          </box>
-        </geometry>
-      </collision>
-
-      <visual name='blade3_visual'>
-        <pose>-0.3433402 0 0 -0.3490658503988659 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.5 0.154178 0.05455</size>
-          </box>
-        </geometry>
-        <material>
+        </visual>
+        <collision name=blade2_collision>
+          <pose>0.0 0.3433402 0 0.0 0.3490658503988659 0</pose>
+            <geometry>
+              <box>
+                <size>0.5 0.154178 0.05455</size>
+              </box>
+            </geometry>
+        </collision>
+        <visual name=blade3_visual>
+          <pose>-0.3433402 -0.0 0 -0.3490658503988659 -0.0 0</pose>
+            <geometry>
+              <box>
+                <size>0.5 0.154178 0.05455</size>
+              </box>
+            </geometry>
+          <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
               <name>Gazebo/Black</name>
             </script>
           </material>
-      </visual>
-      <collision name='blade3_collision'>
-        <pose>-0.3433402 0 0 -0.3490658503988659 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.5 0.154178 0.05455</size>
-          </box>
-        </geometry>
-      </collision>
-      <visual name='blade4_visual'>
-        <pose>0 -0.3433402 0 -0.3490658503988659 0 1.5707963267948966</pose>
-        <geometry>
-          <box>
-            <size>0.5 0.154178 0.05455</size>
-          </box>
-        </geometry>
-        <material>
+        </visual>
+        <collision name=blade3_collision>
+          <pose>-0.3433402 -0.0 0 -0.3490658503988659 -0.0 0</pose>
+            <geometry>
+              <box>
+                <size>0.5 0.154178 0.05455</size>
+              </box>
+            </geometry>
+        </collision>
+        <visual name=blade4_visual>
+          <pose>-0.0 -0.3433402 0 -0.0 -0.3490658503988659 0</pose>
+            <geometry>
+              <box>
+                <size>0.5 0.154178 0.05455</size>
+              </box>
+            </geometry>
+          <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
               <name>Gazebo/Black</name>
             </script>
           </material>
-      </visual>
-      <collision name='blade4_collision'>
-        <pose>0 -0.3433402 0 -0.3490658503988659 0 1.5707963267948966</pose>
-        <geometry>
-          <box>
-            <size>0.5 0.154178 0.05455</size>
-          </box>
-        </geometry>
-      </collision>
-
+        </visual>
+        <collision name=blade4_collision>
+          <pose>-0.0 -0.3433402 0 -0.0 -0.3490658503988659 0</pose>
+            <geometry>
+              <box>
+                <size>0.5 0.154178 0.05455</size>
+              </box>
+            </geometry>
+        </collision>
     </link>
+
     <joint name='spinning_joint' type='revolute'>
       <parent>body</parent>
       <child>propeller</child>
@@ -180,30 +181,7 @@
           <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-          <damping>0</damping>
-          <friction>0</friction>
-        </dynamics>
       </axis>
-      <pose>0 0 0 0 -0 0</pose>
-      <physics>
-        <ode>
-          <cfm>0</cfm>
-          <bounce>0</bounce>
-          <velocity>0</velocity>
-          <fudge_factor>0</fudge_factor>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-          <suspension>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </suspension>
-        </ode>
-      </physics>
     </joint>
 
     <allow_auto_disable>1</allow_auto_disable>
