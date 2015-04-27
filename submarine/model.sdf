@@ -40,7 +40,7 @@
             </geometry>
       </collision>
       <visual name='spacer_visual'>
-        <pose>0 01.3785460 0 0</pose>
+        <pose>0 0 1.378546 0 0 0</pose>
             <geometry>
               <cylinder>
                 <radius>0.0933402</radius>
@@ -55,7 +55,7 @@
           </material>
       </visual>
       <collision name='spacer_collision'>
-        <pose>0 01.3785460 0 0</pose>
+        <pose>0 0 1.378546 0 0 0</pose>
             <geometry>
               <cylinder>
                 <radius>0.0933402</radius>
@@ -80,7 +80,7 @@
       </inertial>
 
         <visual name=blade1_visual>
-          <pose>0.3433402 0.0 0 0.3490658503988659 0.0 0</pose>
+          <pose>0.3433402 0.0 0 0.3490658503988659 0 0.0</pose>
             <geometry>
               <box>
                 <size>0.5 0.154178 0.05455</size>
@@ -94,7 +94,7 @@
           </material>
         </visual>
         <collision name=blade1_collision>
-          <pose>0.3433402 0.0 0 0.3490658503988659 0.0 0</pose>
+          <pose>0.3433402 0.0 0 0.3490658503988659 0 0.0</pose>
             <geometry>
               <box>
                 <size>0.5 0.154178 0.05455</size>
@@ -102,7 +102,7 @@
             </geometry>
         </collision>
         <visual name=blade2_visual>
-          <pose>0.0 0.3433402 0 0.0 0.3490658503988659 0</pose>
+          <pose>0.0 0.3433402 0 0.3490658503988659 0 1.5707963267948966</pose>
             <geometry>
               <box>
                 <size>0.5 0.154178 0.05455</size>
@@ -116,7 +116,7 @@
           </material>
         </visual>
         <collision name=blade2_collision>
-          <pose>0.0 0.3433402 0 0.0 0.3490658503988659 0</pose>
+          <pose>0.0 0.3433402 0 0.3490658503988659 0 1.5707963267948966</pose>
             <geometry>
               <box>
                 <size>0.5 0.154178 0.05455</size>
@@ -124,7 +124,7 @@
             </geometry>
         </collision>
         <visual name=blade3_visual>
-          <pose>-0.3433402 -0.0 0 -0.3490658503988659 -0.0 0</pose>
+          <pose>-0.3433402 -0.0 0 -0.3490658503988659 0 0.0</pose>
             <geometry>
               <box>
                 <size>0.5 0.154178 0.05455</size>
@@ -138,7 +138,7 @@
           </material>
         </visual>
         <collision name=blade3_collision>
-          <pose>-0.3433402 -0.0 0 -0.3490658503988659 -0.0 0</pose>
+          <pose>-0.3433402 -0.0 0 -0.3490658503988659 0 0.0</pose>
             <geometry>
               <box>
                 <size>0.5 0.154178 0.05455</size>
@@ -146,7 +146,7 @@
             </geometry>
         </collision>
         <visual name=blade4_visual>
-          <pose>-0.0 -0.3433402 0 -0.0 -0.3490658503988659 0</pose>
+          <pose>-0.0 -0.3433402 0 -0.3490658503988659 0 1.5707963267948966</pose>
             <geometry>
               <box>
                 <size>0.5 0.154178 0.05455</size>
@@ -160,7 +160,7 @@
           </material>
         </visual>
         <collision name=blade4_collision>
-          <pose>-0.0 -0.3433402 0 -0.0 -0.3490658503988659 0</pose>
+          <pose>-0.0 -0.3433402 0 -0.3490658503988659 0 1.5707963267948966</pose>
             <geometry>
               <box>
                 <size>0.5 0.154178 0.05455</size>
