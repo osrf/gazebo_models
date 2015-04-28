@@ -72,7 +72,7 @@
         <%= body_geometry%>
       </collision>
       <% spacer_geometry_pose =
-            '<pose>0 0' + (0.299196 + 1.07935).to_s + '0 0 0</pose>
+            '<pose>0 0 ' + (0.299196 + 1.07935).to_s + ' 0 0 0</pose>
             <geometry>
               <cylinder>
                 <radius>'+ spacer_radius.to_s + '</radius>
@@ -103,16 +103,14 @@
         </inertia>
       </inertial>
 
-      <% for i in 1..4 %>
-        <%
+      <% for i in 1..4
          x = (i%2)*(spacer_radius + blade_dx/2)*(if i > 2 then -1 else 1 end)
          y = ((i+1)%2)*(spacer_radius + blade_dx/2)*(if i > 2 then -1 else 1 end)
-         roll = (i%2)*blade_angle*(if i > 2 then -1 else 1 end)
-         pitch = ((i+1)%2)*blade_angle*(if i > 2 then -1 else 1 end)
+         roll = blade_angle*(if i > 2 then -1 else 1 end)
          yaw = ((i+1)%2)*Math::PI/2
 
          geometry_pose =
-           '<pose>' + x.to_s + ' ' + y.to_s + ' 0 ' + roll.to_s + ' ' + pitch.to_s + ' ' + yaw.to_s + '</pose>
+           '<pose>' + x.to_s + ' ' + y.to_s + ' 0 ' + roll.to_s + ' 0 ' + yaw.to_s + '</pose>
             <geometry>
               <box>
                 <size>' + blade_dx.to_s + ' ' + blade_dy.to_s + ' ' + blade_dz.to_s + '</size>
