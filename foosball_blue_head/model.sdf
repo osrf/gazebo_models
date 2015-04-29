@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name='Foosball blue head'>
+    <static>true</static>
+    <link name='link'>
+       <visual name='visual'>
+        <geometry>
+          <sphere>
+            <radius>0.15</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://foosball_blue_head/materials/scripts/</uri>
+            <uri>model://foosball_blue_head/materials/textures/</uri>
+            <name>Foosball/BlueHead</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
