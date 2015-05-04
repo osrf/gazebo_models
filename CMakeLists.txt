@@ -76,6 +76,8 @@ fire_hydrant
 first_2015_trash_can
 foosball
 foosball_ball
+foosball_blue_head
+foosball_red_head
 frc_field_2015
 gas_station
 grey_tote
