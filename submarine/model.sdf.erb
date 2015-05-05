@@ -7,9 +7,9 @@
     body_volume = body_length*Math::PI*body_radius**2
     spacer_radius = 0.0933402
     spacer_length = 0.127211
-    spacer_volume = spacer_length*Math::PI*spacer_radius**2
+    #spacer_volume = spacer_length*Math::PI*spacer_radius**2
 
-    mass = body_density*(body_volume+spacer_volume)
+    mass = body_density*(body_volume)
 
     body_ixx = mass/12.0 * (3*body_radius**2  + body_length**2 )
     body_iyy = mass/12.0 * (3*body_radius**2  + body_length**2 )
@@ -84,9 +84,6 @@
         <%= spacer_geometry_pose%>
         <%= material_block%>
       </visual>
-      <collision name='spacer_collision'>
-        <%= spacer_geometry_pose%>
-      </collision>
     </link>
 
     <link name='propeller'>
@@ -145,27 +142,31 @@
     <allow_auto_disable>1</allow_auto_disable>
 
     <% lift_drag_properties =
-     '<alpha_stall>1</alpha_stall>
-      <alpha>1.1</alpha>
-      <cla_stall>0</cla_stall>
-      <upward>1 0 0</upward>
-      <forward>0 0 -1</forward>' %>
+     '<air_density>' + fluid_density.to_s + '</air_density>
+      <cla_stall>0</cla_stall>' %>
 
     <plugin name="submarine_body" filename="libLiftDragPlugin.so">
       <cla>0.8</cla>
       <cda>0.8</cda>
+      <alpha_stall>0</alpha_stall>
+      <alpha>0</alpha>
       <%= lift_drag_properties%>
       <area><%= 2*Math::PI*body_radius*body_length %></area>
-      <air_density><%= fluid_density%></air_density>
+      <upward>0 1 0</upward>
+      <forward>0 0 -1</forward>
       <link_name>body</link_name>
     </plugin>
 
     <plugin name="submarine_propeller" filename="libLiftDragPlugin.so">
       <cla>1.05</cla>
       <cda>1.05</cda>
+      <alpha_stall>1</alpha_stall>
+      <alpha>1</alpha>
       <%= lift_drag_properties%>
       <area><%= 4*(blade_dx*blade_dy*2 + blade_dx*blade_dz*2 + blade_dy*blade_dz*2) %></area>
       <air_density><%= fluid_density%></air_density>
+      <upward>0 -1 0</upward>
+      <forward>0 0 1</forward>
       <link_name>propeller</link_name>
     </plugin>
 
