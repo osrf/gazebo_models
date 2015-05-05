@@ -5,14 +5,14 @@
     <link name='body'>
       <pose>0 0 -1.07935 0 0 0</pose>
       <inertial>
-        <mass>369.3072732306469</mass>
+        <mass>367.5663404700058</mass>
         <inertia>
-          <ixx>216.352510900954</ixx>
+          <ixx>215.33261445867842</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>216.352510900954</iyy>
+          <iyy>215.33261445867842</iyy>
           <iyz>0</iyz>
-          <izz>16.61882729537911</izz>
+          <izz>16.54048532115026</izz>
         </inertia>
       </inertial>
 
@@ -54,15 +54,6 @@
             </script>
           </material>
       </visual>
-      <collision name='spacer_collision'>
-        <pose>0 0 1.378546 0 0 0</pose>
-            <geometry>
-              <cylinder>
-                <radius>0.0933402</radius>
-                <length>0.127211</length>
-              </cylinder>
-            </geometry>
-      </collision>
     </link>
 
     <link name='propeller'>
@@ -190,13 +181,13 @@
     <plugin name="submarine_body" filename="libLiftDragPlugin.so">
       <cla>0.8</cla>
       <cda>0.8</cda>
-      <alpha_stall>1</alpha_stall>
-      <alpha>1.1</alpha>
-      <cla_stall>0</cla_stall>
-      <upward>1 0 0</upward>
-      <forward>0 0 -1</forward>
-      <area>4.900884539600077</area>
+      <alpha_stall>0</alpha_stall>
+      <alpha>0</alpha>
       <air_density>1000</air_density>
+      <cla_stall>0</cla_stall>
+      <area>4.900884539600077</area>
+      <upward>0 1 0</upward>
+      <forward>0 0 -1</forward>
       <link_name>body</link_name>
     </plugin>
 
@@ -204,12 +195,13 @@
       <cla>1.05</cla>
       <cda>1.05</cda>
       <alpha_stall>1</alpha_stall>
-      <alpha>1.1</alpha>
+      <alpha>1</alpha>
+      <air_density>1000</air_density>
       <cla_stall>0</cla_stall>
-      <upward>1 0 0</upward>
-      <forward>0 0 -1</forward>
       <area>0.9021952792000001</area>
       <air_density>1000</air_density>
+      <upward>0 -1 0</upward>
+      <forward>0 0 1</forward>
       <link_name>propeller</link_name>
     </plugin>
 
