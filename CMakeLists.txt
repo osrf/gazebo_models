@@ -115,7 +115,6 @@ nist_maze_wall_triple_holes_120
 nist_simple_ramp_120
 nist_stairs_120
 office_building
-osrf_elevators
 pioneer2dx
 pioneer3at
 plastic_cup
