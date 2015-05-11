@@ -23,7 +23,7 @@
       </visual>
 
       <!-- table collisions on each player's side -->
-      
+
 
         <collision name="sideRed">
           <pose>0 -0.36 0.34700000000000003 0 0 0</pose>
@@ -34,7 +34,7 @@
           </geometry>
           <surface>
             <bounce>
-              <restitution_coefficient>0.5</restitution_coefficient>
+              <restitution_coefficient>0.9</restitution_coefficient>
               <threshold>0</threshold>
             </bounce>
             <contact>
@@ -44,7 +44,7 @@
             </contact>
           </surface>
         </collision>
-      
+
 
         <collision name="sideBlue">
           <pose>0 0.36 0.34700000000000003 0 0 0</pose>
@@ -55,7 +55,7 @@
           </geometry>
           <surface>
             <bounce>
-              <restitution_coefficient>0.5</restitution_coefficient>
+              <restitution_coefficient>0.9</restitution_coefficient>
               <threshold>0</threshold>
             </bounce>
             <contact>
@@ -65,11 +65,11 @@
             </contact>
           </surface>
         </collision>
-      
+
       <!-- /table side collisions -->
 
       <!-- table collisions on each goal side -->
-      
+
 
         <collision name="goalRed">
           <pose>0.55 0 0.34700000000000003 0 1.5707963267948966 0</pose>
@@ -88,7 +88,7 @@
           </geometry>
           <surface>
             <bounce>
-              <restitution_coefficient>0.5</restitution_coefficient>
+              <restitution_coefficient>0.9</restitution_coefficient>
               <threshold>0</threshold>
             </bounce>
             <contact>
@@ -98,7 +98,7 @@
             </contact>
           </surface>
         </collision>
-      
+
 
         <collision name="goalBlue">
           <pose>-0.55 0 0.34700000000000003 3.141592653589793 1.5707963267948966 0</pose>
@@ -117,7 +117,7 @@
           </geometry>
           <surface>
             <bounce>
-              <restitution_coefficient>0.5</restitution_coefficient>
+              <restitution_coefficient>0.9</restitution_coefficient>
               <threshold>0</threshold>
             </bounce>
             <contact>
@@ -127,7 +127,7 @@
             </contact>
           </surface>
         </collision>
-      
+
       <!-- /table goal collisions -->
 
       <!-- table ground -->
@@ -153,13 +153,6 @@
             <size>1.1 0.73 0.02</size>
           </box>
         </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <max_vel>0.500</max_vel>
-            </ode>
-          </contact>
-        </surface>
       </collision>
       <!-- /table ground -->
 
@@ -181,9 +174,9 @@
     <!-- /table_world joint -->
 
     <!-- two teams -->
-    
+
       <!-- 4 rods per team -->
-      
+
 
         <!-- shaft bridge is a dummy link between the revolute and prismatic joints -->
         <link name="shaftBlue0_bridge">
@@ -234,7 +227,7 @@
           </collision>
 
           <!-- center player -->
-          
+
 
             <visual name='player_center'>
               <pose>0 0 0 -1.5707963267948966 0 0</pose>
@@ -253,15 +246,15 @@
               <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
             </collision>
 
-          
+
           <!-- /center player -->
 
           <!-- two players between the center player and the side players -->
-          
+
           <!-- /middle players -->
 
           <!-- side players: two players in the extremes of the rod -->
-          
+
 
             <visual name='player_side_1'>
               <pose>0 0 0.15 -1.5707963267948966 0 0</pose>
@@ -297,7 +290,7 @@
               <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
             </collision>
 
-          
+
           <!-- /side players -->
 
         </link>
@@ -333,7 +326,7 @@
         </joint>
         <!-- /revolute joint -->
 
-      
+
 
         <!-- shaft bridge is a dummy link between the revolute and prismatic joints -->
         <link name="shaftBlue1_bridge">
@@ -384,15 +377,15 @@
           </collision>
 
           <!-- center player -->
-          
+
           <!-- /center player -->
 
           <!-- two players between the center player and the side players -->
-          
+
           <!-- /middle players -->
 
           <!-- side players: two players in the extremes of the rod -->
-          
+
 
             <visual name='player_side_1'>
               <pose>0 0 0.1 -1.5707963267948966 0 0</pose>
@@ -428,7 +421,7 @@
               <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
             </collision>
 
-          
+
           <!-- /side players -->
 
         </link>
@@ -464,7 +457,7 @@
         </joint>
         <!-- /revolute joint -->
 
-      
+
 
         <!-- shaft bridge is a dummy link between the revolute and prismatic joints -->
         <link name="shaftBlue2_bridge">
@@ -515,7 +508,7 @@
           </collision>
 
           <!-- center player -->
-          
+
 
             <visual name='player_center'>
               <pose>0 0 0 -1.5707963267948966 0 0</pose>
@@ -534,11 +527,11 @@
               <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
             </collision>
 
-          
+
           <!-- /center player -->
 
           <!-- two players between the center player and the side players -->
-          
+
 
             <visual name='player_mid_1'>
               <pose>0 0 0.26 -1.5707963267948966 0 0</pose>
@@ -576,11 +569,11 @@
               <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
             </collision>
 
-          
+
           <!-- /middle players -->
 
           <!-- side players: two players in the extremes of the rod -->
-          
+
 
             <visual name='player_side_1'>
               <pose>0 0 0.13 -1.5707963267948966 0 0</pose>
@@ -616,7 +609,7 @@
               <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
             </collision>
 
-          
+
           <!-- /side players -->
 
         </link>
@@ -652,7 +645,7 @@
         </joint>
         <!-- /revolute joint -->
 
-      
+
 
         <!-- shaft bridge is a dummy link between the revolute and prismatic joints -->
         <link name="shaftBlue3_bridge">
@@ -703,7 +696,7 @@
           </collision>
 
           <!-- center player -->
-          
+
 
             <visual name='player_center'>
               <pose>0 0 0 -1.5707963267948966 0 0</pose>
@@ -722,15 +715,15 @@
               <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
             </collision>
 
-          
+
           <!-- /center player -->
 
           <!-- two players between the center player and the side players -->
-          
+
           <!-- /middle players -->
 
           <!-- side players: two players in the extremes of the rod -->
-          
+
 
             <visual name='player_side_1'>
               <pose>0 0 0.15 -1.5707963267948966 0 0</pose>
@@ -766,7 +759,7 @@
               <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
             </collision>
 
-          
+
           <!-- /side players -->
 
         </link>
@@ -802,12 +795,12 @@
         </joint>
         <!-- /revolute joint -->
 
-      
+
       <!-- /shafts -->
 
-    
+
       <!-- 4 rods per team -->
-      
+
 
         <!-- shaft bridge is a dummy link between the revolute and prismatic joints -->
         <link name="shaftRed0_bridge">
@@ -858,7 +851,7 @@
           </collision>
 
           <!-- center player -->
-          
+
 
             <visual name='player_center'>
               <pose>0 0 0 -1.5707963267948966 0 0</pose>
@@ -877,15 +870,15 @@
               <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
             </collision>
 
-          
+
           <!-- /center player -->
 
           <!-- two players between the center player and the side players -->
-          
+
           <!-- /middle players -->
 
           <!-- side players: two players in the extremes of the rod -->
-          
+
 
             <visual name='player_side_1'>
               <pose>0 0 0.15 -1.5707963267948966 0 0</pose>
@@ -921,7 +914,7 @@
               <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
             </collision>
 
-          
+
           <!-- /side players -->
 
         </link>
@@ -957,7 +950,7 @@
         </joint>
         <!-- /revolute joint -->
 
-      
+
 
         <!-- shaft bridge is a dummy link between the revolute and prismatic joints -->
         <link name="shaftRed1_bridge">
@@ -1008,15 +1001,15 @@
           </collision>
 
           <!-- center player -->
-          
+
           <!-- /center player -->
 
           <!-- two players between the center player and the side players -->
-          
+
           <!-- /middle players -->
 
           <!-- side players: two players in the extremes of the rod -->
-          
+
 
             <visual name='player_side_1'>
               <pose>0 0 0.1 -1.5707963267948966 0 0</pose>
@@ -1052,7 +1045,7 @@
               <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
             </collision>
 
-          
+
           <!-- /side players -->
 
         </link>
@@ -1088,7 +1081,7 @@
         </joint>
         <!-- /revolute joint -->
 
-      
+
 
         <!-- shaft bridge is a dummy link between the revolute and prismatic joints -->
         <link name="shaftRed2_bridge">
@@ -1139,7 +1132,7 @@
           </collision>
 
           <!-- center player -->
-          
+
 
             <visual name='player_center'>
               <pose>0 0 0 -1.5707963267948966 0 0</pose>
@@ -1158,11 +1151,11 @@
               <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
             </collision>
 
-          
+
           <!-- /center player -->
 
           <!-- two players between the center player and the side players -->
-          
+
 
             <visual name='player_mid_1'>
               <pose>0 0 0.26 -1.5707963267948966 0 0</pose>
@@ -1200,11 +1193,11 @@
               <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
             </collision>
 
-          
+
           <!-- /middle players -->
 
           <!-- side players: two players in the extremes of the rod -->
-          
+
 
             <visual name='player_side_1'>
               <pose>0 0 0.13 -1.5707963267948966 0 0</pose>
@@ -1240,7 +1233,7 @@
               <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
             </collision>
 
-          
+
           <!-- /side players -->
 
         </link>
@@ -1276,7 +1269,7 @@
         </joint>
         <!-- /revolute joint -->
 
-      
+
 
         <!-- shaft bridge is a dummy link between the revolute and prismatic joints -->
         <link name="shaftRed3_bridge">
@@ -1327,7 +1320,7 @@
           </collision>
 
           <!-- center player -->
-          
+
 
             <visual name='player_center'>
               <pose>0 0 0 -1.5707963267948966 0 0</pose>
@@ -1346,15 +1339,15 @@
               <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
             </collision>
 
-          
+
           <!-- /center player -->
 
           <!-- two players between the center player and the side players -->
-          
+
           <!-- /middle players -->
 
           <!-- side players: two players in the extremes of the rod -->
-          
+
 
             <visual name='player_side_1'>
               <pose>0 0 0.15 -1.5707963267948966 0 0</pose>
@@ -1390,7 +1383,7 @@
               <geometry> <box> <size>0.045 0.13 0.055</size> </box> </geometry>
             </collision>
 
-          
+
           <!-- /side players -->
 
         </link>
@@ -1426,10 +1419,10 @@
         </joint>
         <!-- /revolute joint -->
 
-      
+
       <!-- /shafts -->
 
-    
+
     <!-- /teams -->
 
   </model>

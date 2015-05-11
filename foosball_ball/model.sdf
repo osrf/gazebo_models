@@ -28,12 +28,11 @@
         </geometry>
         <surface>
           <bounce>
-            <restitution_coefficient>0.5</restitution_coefficient>
+            <restitution_coefficient>0.9</restitution_coefficient>
             <threshold>0</threshold>
           </bounce>
           <contact>
             <ode>
-              <max_vel>0.100000</max_vel>
               <min_depth>0.001000</min_depth>
             </ode>
           </contact>
