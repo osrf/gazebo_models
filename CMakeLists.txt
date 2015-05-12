@@ -27,6 +27,7 @@ camera
 cart_front_steer
 cart_rigid_suspension
 cart_soft_suspension
+cessna
 cinder_block
 cinder_block_2
 cinder_block_wide
