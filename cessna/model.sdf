@@ -32,6 +32,61 @@
           </mesh>
         </geometry>
       </visual>
+
+      <!-- Debug - Centers of pressure -->
+      <visual name="pp1">
+        <pose>-1 2.205 1.5 0 0 0</pose>
+        <geometry>
+          <sphere><radius>0.1</radius></sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="pp2">
+        <pose>-1 -2.205 1.5 0 0 0</pose>
+        <geometry>
+          <sphere><radius>0.1</radius></sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="pp3">
+        <pose>-5.45 0 0.55 0 0 0</pose>
+        <geometry>
+          <sphere><radius>0.1</radius></sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name="pp4">
+        <pose>-6 0 1.55 0 0 0</pose>
+        <geometry>
+          <sphere><radius>0.1</radius></sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+
+
     </link>
 
     <!-- The propeller attached to the body -->
@@ -88,6 +143,74 @@
         </limit>
       </axis>
     </joint>
+
+    <plugin name="gazebo_left_wing" filename="libLiftDragPlugin.so">
+      <a0>0.05984281113</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <cma>-1.8</cma>
+      <alpha_stall>0.3391428111</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <cma_stall>0</cma_stall>
+      <cp>-1 2.205 1.5</cp>
+      <area>8.08255</area>
+      <air_density>1.2041</air_density>
+      <forward>1 0 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>cessna::body</link_name>
+    </plugin>
+
+    <plugin name="gazebo_right_wing" filename="libLiftDragPlugin.so">
+      <a0>0.05984281113</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <cma>-1.8</cma>
+      <alpha_stall></alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <cma_stall>0</cma_stall>
+      <cp>-1 -2.205 1.5</cp>
+      <area>8.08255</area>
+      <air_density>1.2041</air_density>
+      <forward>1 0 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>cessna::body</link_name>
+    </plugin>
+
+    <!--<plugin name="gazebo_elevator" filename="libLiftDragPlugin.so">
+      <a0>0</a0>
+      <cla>-0.43</cla>
+      <cda></cda>
+      <cma></cma>
+      <alpha_stall></alpha_stall>
+      <cla_stall></cla_stall>
+      <cda_stall></cda_stall>
+      <cma_stall></cma_stall>
+      <cp>-5.45 0 0.55</cp>
+      <area>2.03458</area>
+      <air_density>1.2041</air_density>
+      <forward>1 0 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>cessna::body</link_name>
+    </plugin>-->
+
+    <!--<plugin name="gazebo_rudder" filename="libLiftDragPlugin.so">
+      <a0>0</a0>
+      <cla></cla>
+      <cda></cda>
+      <cma></cma>
+      <alpha_stall></alpha_stall>
+      <cla_stall></cla_stall>
+      <cda_stall></cda_stall>
+      <cma_stall></cma_stall>
+      <cp>-6 0 1.55</cp>
+      <area>1.5329</area>
+      <air_density>1.2041</air_density>
+      <forward>1 0 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>cessna::body</link_name>
+    </plugin>-->
 
   </model>
 </sdf>
