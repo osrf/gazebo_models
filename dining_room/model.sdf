@@ -4,6 +4,7 @@
     <static>true</static>
     <link name="link">
       <visual name="visual">
+        <cast_shadows>0</cast_shadows>
         <geometry>
           <mesh>
             <uri>model://dining_room/meshes/dining_room.dae</uri>
