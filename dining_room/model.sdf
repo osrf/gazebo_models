@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="Dining room">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://dining_room/meshes/dining_room.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
