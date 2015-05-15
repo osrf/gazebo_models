@@ -14,7 +14,7 @@
           <iyz>0.0</iyz>
           <izz>2666.893931043</izz>
         </inertia>
-        <pose>-1.0414 0 0.9271 0 0 0</pose>
+        <pose>-0.0414 0 0.9271 0 0 0</pose>
       </inertial>
 
       <collision name="collision">
@@ -34,62 +34,36 @@
       </visual>
 
       <!-- Debug - Centers of pressure -->
-      <visual name="pp1">
+      <!--<visual name="cp_left_wing">
         <pose>-1 2.205 1.5 0 0 0</pose>
         <geometry>
           <sphere><radius>0.1</radius></sphere>
         </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Black</name>
-          </script>
-        </material>
       </visual>
 
-      <visual name="pp2">
+      <visual name="cp_right_wing">
         <pose>-1 -2.205 1.5 0 0 0</pose>
         <geometry>
           <sphere><radius>0.1</radius></sphere>
         </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Black</name>
-          </script>
-        </material>
       </visual>
 
-      <visual name="pp3">
+      <visual name="cp_elevator">
         <pose>-5.45 0 0.55 0 0 0</pose>
         <geometry>
           <sphere><radius>0.1</radius></sphere>
         </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Black</name>
-          </script>
-        </material>
       </visual>
 
-      <visual name="pp4">
+      <visual name="cp_rudder">
         <pose>-6 0 1.55 0 0 0</pose>
         <geometry>
           <sphere><radius>0.1</radius></sphere>
         </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Black</name>
-          </script>
-        </material>
-      </visual>
-
+      </visual>-->
 
     </link>
 
-    <!-- The propeller attached to the body -->
     <link name="propeller">
       <pose>1.54 0 0.84 0 0 0</pose>
       <inertial>
@@ -120,16 +94,149 @@
             <uri>model://cessna/meshes/cessna_prop.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <script>
-            <name>Gazebo/Grey</name>
-          </script>
-        </material>
+      </visual>
+    </link>
+
+    <link name="front_wheel">
+      <inertial>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.01786</ixx>
+          <ixy>0</ixy>
+          <iyy>0.01786</iyy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          <izz>0.0324</izz>
+        </inertia>
+        <pose>0.712 0 -0.313 1.570795 0 0</pose>
+      </inertial>
+      <collision name="collision">
+        <pose>0.712 0 -0.313 1.570795 0 0</pose>
+        <geometry>
+          <cylinder>
+              <radius>0.18</radius>
+              <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.3</mu>
+              <mu2>0.3</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/cessna_front_wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="rear_left_wheel">
+      <inertial>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.035516</ixx>
+          <ixy>0</ixy>
+          <iyy>0.035516</iyy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          <izz>0.0625</izz>
+        </inertia>
+        <pose>-1 1.27 -0.25 1.570795 0 0</pose>
+      </inertial>
+      <collision name="collision">
+        <pose>-1 1.27 -0.25 1.570795 0 0</pose>
+        <geometry>
+          <cylinder>
+              <radius>0.25</radius>
+              <length>0.16</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.3</mu>
+              <mu2>0.3</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/cessna_rear_left_wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="rear_right_wheel">
+      <inertial>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.035516</ixx>
+          <ixy>0</ixy>
+          <iyy>0.035516</iyy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          <izz>0.0625</izz>
+        </inertia>
+        <pose>-1 -1.27 -0.25 1.570795 0 0</pose>
+      </inertial>
+      <collision name="collision">
+        <pose>-1 -1.27 -0.25 1.570795 0 0</pose>
+        <geometry>
+          <cylinder>
+              <radius>0.25</radius>
+              <length>0.16</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.3</mu>
+              <mu2>0.3</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/cessna_rear_right_wheel.dae</uri>
+          </mesh>
+        </geometry>
       </visual>
     </link>
 
     <!-- Joint to make the propeller spin -->
-    <joint name='spinning_joint' type='revolute'>
+    <joint name='propeller_joint' type='revolute'>
       <parent>body</parent>
       <child>propeller</child>
       <axis>
@@ -144,73 +251,56 @@
       </axis>
     </joint>
 
-    <plugin name="gazebo_left_wing" filename="libLiftDragPlugin.so">
-      <a0>0.05984281113</a0>
-      <cla>4.752798721</cla>
-      <cda>0.6417112299</cda>
-      <cma>-1.8</cma>
-      <alpha_stall>0.3391428111</alpha_stall>
-      <cla_stall>-3.85</cla_stall>
-      <cda_stall>-0.9233984055</cda_stall>
-      <cma_stall>0</cma_stall>
-      <cp>-1 2.205 1.5</cp>
-      <area>8.08255</area>
-      <air_density>1.2041</air_density>
-      <forward>1 0 0</forward>
-      <upward>0 0 1</upward>
-      <link_name>cessna::body</link_name>
-    </plugin>
+    <!-- Joint to make the front wheel spin -->
+    <joint name='front_wheel_joint' type='revolute'>
+      <parent>body</parent>
+      <child>front_wheel</child>
+      <pose>0.712 0 -0.313 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <limit>
+          <lower>-1e+12</lower>
+          <upper>1e+12</upper>
+          <effort>1000</effort>
+          <velocity>-1</velocity>
+        </limit>
+      </axis>
+    </joint>
 
-    <plugin name="gazebo_right_wing" filename="libLiftDragPlugin.so">
-      <a0>0.05984281113</a0>
-      <cla>4.752798721</cla>
-      <cda>0.6417112299</cda>
-      <cma>-1.8</cma>
-      <alpha_stall></alpha_stall>
-      <cla_stall>-3.85</cla_stall>
-      <cda_stall>-0.9233984055</cda_stall>
-      <cma_stall>0</cma_stall>
-      <cp>-1 -2.205 1.5</cp>
-      <area>8.08255</area>
-      <air_density>1.2041</air_density>
-      <forward>1 0 0</forward>
-      <upward>0 0 1</upward>
-      <link_name>cessna::body</link_name>
-    </plugin>
+    <!-- Joint to make the rear left wheel spin -->
+    <joint name='rear_left_wheel_joint' type='revolute'>
+      <parent>body</parent>
+      <child>rear_left_wheel</child>
+      <pose>-1 -1.27 -0.25 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <limit>
+          <lower>-1e+12</lower>
+          <upper>1e+12</upper>
+          <effort>1000</effort>
+          <velocity>-1</velocity>
+        </limit>
+      </axis>
+    </joint>
 
-    <!--<plugin name="gazebo_elevator" filename="libLiftDragPlugin.so">
-      <a0>0</a0>
-      <cla>-0.43</cla>
-      <cda></cda>
-      <cma></cma>
-      <alpha_stall></alpha_stall>
-      <cla_stall></cla_stall>
-      <cda_stall></cda_stall>
-      <cma_stall></cma_stall>
-      <cp>-5.45 0 0.55</cp>
-      <area>2.03458</area>
-      <air_density>1.2041</air_density>
-      <forward>1 0 0</forward>
-      <upward>0 0 1</upward>
-      <link_name>cessna::body</link_name>
-    </plugin>-->
-
-    <!--<plugin name="gazebo_rudder" filename="libLiftDragPlugin.so">
-      <a0>0</a0>
-      <cla></cla>
-      <cda></cda>
-      <cma></cma>
-      <alpha_stall></alpha_stall>
-      <cla_stall></cla_stall>
-      <cda_stall></cda_stall>
-      <cma_stall></cma_stall>
-      <cp>-6 0 1.55</cp>
-      <area>1.5329</area>
-      <air_density>1.2041</air_density>
-      <forward>1 0 0</forward>
-      <upward>0 0 1</upward>
-      <link_name>cessna::body</link_name>
-    </plugin>-->
+    <!-- Joint to make the rear right wheel spin -->
+    <joint name='rear_right_wheel_joint' type='revolute'>
+      <parent>body</parent>
+      <child>rear_right_wheel</child>
+      <pose>-1 1.27 -0.25 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <limit>
+          <lower>-1e+12</lower>
+          <upper>1e+12</upper>
+          <effort>1000</effort>
+          <velocity>-1</velocity>
+        </limit>
+      </axis>
+    </joint>
 
   </model>
 </sdf>
