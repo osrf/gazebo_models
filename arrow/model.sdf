@@ -5,22 +5,6 @@
     <static>true</static>
     <link name="link">
       <pose>0 0 0 1.57 0 1.57</pose>
-      <collision name="collision">
-        <geometry>
-          <polyline>
-            <point>3.0 0.0</point>
-            <point>0.6 -3.0</point>
-            <point>0.6 -1.6</point>
-            <point>-3.0 -1.6</point>
-            <point>-3.0 1.6</point>
-            <point>0.6 1.6</point>
-            <point>0.6 3.0</point>
-            <point>3.0 0.0</point>
-            <height>0.6</height>
-          </polyline>
-        </geometry>
-      </collision>
-
       <visual name="visual">
         <geometry>
           <polyline>
