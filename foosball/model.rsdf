@@ -248,7 +248,12 @@
               </mesh>
             </geometry>
             <material>
-              <script><name>Gazebo/Black</name></script>
+              <!-- highlight active rods -->
+              <% if j == "2" || j == "3" %>
+                <script><name><%="Gazebo/" + t%></name></script>
+              <% else %>
+                <script><name>Gazebo/Black</name></script>
+              <% end %>
             </material>
           </visual>
 
