@@ -1,6 +1,8 @@
 <?xml version='1.0'?>
 <%
   table_height = 0.85
+  table_mass = 50
+  table_com_offset = 1
 
   field_length = 1.1
   field_width = 0.73
@@ -58,8 +60,26 @@
   <model name='Foosball'>
     <static>0</static>
 
+    <!-- table bridge is a dummy link between joints -->
+    <link name="table_bridge">
+      <pose>0 0 <%= table_height/2.0 %> 0 0 0</pose>
+    </link>
+    <!-- /table bridge -->
+
     <link name='table'>
       <pose>0 0 <%= table_height/2.0 %> 0 0 0</pose>
+      <inertial>
+        <pose>0 0 <%= - table_com_offset %> 0 0 0</pose>
+        <mass><%= table_mass %></mass>
+  <!--      <inertia>
+          <ixx><%= (table_height*table_height + field_width*field_width)*table_mass/12.0 %></ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy><%= (table_height*table_height + field_length*field_length)*table_mass/12.0 %></iyy>
+          <iyz>0</iyz>
+          <izz><%= (field_length*field_length + field_width*field_width)*table_mass/12.0 %></izz>
+        </inertia>
+   -->   </inertial>
 
       <visual name='table'>
         <pose>0 0 0 <%= Math::PI/2.0 %> 0 0</pose>
@@ -177,14 +197,40 @@
     </link>
 
     <!-- joint fixing the table to the world -->
-    <joint name='table_world' type='prismatic'>
-      <parent>world</parent>
+    <joint name='table_table_bridge' type='universal'>
+      <parent>table_bridge</parent>
       <child>table</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.05</lower>
+          <upper>0.05</upper>
+        </limit>
+        <dynamics>
+          <damping>1000</damping>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-0.05</lower>
+          <upper>0.05</upper>
+        </limit>
+        <dynamics>
+          <damping>1000</damping>
+        </dynamics>
+      </axis2>
+      <pose>0 0 0 0 0 0</pose>
+    </joint>
+
+    <joint name='table_bridge_world' type='prismatic'>
+      <parent>world</parent>
+      <child>table_bridge</child>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
           <lower>0</lower>
-          <upper>0.1</upper>
+          <upper>0.05</upper>
         </limit>
       </axis>
       <pose>0 0 0 0 0 0</pose>
