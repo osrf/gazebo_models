@@ -155,6 +155,7 @@ tube_9_5mm
 turtlebot
 ur10
 utility_cart
+vrc_driving_terrain
 washer
 willowgarage
 wood_block_10_2_1cm
