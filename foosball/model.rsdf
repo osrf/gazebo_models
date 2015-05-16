@@ -26,6 +26,8 @@
   shaft_height = 0.8
   rod_length = 1.2
   rod_radius = 0.00779907
+  rod_mass = 1
+  rod_com_offset = 0.025
 
   shaft0_dist = 0.508
   shaft1_dist = 0.3675
@@ -223,6 +225,18 @@
         <!-- shaft contains the rod and players -->
         <%= '<link name=' + '"shaft' + t + j + '">' %>
           <pose><%= posX %> 0 <%= shaft_height %> <%= Math::PI/2.0 %> 0 0</pose>
+          <inertial>
+            <mass><%= rod_mass %></mass>
+            <pose>0 <%= - rod_com_offset %> 0 0 0 0</pose>
+            <inertia>
+              <ixx><%= (3*rod_radius*rod_radius + rod_length*rod_length)*rod_mass/12.0 %></ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy><%= (3*rod_radius*rod_radius + rod_length*rod_length)*rod_mass/12.0 %></iyy>
+              <iyz>0</iyz>
+              <izz><%= rod_radius*rod_radius*rod_mass/2.0 %></izz>
+            </inertia>
+          </inertial>
 
           <visual name='rod'>
             <pose>0 0 0 0 0 0</pose>
@@ -401,6 +415,10 @@
               <lower>-1000</lower>
               <upper>1000</upper>
             </limit>
+            <dynamics>
+              <!--<friction>0.2 </friction>-->
+              <damping>0.2 </damping>
+            </dynamics>
           </axis>
         </joint>
         <!-- /revolute joint -->

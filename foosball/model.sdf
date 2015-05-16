@@ -194,6 +194,18 @@
         <!-- shaft contains the rod and players -->
         <link name="shaftBlue0">
           <pose>-0.508 0 0.8 1.5707963267948966 0 0</pose>
+          <inertial>
+            <mass>1</mass>
+            <pose>0 -0.025 0 0 0 0</pose>
+            <inertia>
+              <ixx>0.12001520637321622</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.12001520637321622</iyy>
+              <iyz>0</iyz>
+              <izz>3.0412746432449998e-05</izz>
+            </inertia>
+          </inertial>
 
           <visual name='rod'>
             <pose>0 0 0 0 0 0</pose>
@@ -219,11 +231,10 @@
               </mesh>
             </geometry>
             <material>
-
-          <!-- highlight active rods -->
-          
-              <script><name>Gazebo/Black</name></script>
-          
+              <!-- highlight active rods -->
+              
+                <script><name>Gazebo/Black</name></script>
+              
             </material>
           </visual>
 
@@ -333,6 +344,10 @@
               <lower>-1000</lower>
               <upper>1000</upper>
             </limit>
+            <dynamics>
+              <!--<friction>0.2 </friction>-->
+              <damping>0.2 </damping>
+            </dynamics>
           </axis>
         </joint>
         <!-- /revolute joint -->
@@ -348,6 +363,18 @@
         <!-- shaft contains the rod and players -->
         <link name="shaftBlue1">
           <pose>-0.3675 0 0.8 1.5707963267948966 0 0</pose>
+          <inertial>
+            <mass>1</mass>
+            <pose>0 -0.025 0 0 0 0</pose>
+            <inertia>
+              <ixx>0.12001520637321622</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.12001520637321622</iyy>
+              <iyz>0</iyz>
+              <izz>3.0412746432449998e-05</izz>
+            </inertia>
+          </inertial>
 
           <visual name='rod'>
             <pose>0 0 0 0 0 0</pose>
@@ -373,11 +400,10 @@
               </mesh>
             </geometry>
             <material>
-
-          <!-- highlight active rods -->
-          
-              <script><name>Gazebo/Black</name></script>
-          
+              <!-- highlight active rods -->
+              
+                <script><name>Gazebo/Black</name></script>
+              
             </material>
           </visual>
 
@@ -468,6 +494,10 @@
               <lower>-1000</lower>
               <upper>1000</upper>
             </limit>
+            <dynamics>
+              <!--<friction>0.2 </friction>-->
+              <damping>0.2 </damping>
+            </dynamics>
           </axis>
         </joint>
         <!-- /revolute joint -->
@@ -483,6 +513,18 @@
         <!-- shaft contains the rod and players -->
         <link name="shaftBlue2">
           <pose>-0.087 0 0.8 1.5707963267948966 0 0</pose>
+          <inertial>
+            <mass>1</mass>
+            <pose>0 -0.025 0 0 0 0</pose>
+            <inertia>
+              <ixx>0.12001520637321622</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.12001520637321622</iyy>
+              <iyz>0</iyz>
+              <izz>3.0412746432449998e-05</izz>
+            </inertia>
+          </inertial>
 
           <visual name='rod'>
             <pose>0 0 0 0 0 0</pose>
@@ -508,11 +550,10 @@
               </mesh>
             </geometry>
             <material>
-
-          <!-- highlight active rods -->
-          
-              <script><name>Gazebo/Blue</name></script>
-          
+              <!-- highlight active rods -->
+              
+                <script><name>Gazebo/Blue</name></script>
+              
             </material>
           </visual>
 
@@ -660,6 +701,10 @@
               <lower>-1000</lower>
               <upper>1000</upper>
             </limit>
+            <dynamics>
+              <!--<friction>0.2 </friction>-->
+              <damping>0.2 </damping>
+            </dynamics>
           </axis>
         </joint>
         <!-- /revolute joint -->
@@ -675,6 +720,18 @@
         <!-- shaft contains the rod and players -->
         <link name="shaftBlue3">
           <pose>0.227 0 0.8 1.5707963267948966 0 0</pose>
+          <inertial>
+            <mass>1</mass>
+            <pose>0 -0.025 0 0 0 0</pose>
+            <inertia>
+              <ixx>0.12001520637321622</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.12001520637321622</iyy>
+              <iyz>0</iyz>
+              <izz>3.0412746432449998e-05</izz>
+            </inertia>
+          </inertial>
 
           <visual name='rod'>
             <pose>0 0 0 0 0 0</pose>
@@ -700,11 +757,10 @@
               </mesh>
             </geometry>
             <material>
-
-          <!-- highlight active rods -->
-          
-              <script><name>Gazebo/Blue</name></script>
-          
+              <!-- highlight active rods -->
+              
+                <script><name>Gazebo/Blue</name></script>
+              
             </material>
           </visual>
 
@@ -814,6 +870,10 @@
               <lower>-1000</lower>
               <upper>1000</upper>
             </limit>
+            <dynamics>
+              <!--<friction>0.2 </friction>-->
+              <damping>0.2 </damping>
+            </dynamics>
           </axis>
         </joint>
         <!-- /revolute joint -->
@@ -834,6 +894,18 @@
         <!-- shaft contains the rod and players -->
         <link name="shaftRed0">
           <pose>0.508 0 0.8 1.5707963267948966 0 0</pose>
+          <inertial>
+            <mass>1</mass>
+            <pose>0 -0.025 0 0 0 0</pose>
+            <inertia>
+              <ixx>0.12001520637321622</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.12001520637321622</iyy>
+              <iyz>0</iyz>
+              <izz>3.0412746432449998e-05</izz>
+            </inertia>
+          </inertial>
 
           <visual name='rod'>
             <pose>0 0 0 0 0 0</pose>
@@ -859,11 +931,10 @@
               </mesh>
             </geometry>
             <material>
-
-          <!-- highlight active rods -->
-          
-              <script><name>Gazebo/Black</name></script>
-          
+              <!-- highlight active rods -->
+              
+                <script><name>Gazebo/Black</name></script>
+              
             </material>
           </visual>
 
@@ -973,6 +1044,10 @@
               <lower>-1000</lower>
               <upper>1000</upper>
             </limit>
+            <dynamics>
+              <!--<friction>0.2 </friction>-->
+              <damping>0.2 </damping>
+            </dynamics>
           </axis>
         </joint>
         <!-- /revolute joint -->
@@ -988,6 +1063,18 @@
         <!-- shaft contains the rod and players -->
         <link name="shaftRed1">
           <pose>0.3675 0 0.8 1.5707963267948966 0 0</pose>
+          <inertial>
+            <mass>1</mass>
+            <pose>0 -0.025 0 0 0 0</pose>
+            <inertia>
+              <ixx>0.12001520637321622</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.12001520637321622</iyy>
+              <iyz>0</iyz>
+              <izz>3.0412746432449998e-05</izz>
+            </inertia>
+          </inertial>
 
           <visual name='rod'>
             <pose>0 0 0 0 0 0</pose>
@@ -1013,11 +1100,10 @@
               </mesh>
             </geometry>
             <material>
-
-          <!-- highlight active rods -->
-          
-              <script><name>Gazebo/Black</name></script>
-          
+              <!-- highlight active rods -->
+              
+                <script><name>Gazebo/Black</name></script>
+              
             </material>
           </visual>
 
@@ -1108,6 +1194,10 @@
               <lower>-1000</lower>
               <upper>1000</upper>
             </limit>
+            <dynamics>
+              <!--<friction>0.2 </friction>-->
+              <damping>0.2 </damping>
+            </dynamics>
           </axis>
         </joint>
         <!-- /revolute joint -->
@@ -1123,6 +1213,18 @@
         <!-- shaft contains the rod and players -->
         <link name="shaftRed2">
           <pose>0.087 0 0.8 1.5707963267948966 0 0</pose>
+          <inertial>
+            <mass>1</mass>
+            <pose>0 -0.025 0 0 0 0</pose>
+            <inertia>
+              <ixx>0.12001520637321622</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.12001520637321622</iyy>
+              <iyz>0</iyz>
+              <izz>3.0412746432449998e-05</izz>
+            </inertia>
+          </inertial>
 
           <visual name='rod'>
             <pose>0 0 0 0 0 0</pose>
@@ -1148,11 +1250,10 @@
               </mesh>
             </geometry>
             <material>
-
-          <!-- highlight active rods -->
-          
-              <script><name>Gazebo/Red</name></script>
-          
+              <!-- highlight active rods -->
+              
+                <script><name>Gazebo/Red</name></script>
+              
             </material>
           </visual>
 
@@ -1300,6 +1401,10 @@
               <lower>-1000</lower>
               <upper>1000</upper>
             </limit>
+            <dynamics>
+              <!--<friction>0.2 </friction>-->
+              <damping>0.2 </damping>
+            </dynamics>
           </axis>
         </joint>
         <!-- /revolute joint -->
@@ -1315,6 +1420,18 @@
         <!-- shaft contains the rod and players -->
         <link name="shaftRed3">
           <pose>-0.227 0 0.8 1.5707963267948966 0 0</pose>
+          <inertial>
+            <mass>1</mass>
+            <pose>0 -0.025 0 0 0 0</pose>
+            <inertia>
+              <ixx>0.12001520637321622</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.12001520637321622</iyy>
+              <iyz>0</iyz>
+              <izz>3.0412746432449998e-05</izz>
+            </inertia>
+          </inertial>
 
           <visual name='rod'>
             <pose>0 0 0 0 0 0</pose>
@@ -1340,11 +1457,10 @@
               </mesh>
             </geometry>
             <material>
-
-          <!-- highlight active rods -->
-          
-              <script><name>Gazebo/Red</name></script>
-          
+              <!-- highlight active rods -->
+              
+                <script><name>Gazebo/Red</name></script>
+              
             </material>
           </visual>
 
@@ -1454,6 +1570,10 @@
               <lower>-1000</lower>
               <upper>1000</upper>
             </limit>
+            <dynamics>
+              <!--<friction>0.2 </friction>-->
+              <damping>0.2 </damping>
+            </dynamics>
           </axis>
         </joint>
         <!-- /revolute joint -->
