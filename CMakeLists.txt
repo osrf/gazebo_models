@@ -115,6 +115,7 @@ nist_maze_wall_triple_holes_120
 nist_simple_ramp_120
 nist_stairs_120
 office_building
+osrf_elevator
 pioneer2dx
 pioneer3at
 plastic_cup
@@ -154,6 +155,7 @@ tube_9_5mm
 turtlebot
 ur10
 utility_cart
+vrc_driving_terrain
 washer
 willowgarage
 wood_block_10_2_1cm
