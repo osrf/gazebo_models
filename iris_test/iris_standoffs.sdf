@@ -5,6 +5,7 @@
 
       <visual name='camera_visual'>
         <pose>0.2 0.0 0.0 0 0 0</pose>
+        <transparency>1.0</transparency>
         <geometry>
           <box>
             <size>0.000001 0.000001 0.000001</size>
