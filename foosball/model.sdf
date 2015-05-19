@@ -25,6 +25,8 @@
       <!-- table collisions on each player's side -->
       
 
+
+
         <collision name="sideRed">
           <pose>0 -0.36 0.34700000000000003 0 0 0</pose>
           <geometry>
@@ -45,6 +47,8 @@
           </surface>
         </collision>
       
+
+
 
         <collision name="sideBlue">
           <pose>0 0.36 0.34700000000000003 0 0 0</pose>
@@ -70,7 +74,6 @@
 
       <!-- table collisions on each goal side -->
       
-
         <collision name="goalRed">
           <pose>0.55 0 0.34700000000000003 0 1.5707963267948966 0</pose>
           <geometry>
@@ -99,7 +102,6 @@
           </surface>
         </collision>
       
-
         <collision name="goalBlue">
           <pose>-0.55 0 0.34700000000000003 3.141592653589793 1.5707963267948966 0</pose>
           <geometry>
@@ -150,7 +152,7 @@
         <pose>0 0 0.28200000000000003 0 0 0</pose>
         <geometry>
           <box>
-            <size>1.1 0.73 0.02</size>
+            <size>1.375 0.73 0.02</size>
           </box>
         </geometry>
         <surface>
@@ -162,6 +164,139 @@
         </surface>
       </collision>
       <!-- /table ground -->
+
+
+      
+            <visual name="goal_visual_Blue_0" >
+              <pose>-0.65 -0.3 0.49 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <uri>model://foosball/meshes/player.dae</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <script><name>Gazebo/Blue</name></script>
+              </material>
+            </visual>
+
+      
+            <visual name="goal_visual_Blue_1" >
+              <pose>-0.65 -0.15 0.49 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <uri>model://foosball/meshes/player.dae</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <script><name>Gazebo/Blue</name></script>
+              </material>
+            </visual>
+
+      
+            <visual name="goal_visual_Blue_2" >
+              <pose>-0.65 0.0 0.49 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <uri>model://foosball/meshes/player.dae</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <script><name>Gazebo/Blue</name></script>
+              </material>
+            </visual>
+
+      
+            <visual name="goal_visual_Blue_3" >
+              <pose>-0.65 0.15 0.49 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <uri>model://foosball/meshes/player.dae</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <script><name>Gazebo/Blue</name></script>
+              </material>
+            </visual>
+
+      
+            <visual name="goal_visual_Blue_4" >
+              <pose>-0.65 0.3 0.49 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <uri>model://foosball/meshes/player.dae</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <script><name>Gazebo/Blue</name></script>
+              </material>
+            </visual>
+
+      
+            <visual name="goal_visual_Red_0" >
+              <pose>0.65 0.3 0.49 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <uri>model://foosball/meshes/player.dae</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <script><name>Gazebo/Red</name></script>
+              </material>
+            </visual>
+
+      
+            <visual name="goal_visual_Red_1" >
+              <pose>0.65 0.15 0.49 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <uri>model://foosball/meshes/player.dae</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <script><name>Gazebo/Red</name></script>
+              </material>
+            </visual>
+
+      
+            <visual name="goal_visual_Red_2" >
+              <pose>0.65 -0.0 0.49 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <uri>model://foosball/meshes/player.dae</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <script><name>Gazebo/Red</name></script>
+              </material>
+            </visual>
+
+      
+            <visual name="goal_visual_Red_3" >
+              <pose>0.65 -0.15 0.49 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <uri>model://foosball/meshes/player.dae</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <script><name>Gazebo/Red</name></script>
+              </material>
+            </visual>
+
+      
+            <visual name="goal_visual_Red_4" >
+              <pose>0.65 -0.3 0.49 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <uri>model://foosball/meshes/player.dae</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <script><name>Gazebo/Red</name></script>
+              </material>
+            </visual>
+
+      
 
     </link>
 
@@ -182,6 +317,9 @@
 
     <!-- two teams -->
     
+
+
+
       <!-- 4 rods per team -->
       
 
@@ -219,11 +357,10 @@
               </mesh>
             </geometry>
             <material>
-
-          <!-- highlight active rods -->
-          
-              <script><name>Gazebo/Black</name></script>
-          
+              <!-- highlight active rods -->
+              
+                <script><name>Gazebo/Black</name></script>
+              
             </material>
           </visual>
 
@@ -373,11 +510,10 @@
               </mesh>
             </geometry>
             <material>
-
-          <!-- highlight active rods -->
-          
-              <script><name>Gazebo/Black</name></script>
-          
+              <!-- highlight active rods -->
+              
+                <script><name>Gazebo/Black</name></script>
+              
             </material>
           </visual>
 
@@ -508,11 +644,10 @@
               </mesh>
             </geometry>
             <material>
-
-          <!-- highlight active rods -->
-          
-              <script><name>Gazebo/Blue</name></script>
-          
+              <!-- highlight active rods -->
+              
+                <script><name>Gazebo/Blue</name></script>
+              
             </material>
           </visual>
 
@@ -700,11 +835,10 @@
               </mesh>
             </geometry>
             <material>
-
-          <!-- highlight active rods -->
-          
-              <script><name>Gazebo/Blue</name></script>
-          
+              <!-- highlight active rods -->
+              
+                <script><name>Gazebo/Blue</name></script>
+              
             </material>
           </visual>
 
@@ -822,6 +956,9 @@
       <!-- /shafts -->
 
     
+
+
+
       <!-- 4 rods per team -->
       
 
@@ -859,11 +996,10 @@
               </mesh>
             </geometry>
             <material>
-
-          <!-- highlight active rods -->
-          
-              <script><name>Gazebo/Black</name></script>
-          
+              <!-- highlight active rods -->
+              
+                <script><name>Gazebo/Black</name></script>
+              
             </material>
           </visual>
 
@@ -1013,11 +1149,10 @@
               </mesh>
             </geometry>
             <material>
-
-          <!-- highlight active rods -->
-          
-              <script><name>Gazebo/Black</name></script>
-          
+              <!-- highlight active rods -->
+              
+                <script><name>Gazebo/Black</name></script>
+              
             </material>
           </visual>
 
@@ -1148,11 +1283,10 @@
               </mesh>
             </geometry>
             <material>
-
-          <!-- highlight active rods -->
-          
-              <script><name>Gazebo/Red</name></script>
-          
+              <!-- highlight active rods -->
+              
+                <script><name>Gazebo/Red</name></script>
+              
             </material>
           </visual>
 
@@ -1340,11 +1474,10 @@
               </mesh>
             </geometry>
             <material>
-
-          <!-- highlight active rods -->
-          
-              <script><name>Gazebo/Red</name></script>
-          
+              <!-- highlight active rods -->
+              
+                <script><name>Gazebo/Red</name></script>
+              
             </material>
           </visual>
 
