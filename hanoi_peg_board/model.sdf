@@ -2,6 +2,7 @@
 
 
 
+
 <sdf version="1.5">
   <model name="hanoi_peg_board">
 

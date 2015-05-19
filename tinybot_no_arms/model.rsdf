@@ -4,7 +4,7 @@
   inertia_dx = 0.065
   inertia_dy = 0.059
   inertia_dz = 0.178
-  mass = 0.4
+  mass = 0.1
   ixx = mass / 12.0 * (inertia_dy**2 + inertia_dz**2)
   iyy = mass / 12.0 * (inertia_dz**2 + inertia_dx**2)
   izz = mass / 12.0 * (inertia_dx**2 + inertia_dy**2)
