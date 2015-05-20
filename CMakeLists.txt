@@ -147,6 +147,9 @@ starting_pen
 stereo_camera
 stone_10_2_5_1cm
 stop_sign
+submarine
+submarine_buoyant
+submarine_sinking
 sun
 table
 table_marble
