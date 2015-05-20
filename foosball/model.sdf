@@ -4,12 +4,6 @@
   <model name='Foosball'>
     <static>0</static>
 
-    <!-- table bridge is a dummy link between joints -->
-    <link name="table_bridge">
-      <pose>0 0 0.425 0 0 0</pose>
-    </link>
-    <!-- /table bridge -->
-
     <link name='table'>
       <pose>0 0 0.425 0 0 0</pose>
       <inertial>
@@ -184,45 +178,31 @@
     </link>
 
     <!-- joint fixing the table to the world -->
-    <joint name='table_table_bridge' type='universal'>
-      <parent>table_bridge</parent>
+    <joint name='table_world' type='universal'>
+      <parent>world</parent>
       <child>table</child>
       <axis>
         <xyz>1 0 0</xyz>
         <limit>
-          <lower>-0.05</lower>
-          <upper>0.05</upper>
+          <lower>-0.03</lower>
+          <upper>0.03</upper>
         </limit>
         <dynamics>
-          <damping>1000</damping>
+          <damping>500</damping>
         </dynamics>
       </axis>
       <axis2>
         <xyz>0 1 0</xyz>
         <limit>
-          <lower>-0.05</lower>
-          <upper>0.05</upper>
+          <lower>-0.03</lower>
+          <upper>0.03</upper>
         </limit>
         <dynamics>
-          <damping>1000</damping>
+          <damping>500</damping>
         </dynamics>
       </axis2>
       <pose>0 0 0 0 0 0</pose>
     </joint>
-
-    <joint name='table_bridge_world' type='prismatic'>
-      <parent>world</parent>
-      <child>table_bridge</child>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>0.05</upper>
-        </limit>
-      </axis>
-      <pose>0 0 0 0 0 0</pose>
-    </joint>
-    <!-- /table_world joint -->
 
     <!-- two teams -->
     
