@@ -80,7 +80,7 @@
       </inertial>
 
       <collision name="collision">
-        <geometry>
+        <geometry>-->
           <!-- In case a simple shape is preferred -->
           <!--box><size>0.05 0.14 2.21</size></box>-->
           <mesh>
@@ -245,7 +245,7 @@
         <limit>
           <lower>-1e+12</lower>
           <upper>1e+12</upper>
-          <effort>1000</effort>
+          <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
       </axis>
@@ -262,7 +262,7 @@
         <limit>
           <lower>-1e+12</lower>
           <upper>1e+12</upper>
-          <effort>1000</effort>
+          <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
       </axis>
@@ -279,7 +279,7 @@
         <limit>
           <lower>-1e+12</lower>
           <upper>1e+12</upper>
-          <effort>1000</effort>
+          <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
       </axis>
@@ -296,7 +296,7 @@
         <limit>
           <lower>-1e+12</lower>
           <upper>1e+12</upper>
-          <effort>1000</effort>
+          <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
       </axis>
