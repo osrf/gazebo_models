@@ -166,7 +166,6 @@
       </visual>
     </link>
     <link name="center_support_horiz_lower">
-      _h
       <pose>0.44 0 0.01 0 1.5708 0</pose>
       <collision name="collision">
         <geometry>
@@ -190,7 +189,6 @@
       </visual>
     </link>
     <link name="center_support_horiz_upper">
-      _
       <pose>0.44 0 0.79 0 1.5708 0</pose>
       <collision name="collision">
         <geometry>

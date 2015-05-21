@@ -50,7 +50,6 @@
             <size>4.25 0.45 4.28</size>
           </box>
         </geometry>
-        hg
       </collision>
       <collision name="wall_07">
         <pose>1.94 12.3 2.14 0 0 0</pose>

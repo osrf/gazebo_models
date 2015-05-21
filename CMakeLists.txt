@@ -22,6 +22,8 @@ bowl
 breakable_test
 brick_box_3x1x3
 cabinet
+cafe
+cafe_table
 camera
 cart_front_steer
 cart_rigid_suspension
@@ -73,7 +75,10 @@ fast_food
 fire_hose_long
 fire_hose_long_curled
 fire_hydrant
+first_2015_trash_can
+frc_field_2015
 gas_station
+grey_tote
 grey_wall
 ground_plane
 hammer
@@ -104,6 +109,8 @@ marble_1_5cm
 metal_peg
 metal_peg_board
 monkey_wrench
+mpl_right_arm
+mpl_right_forearm
 mud_box
 nist_elevated_floor_120
 nist_fiducial_barrel
@@ -113,6 +120,7 @@ nist_maze_wall_triple_holes_120
 nist_simple_ramp_120
 nist_stairs_120
 office_building
+osrf_elevator
 passive_dynamic_walker
 pioneer2dx
 pioneer3at
@@ -155,6 +163,7 @@ turtlebot
 ur10
 ur10_plus_schunk_mpg_80
 utility_cart
+vrc_driving_terrain
 washer
 willowgarage
 wood_block_10_2_1cm
@@ -205,4 +214,3 @@ message (STATUS "Install path: ${CMAKE_INSTALL_PREFIX_ABSOLUTE}/models")
 
 # This must always be last!
 include(CPack)
-

@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="first_2015_trash_can">
+    <link name="link">
+      <inertial>
+        <pose>0 0 0.3683 0 0 0</pose>
+        <mass>4.83076</mass>
+        <inertia>
+          <ixx>0.281534052</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.281534052</iyy>
+          <iyz>0</iyz>
+          <izz>0.126222831</izz>
+        </inertia>
+      </inertial>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://first_2015_trash_can/meshes/trash_can.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://first_2015_trash_can/meshes/trash_can.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

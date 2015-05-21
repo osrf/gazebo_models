@@ -23,7 +23,6 @@
           <contact>
             <ode>
               <soft_cfm>0.001 </soft_cfm><!--"sponginess", 0.0=hard-->
-              <soft_erp> </soft_erp>
               <kp>10000.0 </kp>
               <kd>1000.0 </kd>
               <max_vel>0.01 </max_vel>
