@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
   <model name="cessna">
-
+    <pose>0 0 0.495 0 0 0</pose>
     <!-- Body of the plane -->
     <link name="body">
       <inertial>
