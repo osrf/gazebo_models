@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
   <model name="cessna">
-
+    <pose>0 0 0.495 0 0 0</pose>
     <!-- Body of the plane -->
     <link name="body">
       <inertial>
@@ -245,7 +245,7 @@
         <limit>
           <lower>-1e+12</lower>
           <upper>1e+12</upper>
-          <effort>1000</effort>
+          <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
       </axis>
@@ -262,7 +262,7 @@
         <limit>
           <lower>-1e+12</lower>
           <upper>1e+12</upper>
-          <effort>1000</effort>
+          <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
       </axis>
@@ -279,7 +279,7 @@
         <limit>
           <lower>-1e+12</lower>
           <upper>1e+12</upper>
-          <effort>1000</effort>
+          <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
       </axis>
@@ -296,7 +296,7 @@
         <limit>
           <lower>-1e+12</lower>
           <upper>1e+12</upper>
-          <effort>1000</effort>
+          <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
       </axis>
