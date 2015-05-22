@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 
 <%
+  disk_number = 4
 
   board_dx = 1.25
   board_dy = 0.2
@@ -77,12 +78,7 @@
         </geometry>
         <surface>
           <contact>
-            <ode>
-              <min_depth>0.001</min_depth>
-              <max_vel>0.1</max_vel>
-              <kp>1e8</kp>
-              <kd>1</kd>
-            </ode>
+            <collide_bitmask><%="0x"+(2**(disk_number)-1).to_s(16) %></collide_bitmask>
           </contact>
         </surface>
       </collision>
@@ -112,12 +108,7 @@
         </geometry>
         <surface>
           <contact>
-            <ode>
-              <min_depth>0.001</min_depth>
-              <max_vel>0.1</max_vel>
-              <kp>1e8</kp>
-              <kd>1</kd>
-            </ode>
+            <collide_bitmask><%="0x"+(2**(disk_number)-1).to_s(16) %></collide_bitmask>
           </contact>
         </surface>
       </collision>
@@ -147,12 +138,7 @@
         </geometry>
         <surface>
           <contact>
-            <ode>
-              <min_depth>0.001</min_depth>
-              <max_vel>0.1</max_vel>
-              <kp>1e8</kp>
-              <kd>1</kd>
-            </ode>
+            <collide_bitmask><%="0x"+(2**(disk_number)-1).to_s(16) %></collide_bitmask>
           </contact>
         </surface>
       </collision>

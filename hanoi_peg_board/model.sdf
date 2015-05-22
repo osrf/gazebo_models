@@ -64,12 +64,7 @@
         </geometry>
         <surface>
           <contact>
-            <ode>
-              <min_depth>0.001</min_depth>
-              <max_vel>0.1</max_vel>
-              <kp>1e8</kp>
-              <kd>1</kd>
-            </ode>
+            <collide_bitmask>0xf</collide_bitmask>
           </contact>
         </surface>
       </collision>
@@ -99,12 +94,7 @@
         </geometry>
         <surface>
           <contact>
-            <ode>
-              <min_depth>0.001</min_depth>
-              <max_vel>0.1</max_vel>
-              <kp>1e8</kp>
-              <kd>1</kd>
-            </ode>
+            <collide_bitmask>0xf</collide_bitmask>
           </contact>
         </surface>
       </collision>
@@ -134,12 +124,7 @@
         </geometry>
         <surface>
           <contact>
-            <ode>
-              <min_depth>0.001</min_depth>
-              <max_vel>0.1</max_vel>
-              <kp>1e8</kp>
-              <kd>1</kd>
-            </ode>
+            <collide_bitmask>0xf</collide_bitmask>
           </contact>
         </surface>
       </collision>
