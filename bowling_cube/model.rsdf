@@ -15,7 +15,7 @@
   izz  = mass/12.0 * (dx**2 + dy**2)
 %>
 <sdf version="1.5">
-  <model name="wood_cube_5cm">
+  <model name="bowling_cube">
     <link name="link">
       <pose>0 0 <%= dz/2 %> 0 0 0</pose>
       <inertial>
