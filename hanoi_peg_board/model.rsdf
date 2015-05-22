@@ -55,10 +55,13 @@
       <visual name="vis_peg1">
         <pose> -0.5 0 <%= peg_height/2.0 +  z_offset %> 0 0 0</pose>
         <geometry>
-          <cylinder>
-              <radius><%= peg_radius%></radius>
+          <!--<cylinder>
+            <radius><%= peg_radius%></radius>
             <length><%= peg_height%></length>
-          </cylinder>
+          </cylinder>-->
+          <box>
+            <size><%= peg_radius*2%> <%= peg_radius*2%> <%= peg_height %></size>
+          </box>
         </geometry>
         <material>
           <script>
@@ -70,12 +73,21 @@
       <collision name="col_peg1">
         <pose> -0.5 0 <%= peg_height/2.0 +  z_offset %> 0 0 0</pose>
         <geometry>
-          <cylinder>
+          <!--<cylinder>
             <radius><%= peg_radius%></radius>
             <length><%= peg_height%></length>
-          </cylinder>
+          </cylinder>-->
+          <box>
+            <size><%= peg_radius*2%> <%= peg_radius*2%> <%= peg_height %></size>
+          </box>
         </geometry>
         <surface>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
           <contact>
             <ode>
               <min_depth>0.001</min_depth>
@@ -90,10 +102,13 @@
       <visual name="vis_peg2">
         <pose>0 0 <%= peg_height/2.0+z_offset %> 0 0 0</pose>
         <geometry>
-          <cylinder>
+          <!--<cylinder>
             <radius><%= peg_radius%></radius>
             <length><%= peg_height%></length>
-          </cylinder>
+          </cylinder>-->
+          <box>
+            <size><%= peg_radius*2%> <%= peg_radius*2%> <%= peg_height %></size>
+          </box>
         </geometry>
         <material>
           <script>
@@ -105,12 +120,21 @@
       <collision name="col_peg2">
         <pose>0 0 <%= peg_height/2.0+z_offset %> 0 0 0</pose>
         <geometry>
-          <cylinder>
+          <!--<cylinder>
             <radius><%= peg_radius%></radius>
             <length><%= peg_height%></length>
-          </cylinder>
+          </cylinder>-->
+          <box>
+            <size><%= peg_radius*2%> <%= peg_radius*2%> <%= peg_height %></size>
+          </box>
         </geometry>
         <surface>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
           <contact>
             <ode>
               <min_depth>0.001</min_depth>
@@ -125,10 +149,13 @@
       <visual name="vis_peg3">
         <pose>0.5 0 <%= peg_height/2.0+z_offset %> 0 0 0</pose>
         <geometry>
-          <cylinder>
+          <!--<cylinder>
             <radius><%= peg_radius%></radius>
             <length><%= peg_height%></length>
-          </cylinder>
+          </cylinder>-->
+          <box>
+            <size><%= peg_radius*2%> <%= peg_radius*2%> <%= peg_height %></size>
+          </box>
         </geometry>
         <material>
           <script>
@@ -146,6 +173,12 @@
           </cylinder>
         </geometry>
         <surface>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
           <contact>
             <ode>
               <min_depth>0.001</min_depth>

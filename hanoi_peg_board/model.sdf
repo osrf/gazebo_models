@@ -42,10 +42,13 @@
       <visual name="vis_peg1">
         <pose> -0.5 0 0.15 0 0 0</pose>
         <geometry>
-          <cylinder>
-              <radius>0.01</radius>
+          <!--<cylinder>
+            <radius>0.01</radius>
             <length>0.3</length>
-          </cylinder>
+          </cylinder>-->
+          <box>
+            <size>0.02 0.02 0.3</size>
+          </box>
         </geometry>
         <material>
           <script>
@@ -57,12 +60,21 @@
       <collision name="col_peg1">
         <pose> -0.5 0 0.15 0 0 0</pose>
         <geometry>
-          <cylinder>
+          <!--<cylinder>
             <radius>0.01</radius>
             <length>0.3</length>
-          </cylinder>
+          </cylinder>-->
+          <box>
+            <size>0.02 0.02 0.3</size>
+          </box>
         </geometry>
         <surface>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
           <contact>
             <ode>
               <min_depth>0.001</min_depth>
@@ -77,10 +89,13 @@
       <visual name="vis_peg2">
         <pose>0 0 0.15 0 0 0</pose>
         <geometry>
-          <cylinder>
+          <!--<cylinder>
             <radius>0.01</radius>
             <length>0.3</length>
-          </cylinder>
+          </cylinder>-->
+          <box>
+            <size>0.02 0.02 0.3</size>
+          </box>
         </geometry>
         <material>
           <script>
@@ -92,12 +107,21 @@
       <collision name="col_peg2">
         <pose>0 0 0.15 0 0 0</pose>
         <geometry>
-          <cylinder>
+          <!--<cylinder>
             <radius>0.01</radius>
             <length>0.3</length>
-          </cylinder>
+          </cylinder>-->
+          <box>
+            <size>0.02 0.02 0.3</size>
+          </box>
         </geometry>
         <surface>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
           <contact>
             <ode>
               <min_depth>0.001</min_depth>
@@ -112,10 +136,13 @@
       <visual name="vis_peg3">
         <pose>0.5 0 0.15 0 0 0</pose>
         <geometry>
-          <cylinder>
+          <!--<cylinder>
             <radius>0.01</radius>
             <length>0.3</length>
-          </cylinder>
+          </cylinder>-->
+          <box>
+            <size>0.02 0.02 0.3</size>
+          </box>
         </geometry>
         <material>
           <script>
@@ -133,6 +160,12 @@
           </cylinder>
         </geometry>
         <surface>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
           <contact>
             <ode>
               <min_depth>0.001</min_depth>
