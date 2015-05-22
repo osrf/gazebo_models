@@ -37,6 +37,7 @@ cordless_drill
 create
 cricket_ball
 cube_20k
+dining_room
 door_handle
 double_pendulum_with_base
 drc_practice_2x4
@@ -80,6 +81,7 @@ grey_tote
 grey_wall
 ground_plane
 hammer
+hanoi_peg_board
 hinged_door
 hokuyo
 house_1
@@ -149,6 +151,8 @@ stop_sign
 sun
 table
 table_marble
+tinybot
+tinybot_no_arms
 tube_2_25cm
 tube_9_5mm
 turtlebot
