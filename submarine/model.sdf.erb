@@ -161,11 +161,11 @@
     </plugin>-->
 
     <plugin name="submarine_propeller" filename="libLiftDragPlugin.so">
-      <cla><%= 1.75/blade_angle.abs %></cla>
-      <cla_stall><%= -0.25/(10*Math::PI/180) %> </cla_stall>
+      <cla><%= 10.75/blade_angle.abs %></cla>
+      <cla_stall><%= -2.5/(10*Math::PI/180) %> </cla_stall>
       <cda><%= 1.5/blade_angle.abs %></cda>
       <cda_stall><%= 2/blade_angle.abs %></cda_stall>
-      <alpha_stall><%= blade_angle %></alpha_stall>
+      <alpha_stall><%= blade_angle.abs %></alpha_stall>
       <a0>0</a0>
       <%= lift_drag_properties%>
       <area><%= 4*(blade_dx*blade_dy*2 + blade_dx*blade_dz*2 + blade_dy*blade_dz*2) %></area>

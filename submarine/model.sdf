@@ -204,11 +204,11 @@
     </plugin>-->
 
     <plugin name="submarine_propeller" filename="libLiftDragPlugin.so">
-      <cla>5.013380707394703</cla>
-      <cla_stall>-1.432394487827058 </cla_stall>
+      <cla>30.79648148828175</cla>
+      <cla_stall>-14.32394487827058 </cla_stall>
       <cda>4.297183463481175</cda>
       <cda_stall>5.729577951308232</cda_stall>
-      <alpha_stall>-0.3490658503988659</alpha_stall>
+      <alpha_stall>0.3490658503988659</alpha_stall>
       <a0>0</a0>
       <air_density>1000</air_density>
       <area>1.10548</area>
