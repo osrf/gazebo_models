@@ -76,6 +76,7 @@
           </script>
         </material>
       </visual>
+      <!--
       <collision name='hoop_collision'>
         <pose>0 0.05 3.83 1.57519 -0.165904 -0.00102</pose>
         <geometry>
@@ -129,6 +130,7 @@
           </polyline>
         </geometry>
       </collision>
+-->
       <visual name='pole_visual'>
         <pose>0 0 0.134295 0.004331 -0.016759 0</pose>
         <geometry>
@@ -144,6 +146,7 @@
           </script>
         </material>
       </visual>
+      <!--
       <collision name='pole_collision'>
         <pose>0 0 0.134295 0.004331 -0.016759 0</pose>
         <geometry>
@@ -152,6 +155,7 @@
           </box>
         </geometry>
       </collision>
+-->
     </link>
 
     <static>1</static>

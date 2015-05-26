@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="number3">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://number3/meshes/number.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
