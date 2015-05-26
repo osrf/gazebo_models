@@ -37,12 +37,6 @@
             <uri>model://tube_9_5mm/meshes/tube_9_5.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
-          </script>
-        </material>
       </visual>
 
     </link>

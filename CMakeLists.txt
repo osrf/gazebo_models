@@ -115,6 +115,7 @@ nist_maze_wall_triple_holes_120
 nist_simple_ramp_120
 nist_stairs_120
 office_building
+osrf_elevator
 pioneer2dx
 pioneer3at
 plastic_cup
@@ -146,6 +147,9 @@ starting_pen
 stereo_camera
 stone_10_2_5_1cm
 stop_sign
+submarine
+submarine_buoyant
+submarine_sinking
 sun
 table
 table_marble
@@ -154,6 +158,7 @@ tube_9_5mm
 turtlebot
 ur10
 utility_cart
+vrc_driving_terrain
 washer
 willowgarage
 wood_block_10_2_1cm

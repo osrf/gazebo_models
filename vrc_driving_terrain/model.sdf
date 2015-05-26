@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="vrc_driving_terrain">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <heightmap>
+            <uri>model://vrc_driving_terrain/materials/textures/heightmap.png</uri>
+            <size>500 500 118</size>
+            <pos>0 0 -15</pos>
+          </heightmap>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <heightmap>
+            <texture>
+              <diffuse>file://media/materials/textures/dirt_diffusespecular.png</diffuse>
+              <normal>file://media/materials/textures/flat_normal.png</normal>
+              <size>5</size>
+            </texture>
+            <texture>
+              <diffuse>file://media/materials/textures/grass_diffusespecular.png</diffuse>
+              <normal>file://media/materials/textures/flat_normal.png</normal>
+              <size>5</size>
+            </texture>
+            <texture>
+              <diffuse>file://media/materials/textures/fungus_diffusespecular.png</diffuse>
+              <normal>file://media/materials/textures/flat_normal.png</normal>
+              <size>20</size>
+            </texture>
+            <blend>
+              <min_height>15</min_height>
+              <fade_dist>5</fade_dist>
+            </blend>
+            <blend>
+              <min_height>30</min_height>
+              <fade_dist>10</fade_dist>
+            </blend>
+            <uri>model://vrc_driving_terrain/materials/textures/heightmap.png</uri>
+            <size>500 500 118</size>
+            <pos>0 0 -15</pos>
+          </heightmap>
+        </geometry>
+      </visual>
+    </link>
+    <link name="grass_plane">
+      <collision name="collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>500 500</size>
+          </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.5</mu>
+              <mu2>.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual_0">
+        <pose>0 0 0 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>500 500</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://vrc_driving_terrain/materials/scripts</uri>
+            <uri>model://vrc_driving_terrain/materials/textures</uri>
+            <name>vrc/grass</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

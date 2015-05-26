@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="apollo15_landing_site_1000x1000">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <surface>
+          <friction>
+          <ode>
+            <mu>0.2</mu>
+          </ode>
+          </friction>
+          <contact>
+          <ode>
+            <soft_cfm>1</soft_cfm>
+            <kp>100000</kp>
+            <kd>1</kd>
+            <max_vel>0.000001</max_vel>
+            <min_depth>0.02</min_depth>
+          </ode>
+          </contact>
+        </surface>
+        <geometry>
+          <heightmap>
+            <uri>model://apollo15_landing_site_1000x1000/materials/textures/NAC_DTM_APOLLO15_E261N0036_257x257+7472+2152.png</uri>
+            <size>514 514 49</size>
+            <pos>0 0 -45</pos>
+          </heightmap>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <heightmap>
+            <texture>
+              <diffuse>model://apollo15_landing_site_1000x1000/materials/textures/AS16-110-18026HR-512x512.jpg</diffuse>
+              <normal>file://media/materials/textures/flat_normal.png</normal>
+              <size>2</size>
+            </texture>
+            <uri>model://apollo15_landing_site_1000x1000/materials/textures/NAC_DTM_APOLLO15_E261N0036_257x257+7472+2152.png</uri>
+            <size>514 514 49</size>
+            <pos>0 0 -45</pos>
+          </heightmap>
+        </geometry>
+      </visual>
+
+    </link>
+  </model>
+</sdf>
