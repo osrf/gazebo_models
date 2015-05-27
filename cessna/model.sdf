@@ -1,0 +1,306 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="cessna">
+    <pose>0 0 0.495 0 0 0</pose>
+    <!-- Body of the plane -->
+    <link name="body">
+      <inertial>
+        <mass>680.389</mass>
+        <inertia>
+          <ixx>1285.315427874</ixx>
+          <ixy>0.0</ixy>
+          <iyy>1824.930976707</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>2666.893931043</izz>
+        </inertia>
+        <pose>-0.0414 0 0.9271 0 0 0</pose>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/cessna_body.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/cessna_body.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <!-- Debug - Centers of pressure -->
+      <!--<visual name="cp_left_wing">
+        <pose>-1 2.205 1.5 0 0 0</pose>
+        <geometry>
+          <sphere><radius>0.1</radius></sphere>
+        </geometry>
+      </visual>
+
+      <visual name="cp_right_wing">
+        <pose>-1 -2.205 1.5 0 0 0</pose>
+        <geometry>
+          <sphere><radius>0.1</radius></sphere>
+        </geometry>
+      </visual>
+
+      <visual name="cp_elevator">
+        <pose>-5.45 0 0.55 0 0 0</pose>
+        <geometry>
+          <sphere><radius>0.1</radius></sphere>
+        </geometry>
+      </visual>
+
+      <visual name="cp_rudder">
+        <pose>-6 0 1.55 0 0 0</pose>
+        <geometry>
+          <sphere><radius>0.1</radius></sphere>
+        </geometry>
+      </visual>-->
+
+    </link>
+
+    <link name="propeller">
+      <pose>1.79 0 0.855 0 0 0</pose>
+      <inertial>
+        <mass>18.37</mass>
+        <inertia>
+          <ixx>7.5067</ixx>
+          <ixy>0</ixy>
+          <iyy>7.5150</iyy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          <izz>0.068275</izz>
+        </inertia>
+        <pose>-0.35 0 0 0 0 0</pose>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <!-- In case a simple shape is preferred -->
+          <!--box><size>0.05 0.14 2.21</size></box>-->
+          <mesh>
+            <uri>model://cessna/meshes/cessna_prop.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/cessna_prop.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="front_wheel">
+      <inertial>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.01786</ixx>
+          <ixy>0</ixy>
+          <iyy>0.01786</iyy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          <izz>0.0324</izz>
+        </inertia>
+        <pose>0.712 0 -0.313 1.570795 0 0</pose>
+      </inertial>
+      <collision name="collision">
+        <pose>0.712 0 -0.313 1.570795 0 0</pose>
+        <geometry>
+          <cylinder>
+              <radius>0.18</radius>
+              <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.3</mu>
+              <mu2>0.3</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/cessna_front_wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="rear_left_wheel">
+      <inertial>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.035516</ixx>
+          <ixy>0</ixy>
+          <iyy>0.035516</iyy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          <izz>0.0625</izz>
+        </inertia>
+        <pose>-1 1.27 -0.25 1.570795 0 0</pose>
+      </inertial>
+      <collision name="collision">
+        <pose>-1 1.27 -0.25 1.570795 0 0</pose>
+        <geometry>
+          <cylinder>
+              <radius>0.25</radius>
+              <length>0.16</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.3</mu>
+              <mu2>0.3</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/cessna_rear_left_wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="rear_right_wheel">
+      <inertial>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.035516</ixx>
+          <ixy>0</ixy>
+          <iyy>0.035516</iyy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          <izz>0.0625</izz>
+        </inertia>
+        <pose>-1 -1.27 -0.25 1.570795 0 0</pose>
+      </inertial>
+      <collision name="collision">
+        <pose>-1 -1.27 -0.25 1.570795 0 0</pose>
+        <geometry>
+          <cylinder>
+              <radius>0.25</radius>
+              <length>0.16</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.3</mu>
+              <mu2>0.3</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/cessna_rear_right_wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Joint to make the propeller spin -->
+    <joint name='propeller_joint' type='revolute'>
+      <parent>body</parent>
+      <child>propeller</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <limit>
+          <lower>-1e+12</lower>
+          <upper>1e+12</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- Joint to make the front wheel spin -->
+    <joint name='front_wheel_joint' type='revolute'>
+      <parent>body</parent>
+      <child>front_wheel</child>
+      <pose>0.712 0 -0.313 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <limit>
+          <lower>-1e+12</lower>
+          <upper>1e+12</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- Joint to make the rear left wheel spin -->
+    <joint name='rear_left_wheel_joint' type='revolute'>
+      <parent>body</parent>
+      <child>rear_left_wheel</child>
+      <pose>-1 -1.27 -0.25 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <limit>
+          <lower>-1e+12</lower>
+          <upper>1e+12</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- Joint to make the rear right wheel spin -->
+    <joint name='rear_right_wheel_joint' type='revolute'>
+      <parent>body</parent>
+      <child>rear_right_wheel</child>
+      <pose>-1 1.27 -0.25 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <limit>
+          <lower>-1e+12</lower>
+          <upper>1e+12</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+  </model>
+</sdf>
