@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="cessna">
+  <model name="cessna_c172">
     <pose>0 0 0.495 0 0 0</pose>
     <!-- Body of the plane -->
     <link name="body">
