@@ -5,30 +5,31 @@
 
 <sdf version="1.5">
   <model name="hanoi_peg_board">
+    <pose>0 0 0.06 0 0 0 </pose>
 
     <link name="link">
       <inertial>
-        <mass>750.0</mass>
+        <mass>1500.0</mass>
         <inertia>
-          <ixx>2.5562500000000004</ixx>
+          <ixx>5.450000000000001</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>97.71249999999999</iyy>
+          <iyy>195.76250000000002</iyy>
           <iyz>0</iyz>
-          <izz>100.15625</izz>
+          <izz>200.3125</izz>
         </inertia>
       </inertial>
       <collision name="board_collision">
         <geometry>
           <box>
-            <size>1.25 0.2 0.03</size>
+            <size>1.25 0.2 0.06</size>
           </box>
         </geometry>
       </collision>
-      <!--<visual name="board_visual">
+      <visual name="board_visual">
         <geometry>
           <box>
-            <size>1.25 0.2 0.03</size>
+            <size>1.25 0.2 0.06</size>
           </box>
         </geometry>
         <material>
@@ -37,7 +38,7 @@
             <name>Gazebo/Wood</name>
           </script>
         </material>
-      </visual>-->
+      </visual>
 
       <visual name="vis_peg1">
         <pose> -0.5 0 0.15 0 0 0</pose>
