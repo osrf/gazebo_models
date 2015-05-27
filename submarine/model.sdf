@@ -187,7 +187,6 @@
 
     
 
-    <!-- hack for constant lift coefficient -->
     <!--<plugin name="submarine_body" filename="libLiftDragPlugin.so">
       <cda>0.25464790894703254</cda>
       <cda_stall>-0.25464790894703254</cda_stall>
@@ -212,7 +211,6 @@
       <a0>0</a0>
       <air_density>1000</air_density>
       <area>1.10548</area>
-      <air_density>1000</air_density>
       <upward>0 -1 0</upward>
       <forward>0 0 1</forward>
       <link_name>propeller</link_name>

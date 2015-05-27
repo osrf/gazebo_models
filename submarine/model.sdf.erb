@@ -144,7 +144,6 @@
      '<air_density>' + fluid_density.to_s + '</air_density>'
      %>
 
-    <!-- hack for constant lift coefficient -->
     <!--<plugin name="submarine_body" filename="libLiftDragPlugin.so">
       <cda><%= 0.4/(Math::PI/2) %></cda>
       <cda_stall><%= -0.4/(Math::PI/2) %></cda_stall>
@@ -169,7 +168,6 @@
       <a0>0</a0>
       <%= lift_drag_properties%>
       <area><%= 4*(blade_dx*blade_dy*2 + blade_dx*blade_dz*2 + blade_dy*blade_dz*2) %></area>
-      <air_density><%= fluid_density%></air_density>
       <upward>0 -1 0</upward>
       <forward>0 0 1</forward>
       <link_name>propeller</link_name>
