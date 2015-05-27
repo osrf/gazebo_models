@@ -1,10 +1,8 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
   <model name="hammer">
-    <static>true</static>
     <link name="link">
       <!--
-      <pose>0 0 0 0 0 0</pose>
 
       <collision name="shaft">
         <geometry>
@@ -24,6 +22,18 @@
         </geomtry>
       </collision>
 -->
+      <inertial>
+        <mass>0.5167</mass>
+        <inertia>
+          <ixx>0.0008611666666666669</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0008611666666666669</iyy>
+          <iyz>0</iyz>
+          <izz>0.0008611666666666669</izz>
+        </inertia>
+      </inertial>
+
       <collision name="collision">
         <geometry>
           <mesh>
