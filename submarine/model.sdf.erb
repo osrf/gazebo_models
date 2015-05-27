@@ -26,7 +26,7 @@
     blade_iyy = total_blade_mass/12.0 * (blade_dz**2 + blade_dx**2)
     blade_izz = total_blade_mass/12.0 * (blade_dx**2 + blade_dx**2)
 
-    blade_angle = -20 * Math::PI/180
+    blade_angle = 45 * Math::PI/180
 
     fluid_density = 1000
 
@@ -141,36 +141,49 @@
     <allow_auto_disable>1</allow_auto_disable>
 
     <% lift_drag_properties =
-     '<air_density>' + fluid_density.to_s + '</air_density>'
+     '<air_density>' + fluid_density.to_s + '</air_density>' +
+      '<cla>' + (1.75/(80*Math::PI/180)).to_s + '</cla>' +
+      '<cla_stall>' + (-0.25/(10*Math::PI/180)).to_s + '</cla_stall>' +
+      '<cda>0</cda>' +
+      '<cda_stall>' + (2/(80*Math::PI/180)).to_s + '</cda_stall>' +
+      '<alpha_stall>' + (80*Math::PI/180).to_s + '</alpha_stall>' +
+      '<a0>0</a0>'
      %>
 
-    <!--<plugin name="submarine_body" filename="libLiftDragPlugin.so">
-      <cda><%= 0.4/(Math::PI/2) %></cda>
-      <cda_stall><%= -0.4/(Math::PI/2) %></cda_stall>
-
-      <cla><%= 0.4/(Math::PI/2) %></cla>
-      <cla_stall><%= -0.4/(Math::PI/2) %></cla_stall>
-      <alpha_stall><%= Math::PI/2 %></alpha_stall>
-      <a0>0</a0>
+    <plugin name="submarine_propeller_1" filename="libLiftDragPlugin.so">
       <%= lift_drag_properties%>
-      <area><%= 2*Math::PI*body_radius*body_length %></area>
-      <upward>0 1 0</upward>
-      <forward>0 0 -1</forward>
-      <link_name>body</link_name>
-    </plugin>-->
-
-    <plugin name="submarine_propeller" filename="libLiftDragPlugin.so">
-      <cla><%= 10.75/blade_angle.abs %></cla>
-      <cla_stall><%= -2.5/(10*Math::PI/180) %> </cla_stall>
-      <cda><%= 1.5/blade_angle.abs %></cda>
-      <cda_stall><%= 2/blade_angle.abs %></cda_stall>
-      <alpha_stall><%= blade_angle.abs %></alpha_stall>
-      <a0>0</a0>
-      <%= lift_drag_properties%>
-      <area><%= 4*(blade_dx*blade_dy*2 + blade_dx*blade_dz*2 + blade_dy*blade_dz*2) %></area>
-      <upward>0 -1 0</upward>
-      <forward>0 0 1</forward>
+      <area><%= blade_dx*blade_dy*2 + blade_dx*blade_dz*2 + blade_dy*blade_dz*2 %></area>
+      <upward>0 <%= -Math.cos(blade_angle) %> <%= -Math.sin(blade_angle) %></upward>
+      <forward>0 <%= -Math.sin(blade_angle) %> <%= Math.cos(blade_angle) %></forward>
       <link_name>propeller</link_name>
+      <cp><%= blade_dx*0.7 %> 0 0</cp>
+    </plugin>
+
+    <plugin name="submarine_propeller_2" filename="libLiftDragPlugin.so">
+      <%= lift_drag_properties%>
+      <area><%= blade_dx*blade_dy*2 + blade_dx*blade_dz*2 + blade_dy*blade_dz*2 %></area>
+      <upward><%= -Math.sin(blade_angle) %> 0 <%= -Math.cos(blade_angle) %></upward>
+      <forward><%= -Math.cos(blade_angle) %> 0 <%= Math.sin(blade_angle) %></forward>
+      <link_name>propeller</link_name>
+      <cp>0 <%= -blade_dx*0.7 %> 0</cp>
+    </plugin>
+
+    <plugin name="submarine_propeller_3" filename="libLiftDragPlugin.so">
+      <%= lift_drag_properties%>
+      <area><%= blade_dx*blade_dy*2 + blade_dx*blade_dz*2 + blade_dy*blade_dz*2 %></area>
+      <upward>0 <%= Math.sin(blade_angle) %> <%= -Math.cos(blade_angle) %></upward>
+      <forward>0 <%= -Math.cos(blade_angle) %> <%= -Math.sin(blade_angle) %></forward>
+      <link_name>propeller</link_name>
+      <cp><%= -blade_dx*0.7 %> 0 0</cp>
+    </plugin>
+
+    <plugin name="submarine_propeller_4" filename="libLiftDragPlugin.so">
+      <%= lift_drag_properties%>
+      <area><%= blade_dx*blade_dy*2 + blade_dx*blade_dz*2 + blade_dy*blade_dz*2 %></area>
+      <upward><%= Math.cos(blade_angle) %> 0 <%= -Math.sin(blade_angle) %></upward>
+      <forward><%= Math.sin(blade_angle) %> 0 <%= Math.cos(blade_angle) %></forward>
+      <link_name>propeller</link_name>
+      <cp>0 <%= blade_dx*0.7 %> 0</cp>
     </plugin>
 
     <plugin name="buoyancy" filename="libBuoyancyPlugin.so">
