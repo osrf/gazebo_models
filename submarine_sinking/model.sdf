@@ -1,21 +1,23 @@
 <?xml version='1.0'?>
 <sdf version='1.5'>
+  
   <model name='submarine_sinking'>
     <pose>0 0 1.5 1.5707963267948966 0 0</pose>
     <link name='body'>
       <pose>0 0 -1.07935 0 0 0</pose>
       <inertial>
-        <mass>1102.6990214100174</mass>
+        <mass>1470.2653618800232</mass>
         <inertia>
-          <ixx>645.9978433760353</ixx>
+          <ixx>861.3304578347137</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>645.9978433760353</iyy>
+          <iyy>861.3304578347137</iyy>
           <iyz>0</iyz>
-          <izz>49.62145596345078</izz>
+          <izz>66.16194128460104</izz>
         </inertia>
       </inertial>
 
+      
 
       <visual name='body_visual'>
         <geometry>
@@ -39,6 +41,7 @@
               </cylinder>
             </geometry>
       </collision>
+      
       <visual name='spacer_visual'>
         <pose>0 0 1.378546 0 0 0</pose>
             <geometry>
@@ -59,19 +62,20 @@
     <link name='propeller'>
       <pose>0 0 0.3455 3.14159 0 0</pose>
       <inertial>
-        <mass>25.2312297</mass>
+        <mass>33.641639600000005</mass>
         <inertia>
-          <ixx>0.5319073381913637</ixx>
+          <ixx>0.7092097842551517</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.5319073381913637</iyy>
+          <iyy>0.7092097842551517</iyy>
           <iyz>0</iyz>
-          <izz>1.0513012375</izz>
+          <izz>1.4017349833333335</izz>
         </inertia>
       </inertial>
 
+      
         <visual name=blade1_visual>
-          <pose>0.3433402 0.0 0 -0.3490658503988659 0 0.0</pose>
+          <pose>0.3433402 0.0 0 0.7853981633974483 0 0.0</pose>
             <geometry>
               <box>
                 <size>0.5 0.154178 0.05455</size>
@@ -85,15 +89,16 @@
           </material>
         </visual>
         <collision name=blade1_collision>
-          <pose>0.3433402 0.0 0 -0.3490658503988659 0 0.0</pose>
+          <pose>0.3433402 0.0 0 0.7853981633974483 0 0.0</pose>
             <geometry>
               <box>
                 <size>0.5 0.154178 0.05455</size>
               </box>
             </geometry>
         </collision>
+      
         <visual name=blade2_visual>
-          <pose>0.0 0.3433402 0 -0.3490658503988659 0 1.5707963267948966</pose>
+          <pose>0.0 0.3433402 0 0.7853981633974483 0 1.5707963267948966</pose>
             <geometry>
               <box>
                 <size>0.5 0.154178 0.05455</size>
@@ -107,15 +112,16 @@
           </material>
         </visual>
         <collision name=blade2_collision>
-          <pose>0.0 0.3433402 0 -0.3490658503988659 0 1.5707963267948966</pose>
+          <pose>0.0 0.3433402 0 0.7853981633974483 0 1.5707963267948966</pose>
             <geometry>
               <box>
                 <size>0.5 0.154178 0.05455</size>
               </box>
             </geometry>
         </collision>
+      
         <visual name=blade3_visual>
-          <pose>-0.3433402 -0.0 0 0.3490658503988659 0 0.0</pose>
+          <pose>-0.3433402 -0.0 0 -0.7853981633974483 0 0.0</pose>
             <geometry>
               <box>
                 <size>0.5 0.154178 0.05455</size>
@@ -129,15 +135,16 @@
           </material>
         </visual>
         <collision name=blade3_collision>
-          <pose>-0.3433402 -0.0 0 0.3490658503988659 0 0.0</pose>
+          <pose>-0.3433402 -0.0 0 -0.7853981633974483 0 0.0</pose>
             <geometry>
               <box>
                 <size>0.5 0.154178 0.05455</size>
               </box>
             </geometry>
         </collision>
+      
         <visual name=blade4_visual>
-          <pose>-0.0 -0.3433402 0 0.3490658503988659 0 1.5707963267948966</pose>
+          <pose>-0.0 -0.3433402 0 -0.7853981633974483 0 1.5707963267948966</pose>
             <geometry>
               <box>
                 <size>0.5 0.154178 0.05455</size>
@@ -151,13 +158,14 @@
           </material>
         </visual>
         <collision name=blade4_collision>
-          <pose>-0.0 -0.3433402 0 0.3490658503988659 0 1.5707963267948966</pose>
+          <pose>-0.0 -0.3433402 0 -0.7853981633974483 0 1.5707963267948966</pose>
             <geometry>
               <box>
                 <size>0.5 0.154178 0.05455</size>
               </box>
             </geometry>
         </collision>
+      
     </link>
 
     <joint name='spinning_joint' type='revolute'>
@@ -177,32 +185,42 @@
 
     <allow_auto_disable>1</allow_auto_disable>
 
+    
 
-    <plugin name="submarine_body" filename="libLiftDragPlugin.so">
-      <cla>0.8</cla>
-      <cda>0.8</cda>
-      <alpha_stall>0</alpha_stall>
-      <alpha>0</alpha>
-      <air_density>1000</air_density>
-      <cla_stall>0</cla_stall>
-      <area>4.900884539600077</area>
-      <upward>0 1 0</upward>
-      <forward>0 0 -1</forward>
-      <link_name>body</link_name>
+    <plugin name="submarine_propeller_1" filename="libLiftDragPlugin.so">
+      <air_density>1000</air_density><cla>1.2535816618911175</cla><cla_stall>-1.4326647564469914</cla_stall><cda>0</cda><cda_stall>1.4326647564469914</cda_stall><alpha_stall>1.396</alpha_stall><a0>0</a0>
+      <area>0.22554881980000002</area>
+      <upward>0 -0.7071067811865476 -0.7071067811865475</upward>
+      <forward>0 -0.7071067811865475 0.7071067811865476</forward>
+      <link_name>propeller</link_name>
+      <cp>0.35 0 0</cp>
     </plugin>
 
-    <plugin name="submarine_propeller" filename="libLiftDragPlugin.so">
-      <cla>1.05</cla>
-      <cda>1.05</cda>
-      <alpha_stall>1</alpha_stall>
-      <alpha>1</alpha>
-      <air_density>1000</air_density>
-      <cla_stall>0</cla_stall>
-      <area>0.9021952792000001</area>
-      <air_density>1000</air_density>
-      <upward>0 -1 0</upward>
-      <forward>0 0 1</forward>
+    <plugin name="submarine_propeller_2" filename="libLiftDragPlugin.so">
+      <air_density>1000</air_density><cla>1.2535816618911175</cla><cla_stall>-1.4326647564469914</cla_stall><cda>0</cda><cda_stall>1.4326647564469914</cda_stall><alpha_stall>1.396</alpha_stall><a0>0</a0>
+      <area>0.22554881980000002</area>
+      <upward>-0.7071067811865475 0 -0.7071067811865476</upward>
+      <forward>-0.7071067811865476 0 0.7071067811865475</forward>
       <link_name>propeller</link_name>
+      <cp>0 -0.35 0</cp>
+    </plugin>
+
+    <plugin name="submarine_propeller_3" filename="libLiftDragPlugin.so">
+      <air_density>1000</air_density><cla>1.2535816618911175</cla><cla_stall>-1.4326647564469914</cla_stall><cda>0</cda><cda_stall>1.4326647564469914</cda_stall><alpha_stall>1.396</alpha_stall><a0>0</a0>
+      <area>0.22554881980000002</area>
+      <upward>0 0.7071067811865475 -0.7071067811865476</upward>
+      <forward>0 -0.7071067811865476 -0.7071067811865475</forward>
+      <link_name>propeller</link_name>
+      <cp>-0.35 0 0</cp>
+    </plugin>
+
+    <plugin name="submarine_propeller_4" filename="libLiftDragPlugin.so">
+      <air_density>1000</air_density><cla>1.2535816618911175</cla><cla_stall>-1.4326647564469914</cla_stall><cda>0</cda><cda_stall>1.4326647564469914</cda_stall><alpha_stall>1.396</alpha_stall><a0>0</a0>
+      <area>0.22554881980000002</area>
+      <upward>0.7071067811865476 0 -0.7071067811865475</upward>
+      <forward>0.7071067811865475 0 0.7071067811865476</forward>
+      <link_name>propeller</link_name>
+      <cp>0 0.35 0</cp>
     </plugin>
 
     <plugin name="buoyancy" filename="libBuoyancyPlugin.so">

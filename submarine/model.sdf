@@ -188,7 +188,7 @@
     
 
     <plugin name="submarine_propeller_1" filename="libLiftDragPlugin.so">
-      <air_density>1000</air_density><cla>1.2533451768486759</cla><cla_stall>-1.432394487827058</cla_stall><cda>0</cda><cda_stall>1.432394487827058</cda_stall><alpha_stall>1.3962634015954636</alpha_stall><a0>0</a0>
+      <air_density>1000</air_density><cla>1.2535816618911175</cla><cla_stall>-1.4326647564469914</cla_stall><cda>0</cda><cda_stall>1.4326647564469914</cda_stall><alpha_stall>1.396</alpha_stall><a0>0</a0>
       <area>0.27637</area>
       <upward>0 -0.7071067811865476 -0.7071067811865475</upward>
       <forward>0 -0.7071067811865475 0.7071067811865476</forward>
@@ -197,7 +197,7 @@
     </plugin>
 
     <plugin name="submarine_propeller_2" filename="libLiftDragPlugin.so">
-      <air_density>1000</air_density><cla>1.2533451768486759</cla><cla_stall>-1.432394487827058</cla_stall><cda>0</cda><cda_stall>1.432394487827058</cda_stall><alpha_stall>1.3962634015954636</alpha_stall><a0>0</a0>
+      <air_density>1000</air_density><cla>1.2535816618911175</cla><cla_stall>-1.4326647564469914</cla_stall><cda>0</cda><cda_stall>1.4326647564469914</cda_stall><alpha_stall>1.396</alpha_stall><a0>0</a0>
       <area>0.27637</area>
       <upward>-0.7071067811865475 0 -0.7071067811865476</upward>
       <forward>-0.7071067811865476 0 0.7071067811865475</forward>
@@ -206,7 +206,7 @@
     </plugin>
 
     <plugin name="submarine_propeller_3" filename="libLiftDragPlugin.so">
-      <air_density>1000</air_density><cla>1.2533451768486759</cla><cla_stall>-1.432394487827058</cla_stall><cda>0</cda><cda_stall>1.432394487827058</cda_stall><alpha_stall>1.3962634015954636</alpha_stall><a0>0</a0>
+      <air_density>1000</air_density><cla>1.2535816618911175</cla><cla_stall>-1.4326647564469914</cla_stall><cda>0</cda><cda_stall>1.4326647564469914</cda_stall><alpha_stall>1.396</alpha_stall><a0>0</a0>
       <area>0.27637</area>
       <upward>0 0.7071067811865475 -0.7071067811865476</upward>
       <forward>0 -0.7071067811865476 -0.7071067811865475</forward>
@@ -215,7 +215,7 @@
     </plugin>
 
     <plugin name="submarine_propeller_4" filename="libLiftDragPlugin.so">
-      <air_density>1000</air_density><cla>1.2533451768486759</cla><cla_stall>-1.432394487827058</cla_stall><cda>0</cda><cda_stall>1.432394487827058</cda_stall><alpha_stall>1.3962634015954636</alpha_stall><a0>0</a0>
+      <air_density>1000</air_density><cla>1.2535816618911175</cla><cla_stall>-1.4326647564469914</cla_stall><cda>0</cda><cda_stall>1.4326647564469914</cda_stall><alpha_stall>1.396</alpha_stall><a0>0</a0>
       <area>0.27637</area>
       <upward>0.7071067811865476 0 -0.7071067811865475</upward>
       <forward>0.7071067811865475 0 0.7071067811865476</forward>

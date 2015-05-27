@@ -142,11 +142,11 @@
 
     <% lift_drag_properties =
      '<air_density>' + fluid_density.to_s + '</air_density>' +
-      '<cla>' + (1.75/(80*Math::PI/180)).to_s + '</cla>' +
-      '<cla_stall>' + (-0.25/(10*Math::PI/180)).to_s + '</cla_stall>' +
+      '<cla>' + (1.75/1.396).to_s + '</cla>' +
+      '<cla_stall>' + (-0.25/0.1745).to_s + '</cla_stall>' +
       '<cda>0</cda>' +
-      '<cda_stall>' + (2/(80*Math::PI/180)).to_s + '</cda_stall>' +
-      '<alpha_stall>' + (80*Math::PI/180).to_s + '</alpha_stall>' +
+      '<cda_stall>' + (2/1.396).to_s + '</cda_stall>' +
+      '<alpha_stall>' + 1.396.to_s + '</alpha_stall>' +
       '<a0>0</a0>'
      %>
 
