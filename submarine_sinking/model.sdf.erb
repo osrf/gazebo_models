@@ -99,28 +99,28 @@
         </inertia>
       </inertial>
 
-      <% for i in 1..4
-         x = (i%2)*(spacer_radius + blade_dx/2)*(if i > 2 then -1 else 1 end)
-         y = ((i+1)%2)*(spacer_radius + blade_dx/2)*(if i > 2 then -1 else 1 end)
-         roll = blade_angle*(if i > 2 then -1 else 1 end)
-         yaw = ((i+1)%2)*Math::PI/2
+    <% for i in 1..4
+       x = (i%2)*(spacer_radius + blade_dx/2)*(if i > 2 then -1 else 1 end)
+       y = ((i+1)%2)*(spacer_radius + blade_dx/2)*(if i > 2 then -1 else 1 end)
+       roll = blade_angle*(if i > 2 then -1 else 1 end)
+       yaw = ((i+1)%2)*Math::PI/2
 
-         geometry_pose =
-           '<pose>' + x.to_s + ' ' + y.to_s + ' 0 ' + roll.to_s + ' 0 ' + yaw.to_s + '</pose>
-            <geometry>
-              <box>
-                <size>' + blade_dx.to_s + ' ' + blade_dy.to_s + ' ' + blade_dz.to_s + '</size>
-              </box>
-            </geometry>'
-         %>
-        <visual name=<%= 'blade' + i.to_s + '_visual'%>>
-          <%= geometry_pose %>
-          <%= material_block%>
-        </visual>
-        <collision name=<%= 'blade' + i.to_s + '_collision'%>>
-          <%= geometry_pose %>
-        </collision>
-      <% end %>
+       geometry_pose =
+         '<pose>' + x.to_s + ' ' + y.to_s + ' 0 ' + roll.to_s + ' 0 ' + yaw.to_s + '</pose>
+          <geometry>
+            <box>
+              <size>' + blade_dx.to_s + ' ' + blade_dy.to_s + ' ' + blade_dz.to_s + '</size>
+            </box>
+          </geometry>'
+       %>
+      <visual name=<%= 'blade' + i.to_s + '_visual'%>>
+        <%= geometry_pose %>
+        <%= material_block%>
+      </visual>
+      <collision name=<%= 'blade' + i.to_s + '_collision'%>>
+        <%= geometry_pose %>
+      </collision>
+    <% end %>
     </link>
 
     <joint name='spinning_joint' type='revolute'>
@@ -141,15 +141,17 @@
     <allow_auto_disable>1</allow_auto_disable>
 
     <% lift_drag_properties =
-     '<air_density>' + fluid_density.to_s + '</air_density>' +
-      '<cla>' + (1.75/1.396).to_s + '</cla>' +
-      '<cla_stall>' + (-0.25/0.1745).to_s + '</cla_stall>' +
-      '<cda>0</cda>' +
-      '<cda_stall>' + (2/1.396).to_s + '</cda_stall>' +
-      '<alpha_stall>' + 1.396.to_s + '</alpha_stall>' +
-      '<a0>0</a0>'
+      "<air_density>" + fluid_density.to_s + "</air_density>\n" +
+      "      <cla>" + (1.75/1.396).to_s + "</cla>\n" +
+      "      <cla_stall>" + (-0.25/0.1745).to_s + "</cla_stall>\n" +
+      "      <cda>0</cda>\n" +
+      "      <cda_stall>" + (2/1.396).to_s + "</cda_stall>\n" +
+      "      <alpha_stall>" + 1.396.to_s + "</alpha_stall>\n" +
+      "      <a0>0</a0>\n"
      %>
 
+    <!-- Commented out because it behaves poorly -->
+    <!-- 
     <plugin name="submarine_propeller_1" filename="libLiftDragPlugin.so">
       <%= lift_drag_properties%>
       <area><%= blade_dx*blade_dy*2 + blade_dx*blade_dz*2 + blade_dy*blade_dz*2 %></area>
@@ -185,6 +187,7 @@
       <link_name>propeller</link_name>
       <cp>0 <%= blade_dx*0.7 %> 0</cp>
     </plugin>
+    -->
 
     <plugin name="buoyancy" filename="libBuoyancyPlugin.so">
       <fluid_density><%= fluid_density%></fluid_density>
