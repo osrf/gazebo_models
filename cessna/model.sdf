@@ -435,7 +435,15 @@
           <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
+        <dynamics>
+          <damping>1.000</damping>
+        </dynamics>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
     </joint>
 
     <!-- Joint to move the left aileron -->
@@ -452,7 +460,15 @@
           <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
+        <dynamics>
+          <damping>1.000</damping>
+        </dynamics>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
     </joint>
 
     <!-- Joint to move the right flap -->
@@ -469,7 +485,15 @@
           <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
+        <dynamics>
+          <damping>1.000</damping>
+        </dynamics>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
     </joint>
 
     <!-- Joint to move the right aileron -->
@@ -486,7 +510,15 @@
           <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
+        <dynamics>
+          <damping>1.000</damping>
+        </dynamics>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
     </joint>
 
     <!-- Joint to move the elevators -->
@@ -503,7 +535,15 @@
           <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
+        <dynamics>
+          <damping>1.000</damping>
+        </dynamics>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
     </joint>
 
     <!-- Joint to move the rudder -->
@@ -520,7 +560,15 @@
           <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
+        <dynamics>
+          <damping>1.000</damping>
+        </dynamics>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
     </joint>
 
     <!-- Joint to make the propeller spin -->
@@ -535,7 +583,15 @@
           <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
+        <dynamics>
+          <damping>0.001</damping>
+        </dynamics>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
     </joint>
 
     <!-- Joint to make the front wheel spin -->
@@ -551,7 +607,15 @@
           <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
+        <dynamics>
+          <damping>0.010</damping>
+        </dynamics>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
     </joint>
 
     <!-- Joint to make the rear left wheel spin -->
@@ -567,7 +631,15 @@
           <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
+        <dynamics>
+          <damping>0.010</damping>
+        </dynamics>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
     </joint>
 
     <!-- Joint to make the rear right wheel spin -->
@@ -583,7 +655,15 @@
           <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
+        <dynamics>
+          <damping>0.010</damping>
+        </dynamics>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
     </joint>
 
   </model>
