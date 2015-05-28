@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="endpad">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>6 6 2</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <pose>0 0 -0.2 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://endpad/meshes/endpad.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
