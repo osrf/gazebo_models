@@ -2,7 +2,7 @@
 <sdf version='1.5'>
   <model name='small_2d_gimbal'>
 
-    <plugin name="small_2d_gimbal" filename="librotors_gazebo_Small2dGimbalPlugin.so"/>
+    <plugin name="small_2d_gimbal" filename="libSmall2dGimbalPlugin.so"/>
 
     <pose>0 0 0.18 0 0 0</pose>
 
