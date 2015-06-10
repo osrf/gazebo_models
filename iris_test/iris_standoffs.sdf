@@ -283,7 +283,6 @@
       </axis>
     </joint>
     <link name='iris/imu_link'>
-      <pose>0 0 0 0 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
         <mass>0.015</mass>
@@ -296,6 +295,11 @@
           <izz>0.0008</izz>
         </inertia>
       </inertial>
+      <sensor name="imu_sensor" type="imu">
+        <pose>0 0 0 3.141593 0 0</pose>
+        <always_on>1</always_on>
+        <update_rate>1000.0</update_rate>
+      </sensor>
     </link>
     <joint name='iris/imu_joint' type='revolute'>
       <child>iris/imu_link</child>
