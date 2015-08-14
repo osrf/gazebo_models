@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="person_standing">
+    <link name="link">
+      <inertial>
+        <pose>0 -0.1 0.95 0 0 0</pose>
+        <mass>80.0</mass>
+        <inertia>
+          <ixx>24.88</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>25.73</iyy>
+          <iyz>0</iyz>
+          <izz>2.48</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="bottom">
+        <pose>0 -0.1 0.01 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.5 0.35 0.02</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="person">
+        <pose>0 0 0.02 0.04 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://person_standing/meshes/standing.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <pose>0 0 0.02 0.04 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://person_standing/meshes/standing.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
