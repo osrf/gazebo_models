@@ -33,11 +33,12 @@
       </visual>
 
 
-      
+      <!-- 
       <velocity_decay>
         <linear>0.001</linear>
-        <angular>0.00</angular>
+        <angular>0.01</angular>
       </velocity_decay>
+      -->
       <inertial>
         <pose>0 0 0.023 0 0 0</pose>
         <mass>1.5</mass>
