@@ -14,6 +14,7 @@
         </geometry>
       </visual>
 
+      <!--
       <visual name='timer_visual'>
         <pose>2.2 0.3 0.1 0 0 0</pose>
         <geometry>
@@ -31,12 +32,13 @@
           </box>
         </geometry>
       </visual>
+      -->
 
 
       
       <velocity_decay>
-        <linear>0.001</linear>
-        <angular>0.00</angular>
+        <linear>0.0</linear>
+        <angular>0.0</angular>
       </velocity_decay>
       <inertial>
         <pose>0 0 0.023 0 0 0</pose>
@@ -415,7 +417,7 @@
           <upper>1e+16</upper>
         </limit>
         <dynamics>
-          <damping>0.000</damping>
+          <damping>0.002</damping>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -486,7 +488,7 @@
           <upper>1e+16</upper>
         </limit>
         <dynamics>
-          <damping>0.000</damping>
+          <damping>0.002</damping>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -557,7 +559,7 @@
           <upper>1e+16</upper>
         </limit>
         <dynamics>
-          <damping>0.000</damping>
+          <damping>0.002</damping>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
@@ -628,7 +630,7 @@
           <upper>1e+16</upper>
         </limit>
         <dynamics>
-          <damping>0.000</damping>
+          <damping>0.002</damping>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
