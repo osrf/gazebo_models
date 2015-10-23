@@ -27,8 +27,10 @@
         </geometry>
         <surface>
           <contact>
+            <!-- Red Pine coefficients according to
+                 http://www.fpl.fs.fed.us/documnts/fplgtr/fplgtr113/ch04.pdf -->
             <poissons_ratio>0.347</poissons_ratio>
-            <elastic_modulus>8800000000.0</elastic_modulus>
+            <elastic_modulus>8.8e+09</elastic_modulus>
             <ode>
               <kp>100000</kp>
               <kd>100</kd>
@@ -69,6 +71,8 @@
         </geometry>
         <surface>
           <contact>
+            <!-- Red Pine coefficients according to
+                 http://www.fpl.fs.fed.us/documnts/fplgtr/fplgtr113/ch04.pdf -->
             <poissons_ratio>0.347</poissons_ratio>
             <elastic_modulus>8800000000.0</elastic_modulus>
             <ode>
@@ -111,6 +115,8 @@
         </geometry>
         <surface>
           <contact>
+            <!-- Red Pine coefficients according to
+                 http://www.fpl.fs.fed.us/documnts/fplgtr/fplgtr113/ch04.pdf -->
             <poissons_ratio>0.347</poissons_ratio>
             <elastic_modulus>8800000000.0</elastic_modulus>
             <ode>
@@ -153,6 +159,8 @@
         </geometry>
         <surface>
           <contact>
+            <!-- Red Pine coefficients according to
+                 http://www.fpl.fs.fed.us/documnts/fplgtr/fplgtr113/ch04.pdf -->
             <poissons_ratio>0.347</poissons_ratio>
             <elastic_modulus>8800000000.0</elastic_modulus>
             <ode>
@@ -195,6 +203,8 @@
         </geometry>
         <surface>
           <contact>
+            <!-- Red Pine coefficients according to
+                 http://www.fpl.fs.fed.us/documnts/fplgtr/fplgtr113/ch04.pdf -->
             <poissons_ratio>0.347</poissons_ratio>
             <elastic_modulus>8800000000.0</elastic_modulus>
             <ode>
@@ -237,6 +247,8 @@
         </geometry>
         <surface>
           <contact>
+            <!-- Red Pine coefficients according to
+                 http://www.fpl.fs.fed.us/documnts/fplgtr/fplgtr113/ch04.pdf -->
             <poissons_ratio>0.347</poissons_ratio>
             <elastic_modulus>8800000000.0</elastic_modulus>
             <ode>
@@ -279,6 +291,8 @@
         </geometry>
         <surface>
           <contact>
+            <!-- Red Pine coefficients according to
+                 http://www.fpl.fs.fed.us/documnts/fplgtr/fplgtr113/ch04.pdf -->
             <poissons_ratio>0.347</poissons_ratio>
             <elastic_modulus>8800000000.0</elastic_modulus>
             <ode>
@@ -336,6 +350,8 @@
         </geometry>
         <surface>
           <contact>
+            <!-- Red Pine coefficients according to
+                 http://www.fpl.fs.fed.us/documnts/fplgtr/fplgtr113/ch04.pdf -->
             <poissons_ratio>0.347</poissons_ratio>
             <elastic_modulus>8800000000.0</elastic_modulus>
             <ode>

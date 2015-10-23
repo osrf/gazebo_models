@@ -23,9 +23,9 @@
         </geometry>
         <surface>
           <contact>
-            <!-- stainless steel 18-8 -->
+            <!-- stainless steel 18-8 material properties -->
             <poissons_ratio>0.305</poissons_ratio>
-            <elastic_modulus>200000000000.0</elastic_modulus>
+            <elastic_modulus>2.0e+11</elastic_modulus>
             <ode>
               <kp>100000</kp>
               <kd>100</kd>

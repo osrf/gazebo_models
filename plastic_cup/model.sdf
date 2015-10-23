@@ -23,8 +23,9 @@
         </geometry>
         <surface>
           <contact>
+            <!-- typical acrylic plastic material properties -->
             <poissons_ratio>0.35</poissons_ratio>
-            <elastic_modulus>310264077.6</elastic_modulus>
+            <elastic_modulus>3.102640776e+08</elastic_modulus>
             <ode>
               <kp>100000</kp>
               <kd>100</kd>

@@ -28,7 +28,7 @@
           <contact>
             <!-- tin (wikipedia) -->
             <poissons_ratio>0.36</poissons_ratio>
-            <elastic_modulus>50000000000.0</elastic_modulus>
+            <elastic_modulus>5.0e+10</elastic_modulus>
             <ode>
               <kp>100000</kp>
               <kd>100</kd>
