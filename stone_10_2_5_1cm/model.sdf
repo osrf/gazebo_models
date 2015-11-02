@@ -23,10 +23,13 @@
         </geometry>
         <surface>
           <contact>
-            <!-- Portland Cement Concrete material properties taken from
-                 ftp://www.clrp.cornell.edu/CDOT/Handouts/4c%20%20Materials%20Table.pdf -->
+            <!-- According to:
+                 http://dx.doi.org/10.1007/BF00547934
+                 heat treated chert is somehwere between 72-88 GPa. Based on these findings,
+                 80 GPa is selected without any further qualification.
+                 -->
             <poissons_ratio>0.15</poissons_ratio>
-            <elastic_modulus>2.0e+10</elastic_modulus>
+            <elastic_modulus>8.0e+10</elastic_modulus>
             <ode>
               <kp>100000</kp>
               <kd>100</kd>
