@@ -23,11 +23,23 @@
         </geometry>
         <surface>
           <contact>
+            <!-- stainless steel 18-8 material properties -->
+            <poissons_ratio>0.305</poissons_ratio>
+            <elastic_modulus>2.0e+11</elastic_modulus>
             <ode>
-              <max_vel>0.1</max_vel>
+              <kp>100000</kp>
+              <kd>100</kd>
+              <max_vel>100.0</max_vel>
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
+          <friction>
+            <torsional>
+              <coefficient>1.0</coefficient>
+              <use_patch_radius>0</use_patch_radius>
+              <surface_radius>0.01</surface_radius>
+            </torsional>
+          </friction>
         </surface>
       </collision>
 

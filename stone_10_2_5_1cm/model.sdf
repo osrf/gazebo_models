@@ -21,6 +21,30 @@
             <size>0.1 0.025 0.01</size>
           </box>
         </geometry>
+        <surface>
+          <contact>
+            <!-- According to:
+                 http://dx.doi.org/10.1007/BF00547934
+                 heat treated chert is somehwere between 72-88 GPa. Based on these findings,
+                 80 GPa is selected without any further qualification.
+                 -->
+            <poissons_ratio>0.15</poissons_ratio>
+            <elastic_modulus>8.0e+10</elastic_modulus>
+            <ode>
+              <kp>100000</kp>
+              <kd>100</kd>
+              <max_vel>100.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <torsional>
+              <coefficient>1.0</coefficient>
+              <use_patch_radius>0</use_patch_radius>
+              <surface_radius>0.01</surface_radius>
+            </torsional>
+          </friction>
+        </surface>
       </collision>
 
       <visual name="visual">
