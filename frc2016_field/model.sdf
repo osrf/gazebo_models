@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
-  <model name="frc_field_2016">
+  <model name="frc2016_field">
     <static>true</static>
     <link name="walls">
 
@@ -8,7 +8,7 @@
       <visual name="walls_visual">
         <geometry>
           <mesh>
-            <uri>model://frc_field_2016/meshes/walls.dae</uri>
+            <uri>model://frc2016_field/meshes/walls.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -16,7 +16,7 @@
       <collision name="front_turret">
         <geometry>
           <mesh>
-            <uri>model://frc_field_2016/meshes/turret_collide.dae</uri>
+            <uri>model://frc2016_field/meshes/turret_collide.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -25,7 +25,7 @@
         <pose>0 0 0 0 0 3.1415</pose>
         <geometry>
           <mesh>
-            <uri>model://frc_field_2016/meshes/turret_collide.dae</uri>
+            <uri>model://frc2016_field/meshes/turret_collide.dae</uri>
           </mesh>
         </geometry>
       </collision>
