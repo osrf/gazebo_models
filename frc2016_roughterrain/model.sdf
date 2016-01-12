@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
-  <model name="frc2016_rockwall">
+  <model name="frc2016_roughterrain">
     <static>true</static>
 
     <link name="link">

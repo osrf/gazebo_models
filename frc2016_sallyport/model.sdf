@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
   <model name="frc2016_sallyport">
-    <link name="link">
+    <link name="base">
       <inertial>
         <mass>50</mass>
         <pose>0 0 0.35406 0 0 0</pose>
@@ -174,7 +174,7 @@
 
     <joint type="revolute" name="door_joint">
       <pose>-0.608015 0 0 0 0 0</pose>
-      <parent>link</parent>
+      <parent>base</parent>
       <child>door</child>
       <axis>
         <xyz>0 0 1</xyz>
