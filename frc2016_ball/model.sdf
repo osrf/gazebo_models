@@ -17,7 +17,7 @@
       <visual name="visual">
         <geometry>
           <sphere>
-            <radius>0.11</radius>
+            <radius>0.127</radius>
           </sphere>
         </geometry>
       </visual>
@@ -25,7 +25,7 @@
       <collision name="collision">
         <geometry>
           <sphere>
-            <radius>0.11</radius>
+            <radius>0.127</radius>
           </sphere>
         </geometry>
       </collision>
