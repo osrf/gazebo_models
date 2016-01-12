@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="frc2016_ball">
+    <link name="link">
+      <inertial>
+        <mass>0.213</mass>
+        <inertia>
+          <ixx>0.003226667</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.003226667</iyy>
+          <iyz>0</iyz>
+          <izz>0.003226667</izz>
+        </inertia>
+      </inertial>
+
+      <visual name="visual">
+        <geometry>
+          <sphere>
+            <radius>0.11</radius>
+          </sphere>
+        </geometry>
+      </visual>
+
+      <collision name="collision">
+        <geometry>
+          <sphere>
+            <radius>0.11</radius>
+          </sphere>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>
