@@ -2,6 +2,7 @@
 <sdf version="1.5">
   <model name="parrot_bebop_2">
     <static>false</static>
+    <pose>0 0 0.062656 0 0 0</pose>
 
     <!-- Main link -->
     <link name="body">
@@ -50,7 +51,7 @@
       <visual name="hull">
         <geometry>
           <mesh>
-            <uri>meshes/hull.dae</uri>
+              <uri>model://parrot_bebop_2/meshes/hull.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -58,7 +59,7 @@
         <pose>-0.09035 -0.11423 -0.00501 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>meshes/propeller_rr.dae</uri>
+            <uri>model://parrot_bebop_2/meshes/propeller_rr.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -66,7 +67,7 @@
         <pose>-0.09035 0.11452 -0.00501 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>meshes/propeller_rl.dae</uri>
+            <uri>model://parrot_bebop_2/meshes/propeller_rl.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -74,7 +75,7 @@
         <pose>0.08456 -0.11435 -0.00501 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>meshes/propeller_fr.dae</uri>
+            <uri>model://parrot_bebop_2/meshes/propeller_fr.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -82,7 +83,7 @@
         <pose>0.08456 0.11463 -0.00501 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>meshes/propeller_fl.dae</uri>
+            <uri>model://parrot_bebop_2/meshes/propeller_fl.dae</uri>
           </mesh>
         </geometry>
       </visual>
