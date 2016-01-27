@@ -38,6 +38,7 @@ cordless_drill
 create
 cricket_ball
 cube_20k
+depth_camera
 door_handle
 double_pendulum_with_base
 drc_practice_2x4
@@ -75,6 +76,7 @@ fire_hose_long
 fire_hose_long_curled
 fire_hydrant
 first_2015_trash_can
+follower_vehicle
 frc_field_2015
 frc2016_ball
 frc2016_chevaldefrise
