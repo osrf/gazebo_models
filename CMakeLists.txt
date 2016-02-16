@@ -38,6 +38,7 @@ cordless_drill
 create
 cricket_ball
 cube_20k
+depth_camera
 door_handle
 double_pendulum_with_base
 drc_practice_2x4
