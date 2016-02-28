@@ -1,0 +1,555 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="frc2016_roughterrain">
+    <static>true</static>
+
+    <link name="link">
+      <visual name="platform">
+        <pose>0 0 0.08269 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.5969 0.003175</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="platform">
+        <pose>0 0 0.08269 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.5969 0.003175</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row1_block1_sm">
+        <pose>0.51435 0.11430 0.09698 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0254</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row1_block1_sm">
+        <pose>0.51435 0.11430 0.09698 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0254</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row1_block2_lg">
+        <pose>0.40005 0.11430 0.12238 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0762</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row1_block2_lg">
+        <pose>0.40005 0.11430 0.12238 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0762</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row1_block3_md">
+        <pose>0.28575 0.11430 0.10968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0508</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row1_block3_md">
+        <pose>0.28575 0.11430 0.10968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0508</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row1_block4_sm">
+        <pose>0.17145 0.11430 0.09698 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0254</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row1_block4_sm">
+        <pose>0.17145 0.11430 0.09698 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0254</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row1_block5_md">
+        <pose>0.05715 0.11430 0.10968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0508</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row1_block5_md">
+        <pose>0.05715 0.11430 0.10968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0508</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row1_block6_lg">
+        <pose>-0.05715 0.11430 0.12238 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0762</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row1_block6_lg">
+        <pose>-0.05715 0.11430 0.12238 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0762</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row1_block7_sm">
+        <pose>-0.17145 0.11430 0.09698 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0254</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row1_block7_sm">
+        <pose>-0.17145 0.11430 0.09698 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0254</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row1_block8_sm">
+        <pose>-0.28575 0.11430 0.09698 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0254</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row1_block8_sm">
+        <pose>-0.28575 0.11430 0.09698 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0254</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row1_block9_md">
+        <pose>-0.40005 0.11430 0.10968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0508</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row1_block9_md">
+        <pose>-0.40005 0.11430 0.10968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0508</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row1_block10_lg">
+        <pose>-0.51435 0.11430 0.12238 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0762</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row1_block10_lg">
+        <pose>-0.51435 0.11430 0.12238 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0762</size>
+          </box>
+        </geometry>
+      </collision>
+
+
+      <!-- Row 2 -->
+      <visual name="row2_block1_md">
+        <pose>0.5715 0 0.10968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0508</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row2_block1_md">
+        <pose>0.5715 0 0.10968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0508</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row2_block2_sm">
+        <pose>0.45720 0 0.09698 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0254</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row2_block2_sm">
+        <pose>0.45720 0 0.09698 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0254</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row2_block3_lg">
+        <pose>0.3429 0 0.12238 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0762</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row2_block3_lg">
+        <pose>0.3429 0 0.12238 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0762</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row2_block4_md">
+        <pose>0.2286 0 0.10968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0508</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row2_block4_md">
+        <pose>0.2286 0 0.10968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0508</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row2_block5_lg">
+        <pose>0.1143 0 0.12238 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0762</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row2_block5_lg">
+        <pose>0.1143 0 0.12238 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0762</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row2_block6_sm">
+        <pose>0 0 0.09698 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0254</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row2_block6_sm">
+        <pose>0 0 0.09698 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0254</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row2_block7_md">
+        <pose>-0.1143 0 0.10968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0508</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row2_block7_md">
+        <pose>-0.1143 0 0.10968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0508</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row2_block8_lg">
+        <pose>-0.2286 0 0.12238 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0762</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row2_block8_lg">
+        <pose>-0.2286 0 0.12238 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0762</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row2_block9_sm">
+        <pose>-0.3429 0 0.09698 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0254</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row2_block9_sm">
+        <pose>-0.3429 0 0.09698 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0254</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row2_block10_lg">
+        <pose>-0.4572 0 0.12238 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0762</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row2_block10_lg">
+        <pose>-0.4572 0 0.12238 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0762</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row2_block11_md">
+        <pose>-0.5715 0 0.10968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0508</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row2_block11_md">
+        <pose>-0.5715 0 0.10968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0508</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <!-- Row 3 -->
+      <visual name="row3_block1_lg">
+        <pose>0.51435 -0.1143 0.12238 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0762</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row3_block1_lg">
+        <pose>0.51435 -0.1143 0.12238 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0762</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row3_block2_md">
+        <pose>0.40005 -0.1143 0.10968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0508</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row3_block2_md">
+        <pose>0.40005 -0.1143 0.10968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0508</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row3_block3_lg">
+        <pose>0.28575 -0.1143 0.12238 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0762</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row3_block3_lg">
+        <pose>0.28575 -0.1143 0.12238 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0762</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row3_block4_sm">
+        <pose>0.17145 -0.11430 0.09698 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0254</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row3_block4_sm">
+        <pose>0.17145 -0.11430 0.09698 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0254</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row3_block5_md">
+        <pose>0.05715 -0.11430 0.10968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0508</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row3_block5_md">
+        <pose>0.05715 -0.1143 0.10968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0508</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row3_block6_md">
+        <pose>-0.05715 -0.11430 0.10968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0508</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row3_block6_md">
+        <pose>-0.05715 -0.1143 0.10968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0508</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row3_block7_lg">
+        <pose>-0.17145 -0.1143 0.12238 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0762</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row3_block7_lg">
+        <pose>-0.17145 -0.1143 0.12238 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0762</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row3_block8_sm">
+        <pose>-0.28575 -0.11430 0.09698 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0254</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row3_block8_sm">
+        <pose>-0.28575 -0.11430 0.09698 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0254</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row3_block9_md">
+        <pose>-0.40005 -0.11430 0.10968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0508</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row3_block9_md">
+        <pose>-0.40005 -0.1143 0.10968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0508</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="row3_block10_sm">
+        <pose>-0.51435 -0.11430 0.09698 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0254</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="row3_block10_sm">
+        <pose>-0.51435 -0.11430 0.09698 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0762 0.0762 0.0254</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,350 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="frc2016_portcullis">
+    <link name="base">
+      <inertial>
+        <mass>50</mass>
+        <pose>0 0 1.02941 0 0 0</pose>
+        <inertia>
+          <ixx>3.817114167</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.876984167</iyy>
+          <iyz>0</iyz>
+          <izz>1.628296667</izz>
+        </inertia>
+      </inertial>
+
+      <visual name="platform">
+        <pose>0 0 0.07284 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.5842 0.003175</size>
+          </box>
+        </geometry>
+      </visual>
+
+      <collision name="platform">
+        <pose>0 0 0.07284 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.5842 0.003175</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="left_column">
+        <pose>0.59284 0 0.99042 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.08375 0.28575 1.83198</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="left_column">
+        <pose>0.59284 0 0.99042 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.08375 0.28575 1.83198</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="right_column">
+        <pose>-0.57759 0 0.99042 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.08375 0.28575 1.83198</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="right_column">
+        <pose>-0.57759 0 0.99042 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.08375 0.28575 1.83198</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="top">
+        <pose>-0.00034 0 1.77722 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.229620.28575 0.26657</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="top">
+        <pose>-0.00034 0 1.77722 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.229620.28575 0.26657</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="castor1">
+        <pose>-0.45651 -0.16234 0.03272 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.03272</radius>
+          </sphere>
+        </geometry>
+      </visual>
+      <collision name="castor1">
+        <pose>-0.45651 -0.16234 0.03272 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.03272</radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <visual name="castor2">
+        <pose>-0.27883 0.21836 0.03272 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.03272</radius>
+          </sphere>
+        </geometry>
+      </visual>
+      <collision name="castor2">
+        <pose>-0.27883 0.21836 0.03272 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.03272</radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <visual name="castor3">
+        <pose>0.28083 0.21906 0.03272 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.03272</radius>
+          </sphere>
+        </geometry>
+      </visual>
+      <collision name="castor3">
+        <pose>0.28083 0.21906 0.03272 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.03272</radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <visual name="castor4">
+        <pose>0.45871 -0.16186 0.03272 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.03272</radius>
+          </sphere>
+        </geometry>
+      </visual>
+      <collision name="castor4">
+        <pose>0.45871 -0.16186 0.03272 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.03272</radius>
+          </sphere>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="gate">
+      <pose>-0.02870 0.02885 0.93327 0 0 0</pose>
+
+      <inertial>
+        <mass>2</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>3.817114167</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.876984167</iyy>
+          <iyz>0</iyz>
+          <izz>1.628296667</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>1.1938 0.02496 1.45732</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="horz_1">
+        <pose>0 0 -0.70326 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.1938 0.02496 0.0508</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1.0</ambient>
+          <diffuse>0.4 0.4 0.4 1.0</diffuse>
+        </material>
+      </visual>
+
+      <visual name="horz_2">
+        <pose>0 0 -0.44926 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.1938 0.02496 0.0508</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1.0</ambient>
+          <diffuse>0.4 0.4 0.4 1.0</diffuse>
+        </material>
+      </visual>
+
+      <visual name="horz_3">
+        <pose>0 0 -0.14517 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.1938 0.02496 0.0508</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1.0</ambient>
+          <diffuse>0.4 0.4 0.4 1.0</diffuse>
+        </material>
+      </visual>
+
+      <visual name="horz_4">
+        <pose>0 0 0.16034 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.1938 0.02496 0.0508</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1.0</ambient>
+          <diffuse>0.4 0.4 0.4 1.0</diffuse>
+        </material>
+      </visual>
+
+      <visual name="horz_5">
+        <pose>0 0 0.46514 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.1938 0.02496 0.0508</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1.0</ambient>
+          <diffuse>0.4 0.4 0.4 1.0</diffuse>
+        </material>
+      </visual>
+
+      <visual name="horz_6">
+        <pose>0 0 0.72994 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.1938 0.02496 0.0508</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1.0</ambient>
+          <diffuse>0.4 0.4 0.4 1.0</diffuse>
+        </material>
+      </visual>
+
+      <visual name="vert_1">
+        <pose>-0.58448 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02495 0.02496 1.45732</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1.0</ambient>
+          <diffuse>0.4 0.4 0.4 1.0</diffuse>
+        </material>
+      </visual>
+
+      <visual name="vert_2">
+        <pose>-0.38128 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0508 0.02496 1.45732</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1.0</ambient>
+          <diffuse>0.4 0.4 0.4 1.0</diffuse>
+        </material>
+      </visual>
+
+      <visual name="vert_3">
+        <pose>-0.12728 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0508 0.02496 1.45732</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1.0</ambient>
+          <diffuse>0.4 0.4 0.4 1.0</diffuse>
+        </material>
+      </visual>
+
+      <visual name="vert_4">
+        <pose>0.12672 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0508 0.02496 1.45732</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1.0</ambient>
+          <diffuse>0.4 0.4 0.4 1.0</diffuse>
+        </material>
+      </visual>
+
+      <visual name="vert_5">
+        <pose>0.38072 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0508 0.02496 1.45732</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1.0</ambient>
+          <diffuse>0.4 0.4 0.4 1.0</diffuse>
+        </material>
+      </visual>
+
+      <visual name="vert_6">
+        <pose>0.58392 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02495 0.02496 1.45732</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1.0</ambient>
+          <diffuse>0.4 0.4 0.4 1.0</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <joint type="prismatic" name="joint">
+      <parent>base</parent>
+      <child>gate</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.0</upper>
+        </limit>
+      </axis>
+    </joint>
+
+  </model>
+</sdf>

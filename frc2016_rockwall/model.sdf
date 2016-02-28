@@ -1,0 +1,104 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="frc2016_rockwall">
+    <static>true</static>
+    <link name="link">
+
+      <inertial>
+        <mass>10</mass>
+        <pose>0 0 0.08974 0 0 0</pose>
+        <inertia>
+          <ixx>0.327090833</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.374166667</iyy>
+          <iyz>0</iyz>
+          <izz>1.641090833</izz>
+        </inertia>
+      </inertial>
+
+      <visual name="platform">
+        <pose>0 0 0.06432 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.5969 0.003175</size>
+          </box>
+        </geometry>
+      </visual>
+
+      <collision name="platform">
+        <pose>0 0 0.06432 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.5969 0.003175</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="up1">
+        <pose>0 0.05166 0.12537 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.00462 0.11892</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.46 0.46 0.46 1.0</ambient>
+          <diffuse>0.46 0.46 0.46 1.0</diffuse>
+        </material>
+      </visual>
+
+      <collision name="up1">
+        <pose>0 0.05166 0.12537 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.00462 0.11892</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="up2">
+        <pose>0 -0.05801 0.12537 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.00462 0.11892</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.46 0.46 0.46 1.0</ambient>
+          <diffuse>0.46 0.46 0.46 1.0</diffuse>
+        </material>
+      </visual>
+
+      <collision name="up2">
+        <pose>0 -0.05801 0.12537 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.00462 0.11892</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="top">
+        <pose>0 -0.00249 0.18252 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.1143 0.00462</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.46 0.46 0.46 1.0</ambient>
+          <diffuse>0.46 0.46 0.46 1.0</diffuse>
+        </material>
+      </visual>
+      <collision name="top">
+        <pose>0 -0.00249 0.18252 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.1143 0.00462</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

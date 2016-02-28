@@ -78,6 +78,17 @@ fire_hydrant
 first_2015_trash_can
 follower_vehicle
 frc_field_2015
+frc2016_ball
+frc2016_chevaldefrise
+frc2016_drawbridge
+frc2016_field
+frc2016_lowbar
+frc2016_moat
+frc2016_portcullis
+frc2016_ramparts
+frc2016_rockwall
+frc2016_roughterrain
+frc2016_sallyport
 gas_station
 grey_tote
 grey_wall
@@ -212,3 +223,4 @@ message (STATUS "Install path: ${CMAKE_INSTALL_PREFIX_ABSOLUTE}/models")
 
 # This must always be last!
 include(CPack)
+
