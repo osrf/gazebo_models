@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="RoboCup 3D Simulation Field">
+  <model name="robocup_3d_field">
     <static>true</static>
     <link name="field">
       <pose>0 0 0.01 0 0 0</pose>
