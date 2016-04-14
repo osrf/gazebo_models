@@ -1,8 +1,8 @@
 <?xml version='1.0'?>
 <sdf version='1.5'>
-  <model name='small_2d_gimbal'>
+  <model name='gimbal_small_2d'>
 
-    <plugin name="small_2d_gimbal" filename="libSmall2dGimbalPlugin.so"/>
+    <plugin name="gimbal_small_2d" filename="libSmall2dGimbalPlugin.so"/>
 
     <pose>0 0 0.18 0 0 0</pose>
 
@@ -27,7 +27,7 @@
         <geometry>
          <mesh>
            <scale>0.001 0.001 0.001</scale>
-           <uri>model://small_2d_gimbal/meshes/base_main.dae</uri>
+           <uri>model://gimbal_small_2d/meshes/base_main.dae</uri>
          </mesh>
         </geometry>
         <material>
@@ -46,7 +46,7 @@
         <geometry>
          <mesh>
            <scale>0.001 0.001 0.001</scale>
-           <uri>model://small_2d_gimbal/meshes/base_arm.dae</uri>
+           <uri>model://gimbal_small_2d/meshes/base_arm.dae</uri>
          </mesh>
         </geometry>
         <material>
@@ -101,7 +101,7 @@
         <geometry>
          <mesh>
            <scale>0.001 0.001 0.001</scale>
-           <uri>model://small_2d_gimbal/meshes/tilt.dae</uri>
+           <uri>model://gimbal_small_2d/meshes/tilt.dae</uri>
          </mesh>
         </geometry>
         <material>
