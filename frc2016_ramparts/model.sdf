@@ -1,0 +1,110 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="frc2016_ramparts">
+    <static>true</static>
+
+    <link name="link">
+      <visual name="platform">
+        <pose>0 0 0.06967 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.5969 0.003175</size>
+          </box>
+        </geometry>
+      </visual>
+
+      <collision name="platform">
+        <pose>0 0 0.06967 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.5969 0.003175</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="ramp1">
+        <pose>0.30472 0.00588 0.11090 -0.13 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.60957 0.588891 0.00462</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1.0</ambient>
+          <diffuse>0.2 0.2 0.2 1.0</diffuse>
+        </material>
+      </visual>
+      <collision name="ramp1">
+        <pose>0.30472 0.00588 0.11090 -0.13 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.60957 0.588891 0.00462</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="up1">
+        <pose>0.30472 -0.28806 0.110720 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.60957 0.00462 0.078720</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1.0</ambient>
+          <diffuse>0.2 0.2 0.2 1.0</diffuse>
+        </material>
+      </visual>
+      <collision name="up1">
+        <pose>0.30472 -0.28806 0.110720 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.60957 0.00462 0.078720</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="ramp2">
+        <pose>-0.30472 -0.00619 0.11090 0.13 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.60957 0.588891 0.00462</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1.0</ambient>
+          <diffuse>0.2 0.2 0.2 1.0</diffuse>
+        </material>
+      </visual>
+      <collision name="ramp2">
+        <pose>-0.30472 -0.00619 0.11090 0.13 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.60957 0.588891 0.00462</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="up2">
+        <pose>-0.30472 0.28806 0.110720 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.60957 0.00462 0.078720</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1.0</ambient>
+          <diffuse>0.2 0.2 0.2 1.0</diffuse>
+        </material>
+      </visual>
+      <collision name="up2">
+        <pose>-0.30472 0.28806 0.110720 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.60957 0.00462 0.078720</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

@@ -20,7 +20,7 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <ambient>
-              <color sid="ambient">0 0 0 1</color>
+              <color sid="ambient">0.03707497 0.03707497 0.03707497  1</color>
             </ambient>
             <diffuse>
               <color sid="diffuse">0.03707497 0.03707497 0.03707497 1</color>
@@ -52,7 +52,7 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <ambient>
-              <color sid="ambient">0 0 0 1</color>
+              <color sid="ambient">0.4096 0.3321293 0.06182856  1</color>
             </ambient>
             <diffuse>
               <color sid="diffuse">0.4096 0.3321293 0.06182856 1</color>

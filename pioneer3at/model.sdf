@@ -7,25 +7,18 @@
       <inertial>
         <mass>14.0</mass>
         <inertia>
-          <!-- http://en.wikipedia.org/wiki/List_of_moment_of_inertia_tensors
-          MATLAB:
-          m=14; h=0.19; w=0.4; d=0.5; 
-          ixx = 1/12*m*(h^2+d^2)
-          iyy = 1/12*m*(w^2+d^2) 
-          izz = 1/12*m*(h^2+d^2) 
-          -->
-          <ixx>0.3338</ixx>
+          <ixx>0.147116667</ixx>
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>0.4783</iyy>
+          <iyy>0.334951167</iyy>
           <iyz>0.0</iyz>
-          <izz>0.3338</izz>
+          <izz>0.3978345</izz>
         </inertia>
       </inertial>
       <collision name="collision">
         <geometry>
           <box>
-            <size>0.501 0.400 0.19</size>
+            <size>0.501 0.300 0.19</size>
           </box>
         </geometry>
       </collision>
@@ -39,6 +32,19 @@
     </link>
     <link name="right_front_wheel">
       <pose>0.125 -0.201 -0.06 1.5707 0 0</pose>
+
+      <inertial>
+        <mass>1.5</mass>
+        <inertia>
+          <ixx>0.005240625</ixx>
+          <iyy>0.005240625</iyy>
+          <izz>0.009075</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
       <collision name="collision">
         <geometry>
           <cylinder>
@@ -67,6 +73,19 @@
     </link>
     <link name="left_front_wheel">
       <pose>0.125 0.201 -0.06 1.5707 0 0</pose>
+
+      <inertial>
+        <mass>1.5</mass>
+        <inertia>
+          <ixx>0.005240625</ixx>
+          <iyy>0.005240625</iyy>
+          <izz>0.009075</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
       <collision name="collision">
         <geometry>
           <cylinder>
@@ -95,6 +114,19 @@
     </link>
     <link name="right_rear_wheel">
       <pose>-0.125 -0.201 -0.06 1.5707 0 0</pose>
+
+      <inertial>
+        <mass>1.5</mass>
+        <inertia>
+          <ixx>0.005240625</ixx>
+          <iyy>0.005240625</iyy>
+          <izz>0.009075</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
       <collision name="collision">
         <geometry>
           <cylinder>
@@ -123,6 +155,19 @@
     </link>
     <link name="left_rear_wheel">
       <pose>-0.125 0.201 -0.06 1.5707 0 0</pose>
+
+      <inertial>
+        <mass>1.5</mass>
+        <inertia>
+          <ixx>0.005240625</ixx>
+          <iyy>0.005240625</iyy>
+          <izz>0.009075</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
       <collision name="collision">
         <geometry>
           <cylinder>
