@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <sdf version='1.5'>
   <model name='iris'>
-    <pose>0 0 0.165 0 0 0</pose>
+    <pose>0 0 0.194923 0 0 0</pose>
     <link name='base_link'>
 
       <visual name='camera_visual'>
