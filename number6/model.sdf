@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="number5">
+  <model name="number6">
     <static>true</static>
     <link name="link">
       <visual name="visual">
