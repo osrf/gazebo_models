@@ -1,0 +1,327 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+ <model name="frc2016_chevaldefrise">
+    <link name="base">
+      <inertial>
+        <mass>10</mass>
+        <pose>0 0 0.15672 0 0 0</pose>
+        <inertia>
+          <ixx>0.380220833</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.433654167</iyy>
+          <iyz>0</iyz>
+          <izz>1.647448333</izz>
+        </inertia>
+      </inertial>
+
+      <visual name="platform">
+        <pose>0 0 0.06968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.5969 0.003175</size>
+          </box>
+        </geometry>
+      </visual>
+
+      <collision name="platform">
+        <pose>0 0 0.06968 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.5969 0.003175</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="bar">
+        <pose>0 0 0.16855 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02108</radius>
+            <length>1.273</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      <collision name="bar">
+        <pose>0 0 0.16855 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02108</radius>
+            <length>1.27</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="castor1">
+        <pose>-0.45653 -0.16581 0.03175 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.03175</radius>
+          </sphere>
+        </geometry>
+      </visual>
+
+      <collision name="castor1">
+        <pose>-0.45653 -0.16581 0.03175 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.03175</radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <visual name="castor2">
+        <pose>-0.27855 0.21408 0.03175 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.03175</radius>
+          </sphere>
+        </geometry>
+      </visual>
+
+      <collision name="castor2">
+        <pose>-0.27855 0.21408 0.03175 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.03175</radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <visual name="castor3">
+        <pose>0.28191 0.21419 0.03175 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.03175</radius>
+          </sphere>
+        </geometry>
+      </visual>
+
+      <collision name="castor3">
+        <pose>0.28191 0.21419 0.03175 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.03175</radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <visual name="castor4">
+        <pose>0.45965 -0.16602 0.03175 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.03175</radius>
+          </sphere>
+        </geometry>
+      </visual>
+
+      <collision name="castor4">
+        <pose>0.45965 -0.16602 0.03175 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.03175</radius>
+          </sphere>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="slant1">
+      <pose>-0.45720 0.01307 0.1997 -0.397319587 0 0</pose>
+
+      <inertial>
+        <pose>0 0.1 0 0 0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.060685681</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.014872282</iyy>
+          <iyz>0</iyz>
+          <izz>0.0755042</izz>
+        </inertia>
+      </inertial>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.29845 0.593285005 0.0127</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/WoodFloor</name>
+          </script>
+        </material>
+      </visual>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.29845 0.593285005 0.0127</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="slant2">
+      <pose>-0.15240 -0.01307 0.1997 0.397319587 0 0</pose>
+
+      <inertial>
+        <mass>2</mass>
+        <pose>0 -0.1 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.060685681</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.014872282</iyy>
+          <iyz>0</iyz>
+          <izz>0.0755042</izz>
+        </inertia>
+      </inertial>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.29845 0.593285005 0.0127</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/WoodFloor</name>
+          </script>
+        </material>
+      </visual>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.29845 0.593285005 0.0127</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="slant3">
+      <pose>0.15240 0.01307 0.1997 -0.397319587 0 0</pose>
+      <inertial>
+        <pose>0 0.1 0 0 0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.060685681</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.014872282</iyy>
+          <iyz>0</iyz>
+          <izz>0.0755042</izz>
+        </inertia>
+      </inertial>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.29845 0.593285005 0.0127</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/WoodFloor</name>
+          </script>
+        </material>
+      </visual>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.29845 0.593285005 0.0127</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="slant4">
+      <pose>0.45720 -0.01307 0.1997 0.397319587 0 0</pose>
+      <inertial>
+        <pose>0 -0.1 0 0 0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.060685681</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.014872282</iyy>
+          <iyz>0</iyz>
+          <izz>0.0755042</izz>
+        </inertia>
+      </inertial>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.29845 0.593285005 0.0127</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/WoodFloor</name>
+          </script>
+        </material>
+      </visual>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.29845 0.593285005 0.0127</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint type="revolute" name="slant1_joint">
+      <parent>base</parent>
+      <child>slant1</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5707</upper>
+        </limit>
+      </axis>
+    </joint>
+ 
+    <joint type="revolute" name="slant2_joint">
+      <parent>base</parent>
+      <child>slant2</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.5707</lower>
+          <upper>0</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="slant3_joint">
+      <parent>base</parent>
+      <child>slant3</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5707</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="slant4_joint">
+      <parent>base</parent>
+      <child>slant4</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.5707</lower>
+          <upper>0</upper>
+        </limit>
+      </axis>
+    </joint>
+
+  </model>
+</sdf>

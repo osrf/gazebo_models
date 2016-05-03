@@ -1,0 +1,164 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="frc2016_moat">
+    <static>true</static>
+    <link name="link">
+      <inertial>
+        <mass>10</mass>
+        <pose>0 0 0.06738 0 0 0</pose>
+        <inertia>
+          <ixx>0.312195</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.359270833</iyy>
+          <iyz>0</iyz>
+          <izz>1.641090833</izz>
+        </inertia>
+      </inertial>
+
+      <visual name="platform">
+        <pose>0 0 0.0381 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.5969 0.0762</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="platform">
+        <pose>0 0 0.0381 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.5969  0.0762</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="tube1_side1">
+        <pose>0 -0.25876 0.10301 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.003175 0.0635</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.46 0.46 0.46 1.0</ambient>
+          <diffuse>0.46 0.46 0.46 1.0</diffuse>
+        </material>
+      </visual>
+      <collision name="tube1_side1">
+        <pose>0 -0.25876 0.10301 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.003175 0.0635</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="tube1_side2">
+        <pose>0 -0.22384 0.10301 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.003175 0.0635</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.46 0.46 0.46 1.0</ambient>
+          <diffuse>0.46 0.46 0.46 1.0</diffuse>
+        </material>
+      </visual>
+      <collision name="tube1_side2">
+        <pose>0 -0.22384 0.10301 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.003175 0.0635</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="tube1_top">
+        <pose>0 -0.2413 0.13317 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.0381 0.003175</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.46 0.46 0.46 1.0</ambient>
+          <diffuse>0.46 0.46 0.46 1.0</diffuse>
+        </material>
+      </visual>
+      <collision name="tube1_top">
+        <pose>0 -0.2413 0.13317 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.0381 0.003175</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="tube2_side1">
+        <pose>0 0.22384 0.10301 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.003175 0.0635</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.46 0.46 0.46 1.0</ambient>
+          <diffuse>0.46 0.46 0.46 1.0</diffuse>
+        </material>
+      </visual>
+      <collision name="tube2_side1">
+        <pose>0 0.22384 0.10301 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.003175 0.0635</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="tube2_side2">
+        <pose>0 0.25876 0.10301 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.003175 0.0635</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.46 0.46 0.46 1.0</ambient>
+          <diffuse>0.46 0.46 0.46 1.0</diffuse>
+        </material>
+      </visual>
+      <collision name="tube2_side2">
+        <pose>0 0.25876 0.10301 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.003175 0.0635</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="tube2_top">
+        <pose>0 0.2413 0.13317 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.0381 0.003175</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.46 0.46 0.46 1.0</ambient>
+          <diffuse>0.46 0.46 0.46 1.0</diffuse>
+        </material>
+      </visual>
+      <collision name="tube2_top">
+        <pose>0 0.2413 0.13317 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.0381 0.003175</size>
+          </box>
+        </geometry>
+      </collision>
+
+    </link>
+  </model>
+</sdf>

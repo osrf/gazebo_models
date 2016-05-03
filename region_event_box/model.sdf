@@ -1,0 +1,32 @@
+<?xml version='1.0'?>
+<sdf version='1.5'>
+  <model name='RegionEventBox'>
+    <static>1</static>
+    <pose>0 0 0 0 0 0</pose>
+    <link name='link'>
+      <visual name='visual'>
+        <transparency>0.75</transparency>
+        <geometry>
+          <box>
+            <size>1 1 1.75</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+      </visual>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+    </link>
+    <plugin name="region_event_box" filename="libRegionEventBoxPlugin.so">
+      <event>
+        <name>model_in_region_event_box</name>
+        <type>inclusion</type>
+        <active>true</active>
+      </event>
+    </plugin>
+  </model>
+</sdf>

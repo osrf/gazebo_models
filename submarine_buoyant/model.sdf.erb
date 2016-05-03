@@ -1,0 +1,198 @@
+<?xml version='1.0'?>
+<sdf version='1.5'>
+  <%
+    body_density = 500
+    body_radius = 0.3
+    body_length = 2.6
+    body_volume = body_length*Math::PI*body_radius**2
+    spacer_radius = 0.0933402
+    spacer_length = 0.127211
+    #spacer_volume = spacer_length*Math::PI*spacer_radius**2
+
+    mass = body_density*(body_volume)
+
+    body_ixx = mass/12.0 * (3*body_radius**2  + body_length**2 )
+    body_iyy = mass/12.0 * (3*body_radius**2  + body_length**2 )
+    body_izz = mass/2.0 * body_radius**2
+   
+    blade_dx = 0.5
+    blade_dy = 0.154178
+    blade_dz = 0.05455
+    blade_volume = blade_dx * blade_dy * blade_dz
+    blade_mass = blade_volume * body_density
+
+    total_blade_mass = 4*blade_mass
+
+    blade_ixx = total_blade_mass/12.0 * (blade_dx**2 + blade_dz**2)
+    blade_iyy = total_blade_mass/12.0 * (blade_dz**2 + blade_dx**2)
+    blade_izz = total_blade_mass/12.0 * (blade_dx**2 + blade_dx**2)
+
+    blade_angle = 45 * Math::PI/180
+
+    fluid_density = 999.1026
+
+    material_block =
+          '<material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/White</name>
+            </script>
+          </material>'
+   %>
+  <model name='submarine_buoyant'>
+    <pose>0 0 <%= blade_dx + 1.0 %> <%= Math::PI/2%> 0 0</pose>
+    <link name='body'>
+      <pose>0 0 -1.07935 0 0 0</pose>
+      <inertial>
+        <mass><%= mass %></mass>
+        <inertia>
+          <ixx><%= body_ixx %></ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy><%= body_iyy %></iyy>
+          <iyz>0</iyz>
+          <izz><%= body_izz %></izz>
+        </inertia>
+      </inertial>
+
+      <% body_geometry =
+            '<geometry>
+              <cylinder>
+                <radius>'+ body_radius.to_s + '</radius>
+                <length>'+ body_length.to_s + '</length>
+              </cylinder>
+            </geometry>'
+       %>
+
+      <visual name='body_visual'>
+        <%= body_geometry%>
+        <%= material_block%>
+      </visual>
+      <collision name='body_collision'>
+        <%= body_geometry%>
+      </collision>
+      <% spacer_geometry_pose =
+            '<pose>0 0 ' + (0.299196 + 1.07935).to_s + ' 0 0 0</pose>
+            <geometry>
+              <cylinder>
+                <radius>'+ spacer_radius.to_s + '</radius>
+                <length>'+ spacer_length.to_s + '</length>
+              </cylinder>
+            </geometry>'
+       %>
+      <visual name='spacer_visual'>
+        <%= spacer_geometry_pose%>
+        <%= material_block%>
+      </visual>
+    </link>
+
+    <link name='propeller'>
+      <pose>0 0 0.3455 3.14159 0 0</pose>
+      <inertial>
+        <mass><%= total_blade_mass %></mass>
+        <inertia>
+          <ixx><%= blade_ixx %></ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy><%= blade_iyy %></iyy>
+          <iyz>0</iyz>
+          <izz><%= blade_izz %></izz>
+        </inertia>
+      </inertial>
+
+    <% for i in 1..4
+       x = (i%2)*(spacer_radius + blade_dx/2)*(if i > 2 then -1 else 1 end)
+       y = ((i+1)%2)*(spacer_radius + blade_dx/2)*(if i > 2 then -1 else 1 end)
+       roll = blade_angle*(if i > 2 then -1 else 1 end)
+       yaw = ((i+1)%2)*Math::PI/2
+
+       geometry_pose =
+         '<pose>' + x.to_s + ' ' + y.to_s + ' 0 ' + roll.to_s + ' 0 ' + yaw.to_s + '</pose>
+          <geometry>
+            <box>
+              <size>' + blade_dx.to_s + ' ' + blade_dy.to_s + ' ' + blade_dz.to_s + '</size>
+            </box>
+          </geometry>'
+       %>
+      <visual name=<%= 'blade' + i.to_s + '_visual'%>>
+        <%= geometry_pose %>
+        <%= material_block%>
+      </visual>
+      <collision name=<%= 'blade' + i.to_s + '_collision'%>>
+        <%= geometry_pose %>
+      </collision>
+    <% end %>
+    </link>
+
+    <joint name='spinning_joint' type='revolute'>
+      <parent>body</parent>
+      <child>propeller</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <limit>
+          <lower>-1e+12</lower>
+          <upper>1e+12</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <allow_auto_disable>1</allow_auto_disable>
+
+    <% lift_drag_properties =
+      "<air_density>" + fluid_density.to_s + "</air_density>\n" +
+      "      <cla>" + (1.75/1.396).to_s + "</cla>\n" +
+      "      <cla_stall>" + (-0.25/0.1745).to_s + "</cla_stall>\n" +
+      "      <cda>0</cda>\n" +
+      "      <cda_stall>" + (2/1.396).to_s + "</cda_stall>\n" +
+      "      <alpha_stall>" + 1.396.to_s + "</alpha_stall>\n" +
+      "      <a0>0</a0>\n"
+     %>
+
+    <!-- Commented out because it behaves poorly -->
+    <!--
+    <plugin name="submarine_propeller_1" filename="libLiftDragPlugin.so">
+      <%= lift_drag_properties%>
+      <area><%= blade_dx*blade_dy*2 + blade_dx*blade_dz*2 + blade_dy*blade_dz*2 %></area>
+      <upward>0 <%= -Math.cos(blade_angle) %> <%= -Math.sin(blade_angle) %></upward>
+      <forward>0 <%= -Math.sin(blade_angle) %> <%= Math.cos(blade_angle) %></forward>
+      <link_name>propeller</link_name>
+      <cp><%= blade_dx*0.7 %> 0 0</cp>
+    </plugin>
+
+    <plugin name="submarine_propeller_2" filename="libLiftDragPlugin.so">
+      <%= lift_drag_properties%>
+      <area><%= blade_dx*blade_dy*2 + blade_dx*blade_dz*2 + blade_dy*blade_dz*2 %></area>
+      <upward><%= -Math.sin(blade_angle) %> 0 <%= -Math.cos(blade_angle) %></upward>
+      <forward><%= -Math.cos(blade_angle) %> 0 <%= Math.sin(blade_angle) %></forward>
+      <link_name>propeller</link_name>
+      <cp>0 <%= -blade_dx*0.7 %> 0</cp>
+    </plugin>
+
+    <plugin name="submarine_propeller_3" filename="libLiftDragPlugin.so">
+      <%= lift_drag_properties%>
+      <area><%= blade_dx*blade_dy*2 + blade_dx*blade_dz*2 + blade_dy*blade_dz*2 %></area>
+      <upward>0 <%= Math.sin(blade_angle) %> <%= -Math.cos(blade_angle) %></upward>
+      <forward>0 <%= -Math.cos(blade_angle) %> <%= -Math.sin(blade_angle) %></forward>
+      <link_name>propeller</link_name>
+      <cp><%= -blade_dx*0.7 %> 0 0</cp>
+    </plugin>
+
+    <plugin name="submarine_propeller_4" filename="libLiftDragPlugin.so">
+      <%= lift_drag_properties%>
+      <area><%= blade_dx*blade_dy*2 + blade_dx*blade_dz*2 + blade_dy*blade_dz*2 %></area>
+      <upward><%= Math.cos(blade_angle) %> 0 <%= -Math.sin(blade_angle) %></upward>
+      <forward><%= Math.sin(blade_angle) %> 0 <%= Math.cos(blade_angle) %></forward>
+      <link_name>propeller</link_name>
+      <cp>0 <%= blade_dx*0.7 %> 0</cp>
+    </plugin>
+    -->
+
+    <plugin name="buoyancy" filename="libBuoyancyPlugin.so">
+      <fluid_density><%= fluid_density%></fluid_density>
+    </plugin>
+
+  </model>
+</sdf>

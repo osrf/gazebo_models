@@ -1,0 +1,155 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+ <model name="frc2016_drawbridge">
+    <link name="base">
+      <inertial>
+        <mass>10</mass>
+        <pose>0 0 1.0 0 0 0</pose>
+        <inertia>
+          <ixx>3.649073333</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.67075333</iyy>
+          <iyz>0</iyz>
+          <izz>1.666486667</izz>
+        </inertia>
+      </inertial>
+
+      <visual name="platform">
+        <pose>0 0 0.0425 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.5969 0.085</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="platform">
+        <pose>0 0 0.0425 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.27 0.5969 0.085</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="right_wall">
+        <pose>0.55879 0.04444  0.889 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05715 0.45698 1.77165</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="right_wall">
+        <pose>0.55879 0.04444  0.889 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05715 0.45698 1.77165</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="left_wall">
+        <pose>-0.55879 0.04444  0.889 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05715 0.45698 1.77165</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="left_wall">
+        <pose>-0.55879 0.04444  0.889 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05715 0.45698 1.77165</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="front_upper_wall">
+        <pose>0 0.27611 1.84286 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.1557 0.006347 0.254</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="front_upper_wall">
+        <pose>0 0.27611 1.84286 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.1557 0.006347 0.254</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="back_upper_wall">
+        <pose>0 -0.18722 1.84286 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.1557 0.006347 0.254</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="back_upper_wall">
+        <pose>0 -0.18722 1.84286 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.1557 0.006347 0.254</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="bridge">
+      <pose>0 0.28245 0.50577 0 0 0</pose>
+      <inertial>
+        <mass>2</mass>
+        <pose>0 -0.28245 -0.50577 0 0 0</pose>
+        <inertia>
+          <ixx>0.139361274</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.35708844</iyy>
+          <iyz>0</iyz>
+          <izz>0.217740594</izz>
+        </inertia>
+      </inertial>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>1.14298 0.006347 0.9144</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/WoodFloor</name>
+          </script>
+        </material>
+      </visual>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>1.14298 0.006347 0.9144</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint type="revolute" name="bridge_joint">
+      <pose>0 0 -0.4172 0 0 0</pose>
+      <parent>base</parent>
+      <child>bridge</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.0</lower>
+          <upper>0</upper>
+        </limit>
+      </axis>
+    </joint>
+
+  </model>
+</sdf>

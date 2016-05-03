@@ -1,0 +1,524 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="frc2016_field">
+    <static>true</static>
+    <link name="walls">
+
+      <!-- Visual of the boundary walls -->
+      <visual name="walls_visual">
+        <geometry>
+          <mesh>
+            <uri>model://frc2016_field/meshes/walls.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name="front_turret">
+        <geometry>
+          <mesh>
+            <uri>model://frc2016_field/meshes/turret_collide.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <collision name="back_turret">
+        <pose>0 0 0 0 0 3.1415</pose>
+        <geometry>
+          <mesh>
+            <uri>model://frc2016_field/meshes/turret_collide.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <collision name="left_wall">
+        <pose>4.09997 0 0.2413 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 16.4592 0.4826</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="right_wall">
+        <pose>-4.09997 0 0.2413 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 16.4592 0.4826</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="front_solid_wall">
+        <pose>-2.2105 8.2196 1.0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>3.8 0.1 2.0</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="back_solid_wall">
+        <pose>2.2105 -8.2196 1.0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>3.8 0.1 2.0</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="front_partial_wall">
+        <pose>1.85 8.2196 1.0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>2.1 0.1 2.0</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="front_partial_wall_mid">
+        <pose>3.4 8.2196 0.86 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.25 0.1 1.12</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="front_partial_wall_lower_left">
+        <pose>3.36 8.2196 0.25 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.3 0.1 0.5</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="front_partial_wall_lower_right">
+        <pose>4.0 8.2196 0.25 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.3 0.1 0.5</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="front_partial_wall_upper_right">
+        <pose>3.76 8.2196 1.7 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.54 0.1 0.6</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="front_partial_wall_upper_left">
+        <pose>2.95 8.2196 1.7 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.54 0.1 0.6</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="front_partial_wall_upper_mid">
+        <pose>3.36 8.2196 1.84 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.3 0.1 0.3</size>
+          </box>
+        </geometry>
+      </collision>
+
+
+
+
+      <collision name="back_partial_wall">
+        <pose>-1.85 -8.2196 1.0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>2.1 0.1 2.0</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="back_partial_wall_mid">
+        <pose>-3.4 -8.2196 0.86 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.25 0.1 1.12</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="back_partial_wall_lower_left">
+        <pose>-3.36 -8.2196 0.25 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.3 0.1 0.5</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="back_partial_wall_lower_right">
+        <pose>-4.0 -8.2196 0.25 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.3 0.1 0.5</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="back_partial_wall_upper_right">
+        <pose>-3.76 -8.2196 1.7 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.54 0.1 0.6</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="back_partial_wall_upper_left">
+        <pose>-2.95 -8.2196 1.7 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.54 0.1 0.6</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="back_partial_wall_upper_mid">
+        <pose>-3.36 -8.2196 1.84 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.3 0.1 0.3</size>
+          </box>
+        </geometry>
+      </collision>
+
+
+      <visual name="blue_passage_border_long">
+        <pose>2.72665 4.5882 0.0127 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.0762 7.3025 0.0254</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 0 1 1</ambient>
+          <diffuse>0 0 1 1</diffuse>
+        </material>
+      </visual>
+      <collision name="blue_passage_border_long">
+        <pose>2.72665 4.5882 0.0127 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.0762 7.3025 0.0254</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="blue_passage_border_short">
+        <pose>3.37435 0.97352 0.0127 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.37165 .0762 0.0254</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 0 1 1</ambient>
+          <diffuse>0 0 1 1</diffuse>
+        </material>
+      </visual>
+      <collision name="blue_passage_border_short">
+        <pose>3.37435 0.97352 0.0127 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.37165 .0762 0.0254</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="blue_divider_1">
+        <pose>2.63052 2.80648 0.31114 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.009525 1.2192 0.6096</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="blue_divider_1">
+        <pose>2.63052 2.80648 0.31114 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.009525 1.2192 0.6096</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="blue_divider_2">
+        <pose>1.28432 2.80648 0.31114 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.009525 1.2192 0.6096</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="blue_divider_2">
+        <pose>1.28432 2.80648 0.31114 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.009525 1.2192 0.6096</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="blue_divider_3">
+        <pose>-0.06189 2.80648 0.31114 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.009525 1.2192 0.6096</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="blue_divider_3">
+        <pose>-0.06189 2.80648 0.31114 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.009525 1.2192 0.6096</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="blue_divider_4">
+        <pose>-1.40809 2.80648 0.31114 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.009525 1.2192 0.6096</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="blue_divider_4">
+        <pose>-1.40809 2.80648 0.31114 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.009525 1.2192 0.6096</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="blue_divider_5">
+        <pose>-2.75428 2.80648 0.31114 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.009525 1.2192 0.6096</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="blue_divider_5">
+        <pose>-2.75428 2.80648 0.31114 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.009525 1.2192 0.6096</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="blue_barrier_ramp_up">
+        <pose>-0.73340 3.22301 0.05063 -0.248865603 0 0</pose>
+        <geometry>
+          <box>
+            <size>6.71817 0.3048 0.00635</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="blue_barrier_ramp_up">
+        <pose>-0.73340 3.22301 0.05063 -0.248865603 0 0</pose>
+        <geometry>
+          <box>
+            <size>6.71817 0.3048 0.00635</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="blue_barrier_ramp_down">
+        <pose>-0.73340 2.31802 0.05063 0.248865603 0 0</pose>
+        <geometry>
+          <box>
+            <size>6.71817 0.3048 0.00635</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="blue_barrier_ramp_down">
+        <pose>-0.73340 2.31802 0.05063 0.248865603 0 0</pose>
+        <geometry>
+          <box>
+            <size>6.71817 0.3048 0.00635</size>
+          </box>
+        </geometry>
+      </collision>
+
+
+
+      <visual name="red_passage_border_long">
+        <pose>-2.72730 -4.58839 0.0127 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.0762 7.3025 0.0254</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+      </visual>
+      <collision name="red_passage_border_long">
+        <pose>-2.72730 -4.58839 0.0127 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.0762 7.3025 0.0254</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="red_passage_border_short">
+        <pose>-3.375 -0.97372 0.0127 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.37165 .0762 0.0254</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+      </visual>
+      <collision name="red_passage_border_short">
+        <pose>-3.375 -0.97372 0.0127 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.37165 .0762 0.0254</size>
+          </box>
+        </geometry>
+      </collision>
+
+
+      <visual name="red_divider_1">
+        <pose>-2.63117 -2.76442 0.31114 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.009525 1.2192 0.6096</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="red_divider_1">
+        <pose>-2.63117 -2.72845 0.31114 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.009525 1.2192 0.6096</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="red_divider_2">
+        <pose>-1.28496 -2.76442 0.31114 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.009525 1.2192 0.6096</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="red_divider_2">
+        <pose>-1.28496 -2.76442 0.31114 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.009525 1.2192 0.6096</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="red_divider_3">
+        <pose>0.06124 -2.76442 0.31114 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.009525 1.2192 0.6096</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="red_divider_3">
+        <pose>0.06124 -2.76442 0.31114 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.009525 1.2192 0.6096</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="red_divider_4">
+        <pose>1.40744 -2.76442 0.31114 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.009525 1.2192 0.6096</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="red_divider_4">
+        <pose>1.40744 -2.76442 0.31114 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.009525 1.2192 0.6096</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="red_divider_5">
+        <pose>2.75363 -2.76442 0.31114 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.009525 1.2192 0.6096</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="red_divider_5">
+        <pose>2.75363 -2.76442 0.31114 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.009525 1.2192 0.6096</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="red_barrier_ramp_down">
+        <pose>0.73275 -2.31261 0.05063 -0.248865603 0 0</pose>
+        <geometry>
+          <box>
+            <size>6.71817 0.3048 0.00635</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="red_barrier_ramp_down">
+        <pose>0.73275 -2.31261 0.05063 -0.248865603 0 0</pose>
+        <geometry>
+          <box>
+            <size>6.71817 0.3048 0.00635</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="red_barrier_ramp_up">
+        <pose>0.73275 -3.21691 0.05063 0.248865603 0 0</pose>
+        <geometry>
+          <box>
+            <size>6.71817 0.3048 0.00635</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="red_barrier_ramp_up">
+        <pose>0.73275 -3.21691 0.05063 0.248865603 0 0</pose>
+        <geometry>
+          <box>
+            <size>6.71817 0.3048 0.00635</size>
+          </box>
+        </geometry>
+      </collision>
+
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,262 @@
+<?xml version='1.0'?>
+<sdf version='1.5'>
+  
+  <model name='submarine_sinking'>
+    <pose>0 0 1.5 1.5707963267948966 0 0</pose>
+    <link name='body'>
+      <pose>0 0 -1.07935 0 0 0</pose>
+      <inertial>
+        <mass>1102.6990214100174</mass>
+        <inertia>
+          <ixx>645.9978433760353</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>645.9978433760353</iyy>
+          <iyz>0</iyz>
+          <izz>49.62145596345078</izz>
+        </inertia>
+      </inertial>
+
+      
+
+      <visual name='body_visual'>
+        <geometry>
+              <cylinder>
+                <radius>0.3</radius>
+                <length>2.6</length>
+              </cylinder>
+            </geometry>
+        <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Black</name>
+            </script>
+          </material>
+      </visual>
+      <collision name='body_collision'>
+        <geometry>
+              <cylinder>
+                <radius>0.3</radius>
+                <length>2.6</length>
+              </cylinder>
+            </geometry>
+      </collision>
+      
+      <visual name='spacer_visual'>
+        <pose>0 0 1.378546 0 0 0</pose>
+            <geometry>
+              <cylinder>
+                <radius>0.0933402</radius>
+                <length>0.127211</length>
+              </cylinder>
+            </geometry>
+        <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Black</name>
+            </script>
+          </material>
+      </visual>
+    </link>
+
+    <link name='propeller'>
+      <pose>0 0 0.3455 3.14159 0 0</pose>
+      <inertial>
+        <mass>25.2312297</mass>
+        <inertia>
+          <ixx>0.5319073381913637</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.5319073381913637</iyy>
+          <iyz>0</iyz>
+          <izz>1.0513012375</izz>
+        </inertia>
+      </inertial>
+
+    
+      <visual name=blade1_visual>
+        <pose>0.3433402 0.0 0 0.7853981633974483 0 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.154178 0.05455</size>
+            </box>
+          </geometry>
+        <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Black</name>
+            </script>
+          </material>
+      </visual>
+      <collision name=blade1_collision>
+        <pose>0.3433402 0.0 0 0.7853981633974483 0 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.154178 0.05455</size>
+            </box>
+          </geometry>
+      </collision>
+    
+      <visual name=blade2_visual>
+        <pose>0.0 0.3433402 0 0.7853981633974483 0 1.5707963267948966</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.154178 0.05455</size>
+            </box>
+          </geometry>
+        <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Black</name>
+            </script>
+          </material>
+      </visual>
+      <collision name=blade2_collision>
+        <pose>0.0 0.3433402 0 0.7853981633974483 0 1.5707963267948966</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.154178 0.05455</size>
+            </box>
+          </geometry>
+      </collision>
+    
+      <visual name=blade3_visual>
+        <pose>-0.3433402 -0.0 0 -0.7853981633974483 0 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.154178 0.05455</size>
+            </box>
+          </geometry>
+        <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Black</name>
+            </script>
+          </material>
+      </visual>
+      <collision name=blade3_collision>
+        <pose>-0.3433402 -0.0 0 -0.7853981633974483 0 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.154178 0.05455</size>
+            </box>
+          </geometry>
+      </collision>
+    
+      <visual name=blade4_visual>
+        <pose>-0.0 -0.3433402 0 -0.7853981633974483 0 1.5707963267948966</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.154178 0.05455</size>
+            </box>
+          </geometry>
+        <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Black</name>
+            </script>
+          </material>
+      </visual>
+      <collision name=blade4_collision>
+        <pose>-0.0 -0.3433402 0 -0.7853981633974483 0 1.5707963267948966</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.154178 0.05455</size>
+            </box>
+          </geometry>
+      </collision>
+    
+    </link>
+
+    <joint name='spinning_joint' type='revolute'>
+      <parent>body</parent>
+      <child>propeller</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <limit>
+          <lower>-1e+12</lower>
+          <upper>1e+12</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <allow_auto_disable>1</allow_auto_disable>
+
+    
+
+    <!-- Commented out because it behaves poorly -->
+    <!-- 
+    <plugin name="submarine_propeller_1" filename="libLiftDragPlugin.so">
+      <air_density>999.1026</air_density>
+      <cla>1.2535816618911175</cla>
+      <cla_stall>-1.4326647564469914</cla_stall>
+      <cda>0</cda>
+      <cda_stall>1.4326647564469914</cda_stall>
+      <alpha_stall>1.396</alpha_stall>
+      <a0>0</a0>
+
+      <area>0.22554881980000002</area>
+      <upward>0 -0.7071067811865476 -0.7071067811865475</upward>
+      <forward>0 -0.7071067811865475 0.7071067811865476</forward>
+      <link_name>propeller</link_name>
+      <cp>0.35 0 0</cp>
+    </plugin>
+
+    <plugin name="submarine_propeller_2" filename="libLiftDragPlugin.so">
+      <air_density>999.1026</air_density>
+      <cla>1.2535816618911175</cla>
+      <cla_stall>-1.4326647564469914</cla_stall>
+      <cda>0</cda>
+      <cda_stall>1.4326647564469914</cda_stall>
+      <alpha_stall>1.396</alpha_stall>
+      <a0>0</a0>
+
+      <area>0.22554881980000002</area>
+      <upward>-0.7071067811865475 0 -0.7071067811865476</upward>
+      <forward>-0.7071067811865476 0 0.7071067811865475</forward>
+      <link_name>propeller</link_name>
+      <cp>0 -0.35 0</cp>
+    </plugin>
+
+    <plugin name="submarine_propeller_3" filename="libLiftDragPlugin.so">
+      <air_density>999.1026</air_density>
+      <cla>1.2535816618911175</cla>
+      <cla_stall>-1.4326647564469914</cla_stall>
+      <cda>0</cda>
+      <cda_stall>1.4326647564469914</cda_stall>
+      <alpha_stall>1.396</alpha_stall>
+      <a0>0</a0>
+
+      <area>0.22554881980000002</area>
+      <upward>0 0.7071067811865475 -0.7071067811865476</upward>
+      <forward>0 -0.7071067811865476 -0.7071067811865475</forward>
+      <link_name>propeller</link_name>
+      <cp>-0.35 0 0</cp>
+    </plugin>
+
+    <plugin name="submarine_propeller_4" filename="libLiftDragPlugin.so">
+      <air_density>999.1026</air_density>
+      <cla>1.2535816618911175</cla>
+      <cla_stall>-1.4326647564469914</cla_stall>
+      <cda>0</cda>
+      <cda_stall>1.4326647564469914</cda_stall>
+      <alpha_stall>1.396</alpha_stall>
+      <a0>0</a0>
+
+      <area>0.22554881980000002</area>
+      <upward>0.7071067811865476 0 -0.7071067811865475</upward>
+      <forward>0.7071067811865475 0 0.7071067811865476</forward>
+      <link_name>propeller</link_name>
+      <cp>0 0.35 0</cp>
+    </plugin>
+    -->
+
+    <plugin name="buoyancy" filename="libBuoyancyPlugin.so">
+      <fluid_density>999.1026</fluid_density>
+    </plugin>
+
+  </model>
+</sdf>

@@ -1,0 +1,670 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="cessna_c172">
+    <pose>0 0 0.495 0 0 0</pose>
+    <!-- Body of the plane -->
+    <link name="body">
+      <inertial>
+        <mass>680.389</mass>
+        <inertia>
+          <ixx>1285.315427874</ixx>
+          <ixy>0.0</ixy>
+          <iyy>1824.930976707</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>2666.893931043</izz>
+        </inertia>
+        <pose>-0.0414 0 0.9271 0 0 0</pose>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/body.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/body.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <!-- Debug - Centers of pressure -->
+      <!--<visual name="cp_left_wing">
+        <pose>-1 2.205 1.5 0 0 0</pose>
+        <geometry>
+          <sphere><radius>0.1</radius></sphere>
+        </geometry>
+      </visual>
+
+      <visual name="cp_right_wing">
+        <pose>-1 -2.205 1.5 0 0 0</pose>
+        <geometry>
+          <sphere><radius>0.1</radius></sphere>
+        </geometry>
+      </visual>
+
+      <visual name="cp_elevator">
+        <pose>-5.45 0 0.55 0 0 0</pose>
+        <geometry>
+          <sphere><radius>0.1</radius></sphere>
+        </geometry>
+      </visual>
+
+      <visual name="cp_rudder">
+        <pose>-6 0 1.55 0 0 0</pose>
+        <geometry>
+          <sphere><radius>0.1</radius></sphere>
+        </geometry>
+      </visual>-->
+
+    </link>
+
+    <link name="left_aileron">
+      <inertial>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.8434</ixx>
+          <ixy>0.0</ixy>
+          <iyy>0.0119</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>0.855</izz>
+        </inertia>
+        <pose>-1.65 3.7 1.5 0.05 0 -0.12</pose>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/left_aileron.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/left_aileron.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="left_flap">
+      <inertial>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.6747</ixx>
+          <ixy>0.0</ixy>
+          <iyy>0.0242</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>0.6962</izz>
+        </inertia>
+        <pose>-1.8 1.55 1.43 0.02 0 0</pose>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/left_flap.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/left_flap.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="right_aileron">
+      <inertial>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.8434</ixx>
+          <ixy>0.0</ixy>
+          <iyy>0.0119</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>0.855</izz>
+        </inertia>
+        <pose>-1.65 -3.7 1.5 -0.05 0 0.12</pose>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/right_aileron.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/right_aileron.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="right_flap">
+      <inertial>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.6747</ixx>
+          <ixy>0.0</ixy>
+          <iyy>0.0242</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>0.6962</izz>
+        </inertia>
+        <pose>-1.8 -1.55 1.43 -0.02 0 0</pose>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/right_flap.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/right_flap.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="elevators">
+      <inertial>
+        <mass>2</mass>
+        <inertia>
+          <ixx>1.5008</ixx>
+          <ixy>0.0</ixy>
+          <iyy>0.0274</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>1.5266</izz>
+        </inertia>
+        <pose>-5.75 0 0.57 0 0 0</pose>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/elevators.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/elevators.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="rudder">
+      <inertial>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.4708</ixx>
+          <ixy>0.0</ixy>
+          <iyy>0.5208</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>0.0508</izz>
+        </inertia>
+        <pose>-6.1 0 1.3 0 -0.35 0</pose>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/rudder.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/rudder.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="propeller">
+      <pose>1.79 0 0.855 0 0 0</pose>
+      <inertial>
+        <mass>18.37</mass>
+        <inertia>
+          <ixx>7.5067</ixx>
+          <ixy>0</ixy>
+          <iyy>7.5150</iyy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          <izz>0.068275</izz>
+        </inertia>
+        <pose>-0.35 0 0 0 0 0</pose>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <!-- In case a simple shape is preferred -->
+          <!--box><size>0.05 0.14 2.21</size></box>-->
+          <mesh>
+            <uri>model://cessna/meshes/cessna_prop.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/cessna_prop.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="front_wheel">
+      <inertial>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.01786</ixx>
+          <ixy>0</ixy>
+          <iyy>0.01786</iyy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          <izz>0.0324</izz>
+        </inertia>
+        <pose>0.712 0 -0.313 1.570795 0 0</pose>
+      </inertial>
+      <collision name="collision">
+        <pose>0.712 0 -0.313 1.570795 0 0</pose>
+        <geometry>
+          <cylinder>
+              <radius>0.18</radius>
+              <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.3</mu>
+              <mu2>0.3</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/cessna_front_wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="rear_left_wheel">
+      <inertial>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.035516</ixx>
+          <ixy>0</ixy>
+          <iyy>0.035516</iyy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          <izz>0.0625</izz>
+        </inertia>
+        <pose>-1 1.27 -0.25 1.570795 0 0</pose>
+      </inertial>
+      <collision name="collision">
+        <pose>-1 1.27 -0.25 1.570795 0 0</pose>
+        <geometry>
+          <cylinder>
+              <radius>0.25</radius>
+              <length>0.16</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.3</mu>
+              <mu2>0.3</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/cessna_rear_left_wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="rear_right_wheel">
+      <inertial>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.035516</ixx>
+          <ixy>0</ixy>
+          <iyy>0.035516</iyy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          <izz>0.0625</izz>
+        </inertia>
+        <pose>-1 -1.27 -0.25 1.570795 0 0</pose>
+      </inertial>
+      <collision name="collision">
+        <pose>-1 -1.27 -0.25 1.570795 0 0</pose>
+        <geometry>
+          <cylinder>
+              <radius>0.25</radius>
+              <length>0.16</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.3</mu>
+              <mu2>0.3</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://cessna/meshes/cessna_rear_right_wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Joint to move the left flap -->
+    <joint name='left_flap_joint' type='revolute'>
+      <parent>body</parent>
+      <child>left_flap</child>
+      <pose>-1.6 1.55 1.43 0.02 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <!-- -30/+30 deg. -->
+          <lower>-0.53</lower>
+          <upper>0.53</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1.000</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <!-- Joint to move the left aileron -->
+    <joint name='left_aileron_joint' type='revolute'>
+      <parent>body</parent>
+      <child>left_aileron</child>
+      <pose>-1.45 3.7 1.5 0.05 0 -0.12</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <!-- -30/+30 deg. -->
+          <lower>-0.53</lower>
+          <upper>0.53</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1.000</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <!-- Joint to move the right flap -->
+    <joint name='right_flap_joint' type='revolute'>
+      <parent>body</parent>
+      <child>right_flap</child>
+      <pose>-1.6 -1.55 1.43 -0.02 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <!-- -30/+30 deg. -->
+          <lower>-0.53</lower>
+          <upper>0.53</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1.000</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <!-- Joint to move the right aileron -->
+    <joint name='right_aileron_joint' type='revolute'>
+      <parent>body</parent>
+      <child>right_aileron</child>
+      <pose>-1.45 -3.7 1.5 -0.05 0 0.12</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <!-- -30/+30 deg. -->
+          <lower>-0.53</lower>
+          <upper>0.53</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1.000</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <!-- Joint to move the elevators -->
+    <joint name='elevators_joint' type='revolute'>
+      <parent>body</parent>
+      <child>elevators</child>
+      <pose>-5.55 0 0.57 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <!-- -30/+30 deg. -->
+          <lower>-0.53</lower>
+          <upper>0.53</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1.000</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <!-- Joint to move the rudder -->
+    <joint name='rudder_joint' type='revolute'>
+      <parent>body</parent>
+      <child>rudder</child>
+      <pose>-5.9 0 1.3 0 -0.35 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <!-- -30/+30 deg. -->
+          <lower>-0.53</lower>
+          <upper>0.53</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1.000</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <!-- Joint to make the propeller spin -->
+    <joint name='propeller_joint' type='revolute'>
+      <parent>body</parent>
+      <child>propeller</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+12</lower>
+          <upper>1e+12</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <!-- Joint to make the front wheel spin -->
+    <joint name='front_wheel_joint' type='revolute'>
+      <parent>body</parent>
+      <child>front_wheel</child>
+      <pose>0.712 0 -0.313 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+12</lower>
+          <upper>1e+12</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.010</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <!-- Joint to make the rear left wheel spin -->
+    <joint name='rear_left_wheel_joint' type='revolute'>
+      <parent>body</parent>
+      <child>rear_left_wheel</child>
+      <pose>-1 -1.27 -0.25 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+12</lower>
+          <upper>1e+12</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.010</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <!-- Joint to make the rear right wheel spin -->
+    <joint name='rear_right_wheel_joint' type='revolute'>
+      <parent>body</parent>
+      <child>rear_right_wheel</child>
+      <pose>-1 1.27 -0.25 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+12</lower>
+          <upper>1e+12</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.010</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+  </model>
+</sdf>

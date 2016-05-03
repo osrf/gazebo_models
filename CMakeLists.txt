@@ -27,6 +27,7 @@ camera
 cart_front_steer
 cart_rigid_suspension
 cart_soft_suspension
+cessna
 cinder_block
 cinder_block_2
 cinder_block_wide
@@ -37,6 +38,7 @@ cordless_drill
 create
 cricket_ball
 cube_20k
+depth_camera
 dining_room
 door_handle
 double_pendulum_with_base
@@ -75,7 +77,19 @@ fire_hose_long
 fire_hose_long_curled
 fire_hydrant
 first_2015_trash_can
+follower_vehicle
 frc_field_2015
+frc2016_ball
+frc2016_chevaldefrise
+frc2016_drawbridge
+frc2016_field
+frc2016_lowbar
+frc2016_moat
+frc2016_portcullis
+frc2016_ramparts
+frc2016_rockwall
+frc2016_roughterrain
+frc2016_sallyport
 gas_station
 grey_tote
 grey_wall
@@ -117,6 +131,7 @@ nist_maze_wall_triple_holes_120
 nist_simple_ramp_120
 nist_stairs_120
 office_building
+osrf_elevator
 pioneer2dx
 pioneer3at
 plastic_cup
@@ -148,6 +163,9 @@ starting_pen
 stereo_camera
 stone_10_2_5_1cm
 stop_sign
+submarine
+submarine_buoyant
+submarine_sinking
 sun
 table
 table_marble
@@ -158,6 +176,7 @@ tube_9_5mm
 turtlebot
 ur10
 utility_cart
+vrc_driving_terrain
 washer
 willowgarage
 wood_block_10_2_1cm
@@ -208,3 +227,4 @@ message (STATUS "Install path: ${CMAKE_INSTALL_PREFIX_ABSOLUTE}/models")
 
 # This must always be last!
 include(CPack)
+

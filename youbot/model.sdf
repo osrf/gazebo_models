@@ -450,15 +450,6 @@
           </mesh>
         </geometry>
         <surface>
-          <friction>
-            <ode>
-              <mu>0</mu>
-              <mu2>0</mu2>
-              <fdir1>0 0 0</fdir1>
-              <slip1>0</slip1>
-              <slip2>0</slip2>
-            </ode>
-          </friction>
           <bounce>
             <restitution_coefficient>0</restitution_coefficient>
             <threshold>0</threshold>
@@ -576,15 +567,6 @@
           </mesh>
         </geometry>
         <surface>
-          <friction>
-            <ode>
-              <mu>0</mu>
-              <mu2>0</mu2>
-              <fdir1>0 0 0</fdir1>
-              <slip1>0</slip1>
-              <slip2>0</slip2>
-            </ode>
-          </friction>
           <bounce>
             <restitution_coefficient>0</restitution_coefficient>
             <threshold>0</threshold>
@@ -636,15 +618,6 @@
           </mesh>
         </geometry>
         <surface>
-          <friction>
-            <ode>
-              <mu>0</mu>
-              <mu2>0</mu2>
-              <fdir1>0 0 0</fdir1>
-              <slip1>0</slip1>
-              <slip2>0</slip2>
-            </ode>
-          </friction>
           <bounce>
             <restitution_coefficient>0</restitution_coefficient>
             <threshold>0</threshold>
@@ -696,15 +669,6 @@
           </mesh>
         </geometry>
         <surface>
-          <friction>
-            <ode>
-              <mu>0</mu>
-              <mu2>0</mu2>
-              <fdir1>0 0 0</fdir1>
-              <slip1>0</slip1>
-              <slip2>0</slip2>
-            </ode>
-          </friction>
           <bounce>
             <restitution_coefficient>0</restitution_coefficient>
             <threshold>0</threshold>
@@ -796,15 +760,6 @@
           </cylinder>
         </geometry>
         <surface>
-          <friction>
-            <ode>
-              <mu>0</mu>
-              <mu2>0</mu2>
-              <fdir1>0 0 0</fdir1>
-              <slip1>0</slip1>
-              <slip2>0</slip2>
-            </ode>
-          </friction>
           <bounce>
             <restitution_coefficient>0</restitution_coefficient>
             <threshold>0</threshold>
@@ -881,15 +836,6 @@
           </cylinder>
         </geometry>
         <surface>
-          <friction>
-            <ode>
-              <mu>0</mu>
-              <mu2>0</mu2>
-              <fdir1>0 0 0</fdir1>
-              <slip1>0</slip1>
-              <slip2>0</slip2>
-            </ode>
-          </friction>
           <bounce>
             <restitution_coefficient>0</restitution_coefficient>
             <threshold>0</threshold>
@@ -966,15 +912,6 @@
           </cylinder>
         </geometry>
         <surface>
-          <friction>
-            <ode>
-              <mu>0</mu>
-              <mu2>0</mu2>
-              <fdir1>0 0 0</fdir1>
-              <slip1>0</slip1>
-              <slip2>0</slip2>
-            </ode>
-          </friction>
           <bounce>
             <restitution_coefficient>0</restitution_coefficient>
             <threshold>0</threshold>
@@ -1051,15 +988,6 @@
           </cylinder>
         </geometry>
         <surface>
-          <friction>
-            <ode>
-              <mu>0</mu>
-              <mu2>0</mu2>
-              <fdir1>0 0 0</fdir1>
-              <slip1>0</slip1>
-              <slip2>0</slip2>
-            </ode>
-          </friction>
           <bounce>
             <restitution_coefficient>0</restitution_coefficient>
             <threshold>0</threshold>
@@ -1117,16 +1045,7 @@
           </mesh>
         </geometry>
         <surface>
-          <friction>
-            <ode>
-              <mu>0</mu>
-              <mu2>0</mu2>
-              <fdir1>0 0 0</fdir1>
-              <slip1>0</slip1>
-              <slip2>0</slip2>
-            </ode>
-          </friction>
-          <bounce>
+        <bounce>
             <restitution_coefficient>0</restitution_coefficient>
             <threshold>0</threshold>
           </bounce>
@@ -1205,8 +1124,7 @@
         <limit>
           <lower>0</lower>
           <upper>5.899213</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
+          <effort>9.5</effort>
         </limit>
         <xyz>0 0 -1</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
@@ -1224,8 +1142,8 @@
         <limit>
           <lower>0</lower>
           <upper>2.705260</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
+          <effort>9.5</effort>
+          <velocity>-1</velocity>
         </limit>
         <xyz>-0.173648 -0.984808 0</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
@@ -1243,8 +1161,8 @@
         <limit>
           <lower>-5.183628</lower>
           <upper>0</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
+          <effort>6.0</effort>
+          <velocity>-1</velocity>
         </limit>
         <xyz>-0.173648 -0.984808 0</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
@@ -1262,8 +1180,8 @@
         <limit>
           <lower>0</lower>
           <upper>3.577925</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
+          <effort>2.0</effort>
+          <velocity>-1</velocity>
         </limit>
         <xyz>-0.173648 -0.984808 0</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
@@ -1281,8 +1199,8 @@
         <limit>
           <lower>0</lower>
           <upper>5.846853</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
+          <effort>1.0</effort>
+          <velocity>-1</velocity>
         </limit>
         <xyz>-0.360933 0.063642 -0.930418</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
@@ -1319,8 +1237,8 @@
         <limit>
           <lower>0</lower>
           <upper>0.011500</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
+          <effort>1.0</effort>
+          <velocity>-1</velocity>
         </limit>
         <xyz>0.367852 0.926495 -0.079325</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
@@ -1338,8 +1256,8 @@
         <limit>
           <lower>0</lower>
           <upper>0.011500</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
+          <effort>1.0</effort>
+          <velocity>-1</velocity>
         </limit>
         <xyz>-0.367852 -0.926495 0.079325</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
@@ -1374,10 +1292,7 @@
           <friction>0</friction>
         </dynamics>
         <limit>
-          <lower>-10000000000000000.000000</lower>
-          <upper>10000000000000000.000000</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
+          <effort>1.0</effort>
         </limit>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
@@ -1393,10 +1308,7 @@
           <friction>0</friction>
         </dynamics>
         <limit>
-          <lower>-10000000000000000.000000</lower>
-          <upper>10000000000000000.000000</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
+          <effort>1.0</effort>
         </limit>
         <xyz>0 1.000000 0</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
@@ -1412,10 +1324,7 @@
           <friction>0</friction>
         </dynamics>
         <limit>
-          <lower>-10000000000000000.000000</lower>
-          <upper>10000000000000000.000000</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
+          <effort>1.0</effort>
         </limit>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
@@ -1431,10 +1340,7 @@
           <friction>0</friction>
         </dynamics>
         <limit>
-          <lower>-10000000000000000.000000</lower>
-          <upper>10000000000000000.000000</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
+          <effort>1.0</effort>
         </limit>
         <xyz>0 1.000000 0</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
@@ -1450,10 +1356,7 @@
           <friction>0</friction>
         </dynamics>
         <limit>
-          <lower>-10000000000000000.000000</lower>
-          <upper>10000000000000000.000000</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
+          <effort>1.0</effort>
         </limit>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
@@ -1469,10 +1372,7 @@
           <friction>0</friction>
         </dynamics>
         <limit>
-          <lower>-10000000000000000.000000</lower>
-          <upper>10000000000000000.000000</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
+          <effort>1.0</effort>
         </limit>
         <xyz>0 1.000000 0</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
@@ -1488,10 +1388,7 @@
           <friction>0</friction>
         </dynamics>
         <limit>
-          <lower>-10000000000000000.000000</lower>
-          <upper>10000000000000000.000000</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
+          <effort>1.0</effort>
         </limit>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
@@ -1507,10 +1404,7 @@
           <friction>0</friction>
         </dynamics>
         <limit>
-          <lower>-10000000000000000.000000</lower>
-          <upper>10000000000000000.000000</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
+          <effort>1.0</effort>
         </limit>
         <xyz>0 1.000000 0</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
