@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
   <model name="frc2016_ball">
+    <pose>0 0 0.127 0 0 0</pose>
     <link name="link">
       <inertial>
         <mass>0.213</mass>
