@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="textured_shapes">
+    <pose>0 0 0.5 0 0 0</pose>
+    <link name="box">
+      <pose>0 -1.5 0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>1 1 1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>1 1 1</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://textured_shapes/materials/scripts</uri>
+            <uri>model://textured_shapes/materials/textures</uri>
+            <name>TexturedShape/Squares</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="sphere">
+      <collision name="collision">
+        <geometry>
+          <sphere>
+            <radius>0.5</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <sphere>
+            <radius>0.5</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://textured_shapes/materials/scripts</uri>
+            <uri>model://textured_shapes/materials/textures</uri>
+            <name>TexturedShape/Squares</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name="cylinder">
+      <pose>0 1.5 0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.5</radius>
+            <length>1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.5</radius>
+            <length>1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://textured_shapes/materials/scripts</uri>
+            <uri>model://textured_shapes/materials/textures</uri>
+            <name>TexturedShape/Squares</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

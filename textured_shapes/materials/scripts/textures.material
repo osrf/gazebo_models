@@ -1,0 +1,15 @@
+material TexturedShape/Squares
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture squares.png
+      }
+
+    }
+  }
+}
+
