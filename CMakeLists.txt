@@ -16,8 +16,10 @@ set (dirs
 asphalt_plane
 ball_bearing
 beer
+blocks
 bookshelf
 bowl
+bowling_cube
 breakable_test
 brick_box_3x1x3
 cabinet
