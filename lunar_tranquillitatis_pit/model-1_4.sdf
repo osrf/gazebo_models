@@ -34,7 +34,7 @@
         <geometry>
           <heightmap>
             <texture>
-              <diffuse>file://media/materials/textures/NAC_DTM_TRANQPIT1_M152662021_50CM_1024x1024+31613+5622.png</diffuse>
+              <diffuse>model://lunar_tranquillitatis_pit/media/materials/textures/NAC_DTM_TRANQPIT1_M152662021_50CM_1024x1024+31613+5622.png</diffuse>
               <normal>file://media/materials/textures/flat_normal.png</normal>
               <size>514</size>
             </texture>
