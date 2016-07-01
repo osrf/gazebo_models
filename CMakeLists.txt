@@ -113,6 +113,7 @@ ladder_75deg_0rails
 ladder_75deg_1rails
 ladder_75deg_2rails
 lamp_post
+lunar_tranquillitatis_pit
 mailbox
 marble_1_5cm
 metal_peg

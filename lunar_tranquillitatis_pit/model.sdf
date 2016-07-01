@@ -1,0 +1,50 @@
+
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="lunar_tranquillitatis_pit">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <surface>
+          <friction>
+          <ode>
+            <mu>0.2</mu>
+          </ode>
+          </friction>
+          <contact>
+          <ode>
+            <soft_cfm>1</soft_cfm>
+            <kp>100000</kp>
+            <kd>1</kd>
+            <max_vel>0.000001</max_vel>
+            <min_depth>0.02</min_depth>
+          </ode>
+          </contact>
+        </surface>
+        <geometry>
+          <heightmap>
+            <uri>model://lunar_tranquillitatis_pit/media/materials/textures/NAC_DTM_TRANQPIT1_E080N0330_257x257+7903+1406.png</uri>
+            <size>514 514 119</size>
+            <pos>0 0 -110</pos>
+          </heightmap>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <heightmap>
+            <texture>
+              <diffuse>model://lunar_tranquillitatis_pit/media/materials/textures/NAC_DTM_TRANQPIT1_M152662021_50CM_1024x1024+31613+5622.png</diffuse>
+              <normal>file://media/materials/textures/flat_normal.png</normal>
+              <size>514</size>
+            </texture>
+            <uri>model://lunar_tranquillitatis_pit/media/materials/textures/NAC_DTM_TRANQPIT1_E080N0330_257x257+7903+1406.png</uri>
+            <size>514 514 119</size>
+            <pos>0 0 -110</pos>
+          </heightmap>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
+        
