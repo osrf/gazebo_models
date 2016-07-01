@@ -13,6 +13,7 @@ string (TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
 exec_program(date ARGS -u +%Y-%m-%-dT%H:%M:%S OUTPUT_VARIABLE CURRENT_DATE)
 
 set (dirs
+apollo15_landing_site_1000x1000
 asphalt_plane
 ball_bearing
 beer
