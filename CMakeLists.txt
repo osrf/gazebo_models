@@ -14,6 +14,7 @@ exec_program(date ARGS -u +%Y-%m-%-dT%H:%M:%S OUTPUT_VARIABLE CURRENT_DATE)
 
 set (dirs
 asphalt_plane
+arrow
 ball_bearing
 beer
 bookshelf
@@ -71,11 +72,13 @@ drc_practice_white_jersey_barrier
 drc_practice_wood_slats
 drc_practice_yellow_parking_block
 dumpster
+endpad
 fast_food
 fire_hose_long
 fire_hose_long_curled
 fire_hydrant
 first_2015_trash_can
+flight_heightmap
 follower_vehicle
 frc_field_2015
 frc2016_ball
@@ -90,16 +93,19 @@ frc2016_rockwall
 frc2016_roughterrain
 frc2016_sallyport
 gas_station
+gimbal_small_2d
 grey_tote
 grey_wall
 ground_plane
 hammer
 hinged_door
 hokuyo
+hoop
 house_1
 house_2
 house_3
 husky
+iris
 irobot_hand
 iss
 iss_half
@@ -128,6 +134,15 @@ nist_maze_wall_240
 nist_maze_wall_triple_holes_120
 nist_simple_ramp_120
 nist_stairs_120
+number1
+number2
+number3
+number4
+number5
+number6
+number7
+number8
+number9
 office_building
 osrf_elevator
 pioneer2dx
@@ -158,6 +173,7 @@ simple_gripper
 speed_limit_sign
 standpipe
 starting_pen
+startpad
 stereo_camera
 stone_10_2_5_1cm
 stop_sign

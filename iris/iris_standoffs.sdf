@@ -35,7 +35,7 @@
       -->
 
 
-      
+
       <velocity_decay>
         <linear>0.0</linear>
         <angular>0.0</angular>
@@ -77,7 +77,7 @@
       <visual name='base_link_visual'>
         <geometry>
           <mesh>
-            <uri>model://iris_test/meshes/iris.dae</uri>
+            <uri>model://iris/meshes/iris.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -393,7 +393,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://iris_test/meshes/iris_prop_ccw.dae</uri>
+            <uri>model://iris/meshes/iris_prop_ccw.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -464,7 +464,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://iris_test/meshes/iris_prop_ccw.dae</uri>
+            <uri>model://iris/meshes/iris_prop_ccw.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -535,7 +535,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://iris_test/meshes/iris_prop_cw.dae</uri>
+            <uri>model://iris/meshes/iris_prop_cw.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -606,7 +606,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://iris_test/meshes/iris_prop_cw.dae</uri>
+            <uri>model://iris/meshes/iris_prop_cw.dae</uri>
           </mesh>
         </geometry>
         <material>
