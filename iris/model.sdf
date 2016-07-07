@@ -1,5 +1,5 @@
 <?xml version='1.0'?>
-<sdf version='1.5'>
+<sdf version='1.6'>
   <model name='iris'>
     <pose>0 0 0.194923 0 0 0</pose>
     <link name='base_link'>
@@ -33,13 +33,7 @@
         </geometry>
       </visual>
       -->
-
-
       
-      <velocity_decay>
-        <linear>0.0</linear>
-        <angular>0.0</angular>
-      </velocity_decay>
       <inertial>
         <pose>0 0 0.023 0 0 0</pose>
         <mass>1.5</mass>
@@ -77,7 +71,7 @@
       <visual name='base_link_visual'>
         <geometry>
           <mesh>
-            <uri>model://iris_test/meshes/iris.dae</uri>
+            <uri>model://iris/meshes/iris.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -393,7 +387,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://iris_test/meshes/iris_prop_ccw.dae</uri>
+            <uri>model://iris/meshes/iris_prop_ccw.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -464,7 +458,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://iris_test/meshes/iris_prop_ccw.dae</uri>
+            <uri>model://iris/meshes/iris_prop_ccw.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -535,7 +529,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://iris_test/meshes/iris_prop_cw.dae</uri>
+            <uri>model://iris/meshes/iris_prop_cw.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -606,7 +600,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://iris_test/meshes/iris_prop_cw.dae</uri>
+            <uri>model://iris/meshes/iris_prop_cw.dae</uri>
           </mesh>
         </geometry>
         <material>

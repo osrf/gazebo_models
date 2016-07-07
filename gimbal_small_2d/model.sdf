@@ -1,16 +1,10 @@
 <?xml version='1.0'?>
-<sdf version='1.5'>
+<sdf version='1.6'>
   <model name='gimbal_small_2d'>
-
-    <plugin name="gimbal_small_2d" filename="libSmall2dGimbalPlugin.so"/>
-
     <pose>0 0 0.18 0 0 0</pose>
 
     <link name='base_link'>
-      <pose>0 0 0 0 0 0</pose>
-
        <inertial>
-        <pose>0 0 0 0 0 0</pose>
         <mass>0.2</mass>
         <inertia>
           <ixx>0.001</ixx>
@@ -23,7 +17,6 @@
       </inertial>
 
       <visual name='base_main_viz'>
-        <pose>0 0 0 0 0 0</pose>
         <geometry>
          <mesh>
            <scale>0.001 0.001 0.001</scale>
@@ -36,13 +29,9 @@
             <name>Gazebo/FlatBlack</name>
           </script>
         </material>
-
-        <cast_shadows>1</cast_shadows>
-        <transparency>0</transparency>
       </visual>
 
      <visual name='base_arm_viz'>
-        <pose>0 0 0 0 0 0</pose>
         <geometry>
          <mesh>
            <scale>0.001 0.001 0.001</scale>
@@ -55,9 +44,6 @@
             <name>Gazebo/FlatBlack</name>
           </script>
         </material>
-
-        <cast_shadows>1</cast_shadows>
-        <transparency>0</transparency>
       </visual>
 
       <collision name='base_col'>
@@ -82,10 +68,7 @@
     </link>
 
     <link name='tilt_link'>
-      <!-- <gravity>0</gravity> -->
-      <pose>0 0 0 0 0 0</pose>
        <inertial>
-        <pose>0 0 0 0 0 0</pose>
         <mass>0.01</mass>
         <inertia>
           <ixx>0.0001</ixx>
@@ -110,8 +93,6 @@
             <name>Gazebo/Grey</name>
           </script>
         </material>
-        <cast_shadows>1</cast_shadows>
-        <transparency>0</transparency>
       </visual>
 
       <visual name='camera_viz'>
@@ -149,27 +130,6 @@
         <visualize>true</visualize>
       </sensor>
 
-<!--
-      <collision name='tilt_col'>
-        <pose>0.015 0.01 0 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.05 0.05 0.125</size>
-          </box>
-        </geometry>
-        <surface>
-          <friction>
-            <ode>
-              <mu>1</mu>
-              <mu2>1</mu2>
-              <fdir1>0 0 0</fdir1>
-              <slip1>0</slip1>
-              <slip2>0</slip2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
--->
     </link>
 
     <joint name='tilt_joint' type='revolute'>
@@ -197,7 +157,7 @@
       </axis>
       <pose>0 0 0.02 0 0 0</pose>
     </joint>
-    <static>0</static>
-    <allow_auto_disable>1</allow_auto_disable>
+
+    <plugin name="gimbal_small_2d" filename="libSmall2dGimbalPlugin.so"/>
   </model>
 </sdf>

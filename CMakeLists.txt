@@ -13,11 +13,14 @@ string (TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
 exec_program(date ARGS -u +%Y-%m-%-dT%H:%M:%S OUTPUT_VARIABLE CURRENT_DATE)
 
 set (dirs
+arrow_red
 asphalt_plane
 ball_bearing
 beer
 bookshelf
 bowl
+box_target_red
+box_target_green
 breakable_test
 brick_box_3x1x3
 cabinet
@@ -96,10 +99,12 @@ ground_plane
 hammer
 hinged_door
 hokuyo
+hoop
 house_1
 house_2
 house_3
 husky
+iris
 irobot_hand
 iss
 iss_half
@@ -128,6 +133,15 @@ nist_maze_wall_240
 nist_maze_wall_triple_holes_120
 nist_simple_ramp_120
 nist_stairs_120
+number1
+number2
+number3
+number4
+number5
+number6
+number7
+number8
+number9
 office_building
 osrf_elevator
 pioneer2dx
@@ -175,6 +189,7 @@ utility_cart
 vrc_driving_terrain
 washer
 willowgarage
+winding_valley_heightmap
 wood_block_10_2_1cm
 wood_cube_10cm
 wood_cube_2_5cm

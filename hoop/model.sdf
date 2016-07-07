@@ -1,12 +1,11 @@
 <?xml version='1.0'?>
-<sdf version='1.5'>
+<sdf version='1.6'>
 
   <model name='hoop'>
     <link name='link_3'>
       <pose>0 0 2.979342 0 0 0</pose>
       <inertial>
         <mass>1</mass>
-        <pose>0 0 0 0 -0 0</pose>
         <inertia>
           <ixx>1</ixx>
           <ixy>0</ixy>

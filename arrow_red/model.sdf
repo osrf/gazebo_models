@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
-<sdf version="1.5">
-  <model name="arrow">
+<sdf version="1.6">
+  <model name="arrow_red">
     <pose>0 0 2.0 0 0 0</pose>
     <static>true</static>
     <link name="link">

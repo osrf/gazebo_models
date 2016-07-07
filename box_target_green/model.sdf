@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
-<sdf version="1.5">
-  <model name="endpad">
+<sdf version="1.6">
+  <model name="box_target_green">
     <static>true</static>
     <link name="link">
       <collision name="collision">
@@ -12,10 +12,9 @@
       </collision>
 
       <visual name="visual">
-        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://endpad/meshes/endpad.dae</uri>
+            <uri>model://startpad/meshes/startpad.dae</uri>
           </mesh>
         </geometry>
       </visual>
