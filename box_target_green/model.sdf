@@ -14,7 +14,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://startpad/meshes/startpad.dae</uri>
+            <uri>model://box_target_green/meshes/mesh.dae</uri>
           </mesh>
         </geometry>
       </visual>
