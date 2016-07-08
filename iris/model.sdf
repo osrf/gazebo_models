@@ -5,7 +5,7 @@
     <link name='base_link'>
 
       <visual name='camera_visual'>
-        <pose>0.2 0.0 0.0 0 0 0</pose>
+        <pose>0.2 0 0 0 0 0</pose>
         <transparency>1.0</transparency>
         <geometry>
           <box>
@@ -14,26 +14,6 @@
         </geometry>
       </visual>
 
-      <!--
-      <visual name='timer_visual'>
-        <pose>2.2 0.3 0.1 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>.00001 .00001 .00001</size>
-          </box>
-        </geometry>
-        <plugin filename="libDroneTimerPlugin.so" name="timer"/>
-      </visual>
-      <visual name='timer_visual_background'>
-        <pose>2.3 0.3 0.11 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.01 0.2 0.04</size>
-          </box>
-        </geometry>
-      </visual>
-      -->
-      
       <inertial>
         <pose>0 0 0.023 0 0 0</pose>
         <mass>1.5</mass>
@@ -96,31 +76,6 @@
           </script>
         </material>
       </visual>
-<!--
-      <collision name='front_left_leg_collision'>
-        <pose>0.123 0.22 -0.11 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.005</radius>
-            <length>0.17</length>
-          </cylinder>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <max_vel>0.1</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.0</mu>
-              <mu2>1.0</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
--->
 
       <visual name='front_right_leg_visual'>
         <pose>0.123 -0.22 -0.11 0 0 0</pose>
@@ -137,31 +92,6 @@
           </script>
         </material>
       </visual>
-<!--
-      <collision name='front_right_leg_collision'>
-        <pose>0.123 -0.22 -0.11 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.005</radius>
-            <length>0.17</length>
-          </cylinder>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <max_vel>0.1</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.0</mu>
-              <mu2>1.0</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
--->
 
       <visual name='rear_left_leg_visual'>
         <pose>-0.140 0.21 -0.11 0 0 0</pose>
@@ -178,31 +108,6 @@
           </script>
         </material>
       </visual>
-<!--
-      <collision name='rear_left_leg_collision'>
-        <pose>-0.140 0.21 -0.11 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.005</radius>
-            <length>0.17</length>
-          </cylinder>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <max_vel>0.1</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.0</mu>
-              <mu2>1.0</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
--->
 
       <visual name='rear_right_leg_visual'>
         <pose>-0.140 -0.21 -0.11 0 0 0</pose>
@@ -219,36 +124,10 @@
           </script>
         </material>
       </visual>
-<!--
-      <collision name='rear_right_leg_collision'>
-        <pose>-0.140 -0.21 -0.11 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.005</radius>
-            <length>0.17</length>
-          </cylinder>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <max_vel>0.1</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.0</mu>
-              <mu2>1.0</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
--->
     </link>
+
     <link name='iris/ground_truth/odometry_sensorgt_link'>
-      <pose>0 0 0 0 -0 0</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
         <mass>0.01</mass>
         <inertia>
           <ixx>0.0002</ixx>
@@ -280,7 +159,6 @@
     </joint>
     <link name='iris/imu_link'>
       <inertial>
-        <pose>0 0 0 0 0 0</pose>
         <mass>0.015</mass>
         <inertia>
           <ixx>0.0008</ixx>
@@ -315,45 +193,11 @@
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
-<!--
-    <link name='iris/imugt_link'>
-      <pose>0 0 0 0 -0 0</pose>
-      <inertial>
-        <pose>0 0 0 0 -0 0</pose>
-        <mass>1e-02</mass>
-        <inertia>
-          <ixx>0.0002</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.0002</iyy>
-          <iyz>0</iyz>
-          <izz>0.0002</izz>
-        </inertia>
-      </inertial>
-    </link>
-    <joint name='iris/imugt_joint' type='revolute'>
-      <child>iris/imugt_link</child>
-      <parent>base_link</parent>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>0</upper>
-          <effort>0</effort>
-          <velocity>0</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
--->
+
     <link name='rotor_0'>
-      <pose>0.13 -0.22 0.023 0 -0 0</pose>
+      <pose>0.13 -0.22 0.023 0 0 0</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <mass>0.005</mass>
         <inertia>
           <!-- <ixx>9.75e-07</ixx>-->
@@ -366,34 +210,22 @@
         </inertia>
       </inertial>
       <collision name='rotor_0_collision'>
-        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
             <length>0.005</length>
             <radius>0.1</radius>
           </cylinder>
         </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
       </collision>
       <visual name='rotor_0_visual'>
-        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>1 1 1</scale>
             <uri>model://iris/meshes/iris_prop_ccw.dae</uri>
           </mesh>
         </geometry>
         <material>
           <script>
             <name>Gazebo/Blue</name>
-            <uri>__default__</uri>
           </script>
         </material>
       </visual>
@@ -419,12 +251,10 @@
       </physics>
     </joint>
     <link name='rotor_1'>
-      <pose>-0.13 0.2 0.023 0 -0 0</pose>
+      <pose>-0.13 0.2 0.023 0 0 0</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
         <mass>0.005</mass>
         <inertia>
-          <!-- <ixx>9.75e-07</ixx>-->
           <ixx>0.00001</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
@@ -434,34 +264,22 @@
         </inertia>
       </inertial>
       <collision name='rotor_1_collision'>
-        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
             <length>0.005</length>
             <radius>0.1</radius>
           </cylinder>
         </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
       </collision>
       <visual name='rotor_1_visual'>
-        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>1 1 1</scale>
             <uri>model://iris/meshes/iris_prop_ccw.dae</uri>
           </mesh>
         </geometry>
         <material>
           <script>
             <name>Gazebo/DarkGrey</name>
-            <uri>__default__</uri>
           </script>
         </material>
       </visual>
@@ -487,12 +305,10 @@
       </physics>
     </joint>
     <link name='rotor_2'>
-      <pose>0.13 0.22 0.023 0 -0 0</pose>
+      <pose>0.13 0.22 0.023 0 0 0</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
         <mass>0.005</mass>
         <inertia>
-          <!-- <ixx>9.75e-07</ixx>-->
           <ixx>0.00001</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
@@ -502,34 +318,22 @@
         </inertia>
       </inertial>
       <collision name='rotor_2_collision'>
-        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
             <length>0.005</length>
             <radius>0.1</radius>
           </cylinder>
         </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
       </collision>
       <visual name='rotor_2_visual'>
-        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>1 1 1</scale>
             <uri>model://iris/meshes/iris_prop_cw.dae</uri>
           </mesh>
         </geometry>
         <material>
           <script>
             <name>Gazebo/Blue</name>
-            <uri>__default__</uri>
           </script>
         </material>
       </visual>
@@ -555,12 +359,10 @@
       </physics>
     </joint>
     <link name='rotor_3'>
-      <pose>-0.13 -0.2 0.023 0 -0 0</pose>
+      <pose>-0.13 -0.2 0.023 0 0 0</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
         <mass>0.005</mass>
         <inertia>
-          <!-- <ixx>9.75e-07</ixx>-->
           <ixx>0.00001</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
@@ -570,34 +372,22 @@
         </inertia>
       </inertial>
       <collision name='rotor_3_collision'>
-        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
             <length>0.005</length>
             <radius>0.1</radius>
           </cylinder>
         </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
       </collision>
       <visual name='rotor_3_visual'>
-        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <scale>1 1 1</scale>
             <uri>model://iris/meshes/iris_prop_cw.dae</uri>
           </mesh>
         </geometry>
         <material>
           <script>
             <name>Gazebo/DarkGrey</name>
-            <uri>__default__</uri>
           </script>
         </material>
       </visual>
@@ -623,183 +413,5 @@
       </physics>
     </joint>
 
-    <!-- only publishes four simulated rotor velocities
-         over iris/motors topic.
-         not used by anyone?
-    <plugin name='rosbag' filename='librotors_gazebo_multirotor_base_plugin.so'>
-      <robotNamespace>iris</robotNamespace>
-      <linkName>base_link</linkName>
-      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
-    </plugin>
-    -->
-
-    <!--
-      simulate each motor
-      subscribes to output from rotors_gazebo_controller_interface
-         gazebo/command/motor_speed
-      applies wrench to each motor
-      publishes motor speed to
-        iris/motor_speed/0
-    -->
-
-<!--
-    <plugin name='front_right_motor_model' filename='librotors_gazebo_motor_model.so'>
-      <robotNamespace>iris</robotNamespace>
-      <commandSubTopic>command/motor_speed</commandSubTopic>
-      <imuTopic>imu</imuTopic>
-      <rotor id="0">
-        <jointName>rotor_0_joint</jointName>
-        <linkName>rotor_0</linkName>
-        <turningDirection>ccw</turningDirection>
-        <timeConstantUp>0.0125</timeConstantUp>
-        <timeConstantDown>0.025</timeConstantDown>
-        <maxRotVelocity>838</maxRotVelocity>
-        <motorConstant>8.54858e-06</motorConstant>
-        <momentConstant>0.016</momentConstant>
-        <motorNumber>0</motorNumber>
-        <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
-        <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
-        <motorSpeedPubTopic>motor_speed/0</motorSpeedPubTopic>
-        <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
-      </rotor>
-      <rotor id="1">
-        <jointName>rotor_1_joint</jointName>
-        <linkName>rotor_1</linkName>
-        <turningDirection>ccw</turningDirection>
-        <timeConstantUp>0.0125</timeConstantUp>
-        <timeConstantDown>0.025</timeConstantDown>
-        <maxRotVelocity>838</maxRotVelocity>
-        <motorConstant>8.54858e-06</motorConstant>
-        <momentConstant>0.016</momentConstant>
-        <commandSubTopic>command/motor_speed</commandSubTopic>
-        <motorNumber>1</motorNumber>
-        <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
-        <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
-        <motorSpeedPubTopic>motor_speed/1</motorSpeedPubTopic>
-        <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
-      </rotor>
-      <rotor id="2">
-        <jointName>rotor_2_joint</jointName>
-        <linkName>rotor_2</linkName>
-        <turningDirection>cw</turningDirection>
-        <timeConstantUp>0.0125</timeConstantUp>
-        <timeConstantDown>0.025</timeConstantDown>
-        <maxRotVelocity>838</maxRotVelocity>
-        <motorConstant>8.54858e-06</motorConstant>
-        <momentConstant>0.016</momentConstant>
-        <commandSubTopic>command/motor_speed</commandSubTopic>
-        <motorNumber>2</motorNumber>
-        <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
-        <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
-        <motorSpeedPubTopic>motor_speed/2</motorSpeedPubTopic>
-        <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
-      </rotor>
-      <rotor id="3">
-        <jointName>rotor_3_joint</jointName>
-        <linkName>rotor_3</linkName>
-        <turningDirection>cw</turningDirection>
-        <timeConstantUp>0.0125</timeConstantUp>
-        <timeConstantDown>0.025</timeConstantDown>
-        <maxRotVelocity>838</maxRotVelocity>
-        <motorConstant>8.54858e-06</motorConstant>
-        <momentConstant>0.016</momentConstant>
-        <commandSubTopic>command/motor_speed</commandSubTopic>
-        <motorNumber>3</motorNumber>
-        <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
-        <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
-        <motorSpeedPubTopic>motor_speed/3</motorSpeedPubTopic>
-        <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
-      </rotor>
-    </plugin>
--->
-
-
-    <!-- subscribes to iris/command/motor_speed published by iris_ros.py
-         publishes back to gazebo/command/motor_speed,
-         picked up by rotors_gazebo_motor_model
-    <plugin name='controller_interface' filename='librotors_gazebo_controller_interface.so'>
-      <robotNamespace>iris</robotNamespace>
-      <commandAttitudeThrustSubTopic>command/attitude</commandAttitudeThrustSubTopic>
-      <commandRateThrustSubTopic>command/rate</commandRateThrustSubTopic>
-      <commandMotorSpeedSubTopic>command/motor_speed</commandMotorSpeedSubTopic>
-      <imuSubTopic>imu</imuSubTopic>
-      <motorSpeedCommandPubTopic>gazebo/command/motor_speed</motorSpeedCommandPubTopic>
-    </plugin>
-    -->
-    <!-- publishes to iris/imu, picked up by iris_ros.py ardupilot plugin
-    <plugin name='rotors_gazebo_imu_plugin' filename='librotors_gazebo_imu_plugin.so'>
-      <robotNamespace>iris</robotNamespace>
-      <linkName>iris/imu_link</linkName>
-      <imuTopic>imu</imuTopic>
-      <gyroscopeNoiseDensity>0</gyroscopeNoiseDensity>
-      <gyroscopeRandomWalk>0</gyroscopeRandomWalk>
-      <gyroscopeBiasCorrelationTime>1000.0</gyroscopeBiasCorrelationTime>
-      <gyroscopeTurnOnBiasSigma>0</gyroscopeTurnOnBiasSigma>
-      <accelerometerNoiseDensity>0</accelerometerNoiseDensity>
-      <accelerometerRandomWalk>0</accelerometerRandomWalk>
-      <accelerometerBiasCorrelationTime>300.0</accelerometerBiasCorrelationTime>
-      <accelerometerTurnOnBiasSigma>0</accelerometerTurnOnBiasSigma>
-    </plugin>
-    -->
-    <!-- publishes to iris/ground_truth/imu,
-         optionally picked up by iris_ros.py ardupilot plugin if desired
-    <plugin name='rotors_gazebo_imugt_plugin' filename='librotors_gazebo_imu_plugin.so'>
-      <robotNamespace>iris</robotNamespace>
-      <linkName>iris/imugt_link</linkName>
-      <imuTopic>ground_truth/imu</imuTopic>
-      <gyroscopeNoiseDensity>0.0</gyroscopeNoiseDensity>
-      <gyroscopeRandomWalk>0.0</gyroscopeRandomWalk>
-      <gyroscopeBiasCorrelationTime>1000.0</gyroscopeBiasCorrelationTime>
-      <gyroscopeTurnOnBiasSigma>0.0</gyroscopeTurnOnBiasSigma>
-      <accelerometerNoiseDensity>0.0</accelerometerNoiseDensity>
-      <accelerometerRandomWalk>0.0</accelerometerRandomWalk>
-      <accelerometerBiasCorrelationTime>300.0</accelerometerBiasCorrelationTime>
-      <accelerometerTurnOnBiasSigma>0.0</accelerometerTurnOnBiasSigma>
-    </plugin>
-    -->
-    <static>0</static>
-    <!-- doesn't appear to be used by ardupilot
-    <plugin name='odometry_sensorgt' filename='librotors_gazebo_odometry_plugin.so'>
-      <linkName>iris/ground_truth/odometry_sensorgt_link</linkName>
-      <robotNamespace>iris/ground_truth</robotNamespace>
-      <poseTopic>pose</poseTopic>
-      <poseWithCovarianceTopic>pose_with_covariance</poseWithCovarianceTopic>
-      <positionTopic>position</positionTopic>
-      <transformTopic>transform</transformTopic>
-      <odometryTopic>odometry</odometryTopic>
-      <parentFrameId>world</parentFrameId>
-      <measurementDivisor>1</measurementDivisor>
-      <measurementDelay>0</measurementDelay>
-      <unknownDelay>0.0</unknownDelay>
-      <noiseNormalPosition>0 0 0</noiseNormalPosition>
-      <noiseNormalQuaternion>0 0 0</noiseNormalQuaternion>
-      <noiseNormalLinearVelocity>0 0 0</noiseNormalLinearVelocity>
-      <noiseNormalAngularVelocity>0 0 0</noiseNormalAngularVelocity>
-      <noiseUniformPosition>0 0 0</noiseUniformPosition>
-      <noiseUniformQuaternion>0 0 0</noiseUniformQuaternion>
-      <noiseUniformLinearVelocity>0 0 0</noiseUniformLinearVelocity>
-      <noiseUniformAngularVelocity>0 0 0</noiseUniformAngularVelocity>
-    </plugin>
-    -->
-
-<!--
-    <include>
-      <uri>model://gimbal_small_2d</uri>
-      <pose>0 0 -0.125 1.57 0 1.57</pose>
-    </include>
-
-    <joint name="iris_gimbal_mount" type="revolute">
-      <parent>base_link</parent>
-      <child>gimbal_small_2d::base_link</child>
-      <axis>
-        <limit>
-          <lower>0</lower>
-          <upper>0</upper>
-        </limit>
-        <xyz>0 0 1</xyz>
-        <use_parent_model_frame>true</use_parent_model_frame>
-      </axis>
-    </joint>
--->
   </model>
 </sdf>
