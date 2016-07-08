@@ -94,6 +94,7 @@ frc2016_rockwall
 frc2016_roughterrain
 frc2016_sallyport
 gas_station
+gimbal_small_2d
 grey_tote
 grey_wall
 ground_plane

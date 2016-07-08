@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
   <model name="number4">
+    <pose>0 0 0.4 0 0 0</pose>
     <static>true</static>
     <link name="link">
       <visual name="visual">
