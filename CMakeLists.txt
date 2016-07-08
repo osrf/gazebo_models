@@ -101,7 +101,7 @@ ground_plane
 hammer
 hinged_door
 hokuyo
-hoop
+hoop_red
 house_1
 house_2
 house_3
