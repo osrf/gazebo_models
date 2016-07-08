@@ -126,7 +126,7 @@
       </visual>
     </link>
 
-    <link name='iris/ground_truth/odometry_sensorgt_link'>
+    <link name='ground_truth_odometry_sensorgt_link'>
       <inertial>
         <mass>0.01</mass>
         <inertia>
@@ -139,7 +139,7 @@
         </inertia>
       </inertial>
     </link>
-    <joint name='iris/ground_truth/odometry_sensorgt_joint' type='revolute'>
+    <joint name='ground_truth_odometry_sensorgt_joint' type='revolute'>
       <child>iris/ground_truth/odometry_sensorgt_link</child>
       <parent>base_link</parent>
       <axis>
@@ -157,7 +157,7 @@
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
-    <link name='iris/imu_link'>
+    <link name='imu_link'>
       <inertial>
         <mass>0.015</mass>
         <inertia>
@@ -175,7 +175,7 @@
         <update_rate>1000.0</update_rate>
       </sensor>
     </link>
-    <joint name='iris/imu_joint' type='revolute'>
+    <joint name='imu_joint' type='revolute'>
       <child>iris/imu_link</child>
       <parent>base_link</parent>
       <axis>
@@ -194,7 +194,7 @@
       </axis>
     </joint>
 
-    <link name='rotor_0'>
+    <link name='rotor0'>
       <pose>0.13 -0.22 0.023 0 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
@@ -209,7 +209,7 @@
           <izz>0.000167604</izz>
         </inertia>
       </inertial>
-      <collision name='rotor_0_collision'>
+      <collision name='rotor0_collision'>
         <geometry>
           <cylinder>
             <length>0.005</length>
@@ -217,7 +217,7 @@
           </cylinder>
         </geometry>
       </collision>
-      <visual name='rotor_0_visual'>
+      <visual name='rotor0_visual'>
         <geometry>
           <mesh>
             <uri>model://iris/meshes/iris_prop_ccw.dae</uri>
@@ -230,7 +230,7 @@
         </material>
       </visual>
     </link>
-    <joint name='rotor_0_joint' type='revolute'>
+    <joint name='rotor0_joint' type='revolute'>
       <child>rotor_0</child>
       <parent>base_link</parent>
       <axis>
@@ -250,7 +250,7 @@
         </ode>
       </physics>
     </joint>
-    <link name='rotor_1'>
+    <link name='rotor1'>
       <pose>-0.13 0.2 0.023 0 0 0</pose>
       <inertial>
         <mass>0.005</mass>
@@ -263,7 +263,7 @@
           <izz>0.000167604</izz>
         </inertia>
       </inertial>
-      <collision name='rotor_1_collision'>
+      <collision name='rotor1_collision'>
         <geometry>
           <cylinder>
             <length>0.005</length>
@@ -271,7 +271,7 @@
           </cylinder>
         </geometry>
       </collision>
-      <visual name='rotor_1_visual'>
+      <visual name='rotor1_visual'>
         <geometry>
           <mesh>
             <uri>model://iris/meshes/iris_prop_ccw.dae</uri>
@@ -284,7 +284,7 @@
         </material>
       </visual>
     </link>
-    <joint name='rotor_1_joint' type='revolute'>
+    <joint name='rotor1_joint' type='revolute'>
       <child>rotor_1</child>
       <parent>base_link</parent>
       <axis>
@@ -304,7 +304,7 @@
         </ode>
       </physics>
     </joint>
-    <link name='rotor_2'>
+    <link name='rotor2'>
       <pose>0.13 0.22 0.023 0 0 0</pose>
       <inertial>
         <mass>0.005</mass>
@@ -317,7 +317,7 @@
           <izz>0.000167604</izz>
         </inertia>
       </inertial>
-      <collision name='rotor_2_collision'>
+      <collision name='rotor2_collision'>
         <geometry>
           <cylinder>
             <length>0.005</length>
@@ -325,7 +325,7 @@
           </cylinder>
         </geometry>
       </collision>
-      <visual name='rotor_2_visual'>
+      <visual name='rotor2_visual'>
         <geometry>
           <mesh>
             <uri>model://iris/meshes/iris_prop_cw.dae</uri>
@@ -338,7 +338,7 @@
         </material>
       </visual>
     </link>
-    <joint name='rotor_2_joint' type='revolute'>
+    <joint name='rotor2_joint' type='revolute'>
       <child>rotor_2</child>
       <parent>base_link</parent>
       <axis>
@@ -358,7 +358,7 @@
         </ode>
       </physics>
     </joint>
-    <link name='rotor_3'>
+    <link name='rotor3'>
       <pose>-0.13 -0.2 0.023 0 0 0</pose>
       <inertial>
         <mass>0.005</mass>
@@ -371,7 +371,7 @@
           <izz>0.000167604</izz>
         </inertia>
       </inertial>
-      <collision name='rotor_3_collision'>
+      <collision name='rotor3_collision'>
         <geometry>
           <cylinder>
             <length>0.005</length>
@@ -379,7 +379,7 @@
           </cylinder>
         </geometry>
       </collision>
-      <visual name='rotor_3_visual'>
+      <visual name='rotor3_visual'>
         <geometry>
           <mesh>
             <uri>model://iris/meshes/iris_prop_cw.dae</uri>
@@ -392,7 +392,7 @@
         </material>
       </visual>
     </link>
-    <joint name='rotor_3_joint' type='revolute'>
+    <joint name='rotor3_joint' type='revolute'>
       <child>rotor_3</child>
       <parent>base_link</parent>
       <axis>
