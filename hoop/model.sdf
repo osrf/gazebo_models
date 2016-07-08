@@ -1,22 +1,12 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
 
-  <model name='hoop'>
-    <link name='link_3'>
+  <model name='hoop_red'>
+    <static>1</static>
+    <link name='link'>
       <pose>0 0 2.979342 0 0 0</pose>
-      <inertial>
-        <mass>1</mass>
-        <inertia>
-          <ixx>1</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>1</iyy>
-          <iyz>0</iyz>
-          <izz>1</izz>
-        </inertia>
-      </inertial>
 
-      <visual name='hoop_visual'>
+      <visual name='visual'>
         <pose>0 0.05 3.83 1.57519 -0.165904 0</pose>
         <geometry>
           <polyline>
@@ -75,8 +65,8 @@
           </script>
         </material>
       </visual>
-      <!--
-      <collision name='hoop_collision'>
+
+      <collision name='collision'>
         <pose>0 0.05 3.83 1.57519 -0.165904 -0.00102</pose>
         <geometry>
           <polyline>
@@ -129,7 +119,7 @@
           </polyline>
         </geometry>
       </collision>
--->
+
       <visual name='pole_visual'>
         <pose>0 0 0.134295 0.004331 -0.016759 0</pose>
         <geometry>
@@ -145,7 +135,6 @@
           </script>
         </material>
       </visual>
-      <!--
       <collision name='pole_collision'>
         <pose>0 0 0.134295 0.004331 -0.016759 0</pose>
         <geometry>
@@ -154,9 +143,7 @@
           </box>
         </geometry>
       </collision>
--->
     </link>
 
-    <static>1</static>
   </model>
 </sdf>
