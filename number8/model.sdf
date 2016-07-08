@@ -7,9 +7,16 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://number8/meshes/number.dae</uri>
+            <uri>model://number1/meshes/number.dae</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <uri>model://number8/materials/scripts</uri>
+            <uri>model://number8/materials/textures</uri>
+            <name>Number/Eight</name>
+          </script>
+        </material>
       </visual>
     </link>
   </model>

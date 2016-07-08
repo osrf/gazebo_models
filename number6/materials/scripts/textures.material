@@ -1,0 +1,13 @@
+material Number/Six
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture number6.png
+      }
+    }
+  }
+}

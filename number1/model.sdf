@@ -10,6 +10,13 @@
             <uri>model://number1/meshes/number.dae</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <uri>model://number1/materials/scripts</uri>
+            <uri>model://number1/materials/textures</uri>
+            <name>Number/One</name>
+          </script>
+        </material>
       </visual>
     </link>
   </model>

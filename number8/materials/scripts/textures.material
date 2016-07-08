@@ -1,0 +1,13 @@
+material Number/Eight
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture number8.png
+      }
+    }
+  }
+}

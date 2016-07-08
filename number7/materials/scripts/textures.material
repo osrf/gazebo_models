@@ -1,0 +1,13 @@
+material Number/Seven
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture number7.png
+      }
+    }
+  }
+}
