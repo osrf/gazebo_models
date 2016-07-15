@@ -127,7 +127,7 @@
         </camera>
         <always_on>1</always_on>
         <update_rate>10</update_rate>
-        <visualize>true</visualize>
+        <visualize>0</visualize>
       </sensor>
 
     </link>
