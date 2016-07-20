@@ -1,0 +1,189 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="mars_rover">
+    <static>true</static>
+    <link name="link">
+      <collision name="solar_panel_collision">
+        <pose>0 -0.06945 0.47293 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.87974 0.8821 0.02602</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="chassis_collision">
+        <pose>0 -0.05 0.31475 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.49522 0.67401 0.28915</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="rear_left_bumper_collision">
+        <pose>0.30107 0.38350 0.38976 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04442 0.388970 0.07918</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="rear_right_bumper_collision">
+        <pose>-0.30107 0.38350 0.38976 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04442 0.388970 0.07918</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="rear_bumper_collision">
+        <pose>0 0.59414 0.38976 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.566560 0.04442 0.07918</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="bin_back_panel_collision">
+        <pose>0 0.47 0.32114 0.69137 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.43774 0.212366009 0.05173</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="bin_left_panel_collision1">
+        <pose>0.22615 0.328970 0.33193 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01116 0.19338 0.16304</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="bin_left_panel_collision2">
+        <pose>0.22615 0.471 0.393080 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01116 0.15 0.04</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="bin_left_panel_collision3">
+        <pose>0.22615 0.450 0.353080 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01116 0.15 0.04</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="bin_left_panel_collision4">
+        <pose>0.22615 0.39308 0.313080 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01116 0.15 0.04</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="bin_right_panel_collision1">
+        <pose>-0.22615 0.328970 0.33193 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01116 0.19338 0.16304</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="bin_right_panel_collision2">
+        <pose>-0.22615 0.471 0.393080 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01116 0.15 0.04</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="bin_right_panel_collision3">
+        <pose>-0.22615 0.450 0.353080 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01116 0.15 0.04</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="bin_right_panel_collision4">
+        <pose>-0.22615 0.39308 0.313080 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01116 0.15 0.04</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="bin_front_panel_collision">
+        <pose>0 0.300470 0.32114 2.26207 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.43774 0.212366009 0.05173</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="front_left_wheel_collision">
+        <pose>0.31103 -0.32115 0.13580 1.5707 0 1.5707</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1358</radius>
+            <length>0.1641</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="front_right_wheel_collision">
+        <pose>-0.31103 -0.32115 0.13580 1.5707 0 1.5707</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1358</radius>
+            <length>0.1641</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <collision name="rear_left_wheel_collision">
+        <pose>0.31103 0.28049 0.13580 1.5707 0 1.5707</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1358</radius>
+            <length>0.1641</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <collision name="rear_right_wheel_collision">
+        <pose>-0.31103 0.28049 0.13580 1.5707 0 1.5707</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1358</radius>
+            <length>0.1641</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://mars_rover/meshes/rover.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

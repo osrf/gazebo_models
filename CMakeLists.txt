@@ -117,6 +117,7 @@ lamp_post
 lunar_tranquillitatis_pit
 mailbox
 marble_1_5cm
+mars_rover
 metal_peg
 metal_peg_board
 monkey_wrench
