@@ -191,6 +191,7 @@ wooden_case_wooden_peg
 wooden_peg
 wooden_peg_board
 youbot
+zephyr_delta_wing
 )
 
 set (MODEL_URI_LIST "" CACHE INTERNAL "Model URI List" FORCE)
