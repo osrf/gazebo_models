@@ -156,7 +156,15 @@
       <child>propeller</child>
       <axis>
         <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>0.002</damping>
+        </dynamics>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
     </joint>
 
     <joint name="flap_left_joint" type="revolute">
@@ -169,7 +177,15 @@
           <lower>-0.524</lower>
           <upper>0.524</upper>
         </limit>
+        <dynamics>
+          <damping>0.1</damping>
+        </dynamics>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
     </joint>
 
     <joint name="flap_right_joint" type="revolute">
@@ -182,6 +198,14 @@
           <lower>-0.524</lower>
           <upper>0.524</upper>
         </limit>
+        <dynamics>
+          <damping>0.1</damping>
+        </dynamics>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
       </axis>
     </joint>
   </model>
