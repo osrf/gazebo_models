@@ -41,15 +41,15 @@
         <angular>0.0</angular>
       </velocity_decay>
       <inertial>
-        <pose>0 0 0.023 0 0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <mass>1.5</mass>
         <inertia>
-          <ixx>0.0347563</ixx>
+          <ixx>0.008</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.0458929</iyy>
+          <iyy>0.015</iyy>
           <iyz>0</iyz>
-          <izz>0.0977</izz>
+          <izz>0.017</izz>
         </inertia>
       </inertial>
       <collision name='base_link_collision'>
@@ -255,9 +255,9 @@
       <pose>0 0 0 0 -0 0</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
-        <mass>0.01</mass>
+        <mass>0.15</mass>
         <inertia>
-          <ixx>0.0002</ixx>
+          <ixx>0.0001</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyy>0.0002</iyy>
@@ -278,23 +278,27 @@
           <velocity>0</velocity>
         </limit>
         <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
+          <damping>1.0</damping>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
     </joint>
     <link name='iris/imu_link'>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
-        <mass>0.015</mass>
+        <mass>0.15</mass>
         <inertia>
-          <ixx>0.0008</ixx>
+          <ixx>0.00001</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.0008</iyy>
+          <iyy>0.00002</iyy>
           <iyz>0</iyz>
-          <izz>0.0008</izz>
+          <izz>0.00002</izz>
         </inertia>
       </inertial>
       <sensor name="imu_sensor" type="imu">
@@ -315,11 +319,15 @@
           <velocity>0</velocity>
         </limit>
         <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
+          <damping>1.0</damping>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
     </joint>
 <!--
     <link name='iris/imugt_link'>
@@ -360,10 +368,9 @@
       <pose>0.13 -0.22 0.023 0 -0 0</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
-        <mass>0.005</mass>
+        <mass>0.025</mass>
         <inertia>
-          <!-- <ixx>9.75e-07</ixx>-->
-          <ixx>0.00001</ixx>
+          <ixx>9.75e-06</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyy>0.000166704</iyy>
@@ -431,10 +438,9 @@
       <pose>-0.13 0.2 0.023 0 -0 0</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
-        <mass>0.005</mass>
+        <mass>0.025</mass>
         <inertia>
-          <!-- <ixx>9.75e-07</ixx>-->
-          <ixx>0.00001</ixx>
+          <ixx>9.75e-06</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyy>0.000166704</iyy>
@@ -502,10 +508,9 @@
       <pose>0.13 0.22 0.023 0 -0 0</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
-        <mass>0.005</mass>
+        <mass>0.025</mass>
         <inertia>
-          <!-- <ixx>9.75e-07</ixx>-->
-          <ixx>0.00001</ixx>
+          <ixx>9.75e-06</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyy>0.000166704</iyy>
@@ -573,10 +578,9 @@
       <pose>-0.13 -0.2 0.023 0 -0 0</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
-        <mass>0.005</mass>
+        <mass>0.025</mass>
         <inertia>
-          <!-- <ixx>9.75e-07</ixx>-->
-          <ixx>0.00001</ixx>
+          <ixx>9.75e-06</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyy>0.000166704</iyy>
