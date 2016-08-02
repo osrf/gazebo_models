@@ -38,6 +38,7 @@
           </mesh>
         </geometry>
       </collision>
+<!--
       <visual name="right_rudder">
         <pose>-0.76 0.30 0.025 0 0 0</pose>
         <geometry>
@@ -94,6 +95,7 @@
           </sphere>
         </geometry>
       </visual>
+-->
     </link>
 
     <link name="propeller">
@@ -136,6 +138,7 @@
           </box>
         </geometry>
       </collision>
+<!--
       <visual name="LD1">
         <pose>0 0 0.074205 0 0  0.3</pose>
         <geometry>
@@ -152,6 +155,7 @@
           </sphere>
         </geometry>
       </visual>
+-->
     </link>
 
     <link name="flap_left">
