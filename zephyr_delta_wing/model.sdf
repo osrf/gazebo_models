@@ -5,7 +5,7 @@
 
     <link name="wing">
       <inertial>
-        <pose>0 -0.15 0 0 0 0</pose>
+        <pose>0 -0.05 0 0 0 0</pose>
         <mass>2</mass>
         <inertia>
           <ixx>0.083137104</ixx>
@@ -38,7 +38,6 @@
           </mesh>
         </geometry>
       </collision>
-<!--
       <visual name="right_rudder">
         <pose>-0.76 0.30 0.025 0 0 0</pose>
         <geometry>
@@ -55,8 +54,9 @@
           </box>
         </geometry>
       </visual>
+      <!--
       <visual name="LDleft_wing">
-        <pose>0.4 0.15 0.0 0 0 0</pose>
+        <pose>0.5 0.15 0.0 0 0 0</pose>
         <geometry>
           <sphere>
             <radius>0.03</radius>
@@ -64,7 +64,7 @@
         </geometry>
       </visual>
       <visual name="LDright_wing">
-        <pose>-0.4 0.15 0.0 0 0 0</pose>
+        <pose>-0.5 0.15 0.0 0 0 0</pose>
         <geometry>
           <sphere>
             <radius>0.03</radius>
@@ -95,7 +95,7 @@
           </sphere>
         </geometry>
       </visual>
--->
+      -->
     </link>
 
     <link name="propeller">
@@ -249,7 +249,7 @@
       <child>flap_left</child>
       <pose>0 -0.04 0 0 0 0</pose>
       <axis>
-        <xyz>1 0.330321014 0</xyz>
+        <xyz>-1 -0.330321014 0</xyz>
         <limit>
           <lower>-0.524</lower>
           <upper>0.524</upper>
@@ -270,7 +270,7 @@
       <child>flap_right</child>
       <pose>0 -0.04 0 0 0 0</pose>
       <axis>
-        <xyz>1 -0.330321014 0</xyz>
+        <xyz>-1 0.330321014 0</xyz>
         <limit>
           <lower>-0.524</lower>
           <upper>0.524</upper>
@@ -288,7 +288,7 @@
 
     <plugin name="invisible_canard" filename="libLiftDragPlugin.so">
       <a0>0.1</a0>
-      <cla>4.752798721</cla>
+      <cla>6.752798721</cla>
       <cda>0.06417112299</cda>
       <cma>-1.8</cma>
       <alpha_stall>0.3391428111</alpha_stall>
@@ -296,7 +296,7 @@
       <cda_stall>-0.9233984055</cda_stall>
       <cma_stall>0</cma_stall>
       <cp>0 -0.1 0</cp>
-      <area>0.20</area>
+      <area>0.30</area>
       <air_density>1.2041</air_density>
       <forward>0 -1 0</forward>
       <upward>0 0 1</upward>
@@ -304,15 +304,15 @@
     </plugin>
     <plugin name="left_wing" filename="libLiftDragPlugin.so">
       <a0>0.1</a0>
-      <cla>4.752798721</cla>
+      <cla>6.752798721</cla>
       <cda>0.06417112299</cda>
       <cma>-1.8</cma>
       <alpha_stall>0.3391428111</alpha_stall>
       <cla_stall>-3.85</cla_stall>
       <cda_stall>-0.9233984055</cda_stall>
       <cma_stall>0</cma_stall>
-      <cp>-0.4 0.15 0</cp>
-      <area>0.15</area>
+      <cp>-0.5 0.15 0</cp>
+      <area>0.25</area>
       <air_density>1.2041</air_density>
       <forward>0 -1 0</forward>
       <upward>0 0 1</upward>
@@ -324,15 +324,15 @@
     </plugin>
     <plugin name="right_wing" filename="libLiftDragPlugin.so">
       <a0>0.1</a0>
-      <cla>4.752798721</cla>
+      <cla>6.752798721</cla>
       <cda>0.06417112299</cda>
       <cma>-1.8</cma>
       <alpha_stall>0.3391428111</alpha_stall>
       <cla_stall>-3.85</cla_stall>
       <cda_stall>-0.9233984055</cda_stall>
       <cma_stall>0</cma_stall>
-      <cp>0.4 0.15 0</cp>
-      <area>0.15</area>
+      <cp>0.5 0.15 0</cp>
+      <area>0.25</area>
       <air_density>1.2041</air_density>
       <forward>0 -1 0</forward>
       <upward>0 0 1</upward>
