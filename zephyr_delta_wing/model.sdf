@@ -249,13 +249,13 @@
       <child>flap_left</child>
       <pose>0 -0.04 0 0 0 0</pose>
       <axis>
-        <xyz>-1 -0.330321014 0</xyz>
+        <xyz>1 0.330321014 0</xyz>
         <limit>
           <lower>-0.524</lower>
           <upper>0.524</upper>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1.0</damping>
         </dynamics>
       </axis>
       <physics>
@@ -270,13 +270,13 @@
       <child>flap_right</child>
       <pose>0 -0.04 0 0 0 0</pose>
       <axis>
-        <xyz>-1 0.330321014 0</xyz>
+        <xyz>1 -0.330321014 0</xyz>
         <limit>
           <lower>-0.524</lower>
           <upper>0.524</upper>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1.0</damping>
         </dynamics>
       </axis>
       <physics>
