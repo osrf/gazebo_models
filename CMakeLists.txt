@@ -35,6 +35,7 @@ cinder_block_wide
 coke_can
 construction_barrel
 construction_cone
+control_console
 cordless_drill
 create
 cricket_ball
