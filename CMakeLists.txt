@@ -25,6 +25,7 @@ cabinet
 cafe
 cafe_table
 camera
+cardboard_box
 cart_front_steer
 cart_rigid_suspension
 cart_soft_suspension
