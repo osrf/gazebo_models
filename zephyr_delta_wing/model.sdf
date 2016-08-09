@@ -27,7 +27,7 @@
           </mesh>
         </geometry>
       </visual>
-      <collision name="collision">
+      <collision name="body_collision">
         <geometry>
           <mesh>
             <uri>model://zephyr_delta_wing/meshes/wing.dae</uri>
@@ -38,22 +38,22 @@
           </mesh>
         </geometry>
       </collision>
-      <visual name="right_rudder">
-        <pose>-0.76 0.30 0.025 0 0 0</pose>
+      <collision name="right_rudder_collision">
+        <pose>-0.76435 0.33918 0.002 -0.03 0 0</pose>
         <geometry>
           <box>
-            <size>.005 0.15 .10</size>
+            <size>.005 0.12993 .12688</size>
           </box>
         </geometry>
-      </visual>
-      <visual name="left_rudder">
-        <pose>0.76 0.30 0.025 0 0 0</pose>
+      </collision>
+      <collision name="left_rudder_collision">
+        <pose>0.76435 0.33918 0.002 -0.03 0 0</pose>
         <geometry>
           <box>
-            <size>.005 0.15 .10</size>
+            <size>.005 0.12993 .12688</size>
           </box>
         </geometry>
-      </visual>
+      </collision>
 
       <!--
       <visual name="LDcanard">
@@ -100,7 +100,8 @@
     </link>
 
     <link name="propeller">
-      <pose>0 0.1174 -0.007 0 1.5707 0</pose>
+      <!--<pose>0 0.1174 -0.007 0 1.5707 0</pose>-->
+      <pose>0 0.07 0.008 0 1.5707 0</pose>
       <inertial>
         <mass>.05</mass>
         <inertia>
@@ -139,7 +140,7 @@
           </box>
         </geometry>
       </collision>
-<!--
+<!-- save for debugging use
       <visual name="LD1">
         <pose>0 0 0.074205 0 0  0.3</pose>
         <geometry>
@@ -160,7 +161,7 @@
     </link>
 
     <link name="flap_left">
-      <pose>0.4530 .288 -0.008 0 0 0</pose>
+      <pose>0.4530 .239 0.007 0 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0.32445671</pose>
         <mass>.1</mass>
@@ -195,7 +196,7 @@
     </link>
 
     <link name="flap_right">
-      <pose>-0.4530 .288 -0.008 0 0 0</pose>
+      <pose>-0.4530 .239 0.007 0 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 -0.32445671</pose>
         <mass>.1</mass>
