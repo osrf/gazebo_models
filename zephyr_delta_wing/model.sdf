@@ -54,8 +54,7 @@
           </box>
         </geometry>
       </collision>
-
-      <!--
+      <!-- save for debugging use
       <visual name="LDcanard">
         <pose>0 -0.1 0.0 0 0 0</pose>
         <geometry>
@@ -140,7 +139,7 @@
           </box>
         </geometry>
       </collision>
-<!-- save for debugging use
+      <!-- save for debugging use
       <visual name="LD1">
         <pose>0 0 0.074205 0 0  0.3</pose>
         <geometry>
@@ -157,7 +156,7 @@
           </sphere>
         </geometry>
       </visual>
--->
+      -->
     </link>
 
     <link name="flap_left">
