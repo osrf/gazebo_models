@@ -180,6 +180,7 @@ turtlebot
 ur10
 utility_cart
 vrc_driving_terrain
+warehouse_robot
 washer
 willowgarage
 wood_block_10_2_1cm
