@@ -45,6 +45,7 @@ cricket_ball
 cross_joint_part
 cube_20k
 depth_camera
+disk_part
 door_handle
 double_pendulum_with_base
 drc_practice_2x4
