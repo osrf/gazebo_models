@@ -14,6 +14,7 @@ exec_program(date ARGS -u +%Y-%m-%-dT%H:%M:%S OUTPUT_VARIABLE CURRENT_DATE)
 
 set (dirs
 apollo15_landing_site_1000x1000
+arm_part
 asphalt_plane
 ball_bearing
 beer
@@ -41,6 +42,7 @@ control_console
 cordless_drill
 create
 cricket_ball
+cross_joint_part
 cube_20k
 depth_camera
 door_handle
@@ -94,6 +96,8 @@ frc2016_rockwall
 frc2016_roughterrain
 frc2016_sallyport
 gas_station
+gasket_part
+gear_part
 grey_tote
 grey_wall
 ground_plane
@@ -138,6 +142,7 @@ office_building
 osrf_elevator
 pioneer2dx
 pioneer3at
+piston_rod_part
 plastic_cup
 polaris_ranger_ev
 polaris_ranger_xp900
@@ -145,6 +150,7 @@ polaris_ranger_xp900_no_roll_cage
 powerplant
 pr2
 pr2_gripper
+pulley_part
 quadrotor
 ragdoll
 robocup09_spl_field
@@ -171,12 +177,14 @@ submarine
 submarine_buoyant
 submarine_sinking
 sun
+t_brace_part
 table
 table_marble
 textured_shapes
 tube_2_25cm
 tube_9_5mm
 turtlebot
+u_joint_part
 ur10
 utility_cart
 vrc_driving_terrain

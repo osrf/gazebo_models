@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="arm_part">
+    <link name="link">
+      <inertial>
+        <pose>0 -0.12223 0.101835 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.00950655468</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0054345236</iyy>
+          <iyz>0</iyz>
+          <izz>0.01148428921</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <pose>0 -0.12223 0.101835 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.29824 0.43206 0.20367</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+         <geometry>
+           <mesh>
+             <uri>model://arm_part/meshes/arm.dae</uri>
+           </mesh>
+         </geometry>
+        <material>
+          <script>
+            <uri>model://arm_part/materials/scripts</uri>
+            <uri>model://arm_part/materials/textures</uri>
+            <name>ArmPart/Diffuse</name>
+          </script>
+        </material>
+       </visual>
+    </link>
+  </model>
+</sdf>
