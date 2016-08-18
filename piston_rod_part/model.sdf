@@ -6,17 +6,17 @@
         <pose>0 0.05415 0.00355 0 0 0</pose>
         <mass>0.5</mass>
         <inertia>
-          <ixx>0.01741208468</ixx>
+          <ixx>0.00109584375</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.00238386708</iyy>
+          <iyy>0.00004238541</iyy>
           <iyz>0</iyz>
-          <izz>0.01972873843</izz>
+          <izz>0.00113354166</izz>
         </inertia>
       </inertial>
 
       <collision name='collision_1'>
-        <pose frame=''>0 0 0.00375 0 -0 0</pose>
+        <pose frame=''>0 0 0.00375 0 0 0</pose>
         <geometry>
           <box>
             <size>0.059 0.052 0.0075</size>
@@ -24,7 +24,7 @@
         </geometry>
       </collision>
       <collision name='collision_2'>
-        <pose frame=''>0 0.08 0.00375 0 -0 0</pose>
+        <pose frame=''>0 0.08 0.00375 0 0 0</pose>
         <geometry>
           <box>
             <size>0.031 0.11 0.0075</size>
