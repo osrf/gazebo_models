@@ -3,7 +3,7 @@
   <model name="piston_rod_part">
     <link name="link">
       <inertial>
-        <pose>0 0.21661 0.0142 0 0 0</pose>
+        <pose>0 0.05415 0.00355 0 0 0</pose>
         <mass>0.5</mass>
         <inertia>
           <ixx>0.01741208468</ixx>
@@ -15,11 +15,19 @@
         </inertia>
       </inertial>
 
-      <collision name="collision">
-        <pose>0 0.21661 0.0142 0 0 0</pose>
+      <collision name='collision_1'>
+        <pose frame=''>0 0 0.00375 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.2375 0.64582 0.02840</size>
+            <size>0.059 0.052 0.0075</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='collision_2'>
+        <pose frame=''>0 0.08 0.00375 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.031 0.11 0.0075</size>
           </box>
         </geometry>
       </collision>
@@ -28,6 +36,7 @@
          <geometry>
            <mesh>
              <uri>model://piston_rod_part/meshes/piston_rod.dae</uri>
+             <scale>0.25 0.25 0.25</scale>
            </mesh>
          </geometry>
         <material>

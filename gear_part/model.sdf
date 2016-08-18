@@ -3,24 +3,24 @@
   <model name="gear_part">
     <link name="link">
       <inertial>
-        <pose>0 0 0.016955 0 0 0</pose>
+        <pose>0 0 0.005875 0 0 0</pose>
         <mass>0.5</mass>
         <inertia>
-          <ixx>0.00316771331</ixx>
+          <ixx>0.00019820251953125005</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.00316771331</iyy>
+          <iyy>0.00019820251953125005</iyy>
           <iyz>0</iyz>
-          <izz>0.00615048062</izz>
+          <izz>0.0003844050390625001</izz>
         </inertia>
       </inertial>
 
       <collision name="collision">
-        <pose>0 0 0.016955 0 0 0</pose>
+        <pose>0 0 0.005875 0 0 0</pose>
         <geometry>
           <cylinder>
-            <length>0.04711</length>
-            <radius>0.15685</radius>
+            <length>0.012</length>
+            <radius>0.0392125</radius>
           </cylinder>
         </geometry>
       </collision>
@@ -29,6 +29,7 @@
          <geometry>
            <mesh>
              <uri>model://gear_part/meshes/gear.dae</uri>
+             <scale>0.25 0.25 0.25</scale>
            </mesh>
          </geometry>
         <material>
