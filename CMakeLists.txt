@@ -21,8 +21,8 @@ ball_bearing
 beer
 bookshelf
 bowl
-box_target_red
 box_target_green
+box_target_red
 breakable_test
 brick_box_3x1x3
 cabinet
@@ -114,7 +114,7 @@ house_1
 house_2
 house_3
 husky
-iris
+iris_with_standoffs
 irobot_hand
 iss
 iss_half
