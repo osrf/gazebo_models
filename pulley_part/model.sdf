@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="pulley_part">
+    <link name="link">
+      <inertial>
+        <pose>0 0 0.035145 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.00191581703</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00191581703</iyy>
+          <iyz>0</iyz>
+          <izz>0.0034199104</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <pose>0 0 0.035145 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.11696</radius>
+            <length>0.07029</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+         <geometry>
+           <mesh>
+             <uri>model://pulley_part/meshes/pulley.dae</uri>
+           </mesh>
+         </geometry>
+        <material>
+          <script>
+            <uri>model://arm_part/materials/scripts</uri>
+            <uri>model://arm_part/materials/textures</uri>
+            <name>ArmPart/Diffuse</name>
+          </script>
+        </material>
+       </visual>
+    </link>
+  </model>
+</sdf>

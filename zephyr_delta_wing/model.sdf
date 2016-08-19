@@ -1,0 +1,459 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="zephyr_delta_wing">
+    <pose>0 0 0.02577 0 0 0</pose>
+
+    <link name="wing">
+      <inertial>
+        <pose>0 -0.12 0 0 0 0</pose>
+        <mass>1.5</mass>
+        <inertia>
+          <ixx>0.083137104</ixx>
+          <ixy>0</ixy>
+          <iyy>0.387382402</iyy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          <izz>0.469845106</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://zephyr_delta_wing/meshes/wing.dae</uri>
+            <submesh>
+              <name>Wing</name>
+              <center>true</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="body_collision">
+        <geometry>
+          <mesh>
+            <uri>model://zephyr_delta_wing/meshes/wing.dae</uri>
+            <submesh>
+              <name>Wing</name>
+              <center>true</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="right_rudder_collision">
+        <pose>-0.76435 0.33918 0.002 -0.03 0 0</pose>
+        <geometry>
+          <box>
+            <size>.005 0.12993 .12688</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="left_rudder_collision">
+        <pose>0.76435 0.33918 0.002 -0.03 0 0</pose>
+        <geometry>
+          <box>
+            <size>.005 0.12993 .12688</size>
+          </box>
+        </geometry>
+      </collision>
+      <!-- save for debugging use
+      <visual name="LDcanard">
+        <pose>0 -0.1 0.0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.03</radius>
+          </sphere>
+        </geometry>
+      </visual>
+      <visual name="LDleft_wing">
+        <pose>0.7 0.20 0.0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.03</radius>
+          </sphere>
+        </geometry>
+      </visual>
+      <visual name="LDright_wing">
+        <pose>-0.7 0.20 0.0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.03</radius>
+          </sphere>
+        </geometry>
+      </visual>
+      <visual name="LD3">
+        <pose>0.76 0.30 0.025 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.03</radius>
+          </sphere>
+        </geometry>
+      </visual>
+      <visual name="LD4">
+        <pose>-0.76 0.30 0.025 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.03</radius>
+          </sphere>
+        </geometry>
+      </visual>
+      -->
+      <sensor name="gps_sensor" type="gps">
+        <pose>0 0 0  0 0 0</pose>
+        <update_rate>10.0</update_rate>
+        <always_on>true</always_on>
+        <gps>
+          <position_sensing>
+            <horizontal>
+              <noise type="gaussian_quantized">
+                <mean>0</mean>
+                <stddev>1</stddev>
+                <bias_mean>3</bias_mean>
+                <bias_stddev>1</bias_stddev>
+                <precision>0.5</precision>
+              </noise>
+            </horizontal>
+            <vertical>
+              <noise type="gaussian_quantized">
+                <mean>0</mean>
+                <stddev>1</stddev>
+                <bias_mean>3</bias_mean>
+                <bias_stddev>1</bias_stddev>
+                <precision>1.0</precision>
+              </noise>
+            </vertical>
+          </position_sensing>
+          <velocity_sensing>
+            <horizontal>
+              <noise type="gaussian_quantized">
+                <mean>0</mean>
+                <stddev>0.1</stddev>
+                <bias_mean>0.1</bias_mean>
+                <bias_stddev>0.1</bias_stddev>
+                <precision>0.1</precision>
+              </noise>
+            </horizontal>
+            <vertical>
+              <noise type="gaussian_quantized">
+                <mean>0</mean>
+                <stddev>0.2</stddev>
+                <bias_mean>0.2</bias_mean>
+                <bias_stddev>0.2</bias_stddev>
+                <precision>0.2</precision>
+              </noise>
+            </vertical>
+          </velocity_sensing>
+        </gps>
+      </sensor>
+    </link>
+
+    <link name="propeller">
+      <!--<pose>0 0.1174 -0.007 0 1.5707 0</pose>-->
+      <pose>0 0.07 0.008 0 1.5707 0</pose>
+      <inertial>
+        <mass>.05</mass>
+        <inertia>
+          <ixx>0.000367571</ixx>
+          <ixy>0</ixy>
+          <iyy>0.00036985</iyy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          <izz>0.000003187</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://zephyr_delta_wing/meshes/wing.dae</uri>
+            <submesh>
+              <name>Propeller</name>
+              <center>true</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="blade1">
+        <pose>0 0 0.074205 0 0  0.3</pose>
+        <geometry>
+          <box>
+            <size>0.02561 0.00541 0.14841</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="blade2">
+        <pose>0 0 -0.074205 0 0  -0.3</pose>
+        <geometry>
+          <box>
+            <size>0.02561 0.00541 0.14841</size>
+          </box>
+        </geometry>
+      </collision>
+      <!-- save for debugging use
+      <visual name="LD1">
+        <pose>0 0 0.074205 0 0  0.3</pose>
+        <geometry>
+         <sphere>
+            <radius>0.02</radius>
+          </sphere>
+        </geometry>
+      </visual>
+      <visual name="LD2">
+        <pose>0 0 -0.074205 0 0  -0.3</pose>
+        <geometry>
+          <sphere>
+            <radius>0.02</radius>
+          </sphere>
+        </geometry>
+      </visual>
+      -->
+    </link>
+
+    <link name="flap_left">
+      <pose>0.4530 .239 0.007 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0.32445671</pose>
+        <mass>.1</mass>
+        <inertia>
+          <ixx>0.000102319</ixx>
+          <ixy>0</ixy>
+          <iyy>0.00334417</iyy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          <izz>0.003446072</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://zephyr_delta_wing/meshes/wing.dae</uri>
+            <submesh>
+              <name>Flap_Left</name>
+              <center>true</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <pose>-0.01 0.01 0 0 0 0.32445671</pose>
+        <geometry>
+          <box>
+            <size>0.633463031 0.110694312 0.005</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="flap_right">
+      <pose>-0.4530 .239 0.007 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 -0.32445671</pose>
+        <mass>.1</mass>
+        <inertia>
+          <ixx>0.000102319</ixx>
+          <ixy>0</ixy>
+          <iyy>0.00334417</iyy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          <izz>0.003446072</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://zephyr_delta_wing/meshes/wing.dae</uri>
+            <submesh>
+              <name>Flap_Right</name>
+              <center>true</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <pose>0.01 0.01 0 0 0 -0.32445671</pose>
+        <geometry>
+          <box>
+            <size>0.633463031 0.110694312 0.005</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="propeller_joint" type="revolute">
+      <parent>wing</parent>
+      <child>propeller</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <dynamics>
+          <damping>0.002</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <joint name="flap_left_joint" type="revolute">
+      <parent>wing</parent>
+      <child>flap_left</child>
+      <pose>0 -0.04 0 0 0 0</pose>
+      <axis>
+        <xyz>1 0.330321014 0</xyz>
+        <limit>
+          <lower>-0.524</lower>
+          <upper>0.524</upper>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <joint name="flap_right_joint" type="revolute">
+      <parent>wing</parent>
+      <child>flap_right</child>
+      <pose>0 -0.04 0 0 0 0</pose>
+      <axis>
+        <xyz>1 -0.330321014 0</xyz>
+        <limit>
+          <lower>-0.524</lower>
+          <upper>0.524</upper>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <plugin name="invisible_canard" filename="libLiftDragPlugin.so">
+      <a0>0.13</a0>
+      <cla>3.7</cla>
+      <cda>0.06417112299</cda>
+      <cma>-1.8</cma>
+      <alpha_stall>0.3391428111</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <cma_stall>0</cma_stall>
+      <cp>0 -0.1 0</cp>
+      <area>0.50</area>
+      <air_density>1.2041</air_density>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>wing</link_name>
+    </plugin>
+    <plugin name="left_wing" filename="libLiftDragPlugin.so">
+      <a0>0.15</a0>
+      <cla>6.8</cla>
+      <cda>0.06417112299</cda>
+      <cma>-1.8</cma>
+      <alpha_stall>0.6391428111</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <cma_stall>0</cma_stall>
+      <cp>0.7 0.20 0</cp>
+      <area>0.10</area>
+      <air_density>1.2041</air_density>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>wing</link_name>
+      <control_joint_name>
+        flap_left_joint
+      </control_joint_name>
+      <control_joint_rad_to_cl>-5.0</control_joint_rad_to_cl>
+    </plugin>
+    <plugin name="right_wing" filename="libLiftDragPlugin.so">
+      <a0>0.15</a0>
+      <cla>6.8</cla>
+      <cda>0.06417112299</cda>
+      <cma>-1.8</cma>
+      <alpha_stall>0.6391428111</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <cma_stall>0</cma_stall>
+      <cp>-0.7 0.20 0</cp>
+      <area>0.10</area>
+      <air_density>1.2041</air_density>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>wing</link_name>
+      <control_joint_name>
+        flap_right_joint
+      </control_joint_name>
+      <control_joint_rad_to_cl>-5.0</control_joint_rad_to_cl>
+    </plugin>
+    <plugin name="left_rudder" filename="libLiftDragPlugin.so">
+      <a0>0.0</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <cma>-1.8</cma>
+      <alpha_stall>0.3391428111</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <cma_stall>0</cma_stall>
+      <cp>-0.76 0.30 0.025</cp>
+      <area>0.12</area>
+      <air_density>1.2041</air_density>
+      <forward>0 -1 0</forward>
+      <upward>1 0 0</upward>
+      <link_name>wing</link_name>
+    </plugin>
+    <plugin name="right_rudder" filename="libLiftDragPlugin.so">
+      <a0>0.0</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <cma>-1.8</cma>
+      <alpha_stall>0.3391428111</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <cma_stall>0</cma_stall>
+      <cp>0.76 0.30 0.025</cp>
+      <area>0.12</area>
+      <air_density>1.2041</air_density>
+      <forward>0 -1 0</forward>
+      <upward>1 0 0</upward>
+      <link_name>wing</link_name>
+    </plugin>
+    <plugin name="propeller_blade_1" filename="libLiftDragPlugin.so">
+      <a0>0.1</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.2</area>
+      <air_density>1.2041</air_density>
+      <cp>0 0 0.074205</cp>
+      <forward>-1 0 0</forward>
+      <upward>0 -1 0</upward>
+      <link_name>propeller</link_name>
+    </plugin>
+    <plugin name="propeller_blade_2" filename="libLiftDragPlugin.so">
+      <a0>0.1</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.2</area>
+      <air_density>1.2041</air_density>
+      <cp>0 0 -0.074205</cp>
+      <forward>1 0 0</forward>
+      <upward>0 -1 0</upward>
+      <link_name>propeller</link_name>
+    </plugin>
+
+  </model>
+</sdf>

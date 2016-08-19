@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="u_joint_part">
+    <pose>0 0 0.07929 1.5707 0 0</pose>
+    <link name="link">
+      <inertial>
+        <pose>0 0 0.08086 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.00187558627</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00187558627</iyy>
+          <iyz>0</iyz>
+          <izz>0.00157172602</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision1">
+        <pose>0 0 0.08086 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.07929</radius>
+            <length>0.16172</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <collision name="collision2">
+        <pose>-0.09124 0 0.22804 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01716 0.08862 0.13878</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="collision3">
+        <pose>0.09124 0 0.22804 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01716 0.08862 0.13878</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+         <geometry>
+           <mesh>
+             <uri>model://u_joint_part/meshes/u_joint.dae</uri>
+           </mesh>
+         </geometry>
+        <material>
+          <script>
+            <uri>model://arm_part/materials/scripts</uri>
+            <uri>model://arm_part/materials/textures</uri>
+            <name>ArmPart/Diffuse</name>
+          </script>
+        </material>
+       </visual>
+    </link>
+  </model>
+</sdf>

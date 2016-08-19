@@ -14,6 +14,7 @@ exec_program(date ARGS -u +%Y-%m-%-dT%H:%M:%S OUTPUT_VARIABLE CURRENT_DATE)
 
 set (dirs
 apollo15_landing_site_1000x1000
+arm_part
 arrow_red
 asphalt_plane
 ball_bearing
@@ -28,6 +29,8 @@ cabinet
 cafe
 cafe_table
 camera
+car_wheel
+cardboard_box
 cart_front_steer
 cart_rigid_suspension
 cart_soft_suspension
@@ -38,11 +41,14 @@ cinder_block_wide
 coke_can
 construction_barrel
 construction_cone
+control_console
 cordless_drill
 create
 cricket_ball
+cross_joint_part
 cube_20k
 depth_camera
+disk_part
 door_handle
 double_pendulum_with_base
 drc_practice_2x4
@@ -94,6 +100,8 @@ frc2016_rockwall
 frc2016_roughterrain
 frc2016_sallyport
 gas_station
+gasket_part
+gear_part
 gimbal_small_2d
 grey_tote
 grey_wall
@@ -123,6 +131,7 @@ lamp_post
 lunar_tranquillitatis_pit
 mailbox
 marble_1_5cm
+mars_rover
 metal_peg
 metal_peg_board
 monkey_wrench
@@ -149,6 +158,7 @@ office_building
 osrf_elevator
 pioneer2dx
 pioneer3at
+piston_rod_part
 plastic_cup
 polaris_ranger_ev
 polaris_ranger_xp900
@@ -156,6 +166,7 @@ polaris_ranger_xp900_no_roll_cage
 powerplant
 pr2
 pr2_gripper
+pulley_part
 quadrotor
 ragdoll
 robocup09_spl_field
@@ -182,15 +193,18 @@ submarine
 submarine_buoyant
 submarine_sinking
 sun
+t_brace_part
 table
 table_marble
 textured_shapes
 tube_2_25cm
 tube_9_5mm
 turtlebot
+u_joint_part
 ur10
 utility_cart
 vrc_driving_terrain
+warehouse_robot
 washer
 willowgarage
 winding_valley_heightmap
@@ -206,6 +220,7 @@ wooden_case_wooden_peg
 wooden_peg
 wooden_peg_board
 youbot
+zephyr_delta_wing
 )
 
 set (MODEL_URI_LIST "" CACHE INTERNAL "Model URI List" FORCE)

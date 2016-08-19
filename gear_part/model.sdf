@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="gear_part">
+    <link name="link">
+      <inertial>
+        <pose>0 0 0.005875 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.00019820251</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00019820251</iyy>
+          <iyz>0</iyz>
+          <izz>0.00038440503</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <pose>0 0 0.005875 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.012</length>
+            <radius>0.0392125</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+         <geometry>
+           <mesh>
+             <uri>model://gear_part/meshes/gear.dae</uri>
+             <scale>0.25 0.25 0.25</scale>
+           </mesh>
+         </geometry>
+        <material>
+          <script>
+            <uri>model://arm_part/materials/scripts</uri>
+            <uri>model://arm_part/materials/textures</uri>
+            <name>ArmPart/Diffuse</name>
+          </script>
+        </material>
+       </visual>
+    </link>
+  </model>
+</sdf>

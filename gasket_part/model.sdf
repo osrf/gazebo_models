@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="gasket_part">
+    <link name="link">
+      <inertial>
+        <pose>0 0 0.016955 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.0010728614</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00416707602</iyy>
+          <iyz>0</iyz>
+          <izz>0.00514411341</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <pose>0 0 0.016955 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.31442 0.15684 0.03391</size>
+          </box>
+        </geometry>
+      </collision>
+
+
+      <visual name="visual">
+         <geometry>
+           <mesh>
+             <uri>model://gasket_part/meshes/gasket.dae</uri>
+           </mesh>
+         </geometry>
+        <material>
+          <script>
+            <uri>model://arm_part/materials/scripts</uri>
+            <uri>model://arm_part/materials/textures</uri>
+            <name>ArmPart/Diffuse</name>
+          </script>
+        </material>
+       </visual>
+    </link>
+  </model>
+</sdf>
