@@ -22,6 +22,14 @@
             <size>0.059 0.052 0.0075</size>
           </box>
         </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
       </collision>
       <collision name='collision_2'>
         <pose frame=''>0 0.08 0.00375 0 0 0</pose>
@@ -30,6 +38,14 @@
             <size>0.031 0.11 0.0075</size>
           </box>
         </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
       </collision>
 
       <visual name="visual">
