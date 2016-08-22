@@ -158,6 +158,6 @@
       <pose>0 0 0.02 0 0 0</pose>
     </joint>
 
-    <plugin name="gimbal_small_2d" filename="libSmall2dGimbalPlugin.so"/>
+    <plugin name="gimbal_small_2d" filename="libGimbalSmall2dPlugin.so"/>
   </model>
 </sdf>
