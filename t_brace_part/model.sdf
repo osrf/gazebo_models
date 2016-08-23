@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="t_brace_part">
+    <link name="link">
+      <inertial>
+        <pose>0.22079 0 0.04663 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.00698181016</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00703472735</iyy>
+          <iyz>0</iyz>
+          <izz>0.01329175188</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision1">
+        <pose>0.02115 0 0.04663 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02038 0.39858 0.09326</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="collision2">
+        <pose>0.22079 0 0.05013 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.40017 0.02038 0.0866</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="collision3">
+        <pose>0.09895 0 0.05013 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.13997 0.11302 0.0866</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+         <geometry>
+           <mesh>
+             <uri>model://t_brace_part/meshes/t_brace.dae</uri>
+           </mesh>
+         </geometry>
+        <material>
+          <script>
+            <uri>model://arm_part/materials/scripts</uri>
+            <uri>model://arm_part/materials/textures</uri>
+            <name>ArmPart/Diffuse</name>
+          </script>
+        </material>
+       </visual>
+    </link>
+  </model>
+</sdf>

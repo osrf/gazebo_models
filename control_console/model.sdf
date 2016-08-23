@@ -1,0 +1,104 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="control_console">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://control_console/meshes/console.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <visual name="backvisual">
+        <pose>0 0.29388 1.301125 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.78 0.05 2.60225</size>
+          </box>
+        </geometry>
+      </visual>
+
+      <collision name="back_collision">
+        <pose>0 0.29388 1.301125 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.78 0.05 2.60225</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="base_collision">
+        <pose>0 -0.14669 0.4128 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.78872 0.97373 0.82560</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="mid_collision">
+        <pose>0 0.04268 1.48248 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.70162 0.51806 1.5</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="top_collision">
+        <pose>0 -0.15709 2.31203 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.78872 0.95292 0.62632</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="panel_collision">
+        <pose>0 -0.36311 0.90329 0.428775194 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.33522 0.550273114 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="left_lower_shoulder_collision">
+        <pose>-0.7435 -0.198480 0.87 0.520485 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.30172 0.7 0.5</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="right_lower_shoulder_collision">
+        <pose>0.7435 -0.198480 0.87 0.520485 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.30172 0.7 0.5</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="left_upper_shoulder_collision">
+        <pose>-0.7435 -0.191520 1.992440 -0.620645009 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.30172 0.7 0.5</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="right_upper_shoulder_collision">
+        <pose>0.7435 -0.191520 1.992440 -0.620645009 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.30172 0.7 0.5</size>
+          </box>
+        </geometry>
+      </collision>
+
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="cross_joint_part">
+    <link name="link">
+      <inertial>
+        <pose>0 0 0.048275 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.0045543476</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0045543476</iyy>
+          <iyz>0</iyz>
+          <izz>0.00833187</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collisionY">
+        <pose>0 0 0.048275 1.5707 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.3162</length>
+            <radius>0.04830</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <collision name="collisionX">
+        <pose>0 0 0.048275 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.3162</length>
+            <radius>0.04830</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+
+
+      <visual name="visual">
+         <geometry>
+           <mesh>
+             <uri>model://cross_joint_part/meshes/cross_joint.dae</uri>
+           </mesh>
+         </geometry>
+        <material>
+          <script>
+            <uri>model://arm_part/materials/scripts</uri>
+            <uri>model://arm_part/materials/textures</uri>
+            <name>ArmPart/Diffuse</name>
+          </script>
+        </material>
+       </visual>
+    </link>
+  </model>
+</sdf>
