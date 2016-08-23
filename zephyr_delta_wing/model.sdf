@@ -423,7 +423,7 @@
       <link_name>wing</link_name>
     </plugin>
     <plugin name="propeller_blade_1" filename="libLiftDragPlugin.so">
-      <a0>0.1</a0>
+      <a0>0.30</a0>
       <alpha_stall>1.4</alpha_stall>
       <cla>4.2500</cla>
       <cda>0.10</cda>
@@ -431,7 +431,7 @@
       <cla_stall>-0.025</cla_stall>
       <cda_stall>0.0</cda_stall>
       <cma_stall>0.0</cma_stall>
-      <area>0.2</area>
+      <area>0.02</area>
       <air_density>1.2041</air_density>
       <cp>0 0 0.074205</cp>
       <forward>-1 0 0</forward>
@@ -439,7 +439,7 @@
       <link_name>propeller</link_name>
     </plugin>
     <plugin name="propeller_blade_2" filename="libLiftDragPlugin.so">
-      <a0>0.1</a0>
+      <a0>0.30</a0>
       <alpha_stall>1.4</alpha_stall>
       <cla>4.2500</cla>
       <cda>0.10</cda>
@@ -447,7 +447,7 @@
       <cla_stall>-0.025</cla_stall>
       <cda_stall>0.0</cda_stall>
       <cma_stall>0.0</cma_stall>
-      <area>0.2</area>
+      <area>0.02</area>
       <air_density>1.2041</air_density>
       <cp>0 0 -0.074205</cp>
       <forward>1 0 0</forward>
