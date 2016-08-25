@@ -115,6 +115,7 @@ house_2
 house_3
 husky
 iris_with_standoffs
+iris_with_standoffs_demo
 irobot_hand
 iss
 iss_half
