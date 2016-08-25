@@ -127,7 +127,7 @@
         </camera>
         <always_on>1</always_on>
         <update_rate>10</update_rate>
-        <visualize>0</visualize>
+        <visualize>1</visualize>
       </sensor>
 
     </link>
@@ -158,6 +158,8 @@
       <pose>0 0 0.02 0 0 0</pose>
     </joint>
 
-    <plugin name="gimbal_small_2d" filename="libGimbalSmall2dPlugin.so"/>
+    <plugin name="gimbal_small_2d" filename="libGimbalSmall2dPlugin.so">
+      <joint>tilt_joint</joint>
+    </plugin>
   </model>
 </sdf>
