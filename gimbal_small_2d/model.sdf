@@ -95,6 +95,16 @@
         </material>
       </visual>
 
+     <collision name='tilt_col'>
+        <pose>0 0 -0.005 0 0 0</pose>
+        <geometry>
+         <mesh>
+           <scale>0.001 0.001 0.001</scale>
+           <uri>model://gimbal_small_2d/meshes/tilt.dae</uri>
+         </mesh>
+        </geometry>
+      </collision>
+
       <visual name='camera_viz'>
         <pose>0 0 0.02 0 0 0</pose>
         <geometry>
@@ -111,6 +121,16 @@
           </script>
         </material>
      </visual>
+
+      <collision name='camera_col'>
+        <pose>0 0 0.02 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.025</radius>
+            <length>0.050</length>
+          </cylinder>
+        </geometry>
+     </collision>
 
       <sensor name="camera" type="camera">
         <pose>0 0 0 -1.57 -1.57 0</pose>
