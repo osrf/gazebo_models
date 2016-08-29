@@ -1,0 +1,149 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+
+  <model name='hoop_red'>
+    <static>1</static>
+    <link name='link'>
+      <pose>0 0 2.979342 0 0 0</pose>
+
+      <visual name='visual'>
+        <pose>0 0.05 3.83 1.57519 -0.165904 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>2e-08 1.23625</point>
+            <point>0.390749 1.17179</point>
+            <point>0.73011 0.992324</point>
+            <point>0.997722 0.718657</point>
+            <point>1.17322 0.371616</point>
+            <point>1.23625 -0.0279752</point>
+            <point>1.17268 -0.421748</point>
+            <point>0.995887 -0.754913</point>
+            <point>0.726734 -1.01202</point>
+            <point>0.38608 -1.17761</point>
+            <point>-0.00521072 -1.23625</point>
+            <point>-0.395418 -1.17761</point>
+            <point>-0.733487 -1.01202</point>
+            <point>-0.999556 -0.754913</point>
+            <point>-1.17376 -0.421748</point>
+            <point>-1.23625 -0.0279752</point>
+            <point>-1.17322 0.371616</point>
+            <point>-0.997722 0.718657</point>
+            <point>-0.73011 0.992324</point>
+            <point>-0.390749 1.17179</point>
+            <point>2e-08 1.23625</point>
+          </polyline>
+          <polyline>
+            <height>0.1</height>
+            <point>-1e-08 1.05964</point>
+            <point>0.334928 1.0044</point>
+            <point>0.625809 0.850564</point>
+            <point>0.85519 0.615992</point>
+            <point>1.00562 0.318528</point>
+            <point>1.05964 -0.0239787</point>
+            <point>1.00515 -0.361498</point>
+            <point>0.853618 -0.647068</point>
+            <point>0.622915 -0.867444</point>
+            <point>0.330926 -1.00938</point>
+            <point>-0.00446633 -1.05964</point>
+            <point>-0.33893 -1.00938</point>
+            <point>-0.628703 -0.867444</point>
+            <point>-0.856762 -0.647068</point>
+            <point>-1.00608 -0.361498</point>
+            <point>-1.05964 -0.0239787</point>
+            <point>-1.00562 0.318528</point>
+            <point>-0.85519 0.615992</point>
+            <point>-0.625809 0.850564</point>
+            <point>-0.334928 1.0044</point>
+            <point>-1e-08 1.05964</point>
+          </polyline>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+
+      <collision name='collision'>
+        <pose>0 0.05 3.83 1.57519 -0.165904 -0.00102</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>2e-08 1.23625</point>
+            <point>0.390749 1.17179</point>
+            <point>0.73011 0.992324</point>
+            <point>0.997722 0.718657</point>
+            <point>1.17322 0.371616</point>
+            <point>1.23625 -0.0279752</point>
+            <point>1.17268 -0.421748</point>
+            <point>0.995887 -0.754913</point>
+            <point>0.726734 -1.01202</point>
+            <point>0.38608 -1.17761</point>
+            <point>-0.00521072 -1.23625</point>
+            <point>-0.395418 -1.17761</point>
+            <point>-0.733487 -1.01202</point>
+            <point>-0.999556 -0.754913</point>
+            <point>-1.17376 -0.421748</point>
+            <point>-1.23625 -0.0279752</point>
+            <point>-1.17322 0.371616</point>
+            <point>-0.997722 0.718657</point>
+            <point>-0.73011 0.992324</point>
+            <point>-0.390749 1.17179</point>
+            <point>2e-08 1.23625</point>
+          </polyline>
+          <polyline>
+            <height>0.1</height>
+            <point>-1e-08 1.05964</point>
+            <point>0.334928 1.0044</point>
+            <point>0.625809 0.850564</point>
+            <point>0.85519 0.615992</point>
+            <point>1.00562 0.318528</point>
+            <point>1.05964 -0.0239787</point>
+            <point>1.00515 -0.361498</point>
+            <point>0.853618 -0.647068</point>
+            <point>0.622915 -0.867444</point>
+            <point>0.330926 -1.00938</point>
+            <point>-0.00446633 -1.05964</point>
+            <point>-0.33893 -1.00938</point>
+            <point>-0.628703 -0.867444</point>
+            <point>-0.856762 -0.647068</point>
+            <point>-1.00608 -0.361498</point>
+            <point>-1.05964 -0.0239787</point>
+            <point>-1.00562 0.318528</point>
+            <point>-0.85519 0.615992</point>
+            <point>-0.625809 0.850564</point>
+            <point>-0.334928 1.0044</point>
+            <point>-1e-08 1.05964</point>
+          </polyline>
+        </geometry>
+      </collision>
+
+      <visual name='pole_visual'>
+        <pose>0 0 0.134295 0.004331 -0.016759 0</pose>
+        <geometry>
+          <box>
+            <size>0.3 0.1 5</size>
+          </box>
+        </geometry>
+        <material>
+          <lighting>1</lighting>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+      <collision name='pole_collision'>
+        <pose>0 0 0.134295 0.004331 -0.016759 0</pose>
+        <geometry>
+          <box>
+            <size>0.3 0.1 5</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+  </model>
+</sdf>

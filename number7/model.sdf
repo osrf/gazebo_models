@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="number7">
+    <pose>0 0 0.4 0 0 0</pose>
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://number1/meshes/number.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://number7/materials/scripts</uri>
+            <uri>model://number7/materials/textures</uri>
+            <name>Number/Seven</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

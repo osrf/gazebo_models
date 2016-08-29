@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="arrow_red">
+    <pose>0 0 3.0 0 0 0</pose>
+    <static>true</static>
+    <link name="link">
+      <pose>0 0 0 1.57 0 1.57</pose>
+      <visual name="visual">
+        <geometry>
+          <polyline>
+            <point>3.0 0.0</point>
+            <point>0.6 -3.0</point>
+            <point>0.6 -1.6</point>
+            <point>-3.0 -1.6</point>
+            <point>-3.0 1.6</point>
+            <point>0.6 1.6</point>
+            <point>0.6 3.0</point>
+            <point>3.0 0.0</point>
+            <height>0.6</height>
+          </polyline>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

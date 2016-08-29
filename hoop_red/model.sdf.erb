@@ -1,0 +1,164 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+
+<%
+  pole_height = 5
+%>
+  <model name='hoop_red'>
+    <link name='link3'>
+      <pose>0 0 <%=pole_height/2 + 0.979342%> 0 0 0</pose>
+      <inertial>
+        <mass>1</mass>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+
+      <visual name='hoop_visual'>
+        <pose>0 0.05 <%= pole_height/2 + 0.979342%> 1.57519 -0.165904 0</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>5.64446e-09 0.348897</point>
+            <point>0.110278 0.330707</point>
+            <point>0.206054 0.280056</point>
+            <point>0.28158 0.202821</point>
+            <point>0.33111 0.104879</point>
+            <point>0.348897 -0.00789524</point>
+            <point>0.330957 -0.119027</point>
+            <point>0.281062 -0.213054</point>
+            <point>0.205101 -0.285615</point>
+            <point>0.108961 -0.332349</point>
+            <point>-0.00147058 -0.348897</point>
+            <point>-0.111596 -0.332349</point>
+            <point>-0.207007 -0.285615</point>
+            <point>-0.282097 -0.213054</point>
+            <point>-0.331263 -0.119027</point>
+            <point>-0.348897 -0.00789524</point>
+            <point>-0.33111 0.104879</point>
+            <point>-0.28158 0.202821</point>
+            <point>-0.206054 0.280056</point>
+            <point>-0.110278 0.330707</point>
+            <point>5.64446e-09 0.348897</point>
+          </polyline>
+          <polyline>
+            <height>0.1</height>
+            <point>-2.82223e-09 0.299054</point>
+            <point>0.0945243 0.283463</point>
+            <point>0.176618 0.240048</point>
+            <point>0.241354 0.173847</point>
+            <point>0.283808 0.0898959</point>
+            <point>0.299054 -0.00676734</point>
+            <point>0.283677 -0.102023</point>
+            <point>0.24091 -0.182617</point>
+            <point>0.175801 -0.244813</point>
+            <point>0.0933949 -0.284871</point>
+            <point>-0.0012605 -0.299054</point>
+            <point>-0.0956537 -0.284871</point>
+            <point>-0.177434 -0.244813</point>
+            <point>-0.241798 -0.182617</point>
+            <point>-0.283939 -0.102023</point>
+            <point>-0.299054 -0.00676734</point>
+            <point>-0.283808 0.0898959</point>
+            <point>-0.241354 0.173847</point>
+            <point>-0.176618 0.240048</point>
+            <point>-0.0945243 0.283463</point>
+            <point>-2.82223e-09 0.299054</point>
+          </polyline>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+      <collision name='hoop_collision'>
+        <pose>0 0.05 <%= pole_height/2 + 0.979342%> 1.57519 -0.165904 -0.00102</pose>
+        <geometry>
+          <polyline>
+            <height>0.1</height>
+            <point>5.64446e-09 0.348897</point>
+            <point>0.110278 0.330707</point>
+            <point>0.206054 0.280056</point>
+            <point>0.28158 0.202821</point>
+            <point>0.33111 0.104879</point>
+            <point>0.348897 -0.00789524</point>
+            <point>0.330957 -0.119027</point>
+            <point>0.281062 -0.213054</point>
+            <point>0.205101 -0.285615</point>
+            <point>0.108961 -0.332349</point>
+            <point>-0.00147058 -0.348897</point>
+            <point>-0.111596 -0.332349</point>
+            <point>-0.207007 -0.285615</point>
+            <point>-0.282097 -0.213054</point>
+            <point>-0.331263 -0.119027</point>
+            <point>-0.348897 -0.00789524</point>
+            <point>-0.33111 0.104879</point>
+            <point>-0.28158 0.202821</point>
+            <point>-0.206054 0.280056</point>
+            <point>-0.110278 0.330707</point>
+            <point>5.64446e-09 0.348897</point>
+          </polyline>
+          <polyline>
+            <height>0.1</height>
+            <point>-2.82223e-09 0.299054</point>
+            <point>0.0945243 0.283463</point>
+            <point>0.176618 0.240048</point>
+            <point>0.241354 0.173847</point>
+            <point>0.283808 0.0898959</point>
+            <point>0.299054 -0.00676734</point>
+            <point>0.283677 -0.102023</point>
+            <point>0.24091 -0.182617</point>
+            <point>0.175801 -0.244813</point>
+            <point>0.0933949 -0.284871</point>
+            <point>-0.0012605 -0.299054</point>
+            <point>-0.0956537 -0.284871</point>
+            <point>-0.177434 -0.244813</point>
+            <point>-0.241798 -0.182617</point>
+            <point>-0.283939 -0.102023</point>
+            <point>-0.299054 -0.00676734</point>
+            <point>-0.283808 0.0898959</point>
+            <point>-0.241354 0.173847</point>
+            <point>-0.176618 0.240048</point>
+            <point>-0.0945243 0.283463</point>
+            <point>-2.82223e-09 0.299054</point>
+          </polyline>
+        </geometry>
+      </collision>
+      <visual name='pole_visual'>
+        <pose>0 0 0.134295 0.004331 -0.016759 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length><%= pole_height %></length>
+          </cylinder>
+        </geometry>
+        <material>
+          <lighting>1</lighting>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+      <collision name='pole_collision'>
+        <pose>0 0 0.134295 0.004331 -0.016759 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length><%= pole_height %></length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <static>1</static>
+  </model>
+</sdf>

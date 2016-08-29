@@ -1,0 +1,185 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='gimbal_small_2d'>
+    <pose>0 0 0.18 0 0 0</pose>
+
+    <link name='base_link'>
+       <inertial>
+        <mass>0.2</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+
+      <visual name='base_main_viz'>
+        <geometry>
+         <mesh>
+           <scale>0.001 0.001 0.001</scale>
+           <uri>model://gimbal_small_2d/meshes/base_main.dae</uri>
+         </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/FlatBlack</name>
+          </script>
+        </material>
+      </visual>
+
+     <visual name='base_arm_viz'>
+        <geometry>
+         <mesh>
+           <scale>0.001 0.001 0.001</scale>
+           <uri>model://gimbal_small_2d/meshes/base_arm.dae</uri>
+         </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/FlatBlack</name>
+          </script>
+        </material>
+      </visual>
+
+      <collision name='base_col'>
+        <pose>0.01 0.075 -0.025 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.05 0.15</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+
+    <link name='tilt_link'>
+       <inertial>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.00001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00001</iyy>
+          <iyz>0</iyz>
+          <izz>0.00001</izz>
+        </inertia>
+      </inertial>
+     <visual name='tilt_viz'>
+        <pose>0 0 -0.005 0 0 0</pose>
+        <geometry>
+         <mesh>
+           <scale>0.001 0.001 0.001</scale>
+           <uri>model://gimbal_small_2d/meshes/tilt.dae</uri>
+         </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+
+     <collision name='tilt_col'>
+        <pose>0 0 -0.005 0 0 0</pose>
+        <geometry>
+         <mesh>
+           <scale>0.001 0.001 0.001</scale>
+           <uri>model://gimbal_small_2d/meshes/tilt.dae</uri>
+         </mesh>
+        </geometry>
+      </collision>
+
+      <visual name='camera_viz'>
+        <pose>0 0 0.02 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.025</radius>
+            <length>0.050</length>
+          </cylinder>
+        </geometry>
+
+         <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+     </visual>
+
+      <collision name='camera_col'>
+        <pose>0 0 0.02 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.025</radius>
+            <length>0.050</length>
+          </cylinder>
+        </geometry>
+     </collision>
+
+      <sensor name="camera" type="camera">
+        <pose>0 0 0 -1.57 -1.57 0</pose>
+        <camera>
+          <horizontal_fov>2.0</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+          </image>
+          <clip>
+            <near>0.05</near>
+            <far>15000</far>
+          </clip>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>10</update_rate>
+        <visualize>1</visualize>
+      </sensor>
+
+    </link>
+
+    <joint name='tilt_joint' type='revolute'>
+       <parent>base_link</parent>
+       <child>tilt_link</child>
+
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0.5</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <limit>
+          <lower>-0.1</lower>
+          <upper>3.14159265</upper>
+          <effort>10</effort>
+          <velocity>-1</velocity>
+        </limit>
+      </axis>
+      <pose>0 0 0.02 0 0 0</pose>
+    </joint>
+
+    <plugin name="gimbal_small_2d" filename="libGimbalSmall2dPlugin.so">
+      <joint>tilt_joint</joint>
+    </plugin>
+  </model>
+</sdf>
