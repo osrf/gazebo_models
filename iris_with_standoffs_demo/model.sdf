@@ -517,7 +517,7 @@
       <imuName>iris_demo::iris::iris/imu_link::imu_sensor</imuName>
       <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
       <rotor id="0">
-        <vel_p_gain>0.05</vel_p_gain>
+        <vel_p_gain>0.03</vel_p_gain>
         <vel_i_gain>0</vel_i_gain>
         <vel_d_gain>0</vel_d_gain>
         <vel_i_max>0</vel_i_max>
@@ -529,7 +529,7 @@
         <rotorVelocitySlowdownSim>1</rotorVelocitySlowdownSim>
       </rotor>
       <rotor id="1">
-        <vel_p_gain>0.05</vel_p_gain>
+        <vel_p_gain>0.03</vel_p_gain>
         <vel_i_gain>0</vel_i_gain>
         <vel_d_gain>0</vel_d_gain>
         <vel_i_max>0</vel_i_max>
@@ -541,7 +541,7 @@
         <rotorVelocitySlowdownSim>1</rotorVelocitySlowdownSim>
       </rotor>
       <rotor id="2">
-        <vel_p_gain>0.05</vel_p_gain>
+        <vel_p_gain>0.03</vel_p_gain>
         <vel_i_gain>0</vel_i_gain>
         <vel_d_gain>0</vel_d_gain>
         <vel_i_max>0</vel_i_max>
@@ -553,7 +553,7 @@
         <rotorVelocitySlowdownSim>1</rotorVelocitySlowdownSim>
       </rotor>
       <rotor id="3">
-        <vel_p_gain>0.05</vel_p_gain>
+        <vel_p_gain>0.03</vel_p_gain>
         <vel_i_gain>0</vel_i_gain>
         <vel_d_gain>0</vel_d_gain>
         <vel_i_max>0</vel_i_max>
