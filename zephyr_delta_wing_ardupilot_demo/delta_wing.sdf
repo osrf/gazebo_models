@@ -1,0 +1,161 @@
+<sdf version='1.6' xmlns:xacro='http://ros.org/wiki/xacro'>
+  <model name="zephyr_delta_wing_demo">
+    <pose>0 0 0 0 0 1.5707</pose>
+    <include>
+      <uri>model://zephyr_delta_wing</uri>
+      <pose>0 0 0.2 0 0 0</pose>
+    </include>
+
+    <link name="skid_pad">
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.0043137104</ixx>
+          <ixy>0</ixy>
+          <iyy>0.00387382402</iyy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+          <izz>0.00809845106</izz>
+        </inertia>
+      </inertial>
+      <!--
+      <visual name="skid_pad">
+        <pose>0 -0.05 0.025 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.5 1.0 .05</size>
+          </box>
+        </geometry>
+      </visual>
+      -->
+      <collision name="skid_pad">
+        <pose>0 -0.07 0.025 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.0 0.5 .05</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000000</kp>
+              <kd>1</kd>
+              <min_depth>0.001</min_depth>
+              <max_vel>1.0</max_vel>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <!--
+              <slip2>20</slip2>
+              -->
+              <mu>0.3</mu>
+              <mu2>0</mu2>
+              <fdir1>1 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <sensor name="chase_cam" type="camera">
+        <pose>0 6 0.0 0 0.0 -1.5707</pose>
+        <camera>
+          <horizontal_fov>1.347</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>1000</far>
+          </clip>
+        </camera>
+        <always_on>0</always_on>
+        <update_rate>15</update_rate>
+        <visualize>false</visualize>
+      </sensor>
+      <sensor name="chase_cam_wide" type="camera">
+        <pose>0 5 2.0 0 0.3 -1.5707</pose>
+        <camera>
+          <horizontal_fov>2.0</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>1000</far>
+          </clip>
+        </camera>
+        <always_on>0</always_on>
+        <update_rate>15</update_rate>
+        <visualize>false</visualize>
+      </sensor>
+    </link>
+    <joint name="skid_pad_joint" type="revolute">
+      <parent>zephyr_delta_wing::wing</parent>
+      <child>skid_pad</child>
+      <axis>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <xyz>1 0 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <plugin name="arducopter_plugin" filename="libArduCopterPlugin.so">
+      <imuName>zephyr_delta_wing_demo::zephyr_delta_wing::wing::imu_sensor</imuName>
+      <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
+      <rotor id="0">
+        <vel_p_gain>0.01</vel_p_gain>
+        <vel_i_gain>0</vel_i_gain>
+        <vel_d_gain>0</vel_d_gain>
+        <vel_i_max>0</vel_i_max>
+        <vel_i_min>0</vel_i_min>
+        <vel_cmd_max>2.0</vel_cmd_max>
+        <vel_cmd_min>-2.0</vel_cmd_min>
+        <jointName>zephyr_delta_wing::rotor_0_joint</jointName>
+        <turningDirection>ccw</turningDirection>
+        <rotorVelocitySlowdownSim>1</rotorVelocitySlowdownSim>
+      </rotor>
+      <rotor id="1">
+        <vel_p_gain>0.01</vel_p_gain>
+        <vel_i_gain>0</vel_i_gain>
+        <vel_d_gain>0</vel_d_gain>
+        <vel_i_max>0</vel_i_max>
+        <vel_i_min>0</vel_i_min>
+        <vel_cmd_max>2.0</vel_cmd_max>
+        <vel_cmd_min>-2.0</vel_cmd_min>
+        <jointName>zephyr_delta_wing::rotor_1_joint</jointName>
+        <turningDirection>ccw</turningDirection>
+        <rotorVelocitySlowdownSim>1</rotorVelocitySlowdownSim>
+      </rotor>
+      <rotor id="2">
+        <vel_p_gain>0.01</vel_p_gain>
+        <vel_i_gain>0</vel_i_gain>
+        <vel_d_gain>0</vel_d_gain>
+        <vel_i_max>0</vel_i_max>
+        <vel_i_min>0</vel_i_min>
+        <vel_cmd_max>2.0</vel_cmd_max>
+        <vel_cmd_min>-2.0</vel_cmd_min>
+        <jointName>zephyr_delta_wing::rotor_2_joint</jointName>
+        <turningDirection>cw</turningDirection>
+        <rotorVelocitySlowdownSim>1</rotorVelocitySlowdownSim>
+      </rotor>
+      <rotor id="3">
+        <vel_p_gain>0.01</vel_p_gain>
+        <vel_i_gain>0</vel_i_gain>
+        <vel_d_gain>0</vel_d_gain>
+        <vel_i_max>0</vel_i_max>
+        <vel_i_min>0</vel_i_min>
+        <vel_cmd_max>2.0</vel_cmd_max>
+        <vel_cmd_min>-2.0</vel_cmd_min>
+        <jointName>zephyr_delta_wing::rotor_3_joint</jointName>
+        <turningDirection>cw</turningDirection>
+        <rotorVelocitySlowdownSim>1</rotorVelocitySlowdownSim>
+      </rotor>
+    </plugin>
+
+  </model>
+</sdf>

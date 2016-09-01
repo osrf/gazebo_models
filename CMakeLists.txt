@@ -222,6 +222,7 @@ wooden_peg
 wooden_peg_board
 youbot
 zephyr_delta_wing
+zephyr_delta_wing_ardupilot_demo
 )
 
 set (MODEL_URI_LIST "" CACHE INTERNAL "Model URI List" FORCE)

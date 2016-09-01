@@ -143,6 +143,11 @@
           </velocity_sensing>
         </gps>
       </sensor>
+      <sensor name="imu_sensor" type="imu">
+        <pose>0 0 0 3.141593 0 0</pose>
+        <always_on>1</always_on>
+        <update_rate>1000.0</update_rate>
+      </sensor>
     </link>
 
     <link name="propeller">
