@@ -105,7 +105,7 @@
     </joint>
 
     <plugin name="ardupilot_plugin" filename="libArduPilotPlugin.so">
-      <imuName>zephyr_delta_wing_demo::zephyr_delta_wing::wing::imu_sensor</imuName>
+      <imuName>zephyr_delta_wing::wing::imu_sensor</imuName>
       <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
       <control channel="0">
         <multiplier>1</multiplier>
