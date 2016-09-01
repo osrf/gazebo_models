@@ -104,57 +104,45 @@
       </axis>
     </joint>
 
-    <plugin name="arducopter_plugin" filename="libArduCopterPlugin.so">
+    <plugin name="ardupilot_plugin" filename="libArduPilotPlugin.so">
       <imuName>zephyr_delta_wing_demo::zephyr_delta_wing::wing::imu_sensor</imuName>
       <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
-      <rotor id="0">
-        <vel_p_gain>0.01</vel_p_gain>
-        <vel_i_gain>0</vel_i_gain>
-        <vel_d_gain>0</vel_d_gain>
-        <vel_i_max>0</vel_i_max>
-        <vel_i_min>0</vel_i_min>
-        <vel_cmd_max>2.0</vel_cmd_max>
-        <vel_cmd_min>-2.0</vel_cmd_min>
-        <jointName>zephyr_delta_wing::rotor_0_joint</jointName>
-        <turningDirection>ccw</turningDirection>
-        <rotorVelocitySlowdownSim>1</rotorVelocitySlowdownSim>
-      </rotor>
-      <rotor id="1">
-        <vel_p_gain>0.01</vel_p_gain>
-        <vel_i_gain>0</vel_i_gain>
-        <vel_d_gain>0</vel_d_gain>
-        <vel_i_max>0</vel_i_max>
-        <vel_i_min>0</vel_i_min>
-        <vel_cmd_max>2.0</vel_cmd_max>
-        <vel_cmd_min>-2.0</vel_cmd_min>
-        <jointName>zephyr_delta_wing::rotor_1_joint</jointName>
-        <turningDirection>ccw</turningDirection>
-        <rotorVelocitySlowdownSim>1</rotorVelocitySlowdownSim>
-      </rotor>
-      <rotor id="2">
-        <vel_p_gain>0.01</vel_p_gain>
-        <vel_i_gain>0</vel_i_gain>
-        <vel_d_gain>0</vel_d_gain>
-        <vel_i_max>0</vel_i_max>
-        <vel_i_min>0</vel_i_min>
-        <vel_cmd_max>2.0</vel_cmd_max>
-        <vel_cmd_min>-2.0</vel_cmd_min>
-        <jointName>zephyr_delta_wing::rotor_2_joint</jointName>
-        <turningDirection>cw</turningDirection>
-        <rotorVelocitySlowdownSim>1</rotorVelocitySlowdownSim>
-      </rotor>
-      <rotor id="3">
-        <vel_p_gain>0.01</vel_p_gain>
-        <vel_i_gain>0</vel_i_gain>
-        <vel_d_gain>0</vel_d_gain>
-        <vel_i_max>0</vel_i_max>
-        <vel_i_min>0</vel_i_min>
-        <vel_cmd_max>2.0</vel_cmd_max>
-        <vel_cmd_min>-2.0</vel_cmd_min>
-        <jointName>zephyr_delta_wing::rotor_3_joint</jointName>
-        <turningDirection>cw</turningDirection>
-        <rotorVelocitySlowdownSim>1</rotorVelocitySlowdownSim>
-      </rotor>
+      <control channel="0">
+        <multiplier>1</multiplier>
+        <type>VELOCITY</type>
+        <p_gain>0.01</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>2.0</cmd_max>
+        <cmd_min>-2.0</cmd_min>
+        <jointName>zephyr_delta_wing::propeller_joint</jointName>
+      </control>
+      <control channel="1">
+        <multiplier>1</multiplier>
+        <type>POSITION</type>
+        <p_gain>10.0</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>2.0</cmd_max>
+        <cmd_min>-2.0</cmd_min>
+        <jointName>zephyr_delta_wing::flap_left_joint</jointName>
+      </control>
+      <control channel="2">
+        <multiplier>1</multiplier>
+        <type>POSITION</type>
+        <p_gain>10.0</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>2.0</cmd_max>
+        <cmd_min>-2.0</cmd_min>
+        <jointName>zephyr_delta_wing::flap_right_joint</jointName>
+      </control>
     </plugin>
 
   </model>
