@@ -1,9 +1,9 @@
 <sdf version='1.6' xmlns:xacro='http://ros.org/wiki/xacro'>
   <model name="zephyr_delta_wing_demo">
-    <pose>0 0 0 0 0 1.5707</pose>
+    <pose>0 0 0 0 0 0</pose>
     <include>
       <uri>model://zephyr_delta_wing</uri>
-      <pose>0 0 0.2 0 0 0</pose>
+      <pose>0 0 0.2 0 0 1.57079</pose>
     </include>
 
     <link name="skid_pad">
@@ -108,7 +108,7 @@
       <imuName>zephyr_delta_wing::wing::imu_sensor</imuName>
       <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
       <control channel="2">
-        <!-- 838 max rpm / 2 -->
+        <!-- 838 max rpm / 2 or ? -->
         <multiplier>419</multiplier>
         <offset>1</offset>
         <type>VELOCITY</type>
@@ -121,8 +121,8 @@
         <cmd_min>-2.0</cmd_min>
         <jointName>zephyr_delta_wing::propeller_joint</jointName>
       </control>
-      <control channel="0">
-        <multiplier>-0.3</multiplier>
+      <control channel="1">
+        <multiplier>-0.05</multiplier>
         <offset>-0.5</offset>
         <type>POSITION</type>
         <p_gain>10.0</p_gain>
@@ -134,8 +134,8 @@
         <cmd_min>-2.0</cmd_min>
         <jointName>zephyr_delta_wing::flap_left_joint</jointName>
       </control>
-      <control channel="1">
-        <multiplier>-0.3</multiplier>
+      <control channel="0">
+        <multiplier>-0.05</multiplier>
         <offset>-0.5</offset>
         <type>POSITION</type>
         <p_gain>10.0</p_gain>
