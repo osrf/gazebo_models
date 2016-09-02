@@ -57,12 +57,12 @@
         </surface>
       </collision>
       <sensor name="chase_cam" type="camera">
-        <pose>0 6 0.0 0 0.0 -1.5707</pose>
+        <pose>0 5 0.0 0 0.0 -1.5707</pose>
         <camera>
-          <horizontal_fov>1.347</horizontal_fov>
+          <horizontal_fov>0.5</horizontal_fov>
           <image>
-            <width>640</width>
-            <height>480</height>
+            <width>1280</width>
+            <height>960</height>
           </image>
           <clip>
             <near>0.1</near>
@@ -74,12 +74,12 @@
         <visualize>false</visualize>
       </sensor>
       <sensor name="chase_cam_wide" type="camera">
-        <pose>0 5 2.0 0 0.3 -1.5707</pose>
+        <pose>0 1 0.7 0 0.2 -1.5707</pose>
         <camera>
           <horizontal_fov>2.0</horizontal_fov>
           <image>
-            <width>640</width>
-            <height>480</height>
+            <width>1280</width>
+            <height>960</height>
           </image>
           <clip>
             <near>0.1</near>
@@ -107,8 +107,10 @@
     <plugin name="ardupilot_plugin" filename="libArduPilotPlugin.so">
       <imuName>zephyr_delta_wing::wing::imu_sensor</imuName>
       <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
-      <control channel="0">
-        <multiplier>1</multiplier>
+      <control channel="2">
+        <!-- 838 max rpm / 2 -->
+        <multiplier>419</multiplier>
+        <offset>1</offset>
         <type>VELOCITY</type>
         <p_gain>0.01</p_gain>
         <i_gain>0</i_gain>
@@ -119,8 +121,9 @@
         <cmd_min>-2.0</cmd_min>
         <jointName>zephyr_delta_wing::propeller_joint</jointName>
       </control>
-      <control channel="1">
+      <control channel="0">
         <multiplier>1</multiplier>
+        <offset>0</offset>
         <type>POSITION</type>
         <p_gain>10.0</p_gain>
         <i_gain>0</i_gain>
@@ -131,8 +134,9 @@
         <cmd_min>-2.0</cmd_min>
         <jointName>zephyr_delta_wing::flap_left_joint</jointName>
       </control>
-      <control channel="2">
+      <control channel="1">
         <multiplier>1</multiplier>
+        <offset>0</offset>
         <type>POSITION</type>
         <p_gain>10.0</p_gain>
         <i_gain>0</i_gain>
