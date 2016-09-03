@@ -3,6 +3,7 @@
   <model name="zephyr_delta_wing">
     <pose>0 0 0.02577 0 0 0</pose>
 
+    <!-- this model is -y forward, x-left and z-up -->
     <link name="wing">
       <inertial>
         <pose>0 -0.12 0 0 0 0</pose>
@@ -144,6 +145,7 @@
         </gps>
       </sensor>
       <sensor name="imu_sensor" type="imu">
+        <!-- need to make x-forward, y-left, z-down -->
         <pose>0 0 0 3.141593 0 0</pose>
         <always_on>1</always_on>
         <update_rate>1000.0</update_rate>
