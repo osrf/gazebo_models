@@ -130,7 +130,7 @@
         <jointName>zephyr_delta_wing::propeller_joint</jointName>
       </control>
       <control channel="1">
-        <multiplier>-0.20</multiplier>
+        <multiplier>-0.30</multiplier>
         <offset>-0.5</offset>
         <type>POSITION</type>
         <p_gain>10.0</p_gain>
@@ -143,7 +143,7 @@
         <jointName>zephyr_delta_wing::flap_left_joint</jointName>
       </control>
       <control channel="0">
-        <multiplier>-0.20</multiplier>
+        <multiplier>-0.30</multiplier>
         <offset>-0.5</offset>
         <type>POSITION</type>
         <p_gain>10.0</p_gain>
