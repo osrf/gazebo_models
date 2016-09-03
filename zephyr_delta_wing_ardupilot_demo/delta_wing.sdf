@@ -112,7 +112,7 @@
 
     <plugin name="ardupilot_plugin" filename="libArduPilotPlugin.so">
       <modelToXForwardZUp>0 0 0 0 0 1.57079</modelToXForwardZUp>
-      <modelXYZToNED>0 0 0 3.141593 0 -1.57079</modelXYZToNED>
+      <gazeboXYZToNED>0 0 0 3.141593 0 -1.57079</gazeboXYZToNED>
       <imuName>imu_sensor</imuName>
       <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
       <control channel="2">
