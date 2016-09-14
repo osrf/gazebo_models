@@ -123,8 +123,8 @@
             offset = 1
             multiplier = 838 max rpm / 2 = 419
         -->
-        <multiplier>838</multiplier>
-        <offset>0</offset>
+        <multiplier>419</multiplier>
+        <offset>1</offset>
         <type>VELOCITY</type>
         <p_gain>0.01</p_gain>
         <i_gain>0</i_gain>
