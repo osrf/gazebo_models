@@ -116,7 +116,13 @@
       <imuName>imu_sensor</imuName>
       <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
       <control channel="2">
-        <!-- 838 max rpm / 2 or ? -->
+        <!--
+          incoming control command [-1, 1]
+          so offset it by 1 to get [0, 2]
+          and divide max target by 2.
+            offset = 1
+            multiplier = 838 max rpm / 2 = 419
+        -->
         <multiplier>838</multiplier>
         <offset>0</offset>
         <type>VELOCITY</type>
@@ -126,7 +132,7 @@
         <i_max>0</i_max>
         <i_min>0</i_min>
         <cmd_max>2.0</cmd_max>
-        <cmd_min>-2.0</cmd_min>
+        <cmd_min>0.0</cmd_min>
         <jointName>zephyr_delta_wing::propeller_joint</jointName>
       </control>
       <control channel="1">
