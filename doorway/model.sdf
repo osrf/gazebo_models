@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="doorway">
+    <link name="doorway_base">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://doorway/meshes/doorway_base.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>1.5</radius>
+            <length>0.3</length>
+          </cylinder>
+        </geomtry>
+        <!--<geometry>
+          <mesh>
+            <uri>model://doorway/meshes/doorway_base.dae</uri>
+          </mesh>
+        </geometry>-->
+      </visual>
+    </link>
+    <link name="doorway_door">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://doorway/meshes/doorway_door.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://doorway/meshes/doorway_door.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
