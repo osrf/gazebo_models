@@ -185,6 +185,7 @@ simple_arm
 simple_arm_gripper
 simple_gripper
 speed_limit_sign
+src_doorway
 standpipe
 starting_pen
 stereo_camera
