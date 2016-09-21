@@ -50,7 +50,6 @@ cube_20k
 depth_camera
 disk_part
 door_handle
-doorway
 double_pendulum_with_base
 drc_practice_2x4
 drc_practice_2x6
@@ -186,6 +185,7 @@ simple_arm
 simple_arm_gripper
 simple_gripper
 speed_limit_sign
+src_doorway
 standpipe
 starting_pen
 stereo_camera
