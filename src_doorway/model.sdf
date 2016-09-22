@@ -360,29 +360,83 @@
       </visual>
     </link>
 
+    <!-- The button -->
+    <link name="button">
+      <pose>-0.735 0.15 1.247 0 0 0</pose>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.06 0.018 0.16</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.06 0.018 0.16</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://src_doorway/materials/scripts</uri>
+            <uri>model://src_doorway/materials/textures</uri>
+            <name>src_doorway_button/Diffuse</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
     <!-- Joint connecting the frame and the door -->
     <joint name="hinge" type="revolute">
-        <parent>doorway_frame</parent>
-        <child>doorway_door</child>
-        <pose>0.5 -0.14 0 0 0 0</pose>
-        <axis>
-          <xyz>0 0 1</xyz>
-          <limit>
-            <lower>0</lower>
-            <upper>3</upper>
-          </limit>
-          <dynamics>
-            <damping>1.0</damping>
-            <friction>1.0</friction>
-          </dynamics>
-          <use_parent_model_frame>true</use_parent_model_frame>
-        </axis>
-        <physics>
-          <ode>
-            <cfm_damping>1</cfm_damping>
-          </ode>
-        </physics>
-      </joint>
+      <parent>doorway_frame</parent>
+      <child>doorway_door</child>
+      <pose>0.5 -0.14 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>3</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>1.0</friction>
+        </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+    <!-- Joint to make the button pushable -->
+    <joint name="button_mechanism" type="prismatic">
+      <parent>doorway_frame</parent>
+      <child>button</child>
+      <pose>-0.735 0.15 1.247 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-0.01</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+          <!--<friction>1.0</friction>-->
+          <spring_stiffness>10</spring_stiffness>
+          <spring_reference>0.002</spring_reference>
+        </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
 
   </model>
 </sdf>

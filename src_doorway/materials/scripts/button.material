@@ -1,0 +1,18 @@
+material src_doorway_button/Diffuse
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture button.png
+        filtering anistropic
+        max_anisotropy 16
+      }
+      
+    }
+  }
+}
+
