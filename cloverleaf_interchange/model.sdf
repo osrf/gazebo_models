@@ -7,6 +7,7 @@
         <geometry>
           <mesh>
             <uri>model://cloverleaf_interchange/meshes/cloverleaf.obj</uri>
+            <scale>0.0254 0.0254 0.0254</scale>
           </mesh>
         </geometry>
       </collision>
@@ -14,6 +15,7 @@
         <geometry>
           <mesh>
             <uri>model://cloverleaf_interchange/meshes/cloverleaf.obj</uri>
+            <scale>0.0254 0.0254 0.0254</scale>
           </mesh>
         </geometry>
       </visual>
