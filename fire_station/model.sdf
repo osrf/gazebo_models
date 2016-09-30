@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="fire_station">
+    <static>true</static>
+    <link name="link">
+
+      <collision name="main">
+        <pose>0 -0.135 5 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>20 9.68 10</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="front_top">
+        <pose>0 4.96 7.0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>20 0.5 6.0</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://fire_station/meshes/fire_station.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

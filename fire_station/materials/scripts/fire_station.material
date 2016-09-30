@@ -1,0 +1,34 @@
+material FireStation/Diffuse
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture FireStation_Diffuse.png
+      }
+
+      rtshader_system
+      {
+        lighting_stage normal_map FireStation_Normal.png tangent_space 0
+      }
+    }
+  }
+}
+
+material FireStation/Specular
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture FireStation_Spec.png
+      }
+    }
+  }
+}
