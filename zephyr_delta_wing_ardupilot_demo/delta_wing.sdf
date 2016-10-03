@@ -111,6 +111,9 @@
     </joint>
 
     <plugin name="ardupilot_plugin" filename="libArduPilotPlugin.so">
+      <fdm_addr>127.0.0.1</fdm_addr>
+      <fdm_port_in>9002</fdm_port_in>
+      <fdm_port_out>9003</fdm_port_out>
       <modelToXForwardZUp>0 0 0 0 0 1.57079</modelToXForwardZUp>
       <gazeboXYZToNED>0 0 0 3.141593 0 -1.57079</gazeboXYZToNED>
       <imuName>imu_sensor</imuName>
