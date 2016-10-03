@@ -514,10 +514,13 @@
       <link_name>iris::rotor_3</link_name>
     </plugin>
     <plugin name="arducopter_plugin" filename="libArduCopterPlugin.so">
+      <fdm_addr>127.0.0.1</fdm_addr>
+      <fdm_port_in>9002</fdm_port_in>
+      <fdm_port_out>9003</fdm_port_out>
       <imuName>iris_demo::iris::iris/imu_link::imu_sensor</imuName>
       <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
       <rotor id="0">
-        <vel_p_gain>1.00</vel_p_gain>
+        <vel_p_gain>0.20</vel_p_gain>
         <vel_i_gain>0</vel_i_gain>
         <vel_d_gain>0</vel_d_gain>
         <vel_i_max>0</vel_i_max>
@@ -529,7 +532,7 @@
         <rotorVelocitySlowdownSim>1</rotorVelocitySlowdownSim>
       </rotor>
       <rotor id="1">
-        <vel_p_gain>1.00</vel_p_gain>
+        <vel_p_gain>0.20</vel_p_gain>
         <vel_i_gain>0</vel_i_gain>
         <vel_d_gain>0</vel_d_gain>
         <vel_i_max>0</vel_i_max>
@@ -541,7 +544,7 @@
         <rotorVelocitySlowdownSim>1</rotorVelocitySlowdownSim>
       </rotor>
       <rotor id="2">
-        <vel_p_gain>1.00</vel_p_gain>
+        <vel_p_gain>0.20</vel_p_gain>
         <vel_i_gain>0</vel_i_gain>
         <vel_d_gain>0</vel_d_gain>
         <vel_i_max>0</vel_i_max>
@@ -553,7 +556,7 @@
         <rotorVelocitySlowdownSim>1</rotorVelocitySlowdownSim>
       </rotor>
       <rotor id="3">
-        <vel_p_gain>1.00</vel_p_gain>
+        <vel_p_gain>0.20</vel_p_gain>
         <vel_i_gain>0</vel_i_gain>
         <vel_d_gain>0</vel_d_gain>
         <vel_i_max>0</vel_i_max>
