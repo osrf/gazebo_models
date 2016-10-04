@@ -154,10 +154,10 @@
   </library_lights>
   <library_images>
     <image id="FireStation_Diffuse_tga">
-      <init_from>FireStation_Diffuse.tga</init_from>
+      <init_from>fire_station_diffuse.png</init_from>
     </image>
     <image id="FireStation_Spec_tga">
-      <init_from>FireStation_Spec.tga</init_from>
+      <init_from>fire_station_spec.png</init_from>
     </image>
   </library_images>
   <library_visual_scenes>
