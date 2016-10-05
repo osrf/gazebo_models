@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="door_handle">
+    <link name="handle">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://door_handle/meshes/door_handle.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://door_handle/meshes/door_handle.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
