@@ -1,4 +1,4 @@
-material src_doorway_button/Diffuse
+material src_door_button/Diffuse
 {
   receive_shadows off
   technique
@@ -11,7 +11,7 @@ material src_doorway_button/Diffuse
         filtering anistropic
         max_anisotropy 16
       }
-      
+
     }
   }
 }
