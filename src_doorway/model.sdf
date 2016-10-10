@@ -1,767 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
-  <model name="src_doorway">
+  <model name="src_door">
     <pose>0 0 0 0 0 3.14159</pose>
-
-    <!-- The big circular frame + the platform -->
-    <link name="doorway_frame">
-
-      <!-- Inertia, if needed -->
-      <!-- Mass computed using density of aluminum 7050 (2800Kg/m3). -->
-      <!-- m = (1.25*8.209*0.1)*2800 = 2873 Kg -->
-      <inertial>
-        <pose>0 0 0.05 0 0 0</pose>
-        <mass>2873</mass>
-        <inertia>
-          <ixx>16895.63</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>376.483</iyy>
-          <iyz>0</iyz>
-          <izz>17267.3286</izz>
-        </inertia>
-      </inertial>
-
-      <!-- The platform with its ramps -->
-      <collision name="platform">
-        <pose>0 0 0.05 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>1.25 8.209 0.1</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="front_ramp_1">
-        <pose>0 4.1135 0.05 0.96 0 0</pose>
-        <geometry>
-          <box>
-            <size>1.25 0.072 0.072</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="front_ramp_2">
-        <pose>0 4.1635 0.031 0.96 0 0</pose>
-        <geometry>
-          <box>
-            <size>1.25 0.045 0.045</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="front_ramp_3">
-        <pose>0 4.1935 0.02 0.96 0 0</pose>
-        <geometry>
-          <box>
-            <size>1.25 0.028 0.028</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="front_ramp_4">
-        <pose>0 4.2135 0.012 0.96 0 0</pose>
-        <geometry>
-          <box>
-            <size>1.25 0.017 0.017</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="front_ramp_5">
-        <pose>0 4.2235 0.008 0.96 0 0</pose>
-        <geometry>
-          <box>
-            <size>1.25 0.012 0.012</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="front_ramp_6">
-        <pose>0 4.231 0.005 0.96 0 0</pose>
-        <geometry>
-          <box>
-            <size>1.25 0.008 0.008</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="front_ramp_7">
-        <pose>0 4.2365 0.003 0.96 0 0</pose>
-        <geometry>
-          <box>
-            <size>1.25 0.005 0.005</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="front_ramp_8">
-        <pose>0 4.2405 0.002 0.96 0 0</pose>
-        <geometry>
-          <box>
-            <size>1.25 0.0026 0.0026</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="back_ramp_1">
-        <pose>0 -4.1135 0.05 -0.96 0 0</pose>
-        <geometry>
-          <box>
-            <size>1.25 0.072 0.072</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="back_ramp_2">
-        <pose>0 -4.1635 0.031 -0.96 0 0</pose>
-        <geometry>
-          <box>
-            <size>1.25 0.045 0.045</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="back_ramp_3">
-        <pose>0 -4.1935 0.02 -0.96 0 0</pose>
-        <geometry>
-          <box>
-            <size>1.25 0.028 0.028</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="back_ramp_4">
-        <pose>0 -4.2135 0.012 -0.96 0 0</pose>
-        <geometry>
-          <box>
-            <size>1.25 0.017 0.017</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="back_ramp_5">
-        <pose>0 -4.2235 0.008 -0.96 0 0</pose>
-        <geometry>
-          <box>
-            <size>1.25 0.012 0.012</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="back_ramp_6">
-        <pose>0 -4.231 0.005 -0.96 0 0</pose>
-        <geometry>
-          <box>
-            <size>1.25 0.008 0.008</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="back_ramp_7">
-        <pose>0 -4.2365 0.003 -0.96 0 0</pose>
-        <geometry>
-          <box>
-            <size>1.25 0.005 0.005</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>0.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.0</mu>
-              <mu2>1.0</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="back_ramp_8">
-        <pose>0 -4.2405 0.002 -0.96 0 0</pose>
-        <geometry>
-          <box>
-            <size>1.25 0.0026 0.0026</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-
-      <collision name="left_1">
-        <pose>0.665 0 1.2 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.3 0.19 2.2</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="left_2">
-        <pose>0.96 0 1.21 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.3 0.19 1.65</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="left_3">
-        <pose>1.23 0 1.2 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.25 0.19 0.6</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-
-      <!-- Collision elements in the circular frame -->
-      <collision name="right_1">
-        <pose>-0.665 0 1.2 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.3 0.19 2.2</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="right_2">
-        <pose>-0.96 0 1.21 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.3 0.19 1.65</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="right_3">
-        <pose>-1.23 0 1.2 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.25 0.19 0.6</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-
-      <collision name="top_1">
-        <pose>0 0 2.32 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>1.25 0.19 0.25</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-
-      <collision name="diagonal_top_left">
-        <pose>0.55 0 2.2 0 0.785 0</pose>
-        <geometry>
-          <box>
-            <size>0.3 0.19 0.25</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-
-      <collision name="diagonal_top_right">
-        <pose>-0.55 0 2.2 0 -0.785 0</pose>
-        <geometry>
-          <box>
-            <size>0.3 0.19 0.25</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-
-      <collision name="diagonal_bottom_left">
-        <pose>0.5 0 0.185 0 -0.785 0</pose>
-        <geometry>
-          <box>
-            <size>0.3 0.19 0.07</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-
-      <collision name="diagonal_bottom_right">
-        <pose>-0.5 0 0.185 0 0.785 0</pose>
-        <geometry>
-          <box>
-            <size>0.3 0.19 0.07</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-
-      <visual name="visual">
-        <geometry>
-          <mesh>
-            <uri>model://src_doorway/meshes/doorway_base.dae</uri>
-          </mesh>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1000000.0</kp>
-              <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
-      </visual>
-
-      <!-- Start line -->
-      <visual name="start_line">
-        <pose>0 3 0.1 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>1.25 0.05 0.001</size>
-          </box>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Red</name>
-          </script>
-        </material>
-      </visual>
-
-      <!-- Finish line -->
-      <visual name="finish_line">
-        <pose>0 -1 0.1 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>1.25 0.05 0.001</size>
-          </box>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Red</name>
-          </script>
-        </material>
-      </visual>
-
-    </link>
-
     <!-- The door -->
     <link name="doorway_door">
       <pose>0 0 1 0 0 0</pose>
@@ -792,9 +32,9 @@
         <surface>
           <contact>
             <ode>
-              <kp>1000000.0</kp>
+              <kp>1e16</kp>
               <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
+              <max_vel>1000.0</max_vel>
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
@@ -816,9 +56,9 @@
         <surface>
           <contact>
             <ode>
-              <kp>1000000.0</kp>
+              <kp>1e16</kp>
               <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
+              <max_vel>1000.0</max_vel>
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
@@ -840,9 +80,9 @@
         <surface>
           <contact>
             <ode>
-              <kp>1000000.0</kp>
+              <kp>1e16</kp>
               <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
+              <max_vel>1000.0</max_vel>
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
@@ -865,9 +105,9 @@
         <surface>
           <contact>
             <ode>
-              <kp>1000000.0</kp>
+              <kp>1e16</kp>
               <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
+              <max_vel>1000.0</max_vel>
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
@@ -890,9 +130,9 @@
         <surface>
           <contact>
             <ode>
-              <kp>1000000.0</kp>
+              <kp>1e16</kp>
               <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
+              <max_vel>1000.0</max_vel>
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
@@ -915,9 +155,9 @@
         <surface>
           <contact>
             <ode>
-              <kp>1000000.0</kp>
+              <kp>1e16</kp>
               <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
+              <max_vel>1000.0</max_vel>
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
@@ -940,9 +180,9 @@
         <surface>
           <contact>
             <ode>
-              <kp>1000000.0</kp>
+              <kp>1e16</kp>
               <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
+              <max_vel>1000.0</max_vel>
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
@@ -966,9 +206,9 @@
         <surface>
           <contact>
             <ode>
-              <kp>1000000.0</kp>
+              <kp>1e16</kp>
               <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
+              <max_vel>1000.0</max_vel>
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
@@ -991,9 +231,9 @@
         <surface>
           <contact>
             <ode>
-              <kp>1000000.0</kp>
+              <kp>1e16</kp>
               <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
+              <max_vel>1000.0</max_vel>
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
@@ -1032,9 +272,9 @@
         <surface>
           <contact>
             <ode>
-              <kp>1000000.0</kp>
+              <kp>1e16</kp>
               <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
+              <max_vel>1000.0</max_vel>
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
@@ -1056,9 +296,9 @@
         <surface>
           <contact>
             <ode>
-              <kp>1000000.0</kp>
+              <kp>1e16</kp>
               <kd>100.0</kd>
-              <max_vel>100.0</max_vel>
+              <max_vel>1000.0</max_vel>
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
@@ -1081,7 +321,7 @@
 
     <!-- Joint connecting the frame and the door -->
     <joint name="hinge" type="revolute">
-      <parent>doorway_frame</parent>
+      <parent>world</parent>
       <child>doorway_door</child>
       <pose>0.5 -0.14 0 0 0 0</pose>
       <axis>
@@ -1105,7 +345,7 @@
 
     <!-- Joint to make the button pushable -->
     <joint name="button_mechanism" type="prismatic">
-      <parent>doorway_frame</parent>
+      <parent>world</parent>
       <child>button</child>
       <pose>-0.735 0.15 1.247 0 0 0</pose>
       <axis>
@@ -1127,6 +367,6 @@
         </ode>
       </physics>
     </joint>
-
   </model>
+
 </sdf>
