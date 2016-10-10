@@ -3,7 +3,7 @@
   <model name="src_door">
     <pose>0 0 0 0 0 3.14159</pose>
     <!-- The door -->
-    <link name="doorway_door">
+    <link name="door">
       <pose>0 0 1 0 0 0</pose>
 
       <!-- Mass computed using density of aluminum foil (2700Kg/m3)
@@ -225,25 +225,9 @@
         <pose>0 0 -1 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://src_doorway/meshes/doorway_door.dae</uri>
+            <uri>model://src_door/meshes/doorway_door.dae</uri>
           </mesh>
         </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1e16</kp>
-              <kd>100.0</kd>
-              <max_vel>1000.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
       </visual>
     </link>
 
@@ -293,27 +277,11 @@
             <size>0.06 0.018 0.16</size>
           </box>
         </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1e16</kp>
-              <kd>100.0</kd>
-              <max_vel>1000.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
         <material>
           <script>
-            <uri>model://src_doorway/materials/scripts</uri>
-            <uri>model://src_doorway/materials/textures</uri>
-            <name>src_doorway_button/Diffuse</name>
+            <uri>model://src_door/materials/scripts</uri>
+            <uri>model://src_door/materials/textures</uri>
+            <name>src_door_button/Diffuse</name>
           </script>
         </material>
       </visual>
@@ -322,7 +290,7 @@
     <!-- Joint connecting the frame and the door -->
     <joint name="hinge" type="revolute">
       <parent>world</parent>
-      <child>doorway_door</child>
+      <child>door</child>
       <pose>0.5 -0.14 0 0 0 0</pose>
       <axis>
         <xyz>0 0 1</xyz>

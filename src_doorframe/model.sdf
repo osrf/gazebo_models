@@ -2,9 +2,10 @@
 <sdf version="1.6">
   <model name="src_doorframe">
     <pose>0 0 0 0 0 3.14159</pose>
+    <static>true</static>
 
     <!-- The big circular frame + the platform -->
-    <link name="doorway_frame">
+    <link name="frame">
 
       <!-- Inertia, if needed -->
       <!-- Mass computed using density of aluminum 7050 (2800Kg/m3). -->
@@ -707,25 +708,9 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://src_doorway/meshes/doorway_base.dae</uri>
+            <uri>model://src_doorframe/meshes/doorway_base.dae</uri>
           </mesh>
         </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <kp>1e16</kp>
-              <kd>100.0</kd>
-              <max_vel>1000.0</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <friction>
-            <ode>
-              <mu>1.5</mu>
-              <mu2>1.5</mu2>
-            </ode>
-          </friction>
-        </surface>
       </visual>
 
       <!-- Start line -->
@@ -762,30 +747,5 @@
 
     </link>
 
-    <!--
-    <joint name="world_joint" type="revolute">
-      <parent>world</parent>
-      <child>doorway_frame</child>
-      <pose>0 0 0 0 0 0</pose>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>0</upper>
-        </limit>
-        <dynamics>
-          <damping>1.0</damping>
-          <friction>0.0</friction>
-        </dynamics>
-        <use_parent_model_frame>true</use_parent_model_frame>
-      </axis>
-      <physics>
-        <ode>
-          <cfm_damping>1</cfm_damping>
-        </ode>
-      </physics>
-    </joint>
-    -->
-    <static>1</static>
   </model>
 </sdf>
