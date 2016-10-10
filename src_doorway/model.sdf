@@ -727,6 +727,39 @@
           </friction>
         </surface>
       </visual>
+
+      <!-- Start line -->
+      <visual name="start_line">
+        <pose>0 3 0.1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.25 0.05 0.001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+
+      <!-- Finish line -->
+      <visual name="finish_line">
+        <pose>0 -1 0.1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.25 0.05 0.001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+
     </link>
 
     <!-- The door -->
