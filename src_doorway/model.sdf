@@ -1,11 +1,12 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
   <model name="src_doorway">
+
+    <!-- The big circular frame + the platform -->
     <model name="src_doorframe">
       <pose>0 0 0 0 0 3.14159</pose>
       <static>true</static>
 
-      <!-- The big circular frame + the platform -->
       <link name="frame">
 
         <!-- Inertia, if needed -->
@@ -750,9 +751,10 @@
 
     </model>
 
+    <!-- The door -->
     <model name="src_door">
       <pose>0 0 0 0 0 3.14159</pose>
-      <!-- The door -->
+
       <link name="door">
         <pose>0 0 1 0 0 0</pose>
 
@@ -1031,60 +1033,60 @@
             <script>
               <uri>model://src_doorway/materials/scripts</uri>
               <uri>model://src_doorway/materials/textures</uri>
-              <name>src_door_button/Diffuse</name>
+              <name>src_doorway_button/Diffuse</name>
             </script>
           </material>
         </visual>
       </link>
-
-      <!-- Joint connecting the frame and the door -->
-      <joint name="hinge" type="revolute">
-        <parent>world</parent>
-        <child>door</child>
-        <pose>0.5 -0.14 0 0 0 0</pose>
-        <axis>
-          <xyz>0 0 1</xyz>
-          <limit>
-            <lower>0</lower>
-            <upper>3</upper>
-          </limit>
-          <dynamics>
-            <damping>1.0</damping>
-            <friction>1.0</friction>
-          </dynamics>
-          <use_parent_model_frame>true</use_parent_model_frame>
-        </axis>
-        <physics>
-          <ode>
-            <cfm_damping>1</cfm_damping>
-          </ode>
-        </physics>
-      </joint>
-
-      <!-- Joint to make the button pushable -->
-      <joint name="button_mechanism" type="prismatic">
-        <parent>world</parent>
-        <child>button</child>
-        <pose>-0.735 0.15 1.247 0 0 0</pose>
-        <axis>
-          <xyz>0 1 0</xyz>
-          <limit>
-            <lower>-0.01</lower>
-            <upper>0</upper>
-          </limit>
-          <dynamics>
-            <damping>10</damping>
-            <spring_stiffness>400</spring_stiffness>
-            <spring_reference>0.002</spring_reference>
-          </dynamics>
-          <use_parent_model_frame>true</use_parent_model_frame>
-        </axis>
-        <physics>
-          <ode>
-            <cfm_damping>1</cfm_damping>
-          </ode>
-        </physics>
-      </joint>
     </model>
+
+    <!-- Joint connecting the frame and the door -->
+    <joint name="hinge" type="revolute">
+      <parent>src_doorframe::frame</parent>
+      <child>src_door::door</child>
+      <pose>0.5 -0.14 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>3</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>1.0</friction>
+        </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+    <!-- Joint to make the button pushable -->
+    <joint name="button_mechanism" type="prismatic">
+      <parent>src_doorframe::frame</parent>
+      <child>src_door::button</child>
+      <pose>-0.735 0.15 1.247 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-0.01</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <spring_stiffness>400</spring_stiffness>
+          <spring_reference>0.002</spring_reference>
+        </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
   </model>
 </sdf>

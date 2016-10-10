@@ -141,7 +141,7 @@
   </library_lights>
   <library_images>
     <image id="Doorway_png">
-      <init_from>../../../src_doorframe/materials/textures/Doorway.png</init_from>
+      <init_from>Doorway.png</init_from>
     </image>
   </library_images>
   <library_visual_scenes>

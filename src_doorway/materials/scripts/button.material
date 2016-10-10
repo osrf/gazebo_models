@@ -1,4 +1,4 @@
-material src_door_button/Diffuse
+material src_doorway_button/Diffuse
 {
   receive_shadows off
   technique
