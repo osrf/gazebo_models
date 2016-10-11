@@ -1,10 +1,10 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
   <model name="src_doorway">
+    <pose>0 0 0 0 0 3.14159</pose>
 
     <!-- The big circular frame + the platform -->
     <model name="src_doorframe">
-      <pose>0 0 0 0 0 3.14159</pose>
       <static>true</static>
 
       <link name="frame">
@@ -753,7 +753,6 @@
 
     <!-- The door -->
     <model name="src_door">
-      <pose>0 0 0 0 0 3.14159</pose>
 
       <link name="door">
         <pose>0 0 1 0 0 0</pose>
