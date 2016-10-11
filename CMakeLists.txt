@@ -85,6 +85,7 @@ fast_food
 fire_hose_long
 fire_hose_long_curled
 fire_hydrant
+fire_station
 first_2015_trash_can
 follower_vehicle
 frc_field_2015

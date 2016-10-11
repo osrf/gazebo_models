@@ -1,0 +1,143 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="fire_station">
+    <static>true</static>
+
+    <link name="link">
+
+      <collision name="main">
+        <pose>0 -0.135 5 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>19.98 9.68 10</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="front_top">
+        <pose>0 4.957 7.0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>20 0.515 6.0</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="column_0">
+        <pose>9.333 4.957 2.0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.315 0.515 4.0</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="column_1">
+        <pose>3.33 4.957 2.0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>2.63 0.515 4.0</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="column_2">
+        <pose>-3.33 4.957 2.0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>2.63 0.515 4.0</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="column_3">
+        <pose>-9.333 4.957 2.0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.315 0.515 4.0</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="roof_back">
+        <pose>0 -2.742 10.467 0.25 0 0</pose>
+        <geometry>
+          <box>
+            <size>21.47 6.12 0.28</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="roof_front">
+        <pose>0 3.12 10.467 -0.25 0 0</pose>
+        <geometry>
+          <box>
+            <size>21.47 6.12 0.28</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="roof_base">
+        <pose>0 0.188 9.705 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>21.47 11.86 0.28</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="roof_filling_0">
+        <pose>0 0.188 9.985 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>21.47 9.53 0.28</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="roof_filling_1">
+        <pose>0 0.188 10.14 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>21.47 8.41 0.28</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="roof_filling_2">
+        <pose>0 0.188 10.42 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>21.47 6.25 0.28</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="roof_filling_3">
+        <pose>0 0.188 10.7 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>21.47 4.05 0.28</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="roof_filling_4">
+        <pose>0 0.188 10.98 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>21.47 1.83 0.28</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://fire_station/meshes/fire_station.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
