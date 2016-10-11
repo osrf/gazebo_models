@@ -11,7 +11,7 @@ material src_doorway_button/Diffuse
         filtering anistropic
         max_anisotropy 16
       }
-      
+
     }
   }
 }
