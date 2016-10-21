@@ -1,3 +1,4 @@
+<?xml version="1.0" ?>
 <sdf version='1.6' xmlns:xacro='http://ros.org/wiki/xacro'>
   <model name="zephyr_delta_wing_demo">
     <pose>0 0 0 0 0 0</pose>
