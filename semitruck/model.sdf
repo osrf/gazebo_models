@@ -1,0 +1,970 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="semitruck">
+
+    <link name="trailer">
+      <pose>0.031462238 9.087806553 2.02402 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.391735 0 0 0</pose>
+        <mass>5443</mass>
+        <inertia>
+          <ixx>121449.510163652</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6087.32112493</iyy>
+          <iyz>0</iyz>
+          <izz>121452.253785888</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <pose>0 0 0.391735 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>2.591 16.156993521 2.589832471</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+      <pose>-0.031462238 -9.087806553 -2.02402 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://semitruck/meshes/semi.obj</uri>
+            <scale>0.01 0.01 0.01</scale>
+            <submesh>
+              <name>semi_trailer</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="cab">
+      <pose>0.004843373 -2.0279 1.87493 0 0 0</pose>
+      <inertial>
+        <pose>0 -0.2 -0.5 0 0 0</pose>
+        <mass>9072</mass>
+        <inertia>
+          <ixx>22831.804454735</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>11801.392026984</iyy>
+          <iyz>0</iyz>
+          <izz>19031.257370538</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision1">
+        <pose>0 0.037277477 -0.963324437 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>2.066777679 4.45124915 1.094685077</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="collision3">
+        <pose>0 0.773545048 0.131396078 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>2.039343709 2.911903019 1.094763831</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="collision4">
+        <pose>0 0.917464116 0.605822221 0.332946059 0 0</pose>
+        <geometry>
+          <box>
+            <size>2.039343709 2.441375202 0.945048465</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="collision5">
+        <pose>0 3.66708 -1.05019 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.21561 2.87523 0.29854</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <pose>-0.004843373 2.0279 -1.87493 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://semitruck/meshes/semi.obj</uri>
+            <scale>0.01 0.01 0.01</scale>
+            <submesh>
+              <name>semi_truck</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    
+    <link name="rear_wheel1">
+      <pose>0 1.53513 0.47022 0 0 0</pose>
+
+      <inertial>
+        <pose>0 0 0 0 1.5707 0</pose>
+        <mass>36</mass>
+        <inertia>
+          <ixx>21.208148357</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>21.208148357</iyy>
+          <iyz>0</iyz>
+          <izz>3.979923271</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision1">
+        <pose>1.12178 0 0 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.47022</radius>
+            <length>0.28745</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+              <fdir1>0 0 1</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <collision name="collision2">
+      <pose>0.79986 0 0 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.47022</radius>
+            <length>0.28745</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+              <fdir1>0 0 1</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <collision name="collision3">
+      <pose>-0.79986 0 0 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.47022</radius>
+            <length>0.28745</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+              <fdir1>0 0 1</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <collision name="collision4">
+      <pose>-1.12178 0 0 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.47022</radius>
+            <length>0.28745</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+              <fdir1>0 0 1</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://semitruck/meshes/semi.obj</uri>
+            <scale>0.01 0.01 0.01</scale>
+            <submesh>
+              <name>semi_truck_wheel_rear_01</name>
+              <center>true</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="rear_wheel2">
+      <pose>0 2.65578 0.47022 0 0 0</pose>
+
+      <inertial>
+        <pose>0 0 0 0 1.5707 0</pose>
+        <mass>36</mass>
+        <inertia>
+          <ixx>21.208148357</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>21.208148357</iyy>
+          <iyz>0</iyz>
+          <izz>3.979923271</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision1">
+       <pose>1.12178 0 0 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.47022</radius>
+            <length>0.28745</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+              <fdir1>0 0 1</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <collision name="collision2">
+      <pose>0.79986 0 0 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.47022</radius>
+            <length>0.28745</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+              <fdir1>0 0 1</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <collision name="collision3">
+      <pose>-0.79986 0 0 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.47022</radius>
+            <length>0.28745</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+              <fdir1>0 0 1</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <collision name="collision4">
+      <pose>-1.12178 0 0 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.47022</radius>
+            <length>0.28745</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+              <fdir1>0 0 1</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://semitruck/meshes/semi.obj</uri>
+            <scale>0.01 0.01 0.01</scale>
+            <submesh>
+              <name>semi_truck_wheel_rear_01</name>
+              <center>true</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="rear_wheel3">
+      <pose>0 13.08779 0.47022 0 0 0</pose>
+
+      <inertial>
+        <pose>0 0 0 0 1.5707 0</pose>
+        <mass>36</mass>
+        <inertia>
+          <ixx>21.208148357</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>21.208148357</iyy>
+          <iyz>0</iyz>
+          <izz>3.979923271</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision1">
+       <pose>1.12178 0 0 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.47022</radius>
+            <length>0.28745</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+              <fdir1>0 0 1</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <collision name="collision2">
+      <pose>0.79986 0 0 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.47022</radius>
+            <length>0.28745</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+              <fdir1>0 0 1</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <collision name="collision3">
+      <pose>-0.79986 0 0 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.47022</radius>
+            <length>0.28745</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+              <fdir1>0 0 1</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <collision name="collision4">
+      <pose>-1.12178 0 0 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.47022</radius>
+            <length>0.28745</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+              <fdir1>0 0 1</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://semitruck/meshes/semi.obj</uri>
+            <scale>0.01 0.01 0.01</scale>
+            <submesh>
+              <name>semi_truck_wheel_rear_01</name>
+              <center>true</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="rear_wheel4">
+      <pose>0 14.19853 0.47022 0 0 0</pose>
+
+      <inertial>
+        <pose>0 0 0 0 1.5707 0</pose>
+        <mass>36</mass>
+        <inertia>
+          <ixx>21.208148357</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>21.208148357</iyy>
+          <iyz>0</iyz>
+          <izz>3.979923271</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision1">
+       <pose>1.12178 0 0 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.47022</radius>
+            <length>0.28745</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+              <fdir1>0 0 1</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <collision name="collision2">
+      <pose>0.79986 0 0 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.47022</radius>
+            <length>0.28745</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+              <fdir1>0 0 1</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <collision name="collision3">
+      <pose>-0.79986 0 0 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.47022</radius>
+            <length>0.28745</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+              <fdir1>0 0 1</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <collision name="collision4">
+      <pose>-1.12178 0 0 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.47022</radius>
+            <length>0.28745</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+              <fdir1>0 0 1</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://semitruck/meshes/semi.obj</uri>
+            <scale>0.01 0.01 0.01</scale>
+            <submesh>
+              <name>semi_truck_wheel_rear_01</name>
+              <center>true</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="front_left_wheel">
+      <pose>0.97623 -3.23950 0.47022 0 0 0</pose>
+
+      <inertial>
+        <pose>0 0 0 0 1.5707 0</pose>
+        <mass>9</mass>
+        <inertia>
+          <ixx>0.559461036</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.559461036</iyy>
+          <iyz>0</iyz>
+          <izz>0.994980818</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision1">
+       <pose>0 0 0 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.47022</radius>
+            <length>0.28745</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+              <fdir1>0 0 1</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://semitruck/meshes/semi.obj</uri>
+            <scale>0.01 0.01 0.01</scale>
+            <submesh>
+              <name>semi_truck_wheel_front_left</name>
+              <center>true</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="front_left_wheel_steering_block">
+      <pose>0.8 -3.23950 0.47022 0 0 0</pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.000633333</ixx>
+          <ixy>0.0</ixy>
+          <iyy>0.000633333</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>0.00125</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+      <pose>0 0 0 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.01</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="front_right_wheel">
+      <pose>-0.97623 -3.23950 0.47022 0 0 0</pose>
+
+      <inertial>
+        <pose>0 0 0 0 1.5707 0</pose>
+        <mass>9</mass>
+        <inertia>
+          <ixx>0.559461036</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.559461036</iyy>
+          <iyz>0</iyz>
+          <izz>0.994980818</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision1">
+       <pose>0 0 0 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.47022</radius>
+            <length>0.28745</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+              <fdir1>0 0 1</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://semitruck/meshes/semi.obj</uri>
+            <scale>0.01 0.01 0.01</scale>
+            <submesh>
+              <name>semi_truck_wheel_front_right</name>
+              <center>true</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="front_right_wheel_steering_block">
+      <pose>-0.8 -3.23950 0.47022 0 0 0</pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.000633333</ixx>
+          <ixy>0.0</ixy>
+          <iyy>0.000633333</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>0.00125</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+      <pose>0 0 0 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.01</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="fifth_wheel" type="revolute">
+      <pose>0 -7.0 0 0 0 0</pose>
+      <parent>cab</parent>
+      <child>trailer</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.785</lower>
+          <upper>0.785</upper>
+        </limit>
+        <dynamics>
+          <damping>50.0</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0.000000</cfm>
+            <erp>0.900000</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+
+    <joint name="front_left_steer" type="revolute">
+      <parent>cab</parent>
+      <child>front_left_wheel_steering_block</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.8727</lower>
+          <upper>0.8727</upper>
+        </limit>
+        <dynamics>
+          <damping>50.0</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0.000000</cfm>
+            <erp>0.900000</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+
+    <joint name="front_left_drive" type="revolute">
+      <parent>front_left_wheel_steering_block</parent>
+      <child>front_left_wheel</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e16</lower>
+          <upper>1e16</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="front_right_steer" type="revolute">
+      <parent>cab</parent>
+      <child>front_right_wheel_steering_block</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.8727</lower>
+          <upper>0.8727</upper>
+        </limit>
+        <dynamics>
+          <damping>50.0</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0.000000</cfm>
+            <erp>0.900000</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+
+    <joint name="front_right_drive" type="revolute">
+      <parent>front_right_wheel_steering_block</parent>
+      <child>front_right_wheel</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e16</lower>
+          <upper>1e16</upper>
+        </limit>
+      </axis>
+    </joint>
+
+
+    <joint name="rear1" type="revolute">
+      <parent>cab</parent>
+      <child>rear_wheel1</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e16</lower>
+          <upper>1e16</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="rear2" type="revolute">
+      <parent>cab</parent>
+      <child>rear_wheel2</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e16</lower>
+          <upper>1e16</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="rear3" type="revolute">
+      <parent>trailer</parent>
+      <child>rear_wheel3</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e16</lower>
+          <upper>1e16</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="rear4" type="revolute">
+      <parent>trailer</parent>
+      <child>rear_wheel4</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e16</lower>
+          <upper>1e16</upper>
+        </limit>
+      </axis>
+    </joint>
+
+  </model>
+</sdf>

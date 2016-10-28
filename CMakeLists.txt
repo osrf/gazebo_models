@@ -182,6 +182,7 @@ robonaut
 round_tin_base
 round_tin_top
 saucepan
+semitruck
 simple_arm
 simple_arm_gripper
 simple_gripper
