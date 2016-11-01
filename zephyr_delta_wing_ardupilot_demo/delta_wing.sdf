@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version='1.6' xmlns:xacro='http://ros.org/wiki/xacro'>
-  <model name="zephyr_delta_wing_demo">
+  <model name="zephyr_delta_wing_ardupilot_demo">
     <pose>0 0 0 0 0 0</pose>
     <include>
       <uri>model://zephyr_delta_wing</uri>
