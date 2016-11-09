@@ -158,6 +158,8 @@ number8
 number9
 office_building
 osrf_elevator
+person_standing
+person_walking
 pioneer2dx
 pioneer3at
 piston_rod_part
