@@ -38,6 +38,7 @@ cessna
 cinder_block
 cinder_block_2
 cinder_block_wide
+cloverleaf_interchange
 coke_can
 construction_barrel
 construction_cone
