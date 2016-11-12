@@ -1,8 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
-  <model name="solar_panel">
-    <static>true</static>
-
+  <actor name="solar_panel">
+<!--
     <link name="link">
       <visual name="visual">
         <geometry>
@@ -12,5 +11,12 @@
         </geometry>
       </visual>
     </link>
-  </model>
+-->
+     <skin>
+        <filename>model://solar_panel/meshes/solar_panel.dae</filename>
+     </skin>
+     <animation name="opening">
+        <filename>model://solar_panel/meshes/solar_panel.dae</filename>
+     </animation>
+  </actor>
 </sdf>
