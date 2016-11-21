@@ -190,6 +190,7 @@ simple_arm_gripper
 simple_gripper
 speed_limit_sign
 src_doorway
+src_habitat
 standpipe
 starting_pen
 stereo_camera
