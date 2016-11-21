@@ -1071,13 +1071,13 @@
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
-          <lower>-0.01</lower>
-          <upper>0</upper>
+          <lower>0</lower>
+          <upper>0.01</upper>
         </limit>
         <dynamics>
           <damping>10</damping>
-          <spring_stiffness>400</spring_stiffness>
-          <spring_reference>0.002</spring_reference>
+          <spring_stiffness>800</spring_stiffness>
+          <spring_reference>0</spring_reference>
         </dynamics>
         <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
