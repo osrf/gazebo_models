@@ -1,22 +1,48 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
   <model name="solar_panel">
-<!--
     <link name="Reference">
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://solar_panel/meshes/solar_panel.dae</uri>
+            <uri>model://solar_panel/meshes/solar_panel.obj</uri>
+            <scale>0.0254 0.0254 0.0254</scale>
           </mesh>
         </geometry>
       </visual>
     </link>
--->
+<!--
+    <link name="Button">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://solar_panel/meshes/solar_panel.obj</uri>
+            <scale>0.000254 0.000254 0.000254</scale>
+            <submesh>
+              <name>Button</name>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="ButtonHousing">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://solar_panel/meshes/solar_panel.obj</uri>
+            <submesh>
+              <name>ButtonHousing</name>
+              <center>true</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
     <link name="Base">
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://solar_panel/meshes/solar_panel.dae</uri>
+            <uri>model://solar_panel/meshes/solar_panel.obj</uri>
             <submesh>
               <name>Base</name>
               <center>true</center>
@@ -25,12 +51,11 @@
         </geometry>
       </visual>
     </link>
-<!--
     <link name="Panel_Small_01">
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://solar_panel/meshes/solar_panel.dae</uri>
+            <uri>model://solar_panel/meshes/solar_panel.obj</uri>
             <submesh>
               <name>Panel_Small_01</name>
               <center>false</center>
@@ -43,7 +68,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://solar_panel/meshes/solar_panel.dae</uri>
+            <uri>model://solar_panel/meshes/solar_panel.obj</uri>
             <submesh>
               <name>Panel_Small_02</name>
               <center>false</center>
@@ -56,7 +81,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://solar_panel/meshes/solar_panel.dae</uri>
+            <uri>model://solar_panel/meshes/solar_panel.obj</uri>
             <submesh>
               <name>Panel_Small_03</name>
               <center>false</center>
@@ -69,7 +94,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://solar_panel/meshes/solar_panel.dae</uri>
+            <uri>model://solar_panel/meshes/solar_panel.obj</uri>
             <submesh>
               <name>Panel_Small_04</name>
               <center>false</center>
@@ -78,12 +103,12 @@
         </geometry>
       </visual>
     </link>
--->
+
     <link name="Panel_Large_01">
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://solar_panel/meshes/solar_panel.dae</uri>
+            <uri>model://solar_panel/meshes/solar_panel.obj</uri>
             <submesh>
               <name>Panel_Large_01</name>
             </submesh>
@@ -95,7 +120,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://solar_panel/meshes/solar_panel.dae</uri>
+            <uri>model://solar_panel/meshes/solar_panel.obj</uri>
             <submesh>
               <name>Panel_Large_02</name>
               <center>true</center>
@@ -104,12 +129,11 @@
         </geometry>
       </visual>
     </link>
-<!--
     <link name="Panel_Large_03">
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://solar_panel/meshes/solar_panel.dae</uri>
+            <uri>model://solar_panel/meshes/solar_panel.obj</uri>
             <submesh>
               <name>Panel_Large_03</name>
               <center>true</center>
