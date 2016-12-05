@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="satellite_dish">
+    <static>true</static>
+
+    <link name="base">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://satellite_dish/meshes/satellite_dish.dae</uri>
+            <submesh>
+              <name>Base</name>
+            </submesh>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://satellite_dish/meshes/satellite_dish.dae</uri>
+            <submesh>
+              <name>Base</name>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="pivot">
+      <pose>0 0 1.595 0 0 0</pose>
+      <collision name="collision">
+        <pose>0 0 -1.595 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://satellite_dish/meshes/satellite_dish.dae</uri>
+            <submesh>
+              <name>Pivot</name>
+            </submesh>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose>0 0 -1.595 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://satellite_dish/meshes/satellite_dish.dae</uri>
+            <submesh>
+              <name>Pivot</name>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="dish">
+      <pose>0 0 1.595 0.43 0 0</pose>
+      <collision name="collision">
+        <pose>0 -1.325 -2.895 -0.43 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://satellite_dish/meshes/satellite_dish.dae</uri>
+            <submesh>
+              <name>Dish</name>
+            </submesh>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose>0 -1.325 -2.895 -0.43 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://satellite_dish/meshes/satellite_dish.dae</uri>
+            <submesh>
+              <name>Dish</name>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="wheel_1">
+      <pose>-0.2 -1.725 0.91 0.52 0 0</pose>
+      <collision name="collision">
+        <pose>0.2 1.065 -1.64 -0.52 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://satellite_dish/meshes/satellite_dish.dae</uri>
+            <submesh>
+              <name>Wheel_01</name>
+            </submesh>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose>0.2 1.065 -1.64 -0.52 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://satellite_dish/meshes/satellite_dish.dae</uri>
+            <submesh>
+              <name>Wheel_01</name>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="wheel_2">
+      <pose>0.2 -1.725 0.91 0.52 0 0</pose>
+      <collision name="collision">
+        <pose>-0.2 1.065 -1.64 -0.52 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://satellite_dish/meshes/satellite_dish.dae</uri>
+            <submesh>
+              <name>Wheel_02</name>
+            </submesh>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose>-0.2 1.065 -1.64 -0.52 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://satellite_dish/meshes/satellite_dish.dae</uri>
+            <submesh>
+              <name>Wheel_02</name>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="dish_yaw" type="revolute">
+      <parent>base</parent>
+      <child>pivot</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="dish_pitch" type="revolute">
+      <parent>pivot</parent>
+      <child>dish</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="wheel_1" type="revolute">
+      <parent>base</parent>
+      <child>wheel_1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <joint name="wheel_2" type="revolute">
+      <parent>base</parent>
+      <child>wheel_2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+  </model>
+</sdf>
