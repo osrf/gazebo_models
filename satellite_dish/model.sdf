@@ -1,9 +1,20 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
   <model name="satellite_dish">
-    <static>true</static>
 
     <link name="base">
+      <inertial>
+        <pose>0 -0.6077 0.3193 0 0 0</pose>
+        <inertia>
+          <ixx>165.1022</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>13.8377</iyy>
+          <iyz>0</iyz>
+          <izz>170.3359</izz>
+        </inertia>
+        <mass>400</mass>
+      </inertial>
       <collision name="collision">
         <geometry>
           <mesh>
@@ -28,6 +39,17 @@
 
     <link name="pivot">
       <pose>0 0 1.595 0 0 0</pose>
+      <inertial>
+        <inertia>
+          <ixx>0.00073</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000598</iyy>
+          <iyz>0</iyz>
+          <izz>0.00057</izz>
+        </inertia>
+        <mass>0.82</mass>
+      </inertial>
       <collision name="collision">
         <pose>0 0 -1.595 0 0 0</pose>
         <geometry>
@@ -54,6 +76,18 @@
 
     <link name="dish">
       <pose>0 0 1.595 0.43 0 0</pose>
+      <inertial>
+        <pose>0 0.2 0 0 0 0</pose>
+        <inertia>
+          <ixx>9.2468</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>18.7729</iyy>
+          <iyz>0</iyz>
+          <izz>9.7826</izz>
+        </inertia>
+        <mass>170.056</mass>
+      </inertial>
       <collision name="collision">
         <pose>0 -1.325 -2.895 -0.43 0 0</pose>
         <geometry>
@@ -80,6 +114,17 @@
 
     <link name="wheel_1">
       <pose>-0.2 -1.725 0.91 0.52 0 0</pose>
+      <inertial>
+        <inertia>
+          <ixx>0.03698</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.03887</iyy>
+          <iyz>0</iyz>
+          <izz>0.07500</izz>
+        </inertia>
+        <mass>5.9697</mass>
+      </inertial>
       <collision name="collision">
         <pose>0.2 1.065 -1.64 -0.52 0 0</pose>
         <geometry>
@@ -106,6 +151,17 @@
 
     <link name="wheel_2">
       <pose>0.2 -1.725 0.91 0.52 0 0</pose>
+      <inertial>
+        <inertia>
+          <ixx>0.03698</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.03887</iyy>
+          <iyz>0</iyz>
+          <izz>0.07500</izz>
+        </inertia>
+        <mass>5.9697</mass>
+      </inertial>
       <collision name="collision">
         <pose>-0.2 1.065 -1.64 -0.52 0 0</pose>
         <geometry>
@@ -134,7 +190,7 @@
       <parent>base</parent>
       <child>pivot</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 0 1</xyz>
       </axis>
     </joint>
 
@@ -142,7 +198,11 @@
       <parent>pivot</parent>
       <child>dish</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.2</lower>
+          <upper>1.57</upper>
+        </limit>
       </axis>
     </joint>
 
