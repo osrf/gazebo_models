@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="prius_hybrid">
+    <pose>0 0 0.05 0 0 0</pose>
+    <link name="link">
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.000166667</ixx>
+          <iyy>0.000166667</iyy>
+          <izz>0.000166667</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>1 1 1</size>
+          </box>
+<!--          <mesh>
+            <uri>model://prius_hybrid/meshes/Hybrid.obj</uri>
+             <submesh>
+                <name>Hybrid</name>
+                <center>false</center>
+              </submesh>
+          </mesh>-->
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://prius_hybrid/meshes/Hybrid.obj</uri>
+<!--            <scale>0.0254 0.0254 0.0254</scale>-->
+              <scale>0.01 0.01 0.01</scale>
+            <submesh>
+              <name>Hybrid</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
