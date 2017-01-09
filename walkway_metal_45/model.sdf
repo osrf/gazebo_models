@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="walkway_metal_45">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <pose>0 0.538815 0.076075 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.524 1.07763 0.15215</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="collision2">
+        <pose>0.15793 0.92 0.076075 0 0 -0.785398</pose>
+        <geometry>
+          <box>
+            <size>1.524 1.07763 0.15215</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+         <geometry>
+           <mesh>
+             <scale>0.001 0.001 0.001</scale>
+             <uri>model://walkway_metal_45/meshes/mesh.obj</uri>
+           </mesh>
+         </geometry>
+       </visual>
+    </link>
+  </model>
+</sdf>

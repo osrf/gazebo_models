@@ -211,6 +211,7 @@ ur10
 utility_cart
 vrc_driving_terrain
 walkway_metal_straight
+walkway_metal_45
 walkway_metal_90
 warehouse_robot
 washer
