@@ -1,0 +1,14 @@
+material demo_joint_types/parent
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture parent.png
+      }
+    }
+  }
+}
+

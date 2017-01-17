@@ -1,0 +1,15 @@
+material demo_joint_types/reference
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture reference.png
+      }
+    }
+  }
+}
+
+

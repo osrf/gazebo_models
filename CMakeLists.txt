@@ -48,6 +48,7 @@ create
 cricket_ball
 cross_joint_part
 cube_20k
+demo_joint_types
 depth_camera
 disk_part
 door_handle
