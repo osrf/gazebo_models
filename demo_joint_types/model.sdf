@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<sdf version="1.5">
+<sdf version="1.6">
     <model name="demo_joint_types">
         <pose>0 0 0 0 0 0</pose>
         <self_collide>0</self_collide>
@@ -454,23 +454,6 @@
                     <izz>0.001</izz>
                 </inertia>
             </inertial>
-            <!-- Same geometry as visual -->
-            <collision name="revolute2_invisible_weight">
-                <geometry>
-                    <sphere>
-                        <radius>0.05</radius>
-                    </sphere>
-                </geometry>
-            </collision>
-            <!-- Same geometry as collision -->
-            <visual name="revolute2_invisible_weight">
-                <transparency>1</transparency>
-                <geometry>
-                    <sphere>
-                        <radius>0.05</radius>
-                    </sphere>
-                </geometry>
-            </visual>
         </link>
         <joint name="revolute2_invisible_weight_to_revolute2_arm" type="fixed">
             <parent>revolute2_arm</parent>
@@ -487,10 +470,6 @@
                 <xyz>0 1 0</xyz>
             </axis2>
             <pose>0 0 -0.075  0 0 0</pose>
-            <!-- Make it springy to keep it moving -->
-            <dynamics>
-                <spring_stiffness>10</spring_stiffness>
-            </dynamics>
         </joint>
         <!-- ****************************************
              prismatic joint demo 
@@ -712,23 +691,6 @@
                     <izz>0.001</izz>
                 </inertia>
             </inertial>
-            <!-- Same geometry as visual -->
-            <collision name="ball_invisible_weight">
-                <geometry>
-                    <sphere>
-                        <radius>0.05</radius>
-                    </sphere>
-                </geometry>
-            </collision>
-            <!-- Same geometry as collision -->
-            <visual name="ball_invisible_weight">
-                <transparency>1</transparency>
-                <geometry>
-                    <sphere>
-                        <radius>0.05</radius>
-                    </sphere>
-                </geometry>
-            </visual>
         </link>
         <link name="ball_invisible_weight_2">
             <gravity>1</gravity>
@@ -747,23 +709,6 @@
                     <izz>0.001</izz>
                 </inertia>
             </inertial>
-            <!-- Same geometry as visual -->
-            <collision name="ball_invisible_weight_2">
-                <geometry>
-                    <sphere>
-                        <radius>0.05</radius>
-                    </sphere>
-                </geometry>
-            </collision>
-            <!-- Same geometry as collision -->
-            <visual name="ball_invisible_weight_2">
-                <transparency>1</transparency>
-                <geometry>
-                    <sphere>
-                        <radius>0.05</radius>
-                    </sphere>
-                </geometry>
-            </visual>
         </link>
         <joint name="ball_invisible_weight_to_ball_ball" type="fixed">
             <parent>ball_ball</parent>
@@ -1001,23 +946,6 @@
                     <izz>0.001</izz>
                 </inertia>
             </inertial>
-            <!-- Same geometry as visual -->
-            <collision name="universal_invisible_weight">
-                <geometry>
-                    <sphere>
-                        <radius>0.05</radius>
-                    </sphere>
-                </geometry>
-            </collision>
-            <!-- Same geometry as collision -->
-            <visual name="universal_invisible_weight">
-                <transparency>1</transparency>
-                <geometry>
-                    <sphere>
-                        <radius>0.05</radius>
-                    </sphere>
-                </geometry>
-            </visual>
         </link>
         <joint name="universal_invisible_weight_to_universal_shaft" type="fixed">
             <parent>universal_shaft</parent>
