@@ -159,6 +159,7 @@ number8
 number9
 office_building
 osrf_elevator
+parrot_bebop_2
 person_standing
 person_walking
 pioneer2dx
