@@ -51,7 +51,7 @@
         <link name="revolute_base">
             <!-- Put the bottom of the child on top of the parent
                  z = 0.5 * revolute_base_sz_z + heavy_base_sz_z
-                 x = put it on one end or whatever
+                 x = put it near revolute label on heavy base
                  -->
             <pose >-.72 0 0.35 0 0 0</pose>
             <inertial>
@@ -159,7 +159,7 @@
         <link name="gearbox_base">
             <!-- Put the bottom of the child on top of the parent
                  z = 0.5 * gearbox_base_sz_z + heavy_base_sz_z
-                 x = put it on one end or whatever
+                 x = put it near gearbox label on heavy base
                  -->
             <pose >-.49 0 0.35 0 0 0</pose>
             <inertial>
