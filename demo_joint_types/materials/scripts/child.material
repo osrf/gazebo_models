@@ -1,0 +1,14 @@
+material demo_joint_types/child
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture child.png
+        scale 0.3 0.3
+      }
+    }
+  }
+}

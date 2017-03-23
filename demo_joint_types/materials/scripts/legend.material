@@ -1,0 +1,16 @@
+material demo_joint_types/legend
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture legend.png
+      }
+    }
+  }
+}
+
+
+
