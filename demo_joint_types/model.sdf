@@ -1,13 +1,8 @@
 <?xml version="1.0"?>
 <sdf version="1.6">
     <model name="demo_joint_types">
-        <pose>0 0 0 0 0 0</pose>
-        <self_collide>0</self_collide>
-        <static>0</static>
-
         <!-- A Heavy base keeps the joints from falling over -->
         <link name="heavy_base">
-            <gravity>1</gravity>
             <!-- position the base such that the bottom touches the floor -->
             <pose>0 0 0.05 0 0 0</pose>
             <inertial>
@@ -54,14 +49,12 @@
              revolute joint demo 
              **************************************** -->
         <link name="revolute_base">
-            <gravity>1</gravity>
             <!-- Put the bottom of the child on top of the parent
                  z = 0.5 * revolute_base_sz_z + heavy_base_sz_z
                  x = put it on one end or whatever
                  -->
             <pose >-.72 0 0.35 0 0 0</pose>
             <inertial>
-                <mass>1</mass> <!-- kg -->
                 <inertia>
                     <!-- (mass / 12) * (y*y + z*z) -->
                     <ixx>0.021667</ixx>
@@ -105,7 +98,6 @@
         </joint>
 
         <link name="revolute_arm">
-            <gravity>1</gravity>
             <!-- Put the arm near the top of the revolute_base
                  z = revolute_base_sz_z + heavy_base_sz_z - 0.5 * revolute_arm_sz_z
                  y = -0.5 * revolute_arm_sz_y + fudge(0.05)
@@ -113,7 +105,6 @@
                  -->
             <pose >-.61 -0.075 0.55 0 0 0</pose>
             <inertial>
-                <mass>1</mass> <!-- kg -->
                 <inertia>
                     <!-- (mass / 12) * (y*y + z*z) -->
                     <ixx>0.0060417</ixx>
@@ -166,14 +157,12 @@
              gearbox joint demo 
              **************************************** -->
         <link name="gearbox_base">
-            <gravity>1</gravity>
             <!-- Put the bottom of the child on top of the parent
                  z = 0.5 * gearbox_base_sz_z + heavy_base_sz_z
                  x = put it on one end or whatever
                  -->
             <pose >-.49 0 0.35 0 0 0</pose>
             <inertial>
-                <mass>1</mass> <!-- kg -->
                 <inertia>
                     <!-- (mass / 12) * (y*y + z*z) -->
                     <ixx>0.021667</ixx>
@@ -218,7 +207,6 @@
 
         <!-- The reference body for the gearbox -->
         <link name="gearbox_input">
-            <gravity>1</gravity>
             <!-- Put the arm near the top of the gearbox_base so it swings on it's own
                  z = gearbox_base_sz_z + heavy_base_sz_z - 0.5 * gearbox_input_sz_z
                  y = -0.5 * gearbox_input_sz_y + fudge(0.05)
@@ -226,7 +214,6 @@
                  -->
             <pose >-.38 -0.075 0.55 0 0 0</pose>
             <inertial>
-                <mass>1</mass> <!-- kg -->
                 <inertia>
                     <!-- (mass / 12) * (y*y + z*z) -->
                     <ixx>0.0060417</ixx>
@@ -344,11 +331,9 @@
              revolute2 joint demo 
              **************************************** -->
         <link name="revolute2_base">
-            <gravity>1</gravity>
             <!-- Put the bottom of the child on top of the parent-->
             <pose >-.17 0 0.35 0 0 0</pose>
             <inertial>
-                <mass>1</mass> <!-- kg -->
                 <inertia>
                     <!-- (mass / 12) * (y*y + z*z) -->
                     <ixx>0.021667</ixx>
@@ -392,12 +377,10 @@
         </joint>
 
         <link name="revolute2_arm">
-            <gravity>1</gravity>
             <!-- Put the arm near the top of the base
                  -->
             <pose >-.06 -0.075 0.55 1.5708 0 0</pose>
             <inertial>
-                <mass>1</mass> <!-- kg -->
                 <inertia>
                     <!-- (mass / 12) * (3 * radius * radius + length * length) -->
                     <ixx>0.0058333</ixx>
@@ -454,11 +437,9 @@
              prismatic joint demo 
              **************************************** -->
         <link name="prismatic_base">
-            <gravity>1</gravity>
             <!-- Put the bottom of base on top of the heavy base -->
             <pose >0.09 0 0.35 0 0 0</pose>
             <inertial>
-                <mass>1</mass> <!-- kg -->
                 <inertia>
                     <!-- (mass / 12) * (y*y + z*z) -->
                     <ixx>0.021667</ixx>
@@ -502,11 +483,9 @@
         </joint>
 
         <link name="prismatic_slide">
-            <gravity>1</gravity>
             <!-- Put the slide near the top of the base -->
             <pose >0.2 0 0.70 0 0 0</pose>
             <inertial>
-                <mass>1</mass> <!-- kg -->
                 <inertia>
                     <!-- (mass / 12) * (y*y + z*z) -->
                     <ixx>0.0060417</ixx>
@@ -563,11 +542,9 @@
              ball joint demo 
              **************************************** -->
         <link name="ball_socket">
-            <gravity>1</gravity>
             <!-- make the socket float in the sky -->
             <pose >0.4 0 0.55 0 0 0</pose>
             <inertial>
-                <mass>1</mass> <!-- kg -->
                 <inertia>
                     <!-- (mass / 12) * (y*y + z*z) -->
                     <ixx>0.0016667</ixx>
@@ -611,11 +588,9 @@
         </joint>
 
         <link name="ball_ball">
-            <gravity>1</gravity>
             <!-- Put the ball just under the socket -->
             <pose >0.4 0 0.35 0 0 0</pose>
             <inertial>
-                <mass>1</mass> <!-- kg -->
                 <inertia>
                     <!-- (2 * mass * radius * radius) / 5 -->
                     <ixx>0.00196</ixx>
@@ -665,11 +640,9 @@
              screw joint demo 
              **************************************** -->
         <link name="screw_base">
-            <gravity>1</gravity>
             <!-- Put the bottom of base on top of the heavy base -->
             <pose >0.6 0 0.35 0 0 0</pose>
             <inertial>
-                <mass>1</mass> <!-- kg -->
                 <inertia>
                     <!-- (mass / 12) * (y*y + z*z) -->
                     <ixx>0.021667</ixx>
@@ -713,11 +686,9 @@
         </joint>
 
         <link name="screw_thread">
-            <gravity>1</gravity>
             <!-- Put the thread near the top of the base -->
             <pose >0.71 0 0.70 0 0 0</pose>
             <inertial>
-                <mass>1</mass> <!-- kg -->
                 <inertia>
                     <!-- (mass / 12) * (3 * radius * radius + length * length) -->
                     <ixx>0.0058333</ixx>
@@ -774,11 +745,9 @@
              universal joint demo 
              **************************************** -->
         <link name="universal_base">
-            <gravity>1</gravity>
             <!-- make the base float in the sky -->
             <pose >0.9 0 0.55 0 0 0</pose>
             <inertial>
-                <mass>1</mass> <!-- kg -->
                 <inertia>
                     <!-- (mass / 12) * (y*y + z*z) -->
                     <ixx>0.0016667</ixx>
@@ -822,11 +791,9 @@
         </joint>
 
         <link name="universal_shaft">
-            <gravity>1</gravity>
             <!-- Put the shaft just under the base -->
             <pose >0.9 -0.075 0.44 1.5708 0 0</pose>
             <inertial>
-                <mass>1</mass> <!-- kg -->
                 <inertia>
                     <!-- (mass / 12) * (3 * radius * radius + length * length) -->
                     <ixx>0.0058333</ixx>
@@ -878,11 +845,9 @@
              fixed joint demo 
              **************************************** -->
         <link name="fixed_base">
-            <gravity>1</gravity>
             <!-- Put the bottom of base on top of the heavy base -->
             <pose >-1 0 0.35 0 0 0</pose>
             <inertial>
-                <mass>1</mass> <!-- kg -->
                 <inertia>
                     <!-- (mass / 12) * (y*y + z*z) -->
                     <ixx>0.021667</ixx>
@@ -921,11 +886,9 @@
         </link>
 
         <link name="fixed_arm">
-            <gravity>1</gravity>
             <!-- Put the arm near the top of the base -->
             <pose >-.89 -0.075 0.55 0 0 0</pose>
             <inertial>
-                <mass>1</mass> <!-- kg -->
                 <inertia>
                     <!-- (mass / 12) * (y*y + z*z) -->
                     <ixx>0.0060417</ixx>
