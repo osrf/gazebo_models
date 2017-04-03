@@ -83,6 +83,7 @@ drc_practice_white_jersey_barrier
 drc_practice_wood_slats
 drc_practice_yellow_parking_block
 dumpster
+euro_pallet
 fast_food
 fire_hose_long
 fire_hose_long_curled
