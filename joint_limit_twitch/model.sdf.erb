@@ -1,0 +1,140 @@
+<?xml version="1.0" ?>
+<%
+  # Hand with fingers
+  # Demonstrates a simulation instability in gazebo's fork of ODE
+  # SI units (length in meters)
+  require "matrix"
+  def a_to_s(v)
+    Array(v).join(" ")
+  end
+
+  # Geometry
+  palm_dx   = 0.10
+  palm_dy   = 0.05
+  palm_dz   = 0.10
+  palm_z0   = palm_dz
+
+  finger_locations = {
+    "index"  => Vector[0.5*palm_dx, 0, palm_dz*0.3],
+    "middle"  => Vector[0.5*palm_dx, 0, 0.0],
+    "pinky"  => Vector[0.5*palm_dx, 0, -palm_dz*0.3],
+  }
+
+  finger_mass_sizes = {
+    "1" => {:mass => 0.20, :size => Vector[0.045, 0.011, 0.022]},
+    "2" => {:mass => 0.18, :size => Vector[0.020, 0.010, 0.020]},
+    "3" => {:mass => 0.10, :size => Vector[0.020, 0.010, 0.016]},
+  }
+
+  # inertia
+  palm_mass = 0.71
+  palm_ixx  = palm_mass/12.0 * (palm_dy**2 + palm_dz**2)
+  palm_iyy  = palm_mass/12.0 * (palm_dz**2 + palm_dx**2)
+  palm_izz  = palm_mass/12.0 * (palm_dx**2 + palm_dy**2)
+
+  finger_mass_sizes.keys.each do |k|
+    mass = finger_mass_sizes[k][:mass]
+    size = finger_mass_sizes[k][:size]
+    finger_mass_sizes[k][:ixx] = mass/12.0 * (size[1]**2 + size[2]**2)
+    finger_mass_sizes[k][:iyy] = mass/12.0 * (size[2]**2 + size[0]**2)
+    finger_mass_sizes[k][:izz] = mass/12.0 * (size[0]**2 + size[1]**2)
+  end
+%>
+<sdf version="1.6">
+  <model name="joint_limit_twitch">
+    <link name="palm">
+      <pose>0 0 <%= palm_z0 %>  0 0 0</pose>
+      <inertial>
+        <mass><%= palm_mass %></mass>
+        <inertia>
+          <ixx><%= palm_ixx %></ixx>
+          <iyy><%= palm_iyy %></iyy>
+          <izz><%= palm_izz %></izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size><%= palm_dx %> <%= palm_dy %> <%= palm_dz %></size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size><%= palm_dx %> <%= palm_dy %> <%= palm_dz %></size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+<%
+  finger_locations.keys.each do |fl|
+    pos0 = finger_locations[fl]
+    pos = Vector[pos0[0], pos0[1], pos0[2] + palm_z0]
+    finger_mass_sizes.keys.each do |fms|
+      link = finger_mass_sizes[fms]
+%>
+    <%= "<link name='#{fl}_finger#{fms}'>" %>
+      <pose><%= a_to_s(pos) %>  0 0 0</pose>
+      <inertial>
+        <mass><%= link[:mass] %></mass>
+        <inertia>
+          <ixx><%= link[:ixx] %></ixx>
+          <iyy><%= link[:iyy] %></iyy>
+          <izz><%= link[:izz] %></izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size><%= a_to_s(link[:size]) %></size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e8</kp>
+              <max_vel>1</max_vel>
+              <min_depth>0.01</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+              <mu2>0.1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size><%= a_to_s(link[:size]) %></size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+<%
+    end
+  end
+%>
+  </model>
+</sdf>

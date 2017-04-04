@@ -1,0 +1,491 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.6">
+  <model name="joint_limit_twitch">
+    <link name="palm">
+      <pose>0 0 0.1  0 0 0</pose>
+      <inertial>
+        <mass>0.71</mass>
+        <inertia>
+          <ixx>0.0007395833333333335</ixx>
+          <iyy>0.0011833333333333335</iyy>
+          <izz>0.0007395833333333335</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.1 0.05 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.1 0.05 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name='index_finger1'>
+      <pose>0.05 0 0.13  0 0 0</pose>
+      <inertial>
+        <mass>0.2</mass>
+        <inertia>
+          <ixx>1.0083333333333332e-05</ixx>
+          <iyy>4.181666666666666e-05</iyy>
+          <izz>3.5766666666666664e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.045 0.011 0.022</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e8</kp>
+              <max_vel>1</max_vel>
+              <min_depth>0.01</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+              <mu2>0.1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.045 0.011 0.022</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name='index_finger2'>
+      <pose>0.05 0 0.13  0 0 0</pose>
+      <inertial>
+        <mass>0.18</mass>
+        <inertia>
+          <ixx>7.5e-06</ixx>
+          <iyy>1.2e-05</iyy>
+          <izz>7.5e-06</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.02 0.01 0.02</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e8</kp>
+              <max_vel>1</max_vel>
+              <min_depth>0.01</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+              <mu2>0.1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.02 0.01 0.02</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name='index_finger3'>
+      <pose>0.05 0 0.13  0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>2.9666666666666665e-06</ixx>
+          <iyy>5.466666666666666e-06</iyy>
+          <izz>4.166666666666667e-06</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.02 0.01 0.016</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e8</kp>
+              <max_vel>1</max_vel>
+              <min_depth>0.01</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+              <mu2>0.1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.02 0.01 0.016</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name='middle_finger1'>
+      <pose>0.05 0 0.1  0 0 0</pose>
+      <inertial>
+        <mass>0.2</mass>
+        <inertia>
+          <ixx>1.0083333333333332e-05</ixx>
+          <iyy>4.181666666666666e-05</iyy>
+          <izz>3.5766666666666664e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.045 0.011 0.022</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e8</kp>
+              <max_vel>1</max_vel>
+              <min_depth>0.01</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+              <mu2>0.1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.045 0.011 0.022</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name='middle_finger2'>
+      <pose>0.05 0 0.1  0 0 0</pose>
+      <inertial>
+        <mass>0.18</mass>
+        <inertia>
+          <ixx>7.5e-06</ixx>
+          <iyy>1.2e-05</iyy>
+          <izz>7.5e-06</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.02 0.01 0.02</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e8</kp>
+              <max_vel>1</max_vel>
+              <min_depth>0.01</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+              <mu2>0.1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.02 0.01 0.02</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name='middle_finger3'>
+      <pose>0.05 0 0.1  0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>2.9666666666666665e-06</ixx>
+          <iyy>5.466666666666666e-06</iyy>
+          <izz>4.166666666666667e-06</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.02 0.01 0.016</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e8</kp>
+              <max_vel>1</max_vel>
+              <min_depth>0.01</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+              <mu2>0.1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.02 0.01 0.016</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name='pinky_finger1'>
+      <pose>0.05 0 0.07  0 0 0</pose>
+      <inertial>
+        <mass>0.2</mass>
+        <inertia>
+          <ixx>1.0083333333333332e-05</ixx>
+          <iyy>4.181666666666666e-05</iyy>
+          <izz>3.5766666666666664e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.045 0.011 0.022</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e8</kp>
+              <max_vel>1</max_vel>
+              <min_depth>0.01</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+              <mu2>0.1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.045 0.011 0.022</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name='pinky_finger2'>
+      <pose>0.05 0 0.07  0 0 0</pose>
+      <inertial>
+        <mass>0.18</mass>
+        <inertia>
+          <ixx>7.5e-06</ixx>
+          <iyy>1.2e-05</iyy>
+          <izz>7.5e-06</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.02 0.01 0.02</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e8</kp>
+              <max_vel>1</max_vel>
+              <min_depth>0.01</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+              <mu2>0.1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.02 0.01 0.02</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name='pinky_finger3'>
+      <pose>0.05 0 0.07  0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>2.9666666666666665e-06</ixx>
+          <iyy>5.466666666666666e-06</iyy>
+          <izz>4.166666666666667e-06</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.02 0.01 0.016</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e8</kp>
+              <max_vel>1</max_vel>
+              <min_depth>0.01</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+              <mu2>0.1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.02 0.01 0.016</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+  </model>
+</sdf>
