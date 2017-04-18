@@ -28,6 +28,7 @@ brick_box_3x1x3
 cabinet
 cafe
 cafe_table
+calibration_plane
 camera
 car_wheel
 cardboard_box
@@ -35,6 +36,7 @@ cart_front_steer
 cart_rigid_suspension
 cart_soft_suspension
 cessna
+checkerboard_plane
 cinder_block
 cinder_block_2
 cinder_block_wide
@@ -191,6 +193,7 @@ saucepan
 simple_arm
 simple_arm_gripper
 simple_gripper
+spectrum_plane
 speed_limit_sign
 src_doorway
 standpipe
