@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
-<sdf version="1.4">
-<model name="calibration_plane">
+<sdf version="1.6">
+<model name="checkerboard_plane">
   <pose>0 0 0 0 0 0</pose>
   <static>true</static>
     <link name="link">
