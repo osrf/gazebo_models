@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
   <model name="intel_realsense_r200">
-    <pose></pose>
+    <pose>0 0 0.01 0 0 0</pose>
     <link name="link">
       <inertial>
         <mass>0.2</mass>
@@ -43,6 +43,7 @@
         </geometry>
       </visual>
       <sensor name="camera" type="depth">
+        <pose>0.001 -0.045 0.003 0 0 0</pose>
         <update_rate>60</update_rate>
         <camera>
           <horizontal_fov>0.976899239</horizontal_fov>
