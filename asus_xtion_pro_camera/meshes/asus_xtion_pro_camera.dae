@@ -12,7 +12,7 @@
   </asset>
   <library_images>
     <image id="asus_xtion_pro_camera_tex" name="asus_xtion_pro_camera_tex">
-      <init_from>/home/adam/osrf/g7/src/gazebo_models/asus_xtion_pro_camera/materials/textures/asus_xtion_pro_camera_tex.png</init_from>
+      <init_from>asus_xtion_pro_camera_tex.png</init_from>
     </image>
   </library_images>
   <library_effects>
