@@ -31,7 +31,7 @@
         <technique sid="common">
           <phong>
             <emission>
-              <color sid="emission">0 0 0 1</color>
+              <color sid="emission">0.5 0.5 0.5 1</color>
             </emission>
             <ambient>
               <color sid="ambient">1 1 1 1</color>
@@ -40,7 +40,7 @@
               <texture texture="orbbec_astra_camera_tex-sampler" texcoord="orbbec_astra_camera-mesh-map-0"/>
             </diffuse>
             <specular>
-              <color sid="specular">0.25 0.25 0.25 1</color>
+              <color sid="specular">0.5 0.5 0.5 1</color>
             </specular>
             <shininess>
               <float sid="shininess">50</float>

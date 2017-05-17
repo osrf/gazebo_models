@@ -31,7 +31,7 @@
         <technique sid="common">
           <phong>
             <emission>
-              <color sid="emission">0 0 0 1</color>
+              <color sid="emission">0.5 0.5 0.5 1</color>
             </emission>
             <ambient>
               <color sid="ambient">1 1 1 1</color>
@@ -40,10 +40,10 @@
               <texture texture="realsense_r200_tex-sampler" texcoord="UVMap"/>
             </diffuse>
             <specular>
-              <color sid="specular">0.2 0.2 0.2 1</color>
+              <color sid="specular">0.5 0.5 0.5 1</color>
             </specular>
             <shininess>
-              <float sid="shininess">50</float>
+              <float sid="shininess">150</float>
             </shininess>
             <index_of_refraction>
               <float sid="index_of_refraction">1</float>

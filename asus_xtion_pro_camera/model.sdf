@@ -1,18 +1,17 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
   <model name="asus_xtion_pro_camera">
-    <static>true</static>
     <pose>0 0 0.0235 0 0 0</pose>
     <link name="link">
-    <inertial>
+      <inertial>
         <mass>0.316</mass>
         <inertia>
-          <ixx>0.00085560</ixx>
+          <ixx>.0007765</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.00008443</iyy>
+          <iyy>.0000725</iyy>
           <iyz>0</iyz>
-          <izz>0.00086171</izz>
+          <izz>.0007657</izz>
         </inertia>
       </inertial>
       <collision name="collision">
