@@ -16,6 +16,7 @@ set (dirs
 apollo15_landing_site_1000x1000
 arm_part
 arrow_red
+asus_xtion_pro_camera
 asphalt_plane
 ball_bearing
 beer
@@ -120,6 +121,7 @@ house_1
 house_2
 house_3
 husky
+intel_realsense_r200
 iris_with_standoffs
 iris_with_standoffs_demo
 irobot_hand
@@ -162,6 +164,7 @@ number7
 number8
 number9
 office_building
+orbbec_astra_camera
 osrf_elevator
 parrot_bebop_2
 person_standing
