@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="mass_on_pole">
+
+    <link name="base">
+      <inertial>
+        <mass>100</mass>
+      </inertial>
+      <visual name="vis_base">
+        <pose>0 0 0.01 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.8</radius>
+            <length>0.01</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      <collision name="col_base">
+        <pose>0 0 0.01 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.8</radius>
+            <length>0.01</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="vis_pole">
+        <pose>0 0 1.1 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>2.2</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      <collision name="col_pole">
+        <pose>0 0 1.1 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>2.2</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="mass">
+      <inertial>
+        <mass>0.1</mass>
+      </inertial>
+      <visual name="visual">
+        <pose>0 0 0.1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.2 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <pose>0 0 0.1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.2 0.2</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="joint" type="prismatic">
+      <parent>base</parent>
+      <child>mass</child>
+      <axis>
+        <dynamics>
+          <damping>0.0</damping>
+          <friction>0.1</friction>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+  </model>
+</sdf>
