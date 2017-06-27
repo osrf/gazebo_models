@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="mass_on_pole">
+  <model name="mass_on_rails">
 
     <link name="base">
       <inertial>
@@ -24,22 +24,36 @@
           </cylinder>
         </geometry>
       </collision>
-      <visual name="vis_pole">
-        <pose>0 0 1.1 0 0 0</pose>
+      <visual name="vis_rail1">
+        <pose>0 0.1 1.1 0 0 0</pose>
         <geometry>
-          <cylinder>
-            <radius>0.05</radius>
-            <length>2.2</length>
-          </cylinder>
+          <box>
+            <size>0.05 0.05 2.2</size>
+          </box>
         </geometry>
       </visual>
-      <collision name="col_pole">
-        <pose>0 0 1.1 0 0 0</pose>
+      <collision name="col_rail1">
+        <pose>0 0.1 1.1 0 0 0</pose>
         <geometry>
-          <cylinder>
-            <radius>0.05</radius>
-            <length>2.2</length>
-          </cylinder>
+          <box>
+            <size>0.05 0.05 2.2</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="vis_rail2">
+        <pose>0 -0.1 1.1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.05 2.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="col_rail2">
+        <pose>0 -0.1 1.1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.05 2.2</size>
+          </box>
         </geometry>
       </collision>
     </link>
@@ -75,6 +89,10 @@
           <friction>0.1</friction>
         </dynamics>
         <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>2</upper>
+        </limit>
       </axis>
     </joint>
   </model>
