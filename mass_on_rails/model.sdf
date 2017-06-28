@@ -61,6 +61,15 @@
     <link name="mass">
       <inertial>
         <mass>0.1</mass>
+        <pose>0 0 0.1 0 0 0</pose>
+        <inertia>
+          <ixx>0.00067</ixx>
+          <ixy>0.00000</ixy>
+          <ixz>0.00000</ixz>
+          <iyy>0.00067</iyy>
+          <iyz>0.00000</iyz>
+          <izz>0.00067</izz>
+        </inertia>
       </inertial>
       <visual name="visual">
         <pose>0 0 0.1 0 0 0</pose>
@@ -85,8 +94,8 @@
       <child>mass</child>
       <axis>
         <dynamics>
-          <damping>0.0</damping>
-          <friction>0.1</friction>
+          <damping>0.01</damping>
+          <friction>0.01</friction>
         </dynamics>
         <xyz>0 0 1</xyz>
         <limit>
