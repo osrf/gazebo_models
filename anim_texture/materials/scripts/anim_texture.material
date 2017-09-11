@@ -1,0 +1,15 @@
+material Anim_Texture/Tex
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        /* anim_texutre <base_name> <num_frames> <duration> */
+        anim_texture tex.jpg 4 1
+        filtering none
+      }
+    }
+  }
+}
