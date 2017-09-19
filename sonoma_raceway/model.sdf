@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
   <model name="sonoma_raceway">
+    <pose>0 0 -4.8 0 0 0</pose>
     <static>true</static>
     <link name="link">
       <collision name="collision">
