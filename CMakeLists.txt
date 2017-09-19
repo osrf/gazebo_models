@@ -197,6 +197,7 @@ saucepan
 simple_arm
 simple_arm_gripper
 simple_gripper
+sonoma_raceway
 spectrum_plane
 speed_limit_sign
 src_doorway
