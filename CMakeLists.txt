@@ -45,6 +45,7 @@ cinder_block_wide
 cloverleaf_interchange
 coke_can
 collapsed_fire_station
+collapsed_house
 collapsed_industrial
 collapsed_police_station
 construction_barrel
