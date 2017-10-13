@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="salon">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <pose>0 0 5.694693596 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>7.212969278 5.378752065 11.389387193</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose>0 -0.90360491 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://salon/meshes/salon.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

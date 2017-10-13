@@ -13,6 +13,7 @@ string (TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
 exec_program(date ARGS -u +%Y-%m-%-dT%H:%M:%S OUTPUT_VARIABLE CURRENT_DATE)
 
 set (dirs
+apartment
 apollo15_landing_site_1000x1000
 arm_part
 arrow_red
@@ -43,6 +44,10 @@ cinder_block_2
 cinder_block_wide
 cloverleaf_interchange
 coke_can
+collapsed_fire_station
+collapsed_house
+collapsed_industrial
+collapsed_police_station
 construction_barrel
 construction_cone
 control_console
@@ -112,6 +117,7 @@ gear_part
 gimbal_small_2d
 grey_tote
 grey_wall
+grocery_store
 ground_plane
 hammer
 hinged_door
@@ -137,6 +143,7 @@ ladder_75deg_0rails
 ladder_75deg_1rails
 ladder_75deg_2rails
 lamp_post
+law_office
 lunar_tranquillitatis_pit
 mailbox
 marble_1_5cm
@@ -168,9 +175,12 @@ oak_tree
 office_building
 orbbec_astra_camera
 osrf_elevator
+osrf_first_office
+parking_garage
 parrot_bebop_2
 person_standing
 person_walking
+pine_tree
 pioneer2dx
 pioneer3at
 piston_rod_part
@@ -178,6 +188,8 @@ plastic_cup
 polaris_ranger_ev
 polaris_ranger_xp900
 polaris_ranger_xp900_no_roll_cage
+police_station
+post_office
 powerplant
 pr2
 pr2_gripper
@@ -194,7 +206,9 @@ robocup_spl_ball
 robonaut
 round_tin_base
 round_tin_top
+salon
 saucepan
+school
 simple_arm
 simple_arm_gripper
 simple_gripper
@@ -215,6 +229,7 @@ t_brace_part
 table
 table_marble
 textured_shapes
+thrift_shop
 tube_2_25cm
 tube_9_5mm
 turtlebot

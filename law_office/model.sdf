@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="law_office">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <pose>0 0 6.962436368 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>6.844012958 5.431646878 13.924872736</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://law_office/meshes/law_office.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
