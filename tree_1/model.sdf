@@ -11,13 +11,18 @@
         </geometry>
       </collision>
       <visual name="visual">
-        <!-- give it some transparency so the transparency in the PNGs is used -->
-        <transparency>0.001</transparency>
         <geometry>
           <mesh>
             <uri>model://tree_1/meshes/tree_1.dae</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <uri>model://tree_1/materials/scripts/</uri>
+            <uri>model://tree_1/materials/textures/</uri>
+            <name>Tree/1</name>
+          </script>
+        </material>
       </visual>
     </link>
   </model>

@@ -1,0 +1,16 @@
+material Tree/1
+{
+  technique
+  {
+    pass
+    {
+      alpha_rejection greater 128
+
+      texture_unit
+      {
+        texture branch_diffuse.png
+      }
+    }
+  }
+}
+
