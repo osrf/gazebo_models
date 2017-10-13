@@ -170,6 +170,7 @@ number9
 office_building
 orbbec_astra_camera
 osrf_elevator
+osrf_first_office
 parrot_bebop_2
 person_standing
 person_walking
