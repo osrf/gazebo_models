@@ -170,6 +170,7 @@ osrf_elevator
 parrot_bebop_2
 person_standing
 person_walking
+pine_tree
 pioneer2dx
 pioneer3at
 piston_rod_part
