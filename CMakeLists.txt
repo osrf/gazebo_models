@@ -181,6 +181,7 @@ polaris_ranger_ev
 polaris_ranger_xp900
 polaris_ranger_xp900_no_roll_cage
 police_station
+post_office
 powerplant
 pr2
 pr2_gripper
