@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="tree_1">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://tree_1/meshes/tree_1.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <!-- give it some transparency so the transparency in the PNGs is used -->
+        <transparency>0.001</transparency>
+        <geometry>
+          <mesh>
+            <uri>model://tree_1/meshes/tree_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
