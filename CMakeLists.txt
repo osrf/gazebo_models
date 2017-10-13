@@ -180,6 +180,7 @@ plastic_cup
 polaris_ranger_ev
 polaris_ranger_xp900
 polaris_ranger_xp900_no_roll_cage
+police_station
 powerplant
 pr2
 pr2_gripper
