@@ -113,6 +113,7 @@ gear_part
 gimbal_small_2d
 grey_tote
 grey_wall
+grocery_store
 ground_plane
 hammer
 hinged_door
