@@ -214,6 +214,7 @@ t_brace_part
 table
 table_marble
 textured_shapes
+tree_1
 tube_2_25cm
 tube_9_5mm
 turtlebot
