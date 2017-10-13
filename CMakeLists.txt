@@ -44,6 +44,7 @@ cinder_block_2
 cinder_block_wide
 cloverleaf_interchange
 coke_can
+collapsed_fire_station
 construction_barrel
 construction_cone
 control_console
