@@ -18,7 +18,7 @@
           <mesh>
             <uri>model://tree_1/meshes/tree_1.dae</uri>
             <submesh>
-              <name>Plane001</name>
+              <name>Branch</name>
             </submesh>
           </mesh>
         </geometry>
@@ -35,7 +35,7 @@
           <mesh>
             <uri>model://tree_1/meshes/tree_1.dae</uri>
             <submesh>
-              <name>Plane001_002</name>
+              <name>Bark</name>
             </submesh>
           </mesh>
         </geometry>
