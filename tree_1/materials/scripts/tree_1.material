@@ -1,4 +1,4 @@
-material Tree/1
+material Tree_1/Branch
 {
   technique
   {
@@ -14,3 +14,16 @@ material Tree/1
   }
 }
 
+material Tree_1/Bark
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture bark_diffuse.png
+      }
+    }
+  }
+}
