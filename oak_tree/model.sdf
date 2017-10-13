@@ -1,19 +1,19 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
-  <model name="tree_1">
+  <model name="oak_tree">
     <static>true</static>
     <link name="link">
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://tree_1/meshes/tree_1.dae</uri>
+            <uri>model://oak_tree/meshes/oak_tree.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="branch">
         <geometry>
           <mesh>
-            <uri>model://tree_1/meshes/tree_1.dae</uri>
+            <uri>model://oak_tree/meshes/oak_tree.dae</uri>
             <submesh>
               <name>Branch</name>
             </submesh>
@@ -21,16 +21,16 @@
         </geometry>
         <material>
           <script>
-            <uri>model://tree_1/materials/scripts/</uri>
-            <uri>model://tree_1/materials/textures/</uri>
-            <name>Tree_1/Branch</name>
+            <uri>model://oak_tree/materials/scripts/</uri>
+            <uri>model://oak_tree/materials/textures/</uri>
+            <name>OakTree/Branch</name>
           </script>
         </material>
       </visual>
       <visual name="bark">
         <geometry>
           <mesh>
-            <uri>model://tree_1/meshes/tree_1.dae</uri>
+            <uri>model://oak_tree/meshes/oak_tree.dae</uri>
             <submesh>
               <name>Bark</name>
             </submesh>
@@ -38,9 +38,9 @@
         </geometry>
         <material>
           <script>
-            <uri>model://tree_1/materials/scripts/</uri>
-            <uri>model://tree_1/materials/textures/</uri>
-            <name>Tree_1/Bark</name>
+            <uri>model://oak_tree/materials/scripts/</uri>
+            <uri>model://oak_tree/materials/textures/</uri>
+            <name>OakTree/Bark</name>
           </script>
         </material>
       </visual>

@@ -1,4 +1,4 @@
-material Tree_1/Branch
+material OakTree/Branch
 {
   technique
   {
@@ -14,7 +14,7 @@ material Tree_1/Branch
   }
 }
 
-material Tree_1/Bark
+material OakTree/Bark
 {
   technique
   {
