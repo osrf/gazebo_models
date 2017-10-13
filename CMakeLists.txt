@@ -199,6 +199,7 @@ round_tin_base
 round_tin_top
 salon
 saucepan
+school
 simple_arm
 simple_arm_gripper
 simple_gripper
