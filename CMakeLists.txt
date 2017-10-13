@@ -195,6 +195,7 @@ robocup_spl_ball
 robonaut
 round_tin_base
 round_tin_top
+salon
 saucepan
 simple_arm
 simple_arm_gripper
