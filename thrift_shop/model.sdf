@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="thrift_shop">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box>
+            <!--<size>93.83229 70.65937 296.32520</uri>-->
+            <size>7.212969278 5.431646878 22.778774386</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose>0 -0.912490988 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://thrift_shop/meshes/thrift_shop.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
