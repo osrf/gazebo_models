@@ -189,6 +189,7 @@ police_station
 powerplant
 pr2
 pr2_gripper
+prius_hybrid
 pulley_part
 quadrotor
 ragdoll
