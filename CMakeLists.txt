@@ -171,6 +171,7 @@ number6
 number7
 number8
 number9
+oak_tree
 office_building
 orbbec_astra_camera
 osrf_elevator
