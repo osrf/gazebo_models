@@ -1,0 +1,29 @@
+material PineTree/Branch
+{
+  technique
+  {
+    pass
+    {
+      alpha_rejection greater 128
+
+      texture_unit
+      {
+        texture branch_2_diffuse.png
+      }
+    }
+  }
+}
+
+material PineTree/Bark
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture bark_diffuse.png
+      }
+    }
+  }
+}

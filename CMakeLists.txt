@@ -13,9 +13,11 @@ string (TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
 exec_program(date ARGS -u +%Y-%m-%-dT%H:%M:%S OUTPUT_VARIABLE CURRENT_DATE)
 
 set (dirs
+apartment
 apollo15_landing_site_1000x1000
 arm_part
 arrow_red
+asus_xtion_pro_camera
 asphalt_plane
 ball_bearing
 beer
@@ -28,6 +30,7 @@ brick_box_3x1x3
 cabinet
 cafe
 cafe_table
+calibration_plane
 camera
 car_wheel
 cardboard_box
@@ -35,11 +38,16 @@ cart_front_steer
 cart_rigid_suspension
 cart_soft_suspension
 cessna
+checkerboard_plane
 cinder_block
 cinder_block_2
 cinder_block_wide
 cloverleaf_interchange
 coke_can
+collapsed_fire_station
+collapsed_house
+collapsed_industrial
+collapsed_police_station
 construction_barrel
 construction_cone
 control_console
@@ -48,6 +56,7 @@ create
 cricket_ball
 cross_joint_part
 cube_20k
+demo_joint_types
 depth_camera
 disk_part
 door_handle
@@ -82,6 +91,7 @@ drc_practice_white_jersey_barrier
 drc_practice_wood_slats
 drc_practice_yellow_parking_block
 dumpster
+euro_pallet
 fast_food
 fire_hose_long
 fire_hose_long_curled
@@ -107,6 +117,7 @@ gear_part
 gimbal_small_2d
 grey_tote
 grey_wall
+grocery_store
 ground_plane
 hammer
 hinged_door
@@ -116,6 +127,7 @@ house_1
 house_2
 house_3
 husky
+intel_realsense_r200
 iris_with_standoffs
 iris_with_standoffs_demo
 irobot_hand
@@ -131,10 +143,12 @@ ladder_75deg_0rails
 ladder_75deg_1rails
 ladder_75deg_2rails
 lamp_post
+law_office
 lunar_tranquillitatis_pit
 mailbox
 marble_1_5cm
 mars_rover
+mass_on_rails
 metal_peg
 metal_peg_board
 monkey_wrench
@@ -158,9 +172,14 @@ number7
 number8
 number9
 office_building
+orbbec_astra_camera
 osrf_elevator
+osrf_first_office
+parking_garage
+parrot_bebop_2
 person_standing
 person_walking
+pine_tree
 pioneer2dx
 pioneer3at
 piston_rod_part
@@ -168,6 +187,8 @@ plastic_cup
 polaris_ranger_ev
 polaris_ranger_xp900
 polaris_ranger_xp900_no_roll_cage
+police_station
+post_office
 powerplant
 pr2
 pr2_gripper
@@ -184,10 +205,14 @@ robocup_spl_ball
 robonaut
 round_tin_base
 round_tin_top
+salon
 saucepan
+school
 simple_arm
 simple_arm_gripper
 simple_gripper
+sonoma_raceway
+spectrum_plane
 speed_limit_sign
 src_doorway
 standpipe
@@ -203,6 +228,7 @@ t_brace_part
 table
 table_marble
 textured_shapes
+thrift_shop
 tube_2_25cm
 tube_9_5mm
 turtlebot
@@ -211,6 +237,7 @@ ur10
 utility_cart
 vrc_driving_terrain
 walkway_metal_straight
+walkway_metal_45
 walkway_metal_90
 warehouse_robot
 washer

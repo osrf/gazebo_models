@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<sdf version="1.6">
+<model name="calibration_plane">
+  <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://calibration_plane/meshes/calibration_plane.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

@@ -194,7 +194,6 @@
       <child>upper_link</child>
       <axis>
         <xyz>1.0 0 0</xyz>
-        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
     <!-- pin joint for lower link, at origin of child link -->
@@ -203,7 +202,6 @@
       <child>lower_link</child>
       <axis>
         <xyz>1.0 0 0</xyz>
-        <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
   </model>

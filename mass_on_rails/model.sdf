@@ -1,0 +1,108 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="mass_on_rails">
+
+    <link name="base">
+      <inertial>
+        <mass>100</mass>
+      </inertial>
+      <visual name="vis_base">
+        <pose>0 0 0.01 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.8</radius>
+            <length>0.01</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      <collision name="col_base">
+        <pose>0 0 0.01 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.8</radius>
+            <length>0.01</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="vis_rail1">
+        <pose>0 0.1 1.1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.05 2.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="col_rail1">
+        <pose>0 0.1 1.1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.05 2.2</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="vis_rail2">
+        <pose>0 -0.1 1.1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.05 2.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="col_rail2">
+        <pose>0 -0.1 1.1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.05 2.2</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="mass">
+      <inertial>
+        <mass>0.1</mass>
+        <pose>0 0 0.1 0 0 0</pose>
+        <inertia>
+          <ixx>0.00067</ixx>
+          <ixy>0.00000</ixy>
+          <ixz>0.00000</ixz>
+          <iyy>0.00067</iyy>
+          <iyz>0.00000</iyz>
+          <izz>0.00067</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <pose>0 0 0.1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.2 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <pose>0 0 0.1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.2 0.2</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="joint" type="prismatic">
+      <parent>base</parent>
+      <child>mass</child>
+      <axis>
+        <dynamics>
+          <damping>0.01</damping>
+          <friction>0.01</friction>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>2</upper>
+        </limit>
+      </axis>
+    </joint>
+  </model>
+</sdf>

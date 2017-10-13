@@ -1,0 +1,16 @@
+material demo_joint_types/reference
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture reference.png
+        scale 0.5 0.2
+      }
+    }
+  }
+}
+
+
