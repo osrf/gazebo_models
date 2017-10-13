@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="police_station">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision_main">
+        <pose>0 0 4.289977323 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>13.03704276 13.03704276 8.579954646</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="collision_landing">
+        <pose>0 0 0.464086321 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>13.03704276 16.24458524 0.928172642</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://police_station/meshes/police_station.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
