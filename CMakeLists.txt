@@ -44,7 +44,10 @@ cinder_block_2
 cinder_block_wide
 cloverleaf_interchange
 coke_can
+collapsed_fire_station
 collapsed_house
+collapsed_industrial
+collapsed_police_station
 construction_barrel
 construction_cone
 control_console
@@ -114,6 +117,7 @@ gear_part
 gimbal_small_2d
 grey_tote
 grey_wall
+grocery_store
 ground_plane
 hammer
 hinged_door
@@ -170,6 +174,7 @@ number9
 office_building
 orbbec_astra_camera
 osrf_elevator
+parking_garage
 parrot_bebop_2
 person_standing
 person_walking
@@ -180,6 +185,7 @@ plastic_cup
 polaris_ranger_ev
 polaris_ranger_xp900
 polaris_ranger_xp900_no_roll_cage
+police_station
 powerplant
 pr2
 pr2_gripper
