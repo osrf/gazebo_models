@@ -141,6 +141,7 @@ lunar_tranquillitatis_pit
 mailbox
 marble_1_5cm
 mars_rover
+mass_on_rails
 metal_peg
 metal_peg_board
 monkey_wrench
@@ -196,6 +197,7 @@ saucepan
 simple_arm
 simple_arm_gripper
 simple_gripper
+sonoma_raceway
 spectrum_plane
 speed_limit_sign
 src_doorway
