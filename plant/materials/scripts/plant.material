@@ -1,0 +1,16 @@
+material Plant/Leaves
+{
+  technique
+  {
+    pass
+    {
+      alpha_rejection greater 128
+
+      texture_unit
+      {
+        texture plant_diffuse.png
+      }
+    }
+  }
+}
+

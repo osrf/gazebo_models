@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="plant">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://plant/meshes/plant.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://plant/meshes/plant.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://plant/materials/scripts/</uri>
+            <uri>model://plant/materials/textures/</uri>
+            <name>Plant/Leaves</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
