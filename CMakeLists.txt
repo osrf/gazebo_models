@@ -232,6 +232,7 @@ table_marble
 textured_shapes
 thrift_shop
 tower_crane
+truss_bridge
 tube_2_25cm
 tube_9_5mm
 turtlebot
