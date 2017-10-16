@@ -1,0 +1,147 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="pier">
+    <static>true</static>
+    <link name="link">
+      <pose>0 0 7.457472766 0 0 0</pose>
+      <collision name="collision_platform">
+        <pose>0 11.191539466 0.479153728 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>4.998414184 22.105855458 0.223136714</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="collision_pillar1">
+        <pose>2.765798126 0.839949044 -2.649199172 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.526207228 0.526207228 9.616546934</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="collision_pillar2">
+        <pose>2.765798126 5.15329932 -2.649199172 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.526207228 0.526207228 9.616546934</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="collision_pillar3">
+        <pose>2.765798126 10.602651388 -2.649199172 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.526207228 0.526207228 9.616546934</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="collision_pillar4">
+        <pose>2.765798126 16.597281512 -2.649199172 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.526207228 0.526207228 9.616546934</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="collision_pillar5">
+        <pose>2.765798126 21.976791962 -2.649199172 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.526207228 0.526207228 9.616546934</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="collision_pillar6">
+        <pose>-2.765798126 0.839949044 -2.649199172 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.526207228 0.526207228 9.616546934</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="collision_pillar7">
+        <pose>-2.765798126 5.15329932 -2.649199172 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.526207228 0.526207228 9.616546934</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="collision_pillar8">
+        <pose>-2.765798126 10.602651388 -2.649199172 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.526207228 0.526207228 9.616546934</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="collision_pillar9">
+        <pose>-2.765798126 16.597281512 -2.649199172 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.526207228 0.526207228 9.616546934</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="collision_pillar10">
+        <pose>-2.765798126 21.976791962 -2.649199172 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.526207228 0.526207228 9.616546934</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="collision_beam1">
+        <pose>0 0.303861978 0.079695294 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>6.28904 0.526207228 0.526207228</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="collision_beam2">
+        <pose>0 4.617212 0.079695294 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>6.28904 0.526207228 0.526207228</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="collision_beam3">
+        <pose>0 10.066563814 0.079695294 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>6.28904 0.526207228 0.526207228</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="collision_beam4">
+        <pose>0 16.061198002 0.079695294 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>6.28904 0.526207228 0.526207228</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="collision_beam5">
+        <pose>0 21.440703626 0.079695294 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>6.28904 0.526207228 0.526207228</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://pier/meshes/pier.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
