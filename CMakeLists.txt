@@ -99,6 +99,7 @@ fire_hydrant
 fire_station
 first_2015_trash_can
 follower_vehicle
+fountain
 frc_field_2015
 frc2016_ball
 frc2016_chevaldefrise
