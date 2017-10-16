@@ -1,0 +1,842 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="prius_hybrid">
+    <pose>0 0 0.03 0 0 0</pose>
+    <link name="chassis">
+      <inertial>
+        <mass>1356.0</mass>
+        <pose>0 0 0.48 0 0 0</pose>
+        <inertia>
+          <ixx>2581.13354740</ixx>
+          <ixy>0.0</ixy>
+          <iyy>591.30846112</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>2681.95008628</izz>
+        </inertia>
+      </inertial>
+
+      <visual name="chassis_visual">
+        <geometry>
+          <mesh>
+            <uri>model://prius_hybrid/meshes/Hybrid.obj</uri>
+            <scale>0.01 0.01 0.01</scale>
+            <submesh>
+              <name>Hybrid</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <visual name="interior_visual">
+        <geometry>
+          <mesh>
+            <uri>model://prius_hybrid/meshes/Hybrid.obj</uri>
+            <scale>0.01 0.01 0.01</scale>
+            <submesh>
+              <name>Hybrid_Interior</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <visual name="windows_visual">
+        <geometry>
+          <mesh>
+            <uri>model://prius_hybrid/meshes/Hybrid.obj</uri>
+            <scale>0.01 0.01 0.01</scale>
+            <submesh>
+              <name>Hybrid_Windows</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name="chassis">
+        <pose>0.0 0.05 0.625 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.7526 2.1 0.95</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="front_bumper">
+        <pose>0.0 -2.0 0.458488 0.0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.337282 0.48 0.566691</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="hood">
+        <pose>0.0 -1.900842 0.676305 0.341247 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.597968 0.493107 0.265468</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="windshield">
+        <pose>0.0 -0.875105 1.032268 0.335476 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.168381 1.654253 0.272347</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="top_front">
+        <pose>0.0 0.161236 1.386042 0.135030 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.279154 0.625988 0.171868</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="top_rear">
+        <pose>0.0 0.817696 1.360069 -0.068997 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.285130 0.771189 0.226557</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="rear_window">
+        <pose>0.0 1.640531 1.175126 -0.262017 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.267845 1.116344 0.244286</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="trunk">
+        <pose>0.0 1.637059 0.888180 0.0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.788064 1.138988 0.482746</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="back_bumper">
+        <pose>0.0 2.054454 0.577870 0.0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.781650 0.512093 0.581427</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <sensor name='back_camera_sensor' type='camera'>
+        <update_rate>30</update_rate>
+        <camera name='back_camera'>
+          <horizontal_fov>1.39626</horizontal_fov>
+          <image>
+            <width>800</width>
+            <height>800</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <pose frame=''>0 1.45 1.4 0 0.05 1.5707</pose>
+      </sensor>
+      <sensor name='back_left_far_sonar_sensor' type='ray'>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>5</max>
+            <resolution>0.1</resolution>
+          </range>
+        </ray>
+        <always_on>0</always_on>
+        <update_rate>5</update_rate>
+        <pose frame=''>0.7 2.4 0.5 0 -0 1.5707</pose>
+      </sensor>
+      <sensor name='back_left_middle_sonar_sensor' type='ray'>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>5</max>
+            <resolution>0.1</resolution>
+          </range>
+        </ray>
+        <always_on>0</always_on>
+        <update_rate>5</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>0.24 2.4 0.5 0 -0 1.5707</pose>
+      </sensor>
+      <sensor name='back_right_far_sonar_sensor' type='ray'>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>5</max>
+            <resolution>0.1</resolution>
+          </range>
+        </ray>
+        <always_on>0</always_on>
+        <update_rate>5</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>-0.7 2.4 0.5 0 -0 1.5707</pose>
+      </sensor>
+      <sensor name='back_right_middle_sonar_sensor' type='ray'>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>5</max>
+            <resolution>0.1</resolution>
+          </range>
+        </ray>
+        <always_on>0</always_on>
+        <update_rate>5</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>-0.24 2.4 0.5 0 -0 1.5707</pose>
+      </sensor>
+      <sensor name='center_laser_sensor' type='ray'>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>512</samples>
+              <resolution>1</resolution>
+              <min_angle>-3.14</min_angle>
+              <max_angle>3.14</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>16</samples>
+              <min_angle>-0.1</min_angle>
+              <max_angle>-0.35</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>30</max>
+            <resolution>0.01</resolution>
+          </range>
+        </ray>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>0 0.4 1.8 0 0 -1.5707</pose>
+      </sensor>
+      <sensor name='front_camera_sensor' type='camera'>
+        <update_rate>30</update_rate>
+        <camera name='front_camera'>
+          <horizontal_fov>1.39626</horizontal_fov>
+          <image>
+            <width>800</width>
+            <height>800</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <pose frame=''>0 -0.4 1.4 0 0.05 -1.5707</pose>
+      </sensor>
+      <sensor name='front_left_far_sonar_sensor' type='ray'>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>5</max>
+            <resolution>0.1</resolution>
+          </range>
+        </ray>
+        <always_on>0</always_on>
+        <update_rate>5</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>0.7 -2.1 0.5 0 0 -1.5707</pose>
+      </sensor>
+      <sensor name='front_left_laser_sensor' type='ray'>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>640</samples>
+              <resolution>1</resolution>
+              <min_angle>-2.26889</min_angle>
+              <max_angle>2.2689</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>30</max>
+            <resolution>0.01</resolution>
+          </range>
+        </ray>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>1 -2.3 0.5 0 0.05 0</pose>
+      </sensor>
+      <sensor name='front_left_middle_sonar_sensor' type='ray'>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>5</max>
+            <resolution>0.1</resolution>
+          </range>
+        </ray>
+        <always_on>0</always_on>
+        <update_rate>5</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>0.24 -2.3 0.5 0 0 -1.5707</pose>
+      </sensor>
+      <sensor name='front_right_far_sonar_sensor' type='ray'>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>5</max>
+            <resolution>0.1</resolution>
+          </range>
+        </ray>
+        <always_on>0</always_on>
+        <update_rate>5</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>-0.7 -2.1 0.5 0 0 -1.5707</pose>
+      </sensor>
+      <sensor name='front_right_laser_sensor' type='ray'>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>640</samples>
+              <resolution>1</resolution>
+              <min_angle>-2.26889</min_angle>
+              <max_angle>2.2689</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>30</max>
+            <resolution>0.01</resolution>
+          </range>
+        </ray>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>-1 -2.3 0.5 -0 0.05 3.14</pose>
+      </sensor>
+      <sensor name='front_right_middle_sonar_sensor' type='ray'>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>5</max>
+            <resolution>0.1</resolution>
+          </range>
+        </ray>
+        <always_on>0</always_on>
+        <update_rate>5</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>-0.24 -2.3 0.5 0 0 -1.5707</pose>
+      </sensor>
+      <sensor name='left_camera_sensor' type='camera'>
+        <update_rate>30</update_rate>
+        <camera name='left_camera'>
+          <horizontal_fov>1.39626</horizontal_fov>
+          <image>
+            <width>800</width>
+            <height>800</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <pose frame=''>1 -0.7 1 0 0.05 1</pose>
+      </sensor>
+      <sensor name='right_camera_sensor' type='camera'>
+        <update_rate>30</update_rate>
+        <camera name='right_camera'>
+          <horizontal_fov>1.39626</horizontal_fov>
+          <image>
+            <width>800</width>
+            <height>800</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <pose frame=''>-1 -0.7 1 0 0.05 2.1416</pose>
+      </sensor>
+    </link>
+
+    <link name="front_left_wheel">
+      <pose>0.767 -1.41 0.3 0 0 0</pose>
+      <inertial>
+        <mass>11</mass>
+        <inertia>
+          <ixx>0.58631238</ixx>
+          <ixy>0.0</ixy>
+          <iyy>0.33552910</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>0.33552910</izz>
+        </inertia>
+      </inertial>
+
+      <visual name="visual">
+        <pose>0.03 0.0 0.0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://prius_hybrid/meshes/Hybrid.obj</uri>
+            <scale>0.01 0.01 0.01</scale>
+            <submesh>
+              <name>Wheel_Front_Left_</name>
+              <center>true</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name="collision">
+        <pose>-0.07 0.0 0.0 0 1.5707963267948966 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.31265</radius>
+            <!--length>0.215</length-->
+          </sphere>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.9</mu>
+              <mu2>0.9</mu2>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+
+      </collision>
+    </link>
+
+    <link name="steering_wheel">
+      <pose>0.44 -0.717609 0.938807 -0.87 0 0</pose>
+      <inertial>
+        <mass>1.0</mass>
+        <inertia>
+          <ixx>0.14583300</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.14583300</iyy>
+          <iyz>0</iyz>
+          <izz>0.12500000</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.16</radius>
+            <length>0.01</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.003</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.16</radius>
+            <length>0.01</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <link name="front_right_wheel">
+      <pose>-0.767 -1.41 0.3 0 0 0</pose>
+      <inertial>
+        <mass>11</mass>
+        <inertia>
+          <ixx>0.58631238</ixx>
+          <ixy>0.0</ixy>
+          <iyy>0.33552910</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>0.33552910</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <pose>0 0 0.0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://prius_hybrid/meshes/Hybrid.obj</uri>
+            <scale>0.01 0.01 0.01</scale>
+            <submesh>
+              <name>Wheel_Front_Right</name>
+              <center>true</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name="collision">
+        <pose>0.07 0.0 0.0 0 1.5707963267948966 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.31265</radius>
+            <!--length>0.215</length-->
+          </sphere>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.9</mu>
+              <mu2>0.9</mu2>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+
+      </collision>
+    </link>
+
+
+    <link name="rear_left_wheel">
+      <pose>0.793 1.45 0.3 0 0 0</pose>
+      <inertial>
+        <mass>11</mass>
+        <inertia>
+          <ixx>0.58631238</ixx>
+          <ixy>0.0</ixy>
+          <iyy>0.33552910</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>0.33552910</izz>
+        </inertia>
+      </inertial>
+
+      <visual name="visual">
+        <pose>0.03 0.0 0.0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://prius_hybrid/meshes/Hybrid.obj</uri>
+            <scale>0.01 0.01 0.01</scale>
+            <submesh>
+              <name>Wheel_Front_Left_</name>
+              <center>true</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name="collision">
+        <pose>-0.07 0.0 0.0 0 1.5707963267948966 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.31265</radius>
+            <!--length>0.215</length-->
+          </sphere>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.1</mu>
+              <mu2>1.1</mu2>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+
+      </collision>
+    </link>
+
+    <link name="rear_right_wheel">
+      <pose>-0.793 1.45 0.3 0 0 0</pose>
+      <inertial>
+        <mass>11</mass>
+        <inertia>
+          <ixx>0.58631238</ixx>
+          <ixy>0.0</ixy>
+          <iyy>0.33552910</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>0.33552910</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <pose>0 0 0.0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://prius_hybrid/meshes/Hybrid.obj</uri>
+            <scale>0.01 0.01 0.01</scale>
+            <submesh>
+              <name>Wheel_Front_Right</name>
+              <center>true</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name="collision">
+        <pose>0.07 0.0 0.0 0 1.5707963267948966 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.31265</radius>
+            <!--length>0.215</length-->
+          </sphere>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.1</mu>
+              <mu2>1.1</mu2>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1e8</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+    </link>
+
+    <joint type="universal" name="front_left_combined_joint">
+      <child>front_left_wheel</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <!-- +- 50 degrees -->
+          <lower>-0.8727</lower>
+          <upper>0.8727</upper>
+        </limit>
+      </axis>
+      <axis2>
+        <xyz>1 0 0</xyz>
+      </axis2>
+    </joint>
+
+    <joint type="universal" name="front_right_combined_joint">
+      <child>front_right_wheel</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <!-- +- 50 degrees -->
+          <lower>-0.8727</lower>
+          <upper>0.8727</upper>
+        </limit>
+      </axis>
+      <axis2>
+        <xyz>1 0 0</xyz>
+      </axis2>
+    </joint>
+
+    <joint type="revolute" name="rear_left_wheel_joint">
+      <child>rear_left_wheel</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+    <joint type="revolute" name="rear_right_wheel_joint">
+      <child>rear_right_wheel</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="steering_joint" type="revolute">
+      <pose>-0.002 0 0 0 0 0</pose>
+      <parent>chassis</parent>
+      <child>steering_wheel</child>
+      <axis>
+        <xyz>0 1 0.84365</xyz>
+        <limit>
+          <lower>-3.14</lower>
+          <upper>3.14</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+  </model>
+
+</sdf>

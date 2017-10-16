@@ -195,6 +195,7 @@ powerplant
 pr2
 pr2_gripper
 prius_hybrid
+prius_hybrid_sensors
 pulley_part
 quadrotor
 ragdoll
