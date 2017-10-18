@@ -186,6 +186,7 @@ pioneer2dx
 pioneer3at
 piston_rod_part
 plastic_cup
+playground
 polaris_ranger_ev
 polaris_ranger_xp900
 polaris_ranger_xp900_no_roll_cage
