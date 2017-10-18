@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="stop_light">
+
+    <static>true</static>
+
+    <!-- this pose can be overriden when including the light on another model -->
+    <pose>0 0 1.0 0 0 0</pose>
+
+    <link name="link">
+
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://stop_light/meshes/stop_light.obj</uri>
+            <scale>0.01 0.01 0.01</scale>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="frame">
+        <geometry>
+          <mesh>
+            <uri>model://stop_light/meshes/stop_light.obj</uri>
+            <scale>0.01 0.01 0.01</scale>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <visual name="red">
+        <pose>-0.001123 -0.082251 -0.147514 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.1012</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://stop_light/materials/scripts/</uri>
+            <uri>model://stop_light/materials/textures/</uri>
+            <name>StopLight/Light</name>
+          </script>
+          <ambient>1 0 0 1</ambient>
+          <specular>1 0 0 1</specular>
+          <!-- Turn a light on by uncommenting emissive -->
+          <!--emissive>1 0 0 1</emissive-->
+        </material>
+      </visual>
+
+      <visual name="yellow">
+        <pose>-0.001123 -0.082251 -0.402 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.1012</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://stop_light/materials/scripts/</uri>
+            <uri>model://stop_light/materials/textures/</uri>
+            <name>StopLight/Light</name>
+          </script>
+          <ambient>1 1 0 1</ambient>
+          <specular>1 1 0 1</specular>
+          <!--emissive>1 1 0 1</emissive-->
+        </material>
+      </visual>
+
+      <visual name="green">
+        <pose>-0.001123 -0.082251 -0.655 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.1012</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://stop_light/materials/scripts/</uri>
+            <uri>model://stop_light/materials/textures/</uri>
+            <name>StopLight/Light</name>
+          </script>
+          <ambient>0 1 0 1</ambient>
+          <specular>0 1 0 1</specular>
+          <!--emissive>0 1 0 1</emissive-->
+        </material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>
