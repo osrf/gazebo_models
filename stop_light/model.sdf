@@ -2,6 +2,8 @@
 <sdf version="1.6">
   <model name="stop_light">
 
+    <static>true</static>
+
     <!-- this pose can be overriden when including the light on another model -->
     <pose>0 0 1.0 0 0 0</pose>
 
