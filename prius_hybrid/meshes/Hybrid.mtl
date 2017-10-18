@@ -10,7 +10,7 @@ newmtl Hybrid
 	illum 2
 	Ka 0.5882 0.5882 0.5882
 	Kd 0.5882 0.5882 0.5882
-	Ks 0.0000 0.0000 0.0000
+	Ks 1.0000 1.0000 1.0000
 	Ke 0.0000 0.0000 0.0000
 	map_Ka ../materials/textures/Hybrid.png
 	map_Kd ../materials/textures/Hybrid.png
