@@ -236,6 +236,7 @@ sun
 t_brace_part
 table
 table_marble
+telephone_pole
 textured_shapes
 thrift_shop
 tower_crane
