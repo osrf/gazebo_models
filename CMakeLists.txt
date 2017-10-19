@@ -201,6 +201,7 @@ pr2_gripper
 prius_hybrid
 pulley_part
 quadrotor
+radio_tower
 ragdoll
 robocup09_spl_field
 robocup14_spl_field
