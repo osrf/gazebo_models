@@ -253,6 +253,7 @@ walkway_metal_45
 walkway_metal_90
 warehouse_robot
 washer
+water_tower
 willowgarage
 winding_valley_heightmap
 wood_block_10_2_1cm
