@@ -125,6 +125,9 @@ grey_wall
 grocery_store
 ground_plane
 hammer
+hatchback
+hatchback_red
+hatchback_blue
 hinged_door
 hokuyo
 hoop_red
