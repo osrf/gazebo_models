@@ -233,6 +233,7 @@ submarine
 submarine_buoyant
 submarine_sinking
 sun
+suv
 t_brace_part
 table
 table_marble
