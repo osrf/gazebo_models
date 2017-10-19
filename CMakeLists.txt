@@ -27,6 +27,7 @@ box_target_green
 box_target_red
 breakable_test
 brick_box_3x1x3
+bus
 cabinet
 cafe
 cafe_table
