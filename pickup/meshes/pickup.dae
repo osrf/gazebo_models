@@ -212,7 +212,7 @@
       <init_from>pickup_diffuse.jpg</init_from>
     </image>
     <image id="Wheels2_tga">
-      <init_from>model://suv/materials/textures/wheels2.tga</init_from>
+      <init_from>wheels2.jpg</init_from>
     </image>
   </library_images>
   <library_visual_scenes>
