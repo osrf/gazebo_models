@@ -200,6 +200,7 @@ prius_hybrid
 pulley_part
 quadrotor
 ragdoll
+radio_tower
 robocup09_spl_field
 robocup14_spl_field
 robocup14_spl_goal
