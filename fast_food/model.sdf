@@ -3,7 +3,7 @@
   <model name="Fast Food">
     <static>true</static>
     <link name="link">
-      <pose>0 0 4.73896944 0 0 0</pose>
+      <pose>0 0 3.15931296 0 0 0</pose>
       <collision name="collision">
         <geometry>
           <mesh>
