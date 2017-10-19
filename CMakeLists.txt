@@ -183,6 +183,7 @@ parrot_bebop_2
 person_standing
 person_walking
 pier
+pickup
 pine_tree
 pioneer2dx
 pioneer3at
