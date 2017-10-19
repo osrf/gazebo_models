@@ -185,7 +185,6 @@ person_standing
 person_walking
 pickup
 pier
-pickup
 pine_tree
 pioneer2dx
 pioneer3at
