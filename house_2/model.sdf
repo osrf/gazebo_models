@@ -7,6 +7,7 @@
         <geometry>
           <mesh>
             <uri>model://house_2/meshes/house_2.dae</uri>
+            <scale>1.5 1.5 1.5</scale>
           </mesh>
         </geometry>
       </collision>
@@ -14,6 +15,7 @@
         <geometry>
           <mesh>
             <uri>model://house_2/meshes/house_2.dae</uri>
+            <scale>1.5 1.5 1.5</scale>
           </mesh>
         </geometry>
         <material>
@@ -23,9 +25,10 @@
             <uri>model://house_1/materials/textures</uri>
             <name>House_2/Diffuse</name>
           </script>
+          <!-- Re-enable when normal maps work again
           <shader type="normal_map_object_space">
             <normal_map>model://house_1/materials/textures/House_1_Normal.png</normal_map>
-          </shader>
+          </shader-->
         </material>
       </visual>
     </link>
