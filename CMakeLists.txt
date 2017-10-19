@@ -28,6 +28,7 @@ box_target_green
 box_target_red
 breakable_test
 brick_box_3x1x3
+bus
 cabinet
 cafe
 cafe_table
@@ -98,6 +99,7 @@ fire_hose_long
 fire_hose_long_curled
 fire_hydrant
 fire_station
+fire_truck
 first_2015_trash_can
 follower_vehicle
 fountain
@@ -234,6 +236,7 @@ submarine
 submarine_buoyant
 submarine_sinking
 sun
+suv
 t_brace_part
 table
 table_marble
