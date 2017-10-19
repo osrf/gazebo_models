@@ -182,8 +182,8 @@ parking_garage
 parrot_bebop_2
 person_standing
 person_walking
-pier
 pickup
+pier
 pine_tree
 pioneer2dx
 pioneer3at
