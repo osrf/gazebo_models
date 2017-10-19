@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="telephone_pole">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision_pole">
+        <pose>0 0 4.572 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.07794752</radius>
+            <length>9.144</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="collision_cross">
+        <pose>0 -0.098806 8.048363126 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>2.11605876 0.041763442 0.177805588</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://telephone_pole/meshes/telephone_pole.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

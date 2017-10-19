@@ -13,6 +13,7 @@ string (TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
 exec_program(date ARGS -u +%Y-%m-%-dT%H:%M:%S OUTPUT_VARIABLE CURRENT_DATE)
 
 set (dirs
+ambulance
 apartment
 apollo15_landing_site_1000x1000
 arm_part
@@ -27,6 +28,7 @@ box_target_green
 box_target_red
 breakable_test
 brick_box_3x1x3
+bus
 cabinet
 cafe
 cafe_table
@@ -97,6 +99,7 @@ fire_hose_long
 fire_hose_long_curled
 fire_hydrant
 fire_station
+fire_truck
 first_2015_trash_can
 follower_vehicle
 fountain
@@ -114,6 +117,7 @@ frc2016_roughterrain
 frc2016_sallyport
 gas_station
 gasket_part
+gazebo
 gear_part
 gimbal_small_2d
 grey_tote
@@ -181,15 +185,18 @@ parking_garage
 parrot_bebop_2
 person_standing
 person_walking
+pier
 pine_tree
 pioneer2dx
 pioneer3at
 piston_rod_part
 plastic_cup
+playground
 polaris_ranger_ev
 polaris_ranger_xp900
 polaris_ranger_xp900_no_roll_cage
 police_station
+postbox
 post_office
 powerplant
 pr2
@@ -198,7 +205,9 @@ prius_hybrid
 prius_hybrid_sensors
 pulley_part
 quadrotor
+radio_tower
 ragdoll
+reactor
 robocup09_spl_field
 robocup14_spl_field
 robocup14_spl_goal
@@ -228,9 +237,11 @@ submarine
 submarine_buoyant
 submarine_sinking
 sun
+suv
 t_brace_part
 table
 table_marble
+telephone_pole
 textured_shapes
 thrift_shop
 tower_crane
@@ -247,6 +258,7 @@ walkway_metal_45
 walkway_metal_90
 warehouse_robot
 washer
+water_tower
 willowgarage
 winding_valley_heightmap
 wood_block_10_2_1cm
