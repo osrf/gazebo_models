@@ -183,6 +183,7 @@ parking_garage
 parrot_bebop_2
 person_standing
 person_walking
+pickup
 pier
 pickup
 pine_tree
