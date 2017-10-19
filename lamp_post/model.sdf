@@ -7,6 +7,7 @@
         <geometry>
           <mesh>
             <uri>model://lamp_post/meshes/lamp_post.dae</uri>
+            <scale>3 3 3</scale>
           </mesh>
         </geometry>
       </collision>
@@ -14,6 +15,7 @@
         <geometry>
           <mesh>
             <uri>model://lamp_post/meshes/lamp_post.dae</uri>
+            <scale>3 3 3</scale>
           </mesh>
         </geometry>
       </visual>
