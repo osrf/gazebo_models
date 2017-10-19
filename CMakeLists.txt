@@ -203,6 +203,7 @@ pulley_part
 quadrotor
 radio_tower
 ragdoll
+reactor
 robocup09_spl_field
 robocup14_spl_field
 robocup14_spl_goal
