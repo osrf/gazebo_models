@@ -5,6 +5,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
+            <scale>1.5 1.5 1.5</scale>
             <uri>model://dumpster/meshes/dumpster.dae</uri>
           </mesh>
         </geometry>
@@ -12,6 +13,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
+            <scale>1.5 1.5 1.5</scale>
             <uri>model://dumpster/meshes/dumpster.dae</uri>
           </mesh>
         </geometry>

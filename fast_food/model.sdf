@@ -3,10 +3,11 @@
   <model name="Fast Food">
     <static>true</static>
     <link name="link">
-      <pose>0 0 1.57965648 0 0 0</pose>
+      <pose>0 0 4.73896944 0 0 0</pose>
       <collision name="collision">
         <geometry>
           <mesh>
+            <scale>3 3 2</scale>
             <uri>model://fast_food/meshes/fast_food.dae</uri>
           </mesh>
         </geometry>
@@ -14,6 +15,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
+            <scale>3 3 2</scale>
             <uri>model://fast_food/meshes/fast_food.dae</uri>
           </mesh>
         </geometry>
