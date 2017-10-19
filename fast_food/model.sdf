@@ -3,10 +3,11 @@
   <model name="Fast Food">
     <static>true</static>
     <link name="link">
-      <pose>0 0 1.57965648 0 0 0</pose>
+      <pose>0 0 3.15931296 0 0 0</pose>
       <collision name="collision">
         <geometry>
           <mesh>
+            <scale>3 3 2</scale>
             <uri>model://fast_food/meshes/fast_food.dae</uri>
           </mesh>
         </geometry>
@@ -14,6 +15,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
+            <scale>3 3 2</scale>
             <uri>model://fast_food/meshes/fast_food.dae</uri>
           </mesh>
         </geometry>
@@ -23,9 +25,10 @@
             <uri>model://fast_food/materials/textures</uri>
             <name>FastFood/Diffuse</name>
           </script>
+          <!-- Re-enable when normal maps work again
           <shader type="normal_map_object_space">
             <normal_map>FastFood_Normal.png</normal_map>
-          </shader>
+          </shader>-->
         </material>
       </visual>
     </link>
