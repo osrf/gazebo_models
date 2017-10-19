@@ -1,0 +1,385 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="prius_hybrid_sensors">
+    <include>
+      <uri>model://prius_hybrid</uri>
+    </include>
+
+    <joint name="sensor_joint" type="fixed">
+      <parent>prius_hybrid::chassis</parent>
+      <child>sensors</child>
+    </joint>
+
+    <link name="sensors">
+      <sensor name='back_camera_sensor' type='camera'>
+        <update_rate>30</update_rate>
+        <camera name='back_camera'>
+          <horizontal_fov>1.39626</horizontal_fov>
+          <image>
+            <width>800</width>
+            <height>800</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <pose frame=''>0 1.45 1.4 0 0.05 1.5707</pose>
+      </sensor>
+      <sensor name='back_left_far_sonar_sensor' type='ray'>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>5</max>
+            <resolution>0.1</resolution>
+          </range>
+        </ray>
+        <always_on>0</always_on>
+        <update_rate>5</update_rate>
+        <pose frame=''>0.7 2.4 0.5 0 -0 1.5707</pose>
+      </sensor>
+      <sensor name='back_left_middle_sonar_sensor' type='ray'>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>5</max>
+            <resolution>0.1</resolution>
+          </range>
+        </ray>
+        <always_on>0</always_on>
+        <update_rate>5</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>0.24 2.4 0.5 0 -0 1.5707</pose>
+      </sensor>
+      <sensor name='back_right_far_sonar_sensor' type='ray'>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>5</max>
+            <resolution>0.1</resolution>
+          </range>
+        </ray>
+        <always_on>0</always_on>
+        <update_rate>5</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>-0.7 2.4 0.5 0 -0 1.5707</pose>
+      </sensor>
+      <sensor name='back_right_middle_sonar_sensor' type='ray'>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>5</max>
+            <resolution>0.1</resolution>
+          </range>
+        </ray>
+        <always_on>0</always_on>
+        <update_rate>5</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>-0.24 2.4 0.5 0 -0 1.5707</pose>
+      </sensor>
+      <sensor name='center_laser_sensor' type='ray'>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>512</samples>
+              <resolution>1</resolution>
+              <min_angle>-3.14</min_angle>
+              <max_angle>3.14</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>16</samples>
+              <min_angle>-0.1</min_angle>
+              <max_angle>-0.35</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>30</max>
+            <resolution>0.01</resolution>
+          </range>
+        </ray>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>0 0.4 1.8 0 0 -1.5707</pose>
+      </sensor>
+      <sensor name='front_camera_sensor' type='camera'>
+        <update_rate>30</update_rate>
+        <camera name='front_camera'>
+          <horizontal_fov>1.39626</horizontal_fov>
+          <image>
+            <width>800</width>
+            <height>800</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <pose frame=''>0 -0.4 1.4 0 0.05 -1.5707</pose>
+      </sensor>
+      <sensor name='front_left_far_sonar_sensor' type='ray'>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>5</max>
+            <resolution>0.1</resolution>
+          </range>
+        </ray>
+        <always_on>0</always_on>
+        <update_rate>5</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>0.7 -2.1 0.5 0 0 -1.5707</pose>
+      </sensor>
+      <sensor name='front_left_laser_sensor' type='ray'>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>640</samples>
+              <resolution>1</resolution>
+              <min_angle>-2.26889</min_angle>
+              <max_angle>2.2689</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>30</max>
+            <resolution>0.01</resolution>
+          </range>
+        </ray>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>1 -2.3 0.5 0 0.05 0</pose>
+      </sensor>
+      <sensor name='front_left_middle_sonar_sensor' type='ray'>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>5</max>
+            <resolution>0.1</resolution>
+          </range>
+        </ray>
+        <always_on>0</always_on>
+        <update_rate>5</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>0.24 -2.3 0.5 0 0 -1.5707</pose>
+      </sensor>
+      <sensor name='front_right_far_sonar_sensor' type='ray'>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>5</max>
+            <resolution>0.1</resolution>
+          </range>
+        </ray>
+        <always_on>0</always_on>
+        <update_rate>5</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>-0.7 -2.1 0.5 0 0 -1.5707</pose>
+      </sensor>
+      <sensor name='front_right_laser_sensor' type='ray'>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>640</samples>
+              <resolution>1</resolution>
+              <min_angle>-2.26889</min_angle>
+              <max_angle>2.2689</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>30</max>
+            <resolution>0.01</resolution>
+          </range>
+        </ray>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>-1 -2.3 0.5 -0 0.05 3.14</pose>
+      </sensor>
+      <sensor name='front_right_middle_sonar_sensor' type='ray'>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>5</max>
+            <resolution>0.1</resolution>
+          </range>
+        </ray>
+        <always_on>0</always_on>
+        <update_rate>5</update_rate>
+        <visualize>0</visualize>
+        <pose frame=''>-0.24 -2.3 0.5 0 0 -1.5707</pose>
+      </sensor>
+      <sensor name='left_camera_sensor' type='camera'>
+        <update_rate>30</update_rate>
+        <camera name='left_camera'>
+          <horizontal_fov>1.39626</horizontal_fov>
+          <image>
+            <width>800</width>
+            <height>800</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <pose frame=''>1 -0.7 1 0 0.05 1</pose>
+      </sensor>
+      <sensor name='right_camera_sensor' type='camera'>
+        <update_rate>30</update_rate>
+        <camera name='right_camera'>
+          <horizontal_fov>1.39626</horizontal_fov>
+          <image>
+            <width>800</width>
+            <height>800</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <pose frame=''>-1 -0.7 1 0 0.05 2.1416</pose>
+      </sensor>
+    </link>
+  </model>
+</sdf>
