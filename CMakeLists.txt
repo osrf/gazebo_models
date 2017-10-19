@@ -114,6 +114,7 @@ frc2016_roughterrain
 frc2016_sallyport
 gas_station
 gasket_part
+gazebo
 gear_part
 gimbal_small_2d
 grey_tote
