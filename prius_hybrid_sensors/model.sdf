@@ -80,7 +80,7 @@
         </ray>
         <always_on>0</always_on>
         <update_rate>5</update_rate>
-        <visualize>0</visualize>
+        <visualize>1</visualize>
         <pose frame=''>0.24 2.4 0.5 0 -0 1.5707</pose>
       </sensor>
       <sensor name='back_right_far_sonar_sensor' type='ray'>
@@ -106,7 +106,7 @@
         </ray>
         <always_on>0</always_on>
         <update_rate>5</update_rate>
-        <visualize>0</visualize>
+        <visualize>1</visualize>
         <pose frame=''>-0.7 2.4 0.5 0 -0 1.5707</pose>
       </sensor>
       <sensor name='back_right_middle_sonar_sensor' type='ray'>
@@ -132,7 +132,7 @@
         </ray>
         <always_on>0</always_on>
         <update_rate>5</update_rate>
-        <visualize>0</visualize>
+        <visualize>1</visualize>
         <pose frame=''>-0.24 2.4 0.5 0 -0 1.5707</pose>
       </sensor>
       <sensor name='center_laser_sensor' type='ray'>
@@ -158,8 +158,8 @@
         </ray>
         <always_on>1</always_on>
         <update_rate>30</update_rate>
-        <visualize>0</visualize>
-        <pose frame=''>0 0.4 1.8 0 0 -1.5707</pose>
+        <visualize>1</visualize>
+        <pose frame=''>0 0.4 2.0 0 0 -1.5707</pose>
       </sensor>
       <sensor name='front_camera_sensor' type='camera'>
         <update_rate>30</update_rate>
@@ -205,7 +205,7 @@
         </ray>
         <always_on>0</always_on>
         <update_rate>5</update_rate>
-        <visualize>0</visualize>
+        <visualize>1</visualize>
         <pose frame=''>0.7 -2.1 0.5 0 0 -1.5707</pose>
       </sensor>
       <sensor name='front_left_laser_sensor' type='ray'>
@@ -231,8 +231,8 @@
         </ray>
         <always_on>1</always_on>
         <update_rate>30</update_rate>
-        <visualize>0</visualize>
-        <pose frame=''>1 -2.3 0.5 0 0.05 0</pose>
+        <visualize>1</visualize>
+        <pose frame=''>1 -2.3 0.8 0 0.05 0</pose>
       </sensor>
       <sensor name='front_left_middle_sonar_sensor' type='ray'>
         <ray>
@@ -257,7 +257,7 @@
         </ray>
         <always_on>0</always_on>
         <update_rate>5</update_rate>
-        <visualize>0</visualize>
+        <visualize>1</visualize>
         <pose frame=''>0.24 -2.3 0.5 0 0 -1.5707</pose>
       </sensor>
       <sensor name='front_right_far_sonar_sensor' type='ray'>
@@ -283,7 +283,7 @@
         </ray>
         <always_on>0</always_on>
         <update_rate>5</update_rate>
-        <visualize>0</visualize>
+        <visualize>1</visualize>
         <pose frame=''>-0.7 -2.1 0.5 0 0 -1.5707</pose>
       </sensor>
       <sensor name='front_right_laser_sensor' type='ray'>
@@ -309,8 +309,8 @@
         </ray>
         <always_on>1</always_on>
         <update_rate>30</update_rate>
-        <visualize>0</visualize>
-        <pose frame=''>-1 -2.3 0.5 -0 0.05 3.14</pose>
+        <visualize>1</visualize>
+        <pose frame=''>-1 -2.3 0.8 -0 0.05 3.14</pose>
       </sensor>
       <sensor name='front_right_middle_sonar_sensor' type='ray'>
         <ray>
@@ -335,7 +335,7 @@
         </ray>
         <always_on>0</always_on>
         <update_rate>5</update_rate>
-        <visualize>0</visualize>
+        <visualize>1</visualize>
         <pose frame=''>-0.24 -2.3 0.5 0 0 -1.5707</pose>
       </sensor>
       <sensor name='left_camera_sensor' type='camera'>
@@ -379,6 +379,58 @@
           </noise>
         </camera>
         <pose frame=''>-1 -0.7 1 0 0.05 2.1416</pose>
+      </sensor>
+      <sensor name="gps_sensor" type="gps">
+        <pose>0 0 0  0 0 0</pose>
+        <update_rate>10.0</update_rate>
+        <always_on>true</always_on>
+        <gps>
+          <position_sensing>
+            <horizontal>
+              <noise type="gaussian_quantized">
+                <mean>0</mean>
+                <stddev>1</stddev>
+                <bias_mean>3</bias_mean>
+                <bias_stddev>1</bias_stddev>
+                <precision>0.5</precision>
+              </noise>
+            </horizontal>
+            <vertical>
+              <noise type="gaussian_quantized">
+                <mean>0</mean>
+                <stddev>1</stddev>
+                <bias_mean>3</bias_mean>
+                <bias_stddev>1</bias_stddev>
+                <precision>1.0</precision>
+              </noise>
+            </vertical>
+          </position_sensing>
+          <velocity_sensing>
+            <horizontal>
+              <noise type="gaussian_quantized">
+                <mean>0</mean>
+                <stddev>0.1</stddev>
+                <bias_mean>0.1</bias_mean>
+                <bias_stddev>0.1</bias_stddev>
+                <precision>0.1</precision>
+              </noise>
+            </horizontal>
+            <vertical>
+              <noise type="gaussian_quantized">
+                <mean>0</mean>
+                <stddev>0.2</stddev>
+                <bias_mean>0.2</bias_mean>
+                <bias_stddev>0.2</bias_stddev>
+                <precision>0.2</precision>
+              </noise>
+            </vertical>
+          </velocity_sensing>
+        </gps>
+      </sensor>
+      <sensor name="imu_sensor" type="imu">
+        <pose>0 0 0 0 0 0</pose>
+        <always_on>1</always_on>
+        <update_rate>1000.0</update_rate>
       </sensor>
     </link>
   </model>
