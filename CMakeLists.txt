@@ -126,8 +126,8 @@ grocery_store
 ground_plane
 hammer
 hatchback
-hatchback_red
 hatchback_blue
+hatchback_red
 hinged_door
 hokuyo
 hoop_red
