@@ -4,6 +4,7 @@
     <static>true</static>
     <link name="link">
       <collision name="collision">
+        <pose>0 0 0 0 0 -1.57079632679</pose>
         <geometry>
           <mesh>
             <scale>0.06 0.06 0.06</scale>
@@ -12,6 +13,7 @@
         </geometry>
       </collision>
       <visual name="visual">
+        <pose>0 0 0 0 0 -1.57079632679</pose>
         <geometry>
           <mesh>
             <scale>0.06 0.06 0.06</scale>
