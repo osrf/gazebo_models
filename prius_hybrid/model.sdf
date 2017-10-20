@@ -72,16 +72,14 @@
           </box>
         </geometry>
       </collision>
-
       <collision name="hood">
         <pose>0.0 -1.900842 0.676305 0.341247 0 0</pose>
         <geometry>
           <box>
-            <size>1.597968 0.493107 0.265468</size>
+            <size>1.297968 0.493107 0.265468</size>
           </box>
         </geometry>
       </collision>
-
       <collision name="windshield">
         <pose>0.0 -0.875105 1.032268 0.335476 0 0</pose>
         <geometry>
@@ -218,8 +216,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>0.9</mu>
-              <mu2>0.9</mu2>
+              <mu>1.1</mu>
+              <mu2>1.0</mu2>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
@@ -273,8 +271,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>0.9</mu>
-              <mu2>0.9</mu2>
+              <mu>1.1</mu>
+              <mu2>1.0</mu2>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
