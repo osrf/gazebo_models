@@ -3,9 +3,19 @@
   <model name="bowl">
     <link name="link">
       <inertial>
+      <pose>0 0 0.0175 0 0 0</pose>
         <mass>0.1</mass>
+	  <inertia>
+	    <ixx>0.000250308</ixx>
+	    <ixy>0.0</ixy>
+	    <ixz>0.0</ixz>
+	    <iyy>0.000250308</iyy>
+	    <iyz>0.0</iyz>
+	    <izz>0.0004802</izz>
+	  </inertia>
       </inertial>
       <collision name="collision">
+        <pose>0 0 0.0175 0 0 0</pose>
         <geometry>
           <cylinder>
             <radius>0.098</radius>
