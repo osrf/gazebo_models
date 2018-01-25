@@ -1,0 +1,193 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='demo_joint_friction'>
+    <pose>0 0 0.06 0 0 0</pose>
+    <link name='link_base'>
+      <inertial>
+        <mass>100</mass>
+        <inertia>
+          <ixx>1.2</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>3.64</iyy>
+          <iyz>0</iyz>
+          <izz>4.6</izz>
+        </inertia>
+      </inertial>
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+      <enable_wind>0</enable_wind>
+      <visual name='visual_base'>
+        <geometry>
+          <mesh>
+            <uri>model://demo_joint_friction/meshes/base_model.dae</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='collision_base'>
+        <geometry>
+          <box>
+            <size>0.65 0.36 0.12</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name='link_high_friction'>
+      <gravity>0</gravity>
+      <pose>0.12 0 0.15 0.7853981633974483 0 0</pose>
+      <inertial>
+        <pose>0 0 0.12 0 0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.0051</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0051</iyy>
+          <iyz>0</iyz>
+          <izz>0.0006</izz>
+        </inertia>
+      </inertial>
+      <visual name='visual_high_friction'>
+        <pose>0 0 -0.15 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://demo_joint_friction/meshes/arm.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <lighting>1</lighting>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Orange</name>
+          </script>
+        </material>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+    </link>
+    <joint name='joint_high_friction' type='revolute'>
+      <parent>link_base</parent>
+      <child>link_high_friction</child>
+      <pose>0 0 0 -0.15 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <!--
+               Joint friction
+               Joint friction applies a torque (force for prismatic joints)
+               that resists motion of the joint.
+               Friction is the maximum torque to apply.
+               The joint will not move if any torque less than friction is
+               applied.
+               When a torque larger than friction is applied, the net torque
+               is the larger torque reduced by friction.
+               |net_torque| = |torque_applied| - min(|torque_applied|, friction)
+          -->
+          <friction>2</friction>
+          <!-- Spring stiffess and reference set to add movement to demonstration -->
+          <spring_reference>-0.7853981633974483</spring_reference>
+          <spring_stiffness>7</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link_medium_friction'>
+      <gravity>0</gravity>
+      <pose>0 0 0.15 0.7853981633974483 0 0</pose>
+      <inertial>
+        <pose>0 0 0.12 0 0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.0051</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0051</iyy>
+          <iyz>0</iyz>
+          <izz>0.0006</izz>
+        </inertia>
+      </inertial>
+      <visual name='visual_medium_friction'>
+        <pose>0 0 -0.15 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://demo_joint_friction/meshes/arm.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <lighting>1</lighting>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Orange</name>
+          </script>
+        </material>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+    </link>
+    <joint name='joint_medium_friction' type='revolute'>
+      <parent>link_base</parent>
+      <child>link_medium_friction</child>
+      <pose>0 0 0 -0.15 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0.5</friction>
+          <spring_reference>-0.7853981633974483</spring_reference>
+          <spring_stiffness>7</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link_low_friction'>
+      <gravity>0</gravity>
+      <pose>-0.12 0 0.15 0.7853981633974483 0 0</pose>
+      <inertial>
+        <pose>0 0 0.12 0 0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.0051</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0051</iyy>
+          <iyz>0</iyz>
+          <izz>0.0006</izz>
+        </inertia>
+      </inertial>
+      <visual name='visual_low_friction'>
+        <pose>0 0 -0.15 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://demo_joint_friction/meshes/arm.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <lighting>1</lighting>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Orange</name>
+          </script>
+        </material>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+    </link>
+    <joint name='joint_low_friction' type='revolute'>
+      <parent>link_base</parent>
+      <child>link_low_friction</child>
+      <pose>0 0 0 -0.15 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0.1</friction>
+          <spring_reference>-0.7853981633974483</spring_reference>
+          <spring_stiffness>7</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <allow_auto_disable>1</allow_auto_disable>
+  </model>
+</sdf>
