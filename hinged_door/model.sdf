@@ -114,7 +114,7 @@
         </limit>
         <dynamics>
           <damping>1.0</damping>
-          <friction>10</friction>
+          <spring_stiffness>0.3</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
