@@ -113,7 +113,7 @@
           <upper>1.58</upper>
         </limit>
         <dynamics>
-          <damping>1.0</damping>
+          <damping>0.1</damping>
           <spring_stiffness>0.3</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>true</use_parent_model_frame>
