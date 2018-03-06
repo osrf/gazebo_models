@@ -25,10 +25,9 @@
             <uri>model://house_1/materials/textures</uri>
             <name>House_2/Diffuse</name>
           </script>
-          <!-- Re-enable when normal maps work again
-          <shader type="normal_map_object_space">
+          <shader type="normal_map_tangent_space">
             <normal_map>model://house_1/materials/textures/House_1_Normal.png</normal_map>
-          </shader-->
+          </shader>
         </material>
       </visual>
     </link>

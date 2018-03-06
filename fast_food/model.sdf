@@ -25,10 +25,9 @@
             <uri>model://fast_food/materials/textures</uri>
             <name>FastFood/Diffuse</name>
           </script>
-          <!-- Re-enable when normal maps work again
-          <shader type="normal_map_object_space">
+          <shader type="normal_map_tangent_space">
             <normal_map>FastFood_Normal.png</normal_map>
-          </shader>-->
+          </shader>
         </material>
       </visual>
     </link>

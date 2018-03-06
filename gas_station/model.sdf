@@ -23,7 +23,7 @@
             <uri>model://gas_station/materials/textures</uri>
             <name>GasStation/Diffuse</name>
           </script>
-          <shader type="normal_map_object_space">
+          <shader type="normal_map_tangent_space">
             <normal_map>GasStation_Normal.png</normal_map>
           </shader>
         </material>
