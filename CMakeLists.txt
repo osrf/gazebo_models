@@ -139,6 +139,7 @@ intel_realsense_r200
 iris_with_standoffs
 iris_with_standoffs_demo
 irobot_hand
+iscas_museum
 iss
 iss_half
 jersey_barrier
