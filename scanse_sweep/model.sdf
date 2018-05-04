@@ -1,0 +1,168 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+    <!-- All values listed here are in meters or radians -->
+    <!-- Scanse does not supply 3D meshes on their website,
+         so the meshes and textures are loose approximations -->
+
+    <model name="scanse_sweep">
+        <!-- Give the base link a unique name -->
+        <link name="base">
+            <!-- Make sure it sits on ground plane -->
+            <pose>0 0 0.0117 0 0 0</pose>
+            
+            <inertial>
+                <!-- Assume most of the mass is in the base. This is not
+                     actually true, but gives a good enough approximation
+                     and preserves the desired kinematics -->
+                <mass>0.110</mass>
+                <inertia>
+                    <ixx>0.000022901</ixx>
+                    <iyy>0.000022901</iyy>
+                    <izz>0.000035764</izz>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyz>0</iyz>
+                </inertia>
+            </inertial>
+
+            <collision name="base_collision">
+                <geometry>
+                    <cylinder>
+                        <radius>.0255</radius>
+                        <length>.0234</length>
+                    </cylinder>
+                </geometry>
+            </collision>
+
+            <!-- Visual is just a copy of the collision -->
+            <visual name="base_visual">
+                <geometry>
+                    <mesh>
+                        <uri>model://scanse_sweep/meshes/scanse_bottom.dae</uri>
+                    </mesh>
+                </geometry>
+
+                <!-- Dark gray, matte -->
+                <material>
+                    <ambient>0.25 0.25 0.25 1</ambient>
+                    <diffuse>0.25 0.25 0.25 1</diffuse>
+                    <specular>0 0 0 0</specular>
+                    <emissive>0 0 0 0</emissive>
+                </material>
+            </visual>
+        </link>
+
+        <!-- Top Rotating Bit -->
+        <link name="top">
+            <!-- Make sure it sits on the base -->
+            <pose>0 0 0.04265 0 0 0</pose>
+            
+            <inertial>
+                <mass>0.010</mass>
+                <inertia>
+                    <ixx>0.000011798</ixx>
+                    <iyy>0.000011798</iyy>
+                    <izz>0.000021125</izz>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyz>0</iyz>
+                </inertia>
+            </inertial>
+
+            <collision name="top_collision">
+                <geometry>
+                    <cylinder>
+                        <radius>.0325</radius>
+                        <length>.0385</length>
+                    </cylinder>
+                </geometry>
+            </collision>
+
+            <!-- Visual is just a copy of the collision -->
+            <visual name="top_visual">
+                <geometry>
+                    <mesh>
+                        <uri>model://scanse_sweep/meshes/scanse_top.dae</uri>
+                    </mesh>
+                </geometry>
+
+                <!-- Dark gray, matte -->
+                <material>
+                    <ambient>0.25 0.25 0.25 1</ambient>
+                    <diffuse>0.25 0.25 0.25 1</diffuse>
+                    <specular>0 0 0 0</specular>
+                    <emissive>0 0 0 0</emissive>
+                </material>
+            </visual>
+
+            <!-- Add ray sensor -->
+            <sensor type="ray" name="sensor">
+                <!-- Set vertical location -->
+                <pose>0 0 -0.00105 0 0 0</pose>
+                <!-- Enable sensor visualization -->
+                <visualize>true</visualize>
+                <!-- Set default update frequency of the sensor (500 Hz) -->
+                <update_rate>500</update_rate>
+
+                <ray>
+                    <!-- Resolution is 1cm, so we assume the std_dev of
+                        the noise is roughly 1mm -->
+                    <noise>
+                        <type>gaussian</type>
+                        <mean>0.0</mean>
+                        <stddev>0.001</stddev>
+                    </noise>
+
+                    <scan>
+                        <horizontal>
+                            <samples>1</samples>
+                            <resolution>1</resolution>
+                            <min_angle>0</min_angle>
+                            <max_angle>0</max_angle>
+                        </horizontal>
+
+                        <!-- The Scanse Sweep has a vertical range of 0.5 
+                            degrees. We simulate this by taking multiple 
+                            data points over the range and averaging them. -->
+                        <vertical>
+                            <samples>5</samples>
+                            <!-- Take average of samples over range -->
+                            <resolution>5</resolution>
+                            <!-- +/- 0.25 degrees -->
+                            <min_angle>-0.00436</min_angle>
+                            <max_angle>0.00436</max_angle>
+                        </vertical>
+                    </scan>
+
+                    <range>
+                        <!-- Minimum beam distance -->
+                        <min>0.05</min>
+                        <!-- Maximum beam distance -->
+                        <max>40.0</max>
+                        <!-- Linear beam resolution -->
+                        <resolution>0.01</resolution>
+                    </range>
+                </ray>
+            </sensor>
+        </link>
+
+        <!-- The top parts sits on the base and spins around the z-axis.
+             Note that due to the small masses, when controlling this, your
+             PID gain should be on the order of 0.0001 -->
+        <joint type="revolute" name="joint">
+            <pose>0 0 -0.01925 0 0 0</pose>
+            <parent>base</parent>
+            <child>top</child>
+
+            <axis>
+                <xyz>0 0 1</xyz>
+                <limit>
+                    <!-- Use a very large number to indicate 
+                         continuous revolution -->
+                    <lower>-10000000000000000</lower>
+                    <upper>10000000000000000</upper>
+                </limit>
+            </axis>
+        </joint>
+    </model>
+</sdf>
