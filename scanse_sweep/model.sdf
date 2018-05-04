@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<sdf version="1.5">
+<sdf version="1.6">
     <!-- All values listed here are in meters or radians -->
     <!-- Scanse does not supply 3D meshes on their website,
          so the meshes and textures are loose approximations -->
@@ -37,10 +37,9 @@
             <!-- Visual is just a copy of the collision -->
             <visual name="base_visual">
                 <geometry>
-                    <cylinder>
-                        <radius>.0255</radius>
-                        <length>.0234</length>
-                    </cylinder>
+                    <mesh>
+                        <uri>model://scanse_sweep/meshes/scanse_bottom.dae</uri>
+                    </mesh>
                 </geometry>
 
                 <!-- Dark gray, matte -->
@@ -82,10 +81,9 @@
             <!-- Visual is just a copy of the collision -->
             <visual name="top_visual">
                 <geometry>
-                    <cylinder>
-                        <radius>.0325</radius>
-                        <length>.0385</length>
-                    </cylinder>
+                    <mesh>
+                        <uri>model://scanse_sweep/meshes/scanse_top.dae</uri>
+                    </mesh>
                 </geometry>
 
                 <!-- Dark gray, matte -->
@@ -97,33 +95,13 @@
                 </material>
             </visual>
 
-            <!-- This is purely aesthetic, but provides a reference for
-                 the current direction of the LIDAR unit -->
-            <visual name="sensor_visual">
-                <pose>0.0275 0 0 0 1.5708 0</pose>
-
-                <geometry>
-                    <cylinder>
-                        <radius>0.0127</radius>
-                        <length>0.02</length>
-                    </cylinder>
-                </geometry>
-                
-                <material>
-                    <ambient>0.25 0.25 0.25 1</ambient>
-                    <diffuse>0.25 0.25 0.25 1</diffuse>
-                    <specular>0.25 0.25 0.25 1</specular>
-                    <emissive>0 0 0 0</emissive>
-                </material>
-            </visual>
-
             <!-- Add ray sensor -->
             <sensor type="ray" name="sensor">
                 <!-- Set vertical location -->
                 <pose>0 0 -0.00105 0 0 0</pose>
                 <!-- Enable sensor visualization -->
                 <visualize>true</visualize>
-                <!-- Set update frequency of the sensor (500 Hz) -->
+                <!-- Set default update frequency of the sensor (500 Hz) -->
                 <update_rate>500</update_rate>
 
                 <ray>
@@ -143,7 +121,7 @@
                             <max_angle>0</max_angle>
                         </horizontal>
 
-                        <!-- The Scanse Sweep has a vertical range of 5 
+                        <!-- The Scanse Sweep has a vertical range of 0.5 
                             degrees. We simulate this by taking multiple 
                             data points over the range and averaging them. -->
                         <vertical>
