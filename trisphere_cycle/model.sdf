@@ -7,7 +7,7 @@
         <pose>0.0 0 0  0 0 0</pose>
         <mass>10</mass>
         <inertia>
-          <ixx>0.22799999999999987</ixx>
+          <ixx>0.22799999999999998</ixx>
           <iyy>0.7435210984814149</iyy>
           <izz>0.9655210984814149</izz>
           <ixy>0</ixy>
@@ -15,11 +15,20 @@
           <iyz>0</iyz>
         </inertia>
       </inertial>
-      <visual name="axle">
+      <collision name="axle_collision">
         <pose>-0.4713346258704366 0 0  1.5707963267948966 0 0</pose>
         <geometry>
           <cylinder>
-            <length>1.039230484541326</length>
+            <length>1.0392304845413263</length>
+            <radius>0.03</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="axle_visual">
+        <pose>-0.4713346258704366 0 0  1.5707963267948966 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>1.0392304845413263</length>
             <radius>0.03</radius>
           </cylinder>
         </geometry>
@@ -30,7 +39,16 @@
           </script>
         </material>
       </visual>
-      <visual name="frame_left">
+      <collision name="frame_left_collision">
+        <pose>0 0.17155177419583564 0  0 1.5707963267948966 -0.3490658503988659</pose>
+        <geometry>
+          <cylinder>
+            <length>1.0031676644991372</length>
+            <radius>0.03</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="frame_left_visual">
         <pose>0 0.17155177419583564 0  0 1.5707963267948966 -0.3490658503988659</pose>
         <geometry>
           <cylinder>
@@ -45,7 +63,16 @@
           </script>
         </material>
       </visual>
-      <visual name="frame_right">
+      <collision name="frame_right_collision">
+        <pose>0 -0.17155177419583564 0  0 1.5707963267948966 0.3490658503988659</pose>
+        <geometry>
+          <cylinder>
+            <length>1.0031676644991372</length>
+            <radius>0.03</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="frame_right_visual">
         <pose>0 -0.17155177419583564 0  0 1.5707963267948966 0.3490658503988659</pose>
         <geometry>
           <cylinder>
@@ -74,7 +101,16 @@
           <iyz>0</iyz>
         </inertia>
       </inertial>
-      <visual name="handlebars">
+      <collision name="handlebars_collision">
+        <pose>0 0 0.397747564417433  1.5707963267948966 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.6363961030678927</length>
+            <radius>0.0375</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="handlebars_visual">
         <pose>0 0 0.397747564417433  1.5707963267948966 0 0</pose>
         <geometry>
           <cylinder>
@@ -89,7 +125,16 @@
           </script>
         </material>
       </visual>
-      <visual name="headtube">
+      <collision name="headtube_collision">
+        <pose>0 0 0.2386485386504598  0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.31819805153394637</length>
+            <radius>0.0375</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="headtube_visual">
         <pose>0 0 0.2386485386504598  0 0 0</pose>
         <geometry>
           <cylinder>
@@ -104,7 +149,16 @@
           </script>
         </material>
       </visual>
-      <visual name="spindle">
+      <collision name="spindle_collision">
+        <pose>0 0 -0.23864853865045976  1.5707963267948966 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.6363961030678927</length>
+            <radius>0.015</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="spindle_visual">
         <pose>0 0 -0.23864853865045976  1.5707963267948966 0 0</pose>
         <geometry>
           <cylinder>
@@ -119,7 +173,16 @@
           </script>
         </material>
       </visual>
-      <visual name="fork_left">
+      <collision name="fork_left_collision">
+        <pose>0 0.15909902576697318 -0.07954951288348658  0.7853981633974483 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.45</length>
+            <radius>0.0375</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="fork_left_visual">
         <pose>0 0.15909902576697318 -0.07954951288348658  0.7853981633974483 0 0</pose>
         <geometry>
           <cylinder>
@@ -134,7 +197,16 @@
           </script>
         </material>
       </visual>
-      <visual name="fork_right">
+      <collision name="fork_right_collision">
+        <pose>0 -0.15909902576697318 -0.07954951288348658  -0.7853981633974483 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.45</length>
+            <radius>0.0375</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="fork_right_visual">
         <pose>0 -0.15909902576697318 -0.07954951288348658  -0.7853981633974483 0 0</pose>
         <geometry>
           <cylinder>
@@ -203,7 +275,7 @@
       </axis>
     </joint>
     <link name="wheel_rear_left">
-      <pose>-0.8171182323209433 0.519615242270663 0.15  0 0 0</pose>
+      <pose>-0.8171182323209433 0.5196152422706631 0.15  0 0 0</pose>
       <inertial>
         <mass>0.5</mass>
         <inertia>
@@ -244,7 +316,7 @@
       </axis>
     </joint>
     <link name="wheel_rear_right">
-      <pose>-0.8171182323209433 -0.519615242270663 0.15  0 0 0</pose>
+      <pose>-0.8171182323209433 -0.5196152422706631 0.15  0 0 0</pose>
       <inertial>
         <mass>0.5</mass>
         <inertia>
