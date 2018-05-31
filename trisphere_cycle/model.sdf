@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
-  <model name="cart_front_steer">
+  <model name="trisphere_cycle">
     <link name="frame">
       <pose>-0.40855911616047164 0 0.38502293110800634  0 -0.522020852957719 0</pose>
       <inertial>
