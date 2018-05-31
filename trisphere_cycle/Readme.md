@@ -1,4 +1,4 @@
 To regenerate the model.sdf from the erb template:
 ~~~
-erb model.sdf.erb > model.sdf
+erb -T 1 model.sdf.erb > model.sdf
 ~~~

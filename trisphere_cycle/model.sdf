@@ -1,5 +1,4 @@
 <?xml version="1.0" ?>
-
 <sdf version="1.6">
   <model name="cart_front_steer">
     <link name="frame">
@@ -203,7 +202,6 @@
         <xyz>0 1 0</xyz>
       </axis>
     </joint>
-    
     <link name="wheel_rear_left">
       <pose>-0.8171182323209433 0.519615242270663 0.15  0 0 0</pose>
       <inertial>
@@ -245,7 +243,6 @@
         <xyz>0 1 0</xyz>
       </axis>
     </joint>
-    
     <link name="wheel_rear_right">
       <pose>-0.8171182323209433 -0.519615242270663 0.15  0 0 0</pose>
       <inertial>
@@ -287,6 +284,5 @@
         <xyz>0 1 0</xyz>
       </axis>
     </joint>
-    
   </model>
 </sdf>

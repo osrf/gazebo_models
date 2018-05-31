@@ -258,12 +258,12 @@
         <xyz>0 1 0</xyz>
       </axis>
     </joint>
-    <%
-      rear_wheel_locations.keys.each do |k|
-        x0 = rear_wheel_locations[k][:x0]
-        y0 = rear_wheel_locations[k][:y0]
-    %>
-    <%= "<link name=" + '"wheel_' + k + '">' %>
+<%
+  rear_wheel_locations.keys.each do |k|
+    x0 = rear_wheel_locations[k][:x0]
+    y0 = rear_wheel_locations[k][:y0]
+%>
+    <link name="wheel_<%= k %>">
       <pose><%= x0 %> <%= y0 %> <%= wheel_radius %>  0 0 0</pose>
       <inertial>
         <mass><%= wheel_mass %></mass>
@@ -297,13 +297,15 @@
         </material>
       </visual>
     </link>
-    <%= "<joint name=" + '"wheel_' + k + '_spin" type="revolute">' %>
+    <joint name="wheel_<%= k %>_spin" type="revolute">
       <parent>frame</parent>
-      <%= "<child>wheel_" + k + "</child>" %>
+      <child>wheel_<%= k %></child>
       <axis>
         <xyz>0 1 0</xyz>
       </axis>
     </joint>
-    <% end %>
+<%
+  end
+%>
   </model>
 </sdf>
