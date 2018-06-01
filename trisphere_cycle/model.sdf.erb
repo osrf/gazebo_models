@@ -54,6 +54,11 @@
   wheel_ixx    = 0.4 * wheel_mass * wheel_radius**2
   wheel_iyy    = wheel_ixx
   wheel_izz    = wheel_ixx
+
+  # wheel surface properties
+  wheel_kp = 1e8
+  wheel_kd = 1
+  wheel_min_depth = wheel_radius / 20
 %>
 <sdf version="1.6">
   <model name="trisphere_cycle">
@@ -257,6 +262,15 @@
             <radius><%= wheel_radius %></radius>
           </sphere>
         </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp><%= wheel_kp %></kp>
+              <kd><%= wheel_kd %></kd>
+              <min_depth><%= wheel_min_depth %></min_depth>
+            </ode>
+          </contact>
+        </surface>
       </collision>
       <visual name="visual">
         <geometry>
@@ -314,6 +328,15 @@
             <radius><%= wheel_radius %></radius>
           </sphere>
         </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp><%= wheel_kp %></kp>
+              <kd><%= wheel_kd %></kd>
+              <min_depth><%= wheel_min_depth %></min_depth>
+            </ode>
+          </contact>
+        </surface>
       </collision>
       <visual name="visual">
         <geometry>

@@ -241,6 +241,15 @@
             <radius>0.15</radius>
           </sphere>
         </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000000.0</kp>
+              <kd>1</kd>
+              <min_depth>0.0075</min_depth>
+            </ode>
+          </contact>
+        </surface>
       </collision>
       <visual name="visual">
         <geometry>
@@ -293,6 +302,15 @@
             <radius>0.15</radius>
           </sphere>
         </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000000.0</kp>
+              <kd>1</kd>
+              <min_depth>0.0075</min_depth>
+            </ode>
+          </contact>
+        </surface>
       </collision>
       <visual name="visual">
         <geometry>
@@ -334,6 +352,15 @@
             <radius>0.15</radius>
           </sphere>
         </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000000.0</kp>
+              <kd>1</kd>
+              <min_depth>0.0075</min_depth>
+            </ode>
+          </contact>
+        </surface>
       </collision>
       <visual name="visual">
         <geometry>
