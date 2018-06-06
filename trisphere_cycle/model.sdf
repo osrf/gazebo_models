@@ -246,7 +246,7 @@
             <ode>
               <kp>100000000.0</kp>
               <kd>1</kd>
-              <min_depth>0.0075</min_depth>
+              <min_depth>0.0005</min_depth>
             </ode>
           </contact>
         </surface>
@@ -307,7 +307,7 @@
             <ode>
               <kp>100000000.0</kp>
               <kd>1</kd>
-              <min_depth>0.0075</min_depth>
+              <min_depth>0.0005</min_depth>
             </ode>
           </contact>
         </surface>
@@ -357,7 +357,7 @@
             <ode>
               <kp>100000000.0</kp>
               <kd>1</kd>
-              <min_depth>0.0075</min_depth>
+              <min_depth>0.0005</min_depth>
             </ode>
           </contact>
         </surface>
