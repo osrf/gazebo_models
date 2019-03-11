@@ -6,10 +6,10 @@
         <pose>0 0 0.06 0 0 0</pose>
         <mass>0.390</mass>
         <inertia>
-          <ixx>0.000819</ixx>
+          <ixx>0.00055575</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.000819</iyy>
+          <iyy>0.00055575</iyy>
           <iyz>0</iyz>
           <izz>0.000702</izz>
         </inertia>
