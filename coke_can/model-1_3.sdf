@@ -14,7 +14,7 @@
         </inertia>
       </inertial>
       <collision name="collision">
-        <pose>0 0 -0.18 0 0 0</pose>
+        <pose>0.003937 0.0047244 -0.18 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://coke_can/meshes/coke_can.dae</uri>
@@ -22,7 +22,7 @@
         </geometry>
       </collision>
       <visual name="visual">
-        <pose>0 0 -0.18 0 0 0</pose>
+        <pose>0.003937 0.0047244 -0.18 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://coke_can/meshes/coke_can.dae</uri>
