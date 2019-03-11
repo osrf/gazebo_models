@@ -3,7 +3,7 @@
   <model name="coke_can">
     <link name="link">
       <inertial>
-        <pose>-0.01 -0.012 0.15 0 0 0</pose>
+        <pose>0 0 0.06 0 0 0</pose>
         <mass>0.390</mass>
         <inertia>
           <ixx>0.000819</ixx>
