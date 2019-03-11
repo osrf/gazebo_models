@@ -6,12 +6,12 @@
         <pose>-0.01 -0.012 0.15 0 0 0</pose>
         <mass>0.390</mass>
         <inertia>
-          <ixx>0.00058</ixx>
+          <ixx>0.000819</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.00058</iyy>
+          <iyy>0.000819</iyy>
           <iyz>0</iyz>
-          <izz>0.00019</izz>
+          <izz>0.002808</izz>
         </inertia>
       </inertial>
       <collision name="collision">
