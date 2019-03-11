@@ -10,7 +10,7 @@
           <ixz>0</ixz>
           <iyy>0.000819</iyy>
           <iyz>0</iyz>
-          <izz>0.002808</izz>
+          <izz>0.000702</izz>
         </inertia>
       </inertial>
       <collision name="collision">
