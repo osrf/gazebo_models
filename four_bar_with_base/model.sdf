@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="double_pendulum_with_base">
+  <model name="four_bar_with_base">
     <link name="base">
       <inertial>
         <pose>0 0 0.1 0 0 0</pose>
@@ -61,7 +61,7 @@
         </geometry>
       </collision>
     </link>
-    <!-- upper link, length 1, IC -90 degrees -->
+    <!-- upper link, length 1 -->
     <link name="upper_link">
       <pose>0 0 2.2 2.58719 0 0</pose>
       <self_collide>0</self_collide>
@@ -92,7 +92,7 @@
           </script>
         </material>
       </visual>
-      <visual name="vis_lower_joint">
+      <visual name="vis_upper_middle_joint">
         <pose>0 0 1.0 0 1.5708 0</pose>
         <geometry>
           <cylinder>
@@ -131,7 +131,7 @@
           </cylinder>
         </geometry>
       </collision>
-      <collision name="col_lower_joint">
+      <collision name="col_upper_middle_joint">
         <pose>0 0 1.0 0 1.5708 0</pose>
         <geometry>
           <cylinder>
@@ -150,8 +150,8 @@
         </geometry>
       </collision>
     </link>
-    <!-- lower link, length 1, IC ~-120 degrees more -->
-    <link name="lower_link">
+    <!-- middle link, length 1 -->
+    <link name="middle_link">
       <pose>0.25 -0.5265 1.35 -2.639 0 0</pose>
       <self_collide>0</self_collide>
       <inertial>
@@ -166,7 +166,7 @@
           <izz>0.04</izz>
         </inertia>
       </inertial>
-      <visual name="vis_lower_joint">
+      <visual name="vis_upper_middle_joint">
         <pose>0 0 0 0 1.5708 0</pose>
         <geometry>
           <cylinder>
@@ -196,7 +196,7 @@
           </script>
         </material>
       </visual>
-      <visual name="vis_lower_joint_clone">
+      <visual name="vis_middle_lower_joint">
         <pose>0 0 1.0 0 1.5708 0</pose>
         <geometry>
           <cylinder>
@@ -211,7 +211,7 @@
           </script>
         </material>
       </visual>
-      <collision name="col_lower_joint">
+      <collision name="col_upper_middle_joint">
         <pose>0 0 0 0 1.5708 0</pose>
         <geometry>
           <cylinder>
@@ -229,7 +229,7 @@
           </cylinder>
         </geometry>
       </collision>
-      <collision name="col_lower_joint_clone">
+      <collision name="col_middle_lower_joint">
         <pose>0 0 1.0 0 1.5708 0</pose>
         <geometry>
           <cylinder>
@@ -240,7 +240,7 @@
       </collision>
     </link>
     <!-- lower link, length 1, IC ~-120 degrees more -->
-    <link name="lower_link_clone">
+    <link name="lower_link">
       <pose>0 -0.042713 0.480714 -1.82 0 0</pose>
       <self_collide>0</self_collide>
       <inertial>
@@ -255,7 +255,7 @@
           <izz>0.04</izz>
         </inertia>
       </inertial>
-      <visual name="vis_lower_joint">
+      <visual name="vis_middle_lower_joint">
         <pose>0 0 0 0 1.5708 0</pose>
         <geometry>
           <cylinder>
@@ -300,7 +300,7 @@
           </script>
         </material>
       </visual>
-      <collision name="col_lower_joint">
+      <collision name="col_middle_lower_joint">
         <pose>0 0 0 0 1.5708 0</pose>
         <geometry>
           <cylinder>
@@ -337,17 +337,17 @@
       </axis>
     </joint>
     <!-- pin joint for lower link, at origin of child link -->
-    <joint name="lower_joint" type="revolute">
+    <joint name="upper_middle_joint" type="revolute">
       <parent>upper_link</parent>
-      <child>lower_link</child>
+      <child>middle_link</child>
       <axis>
         <xyz>1.0 0 0</xyz>
       </axis>
     </joint>
     <!-- pin joint for lower link_clone, at origin of child link -->
-    <joint name="lower_joint_clone" type="revolute">
-      <parent>lower_link</parent>
-      <child>lower_link_clone</child>
+    <joint name="middle_lower_joint" type="revolute">
+      <parent>middle_link</parent>
+      <child>lower_link</child>
       <axis>
         <xyz>1.0 0 0</xyz>
       </axis>
@@ -356,7 +356,7 @@
     <joint name="closed_loop_joint" type="revolute">
       <pose>0 0 1.0 0 0 0</pose>
       <parent>base</parent>
-      <child>lower_link_clone</child>
+      <child>lower_link</child>
       <axis>
         <xyz>1.0 0 0</xyz>
       </axis>
