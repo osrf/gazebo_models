@@ -11,7 +11,7 @@
         <material>
           <script>
             <uri>model://baylands/media/scripts/</uri>
-            <uri>model://baylands/media/textures/</uri>
+            <uri>model://baylands/media/Textures/</uri>
             <name>OakTree/Branch</name>
           </script>
         </material>
@@ -31,7 +31,7 @@
         <material>
           <script>
             <uri>model://baylands/media/scripts/</uri>
-            <uri>model://baylands/media/textures/</uri>
+            <uri>model://baylands/media/Textures/</uri>
             <name>OakTree/Branch</name>
           </script>
         </material>
