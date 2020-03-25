@@ -17,7 +17,7 @@
           <heightmap>
             <texture>
               <diffuse>model://sand_island/media/textures/sand_island_color.png</diffuse>
-              <normal>model://sand_island/media/materials/textures/flat_normal.png</normal>
+              <normal>file://media/materials/textures/flat_normal.png</normal>
               <size>1800</size>
             </texture>
             <uri>model://sand_island/media/sand_island_elevation.tif</uri>

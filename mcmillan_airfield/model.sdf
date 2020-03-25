@@ -17,7 +17,7 @@
           <heightmap>
             <texture>
               <diffuse>model://mcmillan_airfield/media/textures/mcmillan_color.png</diffuse>
-              <normal>model://mcmillan_airfield/media/materials/textures/flat_normal.png</normal>
+              <normal>file://media/materials/textures/flat_normal.png</normal>
               <size>5700</size>
             </texture>
             <uri>model://mcmillan_airfield/media/mcmillan_elevation.tif</uri>

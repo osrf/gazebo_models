@@ -16,7 +16,7 @@
           <heightmap>
             <texture>
               <diffuse>model://yosemite/media/textures/yosemite_color.png</diffuse>
-              <normal>model://yosemite/media/materials/textures/flat_normal.png</normal>
+              <normal>file://media/materials/textures/flat_normal.png</normal>
               <size>6000</size>
             </texture>
             <uri>model://yosemite/media/yosemite_elevation.tif</uri>
