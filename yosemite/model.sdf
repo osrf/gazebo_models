@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="heightmap">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision_yosemite">
+        <geometry>
+          <heightmap>
+            <uri>model://yosemite/media/yosemite_elevation.tif</uri>
+            <pos>0 0 -1250</pos>
+          </heightmap>
+        </geometry>
+      </collision>
+      <visual name="visual_yosemite">
+        <geometry>
+          <heightmap>
+            <texture>
+              <diffuse>model://yosemite/media/textures/yosemite_color.png</diffuse>
+              <normal>file://media/materials/textures/flat_normal.png</normal>
+              <size>6000</size>
+            </texture>
+            <uri>model://yosemite/media/yosemite_elevation.tif</uri>
+            <pos>0 0 -1250</pos>
+          </heightmap>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

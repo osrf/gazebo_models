@@ -1,0 +1,72 @@
+material OakTree/Branch
+{
+  technique
+  {
+    shadow_caster_material "OakTree/shadow_caster_alpha"
+
+    pass
+    {
+      alpha_rejection greater 128
+
+      texture_unit
+      {
+        texture Branch.png
+      }
+    }
+  }
+}
+
+vertex_program caster_vp_glsl glsl
+{
+  source caster_vp.glsl
+
+  default_params
+  {
+    param_named_auto world_view_proj_mat worldviewproj_matrix
+    param_named_auto texel_offsets texel_offsets
+  }
+
+}
+
+fragment_program caster_fp_glsl glsl
+{
+  source caster_fp.glsl
+
+  default_params
+  {
+    param_named tex int 0
+  }
+}
+
+
+material OakTree/shadow_caster_alpha
+{
+  transparency_casts_shadows on
+  technique
+  {
+    pass
+    {
+      // See: viewtopic.php?f=3&t=44817
+      fog_override true
+
+      cull_hardware none
+      cull_software none
+
+      alpha_rejection always_pass
+
+      vertex_program_ref caster_vp_glsl
+      {
+      }
+
+      fragment_program_ref caster_fp_glsl
+      {
+      }
+
+      texture_unit tex
+      {
+        // Pass the texture with alpha channel to the caster
+        texture Branch.png
+      }
+    }
+  }
+}

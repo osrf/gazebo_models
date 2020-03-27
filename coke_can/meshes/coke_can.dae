@@ -8,7 +8,7 @@
         <up_axis>Y_UP</up_axis>
         <created>Wed Apr 25 01:36:10 2012</created>
         <modified>Wed Apr 25 01:36:10 2012</modified>
-        <unit meter="0.00254" name="inches"/>
+        <unit meter="0.001" name="milimeters"/>
     </asset>
     <library_images>
         <image id="texture0" name="texture0">

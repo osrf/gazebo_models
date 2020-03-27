@@ -5,16 +5,16 @@
       <inertial>
         <mass>0.390</mass>
         <inertia>
-          <ixx>0.00058</ixx>
+          <ixx>0.00055575</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.00058</iyy>
+          <iyy>0.00055575</iyy>
           <iyz>0</iyz>
-          <izz>0.00019</izz>
+          <izz>0.0001755</izz>
         </inertia>
       </inertial>
       <collision name="collision">
-        <pose>0 0 -0.46 0 0 0</pose>
+        <pose>0.003937 0.0047244 -0.18 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://coke_can/meshes/coke_can.dae</uri>
@@ -22,7 +22,7 @@
         </geometry>
       </collision>
       <visual name="visual">
-        <pose>0 0 -0.46 0 0 0</pose>
+        <pose>0.003937 0.0047244 -0.18 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://coke_can/meshes/coke_can.dae</uri>
