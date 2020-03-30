@@ -7,7 +7,7 @@
         <geometry>
           <heightmap>
             <uri>model://mcmillan_airfield/media/mcmillan_elevation.tif</uri>
-            <pos>0 0 -311</pos>
+            <pos>0 0 -300</pos>
           </heightmap>
         </geometry>
       </collision>
