@@ -7,11 +7,10 @@
         <geometry>
           <heightmap>
             <uri>model://mcmillan_airfield/media/mcmillan_elevation.tif</uri>
-            <pos>0 0 -57</pos>
+            <pos>0 0 -311</pos>
           </heightmap>
         </geometry>
       </collision>
-
       <visual name="visual_mcmillan">
         <geometry>
           <heightmap>
@@ -21,7 +20,7 @@
               <size>5700</size>
             </texture>
             <uri>model://mcmillan_airfield/media/mcmillan_elevation.tif</uri>
-            <pos>0 0 -46</pos>
+            <pos>0 0 -300</pos>
           </heightmap>
         </geometry>
       </visual>
