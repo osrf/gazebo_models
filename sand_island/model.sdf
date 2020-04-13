@@ -7,7 +7,7 @@
         <geometry>
           <heightmap>
             <uri>model://sand_island/media/sand_island_elevation.tif</uri>
-            <pos>0 0 0</pos>
+            <pos>-100 0 0</pos>
           </heightmap>
         </geometry>
       </collision>
@@ -21,11 +21,10 @@
               <size>1800</size>
             </texture>
             <uri>model://sand_island/media/sand_island_elevation.tif</uri>
-            <pos>0 0 -1202</pos>
+            <pos>-100 0 0</pos>
           </heightmap>
         </geometry>
       </visual>
-
     </link>
   </model>
 </sdf>
