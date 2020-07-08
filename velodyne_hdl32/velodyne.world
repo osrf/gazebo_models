@@ -1,15 +1,16 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  
+  <world name="default">
 
     <!-- A global light source -->
-    
+    <include>
       <uri>model://sun</uri>
-    
+    </include>
+
     <!-- A ground plane -->
-    
+    <include>
       <uri>model://ground_plane</uri>
-    
+    </include>
   <model name="velodyne_hdl-32">
   <!-- Give the base link a unique name -->
   <link name="base">
@@ -41,11 +42,11 @@
 
     <!-- The visual is mostly a copy of the collision -->
     <visual name="base_visual">
-    <pose>0 0 -0.029335 0 0 0</pose>
       <geometry>
-       <mesh>
-        <uri>model://velodyne_hdl32/meshes/velodyne_base.dae</uri>
-       </mesh>
+        <cylinder>
+          <radius>.04267</radius>
+          <length>.05867</length>
+        </cylinder>
       </geometry>
     </visual>
   </link>
@@ -74,16 +75,16 @@
           <radius>0.04267</radius>
           <length>0.07357</length>
         </cylinder>
-     </geometry>
+      </geometry>
     </collision>
 
     <!-- The visual is mostly a copy of the collision -->
     <visual name="top_visual">
-      <pose>0 0 -0.0376785 0 0 1.5707</pose>
       <geometry>
-       <mesh>
-        <uri>model://velodyne_hdl32/meshes/velodyne_top.dae</uri>
-       </mesh>
+        <cylinder>
+          <radius>0.04267</radius>
+          <length>0.07357</length>
+        </cylinder>
       </geometry>
     </visual>
     
@@ -101,13 +102,6 @@
       <!-- Set the update rate of the sensor -->
       <update_rate>30</update_rate>
       <ray>
-      
-          <noise>
-     		 <!-- Use gaussian noise -->
-     		 <type>gaussian</type>
-     		 <mean>0.0</mean>
-   		 <stddev>0.02</stddev>
-  	  </noise>
 
   	<!-- The scan element contains the horizontal and vertical beams.
        We are leaving out the vertical beams for this tutorial. -->
@@ -177,5 +171,5 @@
   </axis>
 </joint>
 </model>
-  
+  </world>
 </sdf>
