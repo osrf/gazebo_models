@@ -1,0 +1,125 @@
+<?xml version='1.0'?>
+<sdf version='1.5'>
+  <model name="closed_chain">
+    <link name='right_pad1'>
+      <self_collide>1</self_collide>
+      <pose>0.5 0 0 0 0 0</pose>
+
+      <collision name='right_pad1_collision'>
+        <geometry>
+          <box>
+            <size>1 1 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name='right_pad1_visual'>
+        <geometry>
+          <box>
+            <size>1 1 0.1</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint type="revolute" name="right_pad_joint1">
+      <pose>-0.5 0 0 0 0 0</pose>
+      <child>right_pad2</child>
+      <parent>right_pad1</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name='right_pad2'>
+      <self_collide>1</self_collide>
+      <pose>1 0 0.5 0 -1.5707963268 0</pose>
+
+      <collision name='right_pad2_collision'>
+        <geometry>
+          <box>
+            <size>1 1 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name='right_pad2_visual'>
+        <geometry>
+          <box>
+            <size>1 1 0.1</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+    
+    <joint type="revolute" name="right_pad_joint2">
+      <pose>-0.5 0 0 0 0 0</pose>
+      <child>right_pad3</child>
+      <parent>right_pad2</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name='right_pad3'>
+      <self_collide>1</self_collide>
+      <pose>0.5 0 1 0 -3.1415926536 0</pose>
+
+      <collision name='right_pad3_collision'>
+        <geometry>
+          <box>
+            <size>1 1 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name='right_pad3_visual'>
+        <geometry>
+          <box>
+            <size>1 1 0.1</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+    
+    <joint type="revolute" name="right_pad_joint3">
+      <pose>-0.5 0 0 0 0 0</pose>
+      <child>right_pad4</child>
+      <parent>right_pad3</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name='right_pad4'>
+      <self_collide>1</self_collide>
+      <pose>0 0 0.5 0 -4.7123889804 0</pose>
+
+      <collision name='right_pad4_collision'>
+        <geometry>
+          <box>
+            <size>1 1 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name='right_pad4_visual'>
+        <geometry>
+          <box>
+            <size>1 1 0.1</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+    
+    <joint type="revolute" name="right_pad_joint4">
+      <pose>-0.5 0 0 0 0 0</pose>
+      <child>right_pad1</child>
+      <parent>right_pad4</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+  </model>
+ </sdf>
