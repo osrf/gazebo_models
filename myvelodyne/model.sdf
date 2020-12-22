@@ -1,0 +1,181 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+
+<model name="myvelodyne">
+  <!-- Give the base link a unique name -->
+  <link name="base">
+
+    <!-- Offset the base by half the lenght of the cylinder -->
+    <!--碰撞属性-->
+    <pose>0 0 0.029335 0 0 0</pose>
+    <collision name="base_collision">
+      <geometry>
+        <cylinder>
+          <!-- Radius and length provided by Velodyne -->
+          <radius>.04267</radius>
+          <length>.05867</length>
+        </cylinder>
+      </geometry>
+    </collision>
+
+    <!-- The visual is mostly a copy of the collision -->
+    <!--视觉属性-->
+    <visual name="base_visual">
+      <pose>0 0 -0.029335 0 0 0</pose>
+  <geometry>
+    <mesh>
+      <uri>model://myvelodyne/meshes/velodyne_base.dae</uri>
+    </mesh>
+  </geometry>
+    </visual>
+
+    <!--惯性属性-->
+      <inertial>
+      <mass>1.2</mass>
+      <inertia>
+        <ixx>0.001087473</ixx>
+        <iyy>0.001087473</iyy>
+        <izz>0.001092437</izz>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyz>0</iyz>
+      </inertia>
+    </inertial>
+  </link>
+
+  <!-- Give the base link a unique name -->
+  <link name="top">
+
+    <!-- Vertically offset the top cylinder by the length of the bottom
+        cylinder and half the length of this cylinder. -->
+    <pose>0 0 0.095455 0 0 0</pose>
+    <collision name="top_collision">
+      <geometry>
+        <cylinder>
+          <!-- Radius and length provided by Velodyne -->
+          <radius>0.04267</radius>
+          <length>0.07357</length>
+        </cylinder>
+      </geometry>
+    </collision>
+
+    <!-- The visual is mostly a copy of the collision -->
+    <visual name="top_visual">
+      <!--旋转以匹配模型与mesh-->
+      <pose>0 0 -0.0376785 0 0 1.5707</pose>
+      <geometry>
+         <mesh>
+       <!-- The URI should refer to the 3D mesh. The "model:"
+           URI scheme indicates that the we are referencing a Gazebo
+           model. -->
+       <uri>model://myvelodyne/meshes/velodyne_top.dae</uri>
+     </mesh>
+      </geometry>
+    </visual>
+
+    <inertial>
+     <mass>0.1</mass>
+     <inertia>
+       <ixx>0.000090623</ixx>
+       <iyy>0.000090623</iyy>
+       <izz>0.000091036</izz>
+       <ixy>0</ixy>
+       <ixz>0</ixz>
+       <iyz>0</iyz>
+     </inertia>
+   </inertial>
+
+<!-- 添加传感器参数 -->
+<!-- Add a ray sensor, and give it a name -->
+<sensor type="ray" name="sensor">
+
+  <!-- Position the ray sensor based on the specification. Also rotate
+       it by 90 degrees around the X-axis so that the <horizontal> rays
+       become vertical -->
+  <pose>0 0 -0.004645 1.5707 0 0</pose>
+
+  <!-- Enable visualization to see the rays in the GUI -->
+  <visualize>true</visualize>
+
+  <!-- Set the update rate of the sensor -->
+  <update_rate>30</update_rate>
+<!-- scan:定义了激光束的布局与数量  range：定义了单个光束的性质-->
+<ray>
+
+  <!-- The scan element contains the horizontal and vertical beams.
+       We are leaving out the vertical beams for this tutorial. -->
+  <scan>
+
+    <!-- The horizontal beams -->
+    <horizontal>
+      <!-- The velodyne has 32 beams(samples) -->
+      <samples>32</samples>
+
+      <!-- Resolution is multiplied by samples to determine number of
+           simulated beams vs interpolated beams. See:
+           http://sdformat.org/spec?ver=1.6&elem=sensor#horizontal_resolution
+           -->
+      <resolution>1</resolution>
+
+      <!-- Minimum angle in radians -->
+      <min_angle>-0.53529248</min_angle>
+
+      <!-- Maximum angle in radians -->
+      <max_angle>0.18622663</max_angle>
+    </horizontal>
+  </scan>
+<!--噪声相关-->
+  <noise>
+      <!-- Use gaussian noise -->
+      <type>gaussian</type>
+      <mean>0.0</mean>
+      <stddev>0.02</stddev>
+    </noise>
+
+  <!-- Range defines characteristics of an individual beam -->
+  <range>
+
+    <!-- Minimum distance of the beam -->
+    <min>0.05</min>
+
+    <!-- Maximum distance of the beam -->
+    <max>70</max>
+
+    <!-- Linear resolution of the beam -->
+    <resolution>0.02</resolution>
+  </range>
+</ray>
+</sensor>
+
+  </link>
+<!-- 添加旋转关节 -->
+<!-- Each joint must have a unique name -->
+<joint type="revolute" name="joint">
+
+  <!-- Position the joint at the bottom of the top link -->
+  <pose>0 0 -0.036785 0 0 0</pose>
+
+  <!-- Use the base link as the parent of the joint -->
+  <parent>base</parent>
+
+  <!-- Use the top link as the child of the joint -->
+  <child>top</child>
+
+  <!-- The axis defines the joint's degree of freedom -->
+  <axis>
+
+    <!-- Revolve around the z-axis -->
+    <xyz>0 0 1</xyz>
+
+    <!-- Limit refers to the range of motion of the joint -->
+    <limit>
+
+      <!-- Use a very large number to indicate a continuous revolution -->
+      <lower>-10000000000000000</lower>
+      <upper>10000000000000000</upper>
+    </limit>
+  </axis>
+</joint>
+
+</model>
+</sdf>
