@@ -1,7 +1,11 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="velodyne">
+  
+  <model name="velodyne_hdl-32">
+
     <link name="base">
+
+    
       <pose>0 0 0.029335 0 0 0</pose>
       <inertial>
         <mass>1.2</mass>
@@ -14,26 +18,91 @@
           <iyz>0</iyz>
         </inertia>
       </inertial>
+
       <collision name="base_collision">
         <geometry>
           <cylinder>
+          <!-- Radius and length provided by Velodyne -->
             <radius>.04267</radius>
             <length>.05867</length>
           </cylinder>
         </geometry>
       </collision>
+
+    
       <visual name="base_visual">
+      <!-- Offset the visual by have the base's height. We are not rotating
+       mesh since symmetrical -->
         <pose>0 0 -0.029335 0 0 0</pose>
         <geometry>
-          <mesh>
-            <uri>model://velodyne_hdl32/meshes/velodyne_base.dae</uri>
-          </mesh>
+            <mesh>
+                <uri>model://velodyne_hdl32/meshes/velodyne_base.dae</uri>
+            </mesh>
         </geometry>
       </visual>
-    </link>
     
+    
+    </link>
+
+
+  
     <link name="top">
+      
+      <sensor type="ray" name="sensor">
+
+  
+        <pose>0 0 -0.004645 1.5707 0 0</pose>
+
+  
+        <visualize>true</visualize>
+
+  
+        <update_rate>30</update_rate>
+        <ray>
+          <noise>
+            <!-- Use gaussian noise -->
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.02</stddev>
+          </noise>
+  
+          <scan>
+
+    
+            <horizontal>
+      
+              <samples>32</samples>
+
+    
+           
+              <resolution>1</resolution>
+
+      
+              <min_angle>-0.53529248</min_angle>
+
+     
+              <max_angle>0.18622663</max_angle>
+            </horizontal>
+          </scan>
+
+  
+          <range>
+
+    
+            <min>0.05</min>
+
+    
+            <max>70</max>
+
+    
+            <resolution>0.02</resolution>
+          </range>
+        </ray>
+      </sensor>
+
+    
       <pose>0 0 0.095455 0 0 0</pose>
+      
       <inertial>
         <mass>0.1</mass>
         <inertia>
@@ -45,64 +114,54 @@
           <iyz>0</iyz>
         </inertia>
       </inertial>
+      
       <collision name="top_collision">
         <geometry>
           <cylinder>
+          <!-- Radius and length provided by Velodyne -->
             <radius>0.04267</radius>
             <length>0.07357</length>
           </cylinder>
         </geometry>
       </collision>
+
+    
       <visual name="top_visual">
+
         <pose>0 0 -0.0376785 0 0 1.5707</pose>
         <geometry>
-          <mesh>
-            <uri>model://velodyne_hdl32/meshes/velodyne_top.dae</uri>
-          </mesh>
+            <mesh>
+                <uri>model://velodyne_hdl32/meshes/velodyne_top.dae</uri>
+            </mesh>
         </geometry>
       </visual>
-
-      <sensor type="ray" name="sensor">
-        <pose>0 0 -0.004645 1.5707 0 0</pose>
-        <visualize>true</visualize>
-        <update_rate>30</update_rate>
-        <ray>
-          <noise>
-            <type>gaussian</type>
-            <mean>0.0</mean>
-            <stddev>0.1</stddev>
-          </noise>
-
-          <scan>
-            <horizontal>
-              <samples>32</samples>
-              <resolution>1</resolution>
-              <min_angle>-0.53529248</min_angle>
-              <max_angle>0.18622663</max_angle>
-            </horizontal>
-          </scan>
-
-          <range>
-            <min>0.1</min>
-            <max>70</max>
-            <resolution>0.02</resolution>
-          </range>
-        </ray>
-      </sensor>
     </link>
-
+    <!-- Each joint must have a unique name -->
     <joint type="revolute" name="joint">
+
+  
       <pose>0 0 -0.036785 0 0 0</pose>
+
+  
       <parent>base</parent>
+
+  
       <child>top</child>
+
+    
       <axis>
+
+      
         <xyz>0 0 1</xyz>
+
         <limit>
+
+      
           <lower>-10000000000000000</lower>
           <upper>10000000000000000</upper>
         </limit>
       </axis>
     </joint>
-
   </model>
 </sdf>
+
