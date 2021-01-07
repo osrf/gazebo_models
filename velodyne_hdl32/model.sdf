@@ -26,7 +26,7 @@
         <pose>0 0 -0.029335 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://velodyne_hdl32/meshes/velodyne_base.dae</uri>
+            <uri>model://velodyne_hdl32/meshes/pp1.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -70,7 +70,7 @@
           <noise>
             <type>gaussian</type>
             <mean>0.0</mean>
-            <stddev>0.1</stddev>
+            <stddev>0.02</stddev>
           </noise>
 
           <scan>
