@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="OceanFloorShipwreck">
+    <static>true</static>
+    <link name="base_link">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://ocean_floor_shipwreck/meshes/underwaterworld.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name= "Rock_visual">
+        <geometry>
+          <mesh>
+            <uri>model://ocean_floor_shipwreck/meshes/underwaterworld.dae</uri>
+            <submesh>
+              <name>Rock</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1.0 1.0 1.0</diffuse>
+          <specular>1.0 1.0 1.0</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://ocean_floor_shipwreck/materials/textures/Rock_Albedo.png</albedo_map>
+              <normal_map>model://ocean_floor_shipwreck/materials/textures/Rock_Normal.png</normal_map>
+              <roughness_map>model://ocean_floor_shipwreck/materials/textures/Rock_Roughness.png</roughness_map>
+            </metal>
+          </pbr>
+          <!-- fallback to script if no PBR support-->
+          <script>
+            <uri>model://ocean_floor_shipwreck/materials/scripts/</uri>
+            <uri>model://ocean_floor_shipwreck/materials/textures/</uri>
+            <name>UrbanTile/Rock_Diffuse</name>
+          </script>
+        </material>
+      </visual>
+      <visual name= "Coral03_visual">
+        <geometry>
+          <mesh>
+            <uri>model://ocean_floor_shipwreck/meshes/underwaterworld.dae</uri>
+            <submesh>
+              <name>Coral03</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1.0 1.0 1.0</diffuse>
+          <specular>1.0 1.0 1.0</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://ocean_floor_shipwreck/materials/textures/Coral03_Albedo.png</albedo_map>
+              <normal_map>model://ocean_floor_shipwreck/materials/textures/Coral03_Normal.png</normal_map>
+              <roughness_map>model://ocean_floor_shipwreck/materials/textures/Coral03_Roughness.png</roughness_map>
+            </metal>
+          </pbr>
+          <!-- fallback to script if no PBR support-->
+          <script>
+            <uri>materials/scripts/</uri>
+            <uri>materials/textures/</uri>
+            <name>UrbanTile/Coral03_Diffuse</name>
+          </script>
+        </material>
+      </visual>
+      <visual name= "Coral02_visual">
+        <geometry>
+          <mesh>
+            <uri>model://ocean_floor_shipwreck/meshes/underwaterworld.dae</uri>
+            <submesh>
+              <name>Coral02</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1.0 1.0 1.0</diffuse>
+          <specular>1.0 1.0 1.0</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://ocean_floor_shipwreck/materials/textures/Coral02_Albedo.png</albedo_map>
+              <normal_map>model://ocean_floor_shipwreck/materials/textures/Coral02_Normal.png</normal_map>
+              <roughness_map>model://ocean_floor_shipwreck/materials/textures/Coral02_Roughness.png</roughness_map>
+            </metal>
+          </pbr>
+          <!-- fallback to script if no PBR support-->
+          <script>
+            <uri>model://ocean_floor_shipwreck/materials/scripts/</uri>
+            <uri>model://ocean_floor_shipwreck/materials/textures/</uri>
+            <name>UrbanTile/Coral02_Diffuse</name>
+          </script>
+        </material>
+      </visual>
+      <visual name= "SunkenShip_visual">
+        <geometry>
+          <mesh>
+            <uri>model://ocean_floor_shipwreck/meshes/underwaterworld.dae</uri>
+            <submesh>
+              <name>SunkenShip</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1.0 1.0 1.0</diffuse>
+          <specular>1.0 1.0 1.0</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://ocean_floor_shipwreck/materials/textures/SunkenShip_Albedo.png</albedo_map>
+              <normal_map>model://ocean_floor_shipwreck/materials/textures/SunkenShip_Normal.png</normal_map>
+              <metalness_map>model://ocean_floor_shipwreck/materials/textures/SunkenShip_Metalness.png</metalness_map>
+              <roughness_map>model://ocean_floor_shipwreck/materials/textures/SunkenShip_Roughness.png</roughness_map>
+            </metal>
+          </pbr>
+          <!-- fallback to script if no PBR support-->
+          <script>
+            <uri>model://ocean_floor_shipwreck/materials/scripts/</uri>
+            <uri>model://ocean_floor_shipwreck/materials/textures/</uri>
+            <name>UrbanTile/SunkenShip_Diffuse</name>
+          </script>
+        </material>
+      </visual>
+      <visual name= "Ground_visual">
+        <geometry>
+          <mesh>
+            <uri>model://ocean_floor_shipwreck/meshes/underwaterworld.dae</uri>
+            <submesh>
+              <name>Ground</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1.0 1.0 1.0</diffuse>
+          <specular>1.0 1.0 1.0</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://ocean_floor_shipwreck/materials/textures/GroundSand_Albedo.png</albedo_map>
+              <roughness_map>model://ocean_floor_shipwreck/materials/textures/GroundSand_Roughness.jpg</roughness_map>
+            </metal>
+          </pbr>
+          <!-- fallback to script if no PBR support-->
+          <script>
+            <uri>model://ocean_floor_shipwreck/materials/scripts/</uri>
+            <uri>model://ocean_floor_shipwreck/materials/textures/</uri>
+            <name>UrbanTile/GroundSand_Diffuse</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

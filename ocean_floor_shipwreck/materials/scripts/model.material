@@ -1,0 +1,66 @@
+
+material UrbanTile/GroundSand_Diffuse
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture GroundSand_Albedo.png
+        }
+      }
+    }
+  }
+material UrbanTile/Rock_Diffuse
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture Rock_Albedo.png
+        }
+      }
+    }
+  }
+material UrbanTile/Coral03_Diffuse
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture Coral03_Albedo.png
+        }
+      }
+    }
+  }
+material UrbanTile/Coral02_Diffuse
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture Coral02_Albedo.png
+        }
+      }
+    }
+  }
+material UrbanTile/SunkenShip_Diffuse
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture SunkenShip_Albedo.png
+        }
+      }
+    }
+  }
