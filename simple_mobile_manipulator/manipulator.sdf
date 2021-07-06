@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="simple_mobile_manipulator">
+
+    <include>
+      <uri>model://my_gripper</uri>
+      <pose>1.3 0 0.1 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://my_robot</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <joint name="arm_gripper_joint" type="fixed">
+      <parent>mobile_base::chassis</parent>
+      <child>simple_gripper::riser</child>
+    </joint>
+
+    <!-- attach sensor to the gripper -->
+    <include>
+      <uri>model://hokuyo</uri>
+      <pose>1.3 0 0.3 0 0 0</pose>
+    </include>
+
+    <joint name="hokuyo_joint" type="fixed">
+      <child>hokuyo::link</child>
+      <parent>simple_gripper::palm</parent>
+    </joint>
+
+  </model>
+</sdf>
+
