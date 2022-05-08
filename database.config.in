@@ -5,6 +5,6 @@
   <last_modified>@CURRENT_DATE@</last_modified>
 
   <models>
-    @MODEL_URI_LIST@
+	  <uri>file://gazebo_models</uri>	
   </models>
 </database>
