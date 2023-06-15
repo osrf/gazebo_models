@@ -1,108 +1,167 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="velodyne">
-    <link name="base">
-      <pose>0 0 0.029335 0 0 0</pose>
-      <inertial>
-        <mass>1.2</mass>
-        <inertia>
-          <ixx>0.001087473</ixx>
-          <iyy>0.001087473</iyy>
-          <izz>0.001092437</izz>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyz>0</iyz>
-        </inertia>
-      </inertial>
-      <collision name="base_collision">
-        <geometry>
-          <cylinder>
-            <radius>.04267</radius>
-            <length>.05867</length>
-          </cylinder>
-        </geometry>
-      </collision>
-      <visual name="base_visual">
-        <pose>0 0 -0.029335 0 0 0</pose>
-        <geometry>
+
+  <model name="velodyne_hdl-32">
+  <!-- Give the base link a unique name -->
+  <link name="base">
+    <pose>0 0 0.029335 0 0 0</pose>
+    <inertial>
+      <mass>1.2</mass>
+      <inertia>
+        <ixx>0.001087473</ixx>
+        <iyy>0.001087473</iyy>
+        <izz>0.001092437</izz>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyz>0</iyz>
+      </inertia>
+    </inertial>
+
+    <!-- Offset the base by half the lenght of the cylinder -->
+    <pose>0 0 0.029335 0 0 0</pose>
+    <collision name="base_collision">
+      <geometry>
+        <cylinder>
+          <!-- Radius and length provided by Velodyne -->
+          <radius>.04267</radius>
+          <length>.05867</length>
+        </cylinder>
+      </geometry>
+    </collision>
+
+    <!-- The visual is mostly a copy of the collision -->
+    <visual name="base_visual">
+    <pose>0 0 -0.029335 0 0 0</pose>
+      <geometry>
           <mesh>
-            <uri>model://velodyne_hdl32/meshes/velodyne_base.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
-    </link>
-    
-    <link name="top">
-      <pose>0 0 0.095455 0 0 0</pose>
-      <inertial>
-        <mass>0.1</mass>
-        <inertia>
-          <ixx>0.000090623</ixx>
-          <iyy>0.000090623</iyy>
-          <izz>0.000091036</izz>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyz>0</iyz>
-        </inertia>
-      </inertial>
-      <collision name="top_collision">
-        <geometry>
-          <cylinder>
-            <radius>0.04267</radius>
-            <length>0.07357</length>
-          </cylinder>
-        </geometry>
-      </collision>
-      <visual name="top_visual">
-        <pose>0 0 -0.0376785 0 0 1.5707</pose>
-        <geometry>
-          <mesh>
-            <uri>model://velodyne_hdl32/meshes/velodyne_top.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
+      <uri>model://velodyne_hdl32/meshes/velodyne_base.dae</uri>
+    </mesh>
+      </geometry>
+    </visual>
+  </link>
 
-      <sensor type="ray" name="sensor">
-        <pose>0 0 -0.004645 1.5707 0 0</pose>
-        <visualize>true</visualize>
-        <update_rate>30</update_rate>
-        <ray>
-          <noise>
-            <type>gaussian</type>
-            <mean>0.0</mean>
-            <stddev>0.1</stddev>
-          </noise>
+  <!-- Give the base link a unique name -->
+  <link name="top">
+   <pose>0 0 0.095455 0 0 0</pose>
+   <inertial>
+     <mass>0.1</mass>
+     <inertia>
+       <ixx>0.000090623</ixx>
+       <iyy>0.000090623</iyy>
+       <izz>0.000091036</izz>
+       <ixy>0</ixy>
+       <ixz>0</ixz>
+       <iyz>0</iyz>
+     </inertia>
+   </inertial>
+   
+   <!-- Add a ray sensor, and give it a name -->
+<sensor type="ray" name="sensor">
 
-          <scan>
-            <horizontal>
-              <samples>32</samples>
-              <resolution>1</resolution>
-              <min_angle>-0.53529248</min_angle>
-              <max_angle>0.18622663</max_angle>
-            </horizontal>
-          </scan>
+<pose>0 0 -0.004645 1.5707 0 0</pose>
+  <visualize>true</visualize>
+  <ray>
+    <noise>
+      <!-- Use gaussian noise -->
+      <type>gaussian</type>
+      <mean>0.0</mean>
+      <stddev>0.02</stddev>
+    </noise>
 
-          <range>
-            <min>0.1</min>
-            <max>70</max>
-            <resolution>0.02</resolution>
-          </range>
-        </ray>
-      </sensor>
-    </link>
+  <!-- The scan element contains the horizontal and vertical beams.
+       We are leaving out the vertical beams for this tutorial. -->
+  <scan>
 
-    <joint type="revolute" name="joint">
-      <pose>0 0 -0.036785 0 0 0</pose>
-      <parent>base</parent>
-      <child>top</child>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>-10000000000000000</lower>
-          <upper>10000000000000000</upper>
-        </limit>
-      </axis>
-    </joint>
+    <!-- The horizontal beams -->
+    <horizontal>
+      <!-- The velodyne has 32 beams(samples) -->
+      <samples>32</samples>
 
-  </model>
+      <!-- Resolution is multiplied by samples to determine number of
+           simulated beams vs interpolated beams. See:
+           http://sdformat.org/spec?ver=1.6&elem=sensor#horizontal_resolution
+           -->
+      <resolution>1</resolution>
+
+      <!-- Minimum angle in radians -->
+      <min_angle>-0.53529248</min_angle>
+
+      <!-- Maximum angle in radians -->
+      <max_angle>0.18622663</max_angle>
+    </horizontal>
+  </scan>
+
+  <!-- Range defines characteristics of an individual beam -->
+  <range>
+
+    <!-- Minimum distance of the beam -->
+    <min>0.05</min>
+
+    <!-- Maximum distance of the beam -->
+    <max>70</max>
+
+    <!-- Linear resolution of the beam -->
+    <resolution>0.02</resolution>
+  </range>
+</ray>
+</sensor>
+
+    <!-- Vertically offset the top cylinder by the length of the bottom
+        cylinder and half the length of this cylinder. -->
+    <pose>0 0 0.095455 0 0 0</pose>
+    <collision name="top_collision">
+      <geometry>
+        <cylinder>
+          <!-- Radius and length provided by Velodyne -->
+          <radius>0.04267</radius>
+          <length>0.07357</length>
+        </cylinder>
+      </geometry>
+    </collision>
+
+    <!-- The visual is mostly a copy of the collision -->
+    <visual name="top_visual">
+    <!-- Lower the mesh by half the height, and rotate by 90 degrees -->
+  <pose>0 0 -0.0376785 0 0 1.5707</pose>
+      <geometry>
+     <!-- The mesh tag indicates that we will use a 3D mesh as
+          a visual -->
+     <mesh>
+       <!-- The URI should refer to the 3D mesh. The "model:"
+           URI scheme indicates that the we are referencing a Gazebo
+           model. -->
+       <uri>model://velodyne_hdl32/meshes/velodyne_top.dae</uri>
+     </mesh>
+      </geometry>
+    </visual>
+  </link>
+  
+  <!-- Each joint must have a unique name -->
+<joint type="revolute" name="joint">
+
+  <!-- Position the joint at the bottom of the top link -->
+  <pose>0 0 -0.036785 0 0 0</pose>
+
+  <!-- Use the base link as the parent of the joint -->
+  <parent>base</parent>
+
+  <!-- Use the top link as the child of the joint -->
+  <child>top</child>
+
+  <!-- The axis defines the joint's degree of freedom -->
+  <axis>
+
+    <!-- Revolve around the z-axis -->
+    <xyz>0 0 1</xyz>
+
+    <!-- Limit refers to the range of motion of the joint -->
+    <limit>
+
+      <!-- Use a very large number to indicate a continuous revolution -->
+      <lower>-10000000000000000</lower>
+      <upper>10000000000000000</upper>
+    </limit>
+  </axis>
+</joint>
+</model>
 </sdf>
