@@ -1,0 +1,269 @@
+<?xml version="1.0" ?>
+<sdf version='1.7'>
+  <model name='bus_stop'>
+    <link name='base_link'>
+      <inertial>
+        <pose>-0.028945 0.578968 0.865497 0 -0 0</pose>
+        <mass>599.322</mass>
+        <inertia>
+          <ixx>1541.97</ixx>
+          <ixy>-12.6703</ixy>
+          <ixz>1.60713</ixz>
+          <iyy>1635.91</iyy>
+          <iyz>370.745</iyz>
+          <izz>1773.29</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0.12 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bus_stop/meshes/base_link.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__bench_collision_1'>
+        <pose>-0.68039 -0.585 0.76 -1.5708 0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bus_stop/meshes/bench.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__board_collision_2'>
+        <pose>-1.5 -0.022169 2.9407 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.82 0.266 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__glass1_collision_3'>
+        <pose>1.49 -0.005 1.34 -3.14159 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bus_stop/meshes/glass.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__glass2_collision_4'>
+        <pose>0.755 -0.76 1.34 3.14159 -0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bus_stop/meshes/glass.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__glass3_collision_5'>
+        <pose>-0.745 -0.74 1.34 -3.14159 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bus_stop/meshes/glass.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__glass4_collision_6'>
+        <pose>-1.49 -0.005 1.34 -3.14159 0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bus_stop/meshes/glass.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__head_collision_7'>
+        <pose>0 0 2.64 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bus_stop/meshes/head.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__round1_collision_8'>
+        <pose>1.5 0 2.64 1.57079 7e-06 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bus_stop/meshes/round.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__round2_collision_9'>
+        <pose>0.5 0 2.64 1.57079 7e-06 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bus_stop/meshes/round.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__round3_collision_10'>
+        <pose>-0.5 0 2.64 1.57079 7e-06 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bus_stop/meshes/round.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__round4_collision_11'>
+        <pose>-1.5 0 2.64 1.57079 7e-06 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bus_stop/meshes/round.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__tag_collision_12'>
+        <pose>-1.73 0 2.69 -1.5708 0 -1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.39 0.087 .002</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0.12 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bus_stop/meshes/base_link.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__bench_visual_1'>
+        <pose>-0.68039 -0.585 0.76 -1.5708 0 -3.14159</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bus_stop/meshes/bench.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__board_visual_2'>
+        <cast_shadows>false</cast_shadows>
+        <pose>-1.5 -0.022169 2.9407 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.82 0.266 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://bus_stop/materials/scripts</uri>
+            <uri>model://bus_stop/materials/textures</uri>
+            <name>bus/station</name>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__glass1_visual_3'>
+        <pose>1.49 -0.005 1.34 -3.14159 -0 1.5708</pose>
+        <transparency>0.7</transparency>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bus_stop/meshes/glass.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__glass2_visual_4'>
+        <pose>0.755 -0.76 1.34 3.14159 -0 -3.14159</pose>
+        <transparency>0.7</transparency>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bus_stop/meshes/glass.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__glass3_visual_5'>
+        <pose>-0.745 -0.74 1.34 -3.14159 0 0</pose>
+        <transparency>0.7</transparency>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bus_stop/meshes/glass.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__glass4_visual_6'>
+        <pose>-1.49 -0.005 1.34 -3.14159 0 -1.5708</pose>
+        <transparency>0.7</transparency>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bus_stop/meshes/glass.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__head_visual_7'>
+        <pose>0 0 2.64 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bus_stop/meshes/head.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__round1_visual_8'>
+        <pose>1.5 0 2.64 1.57079 7e-06 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bus_stop/meshes/round.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__round2_visual_9'>
+        <pose>0.5 0 2.64 1.57079 7e-06 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bus_stop/meshes/round.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__round3_visual_10'>
+        <pose>-0.5 0 2.64 1.57079 7e-06 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bus_stop/meshes/round.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__round4_visual_11'>
+        <pose>-1.5 0 2.64 1.57079 7e-06 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bus_stop/meshes/round.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__tag_visual_12'>
+        <pose>-1.73 0 2.69 -1.5708 0 -1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.39 0.087 .002</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://bus_stop/materials/scripts</uri>
+            <uri>model://bus_stop/materials/textures</uri>
+            <name>bus/tag</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

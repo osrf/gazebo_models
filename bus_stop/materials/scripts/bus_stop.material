@@ -1,0 +1,29 @@
+material bus/station
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture pic.png
+			}
+		}
+	}
+}
+
+material bus/tag
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture bus.png
+			}
+		}
+	}
+}
