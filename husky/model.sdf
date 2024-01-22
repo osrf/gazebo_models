@@ -37,6 +37,7 @@
         </geometry>
         <material>
           <script>
+            <uri>model://husky/meshes/base_link.stl</uri>
             <name>Gazebo/FlatBlack</name>
           </script>
         </material>
@@ -51,6 +52,7 @@
         </geometry>
         <material>
           <script>
+            <uri>model://husky/meshes/top_plate.stl</uri>
             <name>Gazebo/Yellow</name>
           </script>
         </material>
@@ -65,6 +67,7 @@
         </geometry>
         <material>
           <script>
+            <uri>model://husky/meshes/bumper.stl</uri>
             <name>Gazebo/FlatBlack</name>
           </script>
         </material>
@@ -79,6 +82,7 @@
         </geometry>
         <material>
           <script>
+            <uri>model://husky/meshes/bumper.stl</uri>
             <name>Gazebo/FlatBlack</name>
           </script>
         </material>
@@ -93,6 +97,7 @@
         </geometry>
         <material>
           <script>
+            <uri>model://husky/meshes/user_rail.stl</uri>
             <name>Gazebo/Grey</name>
           </script>
         </material>
@@ -141,6 +146,7 @@
         </geometry>
         <material>
           <script>
+            <uri>model://husky/meshes/wheel.stl</uri>
             <name>Gazebo/Grey</name>
           </script>
         </material>
@@ -205,6 +211,7 @@
         </geometry>
         <material>
           <script>
+            <uri>model://husky/meshes/wheel.stl</uri>
             <name>Gazebo/Grey</name>
           </script>
         </material>
@@ -269,6 +276,7 @@
         </geometry>
         <material>
           <script>
+            <uri>model://husky/meshes/wheel.stl</uri>
             <name>Gazebo/Grey</name>
           </script>
         </material>
@@ -333,6 +341,7 @@
         </geometry>
         <material>
           <script>
+            <uri>model://husky/meshes/wheel.stl</uri>
             <name>Gazebo/Grey</name>
           </script>
         </material>
