@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="velodyne_hdl-32">
+    <!-- Enlace base -->
+    <link name="base">
+      <pose>0 0 0 0 0 0</pose>
+      <visual name="base_visual">
+        <geometry>
+          <mesh>
+            <uri>model://velodyne_hdl32/meshes/velodyne_base.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Enlace superior -->
+    <link name="top">
+      <pose>0 0 0.1 0 0 0</pose>
+      <visual name="top_visual">
+        <geometry>
+          <mesh>
+            <uri>model://velodyne_hdl32/meshes/velodyne_top.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+
+      <sensor type="ray" name="sensor">
+        <pose>0 0 -0.004645 1.5707 0 0</pose>
+        <visualize>true</visualize>
+        <ray>
+          <noise>
+            <!-- Usa ruido gaussiano -->
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.02</stddev>
+          </noise>
+        </ray>
+      </sensor>
+      
+    </link>
+  </model>
+</sdf>
