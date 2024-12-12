@@ -1,0 +1,319 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="mobile_base">
+    <static>false</static>
+
+    <!-- Base Link -->
+    <link name="base_link">
+      <pose>0 0 0.1 0 0 0</pose>
+      <inertial>
+        <mass>10.0</mass>
+        <inertia>
+          <ixx>1.0</ixx>
+          <iyy>1.0</iyy>
+          <izz>1.0</izz>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="base_collision">
+        <geometry>
+          <box>
+            <size>1.0 1.0 0.2</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="base_visual">
+        <geometry>
+          <box>
+            <size>1.0 1.0 0.2</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Gray</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!-- Caster 1 and Wheel -->
+    <link name="caster1">
+      <pose>-0.4 -0.4 0.0 0 0 0</pose>
+      <collision name="caster1_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.2</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="caster1_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.2</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Gray</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="caster1_swivel" type="revolute">
+      <parent>base_link</parent>
+      <child>caster1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <link name="segway1_wheel">
+      <pose>-0.4 -0.4 -0.05 0 1.5708 0</pose> <!-- Upright wheel -->
+      <collision name="segway1_wheel_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="segway1_wheel_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="segway1_wheel_joint" type="revolute">
+      <parent>caster1</parent>
+      <child>segway1_wheel</child>
+      <axis>
+        <xyz>1 0 0</xyz> <!-- Axis for upright wheel -->
+      </axis>
+    </joint>
+
+    <!-- Caster 2 and Wheel -->
+    <link name="caster2">
+      <pose>0.4 -0.4 0.0 0 0 0</pose>
+      <collision name="caster2_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.2</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="caster2_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.2</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Gray</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="caster2_swivel" type="revolute">
+      <parent>base_link</parent>
+      <child>caster2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <link name="segway2_wheel">
+      <pose>0.4 -0.4 -0.05 0 1.5708 0</pose> <!-- Upright wheel -->
+      <collision name="segway2_wheel_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="segway2_wheel_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="segway2_wheel_joint" type="revolute">
+      <parent>caster2</parent>
+      <child>segway2_wheel</child>
+      <axis>
+        <xyz>1 0 0</xyz> <!-- Axis for upright wheel -->
+      </axis>
+    </joint>
+
+    <!-- Caster 3 and Wheel -->
+    <link name="caster3">
+      <pose>-0.4 0.4 0.0 0 0 0</pose>
+      <collision name="caster3_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.2</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="caster3_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.2</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Gray</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="caster3_swivel" type="revolute">
+      <parent>base_link</parent>
+      <child>caster3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <link name="segway3_wheel">
+      <pose>-0.4 0.4 -0.05 0 1.5708 0</pose> <!-- Upright wheel -->
+      <collision name="segway3_wheel_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="segway3_wheel_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="segway3_wheel_joint" type="revolute">
+      <parent>caster3</parent>
+      <child>segway3_wheel</child>
+      <axis>
+        <xyz>1 0 0</xyz> <!-- Axis for upright wheel -->
+      </axis>
+    </joint>
+
+    <!-- Caster 4 and Wheel -->
+    <link name="caster4">
+      <pose>0.4 0.4 0.0 0 0 0</pose>
+      <collision name="caster4_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.2</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="caster4_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.2</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Gray</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="caster4_swivel" type="revolute">
+      <parent>base_link</parent>
+      <child>caster4</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <link name="segway4_wheel">
+      <pose>0.4 0.4 -0.05 0 1.5708 0</pose> <!-- Upright wheel -->
+      <collision name="segway4_wheel_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="segway4_wheel_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="segway4_wheel_joint" type="revolute">
+      <parent>caster4</parent>
+      <child>segway4_wheel</child>
+      <axis>
+        <xyz>1 0 0</xyz> <!-- Axis for upright wheel -->
+      </axis>
+    </joint>
+
+  </model>
+</sdf>
