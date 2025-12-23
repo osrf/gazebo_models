@@ -1,6 +1,8 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="velodyne">
+
+  <model name="velodyne_hdl-32">
+
     <link name="base">
       <pose>0 0 0.029335 0 0 0</pose>
       <inertial>
@@ -31,7 +33,7 @@
         </geometry>
       </visual>
     </link>
-    
+
     <link name="top">
       <pose>0 0 0.095455 0 0 0</pose>
       <inertial>
@@ -45,6 +47,7 @@
           <iyz>0</iyz>
         </inertia>
       </inertial>
+
       <collision name="top_collision">
         <geometry>
           <cylinder>
@@ -53,6 +56,7 @@
           </cylinder>
         </geometry>
       </collision>
+
       <visual name="top_visual">
         <pose>0 0 -0.0376785 0 0 1.5707</pose>
         <geometry>
@@ -62,17 +66,13 @@
         </geometry>
       </visual>
 
-      <sensor type="ray" name="sensor">
+      <!-- 🔥 Ray Sensor + Noise -->
+      <sensor type="ray" name="velodyne_sensor">
         <pose>0 0 -0.004645 1.5707 0 0</pose>
         <visualize>true</visualize>
         <update_rate>30</update_rate>
-        <ray>
-          <noise>
-            <type>gaussian</type>
-            <mean>0.0</mean>
-            <stddev>0.1</stddev>
-          </noise>
 
+        <ray>
           <scan>
             <horizontal>
               <samples>32</samples>
@@ -83,15 +83,23 @@
           </scan>
 
           <range>
-            <min>0.1</min>
+            <min>0.05</min>
             <max>70</max>
             <resolution>0.02</resolution>
           </range>
+
+          <!-- ✅ Noise 추가 -->
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.1</stddev>
+          </noise>
+
         </ray>
       </sensor>
     </link>
 
-    <joint type="revolute" name="joint">
+    <joint type="revolute" name="velodyne_joint">
       <pose>0 0 -0.036785 0 0 0</pose>
       <parent>base</parent>
       <child>top</child>
